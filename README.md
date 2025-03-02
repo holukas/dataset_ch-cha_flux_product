@@ -26,8 +26,12 @@ Documentation and notebooks for the PI dataset of the **intensively managed gras
 
 ## Upcoming updates
 
-- **GPP** and **RECO** from NEE partitioning
-- **ET** calculated from LE
+- *RF = gap-filled using random forest*
+- *MDS = gap-filled using marginal distrubution sampling from Reichstein et al. (2005)*
+- **GPP** (RF) and **RECO** (RF) from NEE (RF) partitioning
+- **GPP** (MDS) and **RECO** (MDS) from NEE (MDS) partitioning
+- **ET** calculated from LE (RF)
+- **ET** calculated from LE (MDS)
 - more meteo variables
 
 ## Acknowledgments
