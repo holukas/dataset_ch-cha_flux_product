@@ -101,7 +101,9 @@ Here are results from a comparison of annual wind direction histograms (with bin
 
 [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 (using EddyPro v7.0.9) was used for all flux calculations.
 
-### Project creation
+
+### EddyPro settings
+#### Project creation
 - **Raw file format**: ASCII plain text
 - **Metadata file**: Use alternative file
 - **Biomet data**: Use external file
@@ -127,7 +129,7 @@ Here are results from a comparison of annual wind direction histograms (with bin
 		- Columns were defined depending on the year or time period
 		- ASCII files contained data for (in order): sonic anemometer, IRGA and QCL or LGR (if available)
 
-### Basic settings
+#### Basic settings
 - **Files Info**: this section in EddyPro was handled by [fluxrun](https://github.com/holukas/fluxrun)
 - **Missing samples allowance**: 10%
 - **Flux averaging interval**: 30 min
@@ -146,7 +148,7 @@ Here are results from a comparison of annual wind direction histograms (with bin
 - **Diagnostic measurements**:
 	- Not directly used since the diagnostic value was only available for newer years. However, the AGC (automatic gain control, a measure of signal quality/strength) was used in all years.
 
-### Advanced settings
+#### Advanced settings
 - **Angle-of-attack correction**: NO, has a tendency to overestimate CO2 uptake
 - **Axis rotations for tilt correction**: Double rotation
 - **Turbulent fluctuations**: 
@@ -155,7 +157,7 @@ Here are results from a comparison of annual wind direction histograms (with bin
 		- IRGA: Covariance maximization with default (see Table EC1)
 		- QCL/LGR: Constant (see Table EC2)
 - **Compensate density fluctiations (WPL terms)**: YES for open-path IRGA, NO for QCL/LGR
-- **Add instrument sensible heat components for LI-7500**: NO
+- **Add instrument sensible heat components for LI-7500**: NO (see Note#1 below)
 - **Quality check**: Mauder and Foken (2004) (0-1-2 system) for Level-1 quality flags, later extended in post-processing
 - **Footprint estimation**: Kljun et al. (2004)
 - **Statistical analyses**: all tests were selected for output, but not all tests were later used. Notable difference to default settings: Angle of attack criteria were slightly relaxed and allowed minimum AoA -35° (instead of default -30°) and maximum AoA +35° (instead of default +35°)
@@ -163,7 +165,7 @@ Here are results from a comparison of annual wind direction histograms (with bin
 - **Spectral Analysis** and Corrections:
 	- TODO
 
-### Note about instrument sensible heat components for LI-7500
+### Note#1: instrument sensible heat components for LI-7500
 
 **No self-heating correction was applied to open-path IRGA fluxes.**
 

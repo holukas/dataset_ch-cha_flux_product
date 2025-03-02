@@ -110,7 +110,13 @@ flowchart LR
 	  RAW DATA TEST: Generated new flag variable FLAG_L2_FC_CO2_VM97_DROPOUT_TEST, values taken from output variable CO2_VM97_TEST from position 3, based on CO2, with flag 0 (good values) where test passed, flag 2 (bad values) where test failed (for hard flags) or flag 1 (ok values) where test failed (for soft flags) ...
 	  ```
 
-- **Angle-of-attack (AoA) flag** was applied between `2008-01-01` and `2010-01-01`, and between `2016-03-01` and `2016-05-01`. All time periods when the flag indicated issues with AoA were flagged as bad data. Normally not applied by default, but in this case there were time periods when the sonic's vertical wind velocity produced unrealistic wind values. 
+- **Angle-of-attack (AoA) flag** 
+	- The AoA flag was only applied during certain time periods:
+		- between `2008-01-01` and `2010-01-01`
+		- between `2016-03-01` and `2016-05-01`
+		- between `2021-12-10` and `2021-12-23`
+	- All time periods when the flag indicated issues with AoA were flagged as bad data. 
+	- Normally not applied by default, but in this case there were time periods when the sonic's vertical wind velocity produced unrealistic wind values. 
 	- applied to: all fluxes
 	- Note: for flux calculations, the setting in EddyPro was relaxed and accepted minimum and maximum angles of attack of `-35°` and `+35°`, respectively, instead of the default `-30°` and `+30°`. Reason: this test is relatively strict and removes many data points, however, based on tests from another group the relaxed settings seemed defensible, especially since this flag was only applied to obviously flawed time periods.
 	- Example output from diive for NEE (in this step still called `FC`): 
