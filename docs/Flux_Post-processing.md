@@ -70,32 +70,39 @@ flowchart LR
 
 ### Individual flags
 *See notebooks for more details*
-- **SSITC** test flag: Combination of the two partial tests _steady state test_ and _developed turbulent conditions test_, from EddyPro output. (Mauder and Foken, 2006)
+#### **SSITC** test flag
+- Combination of the two partial tests _steady state test_ and _developed turbulent conditions test_, from EddyPro output. (Mauder and Foken, 2006)
 	- applied to: all fluxes
+	- **Exception**: flags where this test resulted in `1` were set to `2` during the time period between `2022-05-01` and `2023-09-30`. 
+		- During this time period, there was a strange issue with the sonic anemometer where the vertical wind component `W_UNROT` (unrotated, the directly measured W) became  negative while during all other time periods the wind was more positive. NEE was clearly affected by this issue, showing some high uptake values during night, therefore also corrupting the gap-filling algorithm later on. Although this was not so visible during the day, we must assume that this effect was also present during daytime. We found that the most problematic time periods can be filtered out by setting the SSITC flag to `2` where the flag was `1`. Therefore we remove all flux values where the SSITC test was `1`. This issue is also visible in the second rotation angle `ROT_PITCH` with slightly different angles than before and after this period. 
 	- Example output from diive for NEE (in this step still called `FC`): 
 	  ```
 	  SSITC TEST: Generated new flag variable FLAG_L2_FC_SSITC_TEST, values taken from output variable FC_SSITC_TEST ...
 	  ```
-- **Gas completeness** test flag: Check completeness of the variable that was used to calculate the respective flux, calculated in diive. (Sabbatini et al., 2018)
+#### **Gas completeness** test flag
+- Check completeness of the variable that was used to calculate the respective flux, calculated in diive. (Sabbatini et al., 2018)
 	- applied to: all fluxes
 	- Example output from diive for NEE (in this step still called `FC`): 
 	  ```
 	  FLUX BASE VARIABLE COMPLETENESS TEST: Generated new flag variable FLAG_L2_FC_COMPLETENESS_TEST, newly calculated from variable CO2, with flag 0 (good values) where available number of records for CO2 >= 0.99, flag 1 (ok values) >= 0.97 and < 0.99, flag 2 (bad values) < 0.97...
 	  ```
-- **Spectral correction factor** test flag: using the `SCF` (spectral correction factor) from EddyPro output, then calculated in diive (Sabbatini et al., 2018)
+#### **Spectral correction factor** test flag
+- using the `SCF` (spectral correction factor) from EddyPro output, then calculated in diive (Sabbatini et al., 2018)
 	- applied to: all fluxes
 	- Example output from diive for NEE (in this step still called `FC`): 
 	  ```
 	  SPECTRAL CORRECTION FACTOR TEST: Generating new flag variable FLAG_L2_FC_SCF_TEST, newly calculated from output variable FC_SCF, withflag 0 (good values) where FC_SCF < 2, flag 1 (ok values) where FC_SCF >= 2 and < 4, flag 2 (bad values) where FC_SCF >= 4...
 	  ```
-- **Signal strength** test flag: for open path IRGAs, this test checks if the instrument's `AGC` (automatic gain control, a measure of signal quality) is above a certain value, whereby high values stand for bad signal (note that for (en)closed path IRGAs it is typically the other way round with high values showing good signal strenth), fluxes where `AGC` was above 90% were discarded. In this case, the name of the custom variable was `CUSTOM_AGC_MEAN` and part of the EddyPro output files, the flag was then calculated in diive.
+#### **Signal strength** test flag
+- for open path IRGAs, this test checks if the instrument's `AGC` (automatic gain control, a measure of signal quality) is above a certain value, whereby high values stand for bad signal (note that for (en)closed path IRGAs it is typically the other way round with high values showing good signal strenth), fluxes where `AGC` was above 90% were discarded. In this case, the name of the custom variable was `CUSTOM_AGC_MEAN` and part of the EddyPro output files, the flag was then calculated in diive.
 	- applied to: open path IRGA fluxes (CO<sub>2</sub>, H<sub>2</sub>O)
 	- Note that the water fluxes `LE` and `ET` are direct conversions of the calculated H<sub>2</sub>O flux
 	- Example output from diive for NEE (in this step still called `FC`): 
 	  ```
 	  SIGNAL STRENGTH TEST: Generating new flag variable FLAG_L2_FC_SIGNAL_STRENGTH_TEST, newly calculated from output variable CUSTOM_AGC_MEAN, with flag 0 (good values) where CUSTOM_AGC_MEAN <= 90, flag 2 (bad values) where CUSTOM_AGC_MEAN > 90 ...
 	  ```
-- **Raw data screening** test flags (multiple): applied results from the EddyPro output file for spikes, amplitude and drop-outs, see also the official EddyPro help for more info [here](https://www.licor.com/support/EddyPro/topics/despiking-raw-statistical-screening.html). (Vickers and Mahrt, 1997)
+#### **Raw data screening** test flags (multiple)
+- applied results from the EddyPro output file for spikes, amplitude and drop-outs, see also the official EddyPro help for more info [here](https://www.licor.com/support/EddyPro/topics/despiking-raw-statistical-screening.html). (Vickers and Mahrt, 1997)
 	- applied to: all fluxes
 	- Example output from diive for NEE (in this step still called `FC`): 
 	  ```
@@ -110,8 +117,8 @@ flowchart LR
 	  RAW DATA TEST: Generated new flag variable FLAG_L2_FC_CO2_VM97_DROPOUT_TEST, values taken from output variable CO2_VM97_TEST from position 3, based on CO2, with flag 0 (good values) where test passed, flag 2 (bad values) where test failed (for hard flags) or flag 1 (ok values) where test failed (for soft flags) ...
 	  ```
 
-- **Angle-of-attack (AoA) flag** 
-	- The AoA flag was only applied during certain time periods:
+#### **Angle-of-attack (AoA) flag** 
+- The AoA flag was only applied during certain time periods:
 		- between `2008-01-01` and `2010-01-01`
 		- between `2016-03-01` and `2016-05-01`
 		- between `2021-12-10` and `2021-12-23`
@@ -295,6 +302,12 @@ Units: nmol CH<sub>4</sub> m<sup>-2</sup> s<sup>-1</sup>
     - `CUT_84`: NEE version with a constant USTAR threshold of `0.092841`, corresponding to the 84th percentile from the FLUXNET detection results
     - The two other scenarios use a slightly lower and higher threshold.
 - The USTAR threshold found for `NEE` was also applied to `FN2O` and `FCH4`
+
+## Overall quality flag QCF after Level-3.3
+
+***TODO***
+***TODO***
+***TODO***
 
 ## Level 4.1: Gap-filling
 
