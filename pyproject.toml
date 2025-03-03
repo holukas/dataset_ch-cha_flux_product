@@ -1,19 +1,21 @@
-[tool.poetry]
-name = "cha-fp2024"
+[project]
+name = "dataset-ch-cha-flux-product"
 version = "0.1.0"
-description = ""
-authors = ["Lukas Hörtnagl <lukas.hoertnagl@usys.ethz.ch>"]
+description = "Dataset for grassland CH-CHA"
+authors = [
+    { name = "Lukas Hörtnagl", email = "lukas.hoertnagl@usys.ethz.ch" }
+]
 readme = "README.md"
+requires-python = ">=3.9,<3.12"
+dependencies = [
+    "jupyterlab (>=4.3.5,<5.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)"
+]
 
-[tool.poetry.dependencies]
-python = ">=3.9,<3.12"
-jupyterlab = ">=4.2.4"
-openpyxl = "^3.1.5"
-
-[tool.poetry.group.dev.dependencies]
+[poetry.group.dev.dependencies]
 diive = { path = "../../21 - DIIVE/diive", develop = true }
 dbc-influxdb = { path = "../../22 - POET/dbc-influxdb", develop = true }
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"

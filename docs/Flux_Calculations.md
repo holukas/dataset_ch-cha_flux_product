@@ -42,7 +42,6 @@
 | **2023_1**         | 0.30, 0.05-0.50 | same as CO2  |                       |
 | **2024_1**         | 0.30, 0.05-0.50 | same as CO2  |                       |
 
-
 ##### **Table EC2**. QCL and LGR constant time lags (seconds) for N<sub>2</sub>O and CH<sub>4</sub> used in final flux calculations. In addition, the range  where most time lags were found is given.
 
 | **time period**       | **N2O QCL LGR**  | **CH<sub>4</sub> QCL LGR**  | **H2O QCL LGR** | **Notes**                                              |

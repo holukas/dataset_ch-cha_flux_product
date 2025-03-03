@@ -7,6 +7,7 @@ Documentation and notebooks for the PI dataset of the **intensively managed gras
 ## Dataset versions
 
 **CH-CHA FP2025.1 (2005-2024) [current version]**
+- initial release
 - release date: 8 Feb 2025
 - is currently available on demand from the Grassland Sciences group server
 
