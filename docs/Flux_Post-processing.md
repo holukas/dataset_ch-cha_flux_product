@@ -132,45 +132,9 @@ flowchart LR
 	  ANGLE OF ATTACK TEST: will be applied on the following dates only: [['2008-01-01', '2010-01-01'], ['2016-03-01', '2016-05-01']]
 	  ANGLE OF ATTACK TEST: Generated new flag variable FLAG_L2_FC_VM97_AOA_HF_TEST, values taken from output variable None, with flag 0 (good values) where test passed, flag 2 (bad values) where test failed ...
 	  ```
-
-### QCF: overall quality flag after Level-2 tests
-- After individual quality tests were run, the single flags are combined into the overall `QCF` flag.
-- The overall flag after Level-2 is named `FLAG_L2_<flux>_QCF`, whereby `<flux>` is the respective flux, e.g., `FC`, `LE`, `H`, `FN2O`, `FCH4`.
-- Example output from diive for NEE (in this step still called `FC`): 
-```
-========================================
-QCF FLAG EVOLUTION
-========================================
-This output shows the evolution of the QCF overall quality flag
-when test flags are applied sequentially to the variable FC.
-
-Number of FC records before QC: 295350
-+++ FLAG_L2_FC_MISSING_TEST rejected 0 values (+0.00%)      TOTALS: flag 0: 295350 (100.00%) / flag 1: 0 (0.00%) / flag 2: 0 (0.00%)
-+++ FLAG_L2_FC_SSITC_TEST rejected 133899 values (+45.34%)      TOTALS: flag 0: 115080 (38.96%) / flag 1: 46371 (15.70%) / flag 2: 133899 (45.34%)
-+++ FLAG_L2_FC_COMPLETENESS_TEST rejected 690 values (+0.23%)      TOTALS: flag 0: 114423 (38.74%) / flag 1: 46338 (15.69%) / flag 2: 134589 (45.57%)
-+++ FLAG_L2_FC_SCF_TEST rejected 194 values (+0.07%)      TOTALS: flag 0: 114201 (38.67%) / flag 1: 46366 (15.70%) / flag 2: 134783 (45.64%)
-+++ FLAG_L2_FC_SIGNAL_STRENGTH_TEST rejected 9808 values (+3.32%)      TOTALS: flag 0: 110029 (37.25%) / flag 1: 40730 (13.79%) / flag 2: 144591 (48.96%)
-+++ FLAG_L2_FC_CO2_VM97_SPIKE_HF_TEST rejected 942 values (+0.32%)      TOTALS: flag 0: 109335 (37.02%) / flag 1: 40482 (13.71%) / flag 2: 145533 (49.27%)
-+++ FLAG_L2_FC_CO2_VM97_AMPLITUDE_RESOLUTION_HF_TEST rejected 3826 values (+1.30%)      TOTALS: flag 0: 106807 (36.16%) / flag 1: 39184 (13.27%) / flag 2: 149359 (50.57%)
-+++ FLAG_L2_FC_CO2_VM97_DROPOUT_TEST rejected 0 values (+0.00%)      TOTALS: flag 0: 106807 (36.16%) / flag 1: 39184 (13.27%) / flag 2: 149359 (50.57%)
-+++ FLAG_L2_FC_VM97_AOA_HF_TEST rejected 2607 values (+0.88%)      TOTALS: flag 0: 105860 (35.84%) / flag 1: 37524 (12.70%) / flag 2: 151966 (51.45%)
-
-In total, 151966 (51.45%) of the available records were rejected in this step.
-INFO Rejected DAYTIME records where QCF flag >= 2
-INFO Rejected NIGHTTIME records where QCF flag >= 1
-```
-
-```
-========================================
-SUMMARY: FLAG_L2_FC_QCF, QCF FLAG FOR FC
-========================================
-Between 2005-01-01 00:15 and 2024-12-31 23:45 ...
-    Total flux records BEFORE quality checks: 295350 (84.23% of potential)
-    Available flux records AFTER quality checks: 143384 (48.55% of total)
-    Rejected flux records: 151966 (51.45% of total)
-    Potential flux records: 350640
-    Potential flux records missed: 55290 (15.77% of potential)
-```
+### QCF: overall quality control flag after Level-2 tests
+*See below for a description of how `QCF` is calculated.*
+- **Single flags from Level-2 are combined into one quality control flag `QCF` that is later *temporarily* applied before outlier detection tests (Level-3.2).
 
 ## Level 3.1: Storage correction
 
@@ -299,23 +263,22 @@ Units: nmol CH<sub>4</sub> m<sup>-2</sup> s<sup>-1</sup>
     - `CUT_16`: NEE version with a constant USTAR threshold of `0.052945`, corresponding to the 16th percentile from the FLUXNET detection results
     - `CUT_84`: NEE version with a constant USTAR threshold of `0.092841`, corresponding to the 84th percentile from the FLUXNET detection results
     - The two other scenarios use a slightly lower and higher threshold.
-- The USTAR threshold found for `NEE` was also applied to `FN2O` and `FCH4`
 
 ## QCF: overall quality control flag after Level-3.3 tests
-- **For subsequent steps, fully quality-filtered data are needed.**- 
+*See below for a description of how `QCF` is calculated.*
+- **For subsequent steps, fully quality-filtered fluxes are needed.**
 - Therefore, after running the individual quality tests in previous steps, the single flags are combined into the overall `QCF`.
-- This creates flux variables that have been filtered by all quality flags created in previous steps.
+- This creates flux variables that have been filtered by all quality flags created in Level-2, Level-3.2 and Level-3.3.
 - The overall quality flag after Level-3.3 is named `FLAG_L3.3_<ustar_scenario>_<flux>_QCF`.
-- See below for a description of how `QCF` is calculated.
 - **Example** for NEE: 
 	- `FLAG_L3.3_CUT_50_NEE_L3.1_QCF` is the `QCF` for `NEE_L3.1` after Level-3.3.
-	- This flag is used to filter the variable `NEE_L3.1` and creates the quality-filtered variable `NEE_L3.1_L3.3_CUT_50_QCF`.
+	- This flag is used to filter the variable `NEE_L3.1` and creates the quality-filtered variable `NEE_L3.1_L3.3_CUT_50_QCF`, that is then used in the following steps.
 	- Note that `NEE_L3.1` is the unfiltered, but storage-corrected variable `FC` from the flux calculations.
 - **Examples** for `<ustar_scenario>`:
 	- `CUT_16`, `CUT_50`, `CUT_84`
 - **Examples** for `<flux>`:
 	- `FC_L3.1`, `LE_L3.1`, `H_L3.1`, `FN2O_L3.1`, `FCH4_L3.1`
-	- These are fluxes that are storage-corrected (Level-3.1), but are not filtered.
+	- These are fluxes that are storage-corrected (Level-3.1), but are not filtered yet.
 - **Example** output from diive for `NEE_L3.1` (storage-corrected `FC` from Level-3.1) for the USTAR scenario `CUT_50`, detailing the sequential application of all individual quality flags from Level-2, Level-3.2 and Level-3.3: 
 ```
 ========================================
@@ -345,6 +308,17 @@ INFO Rejected DAYTIME records where QCF flag >= 2
 INFO Rejected NIGHTTIME records where QCF flag >= 1
 ```
 
+```
+========================================
+SUMMARY: FLAG_L3.3_CUT_50_NEE_L3.1_QCF, QCF FLAG FOR NEE_L3.1
+========================================
+Between 2005-01-01 00:15 and 2024-12-31 23:45 ...
+    Total flux records BEFORE quality checks: 295350 (84.23% of potential)
+    Available flux records AFTER quality checks: 119467 (40.45% of total)
+    Rejected flux records: 175883 (59.55% of total)
+    Potential flux records: 350640
+    Potential flux records missed: 55290 (15.77% of potential)
+```
 ## Level 4.1: Gap-filling
 
 ### Random forest
@@ -425,6 +399,8 @@ FEATURES = METEO_VARS + AGG_VARS + MGMT_VARS
 	- **Soft flags**: If a test results is flag=1, it can still be OK data for some analyses. Even if there is a second test with flag=1, data might still be OK. If one or two flags are 1, and there is no flag=2, then the `QCF` is also 1. These flags are less crucial and are therefore soft flags.
 - `QCF` always uses the same logic, for both flux and meteo data, only the single tests are different.
 - **This was done for all fluxes, however, for NEE the requirements were stricter during the nighttime than during the daytime.** For NEE, daytime `QCF` flags of 0 and 1 were accepted (flag 2 = bad data), but during nighttime only `QCF` flags with 0 were retained (flags 1 and 2 = bad data). For all other fluxes, `QCF` flags of 0 and 1 were accepted during daytime and nighttime (flag 2 = bad data).
+- **Example**:
+	- `FLAG_L3.3_CUT_50_NEE_L3.1_QCF` is the flag after Level-3.3, for flux `NEE_L3.1` (storage-corrected) for the USTAR scenario `CUT_50`. This flag is applied to flux `NEE_L3.1`, producing the quality-filtered flux `NEE_L3.1_L3.3_CUT_50_QCF`. In addition, another flux variable is produced, containing only highest-quality fluxes: `NEE_L3.1_L3.3_CUT_50_QCF0` (all single flags are zero).
 
 **Figure 1**: Example showing how the overall quality control flag `QCF` is calculated from single test flags.
 ![](../images/QCF_overall_quality_flag.png)
