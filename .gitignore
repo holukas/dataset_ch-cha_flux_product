@@ -1,7 +1,7 @@
 # Folders not needed for repo (old)
 
 # e.g.: /src
-/.obsidian
+/.obsidian/
 /.idea/
 /notebooks/0_data
 /notebooks/10_METEO/*.csv
