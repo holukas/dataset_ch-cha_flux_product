@@ -243,6 +243,9 @@
   },
   "active": "899ff8337af393dd",
   "lastOpenFiles": [
+    "notebooks/30_MERGE_DATA/x-Comparison_fluxesCorrectedWithWOffsetInEddyPro.ipynb",
+    "notebooks/30_MERGE_DATA/test.ipynb",
+    "notebooks/30_MERGE_DATA/31.0_FLUXES_L1_IRGA-Copy1.ipynb",
     "docs/Variables.md",
     "docs/Flux_Post-processing.md",
     "docs/Flux_Calculations.md",
@@ -269,8 +272,6 @@
     "images",
     "New folder",
     "data/EddyPro_settings/README.txt",
-    "data/EddyPro_settings/New Textdokument.txt",
-    "data/EddyPro_settings/CH-CHA_2024_1_[IRGA75]_R350-B+IRGA75-A.eddypro",
     "docs/Management_Data.md",
     "notebooks/20_MANAGEMENT/README.md",
     "Flux_Calculations.md",
