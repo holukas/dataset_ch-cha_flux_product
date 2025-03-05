@@ -17,7 +17,7 @@
     - **IRGA**: peak of distribution was used as nominal (default) lag, time ranges around this peak were used as time window (**Table EC1**)
     - **QCL**: peak of distrubution was used as constant lag for the respective time period, no time window used, all lags were constant (**Table EC2**)
 
-##### **Table EC1**. IRGA nominal (default) time lags and size of the lag search windows for different time periods in seconds.  Used for CO2 and H2O (LE) in final flux calculations.
+**Table EC1**. IRGA nominal (default) time lags and size of the lag search windows for different time periods in seconds.  Used for CO2 and H2O (LE) in final flux calculations.
 
 | **time period**    | **CO2 IRGA**    | **H2O IRGA** | **Notes**             |
 | ------------------ | --------------- | ------------ | --------------------- |
@@ -42,7 +42,7 @@
 | **2023_1**         | 0.30, 0.05-0.50 | same as CO2  |                       |
 | **2024_1**         | 0.30, 0.05-0.50 | same as CO2  |                       |
 
-##### **Table EC2**. QCL and LGR constant time lags (seconds) for N<sub>2</sub>O and CH<sub>4</sub> used in final flux calculations. In addition, the range  where most time lags were found is given.
+**Table EC2**. QCL and LGR constant time lags (seconds) for N<sub>2</sub>O and CH<sub>4</sub> used in final flux calculations. In addition, the range  where most time lags were found is given.
 
 | **time period**       | **N2O QCL LGR**  | **CH<sub>4</sub> QCL LGR**  | **H2O QCL LGR** | **Notes**                                              |
 | --------------------- | ---------------- | ---------------- | --------------- | ------------------------------------------------------ |
@@ -71,7 +71,7 @@ I compared histograms of wind directions between 2005 and 2024 using Level-0 flu
 
 Here are results from a comparison of annual wind direction histograms (with bin width of 1°) to a reference period (2006-2009), all wind directions were calculated with a north offset of 7°, then a histogram was calculated for each year. The OFFSET describes how many degrees have to be added (or subtracted) to the half-hourly wind direction to yield a histogram that is most similar to the reference. All OFFSETS are small, which indicates that the wind directions are in good agreement.
 
-##### **Table EC3**. Wind direction offsets (in degrees) compared to a reference period (2006-2009) from Level-0 OPENLAG runs.
+ **Table EC3**. Wind direction offsets (in degrees) compared to a reference period (2006-2009) from Level-0 OPENLAG runs.
 
 | **YEAR** | **OFFSET (°)** |
 | -------- | -------------------- |
@@ -205,7 +205,7 @@ It was shown previously that the self-heating effect can be negligible at grassl
 Due to the points raised we – and many other sites using the LI-COR LI-7500 – are currently not in a position to determine the flux uncertainty due to IRGA self-heating, which is unfortunate. A blackbox application of available corrections is risky, as the study by Deventer et al. (2021) points out: the use of current self-heating corrections in the absence of parallel reference flux measurements “*[…] yields uncertainties that are larger than random flux errors—substantially degrading confidence in ecosystem carbon[…]budgets*”.
 
 
-### **Table EC4**: Level-1 files IRGA (2005-2024).
+**Table EC4**: Level-1 files IRGA (2005-2024).
 
 | Used Level-1 files.                                                                     |
 | --------------------------------------------------------------------------------------- |
