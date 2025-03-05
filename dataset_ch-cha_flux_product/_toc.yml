@@ -8,5 +8,7 @@ chapters:
 - file: Management_Data
 - file: Flux_Calculations
 - file: Flux_Post-processing
+- file: Variables
 - file: Links
 - file: References
+- file: notebooks/README

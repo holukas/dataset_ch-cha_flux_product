@@ -17,7 +17,7 @@
     - **IRGA**: peak of distribution was used as nominal (default) lag, time ranges around this peak were used as time window (**Table EC1**)
     - **QCL**: peak of distrubution was used as constant lag for the respective time period, no time window used, all lags were constant (**Table EC2**)
 
-**Table EC1**. IRGA nominal (default) time lags and size of the lag search windows for different time periods in seconds.  Used for CO2 and H2O (LE) in final flux calculations.
+**Table EC1**. IRGA nominal (default) time lags and size of the lag search windows for different time periods in seconds. Used for CO2 and H2O (LE) in final flux calculations.
 
 | **time period**    | **CO2 IRGA**    | **H2O IRGA** | **Notes**             |
 | ------------------ | --------------- | ------------ | --------------------- |

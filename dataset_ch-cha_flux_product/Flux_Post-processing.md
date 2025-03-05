@@ -5,34 +5,35 @@
 
 ## Overview
 
-```mermaid
-flowchart
-L1F[L1 fluxes]
-L2QCF[L2 quality flags]
-L31F[L3.1 fluxes]
-L31Ffiltered[L3.1 fluxes filtered]
-L32QCF[L3.2 quality flags]
-L33QCF[L3.3 quality flags]
-QCF[overall quality flag QCF]
-L31FfilteredQCF[L3.1 fluxes filtered with QCF]
-L41F[L4.1 gap-filled fluxes]
-L42F[L4.2 partitioned fluxes]
+```{mermaid}
 
-L1F --> L2QCF
-L2QCF --> L31Ffiltered
-L1F --> L31F
-L31F --> L31Ffiltered
-L31Ffiltered --> L32QCF
-L1F --> L33QCF
-
-L2QCF --> QCF
-L32QCF --> QCF
-L33QCF --> QCF
-
-QCF -- applied to storage-corrected fluxes --> L31FfilteredQCF
-L31FfilteredQCF -- gap-filling --> L41F
-
-L41F -- partitioning (NEE) --> L42F
+    flowchart
+        L1F[L1 fluxes]
+        L2QCF[L2 quality flags]
+        L31F[L3.1 fluxes]
+        L31Ffiltered[L3.1 fluxes filtered]
+        L32QCF[L3.2 quality flags]
+        L33QCF[L3.3 quality flags]
+        QCF[overall quality flag QCF]
+        L31FfilteredQCF[L3.1 fluxes filtered with QCF]
+        L41F[L4.1 gap-filled fluxes]
+        L42F[L4.2 partitioned fluxes]
+        
+        L1F --> L2QCF
+        L2QCF --> L31Ffiltered
+        L1F --> L31F
+        L31F --> L31Ffiltered
+        L31Ffiltered --> L32QCF
+        L1F --> L33QCF
+        
+        L2QCF --> QCF
+        L32QCF --> QCF
+        L33QCF --> QCF
+        
+        QCF -- applied to storage-corrected fluxes --> L31FfilteredQCF
+        L31FfilteredQCF -- gap-filling --> L41F
+        
+        L41F -- partitioning (NEE) --> L42F
 
 ```
 
@@ -52,7 +53,7 @@ L41F -- partitioning (NEE) --> L42F
 
 ## Level 2: Quality flag expansion
 
-```mermaid
+```{mermaid}
 flowchart LR
 	L1[Level-1 fluxes] --> d[quality flag expansion] --> L2[Level-2 quality flags] --> QCF[Level-2 overall quality flag QCF]
 ```
@@ -138,7 +139,7 @@ flowchart LR
 
 ## Level 3.1: Storage correction
 
-```mermaid
+```{mermaid}
 flowchart LR
 	L1[Level-1 fluxes] --> e[add storage term] --> L3[Level-3.1 fluxes]
 ```
@@ -182,7 +183,7 @@ SC_SINGLE_gfRMED_L3.1  288091 -7.555871 -0.015403  6.739739
 
 ## Level 3.2: Outlier removal
 
-```mermaid
+```{mermaid}
 
 flowchart LR
 	L2[Level-2 QCF]
@@ -403,4 +404,6 @@ FEATURES = METEO_VARS + AGG_VARS + MGMT_VARS
 	- `FLAG_L3.3_CUT_50_NEE_L3.1_QCF` is the flag after Level-3.3, for flux `NEE_L3.1` (storage-corrected) for the USTAR scenario `CUT_50`. This flag is applied to flux `NEE_L3.1`, producing the quality-filtered flux `NEE_L3.1_L3.3_CUT_50_QCF`. In addition, another flux variable is produced, containing only highest-quality fluxes: `NEE_L3.1_L3.3_CUT_50_QCF0` (all single flags are zero).
 
 **Figure 1**: Example showing how the overall quality control flag `QCF` is calculated from single test flags.
-![](../images/QCF_overall_quality_flag.png)
+![](images/QCF_overall_quality_flag.png)
+
+
