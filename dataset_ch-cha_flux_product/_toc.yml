@@ -4,6 +4,9 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: Meteo_Data
+- file: Management_Data
+- file: Flux_Calculations
+- file: Flux_Post-processing
+- file: Links
+- file: References
