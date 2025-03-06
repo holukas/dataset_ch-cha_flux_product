@@ -1,0 +1,1518 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Imports &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/90_DATASET_OVERVIEW/METEO_TA';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CH-CHA Flux Product
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Meteo_Data.html">Meteo Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Management_Data.html">Management Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Flux_Calculations.html">Flux Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Flux_Post-processing.html">Flux Post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Notebook overview</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/90_DATASET_OVERVIEW/METEO_TA.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/90_DATASET_OVERVIEW/METEO_TA.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Imports</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Imports</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-air-temperature-variables"><strong>List of air temperature variables</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#air-temperature"><strong>Air temperature</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmaps-half-hourly">Heatmaps (half-hourly)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmaps-monthly">Heatmaps (monthly)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#averages-up-to-respective-doy">Averages up to respective DOY</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-below-0c">Number of days below 0°C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-above-30c">Number of days above 30°C</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook"><strong>End of notebook</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <span style='font-size:40px; display:block;'>
+<b>
+    TA
+</b>
+</span><p><strong>Author</strong>: Lukas Hörtnagl (<a class="reference external" href="mailto:holukas&#37;&#52;&#48;ethz&#46;ch">holukas<span>&#64;</span>ethz<span>&#46;</span>ch</a>)</p>
+<section class="tex2jax_ignore mathjax_ignore" id="imports">
+<h1><strong>Imports</strong><a class="headerlink" href="#imports" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">importlib.metadata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.io.files</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_parquet</span><span class="p">,</span> <span class="n">load_parquet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.plotting.cumulative</span><span class="w"> </span><span class="kn">import</span> <span class="n">CumulativeYear</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.plotting.heatmap_datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">HeatmapDateTime</span><span class="p">,</span> <span class="n">HeatmapYearMonth</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
+<span class="n">version_diive</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;diive&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;diive version: v</span><span class="si">{</span><span class="n">version_diive</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diive version: v0.85.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-data">
+<h1><strong>Load data</strong><a class="headerlink" href="#load-data" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SOURCEDIR</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;../60_MERGE_DATA_FLUXES&quot;</span>
+<span class="n">FILENAME</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet&quot;</span>
+<span class="n">FILEPATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">SOURCEDIR</span><span class="p">)</span> <span class="o">/</span> <span class="n">FILENAME</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_parquet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">FILEPATH</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\60_MERGE_DATA_FLUXES\61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet (0.862 seconds).
+    --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-12</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-18</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-24</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-6</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-12</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-18</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-24</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-6</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-12</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-18</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-24</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-6</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-12</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-18</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-24</th>
+      <th>...</th>
+      <th>FCH4_L3.1_L3.3_CUT_50_QCF</th>
+      <th>FCH4_L3.1_L3.3_CUT_50_QCF0</th>
+      <th>FLAG_L3.3_CUT_84_FCH4_L3.1_USTAR_TEST</th>
+      <th>SUM_L3.3_CUT_84_FCH4_L3.1_HARDFLAGS</th>
+      <th>SUM_L3.3_CUT_84_FCH4_L3.1_SOFTFLAGS</th>
+      <th>SUM_L3.3_CUT_84_FCH4_L3.1_FLAGS</th>
+      <th>FLAG_L3.3_CUT_84_FCH4_L3.1_QCF</th>
+      <th>FCH4_L3.1_L3.3_CUT_84_QCF</th>
+      <th>FCH4_L3.1_L3.3_CUT_84_QCF0</th>
+      <th>FCH4_L3.1_L3.3_CUT_16_QCF_gfRF</th>
+      <th>FLAG_FCH4_L3.1_L3.3_CUT_16_QCF_gfRF_ISFILLED</th>
+      <th>FCH4_L3.1_L3.3_CUT_50_QCF_gfRF</th>
+      <th>FLAG_FCH4_L3.1_L3.3_CUT_50_QCF_gfRF_ISFILLED</th>
+      <th>FCH4_L3.1_L3.3_CUT_84_QCF_gfRF</th>
+      <th>FLAG_FCH4_L3.1_L3.3_CUT_84_QCF_gfRF_ISFILLED</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 21:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.229004</td>
+      <td>52.226300</td>
+      <td>52.226689</td>
+      <td>52.216796</td>
+      <td>3.458828</td>
+      <td>3.150402</td>
+      <td>3.115260</td>
+      <td>3.660897</td>
+      <td>4.335667</td>
+      <td>4.347764</td>
+      <td>4.385967</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.227858</td>
+      <td>52.227986</td>
+      <td>52.224528</td>
+      <td>52.214211</td>
+      <td>3.522570</td>
+      <td>3.187638</td>
+      <td>3.103440</td>
+      <td>3.643396</td>
+      <td>4.338551</td>
+      <td>4.342880</td>
+      <td>4.379524</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.226640</td>
+      <td>52.229837</td>
+      <td>52.222456</td>
+      <td>52.209876</td>
+      <td>3.578745</td>
+      <td>3.230037</td>
+      <td>3.095339</td>
+      <td>3.624025</td>
+      <td>4.343767</td>
+      <td>4.339440</td>
+      <td>4.372636</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.224375</td>
+      <td>52.231151</td>
+      <td>52.221324</td>
+      <td>52.238293</td>
+      <td>3.624160</td>
+      <td>3.278488</td>
+      <td>3.093806</td>
+      <td>3.601135</td>
+      <td>4.350872</td>
+      <td>4.336333</td>
+      <td>4.366082</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.222007</td>
+      <td>52.230632</td>
+      <td>52.222701</td>
+      <td>52.273511</td>
+      <td>3.656167</td>
+      <td>3.331678</td>
+      <td>3.103003</td>
+      <td>3.579020</td>
+      <td>4.360311</td>
+      <td>4.334225</td>
+      <td>4.359530</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>350640 rows × 784 columns</p>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="list-of-air-temperature-variables">
+<h1><strong>List of air temperature variables</strong><a class="headerlink" href="#list-of-air-temperature-variables" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fluxlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;TA&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">];</span>
+<span class="n">fluxlist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;AXES_ROTATION_METHOD&#39;,
+ &#39;CUSTOM_DATA_SIZE_IRGA75_MEAN&#39;,
+ &#39;CUSTOM_DATA_SIZE_LGR_MEAN&#39;,
+ &#39;CUSTOM_DATA_SIZE_QCL_MEAN&#39;,
+ &#39;CUSTOM_STATUS_CODE_IRGA75_MEAN&#39;,
+ &#39;CUSTOM_STATUS_CODE_LGR_MEAN&#39;,
+ &#39;CUSTOM_STATUS_CODE_QCL_MEAN&#39;,
+ &#39;CUSTOM_STATUS_QCL_MEAN&#39;,
+ &#39;CUSTOM_STATUS_WORD_QCL_MEAN&#39;,
+ &#39;DENTRENDING_TIME_CONSTANT&#39;,
+ &#39;DOY_START&#39;,
+ &#39;ET_STAGE1&#39;,
+ &#39;ET_STAGE2&#39;,
+ &#39;FCH4_STAGE1&#39;,
+ &#39;FCH4_STAGE2&#39;,
+ &#39;FC_STAGE1&#39;,
+ &#39;FC_STAGE2&#39;,
+ &#39;FH2O_STAGE1&#39;,
+ &#39;FH2O_STAGE2&#39;,
+ &#39;FLAG_TA_T1_2_1_ISFILLED&#39;,
+ &#39;FN2O_STAGE1&#39;,
+ &#39;FN2O_STAGE2&#39;,
+ &#39;H_STAGE1&#39;,
+ &#39;H_STAGE2&#39;,
+ &#39;LE_STAGE1&#39;,
+ &#39;LE_STAGE2&#39;,
+ &#39;TAU&#39;,
+ &#39;TAU_CORRDIFF&#39;,
+ &#39;TAU_NR&#39;,
+ &#39;TAU_NSR&#39;,
+ &#39;TAU_RANDUNC_HF&#39;,
+ &#39;TAU_SCF&#39;,
+ &#39;TAU_SS&#39;,
+ &#39;TAU_SSITC_TEST&#39;,
+ &#39;TAU_SS_TEST&#39;,
+ &#39;TAU_STAGE1&#39;,
+ &#39;TAU_STAGE2&#39;,
+ &#39;TAU_UNCORR&#39;,
+ &#39;TA_EP&#39;,
+ &#39;TA_T1_2_1&#39;,
+ &#39;TIMESTAMP_START&#39;,
+ &#39;TSTAR&#39;,
+ &#39;USTAR&#39;,
+ &#39;USTAR_UNCORR&#39;,
+ &#39;FLAG_L3.3_CUT_16_NEE_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_50_NEE_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_84_NEE_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_NONE_LE_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_NONE_H_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_16_FN2O_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_50_FN2O_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_84_FN2O_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_16_FCH4_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_50_FCH4_L3.1_USTAR_TEST&#39;,
+ &#39;FLAG_L3.3_CUT_84_FCH4_L3.1_USTAR_TEST&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="air-temperature">
+<h1><strong>Air temperature</strong><a class="headerlink" href="#air-temperature" title="Link to this heading">#</a></h1>
+<section id="heatmaps-half-hourly">
+<h2>Heatmaps (half-hourly)<a class="headerlink" href="#heatmaps-half-hourly" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
+<span class="n">HeatmapDateTime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">,</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/622175b1fea4945acf01d95dc784a378fe55b46d127ade5546bf9d1878bcdaea.png" src="../../_images/622175b1fea4945acf01d95dc784a378fe55b46d127ade5546bf9d1878bcdaea.png" />
+</div>
+</div>
+</section>
+<section id="heatmaps-monthly">
+<h2>Heatmaps (monthly)<a class="headerlink" href="#heatmaps-monthly" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Per month&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>        
+<span class="n">HeatmapYearMonth</span><span class="p">(</span><span class="n">series_monthly</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;monthly mean&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;monthly mean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>        
+<span class="n">HeatmapYearMonth</span><span class="p">(</span><span class="n">series_monthly</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;monthly minimum&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;monthly minimum&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>        
+<span class="n">HeatmapYearMonth</span><span class="p">(</span><span class="n">series_monthly</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;monthly maximum&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;monthly maximum&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>      
+<span class="n">HeatmapYearMonth</span><span class="p">(</span><span class="n">series_monthly</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;monthly range&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;monthly range&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="c1"># axs[0].axes.get_yaxis().get_label().set_visible(False)</span>
+<span class="c1"># hide_labels = [1, 2, 3, 4]</span>
+<span class="c1"># for h in hide_labels:</span>
+<span class="c1">#     axs[h].axes.get_yaxis().get_label().set_visible(False)</span>
+<span class="c1">#     plt.setp(axs[h].get_yticklabels(), visible=False)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/64500c167a94fa2e8b251cec7afffe15f4c932ff90b0928252249d52e13ff605.png" src="../../_images/64500c167a94fa2e8b251cec7afffe15f4c932ff90b0928252249d52e13ff605.png" />
+</div>
+</div>
+</section>
+<section id="averages-up-to-respective-doy">
+<h2>Averages up to respective DOY<a class="headerlink" href="#averages-up-to-respective-doy" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ta</span> <span class="o">=</span> <span class="s2">&quot;TA_T1_2_1&quot;</span>
+<span class="n">plotdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">ta</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">plotdf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">plotdf</span><span class="p">[</span><span class="s1">&#39;DOY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span>
+<span class="n">plotdf</span><span class="p">[</span><span class="s1">&#39;DOY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">plotdf</span><span class="p">[</span><span class="s1">&#39;DOY&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofyear</span>
+
+<span class="n">allyears</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">locs</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span>
+    <span class="n">yeardf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="p">[</span><span class="n">locs</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">yeardf</span><span class="p">[</span><span class="s1">&#39;CUMSUM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">yeardf</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>  
+    <span class="n">yeardf</span><span class="p">[</span><span class="s1">&#39;avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">yeardf</span><span class="p">[</span><span class="s1">&#39;CUMSUM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">yeardf</span><span class="p">[</span><span class="s1">&#39;DOY&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">allyears</span> <span class="o">=</span> <span class="n">yeardf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">allyears</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">allyears</span><span class="p">,</span> <span class="n">yeardf</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Average TA up to respective DOY&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="n">grouped</span> <span class="o">=</span> <span class="n">allyears</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">allyears</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">groupdf</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+    <span class="n">yearlyavg</span> <span class="o">=</span> <span class="n">groupdf</span><span class="p">[</span><span class="s2">&quot;avg&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">groupdf</span><span class="p">[</span><span class="s2">&quot;DOY&quot;</span><span class="p">],</span> <span class="n">groupdf</span><span class="p">[</span><span class="s2">&quot;avg&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ix</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yearlyavg</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °C&quot;</span><span class="p">)</span>
+    <span class="c1"># groupdf.plot()</span>
+    <span class="c1"># print(groupdf)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e7dbfa7efd18491d34f8693612337bc991ea8720720820ef6dbe9290d90c651e.png" src="../../_images/e7dbfa7efd18491d34f8693612337bc991ea8720720820ef6dbe9290d90c651e.png" />
+</div>
+</div>
+</section>
+<section id="number-of-days-below-0c">
+<h2>Number of days below 0°C<a class="headerlink" href="#number-of-days-below-0c" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ta</span> <span class="o">=</span> <span class="s2">&quot;TA_T1_2_1&quot;</span>
+<span class="n">plotdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">ta</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">plotdf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">belowzero</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">plotdf</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">belowzero</span> <span class="o">=</span> <span class="n">belowzero</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">belowzero</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">belowzero</span><span class="p">[</span><span class="s2">&quot;YEAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">belowzero</span><span class="o">.</span><span class="n">index</span>
+<span class="n">belowzero</span>
+<span class="n">belowzero</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of days with TA &lt; 0°&quot;</span><span class="p">);</span>
+<span class="n">display</span><span class="p">(</span><span class="n">belowzero</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average per year: </span><span class="si">{</span><span class="n">belowzero</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">belowzero</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> SD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TA_T1_2_1</th>
+      <th>YEAR</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005</th>
+      <td>94</td>
+      <td>2005</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>107</td>
+      <td>2006</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>100</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>112</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>107</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>118</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>98</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>100</td>
+      <td>2012</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>113</td>
+      <td>2013</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>78</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>97</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>96</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>102</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>81</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>96</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>88</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>104</td>
+      <td>2021</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>91</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>91</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>85</td>
+      <td>2024</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average per year: 97.9 +/- 10.57 SD
+</pre></div>
+</div>
+<img alt="../../_images/bca3287dd0b2f68775eeef07fe5f0281e2a2252493acf3c581cbebbf2db6328d.png" src="../../_images/bca3287dd0b2f68775eeef07fe5f0281e2a2252493acf3c581cbebbf2db6328d.png" />
+</div>
+</div>
+</section>
+<section id="number-of-days-above-30c">
+<h2>Number of days above 30°C<a class="headerlink" href="#number-of-days-above-30c" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ta</span> <span class="o">=</span> <span class="s2">&quot;TA_T1_2_1&quot;</span>
+<span class="n">plotdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">ta</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">plotdf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">above</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">plotdf</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">above</span> <span class="o">=</span> <span class="n">above</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">above</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">above</span><span class="p">[</span><span class="s2">&quot;YEAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">above</span><span class="o">.</span><span class="n">index</span>
+<span class="n">above</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of days with TA &gt; 30°&quot;</span><span class="p">);</span>
+<span class="n">display</span><span class="p">(</span><span class="n">above</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average per year: </span><span class="si">{</span><span class="n">above</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">above</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> SD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TA_T1_2_1</th>
+      <th>YEAR</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005</th>
+      <td>8</td>
+      <td>2005</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>17</td>
+      <td>2006</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>9</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>12</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>18</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>14</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>10</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>13</td>
+      <td>2012</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>14</td>
+      <td>2013</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>8</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>30</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>11</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>28</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>26</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>21</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>15</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>9</td>
+      <td>2021</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>22</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>24</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>20</td>
+      <td>2024</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average per year: 16.45 +/- 6.89 SD
+</pre></div>
+</div>
+<img alt="../../_images/0bcbc5c65547b7b905d77a1437f49c8ba0c3fc07274cc92d1fba68780457e286.png" src="../../_images/0bcbc5c65547b7b905d77a1437f49c8ba0c3fc07274cc92d1fba68780457e286.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="end-of-notebook">
+<h1><strong>End of notebook</strong><a class="headerlink" href="#end-of-notebook" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_string</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Finished. </span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\90_DATASET_OVERVIEW"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Imports</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-air-temperature-variables"><strong>List of air temperature variables</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#air-temperature"><strong>Air temperature</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmaps-half-hourly">Heatmaps (half-hourly)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmaps-monthly">Heatmaps (monthly)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#averages-up-to-respective-doy">Averages up to respective DOY</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-below-0c">Number of days below 0°C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-above-30c">Number of days above 30°C</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook"><strong>End of notebook</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

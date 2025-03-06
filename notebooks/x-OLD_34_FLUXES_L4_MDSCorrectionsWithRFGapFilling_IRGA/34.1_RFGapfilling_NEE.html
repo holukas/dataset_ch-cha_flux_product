@@ -1,0 +1,2711 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Imports &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/x-OLD_34_FLUXES_L4_MDSCorrectionsWithRFGapFilling_IRGA/34.1_RFGapfilling_NEE';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CH-CHA Flux Product
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Meteo_Data.html">Meteo Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Management_Data.html">Management Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Flux_Calculations.html">Flux Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Flux_Post-processing.html">Flux Post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Notebook overview</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/x-OLD_34_FLUXES_L4_MDSCorrectionsWithRFGapFilling_IRGA/34.1_RFGapfilling_NEE.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/x-OLD_34_FLUXES_L4_MDSCorrectionsWithRFGapFilling_IRGA/34.1_RFGapfilling_NEE.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Imports</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-main-data">Load main data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-l4-reddyproc-results">Load L4 REddyProc results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-l4-reddyproc-results-with-main-data">Merge L4 REddyProc results with main data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#show-management-footprint-columns">Show management (footprint) columns</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-data-for-corrections-remove-mds-gap-filled-data-for-2005-2008-2009-2016">Prepare data for corrections, remove MDS gap-filled data for 2005, 2008, 2009, 2016</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gap-filling">Gap-filling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-data-range-for-models">Set data range for models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-for-random-forest-execution">Function for random forest execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-to-collect-results-across-years">Dataframe to collect results across years</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nee">NEE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le">LE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#h">H</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collection">COLLECTION</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Gap-filling using random forest (2005, 2008, 2009, 2016)</h1>
+- for these four years the MDS gap-filling produced unrealistic results due to long data gaps<section class="tex2jax_ignore mathjax_ignore" id="imports">
+<h1>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">PerformanceWarning</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.io.files</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_parquet</span><span class="p">,</span> <span class="n">load_parquet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.pkgs.gapfilling.randomforest_ts</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestTS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.plotting.heatmap_datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">HeatmapDateTime</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="settings">
+<h1>Settings<a class="headerlink" href="#settings" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SWIN_COL</span> <span class="o">=</span> <span class="s2">&quot;SW_IN_T1_2_1&quot;</span>
+<span class="n">TA_COL</span> <span class="o">=</span> <span class="s2">&quot;TA_T1_2_1&quot;</span>
+<span class="n">VPD_COL</span> <span class="o">=</span> <span class="s2">&quot;VPD_T1_2_1&quot;</span>
+<span class="n">MGMT_VARS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;</span><span class="p">,</span> <span class="s1">&#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;</span><span class="p">,</span> <span class="s1">&#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;</span><span class="p">,</span> <span class="s1">&#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;</span><span class="p">,</span> <span class="s1">&#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;</span><span class="p">]</span>
+
+<span class="c1"># Random forest model settings</span>
+<span class="n">rf_settings</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>    
+    <span class="n">features_lag</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="n">features_lag_exclude_cols</span><span class="o">=</span><span class="n">MGMT_VARS</span><span class="p">,</span>  <span class="c1"># Management variables are not lagged</span>
+    <span class="n">include_timestamp_as_features</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>    
+    <span class="n">add_continuous_record_number</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">sanitize_timestamp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">perm_n_repeats</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-main-data">
+<h1>Load main data<a class="headerlink" href="#load-main-data" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SOURCEDIR</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;../32_FLUXES_L1_FluxProcessingChain_IRGA&quot;</span>
+<span class="n">FILENAME</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;32.8_FluxProcessingChain_L3.3_NEE_LE_H.parquet&quot;</span>
+<span class="n">FILEPATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">SOURCEDIR</span><span class="p">)</span> <span class="o">/</span> <span class="n">FILENAME</span>
+<span class="n">maindf</span> <span class="o">=</span> <span class="n">load_parquet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">FILEPATH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\32_FLUXES_L1_FluxProcessingChain_IRGA\32.8_FluxProcessingChain_L3.3_NEE_LE_H.parquet (0.432 seconds). Detected time resolution of &lt;30 * Minutes&gt; / 30min 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-l4-reddyproc-results">
+<h1>Load L4 REddyProc results<a class="headerlink" href="#load-l4-reddyproc-results" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SOURCEDIR</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;../33_FLUXES_L4_REddyProc_MDSGapFilling_IRGA&quot;</span>
+<span class="n">FILENAME</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;33.12_REddyProc_L4.1.parquet&quot;</span>
+<span class="n">FILEPATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">SOURCEDIR</span><span class="p">)</span> <span class="o">/</span> <span class="n">FILENAME</span>
+<span class="n">rpdf</span> <span class="o">=</span> <span class="n">load_parquet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">FILEPATH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\33_FLUXES_L4_REddyProc_MDSGapFilling_IRGA\33.12_REddyProc_L4.1.parquet (0.042 seconds). Detected time resolution of &lt;30 * Minutes&gt; / 30min 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">maindf</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">rpdf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AIR_MV</th>
+      <th>AIR_DENSITY</th>
+      <th>AIR_RHO_CP</th>
+      <th>AIR_CP</th>
+      <th>AOA_METHOD</th>
+      <th>AXES_ROTATION_METHOD</th>
+      <th>...</th>
+      <th>SUM_L3.3_CUT_NONE_H_L3.1_HARDFLAGS</th>
+      <th>SUM_L3.3_CUT_NONE_H_L3.1_SOFTFLAGS</th>
+      <th>SUM_L3.3_CUT_NONE_H_L3.1_FLAGS</th>
+      <th>FLAG_L3.3_CUT_NONE_H_L3.1_QCF</th>
+      <th>H_L3.1_L3.3_CUT_NONE_QCF</th>
+      <th>H_L3.1_L3.3_CUT_NONE_QCF0</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:45:00</th>
+      <td>0.023718</td>
+      <td>1.21785</td>
+      <td>1228.93</td>
+      <td>1009.10</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-29.190743</td>
+      <td>-29.190743</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:15:00</th>
+      <td>0.023710</td>
+      <td>1.21827</td>
+      <td>1229.34</td>
+      <td>1009.09</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-31.241158</td>
+      <td>-31.241158</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:45:00</th>
+      <td>0.023715</td>
+      <td>1.21807</td>
+      <td>1229.13</td>
+      <td>1009.08</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-38.598898</td>
+      <td>-38.598898</td>
+    </tr>
+    <tr>
+      <th>2024-01-01 00:15:00</th>
+      <td>0.023648</td>
+      <td>1.22454</td>
+      <td>1233.24</td>
+      <td>1007.10</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-24.008740</td>
+      <td>-24.008740</td>
+    </tr>
+    <tr>
+      <th>2024-01-01 00:45:00</th>
+      <td>0.023590</td>
+      <td>1.22761</td>
+      <td>1236.02</td>
+      <td>1006.85</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-17.766680</td>
+      <td>-17.766680</td>
+    </tr>
+  </tbody>
+</table>
+<p>333074 rows × 498 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NEE_CUT_50_orig</th>
+      <th>NEE_CUT_50_f</th>
+      <th>NEE_CUT_50_fqc</th>
+      <th>NEE_CUT_50_fall</th>
+      <th>NEE_CUT_50_fall_qc</th>
+      <th>NEE_CUT_50_fnum</th>
+      <th>...</th>
+      <th>H_fall</th>
+      <th>H_fall_qc</th>
+      <th>H_fnum</th>
+      <th>H_fsd</th>
+      <th>H_fmeth</th>
+      <th>H_fwin</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 21:45:00</th>
+      <td>NaN</td>
+      <td>1.262247</td>
+      <td>1.0</td>
+      <td>1.262247</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>-15.399825</td>
+      <td>1.0</td>
+      <td>12.0</td>
+      <td>12.555280</td>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:15:00</th>
+      <td>NaN</td>
+      <td>-4.601671</td>
+      <td>1.0</td>
+      <td>-4.601671</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>-14.101359</td>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>11.454304</td>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:45:00</th>
+      <td>NaN</td>
+      <td>-4.601671</td>
+      <td>1.0</td>
+      <td>-4.601671</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>-14.101359</td>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>11.454304</td>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:15:00</th>
+      <td>1.190371</td>
+      <td>1.190371</td>
+      <td>0.0</td>
+      <td>-4.601671</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>-14.101359</td>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>11.454304</td>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:45:00</th>
+      <td>1.334124</td>
+      <td>1.334124</td>
+      <td>0.0</td>
+      <td>-4.601671</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>-14.101359</td>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>11.454304</td>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>333072 rows × 45 columns</p>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="merge-l4-reddyproc-results-with-main-data">
+<h1>Merge L4 REddyProc results with main data<a class="headerlink" href="#merge-l4-reddyproc-results-with-main-data" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">maindf</span><span class="p">,</span> <span class="n">rpdf</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AIR_MV</th>
+      <th>AIR_DENSITY</th>
+      <th>AIR_RHO_CP</th>
+      <th>AIR_CP</th>
+      <th>AOA_METHOD</th>
+      <th>AXES_ROTATION_METHOD</th>
+      <th>...</th>
+      <th>H_fall</th>
+      <th>H_fall_qc</th>
+      <th>H_fnum</th>
+      <th>H_fsd</th>
+      <th>H_fmeth</th>
+      <th>H_fwin</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:45:00</th>
+      <td>0.023718</td>
+      <td>1.21785</td>
+      <td>1228.93</td>
+      <td>1009.10</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>-14.101359</td>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>11.454304</td>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:15:00</th>
+      <td>0.023710</td>
+      <td>1.21827</td>
+      <td>1229.34</td>
+      <td>1009.09</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>-14.101359</td>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>11.454304</td>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:45:00</th>
+      <td>0.023715</td>
+      <td>1.21807</td>
+      <td>1229.13</td>
+      <td>1009.08</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>-14.101359</td>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>11.454304</td>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2024-01-01 00:15:00</th>
+      <td>0.023648</td>
+      <td>1.22454</td>
+      <td>1233.24</td>
+      <td>1007.10</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-01-01 00:45:00</th>
+      <td>0.023590</td>
+      <td>1.22761</td>
+      <td>1236.02</td>
+      <td>1006.85</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>333074 rows × 543 columns</p>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="show-management-footprint-columns">
+<h1>Show management (footprint) columns<a class="headerlink" href="#show-management-footprint-columns" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MANAGEMENT-IN-FOOTPRINT VARIABLES:&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span> <span class="k">if</span> <span class="s2">&quot;FOOTPRINT&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MANAGEMENT-IN-FOOTPRINT VARIABLES:
+  FOOTPRINT_MODEL
+  MGMT_FERT_MIN_FOOTPRINT
+  MGMT_FERT_ORG_FOOTPRINT
+  MGMT_GRAZING_FOOTPRINT
+  MGMT_MOWING_FOOTPRINT
+  MGMT_PESTICIDE_HERBICIDE_FOOTPRINT
+  MGMT_SOILCULTIVATION_FOOTPRINT
+  MGMT_SOWING_FOOTPRINT
+  TIMESINCE_MGMT_FERT_MIN_FOOTPRINT
+  TIMESINCE_MGMT_FERT_ORG_FOOTPRINT
+  TIMESINCE_MGMT_GRAZING_FOOTPRINT
+  TIMESINCE_MGMT_MOWING_FOOTPRINT
+  TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT
+  TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT
+  TIMESINCE_MGMT_SOWING_FOOTPRINT
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="prepare-data-for-corrections-remove-mds-gap-filled-data-for-2005-2008-2009-2016">
+<h1>Prepare data for corrections, remove MDS gap-filled data for 2005, 2008, 2009, 2016<a class="headerlink" href="#prepare-data-for-corrections-remove-mds-gap-filled-data-for-2005-2008-2009-2016" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fluxes_mds</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_f&quot;</span><span class="p">)]</span>
+<span class="n">fluxes_mds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;NEE_CUT_50_f&#39;, &#39;NEE_CUT_16_f&#39;, &#39;NEE_CUT_84_f&#39;, &#39;LE_f&#39;, &#39;H_f&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fluxes_mds</span><span class="p">:</span>
+    <span class="n">HeatmapDateTime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">_df</span><span class="p">[</span><span class="n">f</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/af618ad5dbe4953c92b9b30b41d7a20b0194821c1025ffc1014efab592567bb3.png" src="../../_images/af618ad5dbe4953c92b9b30b41d7a20b0194821c1025ffc1014efab592567bb3.png" />
+<img alt="../../_images/d88e32efe4cc6fe4586c09d1a8e9cfc3b1fe902c667fe0ad7a3a4fff44db58f3.png" src="../../_images/d88e32efe4cc6fe4586c09d1a8e9cfc3b1fe902c667fe0ad7a3a4fff44db58f3.png" />
+<img alt="../../_images/69c3dd67163374068e8f273e393837a5dd29f9bfd0e88584198562706aa0ac91.png" src="../../_images/69c3dd67163374068e8f273e393837a5dd29f9bfd0e88584198562706aa0ac91.png" />
+<img alt="../../_images/feb5c46e8648aea732cbe04d641b7dc86dfe92ed24064c01f2f81451deba9d7e.png" src="../../_images/feb5c46e8648aea732cbe04d641b7dc86dfe92ed24064c01f2f81451deba9d7e.png" />
+<img alt="../../_images/8e418e7ab3141068ff98d4cf9dd44daf9dc961572abe6ef4b27e9212bb25e960.png" src="../../_images/8e418e7ab3141068ff98d4cf9dd44daf9dc961572abe6ef4b27e9212bb25e960.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2008</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="mi">2016</span><span class="p">]</span>
+<span class="c1"># years = [2005]</span>
+<span class="k">for</span> <span class="n">yr</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>  
+    
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fluxes_mds</span><span class="p">:</span>
+        <span class="n">flagname</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">qc&quot;</span>
+        <span class="n">loc</span> <span class="o">=</span> <span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">yr</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_df</span><span class="p">[</span><span class="n">flagname</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>        
+        <span class="n">_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">loc</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>          
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fluxes_mds</span><span class="p">:</span>
+    <span class="n">HeatmapDateTime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">_df</span><span class="p">[</span><span class="n">f</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9807b92aaf293d51414cea62e0e4e34a31a95e90542747f04d72c253d688d14c.png" src="../../_images/9807b92aaf293d51414cea62e0e4e34a31a95e90542747f04d72c253d688d14c.png" />
+<img alt="../../_images/1d893f57ac6cb2a0e5239ef2cf757e132269dc50b2f120b00d9e9da8b3078478.png" src="../../_images/1d893f57ac6cb2a0e5239ef2cf757e132269dc50b2f120b00d9e9da8b3078478.png" />
+<img alt="../../_images/39bf009b139e2f0f5181c50f75ea5b77f0efb2e7e4f3f2f99f32aa51857de321.png" src="../../_images/39bf009b139e2f0f5181c50f75ea5b77f0efb2e7e4f3f2f99f32aa51857de321.png" />
+<img alt="../../_images/fcc97ad306f24948b010bdf9c4c652078f053e2dc38c059ad7a30f23266bb51e.png" src="../../_images/fcc97ad306f24948b010bdf9c4c652078f053e2dc38c059ad7a30f23266bb51e.png" />
+<img alt="../../_images/554e590eaf9f9313602b1d8e5e361d86cca040148295e16988274d0ef186864b.png" src="../../_images/554e590eaf9f9313602b1d8e5e361d86cca040148295e16988274d0ef186864b.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="gap-filling">
+<h1>Gap-filling<a class="headerlink" href="#gap-filling" title="Link to this heading">#</a></h1>
+<section id="set-data-range-for-models">
+<h2>Set data range for models<a class="headerlink" href="#set-data-range-for-models" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set data range for models</span>
+<span class="n">locs_2005</span> <span class="o">=</span> <span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">2005</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&lt;=</span> <span class="mi">2007</span><span class="p">)</span>  <span class="c1"># Source data for gap-filling 2005: 2005-2007</span>
+<span class="n">locs_2008_2009</span> <span class="o">=</span> <span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">2007</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&lt;=</span> <span class="mi">2010</span><span class="p">)</span>  <span class="c1"># Source data for gap-filling 2008 and 2009: 2007-2010</span>
+<span class="n">locs_2016</span> <span class="o">=</span> <span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">2015</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&lt;=</span> <span class="mi">2017</span><span class="p">)</span>  <span class="c1"># Source data for gap-filling 2005: 2015-2017</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="function-for-random-forest-execution">
+<h2>Function for random forest execution<a class="headerlink" href="#function-for-random-forest-execution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">target_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">locs</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+    
+    <span class="c1"># Make subset of required data    </span>
+    <span class="n">USECOLS</span> <span class="o">=</span> <span class="p">[</span><span class="n">target_col</span><span class="p">,</span> <span class="n">SWIN_COL</span><span class="p">,</span> <span class="n">TA_COL</span><span class="p">,</span> <span class="n">VPD_COL</span><span class="p">]</span>
+    <span class="n">USECOLS</span> <span class="o">=</span> <span class="n">USECOLS</span> <span class="o">+</span> <span class="n">MGMT_VARS</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">_df</span><span class="p">[</span><span class="n">locs</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="n">USECOLS</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="c1"># Run random forest</span>
+    <span class="n">rfts</span> <span class="o">=</span> <span class="n">RandomForestTS</span><span class="p">(</span>
+        <span class="n">input_df</span><span class="o">=</span><span class="n">subset</span><span class="p">,</span>
+        <span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">rf_settings</span><span class="p">)</span>
+    
+    <span class="n">rfts</span><span class="o">.</span><span class="n">reduce_features</span><span class="p">()</span>
+    <span class="c1"># rfts.report_feature_reduction()</span>
+    <span class="n">rfts</span><span class="o">.</span><span class="n">trainmodel</span><span class="p">(</span><span class="n">showplot_scores</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showplot_importance</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># rfts.report_traintest()</span>
+    <span class="n">rfts</span><span class="o">.</span><span class="n">fillgaps</span><span class="p">(</span><span class="n">showplot_scores</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showplot_importance</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">rfts</span><span class="o">.</span><span class="n">report_gapfilling</span><span class="p">()</span>
+
+    <span class="c1"># Results</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">rfts</span><span class="o">.</span><span class="n">gapfilling_df_</span>
+    
+    <span class="c1"># Results for relevant year(s)</span>
+    <span class="n">fluxname_filled</span> <span class="o">=</span> <span class="n">rfts</span><span class="o">.</span><span class="n">get_gapfilled_target</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">flagname_filled</span> <span class="o">=</span> <span class="n">rfts</span><span class="o">.</span><span class="n">get_flag</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">res_year</span> <span class="o">=</span> <span class="n">res</span><span class="p">[(</span><span class="n">res</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="n">years</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&lt;=</span> <span class="n">years</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">res_year</span> <span class="o">=</span> <span class="n">res_year</span><span class="p">[[</span><span class="n">fluxname_filled</span><span class="p">,</span> <span class="n">flagname_filled</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>   
+
+    <span class="c1"># Heatmaps</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">)</span>
+    <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># rows, cols</span>
+    <span class="n">gs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.97</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">ax_series</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">ax_series</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">HeatmapDateTime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">res</span><span class="p">[</span><span class="n">target_col</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+    <span class="n">HeatmapDateTime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">res</span><span class="p">[</span><span class="n">fluxname_filled</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  
+
+    <span class="k">return</span> <span class="n">res_year</span><span class="p">,</span> <span class="n">rfts</span>  <span class="c1"># Returns results and instance</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dataframe-to-collect-results-across-years">
+<h2>Dataframe to collect results across years<a class="headerlink" href="#dataframe-to-collect-results-across-years" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">collection_instances_dict</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nee">
+<h2>NEE<a class="headerlink" href="#nee" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NEE_CUT_50_f&quot;</span><span class="p">]</span>
+<span class="c1"># target_cols = [&quot;NEE_CUT_50_f&quot;, &quot;NEE_CUT_16_f&quot;, &quot;NEE_CUT_84_f&quot;]</span>
+<span class="c1"># target_cols = [&quot;NEE_L3.1_L3.3_CUT_50_QCF&quot;, &quot;NEE_L3.1_L3.3_CUT_16_QCF&quot;, &quot;NEE_L3.1_L3.3_CUT_84_QCF&quot;]</span>
+<span class="c1"># target_cols = [&quot;NEE_L3.1_L3.3_CUT_50_QCF&quot;]</span>
+
+<span class="k">for</span> <span class="n">target_col</span> <span class="ow">in</span> <span class="n">target_cols</span><span class="p">:</span>
+    <span class="n">res_2005</span><span class="p">,</span> <span class="n">instance_2005</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2005</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2005</span><span class="p">])</span>
+    <span class="n">res_2008_2009</span><span class="p">,</span> <span class="n">instance_2008_2009</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2008_2009</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">2009</span><span class="p">])</span>
+    <span class="n">res_2016</span><span class="p">,</span> <span class="n">instance_2016</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2016</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2016</span><span class="p">])</span>
+
+    <span class="c1"># Merge results along timestamp index</span>
+    <span class="n">res_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">res_2005</span><span class="p">,</span> <span class="n">res_2008_2009</span><span class="p">,</span> <span class="n">res_2016</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c1"># Add results (gap-filled variable and flag) to collection of results</span>
+    <span class="n">collection_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">collection_df</span><span class="p">,</span> <span class="n">res_merged</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add to collection of results, add to existing column</span>
+    
+    <span class="c1"># # Add random forest instance to collection of instances</span>
+    <span class="c1"># collection_instances_dict[str(years[0])] = rfts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============================================================
+Starting gap-filling for
+NEE_CUT_50_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;NEE_CUT_50_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 52560.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2005-01-01 00:15:00 and 2007-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.008010060622572457.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2005-07-27 11:15:00 and 2007-12-31 22:45:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target NEE_CUT_50_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of NEE_CUT_50_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target NEE_CUT_50_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting NEE_CUT_50_f ...
+&gt;&gt;&gt; Predicting target NEE_CUT_50_f where all features are available ... predicted 52560 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 15787 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable NEE_CUT_50_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (15787 values, NEE_CUT_50_f_gfRF where flag=1) in comparison to observed targets (36773 values, NEE_CUT_50_f).
+
+## TARGET
+- first timestamp:  2005-01-01 00:15:00
+- last timestamp:  2007-12-31 23:45:00
+- potential number of values: 52560 values)
+- target column (observed):  NEE_CUT_50_f
+- missing records (observed):  15787 (cross-check from flag: 15787)
+- target column (gap-filled):  NEE_CUT_50_f_gfRF  (52560 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_NEE_CUT_50_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (36773 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (15787 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;.YEARDOY&#39;, &#39;.RECORDNUMBER&#39;, &#39;TA_T1_2_1&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;VPD_T1_2_1&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;]
+- number of features used in model:  15
+- permutation importances were calculated from 5 repeats.
+
+                                          PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                                     1.893137  0.011426
+TIMESINCE_MGMT_MOWING_FOOTPRINT                  0.179443  0.000926
+.YEARDOY                                         0.061616  0.001649
+.RECORDNUMBER                                    0.059302  0.000725
+TA_T1_2_1                                        0.052587  0.000540
+.TA_T1_2_1-1                                     0.042532  0.000732
+.SW_IN_T1_2_1-1                                  0.036218  0.000421
+.DOY                                             0.032422  0.000576
+.HOUR                                            0.030187  0.000581
+VPD_T1_2_1                                       0.021147  0.000466
+TIMESINCE_MGMT_FERT_ORG_FOOTPRINT                0.015966  0.000363
+TIMESINCE_MGMT_SOWING_FOOTPRINT                  0.015876  0.000228
+.VPD_T1_2_1-1                                    0.014053  0.000225
+TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT         0.013162  0.000211
+TIMESINCE_MGMT_GRAZING_FOOTPRINT                 0.012933  0.000189
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  0.6641925555555274 (mean absolute error)
+- MedAE:  0.20204950698733704 (median absolute error)
+- MSE:  2.348024594012046 (mean squared error)
+- RMSE:  1.5323265298271271 (root mean squared error)
+- MAXE:  38.09337106016312 (max error)
+- MAPE:  0.386 (mean absolute percentage error)
+- R2:  0.9656198742867499
+
+
+
+============================================================
+Starting gap-filling for
+NEE_CUT_50_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;NEE_CUT_50_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 70128.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2007-01-01 00:15:00 and 2010-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.011512396848455864.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2007-01-01 01:15:00 and 2010-12-31 23:45:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target NEE_CUT_50_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of NEE_CUT_50_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target NEE_CUT_50_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting NEE_CUT_50_f ...
+&gt;&gt;&gt; Predicting target NEE_CUT_50_f where all features are available ... predicted 70128 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 25851 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable NEE_CUT_50_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (25851 values, NEE_CUT_50_f_gfRF where flag=1) in comparison to observed targets (44277 values, NEE_CUT_50_f).
+
+## TARGET
+- first timestamp:  2007-01-01 00:15:00
+- last timestamp:  2010-12-31 23:45:00
+- potential number of values: 70128 values)
+- target column (observed):  NEE_CUT_50_f
+- missing records (observed):  25851 (cross-check from flag: 25851)
+- target column (gap-filled):  NEE_CUT_50_f_gfRF  (70128 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_NEE_CUT_50_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (44277 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (25851 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TA_T1_2_1&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;VPD_T1_2_1&#39;, &#39;.RECORDNUMBER&#39;, &#39;.DOY&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;.SEASON&#39;, &#39;.HOUR&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;.YEARDOY&#39;, &#39;.YEARMONTH&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;]
+- number of features used in model:  18
+- permutation importances were calculated from 5 repeats.
+
+                                              PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                                         1.629330  0.003474
+TIMESINCE_MGMT_MOWING_FOOTPRINT                      0.177972  0.001182
+TA_T1_2_1                                            0.106875  0.002336
+.TA_T1_2_1-1                                         0.055545  0.000864
+VPD_T1_2_1                                           0.040661  0.000611
+.RECORDNUMBER                                        0.040171  0.000399
+.DOY                                                 0.035599  0.000535
+TIMESINCE_MGMT_GRAZING_FOOTPRINT                     0.033522  0.000521
+.SEASON                                              0.031552  0.000766
+.HOUR                                                0.031327  0.000682
+.SW_IN_T1_2_1-1                                      0.029728  0.000154
+.VPD_T1_2_1-1                                        0.027539  0.000325
+TIMESINCE_MGMT_FERT_ORG_FOOTPRINT                    0.026476  0.000682
+.YEARDOY                                             0.026364  0.000343
+.YEARMONTH                                           0.025988  0.000212
+TIMESINCE_MGMT_SOWING_FOOTPRINT                      0.020627  0.000395
+TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT         0.010777  0.000200
+TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT             0.010527  0.000191
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  0.9248248442100329 (mean absolute error)
+- MedAE:  0.3113765563189954 (median absolute error)
+- MSE:  4.567984918226472 (mean squared error)
+- RMSE:  2.13728447292972 (root mean squared error)
+- MAXE:  53.67911307651543 (max error)
+- MAPE:  0.414 (mean absolute percentage error)
+- R2:  0.9477880765720937
+
+
+
+============================================================
+Starting gap-filling for
+NEE_CUT_50_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;NEE_CUT_50_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 52608.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2015-01-01 00:15:00 and 2017-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.00930777988924134.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2015-01-01 00:15:00 and 2017-12-31 23:15:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target NEE_CUT_50_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of NEE_CUT_50_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target NEE_CUT_50_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting NEE_CUT_50_f ...
+&gt;&gt;&gt; Predicting target NEE_CUT_50_f where all features are available ... predicted 52608 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 14413 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable NEE_CUT_50_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (14413 values, NEE_CUT_50_f_gfRF where flag=1) in comparison to observed targets (38195 values, NEE_CUT_50_f).
+
+## TARGET
+- first timestamp:  2015-01-01 00:15:00
+- last timestamp:  2017-12-31 23:45:00
+- potential number of values: 52608 values)
+- target column (observed):  NEE_CUT_50_f
+- missing records (observed):  14413 (cross-check from flag: 14413)
+- target column (gap-filled):  NEE_CUT_50_f_gfRF  (52608 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_NEE_CUT_50_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (38195 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (14413 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;.HOUR&#39;, &#39;.DOY&#39;, &#39;TA_T1_2_1&#39;, &#39;.RECORDNUMBER&#39;, &#39;.YEARWEEK&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;VPD_T1_2_1&#39;, &#39;.YEARDOY&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;.SEASON&#39;, &#39;.WEEK&#39;]
+- number of features used in model:  16
+- permutation importances were calculated from 5 repeats.
+
+                                   PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                              1.569808  0.007657
+TIMESINCE_MGMT_MOWING_FOOTPRINT           0.151669  0.002767
+.HOUR                                     0.069073  0.000620
+.DOY                                      0.066795  0.001345
+TA_T1_2_1                                 0.054378  0.000297
+.RECORDNUMBER                             0.052184  0.000987
+.YEARWEEK                                 0.044331  0.000910
+.TA_T1_2_1-1                              0.039740  0.000460
+TIMESINCE_MGMT_GRAZING_FOOTPRINT          0.033030  0.000667
+.SW_IN_T1_2_1-1                           0.024111  0.000253
+.VPD_T1_2_1-1                             0.020627  0.000240
+VPD_T1_2_1                                0.016966  0.000168
+.YEARDOY                                  0.016639  0.000263
+TIMESINCE_MGMT_FERT_ORG_FOOTPRINT         0.013955  0.000244
+.SEASON                                   0.012303  0.000302
+.WEEK                                     0.011362  0.000620
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  0.7248600056262181 (mean absolute error)
+- MedAE:  0.22632376095381668 (median absolute error)
+- MSE:  2.920584280368359 (mean squared error)
+- RMSE:  1.7089717026236446 (root mean squared error)
+- MAXE:  43.26821382441907 (max error)
+- MAPE:  0.678 (mean absolute percentage error)
+- R2:  0.9579257418463125
+</pre></div>
+</div>
+<img alt="../../_images/6e6fed291f499f78db684db0ab11fd1421f8b472c632d5c20feec50eb85effd7.png" src="../../_images/6e6fed291f499f78db684db0ab11fd1421f8b472c632d5c20feec50eb85effd7.png" />
+<img alt="../../_images/07674ce9db1d49ea46082bcc23eed262e7767b5b0c884394c7ae7a9925fd685b.png" src="../../_images/07674ce9db1d49ea46082bcc23eed262e7767b5b0c884394c7ae7a9925fd685b.png" />
+<img alt="../../_images/760d4ead801b8ba086c1fb61d6e40e4201904dedddcaf4f3a91611d6a15c38c0.png" src="../../_images/760d4ead801b8ba086c1fb61d6e40e4201904dedddcaf4f3a91611d6a15c38c0.png" />
+</div>
+</div>
+</section>
+<section id="le">
+<h2>LE<a class="headerlink" href="#le" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LE_f&quot;</span><span class="p">]</span>
+<span class="c1"># target_cols = [&quot;LE_L3.1_L3.3_CUT_NONE_QCF&quot;]</span>
+
+<span class="k">for</span> <span class="n">target_col</span> <span class="ow">in</span> <span class="n">target_cols</span><span class="p">:</span>
+    <span class="n">res_2005</span><span class="p">,</span> <span class="n">instance_2005</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2005</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2005</span><span class="p">])</span>
+    <span class="n">res_2008_2009</span><span class="p">,</span> <span class="n">instance_2008_2009</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2008_2009</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">2009</span><span class="p">])</span>
+    <span class="n">res_2016</span><span class="p">,</span> <span class="n">instance_2016</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2016</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2016</span><span class="p">])</span>
+
+    <span class="c1"># Merge results along timestamp index</span>
+    <span class="n">res_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">res_2005</span><span class="p">,</span> <span class="n">res_2008_2009</span><span class="p">,</span> <span class="n">res_2016</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c1"># Add results (gap-filled variable and flag) to collection of results</span>
+    <span class="n">collection_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">collection_df</span><span class="p">,</span> <span class="n">res_merged</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add to collection of results, add to existing column</span>
+    
+    <span class="c1"># # Add random forest instance to collection of instances</span>
+    <span class="c1"># collection_instances_dict[str(years[0])] = rfts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============================================================
+Starting gap-filling for
+LE_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;LE_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 52560.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2005-01-01 00:15:00 and 2007-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.005002088456295728.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2005-07-27 11:15:00 and 2007-12-31 22:45:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target LE_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of LE_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target LE_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting LE_f ...
+&gt;&gt;&gt; Predicting target LE_f where all features are available ... predicted 52560 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 15546 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable LE_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (15546 values, LE_f_gfRF where flag=1) in comparison to observed targets (37014 values, LE_f).
+
+## TARGET
+- first timestamp:  2005-01-01 00:15:00
+- last timestamp:  2007-12-31 23:45:00
+- potential number of values: 52560 values)
+- target column (observed):  LE_f
+- missing records (observed):  15546 (cross-check from flag: 15546)
+- target column (gap-filled):  LE_f_gfRF  (52560 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_LE_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (37014 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (15546 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;.RECORDNUMBER&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;.DOY&#39;, &#39;VPD_T1_2_1&#39;, &#39;.YEARDOY&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;.SEASON&#39;, &#39;.HOUR&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;]
+- number of features used in model:  16
+- permutation importances were calculated from 5 repeats.
+
+                                          PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                                     0.998381  0.006298
+TA_T1_2_1                                        0.041896  0.000537
+.TA_T1_2_1-1                                     0.036834  0.000411
+TIMESINCE_MGMT_MOWING_FOOTPRINT                  0.027697  0.000486
+.RECORDNUMBER                                    0.025877  0.000235
+.SW_IN_T1_2_1-1                                  0.024713  0.000199
+.DOY                                             0.019668  0.000527
+VPD_T1_2_1                                       0.018106  0.000220
+.YEARDOY                                         0.016293  0.000218
+.VPD_T1_2_1-1                                    0.013799  0.000111
+.SEASON                                          0.010284  0.000691
+.HOUR                                            0.010078  0.000266
+TIMESINCE_MGMT_FERT_ORG_FOOTPRINT                0.010066  0.000146
+TIMESINCE_MGMT_GRAZING_FOOTPRINT                 0.008184  0.000079
+TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT         0.007421  0.000117
+TIMESINCE_MGMT_SOWING_FOOTPRINT                  0.005197  0.000045
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  5.6056053118445 (mean absolute error)
+- MedAE:  1.4954036711390417 (median absolute error)
+- MSE:  165.23509543197616 (mean squared error)
+- RMSE:  12.8543803986025 (root mean squared error)
+- MAXE:  286.82824325327755 (max error)
+- MAPE:  0.449 (mean absolute percentage error)
+- R2:  0.9762097142655236
+
+
+
+============================================================
+Starting gap-filling for
+LE_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;LE_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 70128.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2007-01-01 00:15:00 and 2010-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.008163960742913302.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2007-01-01 01:15:00 and 2010-12-31 23:45:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target LE_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of LE_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target LE_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting LE_f ...
+&gt;&gt;&gt; Predicting target LE_f where all features are available ... predicted 70128 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 25102 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable LE_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (25102 values, LE_f_gfRF where flag=1) in comparison to observed targets (45026 values, LE_f).
+
+## TARGET
+- first timestamp:  2007-01-01 00:15:00
+- last timestamp:  2010-12-31 23:45:00
+- potential number of values: 70128 values)
+- target column (observed):  LE_f
+- missing records (observed):  25102 (cross-check from flag: 25102)
+- target column (gap-filled):  LE_f_gfRF  (70128 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_LE_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (45026 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (25102 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;TA_T1_2_1&#39;, &#39;.YEARMONTH&#39;, &#39;.DOY&#39;, &#39;VPD_T1_2_1&#39;, &#39;.RECORDNUMBER&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;.YEARDOY&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;.HOUR&#39;]
+- number of features used in model:  16
+- permutation importances were calculated from 5 repeats.
+
+                                              PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                                         0.851864  0.006164
+.TA_T1_2_1-1                                         0.081443  0.001061
+.SW_IN_T1_2_1-1                                      0.056402  0.000515
+TA_T1_2_1                                            0.046177  0.000984
+.YEARMONTH                                           0.043764  0.001068
+.DOY                                                 0.029847  0.000486
+VPD_T1_2_1                                           0.025554  0.000289
+.RECORDNUMBER                                        0.024907  0.000418
+TIMESINCE_MGMT_MOWING_FOOTPRINT                      0.023369  0.000523
+TIMESINCE_MGMT_FERT_ORG_FOOTPRINT                    0.021527  0.000333
+.YEARDOY                                             0.019675  0.000259
+.VPD_T1_2_1-1                                        0.013253  0.000144
+TIMESINCE_MGMT_SOWING_FOOTPRINT                      0.011832  0.000218
+TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT         0.011399  0.000121
+TIMESINCE_MGMT_GRAZING_FOOTPRINT                     0.011273  0.000161
+.HOUR                                                0.009154  0.000136
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  7.607703697945107 (mean absolute error)
+- MedAE:  2.212442885111101 (median absolute error)
+- MSE:  315.447557671924 (mean squared error)
+- RMSE:  17.7608433829006 (root mean squared error)
+- MAXE:  523.5611976641665 (max error)
+- MAPE:  0.508 (mean absolute percentage error)
+- R2:  0.965171203092634
+
+
+
+============================================================
+Starting gap-filling for
+LE_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;LE_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 52608.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2015-01-01 00:15:00 and 2017-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.00690523139205792.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2015-01-01 00:15:00 and 2017-12-31 23:45:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target LE_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of LE_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target LE_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting LE_f ...
+&gt;&gt;&gt; Predicting target LE_f where all features are available ... predicted 52608 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 13844 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable LE_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (13844 values, LE_f_gfRF where flag=1) in comparison to observed targets (38764 values, LE_f).
+
+## TARGET
+- first timestamp:  2015-01-01 00:15:00
+- last timestamp:  2017-12-31 23:45:00
+- potential number of values: 52608 values)
+- target column (observed):  LE_f
+- missing records (observed):  13844 (cross-check from flag: 13844)
+- target column (gap-filled):  LE_f_gfRF  (52608 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_LE_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (38764 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (13844 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;.DOY&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;.RECORDNUMBER&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;.HOUR&#39;]
+- number of features used in model:  10
+- permutation importances were calculated from 5 repeats.
+
+                                 PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                            0.926527  0.007000
+.TA_T1_2_1-1                            0.051337  0.000722
+.DOY                                    0.048015  0.000582
+TA_T1_2_1                               0.039714  0.000773
+VPD_T1_2_1                              0.033235  0.000426
+.SW_IN_T1_2_1-1                         0.031373  0.000763
+.RECORDNUMBER                           0.031187  0.000392
+.VPD_T1_2_1-1                           0.022794  0.000365
+TIMESINCE_MGMT_MOWING_FOOTPRINT         0.022733  0.000159
+.HOUR                                   0.017112  0.000509
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  5.65284789708542 (mean absolute error)
+- MedAE:  1.46601628005752 (median absolute error)
+- MSE:  185.19281556331148 (mean squared error)
+- RMSE:  13.608556703901831 (root mean squared error)
+- MAXE:  677.3844541878899 (max error)
+- MAPE:  0.395 (mean absolute percentage error)
+- R2:  0.9717891590693529
+</pre></div>
+</div>
+<img alt="../../_images/fb48cb8376f8b457b9fe7516343ed0f42598ea9099e13bd9ede7532ba89128b5.png" src="../../_images/fb48cb8376f8b457b9fe7516343ed0f42598ea9099e13bd9ede7532ba89128b5.png" />
+<img alt="../../_images/f5bf6d7d29380c87f115647dc9e5bba3194b525faca14c3e44ca721c0aa00edc.png" src="../../_images/f5bf6d7d29380c87f115647dc9e5bba3194b525faca14c3e44ca721c0aa00edc.png" />
+<img alt="../../_images/94e378d2bc94577e9ebc192a3a1b64802a820cd24630d62962f313cc8db469a2.png" src="../../_images/94e378d2bc94577e9ebc192a3a1b64802a820cd24630d62962f313cc8db469a2.png" />
+</div>
+</div>
+</section>
+<section id="h">
+<h2>H<a class="headerlink" href="#h" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;H_f&quot;</span><span class="p">]</span>
+<span class="c1"># target_cols = [&quot;H_L3.1_L3.3_CUT_NONE_QCF&quot;]</span>
+
+<span class="k">for</span> <span class="n">target_col</span> <span class="ow">in</span> <span class="n">target_cols</span><span class="p">:</span>
+    <span class="n">res_2005</span><span class="p">,</span> <span class="n">instance_2005</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2005</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2005</span><span class="p">])</span>
+    <span class="n">res_2008_2009</span><span class="p">,</span> <span class="n">instance_2008_2009</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2008_2009</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">2009</span><span class="p">])</span>
+    <span class="n">res_2016</span><span class="p">,</span> <span class="n">instance_2016</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">target_col</span><span class="o">=</span><span class="n">target_col</span><span class="p">,</span> <span class="n">locs</span><span class="o">=</span><span class="n">locs_2016</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2016</span><span class="p">])</span>
+
+    <span class="c1"># Merge results along timestamp index</span>
+    <span class="n">res_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">res_2005</span><span class="p">,</span> <span class="n">res_2008_2009</span><span class="p">,</span> <span class="n">res_2016</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c1"># Add results (gap-filled variable and flag) to collection of results</span>
+    <span class="n">collection_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">collection_df</span><span class="p">,</span> <span class="n">res_merged</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add to collection of results, add to existing column</span>
+    
+    <span class="c1"># # Add random forest instance to collection of instances</span>
+    <span class="c1"># collection_instances_dict[str(years[0])] = rfts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============================================================
+Starting gap-filling for
+H_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;H_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 52560.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2005-01-01 00:15:00 and 2007-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.007198546109544868.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2005-07-26 16:15:00 and 2007-12-31 22:45:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target H_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of H_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target H_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting H_f ...
+&gt;&gt;&gt; Predicting target H_f where all features are available ... predicted 52560 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 15398 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable H_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (15398 values, H_f_gfRF where flag=1) in comparison to observed targets (37162 values, H_f).
+
+## TARGET
+- first timestamp:  2005-01-01 00:15:00
+- last timestamp:  2007-12-31 23:45:00
+- potential number of values: 52560 values)
+- target column (observed):  H_f
+- missing records (observed):  15398 (cross-check from flag: 15398)
+- target column (gap-filled):  H_f_gfRF  (52560 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_H_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (37162 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (15398 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;TA_T1_2_1&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;.DOY&#39;, &#39;VPD_T1_2_1&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;.YEARDOY&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;.HOUR&#39;, &#39;.RECORDNUMBER&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;]
+- number of features used in model:  16
+- permutation importances were calculated from 5 repeats.
+
+                                              PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                                         2.286622  0.005036
+.VPD_T1_2_1-1                                        0.124319  0.001588
+TA_T1_2_1                                            0.091134  0.000975
+.TA_T1_2_1-1                                         0.070088  0.000681
+.DOY                                                 0.058927  0.000517
+VPD_T1_2_1                                           0.057899  0.000377
+TIMESINCE_MGMT_MOWING_FOOTPRINT                      0.056634  0.000851
+.YEARDOY                                             0.046740  0.001419
+TIMESINCE_MGMT_GRAZING_FOOTPRINT                     0.027164  0.000353
+.HOUR                                                0.025093  0.000481
+.RECORDNUMBER                                        0.023571  0.000169
+TIMESINCE_MGMT_FERT_ORG_FOOTPRINT                    0.016776  0.000395
+.SW_IN_T1_2_1-1                                      0.014747  0.000144
+TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT             0.014168  0.000325
+TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT         0.009839  0.000227
+TIMESINCE_MGMT_SOWING_FOOTPRINT                      0.007880  0.000071
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  3.0363481016781413 (mean absolute error)
+- MedAE:  1.2275314965263107 (median absolute error)
+- MSE:  35.308167649439106 (mean squared error)
+- RMSE:  5.94206762410519 (root mean squared error)
+- MAXE:  123.18003992941935 (max error)
+- MAPE:  1.716 (mean absolute percentage error)
+- R2:  0.9659718161914362
+
+
+
+============================================================
+Starting gap-filling for
+H_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;H_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 70128.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2007-01-01 00:15:00 and 2010-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.014521124814123465.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2007-01-01 01:15:00 and 2010-12-31 23:45:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target H_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of H_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target H_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting H_f ...
+&gt;&gt;&gt; Predicting target H_f where all features are available ... predicted 70128 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 23723 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable H_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (23723 values, H_f_gfRF where flag=1) in comparison to observed targets (46405 values, H_f).
+
+## TARGET
+- first timestamp:  2007-01-01 00:15:00
+- last timestamp:  2010-12-31 23:45:00
+- potential number of values: 70128 values)
+- target column (observed):  H_f
+- missing records (observed):  23723 (cross-check from flag: 23723)
+- target column (gap-filled):  H_f_gfRF  (70128 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_H_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (46405 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (23723 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;VPD_T1_2_1&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;.RECORDNUMBER&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;TA_T1_2_1&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;.DOY&#39;, &#39;.YEARDOY&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;.HOUR&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;]
+- number of features used in model:  17
+- permutation importances were calculated from 5 repeats.
+
+                                              PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                                         2.017861  0.012056
+.VPD_T1_2_1-1                                        0.132658  0.002754
+VPD_T1_2_1                                           0.115888  0.001593
+TIMESINCE_MGMT_MOWING_FOOTPRINT                      0.072079  0.000802
+.RECORDNUMBER                                        0.063231  0.000928
+.TA_T1_2_1-1                                         0.055278  0.000984
+TA_T1_2_1                                            0.053163  0.000565
+TIMESINCE_MGMT_GRAZING_FOOTPRINT                     0.049944  0.001030
+TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT             0.045813  0.000477
+.SW_IN_T1_2_1-1                                      0.043267  0.000387
+.DOY                                                 0.033866  0.000530
+.YEARDOY                                             0.031973  0.000341
+TIMESINCE_MGMT_FERT_ORG_FOOTPRINT                    0.027615  0.000402
+.HOUR                                                0.026744  0.000521
+TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT         0.020857  0.000531
+TIMESINCE_MGMT_FERT_MIN_FOOTPRINT                    0.017548  0.000397
+TIMESINCE_MGMT_SOWING_FOOTPRINT                      0.016950  0.000237
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  4.585122551817628 (mean absolute error)
+- MedAE:  1.6707032148570136 (median absolute error)
+- MSE:  115.36588257969088 (mean squared error)
+- RMSE:  10.740851110582014 (root mean squared error)
+- MAXE:  207.72776022740004 (max error)
+- MAPE:  0.759 (mean absolute percentage error)
+- R2:  0.9268886964189673
+
+
+
+============================================================
+Starting gap-filling for
+H_f
+using &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt;
+============================================================
+
+Adding new data columns ...
+++ Added new columns with lagged variants for: [&#39;SW_IN_T1_2_1&#39;, &#39;TA_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;] (lags between -1 and -1 with stepsize 1), no lagged variants for: [&#39;H_f&#39;, &#39;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_SOWING_FOOTPRINT&#39;, &#39;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&#39;]. Shifting the time series created gaps which were then filled with the nearest value.
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 52608.
+
+Sanitizing timestamp ...
+&gt;&gt;&gt; Validating timestamp naming of timestamp column TIMESTAMP_MIDDLE ... Timestamp name OK.
+&gt;&gt;&gt; Converting timestamp TIMESTAMP_MIDDLE to datetime ... OK
+&gt;&gt;&gt; All rows have timestamp TIMESTAMP_MIDDLE, no rows removed.
+&gt;&gt;&gt; Sorting timestamp TIMESTAMP_MIDDLE ascending ...
+&gt;&gt;&gt; Removing data records with duplicate indexes ... OK (no duplicates found in timestamp index)
+&gt;&gt;&gt; Creating continuous &lt;30 * Minutes&gt; timestamp index for timestamp TIMESTAMP_MIDDLE between 2015-01-01 00:15:00 and 2017-12-31 23:45:00 ...
+
+Feature reduction based on permutation importance ...
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 5 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.009991751140722527.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;sklearn.ensemble._forest.RandomForestRegressor&#39;&gt; based on data between 2015-01-01 00:15:00 and 2017-12-31 23:45:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+&gt;&gt;&gt; Using model to predict target H_f in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of H_f ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target H_f ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+&gt;&gt;&gt; Calculating prediction scores based on all data predicting H_f ...
+&gt;&gt;&gt; Predicting target H_f where all features are available ... predicted 52608 records.
+&gt;&gt;&gt; Collecting results for final model ...
+&gt;&gt;&gt; Filling 10565 missing records in target with predictions from final model ...
+&gt;&gt;&gt; Storing gap-filled time series in variable H_f_gfRF ...
+&gt;&gt;&gt; Restoring original timestamp in results ...
+&gt;&gt;&gt; Combining predictions from full model and fallback model ...
+
+===================
+GAP-FILLING RESULTS
+===================
+
+Model scores and feature importances were calculated from high-quality predicted targets (10565 values, H_f_gfRF where flag=1) in comparison to observed targets (42043 values, H_f).
+
+## TARGET
+- first timestamp:  2015-01-01 00:15:00
+- last timestamp:  2017-12-31 23:45:00
+- potential number of values: 52608 values)
+- target column (observed):  H_f
+- missing records (observed):  10565 (cross-check from flag: 10565)
+- target column (gap-filled):  H_f_gfRF  (52608 values)
+- missing records (gap-filled):  0
+- gap-filling flag: FLAG_H_f_gfRF_ISFILLED
+  &gt; flag 0 ... observed targets (42043 values)
+  &gt; flag 1 ... targets gap-filled with high-quality, all features available (10565 values)
+  &gt; flag 2 ... targets gap-filled with fallback (0 values)
+
+## FEATURE IMPORTANCES
+- names of features used in model:  [&#39;SW_IN_T1_2_1&#39;, &#39;VPD_T1_2_1&#39;, &#39;.VPD_T1_2_1-1&#39;, &#39;TIMESINCE_MGMT_MOWING_FOOTPRINT&#39;, &#39;.TA_T1_2_1-1&#39;, &#39;.SW_IN_T1_2_1-1&#39;, &#39;.DOY&#39;, &#39;.YEARDOY&#39;, &#39;.RECORDNUMBER&#39;, &#39;.HOUR&#39;, &#39;TA_T1_2_1&#39;, &#39;TIMESINCE_MGMT_GRAZING_FOOTPRINT&#39;]
+- number of features used in model:  12
+- permutation importances were calculated from 5 repeats.
+
+                                  PERM_IMPORTANCE   PERM_SD
+SW_IN_T1_2_1                             2.730903  0.011351
+VPD_T1_2_1                               0.219105  0.000317
+.VPD_T1_2_1-1                            0.199873  0.001650
+TIMESINCE_MGMT_MOWING_FOOTPRINT          0.081511  0.000678
+.TA_T1_2_1-1                             0.062212  0.000725
+.SW_IN_T1_2_1-1                          0.051107  0.000518
+.DOY                                     0.033901  0.000304
+.YEARDOY                                 0.031947  0.000421
+.RECORDNUMBER                            0.030137  0.000344
+.HOUR                                    0.029345  0.000558
+TA_T1_2_1                                0.022431  0.000287
+TIMESINCE_MGMT_GRAZING_FOOTPRINT         0.018579  0.000362
+
+## MODEL
+The model was trained on a training set with test size 25.00%.
+- estimator:  RandomForestRegressor(n_estimators=200, n_jobs=-1, random_state=42)
+- parameters:  {&#39;bootstrap&#39;: True, &#39;ccp_alpha&#39;: 0.0, &#39;criterion&#39;: &#39;squared_error&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: 1.0, &#39;max_leaf_nodes&#39;: None, &#39;max_samples&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;n_estimators&#39;: 200, &#39;n_jobs&#39;: -1, &#39;oob_score&#39;: False, &#39;random_state&#39;: 42, &#39;verbose&#39;: 0, &#39;warm_start&#39;: False}
+
+## MODEL SCORES
+- MAE:  3.7015753372463958 (mean absolute error)
+- MedAE:  1.479832744671322 (median absolute error)
+- MSE:  61.242700656861935 (mean squared error)
+- RMSE:  7.825771569427639 (root mean squared error)
+- MAXE:  283.0462634432499 (max error)
+- MAPE:  0.839 (mean absolute percentage error)
+- R2:  0.9525607723475673
+</pre></div>
+</div>
+<img alt="../../_images/d1ea29d0f676dd3a7feb392906f849e70ecc2b9331459d833a314c9ea4486b1e.png" src="../../_images/d1ea29d0f676dd3a7feb392906f849e70ecc2b9331459d833a314c9ea4486b1e.png" />
+<img alt="../../_images/3eeaa84782db8a86a81fcf0a46c939906de6f4561e9975ade566d7fdc0558d61.png" src="../../_images/3eeaa84782db8a86a81fcf0a46c939906de6f4561e9975ade566d7fdc0558d61.png" />
+<img alt="../../_images/9637ef33d79ff566d518f9872ccd06ae00c20d5aebdebe9d6a209a71b76a627d.png" src="../../_images/9637ef33d79ff566d518f9872ccd06ae00c20d5aebdebe9d6a209a71b76a627d.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="collection">
+<h1>COLLECTION<a class="headerlink" href="#collection" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for duplicates in timestamp index and column names</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">collection_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">collection_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NEE_CUT_50_f_gfRF</th>
+      <th>FLAG_NEE_CUT_50_f_gfRF_ISFILLED</th>
+      <th>LE_f_gfRF</th>
+      <th>FLAG_LE_f_gfRF_ISFILLED</th>
+      <th>H_f_gfRF</th>
+      <th>FLAG_H_f_gfRF_ISFILLED</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>2.092792</td>
+      <td>1</td>
+      <td>7.737054</td>
+      <td>1</td>
+      <td>-12.422459</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>2.079400</td>
+      <td>1</td>
+      <td>7.691782</td>
+      <td>1</td>
+      <td>-12.265577</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>2.094548</td>
+      <td>1</td>
+      <td>7.763835</td>
+      <td>1</td>
+      <td>-11.656234</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>2.088299</td>
+      <td>1</td>
+      <td>7.408422</td>
+      <td>1</td>
+      <td>-11.207629</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>2.073170</td>
+      <td>1</td>
+      <td>4.867932</td>
+      <td>1</td>
+      <td>-11.428826</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2016-12-31 21:45:00</th>
+      <td>1.204131</td>
+      <td>0</td>
+      <td>3.214732</td>
+      <td>0</td>
+      <td>3.757635</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-12-31 22:15:00</th>
+      <td>0.980903</td>
+      <td>0</td>
+      <td>2.810929</td>
+      <td>0</td>
+      <td>3.808380</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-12-31 22:45:00</th>
+      <td>1.002963</td>
+      <td>0</td>
+      <td>3.289392</td>
+      <td>0</td>
+      <td>4.222816</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-12-31 23:15:00</th>
+      <td>1.173986</td>
+      <td>1</td>
+      <td>3.232717</td>
+      <td>1</td>
+      <td>5.461240</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2016-12-31 23:45:00</th>
+      <td>1.099330</td>
+      <td>1</td>
+      <td>3.466575</td>
+      <td>0</td>
+      <td>6.959771</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>70176 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># collection_df.loc[&#39;2009-12-31 21:45:00&#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_df</span><span class="p">[</span><span class="s1">&#39;NEE_CUT_50_f_gfRF&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="mf">0.02161926</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">collection_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># Cumulative g CO2 m-2 yr-1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMESTAMP_MIDDLE
+2005   -232.155741
+2008     -7.657891
+2009     21.001395
+2016   -561.285540
+Name: NEE_CUT_50_f_gfRF, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">collection_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">HeatmapDateTime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">collection_df</span><span class="p">[</span><span class="n">c</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fcc481cf3c7ca049b28c16b504a6cfc359389436c038a44780c71ec8e5ff29c0.png" src="../../_images/fcc481cf3c7ca049b28c16b504a6cfc359389436c038a44780c71ec8e5ff29c0.png" />
+<img alt="../../_images/119b42dc2366cc32b1d836d4efeabd4b8924966f76078d05aa318ba8a33a6851.png" src="../../_images/119b42dc2366cc32b1d836d4efeabd4b8924966f76078d05aa318ba8a33a6851.png" />
+<img alt="../../_images/3dbed8f7479b40d3843f9660fd42e9d7f42f1626d75e50d58d8f55172c265c58.png" src="../../_images/3dbed8f7479b40d3843f9660fd42e9d7f42f1626d75e50d58d8f55172c265c58.png" />
+<img alt="../../_images/7e08d6a1554c374a90a59affcd4a2263fb6c98767bed8ac45bd9bbc35a41f32a.png" src="../../_images/7e08d6a1554c374a90a59affcd4a2263fb6c98767bed8ac45bd9bbc35a41f32a.png" />
+<img alt="../../_images/cbbb7a4160d49ffadc4ffe5a17009f1153cfe37b066d787710ad4ecd295df6a2.png" src="../../_images/cbbb7a4160d49ffadc4ffe5a17009f1153cfe37b066d787710ad4ecd295df6a2.png" />
+<img alt="../../_images/d50986b4b7bdfab0305d1758c1213677f19dbfda8a16627e8814f4dd4f9bb2ad.png" src="../../_images/d50986b4b7bdfab0305d1758c1213677f19dbfda8a16627e8814f4dd4f9bb2ad.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># locs = (collection_df[&#39;FLAG_NEE_L3.1_L3.3_CUT_50_QCF_gfRF_ISFILLED&#39;] == 1) &amp; (collection_df[&#39;NEE_L3.1_L3.3_CUT_50_QCF_gfRF&#39;] &lt; 0)</span>
+<span class="c1"># collection_df[locs].describe()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\x-OLD_34_FLUXES_L4_MDSCorrectionsWithRFGapFilling_IRGA"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-main-data">Load main data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-l4-reddyproc-results">Load L4 REddyProc results</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-l4-reddyproc-results-with-main-data">Merge L4 REddyProc results with main data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#show-management-footprint-columns">Show management (footprint) columns</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-data-for-corrections-remove-mds-gap-filled-data-for-2005-2008-2009-2016">Prepare data for corrections, remove MDS gap-filled data for 2005, 2008, 2009, 2016</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gap-filling">Gap-filling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-data-range-for-models">Set data range for models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-for-random-forest-execution">Function for random forest execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-to-collect-results-across-years">Dataframe to collect results across years</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nee">NEE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le">LE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#h">H</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collection">COLLECTION</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

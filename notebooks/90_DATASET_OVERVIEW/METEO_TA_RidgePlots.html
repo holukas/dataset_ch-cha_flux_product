@@ -1,0 +1,1214 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Imports &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/90_DATASET_OVERVIEW/METEO_TA_RidgePlots';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CH-CHA Flux Product
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Meteo_Data.html">Meteo Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Management_Data.html">Management Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Flux_Calculations.html">Flux Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Flux_Post-processing.html">Flux Post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Notebook overview</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/90_DATASET_OVERVIEW/METEO_TA_RidgePlots.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/90_DATASET_OVERVIEW/METEO_TA_RidgePlots.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Imports</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Imports</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#air-temperature"><strong>Air temperature</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-years-2005-2024">All years (2005-2024)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-year-2005-2024">Per year (2005-2024)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-month-2005-2024">Per month (2005-2024)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-week-2005-2024">Per week (2005-2024)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#single-years-per-month">Single years per month</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#single-years-per-week">Single years per week</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook"><strong>End of notebook</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <span style='font-size:40px; display:block;'>
+<b>
+    TA ridge plots
+</b>
+</span><p><strong>Author</strong>: Lukas Hörtnagl (<a class="reference external" href="mailto:holukas&#37;&#52;&#48;ethz&#46;ch">holukas<span>&#64;</span>ethz<span>&#46;</span>ch</a>)</p>
+<section class="tex2jax_ignore mathjax_ignore" id="imports">
+<h1><strong>Imports</strong><a class="headerlink" href="#imports" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">importlib.metadata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.io.files</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_parquet</span><span class="p">,</span> <span class="n">load_parquet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.plotting.cumulative</span><span class="w"> </span><span class="kn">import</span> <span class="n">CumulativeYear</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.plotting.heatmap_datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">HeatmapDateTime</span><span class="p">,</span> <span class="n">HeatmapYearMonth</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.plotting.xridgeplot</span><span class="w"> </span><span class="kn">import</span> <span class="n">RidgePlotTS</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
+<span class="n">version_diive</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;diive&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;diive version: v</span><span class="si">{</span><span class="n">version_diive</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diive version: v0.86.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-data">
+<h1><strong>Load data</strong><a class="headerlink" href="#load-data" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SOURCEDIR</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;../60_MERGE_DATA_FLUXES&quot;</span>
+<span class="n">FILENAME</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet&quot;</span>
+<span class="n">FILEPATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">SOURCEDIR</span><span class="p">)</span> <span class="o">/</span> <span class="n">FILENAME</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_parquet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">FILEPATH</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\60_MERGE_DATA_FLUXES\61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet (0.798 seconds).
+    --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-12</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-18</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-24</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-6</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-12</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-18</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-24</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-6</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-12</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-18</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-24</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-6</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-12</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-18</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-24</th>
+      <th>...</th>
+      <th>FCH4_L3.1_L3.3_CUT_50_QCF</th>
+      <th>FCH4_L3.1_L3.3_CUT_50_QCF0</th>
+      <th>FLAG_L3.3_CUT_84_FCH4_L3.1_USTAR_TEST</th>
+      <th>SUM_L3.3_CUT_84_FCH4_L3.1_HARDFLAGS</th>
+      <th>SUM_L3.3_CUT_84_FCH4_L3.1_SOFTFLAGS</th>
+      <th>SUM_L3.3_CUT_84_FCH4_L3.1_FLAGS</th>
+      <th>FLAG_L3.3_CUT_84_FCH4_L3.1_QCF</th>
+      <th>FCH4_L3.1_L3.3_CUT_84_QCF</th>
+      <th>FCH4_L3.1_L3.3_CUT_84_QCF0</th>
+      <th>FCH4_L3.1_L3.3_CUT_16_QCF_gfRF</th>
+      <th>FLAG_FCH4_L3.1_L3.3_CUT_16_QCF_gfRF_ISFILLED</th>
+      <th>FCH4_L3.1_L3.3_CUT_50_QCF_gfRF</th>
+      <th>FLAG_FCH4_L3.1_L3.3_CUT_50_QCF_gfRF_ISFILLED</th>
+      <th>FCH4_L3.1_L3.3_CUT_84_QCF_gfRF</th>
+      <th>FLAG_FCH4_L3.1_L3.3_CUT_84_QCF_gfRF_ISFILLED</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 21:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.229004</td>
+      <td>52.226300</td>
+      <td>52.226689</td>
+      <td>52.216796</td>
+      <td>3.458828</td>
+      <td>3.150402</td>
+      <td>3.115260</td>
+      <td>3.660897</td>
+      <td>4.335667</td>
+      <td>4.347764</td>
+      <td>4.385967</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.227858</td>
+      <td>52.227986</td>
+      <td>52.224528</td>
+      <td>52.214211</td>
+      <td>3.522570</td>
+      <td>3.187638</td>
+      <td>3.103440</td>
+      <td>3.643396</td>
+      <td>4.338551</td>
+      <td>4.342880</td>
+      <td>4.379524</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.226640</td>
+      <td>52.229837</td>
+      <td>52.222456</td>
+      <td>52.209876</td>
+      <td>3.578745</td>
+      <td>3.230037</td>
+      <td>3.095339</td>
+      <td>3.624025</td>
+      <td>4.343767</td>
+      <td>4.339440</td>
+      <td>4.372636</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.224375</td>
+      <td>52.231151</td>
+      <td>52.221324</td>
+      <td>52.238293</td>
+      <td>3.624160</td>
+      <td>3.278488</td>
+      <td>3.093806</td>
+      <td>3.601135</td>
+      <td>4.350872</td>
+      <td>4.336333</td>
+      <td>4.366082</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.222007</td>
+      <td>52.230632</td>
+      <td>52.222701</td>
+      <td>52.273511</td>
+      <td>3.656167</td>
+      <td>3.331678</td>
+      <td>3.103003</td>
+      <td>3.579020</td>
+      <td>4.360311</td>
+      <td>4.334225</td>
+      <td>4.359530</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>350640 rows × 784 columns</p>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="air-temperature">
+<h1><strong>Air temperature</strong><a class="headerlink" href="#air-temperature" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">series</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMESTAMP_MIDDLE
+2005-01-01 00:15:00    1.566667
+2005-01-01 00:45:00    1.533333
+2005-01-01 01:15:00    1.566667
+2005-01-01 01:45:00    1.566667
+2005-01-01 02:15:00    1.500000
+                         ...   
+2024-12-31 21:45:00   -1.919472
+2024-12-31 22:15:00   -2.104678
+2024-12-31 22:45:00   -2.089444
+2024-12-31 23:15:00   -2.355761
+2024-12-31 23:45:00   -2.578839
+Freq: 30min, Name: TA_T1_2_1, Length: 350640, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<section id="all-years-2005-2024">
+<h2>All years (2005-2024)<a class="headerlink" href="#all-years-2005-2024" title="Link to this heading">#</a></h2>
+<section id="per-year-2005-2024">
+<h3>Per year (2005-2024)<a class="headerlink" href="#per-year-2005-2024" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rp</span> <span class="o">=</span> <span class="n">RidgePlotTS</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">)</span>
+<span class="n">rp</span><span class="o">.</span><span class="n">per_year</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">],</span> <span class="n">hspace</span><span class="o">=-</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Air temperature (°C)&quot;</span><span class="p">,</span>
+            <span class="n">fig_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">shade_percentile</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">show_mean_line</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">fig_title</span><span class="o">=</span><span class="s2">&quot;Air temperature per year (2005-2024)&quot;</span><span class="p">,</span> <span class="n">fig_dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/789b468d2407d0f2b721ddd553f30175962279c0b6275ed85ee420a75e19dcd6.png" src="../../_images/789b468d2407d0f2b721ddd553f30175962279c0b6275ed85ee420a75e19dcd6.png" />
+</div>
+</div>
+</section>
+<section id="per-month-2005-2024">
+<h3>Per month (2005-2024)<a class="headerlink" href="#per-month-2005-2024" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rp</span><span class="o">.</span><span class="n">per_month</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">],</span> <span class="n">hspace</span><span class="o">=-</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Air temperature (°C)&quot;</span><span class="p">,</span>
+             <span class="n">fig_width</span><span class="o">=</span><span class="mf">4.5</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">shade_percentile</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">show_mean_line</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">fig_title</span><span class="o">=</span><span class="s2">&quot;Air temperatures per month (2005-2024)&quot;</span><span class="p">,</span> <span class="n">fig_dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f8be694ef707400b73931392a922f5bdca4d873d0a14b85b4fa7b3edd9ec9106.png" src="../../_images/f8be694ef707400b73931392a922f5bdca4d873d0a14b85b4fa7b3edd9ec9106.png" />
+</div>
+</div>
+</section>
+<section id="per-week-2005-2024">
+<h3>Per week (2005-2024)<a class="headerlink" href="#per-week-2005-2024" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rp</span><span class="o">.</span><span class="n">per_week</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">],</span> <span class="n">hspace</span><span class="o">=-</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Air temperature (°C)&quot;</span><span class="p">,</span>
+            <span class="n">fig_width</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">shade_percentile</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">show_mean_line</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">fig_title</span><span class="o">=</span><span class="s2">&quot;Air temperatures per week (2005-2024)&quot;</span><span class="p">,</span> <span class="n">fig_dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1c1c9dd6e8576723c73841d716b1592994f304a37c50704016b2a663928df79f.png" src="../../_images/1c1c9dd6e8576723c73841d716b1592994f304a37c50704016b2a663928df79f.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="single-years-per-month">
+<h1>Single years per month<a class="headerlink" href="#single-years-per-month" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uniq_years</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">uy</span> <span class="ow">in</span> <span class="n">uniq_years</span><span class="p">:</span>
+    <span class="n">series_yr</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">uy</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">rp</span> <span class="o">=</span> <span class="n">RidgePlotTS</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">series_yr</span><span class="p">)</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">per_month</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">],</span> <span class="n">hspace</span><span class="o">=-</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Air temperature (°C)&quot;</span><span class="p">,</span>
+                 <span class="n">fig_width</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">shade_percentile</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">show_mean_line</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">fig_title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Air temperatures per month (</span><span class="si">{</span><span class="n">uy</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">fig_dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a234a5dba9cd95e59fb8bf0a7aaf5f1c7b4379e4911f9282a9b0514b561f0bba.png" src="../../_images/a234a5dba9cd95e59fb8bf0a7aaf5f1c7b4379e4911f9282a9b0514b561f0bba.png" />
+<img alt="../../_images/64f2666c54d7d1f22c0cf65e14621b70098324823531167966e4e7ef11caedd8.png" src="../../_images/64f2666c54d7d1f22c0cf65e14621b70098324823531167966e4e7ef11caedd8.png" />
+<img alt="../../_images/b41f5999bdd6f9b3261a31a6f9ea5fb0c700d357400974995264b4a4bebc08d0.png" src="../../_images/b41f5999bdd6f9b3261a31a6f9ea5fb0c700d357400974995264b4a4bebc08d0.png" />
+<img alt="../../_images/61358006da9c8067982fc709acc19b3a596b6c5c4f84e06baa6a4ae4cd1f602a.png" src="../../_images/61358006da9c8067982fc709acc19b3a596b6c5c4f84e06baa6a4ae4cd1f602a.png" />
+<img alt="../../_images/68e7b9bcfe26fc4c3d2e633f5752813603150addd1a6d3f57969f72fefbb640a.png" src="../../_images/68e7b9bcfe26fc4c3d2e633f5752813603150addd1a6d3f57969f72fefbb640a.png" />
+<img alt="../../_images/e0069ae85e470061e489be828bb8690bcdcfd10ccb12d921490cd035a9a49ad4.png" src="../../_images/e0069ae85e470061e489be828bb8690bcdcfd10ccb12d921490cd035a9a49ad4.png" />
+<img alt="../../_images/9ba57efc96e353724bbe1360d3094b3841fcdc87431416a993f787d2e9ae7ac0.png" src="../../_images/9ba57efc96e353724bbe1360d3094b3841fcdc87431416a993f787d2e9ae7ac0.png" />
+<img alt="../../_images/c07b6bc964afa8c0cbd52d2aa75d582712e7c42a432d77beb1ee4972bc6fb099.png" src="../../_images/c07b6bc964afa8c0cbd52d2aa75d582712e7c42a432d77beb1ee4972bc6fb099.png" />
+<img alt="../../_images/59d4d2f1ca70ac7bb62c95a926dd64e94476f462864659668799996c12f9fb1b.png" src="../../_images/59d4d2f1ca70ac7bb62c95a926dd64e94476f462864659668799996c12f9fb1b.png" />
+<img alt="../../_images/4e76f9d158efef18f41bd9e638cd1bf11a373f37fd3bcdc688c3b824d6d58039.png" src="../../_images/4e76f9d158efef18f41bd9e638cd1bf11a373f37fd3bcdc688c3b824d6d58039.png" />
+<img alt="../../_images/12250f8403cf030fbecbda77f1a72d0eb48d6a72f3ee0cee71f19e728c132d46.png" src="../../_images/12250f8403cf030fbecbda77f1a72d0eb48d6a72f3ee0cee71f19e728c132d46.png" />
+<img alt="../../_images/e95e2a8df53b8abded9c47963ac85f812a5f100d07810d6f0b3940c410a15095.png" src="../../_images/e95e2a8df53b8abded9c47963ac85f812a5f100d07810d6f0b3940c410a15095.png" />
+<img alt="../../_images/cd2bfceef2b747e04fc8486b5882a113ccbc586fc756bd3d7dd71c893e56c77a.png" src="../../_images/cd2bfceef2b747e04fc8486b5882a113ccbc586fc756bd3d7dd71c893e56c77a.png" />
+<img alt="../../_images/752ecca36bd297f860ff0e4053f310856b47625a3803294f0fc5bb240a1204b8.png" src="../../_images/752ecca36bd297f860ff0e4053f310856b47625a3803294f0fc5bb240a1204b8.png" />
+<img alt="../../_images/5e3f45b5bb5628daaa929c0717b133e7e50d5b53348dd341d4cf2c63c0f5a166.png" src="../../_images/5e3f45b5bb5628daaa929c0717b133e7e50d5b53348dd341d4cf2c63c0f5a166.png" />
+<img alt="../../_images/0aeace220a433c98b2d8f9076b821de0b421eaf4214408148c483e23083cc622.png" src="../../_images/0aeace220a433c98b2d8f9076b821de0b421eaf4214408148c483e23083cc622.png" />
+<img alt="../../_images/8d97733504af128ea47036393996a10fb2981ef618c893e8f206462a2a2e1441.png" src="../../_images/8d97733504af128ea47036393996a10fb2981ef618c893e8f206462a2a2e1441.png" />
+<img alt="../../_images/c7ba2de194e38dbfa6d3bfd26175cb0b39a62f6df754b3e372046746040a4b93.png" src="../../_images/c7ba2de194e38dbfa6d3bfd26175cb0b39a62f6df754b3e372046746040a4b93.png" />
+<img alt="../../_images/377ce8882ba0c791c15b893b08dee17da33fefb19a5ce71ef1a2452230544f6e.png" src="../../_images/377ce8882ba0c791c15b893b08dee17da33fefb19a5ce71ef1a2452230544f6e.png" />
+<img alt="../../_images/d642f24f43fe874b9d92288454b8cb11282b2722d39a017dc59b64e5f89bcbc9.png" src="../../_images/d642f24f43fe874b9d92288454b8cb11282b2722d39a017dc59b64e5f89bcbc9.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="single-years-per-week">
+<h1>Single years per week<a class="headerlink" href="#single-years-per-week" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uniq_years</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">uy</span> <span class="ow">in</span> <span class="n">uniq_years</span><span class="p">:</span>
+    <span class="n">series_yr</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">uy</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">rp</span> <span class="o">=</span> <span class="n">RidgePlotTS</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">series_yr</span><span class="p">)</span>
+    <span class="n">rp</span><span class="o">.</span><span class="n">per_week</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">38</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="n">hspace</span><span class="o">=-</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Air temperature (°C)&quot;</span><span class="p">,</span>
+                 <span class="n">fig_width</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">shade_percentile</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">show_mean_line</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">fig_title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Air temperatures per week (</span><span class="si">{</span><span class="n">uy</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">fig_dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/347d7454eb0f2d1af598dcfccedfe82dde12785fe896f13d02efecf85de8e3ac.png" src="../../_images/347d7454eb0f2d1af598dcfccedfe82dde12785fe896f13d02efecf85de8e3ac.png" />
+<img alt="../../_images/d58056d1da04d97c5908fc37605d631e83de0a69c6193f786df8ce0d22e98706.png" src="../../_images/d58056d1da04d97c5908fc37605d631e83de0a69c6193f786df8ce0d22e98706.png" />
+<img alt="../../_images/31b4cd0e72803515a88cfd61f6a06a2d335a914dfa181f9f6bfeaf6def384750.png" src="../../_images/31b4cd0e72803515a88cfd61f6a06a2d335a914dfa181f9f6bfeaf6def384750.png" />
+<img alt="../../_images/c00165b9a3b95e520068217fd6f9280fa3834f3c429470a07878108b8e7e36fb.png" src="../../_images/c00165b9a3b95e520068217fd6f9280fa3834f3c429470a07878108b8e7e36fb.png" />
+<img alt="../../_images/1c8cc9adc6e88ad32bf84c274878e718441b5cfd894ea4eae5cf83cfb81cc8df.png" src="../../_images/1c8cc9adc6e88ad32bf84c274878e718441b5cfd894ea4eae5cf83cfb81cc8df.png" />
+<img alt="../../_images/8c202f0ce23a77438ff165ccfb0970bf2cf8e333250d0084e8d7943cc3c134ec.png" src="../../_images/8c202f0ce23a77438ff165ccfb0970bf2cf8e333250d0084e8d7943cc3c134ec.png" />
+<img alt="../../_images/6d58b0bce04e31da06a8c9945ade1307e161fd48a5e855d68aecde768509ac83.png" src="../../_images/6d58b0bce04e31da06a8c9945ade1307e161fd48a5e855d68aecde768509ac83.png" />
+<img alt="../../_images/003cbf2e68396966f026645c5800cccf2f288e0638a49d65f875c39d36bc48fd.png" src="../../_images/003cbf2e68396966f026645c5800cccf2f288e0638a49d65f875c39d36bc48fd.png" />
+<img alt="../../_images/ee426d6007662806f1ce98325e8c4ebd9f9dd680c5dc123507445cb0ba4b1740.png" src="../../_images/ee426d6007662806f1ce98325e8c4ebd9f9dd680c5dc123507445cb0ba4b1740.png" />
+<img alt="../../_images/8f65692a9adc0f0b63218b7ffb0ec64362bc590bbd6314006bee168dd8ffcd95.png" src="../../_images/8f65692a9adc0f0b63218b7ffb0ec64362bc590bbd6314006bee168dd8ffcd95.png" />
+<img alt="../../_images/14b8ee34d4d2c0424f8513794a2e7ad1d9566a3d982966e271c186feeca4a961.png" src="../../_images/14b8ee34d4d2c0424f8513794a2e7ad1d9566a3d982966e271c186feeca4a961.png" />
+<img alt="../../_images/c02c9fd8e0ce812c94bb74230104b3a85f3d66ad641775ef02d0bc33f09feebc.png" src="../../_images/c02c9fd8e0ce812c94bb74230104b3a85f3d66ad641775ef02d0bc33f09feebc.png" />
+<img alt="../../_images/4cc24346977eb0bb1a8ebec425ccebe8ec3f6de7dd1530e0d42dbe9d3df49375.png" src="../../_images/4cc24346977eb0bb1a8ebec425ccebe8ec3f6de7dd1530e0d42dbe9d3df49375.png" />
+<img alt="../../_images/8f13ce729af9bab3c2870447dd5c406f8fcba0f0c6181cf96af9a34d08b04ba6.png" src="../../_images/8f13ce729af9bab3c2870447dd5c406f8fcba0f0c6181cf96af9a34d08b04ba6.png" />
+<img alt="../../_images/5813d0ec2bd0a5ae573f806e6086d11a987fa00394a1d206395bed7c03641ad9.png" src="../../_images/5813d0ec2bd0a5ae573f806e6086d11a987fa00394a1d206395bed7c03641ad9.png" />
+<img alt="../../_images/250ec9b58a170a4a208d8d997912a0552260bfe9dd6ecc42e75f351b5d2313e2.png" src="../../_images/250ec9b58a170a4a208d8d997912a0552260bfe9dd6ecc42e75f351b5d2313e2.png" />
+<img alt="../../_images/94c2d376af238106402060d3b878f8724c17386800ab6821d0452df6d67773c0.png" src="../../_images/94c2d376af238106402060d3b878f8724c17386800ab6821d0452df6d67773c0.png" />
+<img alt="../../_images/b6b261cbe9591067092fd388224479ba5cd3849c3670db8a963aa191f992b313.png" src="../../_images/b6b261cbe9591067092fd388224479ba5cd3849c3670db8a963aa191f992b313.png" />
+<img alt="../../_images/d1672bbb5f544c702144ecf188184c9dd9af41dbcfc0eec874a8fcb24a0fa37f.png" src="../../_images/d1672bbb5f544c702144ecf188184c9dd9af41dbcfc0eec874a8fcb24a0fa37f.png" />
+<img alt="../../_images/66e83f1d5e2013ad3f9272ea0e593c156537d3989822ad4ac2037d52e7238123.png" src="../../_images/66e83f1d5e2013ad3f9272ea0e593c156537d3989822ad4ac2037d52e7238123.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="end-of-notebook">
+<h1><strong>End of notebook</strong><a class="headerlink" href="#end-of-notebook" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_string</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Finished. </span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-03-03 15:26:38
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\90_DATASET_OVERVIEW"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Imports</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#air-temperature"><strong>Air temperature</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-years-2005-2024">All years (2005-2024)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-year-2005-2024">Per year (2005-2024)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-month-2005-2024">Per month (2005-2024)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-week-2005-2024">Per week (2005-2024)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#single-years-per-month">Single years per month</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#single-years-per-week">Single years per week</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook"><strong>End of notebook</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

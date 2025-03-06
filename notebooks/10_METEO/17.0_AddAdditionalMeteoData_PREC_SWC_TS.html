@@ -1,0 +1,2695 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Add additional meteo data &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CH-CHA Flux Product
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Meteo_Data.html">Meteo Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Management_Data.html">Management Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Flux_Calculations.html">Flux Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Flux_Post-processing.html">Flux Post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Notebook overview</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Add additional meteo data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Add additional meteo data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-meteo-data-so-far-m7">Load meteo data so far (M7)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-additional-meteo-data-from-feigenwinter-et-al-2023a-2005-2020">Load additional meteo data from Feigenwinter et al. (2023a) (2005-2020)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-meteo-data-from-fluxnet-v2024-2021-2023">Load meteo data from FLUXNET v2024 (2021-2023)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sanitize-timestamp">Sanitize timestamp</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-meteo-data-from-database-screened-with-diive-2021-2024">Load meteo data from database, screened with <code class="docutils literal notranslate"><span class="pre">diive</span></code> (2021-2024)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sanitize timestamp</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-data"><strong>MERGE DATA</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteo7-2005-2024">Meteo7 (2005-2024)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prec-swc-ts-from-feigenwinter-2005-2020-new-columns"><code class="docutils literal notranslate"><span class="pre">PREC</span></code> <code class="docutils literal notranslate"><span class="pre">SWC</span></code> <code class="docutils literal notranslate"><span class="pre">TS</span></code> from Feigenwinter (2005-2020) [new columns]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prec-from-fluxnet-2021-2023-add-to-existing-column-and-1-new-column"><code class="docutils literal notranslate"><span class="pre">PREC</span></code> from FLUXNET (2021-2023) [add to existing column and 1 new column]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prec-from-diive-2024-add-to-existing-column"><code class="docutils literal notranslate"><span class="pre">PREC</span></code> from diive (2024) [add to existing column]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swc-from-diive-2021-2024-add-to-existing-columns"><code class="docutils literal notranslate"><span class="pre">SWC</span></code> from diive (2021-2024) [add to existing columns]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ts-from-diive-2021-2024-add-to-existing-columns"><code class="docutils literal notranslate"><span class="pre">TS</span></code> from diive (2021-2024) [add to existing columns]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Sanitize timestamp</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fix-missing-prec-flags">Fix missing <code class="docutils literal notranslate"><span class="pre">PREC</span></code> flags</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-timesince-variable-for-prec">Calc <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variable for <code class="docutils literal notranslate"><span class="pre">PREC</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot">Plot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-to-file">Save to file</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="add-additional-meteo-data">
+<h1><strong>Add additional meteo data</strong><a class="headerlink" href="#add-additional-meteo-data" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Collect additional meteo data from various sources: <code class="docutils literal notranslate"><span class="pre">SWC</span></code> <code class="docutils literal notranslate"><span class="pre">TS</span></code> <code class="docutils literal notranslate"><span class="pre">PREC</span></code></p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="imports">
+<h1>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DIRCONF</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;L:\Sync\luhk_work\20 - CODING\22 - POET\configs&#39;</span>
+<span class="n">TIMEZONE_OFFSET_TO_UTC_HOURS</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Timezone, e.g. &quot;1&quot; is translated to timezone &quot;UTC+01:00&quot; (CET, winter time)</span>
+<span class="n">REQUIRED_TIME_RESOLUTION</span> <span class="o">=</span> <span class="s1">&#39;30min&#39;</span>  <span class="c1"># 30MIN time resolution</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.metadata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dbc_influxdb</span><span class="w"> </span><span class="kn">import</span> <span class="n">dbcInflux</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.io.files</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_parquet</span><span class="p">,</span> <span class="n">save_parquet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.times.times</span><span class="w"> </span><span class="kn">import</span> <span class="n">TimestampSanitizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.pkgs.createvar.timesince</span><span class="w"> </span><span class="kn">import</span> <span class="n">TimeSince</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">influxdb_client.client.warnings</span><span class="w"> </span><span class="kn">import</span> <span class="n">MissingPivotFunction</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">MissingPivotFunction</span><span class="p">)</span>
+
+<span class="n">version_diive</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;diive&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;diive version: v</span><span class="si">{</span><span class="n">version_diive</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">version_dbc</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;dbc_influxdb&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dbc-influxdb version: v</span><span class="si">{</span><span class="n">version_dbc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">dbc</span> <span class="o">=</span> <span class="n">dbcInflux</span><span class="p">(</span><span class="n">dirconf</span><span class="o">=</span><span class="n">DIRCONF</span><span class="p">)</span>  <span class="c1"># Connect to database</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diive version: v0.85.0
+dbc-influxdb version: v0.12.0
+Reading configuration files was successful.
+Connection to database works.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-meteo-data-so-far-m7">
+<h1>Load meteo data so far (M7)<a class="headerlink" href="#load-meteo-data-so-far-m7" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meteo7</span> <span class="o">=</span> <span class="n">load_parquet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;16.1_CH-CHA_meteo7_gapfilled_2005-2024.parquet&quot;</span><span class="p">)</span>
+<span class="n">meteo7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file 16.1_CH-CHA_meteo7_gapfilled_2005-2024.parquet (0.038 seconds).
+    --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LW_IN_T1_2_1</th>
+      <th>PA_GF1_0.9_1</th>
+      <th>FLAG_PA_GF1_0.9_1_ISFILLED</th>
+      <th>PPFD_IN_T1_2_2</th>
+      <th>FLAG_PPFD_IN_T1_2_2_ISFILLED</th>
+      <th>VPD_T1_2_1</th>
+      <th>FLAG_VPD_T1_2_1_ISFILLED</th>
+      <th>SW_IN_T1_2_1</th>
+      <th>FLAG_SW_IN_T1_2_1_ISFILLED</th>
+      <th>TA_T1_2_1</th>
+      <th>FLAG_TA_T1_2_1_ISFILLED</th>
+      <th>RH_T1_2_1</th>
+      <th>FLAG_RH_T1_2_1_ISFILLED</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>978.100000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.099893</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.566667</td>
+      <td>3.0</td>
+      <td>85.400000</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>977.933333</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.097606</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.533333</td>
+      <td>3.0</td>
+      <td>85.700000</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>977.900000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.091683</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.566667</td>
+      <td>3.0</td>
+      <td>86.600000</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>977.833333</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.071157</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.566667</td>
+      <td>3.0</td>
+      <td>89.600000</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>977.833333</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.058333</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.500000</td>
+      <td>3.0</td>
+      <td>91.433333</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 21:45:00</th>
+      <td>304.613900</td>
+      <td>983.370890</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000011</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-1.919472</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:15:00</th>
+      <td>303.039890</td>
+      <td>983.052160</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000011</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-2.104678</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:45:00</th>
+      <td>302.093633</td>
+      <td>982.851140</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000011</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-2.089444</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:15:00</th>
+      <td>302.217307</td>
+      <td>982.896827</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000010</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-2.355761</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:45:00</th>
+      <td>298.392973</td>
+      <td>982.856613</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000010</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-2.578839</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>350640 rows × 13 columns</p>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-additional-meteo-data-from-feigenwinter-et-al-2023a-2005-2020">
+<h1>Load additional meteo data from Feigenwinter et al. (2023a) (2005-2020)<a class="headerlink" href="#load-additional-meteo-data-from-feigenwinter-et-al-2023a-2005-2020" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Variables: <code class="docutils literal notranslate"><span class="pre">PREC</span></code> <code class="docutils literal notranslate"><span class="pre">SWC</span></code> <code class="docutils literal notranslate"><span class="pre">TS</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data from Feigenwinter et al. (2023a)</span>
+<span class="n">df_feigenw_2005_2020</span> <span class="o">=</span> <span class="n">load_parquet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;13.1_CH-CHA_FEIGENW_meteo_2005-2020.parquet&quot;</span><span class="p">)</span>
+<span class="n">keepcols</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SWC_GF1_0.05_1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SWC_GF1_0.15_1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SWC_GF1_0.75_1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TS_GF1_0.04_1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TS_GF1_0.15_1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TS_GF1_0.4_1&#39;</span>
+<span class="p">]</span>
+<span class="n">df_feigenw_2005_2020</span> <span class="o">=</span> <span class="n">df_feigenw_2005_2020</span><span class="p">[</span><span class="n">keepcols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_feigenw_2005_2020</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file 13.1_CH-CHA_FEIGENW_meteo_2005-2020.parquet (0.020 seconds).
+    --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PREC_RAIN_TOT_GF1_0.5_1</th>
+      <th>FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED</th>
+      <th>SWC_GF1_0.05_1</th>
+      <th>SWC_GF1_0.15_1</th>
+      <th>SWC_GF1_0.75_1</th>
+      <th>TS_GF1_0.04_1</th>
+      <th>TS_GF1_0.15_1</th>
+      <th>TS_GF1_0.4_1</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>0.1</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>0.1</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-12-31 21:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>43.15512</td>
+      <td>37.83649</td>
+      <td>42.34799</td>
+      <td>7.059905</td>
+      <td>4.751553</td>
+      <td>5.665280</td>
+    </tr>
+    <tr>
+      <th>2020-12-31 22:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>43.14826</td>
+      <td>37.83116</td>
+      <td>42.34475</td>
+      <td>7.037867</td>
+      <td>4.753286</td>
+      <td>5.666638</td>
+    </tr>
+    <tr>
+      <th>2020-12-31 22:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>43.14190</td>
+      <td>37.82694</td>
+      <td>42.34330</td>
+      <td>7.021161</td>
+      <td>4.754451</td>
+      <td>5.668180</td>
+    </tr>
+    <tr>
+      <th>2020-12-31 23:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>43.13696</td>
+      <td>37.82402</td>
+      <td>42.34280</td>
+      <td>6.998506</td>
+      <td>4.753085</td>
+      <td>5.669790</td>
+    </tr>
+    <tr>
+      <th>2020-12-31 23:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>43.13130</td>
+      <td>37.82018</td>
+      <td>42.30388</td>
+      <td>6.990282</td>
+      <td>4.749334</td>
+      <td>5.671485</td>
+    </tr>
+  </tbody>
+</table>
+<p>280512 rows × 8 columns</p>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-meteo-data-from-fluxnet-v2024-2021-2023">
+<h1>Load meteo data from FLUXNET v2024 (2021-2023)<a class="headerlink" href="#load-meteo-data-from-fluxnet-v2024-2021-2023" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Variables: <code class="docutils literal notranslate"><span class="pre">PREC</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">df_fluxnet_prec_2021_2023</span><span class="p">,</span> <span class="n">data_detailed_fluxnet</span><span class="p">,</span> <span class="n">assigned_measurements_fluxnet</span> <span class="o">=</span> <span class="n">dbc</span><span class="o">.</span><span class="n">download</span><span class="p">(</span>
+    <span class="n">bucket</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ch-cha_processed&#39;</span><span class="p">,</span>
+    <span class="n">measurements</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PREC&#39;</span><span class="p">],</span>
+    <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PREC_F&#39;</span><span class="p">,</span> <span class="s1">&#39;PREC_F_QC&#39;</span><span class="p">],</span>
+    <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2021-01-01 00:00:01&#39;</span><span class="p">,</span>  <span class="c1"># Download data starting with this date (the start date itself IS included),</span>
+    <span class="n">stop</span><span class="o">=</span><span class="s1">&#39;2024-01-01 00:00:01&#39;</span><span class="p">,</span>  <span class="c1"># Download data before this date (the stop date itself IS NOT included),</span>
+    <span class="n">timezone_offset_to_utc_hours</span><span class="o">=</span><span class="n">TIMEZONE_OFFSET_TO_UTC_HOURS</span><span class="p">,</span>
+    <span class="n">data_version</span><span class="o">=</span><span class="s1">&#39;fluxnet_v2024&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DOWNLOADING
+    from bucket ch-cha_processed
+    variables [&#39;PREC_F&#39;, &#39;PREC_F_QC&#39;]
+    from measurements [&#39;PREC&#39;]
+    from data version fluxnet_v2024
+    between 2021-01-01 00:00:01 and 2024-01-01 00:00:01
+    with timezone offset to UTC of 1
+Used querystring: from(bucket: &quot;ch-cha_processed&quot;) |&gt; range(start: 2021-01-01T00:00:01+01:00, stop: 2024-01-01T00:00:01+01:00) |&gt; filter(fn: (r) =&gt; r[&quot;_measurement&quot;] == &quot;PREC&quot;) |&gt; filter(fn: (r) =&gt; r[&quot;data_version&quot;] == &quot;fluxnet_v2024&quot;) |&gt; filter(fn: (r) =&gt; r[&quot;_field&quot;] == &quot;PREC_F&quot; or r[&quot;_field&quot;] == &quot;PREC_F_QC&quot;) |&gt; pivot(rowKey:[&quot;_time&quot;], columnKey: [&quot;_field&quot;], valueColumn: &quot;_value&quot;)
+querystring was constructed from:
+    bucketstring: from(bucket: &quot;ch-cha_processed&quot;)
+    rangestring: |&gt; range(start: 2021-01-01T00:00:01+01:00, stop: 2024-01-01T00:00:01+01:00)
+    measurementstring: |&gt; filter(fn: (r) =&gt; r[&quot;_measurement&quot;] == &quot;PREC&quot;)
+    dataversionstring: |&gt; filter(fn: (r) =&gt; r[&quot;data_version&quot;] == &quot;fluxnet_v2024&quot;)
+    fieldstring: |&gt; filter(fn: (r) =&gt; r[&quot;_field&quot;] == &quot;PREC_F&quot; or r[&quot;_field&quot;] == &quot;PREC_F_QC&quot;)
+    pivotstring: |&gt; pivot(rowKey:[&quot;_time&quot;], columnKey: [&quot;_field&quot;], valueColumn: &quot;_value&quot;)
+Download finished.
+Downloaded data for 2 variables:
+&lt;-- PREC_F  (52560 records)  first date: 2021-01-01 00:30:00  last date: 2024-01-01 00:00:00
+&lt;-- PREC_F_QC  (52560 records)  first date: 2021-01-01 00:30:00  last date: 2024-01-01 00:00:00
+========================================
+Fields in measurement PREC of bucket ch-cha_processed:
+#1  ch-cha_processed  PREC  PREC
+#2  ch-cha_processed  PREC  PREC_ERA
+#3  ch-cha_processed  PREC  PREC_F
+#4  ch-cha_processed  PREC  PREC_F_QC
+#5  ch-cha_processed  PREC  PREC_RAIN
+#6  ch-cha_processed  PREC  PREC_RAIN_SOURCE
+#7  ch-cha_processed  PREC  PREC_RAIN_TOT_GF1_0.5_1
+#8  ch-cha_processed  PREC  PREC_TOT_M1_1_1
+#9  ch-cha_processed  PREC  P_RAIN_TOT_GF1_0.5_1
+#10  ch-cha_processed  PREC  P_RAIN_TOT_M1_1_1
+Found 10 fields in measurement PREC of bucket ch-cha_processed.
+========================================
+CPU times: total: 1.56 s
+Wall time: 2.45 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_fluxnet_prec_2021_2023</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PREC_F</th>
+      <th>PREC_F_QC</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_END</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-01-01 00:30:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:30:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 02:30:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:30:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:30:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-01-01 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>52560 rows × 2 columns</p>
+</div></div></div>
+</div>
+<section id="sanitize-timestamp">
+<h2>Sanitize timestamp<a class="headerlink" href="#sanitize-timestamp" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_fluxnet_prec_2021_2023</span> <span class="o">=</span> <span class="n">TimestampSanitizer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_fluxnet_prec_2021_2023</span><span class="p">,</span> <span class="n">output_middle_timestamp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="n">df_fluxnet_prec_2021_2023</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PREC_F</th>
+      <th>PREC_F_QC</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-01-01 00:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 00:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 02:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 21:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>52560 rows × 2 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-meteo-data-from-database-screened-with-diive-2021-2024">
+<h1>Load meteo data from database, screened with <code class="docutils literal notranslate"><span class="pre">diive</span></code> (2021-2024)<a class="headerlink" href="#load-meteo-data-from-database-screened-with-diive-2021-2024" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Variables: <code class="docutils literal notranslate"><span class="pre">PREC</span></code> (2024)  <code class="docutils literal notranslate"><span class="pre">SWC</span></code> <code class="docutils literal notranslate"><span class="pre">TS</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">df_diive_2021_2024</span><span class="p">,</span> <span class="n">data_detailed</span><span class="p">,</span> <span class="n">assigned_measurements</span> <span class="o">=</span> <span class="n">dbc</span><span class="o">.</span><span class="n">download</span><span class="p">(</span>
+    <span class="n">bucket</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ch-cha_processed&#39;</span><span class="p">,</span>
+    <span class="n">measurements</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SWC&#39;</span><span class="p">,</span> <span class="s1">&#39;TS&#39;</span><span class="p">,</span> <span class="s1">&#39;PREC&#39;</span><span class="p">],</span>
+    <span class="n">fields</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">&#39;SWC_GF1_0.05_1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;SWC_GF1_0.15_1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;SWC_GF1_0.2_1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;SWC_LOWRES_GF1_0.75_3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;TS_LOWRES_GF1_0.05_3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;TS_LOWRES_GF1_0.2_3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;TS_LOWRES_GF1_0.4_3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span>
+    <span class="p">],</span>
+    <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2021-01-01 00:00:01&#39;</span><span class="p">,</span>  <span class="c1"># Download data starting with this date (the start date itself IS included),</span>
+    <span class="n">stop</span><span class="o">=</span><span class="s1">&#39;2025-01-01 00:00:01&#39;</span><span class="p">,</span>  <span class="c1"># Download data before this date (the stop date itself IS NOT included),</span>
+    <span class="n">timezone_offset_to_utc_hours</span><span class="o">=</span><span class="n">TIMEZONE_OFFSET_TO_UTC_HOURS</span><span class="p">,</span>
+    <span class="n">data_version</span><span class="o">=</span><span class="s1">&#39;meteoscreening_diive&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DOWNLOADING
+    from bucket ch-cha_processed
+    variables [&#39;SWC_GF1_0.05_1&#39;, &#39;SWC_GF1_0.15_1&#39;, &#39;SWC_GF1_0.2_1&#39;, &#39;SWC_LOWRES_GF1_0.75_3&#39;, &#39;TS_LOWRES_GF1_0.05_3&#39;, &#39;TS_LOWRES_GF1_0.2_3&#39;, &#39;TS_LOWRES_GF1_0.4_3&#39;, &#39;PREC_RAIN_TOT_GF1_0.5_1&#39;]
+    from measurements [&#39;SWC&#39;, &#39;TS&#39;, &#39;PREC&#39;]
+    from data version meteoscreening_diive
+    between 2021-01-01 00:00:01 and 2025-01-01 00:00:01
+    with timezone offset to UTC of 1
+Used querystring: from(bucket: &quot;ch-cha_processed&quot;) |&gt; range(start: 2021-01-01T00:00:01+01:00, stop: 2025-01-01T00:00:01+01:00) |&gt; filter(fn: (r) =&gt; r[&quot;_measurement&quot;] == &quot;SWC&quot; or r[&quot;_measurement&quot;] == &quot;TS&quot; or r[&quot;_measurement&quot;] == &quot;PREC&quot;) |&gt; filter(fn: (r) =&gt; r[&quot;data_version&quot;] == &quot;meteoscreening_diive&quot;) |&gt; filter(fn: (r) =&gt; r[&quot;_field&quot;] == &quot;SWC_GF1_0.05_1&quot; or r[&quot;_field&quot;] == &quot;SWC_GF1_0.15_1&quot; or r[&quot;_field&quot;] == &quot;SWC_GF1_0.2_1&quot; or r[&quot;_field&quot;] == &quot;SWC_LOWRES_GF1_0.75_3&quot; or r[&quot;_field&quot;] == &quot;TS_LOWRES_GF1_0.05_3&quot; or r[&quot;_field&quot;] == &quot;TS_LOWRES_GF1_0.2_3&quot; or r[&quot;_field&quot;] == &quot;TS_LOWRES_GF1_0.4_3&quot; or r[&quot;_field&quot;] == &quot;PREC_RAIN_TOT_GF1_0.5_1&quot;) |&gt; pivot(rowKey:[&quot;_time&quot;], columnKey: [&quot;_field&quot;], valueColumn: &quot;_value&quot;)
+querystring was constructed from:
+    bucketstring: from(bucket: &quot;ch-cha_processed&quot;)
+    rangestring: |&gt; range(start: 2021-01-01T00:00:01+01:00, stop: 2025-01-01T00:00:01+01:00)
+    measurementstring: |&gt; filter(fn: (r) =&gt; r[&quot;_measurement&quot;] == &quot;SWC&quot; or r[&quot;_measurement&quot;] == &quot;TS&quot; or r[&quot;_measurement&quot;] == &quot;PREC&quot;)
+    dataversionstring: |&gt; filter(fn: (r) =&gt; r[&quot;data_version&quot;] == &quot;meteoscreening_diive&quot;)
+    fieldstring: |&gt; filter(fn: (r) =&gt; r[&quot;_field&quot;] == &quot;SWC_GF1_0.05_1&quot; or r[&quot;_field&quot;] == &quot;SWC_GF1_0.15_1&quot; or r[&quot;_field&quot;] == &quot;SWC_GF1_0.2_1&quot; or r[&quot;_field&quot;] == &quot;SWC_LOWRES_GF1_0.75_3&quot; or r[&quot;_field&quot;] == &quot;TS_LOWRES_GF1_0.05_3&quot; or r[&quot;_field&quot;] == &quot;TS_LOWRES_GF1_0.2_3&quot; or r[&quot;_field&quot;] == &quot;TS_LOWRES_GF1_0.4_3&quot; or r[&quot;_field&quot;] == &quot;PREC_RAIN_TOT_GF1_0.5_1&quot;)
+    pivotstring: |&gt; pivot(rowKey:[&quot;_time&quot;], columnKey: [&quot;_field&quot;], valueColumn: &quot;_value&quot;)
+Download finished.
+Downloaded data for 8 variables:
+&lt;-- PREC_RAIN_TOT_GF1_0.5_1  (17555 records)  first date: 2024-01-01 00:30:00  last date: 2025-01-01 00:00:00
+&lt;-- SWC_GF1_0.2_1  (54711 records)  first date: 2021-11-17 13:30:00  last date: 2025-01-01 00:00:00
+&lt;-- SWC_GF1_0.15_1  (12363 records)  first date: 2021-01-01 00:30:00  last date: 2021-09-15 13:30:00
+&lt;-- SWC_GF1_0.05_1  (67073 records)  first date: 2021-01-01 00:30:00  last date: 2025-01-01 00:00:00
+&lt;-- SWC_LOWRES_GF1_0.75_3  (70030 records)  first date: 2021-01-01 00:30:00  last date: 2025-01-01 00:00:00
+&lt;-- TS_LOWRES_GF1_0.05_3  (70037 records)  first date: 2021-01-01 00:30:00  last date: 2025-01-01 00:00:00
+&lt;-- TS_LOWRES_GF1_0.2_3  (70036 records)  first date: 2021-01-01 00:30:00  last date: 2025-01-01 00:00:00
+&lt;-- TS_LOWRES_GF1_0.4_3  (70031 records)  first date: 2021-01-01 00:30:00  last date: 2025-01-01 00:00:00
+========================================
+Fields in measurement SWC of bucket ch-cha_processed:
+#1  ch-cha_processed  SWC  SWC_0.05
+#2  ch-cha_processed  SWC  SWC_0.15
+#3  ch-cha_processed  SWC  SWC_0.75
+#4  ch-cha_processed  SWC  SWC_F_MDS_1
+#5  ch-cha_processed  SWC  SWC_F_MDS_1_QC
+#6  ch-cha_processed  SWC  SWC_F_MDS_2
+#7  ch-cha_processed  SWC  SWC_F_MDS_2_QC
+#8  ch-cha_processed  SWC  SWC_F_MDS_3
+#9  ch-cha_processed  SWC  SWC_F_MDS_3_QC
+#10  ch-cha_processed  SWC  SWC_F_MDS_4
+#11  ch-cha_processed  SWC  SWC_F_MDS_4_QC
+#12  ch-cha_processed  SWC  SWC_F_MDS_5
+#13  ch-cha_processed  SWC  SWC_F_MDS_5_QC
+#14  ch-cha_processed  SWC  SWC_F_MDS_6
+#15  ch-cha_processed  SWC  SWC_F_MDS_6_QC
+#16  ch-cha_processed  SWC  SWC_F_MDS_7
+#17  ch-cha_processed  SWC  SWC_F_MDS_7_QC
+#18  ch-cha_processed  SWC  SWC_F_MDS_8
+#19  ch-cha_processed  SWC  SWC_F_MDS_8_QC
+#20  ch-cha_processed  SWC  SWC_F_MDS_9
+#21  ch-cha_processed  SWC  SWC_F_MDS_9_QC
+#22  ch-cha_processed  SWC  SWC_GF1_0.05_1
+#23  ch-cha_processed  SWC  SWC_GF1_0.05_2
+#24  ch-cha_processed  SWC  SWC_GF1_0.05_3
+#25  ch-cha_processed  SWC  SWC_GF1_0.15_1
+#26  ch-cha_processed  SWC  SWC_GF1_0.1_1
+#27  ch-cha_processed  SWC  SWC_GF1_0.1_2
+#28  ch-cha_processed  SWC  SWC_GF1_0.1_3
+#29  ch-cha_processed  SWC  SWC_GF1_0.25_1
+#30  ch-cha_processed  SWC  SWC_GF1_0.2_1
+#31  ch-cha_processed  SWC  SWC_GF1_0.2_2
+#32  ch-cha_processed  SWC  SWC_GF1_0.2_3
+#33  ch-cha_processed  SWC  SWC_GF1_0.3_1
+#34  ch-cha_processed  SWC  SWC_GF1_0.3_2
+#35  ch-cha_processed  SWC  SWC_GF1_0.3_3
+#36  ch-cha_processed  SWC  SWC_GF1_0.4_1
+#37  ch-cha_processed  SWC  SWC_GF1_0.4_3
+#38  ch-cha_processed  SWC  SWC_GF1_0.5_1
+#39  ch-cha_processed  SWC  SWC_GF1_0.5_2
+#40  ch-cha_processed  SWC  SWC_GF1_0.5_3
+#41  ch-cha_processed  SWC  SWC_GF1_0.6_3
+#42  ch-cha_processed  SWC  SWC_GF1_0.75_1
+#43  ch-cha_processed  SWC  SWC_GF1_0.75_3
+#44  ch-cha_processed  SWC  SWC_GF1_1_3
+#45  ch-cha_processed  SWC  SWC_GF4_0.05_1
+#46  ch-cha_processed  SWC  SWC_GF4_0.05_1.1
+#47  ch-cha_processed  SWC  SWC_GF4_0.05_2
+#48  ch-cha_processed  SWC  SWC_GF4_0.05_2.1
+#49  ch-cha_processed  SWC  SWC_GF4_0.05_3
+#50  ch-cha_processed  SWC  SWC_GF4_0.05_4
+#51  ch-cha_processed  SWC  SWC_GF4_0.05_5
+#52  ch-cha_processed  SWC  SWC_GF4_0.1_1
+#53  ch-cha_processed  SWC  SWC_GF4_0.1_2
+#54  ch-cha_processed  SWC  SWC_GF4_0.1_2.1
+#55  ch-cha_processed  SWC  SWC_GF4_0.1_3
+#56  ch-cha_processed  SWC  SWC_GF4_0.1_4
+#57  ch-cha_processed  SWC  SWC_GF4_0.1_5
+#58  ch-cha_processed  SWC  SWC_GF4_0.2_1
+#59  ch-cha_processed  SWC  SWC_GF4_0.2_2
+#60  ch-cha_processed  SWC  SWC_GF4_0.3_4
+#61  ch-cha_processed  SWC  SWC_GF4_0.3_5
+#62  ch-cha_processed  SWC  SWC_GF4_0.5_4
+#63  ch-cha_processed  SWC  SWC_GF4_0.5_5
+#64  ch-cha_processed  SWC  SWC_GF4_1_1
+#65  ch-cha_processed  SWC  SWC_GF5_0.05_1
+#66  ch-cha_processed  SWC  SWC_GF5_0.05_1.1
+#67  ch-cha_processed  SWC  SWC_GF5_0.05_2
+#68  ch-cha_processed  SWC  SWC_GF5_0.05_2.1
+#69  ch-cha_processed  SWC  SWC_GF5_0.05_3
+#70  ch-cha_processed  SWC  SWC_GF5_0.05_4
+#71  ch-cha_processed  SWC  SWC_GF5_0.1_1
+#72  ch-cha_processed  SWC  SWC_GF5_0.1_1.1
+#73  ch-cha_processed  SWC  SWC_GF5_0.1_2
+#74  ch-cha_processed  SWC  SWC_GF5_0.1_2.1
+#75  ch-cha_processed  SWC  SWC_GF5_0.1_3
+#76  ch-cha_processed  SWC  SWC_GF5_0.1_4
+#77  ch-cha_processed  SWC  SWC_GF5_0.2_2
+#78  ch-cha_processed  SWC  SWC_LOWRES_GF1_0.75_3
+Found 78 fields in measurement SWC of bucket ch-cha_processed.
+========================================
+========================================
+Fields in measurement TS of bucket ch-cha_processed:
+#1  ch-cha_processed  TS  TS_0.04
+#2  ch-cha_processed  TS  TS_0.15
+#3  ch-cha_processed  TS  TS_0.4
+#4  ch-cha_processed  TS  TS_AVG_GF1_0.025_2
+#5  ch-cha_processed  TS  TS_AVG_GF1_1_3
+#6  ch-cha_processed  TS  TS_F_MDS_1
+#7  ch-cha_processed  TS  TS_F_MDS_10
+#8  ch-cha_processed  TS  TS_F_MDS_10_QC
+#9  ch-cha_processed  TS  TS_F_MDS_11
+#10  ch-cha_processed  TS  TS_F_MDS_11_QC
+#11  ch-cha_processed  TS  TS_F_MDS_12
+#12  ch-cha_processed  TS  TS_F_MDS_12_QC
+#13  ch-cha_processed  TS  TS_F_MDS_13
+#14  ch-cha_processed  TS  TS_F_MDS_13_QC
+#15  ch-cha_processed  TS  TS_F_MDS_14
+#16  ch-cha_processed  TS  TS_F_MDS_14_QC
+#17  ch-cha_processed  TS  TS_F_MDS_1_QC
+#18  ch-cha_processed  TS  TS_F_MDS_2
+#19  ch-cha_processed  TS  TS_F_MDS_2_QC
+#20  ch-cha_processed  TS  TS_F_MDS_3
+#21  ch-cha_processed  TS  TS_F_MDS_3_QC
+#22  ch-cha_processed  TS  TS_F_MDS_4
+#23  ch-cha_processed  TS  TS_F_MDS_4_QC
+#24  ch-cha_processed  TS  TS_F_MDS_5
+#25  ch-cha_processed  TS  TS_F_MDS_5_QC
+#26  ch-cha_processed  TS  TS_F_MDS_6
+#27  ch-cha_processed  TS  TS_F_MDS_6_QC
+#28  ch-cha_processed  TS  TS_F_MDS_7
+#29  ch-cha_processed  TS  TS_F_MDS_7_QC
+#30  ch-cha_processed  TS  TS_F_MDS_8
+#31  ch-cha_processed  TS  TS_F_MDS_8_QC
+#32  ch-cha_processed  TS  TS_F_MDS_9
+#33  ch-cha_processed  TS  TS_F_MDS_9_QC
+#34  ch-cha_processed  TS  TS_GF1_0.01_1
+#35  ch-cha_processed  TS  TS_GF1_0.01_2
+#36  ch-cha_processed  TS  TS_GF1_0.025_2
+#37  ch-cha_processed  TS  TS_GF1_0.02_1
+#38  ch-cha_processed  TS  TS_GF1_0.04_1
+#39  ch-cha_processed  TS  TS_GF1_0.05_1
+#40  ch-cha_processed  TS  TS_GF1_0.05_2
+#41  ch-cha_processed  TS  TS_GF1_0.05_3
+#42  ch-cha_processed  TS  TS_GF1_0.07_1
+#43  ch-cha_processed  TS  TS_GF1_0.15_1
+#44  ch-cha_processed  TS  TS_GF1_0.1_1
+#45  ch-cha_processed  TS  TS_GF1_0.1_2
+#46  ch-cha_processed  TS  TS_GF1_0.1_3
+#47  ch-cha_processed  TS  TS_GF1_0.25_1
+#48  ch-cha_processed  TS  TS_GF1_0.2_1
+#49  ch-cha_processed  TS  TS_GF1_0.2_2
+#50  ch-cha_processed  TS  TS_GF1_0.2_3
+#51  ch-cha_processed  TS  TS_GF1_0.3_1
+#52  ch-cha_processed  TS  TS_GF1_0.3_2
+#53  ch-cha_processed  TS  TS_GF1_0.3_3
+#54  ch-cha_processed  TS  TS_GF1_0.4_1
+#55  ch-cha_processed  TS  TS_GF1_0.4_3
+#56  ch-cha_processed  TS  TS_GF1_0.5_1
+#57  ch-cha_processed  TS  TS_GF1_0.5_2
+#58  ch-cha_processed  TS  TS_GF1_0.5_3
+#59  ch-cha_processed  TS  TS_GF1_0.6_3
+#60  ch-cha_processed  TS  TS_GF1_0.75_3
+#61  ch-cha_processed  TS  TS_GF1_0.95_1
+#62  ch-cha_processed  TS  TS_GF1_1_3
+#63  ch-cha_processed  TS  TS_GF4_0.05_1
+#64  ch-cha_processed  TS  TS_GF4_0.05_1.1
+#65  ch-cha_processed  TS  TS_GF4_0.05_2
+#66  ch-cha_processed  TS  TS_GF4_0.05_2.1
+#67  ch-cha_processed  TS  TS_GF4_0.05_3
+#68  ch-cha_processed  TS  TS_GF4_0.05_4
+#69  ch-cha_processed  TS  TS_GF4_0.05_5
+#70  ch-cha_processed  TS  TS_GF4_0.1_1
+#71  ch-cha_processed  TS  TS_GF4_0.1_1.1
+#72  ch-cha_processed  TS  TS_GF4_0.1_2
+#73  ch-cha_processed  TS  TS_GF4_0.1_2.1
+#74  ch-cha_processed  TS  TS_GF4_0.1_3
+#75  ch-cha_processed  TS  TS_GF4_0.1_4
+#76  ch-cha_processed  TS  TS_GF4_0.1_5
+#77  ch-cha_processed  TS  TS_GF4_0.2_1
+#78  ch-cha_processed  TS  TS_GF4_0.2_2
+#79  ch-cha_processed  TS  TS_GF4_0.3_4
+#80  ch-cha_processed  TS  TS_GF4_0.3_5
+#81  ch-cha_processed  TS  TS_GF4_0.5_1
+#82  ch-cha_processed  TS  TS_GF4_0.5_4
+#83  ch-cha_processed  TS  TS_GF4_0.5_5
+#84  ch-cha_processed  TS  TS_GF4_1_1
+#85  ch-cha_processed  TS  TS_GF5_0.05_1
+#86  ch-cha_processed  TS  TS_GF5_0.05_1.1
+#87  ch-cha_processed  TS  TS_GF5_0.05_2
+#88  ch-cha_processed  TS  TS_GF5_0.05_2.1
+#89  ch-cha_processed  TS  TS_GF5_0.05_3
+#90  ch-cha_processed  TS  TS_GF5_0.05_4
+#91  ch-cha_processed  TS  TS_GF5_0.1_1
+#92  ch-cha_processed  TS  TS_GF5_0.1_1.1
+#93  ch-cha_processed  TS  TS_GF5_0.1_2
+#94  ch-cha_processed  TS  TS_GF5_0.1_2.1
+#95  ch-cha_processed  TS  TS_GF5_0.1_3
+#96  ch-cha_processed  TS  TS_GF5_0.1_4
+#97  ch-cha_processed  TS  TS_GF5_0.2_1
+#98  ch-cha_processed  TS  TS_GF5_0.2_2
+#99  ch-cha_processed  TS  TS_GF5_0.5_1
+#100  ch-cha_processed  TS  TS_GF5_1_1
+#101  ch-cha_processed  TS  TS_LOWRES_GF1_0.05_3
+#102  ch-cha_processed  TS  TS_LOWRES_GF1_0.1_3
+#103  ch-cha_processed  TS  TS_LOWRES_GF1_0.2_3
+#104  ch-cha_processed  TS  TS_LOWRES_GF1_0.3_3
+#105  ch-cha_processed  TS  TS_LOWRES_GF1_0.4_3
+#106  ch-cha_processed  TS  TS_LOWRES_GF1_0.5_3
+#107  ch-cha_processed  TS  TS_LOWRES_GF1_0.6_3
+#108  ch-cha_processed  TS  TS_LOWRES_GF1_0.75_3
+#109  ch-cha_processed  TS  TS_LOWRES_GF1_1_3
+Found 109 fields in measurement TS of bucket ch-cha_processed.
+========================================
+========================================
+Fields in measurement PREC of bucket ch-cha_processed:
+#1  ch-cha_processed  PREC  PREC
+#2  ch-cha_processed  PREC  PREC_ERA
+#3  ch-cha_processed  PREC  PREC_F
+#4  ch-cha_processed  PREC  PREC_F_QC
+#5  ch-cha_processed  PREC  PREC_RAIN
+#6  ch-cha_processed  PREC  PREC_RAIN_SOURCE
+#7  ch-cha_processed  PREC  PREC_RAIN_TOT_GF1_0.5_1
+#8  ch-cha_processed  PREC  PREC_TOT_M1_1_1
+#9  ch-cha_processed  PREC  P_RAIN_TOT_GF1_0.5_1
+#10  ch-cha_processed  PREC  P_RAIN_TOT_M1_1_1
+Found 10 fields in measurement PREC of bucket ch-cha_processed.
+========================================
+CPU times: total: 7.98 s
+Wall time: 11.1 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_diive_2021_2024</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PREC_RAIN_TOT_GF1_0.5_1</th>
+      <th>SWC_GF1_0.05_1</th>
+      <th>SWC_GF1_0.15_1</th>
+      <th>SWC_GF1_0.2_1</th>
+      <th>SWC_LOWRES_GF1_0.75_3</th>
+      <th>TS_LOWRES_GF1_0.05_3</th>
+      <th>TS_LOWRES_GF1_0.2_3</th>
+      <th>TS_LOWRES_GF1_0.4_3</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_END</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-01-01 00:30:00</th>
+      <td>NaN</td>
+      <td>43.126695</td>
+      <td>37.815501</td>
+      <td>NaN</td>
+      <td>42.622617</td>
+      <td>3.180832</td>
+      <td>4.691608</td>
+      <td>5.775482</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:00:00</th>
+      <td>NaN</td>
+      <td>43.122169</td>
+      <td>37.812458</td>
+      <td>NaN</td>
+      <td>42.833337</td>
+      <td>3.182800</td>
+      <td>4.680240</td>
+      <td>5.780918</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:30:00</th>
+      <td>NaN</td>
+      <td>43.115942</td>
+      <td>37.807812</td>
+      <td>NaN</td>
+      <td>42.705397</td>
+      <td>3.153244</td>
+      <td>4.672886</td>
+      <td>5.782277</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 02:00:00</th>
+      <td>NaN</td>
+      <td>43.111309</td>
+      <td>37.804945</td>
+      <td>NaN</td>
+      <td>42.746237</td>
+      <td>3.153244</td>
+      <td>4.662855</td>
+      <td>5.790431</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 02:30:00</th>
+      <td>NaN</td>
+      <td>43.106277</td>
+      <td>37.800922</td>
+      <td>NaN</td>
+      <td>42.731170</td>
+      <td>3.166388</td>
+      <td>4.653491</td>
+      <td>5.793149</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:00:00</th>
+      <td>0.0</td>
+      <td>58.725733</td>
+      <td>NaN</td>
+      <td>52.459871</td>
+      <td>45.120877</td>
+      <td>3.474346</td>
+      <td>4.437078</td>
+      <td>5.528727</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:30:00</th>
+      <td>0.0</td>
+      <td>58.725118</td>
+      <td>NaN</td>
+      <td>52.633365</td>
+      <td>45.144937</td>
+      <td>3.428224</td>
+      <td>4.440415</td>
+      <td>5.521962</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:00:00</th>
+      <td>0.0</td>
+      <td>58.728398</td>
+      <td>NaN</td>
+      <td>52.381308</td>
+      <td>45.152280</td>
+      <td>3.384733</td>
+      <td>4.443751</td>
+      <td>5.523991</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:30:00</th>
+      <td>0.0</td>
+      <td>58.731899</td>
+      <td>NaN</td>
+      <td>52.309913</td>
+      <td>45.095043</td>
+      <td>3.349179</td>
+      <td>4.439747</td>
+      <td>5.528050</td>
+    </tr>
+    <tr>
+      <th>2025-01-01 00:00:00</th>
+      <td>0.0</td>
+      <td>58.738572</td>
+      <td>NaN</td>
+      <td>52.309997</td>
+      <td>45.278093</td>
+      <td>3.316919</td>
+      <td>4.442417</td>
+      <td>5.523991</td>
+    </tr>
+  </tbody>
+</table>
+<p>70077 rows × 8 columns</p>
+</div></div></div>
+</div>
+<section id="id1">
+<h2>Sanitize timestamp<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_diive_2021_2024</span> <span class="o">=</span> <span class="n">TimestampSanitizer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_diive_2021_2024</span><span class="p">,</span> <span class="n">output_middle_timestamp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="n">df_diive_2021_2024</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PREC_RAIN_TOT_GF1_0.5_1</th>
+      <th>SWC_GF1_0.05_1</th>
+      <th>SWC_GF1_0.15_1</th>
+      <th>SWC_GF1_0.2_1</th>
+      <th>SWC_LOWRES_GF1_0.75_3</th>
+      <th>TS_LOWRES_GF1_0.05_3</th>
+      <th>TS_LOWRES_GF1_0.2_3</th>
+      <th>TS_LOWRES_GF1_0.4_3</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>43.126695</td>
+      <td>37.815501</td>
+      <td>NaN</td>
+      <td>42.622617</td>
+      <td>3.180832</td>
+      <td>4.691608</td>
+      <td>5.775482</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>43.122169</td>
+      <td>37.812458</td>
+      <td>NaN</td>
+      <td>42.833337</td>
+      <td>3.182800</td>
+      <td>4.680240</td>
+      <td>5.780918</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>43.115942</td>
+      <td>37.807812</td>
+      <td>NaN</td>
+      <td>42.705397</td>
+      <td>3.153244</td>
+      <td>4.672886</td>
+      <td>5.782277</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>43.111309</td>
+      <td>37.804945</td>
+      <td>NaN</td>
+      <td>42.746237</td>
+      <td>3.153244</td>
+      <td>4.662855</td>
+      <td>5.790431</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>43.106277</td>
+      <td>37.800922</td>
+      <td>NaN</td>
+      <td>42.731170</td>
+      <td>3.166388</td>
+      <td>4.653491</td>
+      <td>5.793149</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 21:45:00</th>
+      <td>0.0</td>
+      <td>58.725733</td>
+      <td>NaN</td>
+      <td>52.459871</td>
+      <td>45.120877</td>
+      <td>3.474346</td>
+      <td>4.437078</td>
+      <td>5.528727</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:15:00</th>
+      <td>0.0</td>
+      <td>58.725118</td>
+      <td>NaN</td>
+      <td>52.633365</td>
+      <td>45.144937</td>
+      <td>3.428224</td>
+      <td>4.440415</td>
+      <td>5.521962</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:45:00</th>
+      <td>0.0</td>
+      <td>58.728398</td>
+      <td>NaN</td>
+      <td>52.381308</td>
+      <td>45.152280</td>
+      <td>3.384733</td>
+      <td>4.443751</td>
+      <td>5.523991</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:15:00</th>
+      <td>0.0</td>
+      <td>58.731899</td>
+      <td>NaN</td>
+      <td>52.309913</td>
+      <td>45.095043</td>
+      <td>3.349179</td>
+      <td>4.439747</td>
+      <td>5.528050</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:45:00</th>
+      <td>0.0</td>
+      <td>58.738572</td>
+      <td>NaN</td>
+      <td>52.309997</td>
+      <td>45.278093</td>
+      <td>3.316919</td>
+      <td>4.442417</td>
+      <td>5.523991</td>
+    </tr>
+  </tbody>
+</table>
+<p>70128 rows × 8 columns</p>
+</div></div></div>
+</div>
+</br></section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="merge-data">
+<h1><strong>MERGE DATA</strong><a class="headerlink" href="#merge-data" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Start with meteo7, then add data</p></li>
+</ul>
+<section id="meteo7-2005-2024">
+<h2>Meteo7 (2005-2024)<a class="headerlink" href="#meteo7-2005-2024" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">meteo7</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">9</span><span class="p">));</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index duplicates: 0
+Column duplicates: 0
+</pre></div>
+</div>
+<img alt="../../_images/4848720ad2271d9ea79e409f0ade3d238c2694e95fcbe9df5faa83ed87ce6494.png" src="../../_images/4848720ad2271d9ea79e409f0ade3d238c2694e95fcbe9df5faa83ed87ce6494.png" />
+</div>
+</div>
+</section>
+<section id="prec-swc-ts-from-feigenwinter-2005-2020-new-columns">
+<h2><code class="docutils literal notranslate"><span class="pre">PREC</span></code> <code class="docutils literal notranslate"><span class="pre">SWC</span></code> <code class="docutils literal notranslate"><span class="pre">TS</span></code> from Feigenwinter (2005-2020) [new columns]<a class="headerlink" href="#prec-swc-ts-from-feigenwinter-2005-2020-new-columns" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_merged</span><span class="p">,</span> <span class="n">df_feigenw_2005_2020</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">9</span><span class="p">));</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index duplicates: 0
+Column duplicates: 0
+</pre></div>
+</div>
+<img alt="../../_images/d195797f14a0fae92cb974b406a23dd880e0c03dc0e8bc2a6c8cb970ec06d1f9.png" src="../../_images/d195797f14a0fae92cb974b406a23dd880e0c03dc0e8bc2a6c8cb970ec06d1f9.png" />
+</div>
+</div>
+</section>
+<section id="prec-from-fluxnet-2021-2023-add-to-existing-column-and-1-new-column">
+<h2><code class="docutils literal notranslate"><span class="pre">PREC</span></code> from FLUXNET (2021-2023) [add to existing column and 1 new column]<a class="headerlink" href="#prec-from-fluxnet-2021-2023-add-to-existing-column-and-1-new-column" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rename_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;PREC_F&#39;</span><span class="p">:</span> <span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PREC_F_QC&#39;</span><span class="p">:</span> <span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_FLUXNET_ISFILLED&#39;</span>
+<span class="p">}</span>
+<span class="n">df_fluxnet_prec_2021_2023</span> <span class="o">=</span> <span class="n">df_fluxnet_prec_2021_2023</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">rename_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_fluxnet_prec_2021_2023</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_FLUXNET_ISFILLED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_fluxnet_prec_2021_2023</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_FLUXNET_ISFILLED&#39;</span><span class="p">]</span>
+
+<span class="n">df_merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">));</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index duplicates: 0
+Column duplicates: 0
+</pre></div>
+</div>
+<img alt="../../_images/234c3e4f794d8e7227a6e53a00582eb8c2b50f54d62f3f49876a13a8f1e0c019.png" src="../../_images/234c3e4f794d8e7227a6e53a00582eb8c2b50f54d62f3f49876a13a8f1e0c019.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_diive_2021_2024</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PREC_RAIN_TOT_GF1_0.5_1</th>
+      <th>SWC_GF1_0.05_1</th>
+      <th>SWC_GF1_0.15_1</th>
+      <th>SWC_GF1_0.2_1</th>
+      <th>SWC_LOWRES_GF1_0.75_3</th>
+      <th>TS_LOWRES_GF1_0.05_3</th>
+      <th>TS_LOWRES_GF1_0.2_3</th>
+      <th>TS_LOWRES_GF1_0.4_3</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>43.126695</td>
+      <td>37.815501</td>
+      <td>NaN</td>
+      <td>42.622617</td>
+      <td>3.180832</td>
+      <td>4.691608</td>
+      <td>5.775482</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>43.122169</td>
+      <td>37.812458</td>
+      <td>NaN</td>
+      <td>42.833337</td>
+      <td>3.182800</td>
+      <td>4.680240</td>
+      <td>5.780918</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>43.115942</td>
+      <td>37.807812</td>
+      <td>NaN</td>
+      <td>42.705397</td>
+      <td>3.153244</td>
+      <td>4.672886</td>
+      <td>5.782277</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>43.111309</td>
+      <td>37.804945</td>
+      <td>NaN</td>
+      <td>42.746237</td>
+      <td>3.153244</td>
+      <td>4.662855</td>
+      <td>5.790431</td>
+    </tr>
+    <tr>
+      <th>2021-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>43.106277</td>
+      <td>37.800922</td>
+      <td>NaN</td>
+      <td>42.731170</td>
+      <td>3.166388</td>
+      <td>4.653491</td>
+      <td>5.793149</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 21:45:00</th>
+      <td>0.0</td>
+      <td>58.725733</td>
+      <td>NaN</td>
+      <td>52.459871</td>
+      <td>45.120877</td>
+      <td>3.474346</td>
+      <td>4.437078</td>
+      <td>5.528727</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:15:00</th>
+      <td>0.0</td>
+      <td>58.725118</td>
+      <td>NaN</td>
+      <td>52.633365</td>
+      <td>45.144937</td>
+      <td>3.428224</td>
+      <td>4.440415</td>
+      <td>5.521962</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:45:00</th>
+      <td>0.0</td>
+      <td>58.728398</td>
+      <td>NaN</td>
+      <td>52.381308</td>
+      <td>45.152280</td>
+      <td>3.384733</td>
+      <td>4.443751</td>
+      <td>5.523991</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:15:00</th>
+      <td>0.0</td>
+      <td>58.731899</td>
+      <td>NaN</td>
+      <td>52.309913</td>
+      <td>45.095043</td>
+      <td>3.349179</td>
+      <td>4.439747</td>
+      <td>5.528050</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:45:00</th>
+      <td>0.0</td>
+      <td>58.738572</td>
+      <td>NaN</td>
+      <td>52.309997</td>
+      <td>45.278093</td>
+      <td>3.316919</td>
+      <td>4.442417</td>
+      <td>5.523991</td>
+    </tr>
+  </tbody>
+</table>
+<p>70128 rows × 8 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="prec-from-diive-2024-add-to-existing-column">
+<h2><code class="docutils literal notranslate"><span class="pre">PREC</span></code> from diive (2024) [add to existing column]<a class="headerlink" href="#prec-from-diive-2024-add-to-existing-column" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_diive_2021_2024</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/daab3bd9948abe06f4a947ad7f5947e021cb2af58eae45c55664d818aacd0f76.png" src="../../_images/daab3bd9948abe06f4a947ad7f5947e021cb2af58eae45c55664d818aacd0f76.png" />
+</div>
+</div>
+</section>
+<section id="swc-from-diive-2021-2024-add-to-existing-columns">
+<h2><code class="docutils literal notranslate"><span class="pre">SWC</span></code> from diive (2021-2024) [add to existing columns]<a class="headerlink" href="#swc-from-diive-2021-2024-add-to-existing-columns" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.05_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.05_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_diive_2021_2024</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.05_1&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.15_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.15_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_diive_2021_2024</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.15_1&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.15_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.15_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_diive_2021_2024</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.2_1&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.75_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;SWC_GF1_0.75_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_diive_2021_2024</span><span class="p">[</span><span class="s1">&#39;SWC_LOWRES_GF1_0.75_3&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">9</span><span class="p">));</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index duplicates: 0
+Column duplicates: 0
+</pre></div>
+</div>
+<img alt="../../_images/4146c4d1beef164e3b01742bc67b75024c0cb260343ff38acf19b3671a2671a6.png" src="../../_images/4146c4d1beef164e3b01742bc67b75024c0cb260343ff38acf19b3671a2671a6.png" />
+</div>
+</div>
+</section>
+<section id="ts-from-diive-2021-2024-add-to-existing-columns">
+<h2><code class="docutils literal notranslate"><span class="pre">TS</span></code> from diive (2021-2024) [add to existing columns]<a class="headerlink" href="#ts-from-diive-2021-2024-add-to-existing-columns" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;TS_GF1_0.04_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;TS_GF1_0.04_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_diive_2021_2024</span><span class="p">[</span><span class="s1">&#39;TS_LOWRES_GF1_0.05_3&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;TS_GF1_0.15_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;TS_GF1_0.15_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_diive_2021_2024</span><span class="p">[</span><span class="s1">&#39;TS_LOWRES_GF1_0.2_3&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;TS_GF1_0.4_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;TS_GF1_0.4_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_diive_2021_2024</span><span class="p">[</span><span class="s1">&#39;TS_LOWRES_GF1_0.4_3&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">9</span><span class="p">));</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column duplicates: </span><span class="si">{</span><span class="n">df_merged</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index duplicates: 0
+Column duplicates: 0
+</pre></div>
+</div>
+<img alt="../../_images/5d31a35d7e9f482e72d541a8e6c4f301c66d826d76d687ed912a783032963878.png" src="../../_images/5d31a35d7e9f482e72d541a8e6c4f301c66d826d76d687ed912a783032963878.png" />
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Sanitize timestamp<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">TimestampSanitizer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_merged</span><span class="p">,</span> <span class="n">output_middle_timestamp</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="n">df_merged</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LW_IN_T1_2_1</th>
+      <th>PA_GF1_0.9_1</th>
+      <th>FLAG_PA_GF1_0.9_1_ISFILLED</th>
+      <th>PPFD_IN_T1_2_2</th>
+      <th>FLAG_PPFD_IN_T1_2_2_ISFILLED</th>
+      <th>VPD_T1_2_1</th>
+      <th>FLAG_VPD_T1_2_1_ISFILLED</th>
+      <th>SW_IN_T1_2_1</th>
+      <th>FLAG_SW_IN_T1_2_1_ISFILLED</th>
+      <th>TA_T1_2_1</th>
+      <th>FLAG_TA_T1_2_1_ISFILLED</th>
+      <th>RH_T1_2_1</th>
+      <th>FLAG_RH_T1_2_1_ISFILLED</th>
+      <th>PREC_RAIN_TOT_GF1_0.5_1</th>
+      <th>FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED</th>
+      <th>SWC_GF1_0.05_1</th>
+      <th>SWC_GF1_0.15_1</th>
+      <th>SWC_GF1_0.75_1</th>
+      <th>TS_GF1_0.04_1</th>
+      <th>TS_GF1_0.15_1</th>
+      <th>TS_GF1_0.4_1</th>
+      <th>FLAG_PREC_RAIN_TOT_GF1_0.5_1_FLUXNET_ISFILLED</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>978.100000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.099893</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.566667</td>
+      <td>3.0</td>
+      <td>85.400000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>977.933333</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.097606</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.533333</td>
+      <td>3.0</td>
+      <td>85.700000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>977.900000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.091683</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.566667</td>
+      <td>3.0</td>
+      <td>86.600000</td>
+      <td>1.0</td>
+      <td>0.1</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>977.833333</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.071157</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.566667</td>
+      <td>3.0</td>
+      <td>89.600000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>977.833333</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.058333</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.500000</td>
+      <td>3.0</td>
+      <td>91.433333</td>
+      <td>1.0</td>
+      <td>0.1</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 21:45:00</th>
+      <td>304.613900</td>
+      <td>983.370890</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000011</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-1.919472</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>58.725733</td>
+      <td>52.459871</td>
+      <td>45.120877</td>
+      <td>3.474346</td>
+      <td>4.437078</td>
+      <td>5.528727</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:15:00</th>
+      <td>303.039890</td>
+      <td>983.052160</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000011</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-2.104678</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>58.725118</td>
+      <td>52.633365</td>
+      <td>45.144937</td>
+      <td>3.428224</td>
+      <td>4.440415</td>
+      <td>5.521962</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:45:00</th>
+      <td>302.093633</td>
+      <td>982.851140</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000011</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-2.089444</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>58.728398</td>
+      <td>52.381308</td>
+      <td>45.152280</td>
+      <td>3.384733</td>
+      <td>4.443751</td>
+      <td>5.523991</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:15:00</th>
+      <td>302.217307</td>
+      <td>982.896827</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000010</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-2.355761</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>58.731899</td>
+      <td>52.309913</td>
+      <td>45.095043</td>
+      <td>3.349179</td>
+      <td>4.439747</td>
+      <td>5.528050</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:45:00</th>
+      <td>298.392973</td>
+      <td>982.856613</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.000010</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-2.578839</td>
+      <td>0.0</td>
+      <td>99.997990</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>58.738572</td>
+      <td>52.309997</td>
+      <td>45.278093</td>
+      <td>3.316919</td>
+      <td>4.442417</td>
+      <td>5.523991</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>350640 rows × 22 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fix-missing-prec-flags">
+<h1>Fix missing <code class="docutils literal notranslate"><span class="pre">PREC</span></code> flags<a class="headerlink" href="#fix-missing-prec-flags" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_FLUXNET_ISFILLED&#39;</span><span class="p">])</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;TIMESTAMP_MIDDLE&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/60bdfe288b42179a3154ccddba43832d4eb3eb6dea48719b499f786548f6d606.png" src="../../_images/60bdfe288b42179a3154ccddba43832d4eb3eb6dea48719b499f786548f6d606.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">still_missing</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">][</span><span class="n">still_missing</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMESTAMP_MIDDLE
+2024-01-01 00:15:00   NaN
+2024-01-01 00:45:00   NaN
+2024-01-01 01:15:00   NaN
+2024-01-01 01:45:00   NaN
+2024-01-01 02:15:00   NaN
+                       ..
+2024-12-31 21:45:00   NaN
+2024-12-31 22:15:00   NaN
+2024-12-31 22:45:00   NaN
+2024-12-31 23:15:00   NaN
+2024-12-31 23:45:00   NaN
+Freq: 30min, Name: FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED, Length: 17568, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED&#39;</span><span class="p">][</span><span class="n">still_missing</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMESTAMP_MIDDLE
+2024-01-01 00:15:00    0.0
+2024-01-01 00:45:00    0.0
+2024-01-01 01:15:00    0.0
+2024-01-01 01:45:00    0.0
+2024-01-01 02:15:00    0.0
+                      ... 
+2024-12-31 21:45:00    0.0
+2024-12-31 22:15:00    0.0
+2024-12-31 22:45:00    0.0
+2024-12-31 23:15:00    0.0
+2024-12-31 23:45:00    0.0
+Freq: 30min, Name: FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED, Length: 17568, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="calc-timesince-variable-for-prec">
+<h1>Calc <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variable for <code class="docutils literal notranslate"><span class="pre">PREC</span></code><a class="headerlink" href="#calc-timesince-variable-for-prec" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series_prec</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">ts_prec</span> <span class="o">=</span> <span class="n">TimeSince</span><span class="p">(</span><span class="n">series_prec</span><span class="p">,</span> <span class="n">lower_lim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">include_lim</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ts_prec</span><span class="o">.</span><span class="n">calc</span><span class="p">()</span>
+<span class="c1"># ts_full_results = ts.get_full_results()</span>
+<span class="n">timesince</span> <span class="o">=</span> <span class="n">ts_prec</span><span class="o">.</span><span class="n">get_timesince</span><span class="p">()</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="n">timesince</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">timesince</span>
+<span class="c1"># locs = (timesince.index.year == 2012)</span>
+<span class="c1"># timesince[locs].plot(x_compat=True);</span>
+<span class="c1"># timesince.index</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot">
+<h1>Plot<a class="headerlink" href="#plot" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">14</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e45b815037442195cea218b882632a8b0745af20eac765adae582f727e218f81.png" src="../../_images/e45b815037442195cea218b882632a8b0745af20eac765adae582f727e218f81.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="save-to-file">
+<h1>Save to file<a class="headerlink" href="#save-to-file" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OUTNAME</span> <span class="o">=</span> <span class="s2">&quot;17.1_CH-CHA_meteo10_2005-2024&quot;</span>
+<span class="n">OUTPATH</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="n">save_parquet</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">OUTNAME</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_merged</span><span class="p">,</span> <span class="n">outpath</span><span class="o">=</span><span class="n">OUTPATH</span><span class="p">)</span>
+<span class="c1"># df_merged.to_csv(Path(OUTPATH) / f&quot;{OUTNAME}.csv&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved file 17.1_CH-CHA_meteo10_2005-2024.parquet (0.313 seconds).
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\10_METEO"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Add additional meteo data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-meteo-data-so-far-m7">Load meteo data so far (M7)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-additional-meteo-data-from-feigenwinter-et-al-2023a-2005-2020">Load additional meteo data from Feigenwinter et al. (2023a) (2005-2020)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-meteo-data-from-fluxnet-v2024-2021-2023">Load meteo data from FLUXNET v2024 (2021-2023)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sanitize-timestamp">Sanitize timestamp</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-meteo-data-from-database-screened-with-diive-2021-2024">Load meteo data from database, screened with <code class="docutils literal notranslate"><span class="pre">diive</span></code> (2021-2024)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sanitize timestamp</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-data"><strong>MERGE DATA</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteo7-2005-2024">Meteo7 (2005-2024)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prec-swc-ts-from-feigenwinter-2005-2020-new-columns"><code class="docutils literal notranslate"><span class="pre">PREC</span></code> <code class="docutils literal notranslate"><span class="pre">SWC</span></code> <code class="docutils literal notranslate"><span class="pre">TS</span></code> from Feigenwinter (2005-2020) [new columns]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prec-from-fluxnet-2021-2023-add-to-existing-column-and-1-new-column"><code class="docutils literal notranslate"><span class="pre">PREC</span></code> from FLUXNET (2021-2023) [add to existing column and 1 new column]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prec-from-diive-2024-add-to-existing-column"><code class="docutils literal notranslate"><span class="pre">PREC</span></code> from diive (2024) [add to existing column]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swc-from-diive-2021-2024-add-to-existing-columns"><code class="docutils literal notranslate"><span class="pre">SWC</span></code> from diive (2021-2024) [add to existing columns]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ts-from-diive-2021-2024-add-to-existing-columns"><code class="docutils literal notranslate"><span class="pre">TS</span></code> from diive (2021-2024) [add to existing columns]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Sanitize timestamp</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fix-missing-prec-flags">Fix missing <code class="docutils literal notranslate"><span class="pre">PREC</span></code> flags</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-timesince-variable-for-prec">Calc <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variable for <code class="docutils literal notranslate"><span class="pre">PREC</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot">Plot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-to-file">Save to file</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
