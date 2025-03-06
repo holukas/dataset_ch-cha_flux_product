@@ -14,21 +14,32 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dataset_ch-cha_flux_product/Flux_Calculations.md",
+                "file": "dataset_ch-cha_flux_product/notebooks/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Flux_Calculations"
+              "title": "Outline of README"
+            }
+          },
+          {
+            "id": "dc0bd7188975c976",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "5cc31ff0d2ff9a41",
         "type": "tabs",
-        "dimension": 38.660049627791565,
+        "dimension": 48.43672456575682,
         "children": [
           {
             "id": "c582213d306bbd31",
@@ -42,6 +53,20 @@
               },
               "icon": "lucide-file",
               "title": "Flux_Calculations"
+            }
+          },
+          {
+            "id": "669c7c036e7f3e60",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataset_ch-cha_flux_product/notebooks/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           },
           {
@@ -86,12 +111,13 @@
               "title": "README"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "3c0c231474fd2b51",
         "type": "tabs",
-        "dimension": 45.90570719602978,
+        "dimension": 36.12903225806451,
         "children": [
           {
             "id": "95ee4ddd28cf75c0",
@@ -160,7 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 201.5
+    "width": 458.5
   },
   "right": {
     "id": "df4b0db2b0923cc6",
@@ -235,36 +261,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c582213d306bbd31",
+  "active": "669c7c036e7f3e60",
   "lastOpenFiles": [
-    "dataset_ch-cha_flux_product/_build/html/_static/scripts/sphinx-book-theme.js",
-    "dataset_ch-cha_flux_product/_build/html/_static/styles/sphinx-book-theme.css",
-    "dataset_ch-cha_flux_product/_build/html/searchindex.js.tmp",
-    "dataset_ch-cha_flux_product/Flux_Post-processing.md",
-    "dataset_ch-cha_flux_product/intro.md",
-    "dataset_ch-cha_flux_product/_build/html/_images/QCF_overall_quality_flag.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/self-heating_CH-LAE_2016-2017_parallel_measurements_IRGA72_IRGA75_correction_scaling_factor_diel_cycles.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/self-heating_CH-LAE_2016-2017_parallel_measurements_IRGA72_IRGA75_correction_scaling_factor_in_ustar_classes.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/self-heating_CH-LAE_mixedForest_2016-2017.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/self-heating_CH-OE2_cropland_2015-2017.png",
+    "dataset_ch-cha_flux_product/notebooks/_create_readme.ipynb",
+    "dataset_ch-cha_flux_product/notebooks/file_links.md",
+    "dataset_ch-cha_flux_product/notebooks/Untitled.ipynb",
     "dataset_ch-cha_flux_product/Flux_Calculations.md",
-    "README.md",
-    "dataset_ch-cha_flux_product/_build/html/_images/47cff7d205f1dff148fd0adcf89451b1751f1f30e683e3037f062b1cd95e8171.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/59d0e5eb7b5c43a44d2d3f52086014f0fd71b9616c387b90cc32798bc4bd0741.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/2fe08e1ae0dabaecb8d30ebe61fcfcd02eb92131cd47139fc6b0a359dec4e19e.png",
-    "dataset_ch-cha_flux_product/_build/jupyter_execute/notebooks/10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.ipynb",
     "dataset_ch-cha_flux_product/_build/html/index.html",
     "dataset_ch-cha_flux_product/_build/html/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css",
     "dataset_ch-cha_flux_product/_build/html/objects.inv",
     "dataset_ch-cha_flux_product/_build/html/searchindex.js",
     "dataset_ch-cha_flux_product/_build/html/_images/c45f66dfb737dee82787070df4c7c1ad3463346a9f0708aa67bed8bb9be105f4.png",
     "dataset_ch-cha_flux_product/_build/html/_images/e81abef98a72c7c4d5ae828383650d08ae72ba15363e74886c26f0fafb83d5f5.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/d2003f0eea3db2e8636ce12596a822cf521f37eb20968504906ed10a4b784d23.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/4cece03924693e2f16c8ac7ce4b4fabfb275c1835eae9a88c17f3d314122ec9f.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/5c1fb2f779c41f2c574b25c0a8bd87dfb87d7a1be953f9f2373bb082a3c3abe3.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/250ec9b58a170a4a208d8d997912a0552260bfe9dd6ecc42e75f351b5d2313e2.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/5813d0ec2bd0a5ae573f806e6086d11a987fa00394a1d206395bed7c03641ad9.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/c07b6bc964afa8c0cbd52d2aa75d582712e7c42a432d77beb1ee4972bc6fb099.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/9ba57efc96e353724bbe1360d3094b3841fcdc87431416a993f787d2e9ae7ac0.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/e0069ae85e470061e489be828bb8690bcdcfd10ccb12d921490cd035a9a49ad4.png",
     "dataset_ch-cha_flux_product/_build/html/_images",
     "dataset_ch-cha_flux_product/_build/html/search.html",
     "dataset_ch-cha_flux_product/_build/html/genindex.html",
+    "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.ipynb",
+    "dataset_ch-cha_flux_product/_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/README.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/References.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Variables.md",
+    "dataset_ch-cha_flux_product/_build/html/_sources/References.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/README.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Meteo_Data.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Management_Data.md",
@@ -272,6 +296,9 @@
     "dataset_ch-cha_flux_product/_build/html/_sources/intro.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Flux_Post-processing.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Flux_Calculations.md",
+    "dataset_ch-cha_flux_product/Flux_Post-processing.md",
+    "dataset_ch-cha_flux_product/intro.md",
+    "README.md",
     "dataset_ch-cha_flux_product/Variables.md",
     "dataset_ch-cha_flux_product/References.md",
     "dataset_ch-cha_flux_product/README.md",
@@ -281,7 +308,6 @@
     "dataset_ch-cha_flux_product/notebooks/README.md",
     "dataset_ch-cha_flux_product/markdown.md",
     "dataset_ch-cha_flux_product/markdown-notebooks.md",
-    "_dataset_ch-cha_flux_product/notebooks/README.md",
-    "_dataset_ch-cha_flux_product/Variables.md"
+    "_dataset_ch-cha_flux_product/notebooks/README.md"
   ]
 }
