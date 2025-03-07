@@ -3,13 +3,14 @@
 - **Notebook**: [22.0_ConvertMgmtToTimeseries.ipynb](../notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb)
 - **Detailed management info**: [CH-CHA-Management_2005-2024_20250107.zip](../data/CH-CHA-Management_2005-2024_20250107.zip) (zipped XLSX file, 8MB)
 
-Detailed management data are available in an Excel file. The file contains info between 2001 and 2024, whereby info for 2024 and some info for 2023 (e.g., C content of fertilizer) was not available yet. Key information was converted to a time series format with the aim to be used e.g. in machine-learning models.
+**Management information was converted to a time series format with the aim to be used e.g. in machine-learning models.**
 
+Detailed management data are available in an Excel file. The file contains info between 2001 and 2024, whereby info for 2024 and some info for 2023 (e.g., C content of fertilizer) was not available yet. 
 ## Unique events
 
 Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (**Table M1**).
 
-##### **Table M1**. Unique management events between 2001 and 2024.
+**Table M1**. Unique management events between 2001 and 2024.
 
 | Unique management events                     |
 | -------------------------------------------- |
@@ -52,7 +53,7 @@ Each management event was assigned a variable name and a list of unique events w
 
 Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B (**Table M2**).
 
-##### **Table M2**. Simplified and grouped management variables.
+**Table M2**. Simplified and grouped management variables.
 
 | Management per parcel             | counts |
 | --------------------------------- | ---------- |

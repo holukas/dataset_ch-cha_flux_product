@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Imports &#8212; CH-CHA Flux Product</title>
+    <title>Merge all results &#8212; CH-CHA Flux Product</title>
   
   
   
@@ -373,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Imports</h1>
+    <h1>Merge all results</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,7 +383,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Merge all results</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-l3-3-results-for-nee-le-and-h">Load L3.3 results for NEE, LE and H</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-main-data">Load main data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-results-for-nee">Add results for NEE</a></li>
@@ -410,7 +411,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><strong>Author</strong>: Lukas Hörtnagl (<a class="reference external" href="mailto:holukas&#37;&#52;&#48;ethz&#46;ch">holukas<span>&#64;</span>ethz<span>&#46;</span>ch</a>)</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="merge-all-results">
+<h1><strong>Merge all results</strong><a class="headerlink" href="#merge-all-results" title="Link to this heading">#</a></h1>
+<p><strong>Author</strong>: Lukas Hörtnagl (<a class="reference external" href="mailto:holukas&#37;&#52;&#48;ethz&#46;ch">holukas<span>&#64;</span>ethz<span>&#46;</span>ch</a>)</p>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="imports">
 <h1>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
@@ -436,15 +440,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ../40_FLUX_PROCESSING_CHAIN/41.1_FluxProcessingChain_L4.1_NEE.parquet (0.088 seconds).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ../40_FLUX_PROCESSING_CHAIN/41.1_FluxProcessingChain_L4.1_NEE.parquet (0.528 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
-Loaded .parquet file ../40_FLUX_PROCESSING_CHAIN/42.1_FluxProcessingChain_L4.1_LE.parquet (0.052 seconds).
+Loaded .parquet file ../40_FLUX_PROCESSING_CHAIN/42.1_FluxProcessingChain_L4.1_LE.parquet (0.302 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
-Loaded .parquet file ../40_FLUX_PROCESSING_CHAIN/43.1_FluxProcessingChain_L4.1_H.parquet (0.047 seconds).
+Loaded .parquet file ../40_FLUX_PROCESSING_CHAIN/43.1_FluxProcessingChain_L4.1_H.parquet (0.326 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
-Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.7_CorrectionGapFilling_L4.1_FN2O_CUT165084.parquet (0.037 seconds).
+Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.7_CorrectionGapFilling_L4.1_FN2O_CUT165084.parquet (0.286 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
-Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilling_L4.1_FCH4_CUT_165084.parquet (0.037 seconds).
+Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilling_L4.1_FCH4_CUT_165084.parquet (0.034 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
 </pre></div>
 </div>
@@ -463,7 +467,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\30_MERGE_DATA\33.5_CH-CHA_IRGA+QCL+LGR+M10+MGMT_Level-1_eddypro_fluxnet_2005-2024.parquet (0.617 seconds).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\30_MERGE_DATA\33.5_CH-CHA_IRGA+QCL+LGR+M10+MGMT_Level-1_eddypro_fluxnet_2005-2024.parquet (4.436 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
 </pre></div>
 </div>
@@ -657,9 +661,9 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.233410</td>
+      <td>1.237837</td>
       <td>1</td>
-      <td>0.929992</td>
+      <td>0.911990</td>
       <td>1</td>
       <td>0.641069</td>
       <td>1</td>
@@ -691,9 +695,9 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.220128</td>
+      <td>1.223967</td>
       <td>1</td>
-      <td>0.928927</td>
+      <td>0.910926</td>
       <td>1</td>
       <td>0.642671</td>
       <td>1</td>
@@ -725,9 +729,9 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.629584</td>
+      <td>1.630407</td>
       <td>1</td>
-      <td>1.664379</td>
+      <td>1.667542</td>
       <td>1</td>
       <td>1.284791</td>
       <td>1</td>
@@ -759,9 +763,9 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.526892</td>
+      <td>1.523451</td>
       <td>1</td>
-      <td>1.639928</td>
+      <td>1.639653</td>
       <td>1</td>
       <td>1.286028</td>
       <td>1</td>
@@ -793,11 +797,11 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.623264</td>
+      <td>1.608524</td>
       <td>1</td>
-      <td>1.658089</td>
+      <td>1.660211</td>
       <td>1</td>
-      <td>1.337777</td>
+      <td>1.338450</td>
       <td>1</td>
     </tr>
     <tr>
@@ -861,11 +865,11 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.031399</td>
+      <td>1.164181</td>
       <td>1</td>
-      <td>1.124673</td>
+      <td>1.160720</td>
       <td>1</td>
-      <td>1.225784</td>
+      <td>1.210497</td>
       <td>1</td>
     </tr>
     <tr>
@@ -895,11 +899,11 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.934743</td>
+      <td>1.129005</td>
       <td>1</td>
-      <td>1.073372</td>
+      <td>1.131454</td>
       <td>1</td>
-      <td>1.209664</td>
+      <td>1.198036</td>
       <td>1</td>
     </tr>
     <tr>
@@ -997,11 +1001,11 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.035323</td>
+      <td>1.035859</td>
       <td>1</td>
-      <td>1.061307</td>
+      <td>1.126110</td>
       <td>1</td>
-      <td>1.123850</td>
+      <td>1.145695</td>
       <td>1</td>
     </tr>
   </tbody>
@@ -1183,7 +1187,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>9.497795</td>
+      <td>12.881390</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1217,7 +1221,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>9.892324</td>
+      <td>12.671936</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1251,7 +1255,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.766715</td>
+      <td>8.715656</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1285,7 +1289,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.499177</td>
+      <td>7.805379</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1319,7 +1323,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.319153</td>
+      <td>8.016290</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1703,7 +1707,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-16.238439</td>
+      <td>-16.302610</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1737,7 +1741,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-15.898568</td>
+      <td>-15.891337</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1771,7 +1775,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-14.768863</td>
+      <td>-14.849423</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1805,7 +1809,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-10.533356</td>
+      <td>-10.172901</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1839,7 +1843,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
       <td>2.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-8.729219</td>
+      <td>-8.028102</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3140,7 +3144,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved file 61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet (8.178 seconds).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved file 61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet (7.627 seconds).
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet&#39;
@@ -3162,7 +3166,7 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-02-08 13:43:11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-03-07 13:12:13
 </pre></div>
 </div>
 </div>
@@ -3215,7 +3219,8 @@ Loaded .parquet file ../50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.7_CorrectionGapFilli
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Merge all results</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-l3-3-results-for-nee-le-and-h">Load L3.3 results for NEE, LE and H</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-main-data">Load main data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-results-for-nee">Add results for NEE</a></li>
