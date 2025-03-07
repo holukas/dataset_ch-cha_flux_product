@@ -434,11 +434,12 @@ document.write(`
         <span class="n">filename</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">name</span>
         <span class="n">filename_noext</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">stem</span>               
         <span class="c1"># filelink = outpath / rel_filepath / f&quot;{filename_noext}.html&quot;</span>
-        <span class="n">filelink</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename_noext</span><span class="si">}</span><span class="s2">.html&quot;</span>
-        <span class="c1"># filelink = filelink.as_posix()  # Browser for html uses forward slash, also on Windows    </span>
+        <span class="n">filelink</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;notebooks&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">rel_filepath</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename_noext</span><span class="si">}</span><span class="s2">.html&quot;</span>
+        <span class="c1"># filelink = f&quot;{filename_noext}.html&quot;</span>
+        <span class="n">filelink</span> <span class="o">=</span> <span class="n">filelink</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>  <span class="c1"># Browser for html uses forward slash, also on Windows    </span>
         <span class="n">link</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filelink</span><span class="si">}</span><span class="s2">&quot;</span>    
-        <span class="c1"># linestr = f&quot;[test]({link})\n&quot;</span>
-        <span class="n">linestr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filelink</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">linestr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">filename_noext</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="c1"># linestr = f&quot;{filelink}\n&quot;</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">linestr</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">linestr</span><span class="p">)</span>
 
@@ -447,184 +448,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WindowsPath(&#39;00_L0_checks/01_L0_merge_output_to_parquet.ipynb&#39;), WindowsPath(&#39;00_L0_checks/02_L0_timelags_check.ipynb&#39;), WindowsPath(&#39;00_L0_checks/03_L0_winddir_check.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/LW_IN_T1_2_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/PA_GF1_0.9_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/PPFD_IN_T1_2_2_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/RH_T1_2_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SW_IN_T1_2_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SWC_GF1_0.05_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SWC_GF1_0.15_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SWC_GF1_0.1_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SWC_GF1_0.2_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SWC_GF1_0.3_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SWC_GF1_0.4_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SWC_GF1_0.5_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/SWC_LOWRES_GF1_0.75_3_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TA_T1_2_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.025_2_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.04_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.05_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.15_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.1_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.1_2_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.25_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.2_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.2_2_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.3_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.4_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_GF1_0.5_1_2021-2023.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_0.05_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_0.1_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_0.2_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_0.3_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_0.4_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_0.5_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_0.6_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_0.75_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2021-2023/TS_LOWRES_GF1_1_3_2021-2024.09.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/LW_IN_T1_2_1_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/PA_GF1_0.9_1_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/PPFD_IN_T1_2_2_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/PREC_RAIN_TOT_GF1_0.5_1_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/RH_T1_2_1_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/SW_IN_T1_2_1_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/SWC_GF1_0.05_1_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/SWC_GF1_0.2_1_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/SWC_LOWRES_GF1_0.75_3_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/TA_T1_2_1_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/TS_LOWRES_GF1_0.05_3_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/TS_LOWRES_GF1_0.2_3_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/11_meteoscreening_diive_2024/TS_LOWRES_GF1_0.4_3_2024.ipynb&#39;), WindowsPath(&#39;10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.ipynb&#39;), WindowsPath(&#39;10_METEO/13.0_DownloadMeteo20_2005-2020_FEIGENW.ipynb&#39;), WindowsPath(&#39;10_METEO/14.0_DownloadMeteo6_2021-2024_DB-PROCESSED_meteoscreening_diive.ipynb&#39;), WindowsPath(&#39;10_METEO/15.0_MergeMeteo6_2005-2024.ipynb&#39;), WindowsPath(&#39;10_METEO/16.0_GapFillingMeteo7_2005-2024.ipynb&#39;), WindowsPath(&#39;10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.ipynb&#39;), WindowsPath(&#39;10_METEO/17.2_GapFilling_TS.ipynb&#39;), WindowsPath(&#39;10_METEO/17.4_GapFilling_SWC.ipynb&#39;), WindowsPath(&#39;10_METEO/STATS.ipynb&#39;), WindowsPath(&#39;20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb&#39;), WindowsPath(&#39;30_MERGE_DATA/31.0_FLUXES_L1_IRGA.ipynb&#39;), WindowsPath(&#39;30_MERGE_DATA/31.2_ProblematicSonicPeriods_2021-2023.ipynb&#39;), WindowsPath(&#39;30_MERGE_DATA/32.0_FLUXES_L1_QCL+LGR.ipynb&#39;), WindowsPath(&#39;30_MERGE_DATA/33.0_FLUXES_L1_IRGA+QCL+LGR+METEO10+MGMT.ipynb&#39;), WindowsPath(&#39;30_MERGE_DATA/33.2_CalcMean3HVars_SWC_TS_PREC.ipynb&#39;), WindowsPath(&#39;30_MERGE_DATA/33.4_CalcMean3HVarsStepLag_SWC_TS_PREC.ipynb&#39;), WindowsPath(&#39;40_FLUX_PROCESSING_CHAIN/41.0_FluxProcessingChain_L3.3_NEE_QCF10.ipynb&#39;), WindowsPath(&#39;40_FLUX_PROCESSING_CHAIN/42.0_FluxProcessingChain_L3.3_LE_QCF11.ipynb&#39;), WindowsPath(&#39;40_FLUX_PROCESSING_CHAIN/43.0_FluxProcessingChain_L3.3_H_QCF11.ipynb&#39;), WindowsPath(&#39;50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.0_FluxProcessingChain_L3.3_FN2O_QCF11.ipynb&#39;), WindowsPath(&#39;50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.2_CorrectionGapFilling_FN2O_CUT50.ipynb&#39;), WindowsPath(&#39;50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.4_CorrectionGapFilling_FN2O_CUT16.ipynb&#39;), WindowsPath(&#39;50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.6_CorrectionGapFilling_FN2O_CUT84.ipynb&#39;), WindowsPath(&#39;50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.0_FluxProcessingChain_L3.3_FCH4_QCF11.ipynb&#39;), WindowsPath(&#39;50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.2_CorrectionGapFilling_FCH4_CUT50.ipynb&#39;), WindowsPath(&#39;50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.4_CorrectionGapFilling_FCH4_CUT16.ipynb&#39;), WindowsPath(&#39;50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.6_CorrectionGapFilling_FCH4_CUT84.ipynb&#39;), WindowsPath(&#39;60_MERGE_DATA_FLUXES/61.0_MergeFluxProcessingChainResults.ipynb&#39;), WindowsPath(&#39;90_DATASET_OVERVIEW/FLUX_NEE_RidgePlots.ipynb&#39;), WindowsPath(&#39;90_DATASET_OVERVIEW/FLUXES.ipynb&#39;), WindowsPath(&#39;90_DATASET_OVERVIEW/METEO_TA.ipynb&#39;), WindowsPath(&#39;90_DATASET_OVERVIEW/METEO_TA_RidgePlots.ipynb&#39;), WindowsPath(&#39;90_DATASET_OVERVIEW/Variables.ipynb&#39;)]
-00_L0_checks
-01_L0_merge_output_to_parquet.html
-
-02_L0_timelags_check.html
-
-03_L0_winddir_check.html
-
-10_METEO\11_meteoscreening_diive_2021-2023
-LW_IN_T1_2_1_2021-2023.html
-
-PA_GF1_0.9_1_2021-2023.html
-
-PPFD_IN_T1_2_2_2021-2023.html
-
-RH_T1_2_1_2021-2023.html
-
-SW_IN_T1_2_1_2021-2023.html
-
-SWC_GF1_0.05_1_2021-2023.html
-
-SWC_GF1_0.15_1_2021-2023.html
-
-SWC_GF1_0.1_1_2021-2023.html
-
-SWC_GF1_0.2_1_2021-2023.html
-
-SWC_GF1_0.3_1_2021-2023.html
-
-SWC_GF1_0.4_1_2021-2023.html
-
-SWC_GF1_0.5_1_2021-2023.html
-
-SWC_LOWRES_GF1_0.75_3_2021-2023.html
-
-TA_T1_2_1_2021-2023.html
-
-TS_GF1_0.025_2_2021-2023.html
-
-TS_GF1_0.04_1_2021-2023.html
-
-TS_GF1_0.05_1_2021-2023.html
-
-TS_GF1_0.15_1_2021-2023.html
-
-TS_GF1_0.1_1_2021-2023.html
-
-TS_GF1_0.1_2_2021-2023.html
-
-TS_GF1_0.25_1_2021-2023.html
-
-TS_GF1_0.2_1_2021-2023.html
-
-TS_GF1_0.2_2_2021-2023.html
-
-TS_GF1_0.3_1_2021-2023.html
-
-TS_GF1_0.4_1_2021-2023.html
-
-TS_GF1_0.5_1_2021-2023.html
-
-TS_LOWRES_GF1_0.05_3_2021-2024.09.html
-
-TS_LOWRES_GF1_0.1_3_2021-2024.09.html
-
-TS_LOWRES_GF1_0.2_3_2021-2024.09.html
-
-TS_LOWRES_GF1_0.3_3_2021-2024.09.html
-
-TS_LOWRES_GF1_0.4_3_2021-2024.09.html
-
-TS_LOWRES_GF1_0.5_3_2021-2024.09.html
-
-TS_LOWRES_GF1_0.6_3_2021-2024.09.html
-
-TS_LOWRES_GF1_0.75_3_2021-2024.09.html
-
-TS_LOWRES_GF1_1_3_2021-2024.09.html
-
-10_METEO\11_meteoscreening_diive_2024
-LW_IN_T1_2_1_2024.html
-
-PA_GF1_0.9_1_2024.html
-
-PPFD_IN_T1_2_2_2024.html
-
-PREC_RAIN_TOT_GF1_0.5_1_2024.html
-
-RH_T1_2_1_2024.html
-
-SW_IN_T1_2_1_2024.html
-
-SWC_GF1_0.05_1_2024.html
-
-SWC_GF1_0.2_1_2024.html
-
-SWC_LOWRES_GF1_0.75_3_2024.html
-
-TA_T1_2_1_2024.html
-
-TS_LOWRES_GF1_0.05_3_2024.html
-
-TS_LOWRES_GF1_0.2_3_2024.html
-
-TS_LOWRES_GF1_0.4_3_2024.html
-
-10_METEO
-12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.html
-
-13.0_DownloadMeteo20_2005-2020_FEIGENW.html
-
-14.0_DownloadMeteo6_2021-2024_DB-PROCESSED_meteoscreening_diive.html
-
-15.0_MergeMeteo6_2005-2024.html
-
-16.0_GapFillingMeteo7_2005-2024.html
-
-17.0_AddAdditionalMeteoData_PREC_SWC_TS.html
-
-17.2_GapFilling_TS.html
-
-17.4_GapFilling_SWC.html
-
-STATS.html
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WindowsPath(&#39;20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb&#39;)]
 20_MANAGEMENT
-22.0_ConvertMgmtToTimeseries.html
-
-30_MERGE_DATA
-31.0_FLUXES_L1_IRGA.html
-
-31.2_ProblematicSonicPeriods_2021-2023.html
-
-32.0_FLUXES_L1_QCL+LGR.html
-
-33.0_FLUXES_L1_IRGA+QCL+LGR+METEO10+MGMT.html
-
-33.2_CalcMean3HVars_SWC_TS_PREC.html
-
-33.4_CalcMean3HVarsStepLag_SWC_TS_PREC.html
-
-40_FLUX_PROCESSING_CHAIN
-41.0_FluxProcessingChain_L3.3_NEE_QCF10.html
-
-42.0_FluxProcessingChain_L3.3_LE_QCF11.html
-
-43.0_FluxProcessingChain_L3.3_H_QCF11.html
-
-50_FLUX_PROCESSING_CHAIN_QCL+LGR
-51.0_FluxProcessingChain_L3.3_FN2O_QCF11.html
-
-51.2_CorrectionGapFilling_FN2O_CUT50.html
-
-51.4_CorrectionGapFilling_FN2O_CUT16.html
-
-51.6_CorrectionGapFilling_FN2O_CUT84.html
-
-52.0_FluxProcessingChain_L3.3_FCH4_QCF11.html
-
-52.2_CorrectionGapFilling_FCH4_CUT50.html
-
-52.4_CorrectionGapFilling_FCH4_CUT16.html
-
-52.6_CorrectionGapFilling_FCH4_CUT84.html
-
-60_MERGE_DATA_FLUXES
-61.0_MergeFluxProcessingChainResults.html
-
-90_DATASET_OVERVIEW
-FLUX_NEE_RidgePlots.html
-
-FLUXES.html
-
-METEO_TA.html
-
-METEO_TA_RidgePlots.html
-
-Variables.html
+[22.0_ConvertMgmtToTimeseries](notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html)
 
 
 Links generated and saved to README
@@ -634,26 +460,26 @@ Links generated and saved to README
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import os</span>
+<span class="c1"># import yaml</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_toc</span><span class="p">(</span><span class="n">root_dir</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">toc_file</span><span class="o">=</span><span class="s2">&quot;_toc.yml&quot;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates _toc.yml from .ipynb files in the directory.&quot;&quot;&quot;</span>
+<span class="c1"># def generate_toc(root_dir=&quot;.&quot;, toc_file=&quot;_toc.yml&quot;):</span>
+<span class="c1">#     &quot;&quot;&quot;Generates _toc.yml from .ipynb files in the directory.&quot;&quot;&quot;</span>
 
-    <span class="n">notebooks</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">root_dir</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.ipynb&quot;</span><span class="p">)])</span>
-    <span class="n">toc</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#     notebooks = sorted([f for f in os.listdir(root_dir) if f.endswith(&quot;.ipynb&quot;)])</span>
+<span class="c1">#     toc = []</span>
 
-    <span class="k">for</span> <span class="n">nb</span> <span class="ow">in</span> <span class="n">notebooks</span><span class="p">:</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">nb</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>  <span class="c1"># Clean up title</span>
-        <span class="n">toc</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;file&quot;</span><span class="p">:</span> <span class="n">nb</span><span class="p">})</span>
+<span class="c1">#     for nb in notebooks:</span>
+<span class="c1">#         title = os.path.splitext(nb)[0].replace(&quot;_&quot;, &quot; &quot;).title()  # Clean up title</span>
+<span class="c1">#         toc.append({&quot;file&quot;: nb})</span>
 
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">toc_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">toc</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1">#     with open(toc_file, &quot;w&quot;) as f:</span>
+<span class="c1">#         yaml.dump(toc, f, default_flow_style=False)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated _toc.yml with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">notebooks</span><span class="p">)</span><span class="si">}</span><span class="s2"> entries.&quot;</span><span class="p">)</span>
+<span class="c1">#     print(f&quot;Generated _toc.yml with {len(notebooks)} entries.&quot;)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">generate_toc</span><span class="p">()</span>
+<span class="c1"># if __name__ == &quot;__main__&quot;:</span>
+<span class="c1">#     generate_toc()</span>
 </pre></div>
 </div>
 </div>
