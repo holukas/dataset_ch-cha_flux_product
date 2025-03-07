@@ -16,7 +16,7 @@ Documentation and notebooks for the PI dataset of the **intensively managed gras
 - [Site info CH-CHA](https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/)
 - [Documentation](dataset_ch-cha_flux_product/README.md): Info about flux, meteo and management (post-)processing
 - [Notebooks](dataset_ch-cha_flux_product/notebooks/README.md): Jupyter notebooks used to create the final dataset
-
+[README](dataset_ch-cha_flux_product/notebooks/README.md)
 ## Eddy covariance fluxes in this dataset
 
 - **NEE**: Net ecosystem exchange of carbon dioxide (2005-2024)

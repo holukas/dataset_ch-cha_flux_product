@@ -326,7 +326,8 @@ Between 2005-01-01 00:15 and 2024-12-31 23:45 ...
 
 - All fluxes were gap-filled using the class `LongTermGapFillingRandomForestTS` from [diive](https://github.com/holukas/diive/tree/main)
 - This class builds a random forest model for each year, trained on data of the respective year and the two closest/neighboring years
-- For example: for gap-filling 2015, the model was trained on 2014, 2015 and 2016. For 2005 (the very first year for FC fluxes), the two closest years were used, i.e., the model was trained on 2005, 2006 and 2007. Likewise, for the very last year, the model was trained on data from the last year and the two preceding years.
+- **For example**: for gap-filling 2015, the model was trained on 2014, 2015 and 2016. For 2005 (the very first year for FC fluxes), the two closest years were used, i.e., the model was trained on 2005, 2006 and 2007. Likewise, for the very last year, the model was trained on data from the last year and the two preceding years.
+- **Exception**: due to low flux availability for `FN2O` and `FCH4` in 2017, 2018 and 2022, respective gap-filling models were built from all available, directly measured data (2012-2022) after quality checks and then used to gap-fill these three years. A completely new gap-filled flux version for the complete time range (2012-2022) was built. From that version, gap-filled data for the three years (2017, 2018, 2022) then replaced the data in the previously gap-filled version.
 - Generally used random forest settings: `n_estimators`: 500, `random_state`: 42, `min_samples_split`: 2, `min_samples_leaf`: 1, default settings were used for all other parameters, see [here](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html).
 #### Features (predictors)
 - Variables used as features in training the random forest models.
@@ -335,7 +336,7 @@ Between 2005-01-01 00:15 and 2024-12-31 23:45 ...
 ++ Added new columns with timestamp info: ['.YEAR', '.SEASON', '.MONTH', '.WEEK', '.DOY', '.HOUR', '.YEARMONTH', '.YEARDOY', '.YEARWEEK']
 ```
 - **Lagged variants** were calculated for `SW_IN_T1_2_1`, `TA_T1_2_1`, `VPD_T1_2_1` and all variables listed in  `METEO_VARS` (see below).
-- Feature importances were calculated as **permutation importance**: Permutation feature importance assesses feature contributions to a model's performance. It works by randomly shuffling a feature's values, observing the resulting performance drop. This reveals how much the model relies on that feature.
+- **Feature importances** were calculated as **permutation importance**: Permutation feature importance assesses feature contributions to a model's performance. It works by randomly shuffling a feature's values, observing the resulting performance drop. This reveals how much the model relies on that feature.
 - **Feature reduction**: Feature reduction was performed by comparing feature importances to a random variable (`.RANDOM`), which consisted of random numbers (floats) between 0 and 1. Features with importance below `.RANDOM`'s were discarded. To ensure consistency across yearly models, a feature was only removed if it was deemed unimportant in _all_ yearly models. A feature was retained if it was deemed important in at least one model.
 
 ##### NEE, LE, H
