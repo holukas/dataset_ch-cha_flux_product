@@ -4,12 +4,20 @@ produced by [Lukas Hörtnagl](https://gl.ethz.ch/people/person-detail.lukas.html
 
 Documentation and notebooks for the PI dataset of the **intensively managed grassland ecosystem station CH-CHA (Chamau)** . The research station CH-CHA is part of [Swiss FluxNet](https://www.swissfluxnet.ethz.ch/), operated by the [Grassland Sciences Group, ETH Zurich](https://gl.ethz.ch/). Group leader: [Prof. Nina Buchmann](https://gl.ethz.ch/people/person-detail.nina.html).
 
+This dataset contains ecosystem fluxes measured by the eddy covariance method, meteorological data and detailed management info between 2005 and 2024. More data will be added to this dataset in the future.
+
 ## Dataset versions
 
-**CH-CHA FP2025.1 (2005-2024) [current version]**
-- initial release
-- release date: 8 Feb 2025
+### **CH-CHA FP2025.2 (2005-2024) [current version]**
+- release date: 7 Mar 2025
 - is currently available on demand from the Grassland Sciences group server
+- **Differrences to previous version**:
+	- **Flux calculations Level-1, updated fluxes for 2023**: The vertical wind component `W` showed a constant offset during some time periods. Fluxes for these time periods were re-calculated separately, taking the offset into account in the EddyPro settings. See [this table](https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/ec-raw-binary-format-ch-cha/#Setup_since_2005), Note (28), for the exact time periods. Other time periods during the same year were also re-calculated, but without the offset time periods.
+	- **Post-processing Level-2, SSITC test**: stricter setting for *all fluxes* between `2022-05-01` and `2023-09-30`. For this test flag, data of medium quality were set to bad quality. This allowed to filter out erratic flux values due to a drift towards negative numbers observed in the vertical wind component `W`. 
+	- No new data were added.
+
+### Previous versions
+- CH-CHA FP2025.1 (2005-2024) | initial release | release date: 8 Feb 2025
 
 ## Contents
 
