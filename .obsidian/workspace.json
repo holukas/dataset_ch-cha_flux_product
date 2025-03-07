@@ -14,13 +14,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dataset_ch-cha_flux_product/intro.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of intro"
+              "title": "Outline of README"
             }
           }
         ]
@@ -64,12 +64,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/intro.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "intro"
+              "title": "README"
             },
             "group": "e7e8a17d352f45d9"
           },
@@ -115,12 +115,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/intro.md",
+                "file": "README.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "intro"
+              "title": "README"
             },
             "group": "e7e8a17d352f45d9"
           }
@@ -258,8 +258,12 @@
   },
   "active": "ea060802510d5a39",
   "lastOpenFiles": [
-    "dataset_ch-cha_flux_product/Flux_Calculations.md",
+    "dataset_ch-cha_flux_product/README.md",
     "dataset_ch-cha_flux_product/intro.md",
+    "dataset_ch-cha_flux_product/notebooks/60_MERGE_DATA_FLUXES/CH-CHA_FP2025.2_61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4_20250307.csv.zip",
+    "dataset_ch-cha_flux_product/notebooks/60_MERGE_DATA_FLUXES/CH-CHA_FP2025.2_61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4_20250307.csv",
+    "dataset_ch-cha_flux_product/notebooks/60_MERGE_DATA_FLUXES/61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4 - Copy.csv",
+    "dataset_ch-cha_flux_product/Flux_Calculations.md",
     "dataset_ch-cha_flux_product/Flux_Post-processing.md",
     "dataset_ch-cha_flux_product/Management_Data.md",
     "dataset_ch-cha_flux_product/notebooks/README.md",
@@ -280,9 +284,6 @@
     "dataset_ch-cha_flux_product/_build/html/_images",
     "dataset_ch-cha_flux_product/_build/html/search.html",
     "dataset_ch-cha_flux_product/_build/html/genindex.html",
-    "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.ipynb",
-    "dataset_ch-cha_flux_product/_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.html",
-    "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.ipynb",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/README.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/intro.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Variables.md",
@@ -298,7 +299,6 @@
     "dataset_ch-cha_flux_product/notebooks/file_links.md",
     "README.md",
     "dataset_ch-cha_flux_product/References.md",
-    "dataset_ch-cha_flux_product/README.md",
     "dataset_ch-cha_flux_product/Meteo_Data.md",
     "dataset_ch-cha_flux_product/markdown.md",
     "dataset_ch-cha_flux_product/markdown-notebooks.md",
