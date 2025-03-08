@@ -57,10 +57,18 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'L2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Used Software" href="Used_Software.html" />
+    <link rel="next" title="Level-3.1: Storage correction" href="L3.1.html" />
     <link rel="prev" title="Flux Post-processing" href="Flux_Post-processing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,6 +193,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Flux_Calculations.html">Flux Calculations</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Flux_Post-processing.html">Flux Post-processing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Level-2: Quality flag expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level-3.1: Storage correction</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
@@ -364,7 +373,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -380,6 +391,23 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-flags">Individual flags</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssitc-test-flag"><strong>SSITC</strong> test flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-completeness-test-flag"><strong>Gas completeness</strong> test flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-correction-factor-test-flag"><strong>Spectral correction factor</strong> test flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-strength-test-flag"><strong>Signal strength</strong> test flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data-screening-test-flags-multiple"><strong>Raw data screening</strong> test flags (multiple)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-of-attack-aoa-flag"><strong>Angle-of-attack (AoA) flag</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qcf-overall-quality-control-flag-after-level-2-tests">QCF: overall quality control flag after Level-2 tests</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,7 +419,143 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="level-2-quality-flag-expansion">
 <h1>Level-2: Quality flag expansion<a class="headerlink" href="#level-2-quality-flag-expansion" title="Link to this heading">#</a></h1>
-<p><em>soon</em></p>
+<pre  class="mermaid">
+        flowchart LR
+	L1[Level-1 fluxes] --&gt; d[quality flag expansion] --&gt; L2[Level-2 quality flags] --&gt; QCF[Level-2 overall quality flag QCF]
+    </pre><ul class="simple">
+<li><p><strong>Level-2 creates additional quality flags.</strong></p></li>
+<li><p>Based on Level-1 (final) flux calculations</p></li>
+<li><p>Builds upon flux results (<em><em>fluxnet</em></em> files) from EddyPro</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">SSITC</span></code> flag from EddyPro is expanded with results from additional quality flags.</p></li>
+<li><p>All individual quality flags are combined into one overall quality flag <code class="docutils literal notranslate"><span class="pre">QCF</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">QCF</span></code> flag uses a <code class="docutils literal notranslate"><span class="pre">0-1-2</span></code> system, where</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> = best quality data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> = medium quality data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> = bad quality data, reject in all cases</p></li>
+</ul>
+</li>
+</ul>
+<section id="individual-flags">
+<h2>Individual flags<a class="headerlink" href="#individual-flags" title="Link to this heading">#</a></h2>
+<p><em>See notebooks for more details</em></p>
+<section id="ssitc-test-flag">
+<h3><strong>SSITC</strong> test flag<a class="headerlink" href="#ssitc-test-flag" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Combination of the two partial tests <em>steady state test</em> and <em>developed turbulent conditions test</em>, from EddyPro output. (Mauder and Foken, 2006)</p>
+<ul>
+<li><p>applied to: all fluxes</p></li>
+<li><p><strong>Exception</strong>: flags where this test resulted in <code class="docutils literal notranslate"><span class="pre">1</span></code> were set to <code class="docutils literal notranslate"><span class="pre">2</span></code> during the time period between <code class="docutils literal notranslate"><span class="pre">2022-05-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2023-09-30</span></code>.</p>
+<ul class="simple">
+<li><p>During this time period, there was a strange issue with the sonic anemometer where the vertical wind component <code class="docutils literal notranslate"><span class="pre">W_UNROT</span></code> (unrotated, the directly measured W) became  negative while during all other time periods the wind was more positive. NEE was clearly affected by this issue, showing some high uptake values during night, therefore also corrupting the gap-filling algorithm later on. Although this was not so visible during the day, we must assume that this effect was also present during daytime. We found that the most problematic time periods can be filtered out by setting the SSITC flag to <code class="docutils literal notranslate"><span class="pre">2</span></code> where the flag was <code class="docutils literal notranslate"><span class="pre">1</span></code>. Therefore we remove all flux values where the SSITC test was <code class="docutils literal notranslate"><span class="pre">1</span></code>. This issue is also visible in the second rotation angle <code class="docutils literal notranslate"><span class="pre">ROT_PITCH</span></code> with slightly different angles than before and after this period.</p></li>
+</ul>
+</li>
+<li><p>Example output from diive for NEE (in this step still called <code class="docutils literal notranslate"><span class="pre">FC</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SSITC</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">Generated</span> <span class="n">new</span> <span class="n">flag</span> <span class="n">variable</span> <span class="n">FLAG_L2_FC_SSITC_TEST</span><span class="p">,</span> <span class="n">values</span> <span class="n">taken</span> <span class="kn">from</span><span class="w"> </span><span class="nn">output</span> <span class="n">variable</span> <span class="n">FC_SSITC_TEST</span> <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="gas-completeness-test-flag">
+<h3><strong>Gas completeness</strong> test flag<a class="headerlink" href="#gas-completeness-test-flag" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Check completeness of the variable that was used to calculate the respective flux, calculated in diive. (Sabbatini et al., 2018)</p>
+<ul>
+<li><p>applied to: all fluxes</p></li>
+<li><p>Example output from diive for NEE (in this step still called <code class="docutils literal notranslate"><span class="pre">FC</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FLUX</span> <span class="n">BASE</span> <span class="n">VARIABLE</span> <span class="n">COMPLETENESS</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">Generated</span> <span class="n">new</span> <span class="n">flag</span> <span class="n">variable</span> <span class="n">FLAG_L2_FC_COMPLETENESS_TEST</span><span class="p">,</span> <span class="n">newly</span> <span class="n">calculated</span> <span class="kn">from</span><span class="w"> </span><span class="nn">variable</span> <span class="n">CO2</span><span class="p">,</span> <span class="k">with</span> <span class="n">flag</span> <span class="mi">0</span> <span class="p">(</span><span class="n">good</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">available</span> <span class="n">number</span> <span class="n">of</span> <span class="n">records</span> <span class="k">for</span> <span class="n">CO2</span> <span class="o">&gt;=</span> <span class="mf">0.99</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">1</span> <span class="p">(</span><span class="n">ok</span> <span class="n">values</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.97</span> <span class="ow">and</span> <span class="o">&lt;</span> <span class="mf">0.99</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">2</span> <span class="p">(</span><span class="n">bad</span> <span class="n">values</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.97</span><span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="spectral-correction-factor-test-flag">
+<h3><strong>Spectral correction factor</strong> test flag<a class="headerlink" href="#spectral-correction-factor-test-flag" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>using the <code class="docutils literal notranslate"><span class="pre">SCF</span></code> (spectral correction factor) from EddyPro output, then calculated in diive (Sabbatini et al., 2018)</p>
+<ul>
+<li><p>applied to: all fluxes</p></li>
+<li><p>Example output from diive for NEE (in this step still called <code class="docutils literal notranslate"><span class="pre">FC</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SPECTRAL</span> <span class="n">CORRECTION</span> <span class="n">FACTOR</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">Generating</span> <span class="n">new</span> <span class="n">flag</span> <span class="n">variable</span> <span class="n">FLAG_L2_FC_SCF_TEST</span><span class="p">,</span> <span class="n">newly</span> <span class="n">calculated</span> <span class="kn">from</span><span class="w"> </span><span class="nn">output</span> <span class="n">variable</span> <span class="n">FC_SCF</span><span class="p">,</span> <span class="n">withflag</span> <span class="mi">0</span> <span class="p">(</span><span class="n">good</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">FC_SCF</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">1</span> <span class="p">(</span><span class="n">ok</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">FC_SCF</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">2</span> <span class="p">(</span><span class="n">bad</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">FC_SCF</span> <span class="o">&gt;=</span> <span class="mf">4.</span><span class="o">..</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="signal-strength-test-flag">
+<h3><strong>Signal strength</strong> test flag<a class="headerlink" href="#signal-strength-test-flag" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>for open path IRGAs, this test checks if the instrument’s <code class="docutils literal notranslate"><span class="pre">AGC</span></code> (automatic gain control, a measure of signal quality) is above a certain value, whereby high values stand for bad signal (note that for (en)closed path IRGAs it is typically the other way round with high values showing good signal strenth), fluxes where <code class="docutils literal notranslate"><span class="pre">AGC</span></code> was above 90% were discarded. In this case, the name of the custom variable was <code class="docutils literal notranslate"><span class="pre">CUSTOM_AGC_MEAN</span></code> and part of the EddyPro output files, the flag was then calculated in diive.</p>
+<ul>
+<li><p>applied to: open path IRGA fluxes (CO<sub>2</sub>, H<sub>2</sub>O)</p></li>
+<li><p>Note that the water fluxes <code class="docutils literal notranslate"><span class="pre">LE</span></code> and <code class="docutils literal notranslate"><span class="pre">ET</span></code> are direct conversions of the calculated H<sub>2</sub>O flux</p></li>
+<li><p>Example output from diive for NEE (in this step still called <code class="docutils literal notranslate"><span class="pre">FC</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SIGNAL</span> <span class="n">STRENGTH</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">Generating</span> <span class="n">new</span> <span class="n">flag</span> <span class="n">variable</span> <span class="n">FLAG_L2_FC_SIGNAL_STRENGTH_TEST</span><span class="p">,</span> <span class="n">newly</span> <span class="n">calculated</span> <span class="kn">from</span><span class="w"> </span><span class="nn">output</span> <span class="n">variable</span> <span class="n">CUSTOM_AGC_MEAN</span><span class="p">,</span> <span class="k">with</span> <span class="n">flag</span> <span class="mi">0</span> <span class="p">(</span><span class="n">good</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">CUSTOM_AGC_MEAN</span> <span class="o">&lt;=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">2</span> <span class="p">(</span><span class="n">bad</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">CUSTOM_AGC_MEAN</span> <span class="o">&gt;</span> <span class="mi">90</span> <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="raw-data-screening-test-flags-multiple">
+<h3><strong>Raw data screening</strong> test flags (multiple)<a class="headerlink" href="#raw-data-screening-test-flags-multiple" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>applied results from the EddyPro output file for spikes, amplitude and drop-outs, see also the official EddyPro help for more info <a class="reference external" href="https://www.licor.com/support/EddyPro/topics/despiking-raw-statistical-screening.html">here</a>. (Vickers and Mahrt, 1997)</p>
+<ul>
+<li><p>applied to: all fluxes</p></li>
+<li><p>Example output from diive for NEE (in this step still called <code class="docutils literal notranslate"><span class="pre">FC</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RAW</span> <span class="n">DATA</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">Generated</span> <span class="n">new</span> <span class="n">flag</span> <span class="n">variable</span> <span class="n">FLAG_L2_FC_CO2_VM97_SPIKE_HF_TEST</span><span class="p">,</span> <span class="n">values</span> <span class="n">taken</span> <span class="kn">from</span><span class="w"> </span><span class="nn">output</span> <span class="n">variable</span> <span class="n">CO2_VM97_TEST</span> <span class="kn">from</span><span class="w"> </span><span class="nn">position</span> <span class="mi">1</span><span class="p">,</span> <span class="n">based</span> <span class="n">on</span> <span class="n">CO2</span><span class="p">,</span> <span class="k">with</span> <span class="n">flag</span> <span class="mi">0</span> <span class="p">(</span><span class="n">good</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">passed</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">2</span> <span class="p">(</span><span class="n">bad</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">failed</span> <span class="p">(</span><span class="k">for</span> <span class="n">hard</span> <span class="n">flags</span><span class="p">)</span> <span class="ow">or</span> <span class="n">flag</span> <span class="mi">1</span> <span class="p">(</span><span class="n">ok</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">failed</span> <span class="p">(</span><span class="k">for</span> <span class="n">soft</span> <span class="n">flags</span><span class="p">)</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RAW</span> <span class="n">DATA</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">Generated</span> <span class="n">new</span> <span class="n">flag</span> <span class="n">variable</span> <span class="n">FLAG_L2_FC_CO2_VM97_AMPLITUDE_RESOLUTION_HF_TEST</span><span class="p">,</span> <span class="n">values</span> <span class="n">taken</span> <span class="kn">from</span><span class="w"> </span><span class="nn">output</span> <span class="n">variable</span> <span class="n">CO2_VM97_TEST</span> <span class="kn">from</span><span class="w"> </span><span class="nn">position</span> <span class="mi">2</span><span class="p">,</span> <span class="n">based</span> <span class="n">on</span> <span class="n">CO2</span><span class="p">,</span> <span class="k">with</span> <span class="n">flag</span> <span class="mi">0</span> <span class="p">(</span><span class="n">good</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">passed</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">2</span> <span class="p">(</span><span class="n">bad</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">failed</span> <span class="p">(</span><span class="k">for</span> <span class="n">hard</span> <span class="n">flags</span><span class="p">)</span> <span class="ow">or</span> <span class="n">flag</span> <span class="mi">1</span> <span class="p">(</span><span class="n">ok</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">failed</span> <span class="p">(</span><span class="k">for</span> <span class="n">soft</span> <span class="n">flags</span><span class="p">)</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RAW</span> <span class="n">DATA</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">Generated</span> <span class="n">new</span> <span class="n">flag</span> <span class="n">variable</span> <span class="n">FLAG_L2_FC_CO2_VM97_DROPOUT_TEST</span><span class="p">,</span> <span class="n">values</span> <span class="n">taken</span> <span class="kn">from</span><span class="w"> </span><span class="nn">output</span> <span class="n">variable</span> <span class="n">CO2_VM97_TEST</span> <span class="kn">from</span><span class="w"> </span><span class="nn">position</span> <span class="mi">3</span><span class="p">,</span> <span class="n">based</span> <span class="n">on</span> <span class="n">CO2</span><span class="p">,</span> <span class="k">with</span> <span class="n">flag</span> <span class="mi">0</span> <span class="p">(</span><span class="n">good</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">passed</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">2</span> <span class="p">(</span><span class="n">bad</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">failed</span> <span class="p">(</span><span class="k">for</span> <span class="n">hard</span> <span class="n">flags</span><span class="p">)</span> <span class="ow">or</span> <span class="n">flag</span> <span class="mi">1</span> <span class="p">(</span><span class="n">ok</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">failed</span> <span class="p">(</span><span class="k">for</span> <span class="n">soft</span> <span class="n">flags</span><span class="p">)</span> <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="angle-of-attack-aoa-flag">
+<h3><strong>Angle-of-attack (AoA) flag</strong><a class="headerlink" href="#angle-of-attack-aoa-flag" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>The AoA flag was only applied during certain time periods:
+- between <code class="docutils literal notranslate"><span class="pre">2008-01-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2010-01-01</span></code>
+- between <code class="docutils literal notranslate"><span class="pre">2016-03-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2016-05-01</span></code>
+- between <code class="docutils literal notranslate"><span class="pre">2021-12-10</span></code> and <code class="docutils literal notranslate"><span class="pre">2021-12-23</span></code></p>
+<ul>
+<li><p>All time periods when the flag indicated issues with AoA were flagged as bad data.</p></li>
+<li><p>Normally not applied by default, but in this case there were time periods when the sonic’s vertical wind velocity produced unrealistic wind values.</p></li>
+<li><p>applied to: all fluxes</p></li>
+<li><p>Note: for flux calculations, the setting in EddyPro was relaxed and accepted minimum and maximum angles of attack of <code class="docutils literal notranslate"><span class="pre">-35°</span></code> and <code class="docutils literal notranslate"><span class="pre">+35°</span></code>, respectively, instead of the default <code class="docutils literal notranslate"><span class="pre">-30°</span></code> and <code class="docutils literal notranslate"><span class="pre">+30°</span></code>. Reason: this test is relatively strict and removes many data points, however, based on tests from another group the relaxed settings seemed defensible, especially since this flag was only applied to obviously flawed time periods.</p></li>
+<li><p>Example output from diive for NEE (in this step still called <code class="docutils literal notranslate"><span class="pre">FC</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ANGLE</span> <span class="n">OF</span> <span class="n">ATTACK</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">will</span> <span class="n">be</span> <span class="n">applied</span> <span class="n">on</span> <span class="n">the</span> <span class="n">following</span> <span class="n">dates</span> <span class="n">only</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;2008-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2010-01-01&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;2016-03-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-05-01&#39;</span><span class="p">]]</span>
+<span class="n">ANGLE</span> <span class="n">OF</span> <span class="n">ATTACK</span> <span class="n">TEST</span><span class="p">:</span> <span class="n">Generated</span> <span class="n">new</span> <span class="n">flag</span> <span class="n">variable</span> <span class="n">FLAG_L2_FC_VM97_AOA_HF_TEST</span><span class="p">,</span> <span class="n">values</span> <span class="n">taken</span> <span class="kn">from</span><span class="w"> </span><span class="nn">output</span> <span class="n">variable</span> <span class="kc">None</span><span class="p">,</span> <span class="k">with</span> <span class="n">flag</span> <span class="mi">0</span> <span class="p">(</span><span class="n">good</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">passed</span><span class="p">,</span> <span class="n">flag</span> <span class="mi">2</span> <span class="p">(</span><span class="n">bad</span> <span class="n">values</span><span class="p">)</span> <span class="n">where</span> <span class="n">test</span> <span class="n">failed</span> <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="qcf-overall-quality-control-flag-after-level-2-tests">
+<h2>QCF: overall quality control flag after Level-2 tests<a class="headerlink" href="#qcf-overall-quality-control-flag-after-level-2-tests" title="Link to this heading">#</a></h2>
+<p><em>See below for a description of how <code class="docutils literal notranslate"><span class="pre">QCF</span></code> is calculated.</em></p>
+<ul class="simple">
+<li><p>**Single flags from Level-2 are combined into one quality control flag <code class="docutils literal notranslate"><span class="pre">QCF</span></code> that is later <em>temporarily</em> applied before outlier detection tests (Level-3.2).</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -434,11 +598,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Used_Software.html"
+       href="L3.1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Used Software</p>
+        <p class="prev-next-title">Level-3.1: Storage correction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -448,6 +612,30 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-flags">Individual flags</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssitc-test-flag"><strong>SSITC</strong> test flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-completeness-test-flag"><strong>Gas completeness</strong> test flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-correction-factor-test-flag"><strong>Spectral correction factor</strong> test flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-strength-test-flag"><strong>Signal strength</strong> test flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data-screening-test-flags-multiple"><strong>Raw data screening</strong> test flags (multiple)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-of-attack-aoa-flag"><strong>Angle-of-attack (AoA) flag</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qcf-overall-quality-control-flag-after-level-2-tests">QCF: overall quality control flag after Level-2 tests</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
