@@ -193,6 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level-3.2: Outlier flagging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level 3.3: USTAR filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level 4.1: Gap-filling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level 4.2: NEE Partitioning (in progress)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
@@ -373,7 +374,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -389,6 +392,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bico">bico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluxrun">fluxrun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diive">diive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reddyproc">REddyProc</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -400,18 +415,42 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="used-software">
 <h1>Used Software<a class="headerlink" href="#used-software" title="Link to this heading">#</a></h1>
-<p>TODO</p>
+<section id="jupyter-notebooks">
+<h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Jupyter notebooks</strong> used to create the dataset can be found here: <a class="github reference external" href="https://github.com/holukas/dataset_cha_fp2024_2005-2023/tree/main">holukas/dataset_cha_fp2024_2005-2023</a>*</p></li>
-<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Overview of processing progress on Google Docs</a> (binary conversion and Level-0 and Level-1 calculations), this sheet was used during processing</p></li>
-<li><p>General overview of flux processing chain, explaining the different flux levels: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/">Flux Processing Chain</a>*</p></li>
-<li><p><a class="reference external" href="https://github.com/holukas/bico">bico</a>: Binary converter to convert original eddy covariance raw data files (irregular compressed binary files) to regular ASCII files. Used versions <code class="docutils literal notranslate"><span class="pre">v1.6.3</span></code> and <code class="docutils literal notranslate"><span class="pre">v1.6.5</span></code>.</p></li>
+<li><p><strong>Jupyter notebooks</strong> were used to run <a class="reference external" href="https://github.com/holukas/diive">diive</a> code during dataset creation.</p></li>
+</ul>
+</section>
+<section id="bico">
+<h2>bico<a class="headerlink" href="#bico" title="Link to this heading">#</a></h2>
+<p><em>Prepares raw data files that are used in creating Level-0 and Level-1.</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/holukas/bico">bico</a>: Binary converter to convert original eddy covariance raw data files (irregular compressed binary files) to regular ASCII files.  Used versions <code class="docutils literal notranslate"><span class="pre">v1.6.3</span></code> and <code class="docutils literal notranslate"><span class="pre">v1.6.5</span></code>.</p></li>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Overview of processing progress on Google Docs</a> (binary conversion and Level-0 and Level-1 calculations), this sheet was used during processing.</p></li>
+</ul>
+</section>
+<section id="fluxrun">
+<h2>fluxrun<a class="headerlink" href="#fluxrun" title="Link to this heading">#</a></h2>
+<p><em>Produces Level-0 and Level-1 fluxes.</em></p>
+<ul class="simple">
 <li><p><a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a>: Python wrapper for executing EddyPro. Originally developed to save the output of the EddyPro console to a text file. It also generates (simple) plots of the results. Makes it simples to execute EddyPro in parallel. Was made for internal use and is thus more tailored to needs of the Grassland Sciences group. Used version <code class="docutils literal notranslate"><span class="pre">v1.4.1</span></code>.</p></li>
-<li><p><a class="reference external" href="https://github.com/holukas/diive">diive</a>: Python library for (post-)processing time series data. Used for quality control, gap-filling, merging, etc. Used versions <code class="docutils literal notranslate"><span class="pre">v0.80+</span></code>.</p></li>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Overview of processing progress on Google Docs</a> (binary conversion and Level-0 and Level-1 calculations), this sheet was used during processing.</p></li>
 </ul>
+</section>
+<section id="diive">
+<h2>diive<a class="headerlink" href="#diive" title="Link to this heading">#</a></h2>
+<p><em>Produces Level-2, Level-3.1, Level-3.2, Level-3.3. Also produces Level-4.1 (random forest). Applied in Jupyter notebooks.</em></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/EarthyScience/REddyProc">ReddyProc</a> was used for MDS gap-filling and NEE partitioning. Used version <code class="docutils literal notranslate"><span class="pre">X.X.X</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/holukas/diive">diive</a>: Python library for (post-)processing time series data. Used for quality control, gap-filling, merging, etc.  Used versions <code class="docutils literal notranslate"><span class="pre">v0.80+</span></code>.</p></li>
 </ul>
+</section>
+<section id="reddyproc">
+<h2>REddyProc<a class="headerlink" href="#reddyproc" title="Link to this heading">#</a></h2>
+<p><em>Produces Level-4.1 (MDS) and Level-4.2.</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/EarthyScience/REddyProc">REddyProc</a> was used for MDS gap-filling and NEE partitioning. Used version <code class="docutils literal notranslate"><span class="pre">X.X.X</span></code></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -468,6 +507,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bico">bico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluxrun">fluxrun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diive">diive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reddyproc">REddyProc</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

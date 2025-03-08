@@ -201,6 +201,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level-3.2: Outlier flagging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level 3.3: USTAR filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level 4.1: Gap-filling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level 4.2: NEE Partitioning (in progress)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
@@ -405,7 +406,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-4-2-nee-partitioning-planned">Level 4.2: NEE Partitioning (planned)</a></li>
 </ul>
             </nav>
         </div>
@@ -459,19 +459,9 @@ document.write(`
 <li><p><strong>Level-3.2</strong> detects outliers and creates additional quality flags</p></li>
 <li><p><strong>Level-3.3</strong> creates additional quality flags based on three different constant USTAR thresholds, previously detected by FLUXNET (Pastorello et al., 2020)</p></li>
 <li><p><strong>Level-4.1</strong> performs gap-filling (long-term random forest)</p></li>
-<li><p>(planned) <strong>Level-4.2</strong> partitions NEE fluxes into GPP and RECO</p></li>
+<li><p><strong>Level-4.2</strong> partitions NEE fluxes (gap-filled with random forest, MDS) into GPP and RECO</p></li>
 </ul>
 </section>
-<section id="level-4-2-nee-partitioning-planned">
-<h2>Level 4.2: NEE Partitioning (planned)<a class="headerlink" href="#level-4-2-nee-partitioning-planned" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><em>planned</em></p></li>
-<li><p>Nighttime method based on Reichstein et al (2005)</p></li>
-<li><p>Daytime method based on Lasslop et al. (2010)</p></li>
-<li><p>Modified daytime method based on Keenan et al. (2019)</p></li>
-</ul>
-</section>
-<hr class="docutils" />
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -541,7 +531,6 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-4-2-nee-partitioning-planned">Level 4.2: NEE Partitioning (planned)</a></li>
 </ul>
   </nav></div>
 

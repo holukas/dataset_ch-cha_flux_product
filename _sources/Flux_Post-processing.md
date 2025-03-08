@@ -40,14 +40,4 @@
 - **Level-3.2** detects outliers and creates additional quality flags
 - **Level-3.3** creates additional quality flags based on three different constant USTAR thresholds, previously detected by FLUXNET (Pastorello et al., 2020)
 - **Level-4.1** performs gap-filling (long-term random forest)
-- (planned) **Level-4.2** partitions NEE fluxes into GPP and RECO
-
-
-## Level 4.2: NEE Partitioning (planned)
-
-- _planned_
-- Nighttime method based on Reichstein et al (2005)
-- Daytime method based on Lasslop et al. (2010)
-- Modified daytime method based on Keenan et al. (2019)
-
----
+- **Level-4.2** partitions NEE fluxes (gap-filled with random forest, MDS) into GPP and RECO
