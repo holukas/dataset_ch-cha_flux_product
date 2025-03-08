@@ -29,7 +29,7 @@ This dataset contains ecosystem fluxes measured by the eddy covariance method, m
 - [Variables](Variables): list of variables in the dataset
 - [Links](Links): 
 - [References](References): contains references relevant to the production of this dataset
-- [Notebooks](dataset_ch-cha_flux_product/notebooks/README.md): Jupyter notebooks used to create the final dataset
+- [Notebooks overview](notebooks/README.md): Jupyter notebooks used to create the final dataset
 
 ## Eddy covariance fluxes in this dataset
 
