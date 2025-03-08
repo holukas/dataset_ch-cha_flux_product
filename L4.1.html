@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Links &#8212; CH-CHA Flux Product</title>
+    <title>Level 4.1: Gap-filling &#8212; CH-CHA Flux Product</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Links';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'L4.1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="References" href="References.html" />
-    <link rel="prev" title="Variables" href="Variables.html" />
+    <link rel="next" title="QCF: overall quality control flag" href="QCF.html" />
+    <link rel="prev" title="Level 3.3: USTAR filtering" href="L3.3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,18 +183,18 @@
 <li class="toctree-l1"><a class="reference internal" href="Meteo_Data.html">Meteo Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management_Data.html">Management Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Flux_Calculations.html">Flux Calculations</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Flux_Post-processing.html">Flux Post-processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Flux_Post-processing.html">Flux Post-processing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="L2.html">Level-2: Quality flag expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level-3.1: Storage correction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level-3.2: Outlier flagging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level 3.3: USTAR filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level 4.1: Gap-filling</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Level 4.1: Gap-filling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/README.html">Notebook overview</a></li>
 </ul>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLinks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FL4.1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +298,7 @@
       
       
       
-      <li><a href="_sources/Links.md" target="_blank"
+      <li><a href="_sources/L4.1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +369,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -380,11 +382,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Links</h1>
+    <h1>Level 4.1: Gap-filling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random forest</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-predictors">Features (predictors)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nee-le-h">NEE, LE, H</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fn2o-fch4">FN2O, FCH4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -394,17 +411,74 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="links">
-<h1>Links<a class="headerlink" href="#links" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="level-4-1-gap-filling">
+<h1>Level 4.1: Gap-filling<a class="headerlink" href="#level-4-1-gap-filling" title="Link to this heading">#</a></h1>
+<section id="random-forest">
+<h2>Random forest<a class="headerlink" href="#random-forest" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Jupyter notebooks</strong> used to create the dataset can be found here: <a class="github reference external" href="https://github.com/holukas/dataset_cha_fp2024_2005-2023/tree/main">holukas/dataset_cha_fp2024_2005-2023</a>*</p></li>
-<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Overview of processing progress on Google Docs</a> (binary conversion and Level-0 and Level-1 calculations), this sheet was used during processing</p></li>
-<li><p>General overview of flux processing chain, explaining the different flux levels: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/">Flux Processing Chain</a></p></li>
-<li><p>Flux partitioning was done using <a class="reference external" href="https://github.com/EarthyScience/REddyProc">ReddyProc</a> v1.3.3</p></li>
-<li><p><a class="reference external" href="https://github.com/holukas/bico">bico</a>: Binary converter to convert original eddy covariance raw data files (irregular compressed binary files) to regular ASCII files. Used versions <code class="docutils literal notranslate"><span class="pre">v1.6.3</span></code> and <code class="docutils literal notranslate"><span class="pre">v1.6.5</span></code>.</p></li>
-<li><p><a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a>: Python wrapper for EddyPro. Used version <code class="docutils literal notranslate"><span class="pre">v1.4.1</span></code>.</p></li>
-<li><p><a class="reference external" href="https://github.com/holukas/diive">diive</a>: Python library for (post-)processing time series data. Used for quality control, gap-filling, merging, etc. Used versions <code class="docutils literal notranslate"><span class="pre">v0.80+</span></code>.</p></li>
+<li><p>All fluxes were gap-filled using the class <code class="docutils literal notranslate"><span class="pre">LongTermGapFillingRandomForestTS</span></code> from <a class="reference external" href="https://github.com/holukas/diive/tree/main">diive</a></p></li>
+<li><p>This class builds a random forest model for each year, trained on data of the respective year and the two closest/neighboring years</p></li>
+<li><p><strong>For example</strong>: for gap-filling 2015, the model was trained on 2014, 2015 and 2016. For 2005 (the very first year for FC fluxes), the two closest years were used, i.e., the model was trained on 2005, 2006 and 2007. Likewise, for the very last year, the model was trained on data from the last year and the two preceding years.</p></li>
+<li><p><strong>Exception</strong>: due to low flux availability for <code class="docutils literal notranslate"><span class="pre">FN2O</span></code> and <code class="docutils literal notranslate"><span class="pre">FCH4</span></code> in 2017, 2018 and 2022, respective gap-filling models were built from all available, directly measured data (2012-2022) after quality checks and then used to gap-fill these three years. A completely new gap-filled flux version for the complete time range (2012-2022) was built. From that version, gap-filled data for the three years (2017, 2018, 2022) then replaced the data in the previously gap-filled version.</p></li>
+<li><p>Generally used random forest settings: <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>: 500, <code class="docutils literal notranslate"><span class="pre">random_state</span></code>: 42, <code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>: 2, <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>: 1, default settings were used for all other parameters, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">here</a>.</p></li>
 </ul>
+<section id="features-predictors">
+<h3>Features (predictors)<a class="headerlink" href="#features-predictors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Variables used as features in training the random forest models.</p></li>
+<li><p>In addition to features listed below, timestamp info was included as additional features:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">++</span> <span class="n">Added</span> <span class="n">new</span> <span class="n">columns</span> <span class="k">with</span> <span class="n">timestamp</span> <span class="n">info</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;.YEAR&#39;</span><span class="p">,</span> <span class="s1">&#39;.SEASON&#39;</span><span class="p">,</span> <span class="s1">&#39;.MONTH&#39;</span><span class="p">,</span> <span class="s1">&#39;.WEEK&#39;</span><span class="p">,</span> <span class="s1">&#39;.DOY&#39;</span><span class="p">,</span> <span class="s1">&#39;.HOUR&#39;</span><span class="p">,</span> <span class="s1">&#39;.YEARMONTH&#39;</span><span class="p">,</span> <span class="s1">&#39;.YEARDOY&#39;</span><span class="p">,</span> <span class="s1">&#39;.YEARWEEK&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Lagged variants</strong> were calculated for <code class="docutils literal notranslate"><span class="pre">SW_IN_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">TA_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">VPD_T1_2_1</span></code> and all variables listed in  <code class="docutils literal notranslate"><span class="pre">METEO_VARS</span></code> (see below).</p></li>
+<li><p><strong>Feature importances</strong> were calculated as <strong>permutation importance</strong>: Permutation feature importance assesses feature contributions to a model’s performance. It works by randomly shuffling a feature’s values, observing the resulting performance drop. This reveals how much the model relies on that feature.</p></li>
+<li><p><strong>Feature reduction</strong>: Feature reduction was performed by comparing feature importances to a random variable (<code class="docutils literal notranslate"><span class="pre">.RANDOM</span></code>), which consisted of random numbers (floats) between 0 and 1. Features with importance below <code class="docutils literal notranslate"><span class="pre">.RANDOM</span></code>’s were discarded. To ensure consistency across yearly models, a feature was only removed if it was deemed unimportant in <em>all</em> yearly models. A feature was retained if it was deemed important in at least one model.</p></li>
+</ul>
+<section id="nee-le-h">
+<h4>NEE, LE, H<a class="headerlink" href="#nee-le-h" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MGMT_VARS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s2">&quot;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_GRAZING_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_MOWING_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_SOWING_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&quot;</span><span class="p">]</span>
+
+<span class="n">FEATURES</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s2">&quot;SW_IN_T1_2_1&quot;</span><span class="p">,</span> <span class="s2">&quot;TA_T1_2_1&quot;</span><span class="p">,</span> <span class="s2">&quot;VPD_T1_2_1&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">MGMT_VARS</span>
+</pre></div>
+</div>
+</section>
+<section id="fn2o-fch4">
+<h4>FN2O, FCH4<a class="headerlink" href="#fn2o-fch4" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Management variables (also includes time since PRECIP)</span>
+<span class="n">MGMT_VARS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s2">&quot;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&quot;</span><span class="p">,</span>   <span class="s2">&quot;TIMESINCE_MGMT_GRAZING_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_MOWING_FOOTPRINT&quot;</span><span class="p">,</span>
+<span class="s2">&quot;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_SOWING_FOOTPRINT&quot;</span><span class="p">,</span>
+<span class="s2">&quot;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1&quot;</span>
+<span class="p">]</span>
+
+<span class="c1"># Already lagged variants of SWC, TS and PRECIP</span>
+<span class="n">AGG_VARS</span> <span class="o">=</span> <span class="p">[</span>
+
+<span class="c1"># SWC</span>
+<span class="s2">&quot;SWC_GF1_0.15_1_gfXG_MEAN3H&quot;</span><span class="p">,</span> <span class="s2">&quot;.SWC_GF1_0.15_1_gfXG_MEAN3H-24&quot;</span><span class="p">,</span> <span class="s2">&quot;.SWC_GF1_0.15_1_gfXG_MEAN3H-18&quot;</span><span class="p">,</span> <span class="s2">&quot;.SWC_GF1_0.15_1_gfXG_MEAN3H-12&quot;</span><span class="p">,</span> <span class="s2">&quot;.SWC_GF1_0.15_1_gfXG_MEAN3H-6&quot;</span><span class="p">,</span>
+
+<span class="c1"># TS</span>
+<span class="s2">&quot;TS_GF1_0.04_1_gfXG_MEAN3H&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.04_1_gfXG_MEAN3H-24&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.04_1_gfXG_MEAN3H-18&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.04_1_gfXG_MEAN3H-12&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.04_1_gfXG_MEAN3H-6&quot;</span><span class="p">,</span> <span class="s2">&quot;TS_GF1_0.15_1_gfXG_MEAN3H&quot;</span><span class="p">,</span>   <span class="s2">&quot;.TS_GF1_0.15_1_gfXG_MEAN3H-24&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.15_1_gfXG_MEAN3H-18&quot;</span><span class="p">,</span>   <span class="s2">&quot;.TS_GF1_0.15_1_gfXG_MEAN3H-12&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.15_1_gfXG_MEAN3H-6&quot;</span><span class="p">,</span>
+<span class="s2">&quot;TS_GF1_0.4_1_gfXG_MEAN3H&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.4_1_gfXG_MEAN3H-24&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.4_1_gfXG_MEAN3H-18&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.4_1_gfXG_MEAN3H-12&quot;</span><span class="p">,</span> <span class="s2">&quot;.TS_GF1_0.4_1_gfXG_MEAN3H-6&quot;</span><span class="p">,</span>
+
+<span class="c1"># PRECIP</span>
+<span class="s2">&quot;PREC_RAIN_TOT_GF1_0.5_1_MEAN3H&quot;</span><span class="p">,</span> <span class="s2">&quot;.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-24&quot;</span><span class="p">,</span> <span class="s2">&quot;.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-18&quot;</span><span class="p">,</span> <span class="s2">&quot;.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-12&quot;</span><span class="p">,</span> <span class="s2">&quot;.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-6&quot;</span>
+<span class="p">]</span>
+
+<span class="n">METEO_VARS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s2">&quot;TS_GF1_0.04_1_gfXG&quot;</span><span class="p">,</span> <span class="s2">&quot;TS_GF1_0.15_1_gfXG&quot;</span><span class="p">,</span> <span class="s2">&quot;TS_GF1_0.4_1_gfXG&quot;</span><span class="p">,</span> <span class="s2">&quot;SWC_GF1_0.15_1_gfXG&quot;</span><span class="p">,</span> <span class="s2">&quot;PREC_RAIN_TOT_GF1_0.5_1&quot;</span>
+<span class="p">]</span>
+
+<span class="n">FEATURES</span> <span class="o">=</span> <span class="n">METEO_VARS</span> <span class="o">+</span> <span class="n">AGG_VARS</span> <span class="o">+</span> <span class="n">MGMT_VARS</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -438,20 +512,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Variables.html"
+       href="L3.3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Variables</p>
+        <p class="prev-next-title">Level 3.3: USTAR filtering</p>
       </div>
     </a>
     <a class="right-next"
-       href="References.html"
+       href="QCF.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">References</p>
+        <p class="prev-next-title">QCF: overall quality control flag</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -461,6 +535,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random forest</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-predictors">Features (predictors)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nee-le-h">NEE, LE, H</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fn2o-fch4">FN2O, FCH4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
