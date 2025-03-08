@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Variables" href="Variables.html" />
-    <link rel="prev" title="Flux Post-processing" href="Flux_Post-processing.html" />
+    <link rel="prev" title="Level-2: Quality flag expansion" href="L2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +183,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Meteo_Data.html">Meteo Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management_Data.html">Management Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Flux_Calculations.html">Flux Calculations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Flux_Post-processing.html">Flux Post-processing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Flux_Post-processing.html">Flux Post-processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="L2.html">Level-2: Quality flag expansion</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Used Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
@@ -389,7 +392,15 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="used-software">
 <h1>Used Software<a class="headerlink" href="#used-software" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li></li>
+<li><p><strong>Jupyter notebooks</strong> used to create the dataset can be found here: <a class="github reference external" href="https://github.com/holukas/dataset_cha_fp2024_2005-2023/tree/main">holukas/dataset_cha_fp2024_2005-2023</a>*</p></li>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Overview of processing progress on Google Docs</a> (binary conversion and Level-0 and Level-1 calculations), this sheet was used during processing</p></li>
+<li><p>General overview of flux processing chain, explaining the different flux levels: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/">Flux Processing Chain</a>*</p></li>
+<li><p><a class="reference external" href="https://github.com/holukas/bico">bico</a>: Binary converter to convert original eddy covariance raw data files (irregular compressed binary files) to regular ASCII files. Used versions <code class="docutils literal notranslate"><span class="pre">v1.6.3</span></code> and <code class="docutils literal notranslate"><span class="pre">v1.6.5</span></code>.</p></li>
+<li><p><a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a>: Python wrapper for executing EddyPro. Originally developed to save the output of the EddyPro console to a text file. It also generates (simple) plots of the results. Makes it simples to execute EddyPro in parallel. Was made for internal use and is thus more tailored to needs of the Grassland Sciences group. Used version <code class="docutils literal notranslate"><span class="pre">v1.4.1</span></code>.</p></li>
+<li><p><a class="reference external" href="https://github.com/holukas/diive">diive</a>: Python library for (post-)processing time series data. Used for quality control, gap-filling, merging, etc. Used versions <code class="docutils literal notranslate"><span class="pre">v0.80+</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/EarthyScience/REddyProc">ReddyProc</a> was used for MDS gap-filling and NEE partitioning. Used version <code class="docutils literal notranslate"><span class="pre">X.X.X</span></code></p></li>
 </ul>
 </section>
 
@@ -424,12 +435,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Flux_Post-processing.html"
+       href="L2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Flux Post-processing</p>
+        <p class="prev-next-title">Level-2: Quality flag expansion</p>
       </div>
     </a>
     <a class="right-next"
