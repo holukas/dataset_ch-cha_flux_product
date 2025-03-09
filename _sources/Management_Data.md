@@ -11,25 +11,7 @@ Detailed management data are available in an Excel file. The file contains info 
 Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (**Table M1**).
 
 
-
-```{table} my caption
-
-| Unique management events                     |
-| -------------------------------------------- |
-| 1: MGMT_FERT_ORG_MAN                         |
-| 2: MGMT_PPGM_HERBREMOVAL_RUMEX               |
-| 3: MGMT_PPGM_HARROWING_1CM                   |
-| 4: MGMT_USE_GRAZING_CATTLE                   |
-| 5: MGMT_PPGM_ROLLING                         |
-| 6: MGMT_PPGM_HARROWING_7CM                   |
-| 7: MGMT_SOWING_OVERSOWING_OH440RENO          |
-| 8: MGMT_USE_MOWING_GRASSSILAGE               |
-| 9: MGMT_FERT_MIN_CAN                         |
-```
-
-
-
-**Table M1**. Unique management events between 2001 and 2024.
+```{table} Unique management events between 2001 and 2024.
 
 | Unique management events                     |
 | -------------------------------------------- |
@@ -67,12 +49,13 @@ Each management event was assigned a variable name and a list of unique events w
 | 32: MGMT_SOWING_RESOWING_UFA-420             |
 | 33: MGMT_PPGM_HERBICIDE                      |
 | 34: MGMT_SOILCULTIVATION_HARROWING           |
+```
 
 ## Simplified variable names
 
 Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B (**Table M2**).
 
-**Table M2**. Simplified and grouped management variables.
+```{table}  Simplified and grouped management variables.
 
 | Management per parcel             | counts |
 | --------------------------------- | ---------- |
@@ -90,6 +73,7 @@ Unique events were simplified and grouped together, where appropriate. In additi
 | MGMT_SOWING_PARCEL-A              | 6          |
 | MGMT_FERT_MIN_PARCEL-A            | 5          |
 | MGMT_FERT_MIN_PARCEL-B            | 2          |
+```
 
 ## Converting management info to time series format
 
@@ -100,9 +84,10 @@ In order to convert `start` and `end` information for each event to time series 
 The info from the Excel file was then inserted into the empty dataframe. When management took place, values in the respective data column for the respective day(s) were set to `1`, otherwise to `0`. All values of the respective days of management were set to `1` because the exact starting and end times were not available for all events.
 
 
-> **Example**
-> The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. In the dataframe, `1` was inserted in the column `MGMT_GRAZING_PARCEL-B` between the (daily) timestamps `2008-11-01` and `2008-11-04` (inclusive start and end dates).  
- 
+:::{admonition} Example
+The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. In the dataframe, `1` was inserted in the column `MGMT_GRAZING_PARCEL-B` between the (daily) timestamps `2008-11-01` and `2008-11-04` (inclusive start and end dates).  
+:::
+
 For all management events, `TIMESINCE` variables were calculated, describing the temporal distance of each day to the previous management event.
 
 TODO: add figure
