@@ -1,6 +1,6 @@
 # QCF: overall quality control flag
 
-:::{info} 
+:::{note} 
 The `QCF` (**Q**uality **C**ontrol **F**lag) is calculated from multiple flags from single tests.
 :::
 
