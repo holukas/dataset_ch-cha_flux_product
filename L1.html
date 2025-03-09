@@ -541,11 +541,19 @@ document.write(`
 </div></blockquote>
 <p>In addition, the correction by Burba et al. (2008) considers vertically mounted IRGAs only, while the IRGA at CH-CHA (and all other Swiss FluxNet sites) are tilted at approx. 15°. The correction does not account for this tilting angle.</p>
 <p>We are therefore hesitant in applying this correction for CH-CHA because we found that the correction was not working as expected for other site in Swiss FluxNet. For example, the cropland CH-OE2 (<a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-oe2-oensingen/site-info-ch-oe2/">link</a>) is at 452 m a.s.l. and climatic conditions (air temperatures) are very similar to CH-CHA. For CH-OE2, we had the option to compare fluxes from the open-path IRGA LI-7500 (LI75) with concurrent fluxes from the enclosed-path IRGA LI-7200 (LI72). We found that LI75 and LI72 fluxes corresponded relatively well over approx. 2 years (<strong>Fig. 1</strong>, LI75 in red, LI72 as “true” flux in black). However, when we corrected the LI75 fluxes using EddyPro (Burba 2008 method) we found that the correction resulted in a strong underestimation of the cumulative carbon uptake in comparison to LI72 (see blue and purple lines in <strong>Fig. 1</strong>). This indicates that the default application of the Burba 2008 correction is risky.</p>
-<p><img alt="" src="_images/self-heating_CH-OE2_cropland_2015-2017.png" />
-<strong>Figure 1</strong>. Cumulative NEE fluxes from Feb 2015 until Apr 2017 at the cropland site CH-OE2. Shown is a comparison of self-heating correction approaches: open-path LI-7500 fluxes (only WPL corrected, red) with enclosed-path LI-7200 fluxes (black, assumed to show the “true” flux). Also shown are cumulative fluxes after applying the Burba 2008 correction in EddyPro using the single linear regression method (SLR, blue) and the multiple regression method (MLR, purple).</p>
+<figure class="align-default" id="fig-1">
+<img alt="" src="_images/self-heating_CH-OE2_cropland_2015-2017.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Figure 1</strong>. Cumulative NEE fluxes from Feb 2015 until Apr 2017 at the cropland site CH-OE2. Shown is a comparison of self-heating correction approaches: open-path LI-7500 fluxes (only WPL corrected, red) with enclosed-path LI-7200 fluxes (black, assumed to show the “true” flux). Also shown are cumulative fluxes after applying the Burba 2008 correction in EddyPro using the single linear regression method (SLR, blue) and the multiple regression method (MLR, purple).</span><a class="headerlink" href="#fig-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In contrast, for the forest site CH-LAE (<a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-lae-laegeren/site-info-ch-lae/">link</a>) we found that some self-heating correction is clearly needed, even in summer when temperature increase &gt; 30°C. Here, the Burba 2008 correction yields unsatisfactory results and corrects the fluxes only slightly, albeit in the right direction (<strong>Fig. 2</strong>). CH-LAE has a relatively unique location and is very different from CH-CHA. For CH-LAE, we apply the self-heating correction similar to Kittler et al. (2017, <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017JG003830">link</a>), which used an earlier description of the correction (Burba 2006) in combination with a scaling factor. A more detailed description for the CH-LAE correction can be found here: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/knowledge-base/ch-lae-fp2021-2004-2020/#Note_Self-heating_correction_of_open-path_CO2_fluxes">link</a>. Unfortunately, at CH-CHA we cannot apply this method since parallel measurements are not available.</p>
-<p><img alt="" src="_images/self-heating_CH-LAE_mixedForest_2016-2017.png" />
-<strong>Figure 2</strong>. Cumulative NEE between Jan 2016 and Dec 2017 at the forest site CH-LAE. “True” flux from LI-7200 (black), no self-heating correction for LI-7500 fluxes (red), after correction in EddyPro Burba 2008 (blue) and after correction Kittler 2017 (orange).</p>
+<figure class="align-default" id="fig-2">
+<img alt="" src="_images/self-heating_CH-LAE_mixedForest_2016-2017.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Cumulative NEE between Jan 2016 and Dec 2017 at the forest site CH-LAE. “True” flux from LI-7200 (black), no self-heating correction for LI-7500 fluxes (red), after correction in EddyPro Burba 2008 (blue) and after correction Kittler 2017 (orange).</span><a class="headerlink" href="#fig-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The self-heating issue for open-path IRGAs is still not solved. Due to the reasons outlined above and the involved uncertainties we currently refrain from applying the correction to CH-CHA fluxes.</p>
 </section>
 <section id="details">
@@ -554,13 +562,13 @@ document.write(`
 <figure class="align-default" id="fig-3">
 <img alt="" src="_images/self-heating_CH-LAE_2016-2017_parallel_measurements_IRGA72_IRGA75_correction_scaling_factor_in_ustar_classes.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Figure 3</strong> shows ξ for the forest site CH-LAE and demonstrates that ξ is mostly 0.05 during the night (i.e. the night fluxes need a 5% self-heating correction), but increases during sunrise, reaching values of up to 0.3. In contrast, ξ for the forest site CH-DAV showed a completely different picture.</span><a class="headerlink" href="#fig-3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text"><strong>Figure 3</strong> shows ξ for the forest site CH-LAE and demonstrates that ξ is mostly 0.05 during the night (i.e. the night fluxes need a 5% self-heating correction), but increases during sunrise, reaching values of up to 0.3. In contrast, ξ for the forest site CH-DAV showed a completely different picture.</span><a class="headerlink" href="#fig-3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="fig-4">
 <img alt="" src="_images/self-heating_CH-LAE_2016-2017_parallel_measurements_IRGA72_IRGA75_correction_scaling_factor_diel_cycles.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text"><strong>Figure</strong> <strong>4</strong> shows that for the forest site CH-LAE, high values for ξ are needed during the day, but ξ is close to zero during the night (i.e. nighttime fluxes need little correction).</span><a class="headerlink" href="#fig-4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text"><strong>Figure</strong> <strong>4</strong> shows that for the forest site CH-LAE, high values for ξ are needed during the day, but ξ is close to zero during the night (i.e. nighttime fluxes need little correction).</span><a class="headerlink" href="#fig-4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The central finding of_ <strong>Figure 3</strong> and_ <strong>Figure 4</strong> is that ξ is not constant and applying an unknown constant ξ to fluxes where parallel measurements were not available would yield “corrected” fluxes of unknown quality. In the absence of parallel measurements, ξ remains unknown. Unfortunately, there is no general ξ value that can be used with confidence across sites or for specific ecosystems. A recent study recommended against applying the fitting correction with coefficients for other sites (Deventer et al., 2021).</p>

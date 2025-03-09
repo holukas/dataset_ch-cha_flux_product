@@ -10,6 +10,25 @@ Detailed management data are available in an Excel file. The file contains info 
 
 Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (**Table M1**).
 
+
+
+```{table} my caption
+
+| Unique management events                     |
+| -------------------------------------------- |
+| 1: MGMT_FERT_ORG_MAN                         |
+| 2: MGMT_PPGM_HERBREMOVAL_RUMEX               |
+| 3: MGMT_PPGM_HARROWING_1CM                   |
+| 4: MGMT_USE_GRAZING_CATTLE                   |
+| 5: MGMT_PPGM_ROLLING                         |
+| 6: MGMT_PPGM_HARROWING_7CM                   |
+| 7: MGMT_SOWING_OVERSOWING_OH440RENO          |
+| 8: MGMT_USE_MOWING_GRASSSILAGE               |
+| 9: MGMT_FERT_MIN_CAN                         |
+```
+
+
+
 **Table M1**. Unique management events between 2001 and 2024.
 
 | Unique management events                     |
