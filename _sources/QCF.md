@@ -1,5 +1,9 @@
 # QCF: overall quality control flag
-- `QCF` (**Q**uality **C**ontrol **F**lag) is calculated from multiple flags from single tests.
+
+:::{info} 
+The `QCF` (**Q**uality **C**ontrol **F**lag) is calculated from multiple flags from single tests.
+:::
+
 - `QCF` is a flag that shows the *overall* quality of the respective data point. 
 - `QCF` can be: `0`=best data, `1`=OK data, `2`=bad data
 - **`QCF` is calculated from single test flags summed together**:
@@ -17,7 +21,9 @@
 - **Example**:
 	- `FLAG_L3.3_CUT_50_NEE_L3.1_QCF` is the flag after Level-3.3, for flux `NEE_L3.1` (storage-corrected) for the USTAR scenario `CUT_50`. This flag is applied to flux `NEE_L3.1`, producing the quality-filtered flux `NEE_L3.1_L3.3_CUT_50_QCF`. In addition, another flux variable is produced, containing only highest-quality fluxes: `NEE_L3.1_L3.3_CUT_50_QCF0` (all single flags are zero).
 
-**Figure 1**: Example showing how the overall quality control flag `QCF` is calculated from single test flags.
+:::{figure-md} fig-qcf1
 ![](images/QCF_overall_quality_flag.png)
 
+Example showing how the overall quality control flag `QCF` is calculated from single test flags.
+:::
 

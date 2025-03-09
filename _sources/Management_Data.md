@@ -92,14 +92,17 @@ For all management events, `TIMESINCE` variables were calculated, describing the
 
 TODO: add figure
 
-> **Example**  
-> The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. The variable `TIMESINCE_MGMT_GRAZING_PARCEL-B` was calculated and has value `0` between `2008-11-01` and `2008-11-04`, value `1` on `2008-11-05`, value `2` on `2008-11-06`, etc...  
+:::{admonition} Example
+The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. The variable `TIMESINCE_MGMT_GRAZING_PARCEL-B` was calculated and has value `0` between `2008-11-01` and `2008-11-04`, value `1` on `2008-11-05`, value `2` on `2008-11-06`, etc...  
+:::
+
 ### Half-hourly time scale
 
 Flux and meteo data are available with a **half-hourly (hh)** timestamp. Therefore, the daily management dataframe was converted to hh time resolution. The hh timestamp shows the _middle_ of the averaging interval, `TIMESTAMP_MIDDLE`.
 
-> **Example**  
-> At the daily scale, the event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. Converted to the half-hourly timescale, all values between `2008-11-01 00:15:00` and `2008-11-04 23:45:00` were set to `1`.  
+:::{admonition} Example
+At the daily scale, the event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. Converted to the half-hourly timescale, all values between `2008-11-01 00:15:00` and `2008-11-04 23:45:00` were set to `1`.
+:::
 
 Wind direction was then added to the hh management data and used to create new `_FOOTPRINT` (suffix) variables. These variables contain info about the parcel from where the wind was arriving at the sensors. This means, depending on wind direction, the `_FOOTPRINT` variables can contain info from `_PARCEL-A` or `_PARCEL-B` variables.
 
