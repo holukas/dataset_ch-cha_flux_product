@@ -7,8 +7,22 @@ chapters:
 - file: Meteo_Data
 - file: Management_Data
 - file: Flux_Calculations
+  sections:
+  - file: L0
+  - file: L1
 - file: Flux_Post-processing
+  sections:
+  - file: L2
+  - file: L3.1
+  - file: L3.2  
+  - file: L3.3  
+  - file: L4.1
+  - file: L4.2  
+  - file: QCF  
+- file: Used_Software
+- file: Instrumentation
 - file: Variables
+- file: SI
 - file: Links
 - file: References
 - file: notebooks/README

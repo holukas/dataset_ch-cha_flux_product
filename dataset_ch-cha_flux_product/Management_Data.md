@@ -10,7 +10,8 @@ Detailed management data are available in an Excel file. The file contains info 
 
 Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (**Table M1**).
 
-**Table M1**. Unique management events between 2001 and 2024.
+
+```{table} Unique management events between 2001 and 2024.
 
 | Unique management events                     |
 | -------------------------------------------- |
@@ -48,12 +49,13 @@ Each management event was assigned a variable name and a list of unique events w
 | 32: MGMT_SOWING_RESOWING_UFA-420             |
 | 33: MGMT_PPGM_HERBICIDE                      |
 | 34: MGMT_SOILCULTIVATION_HARROWING           |
+```
 
 ## Simplified variable names
 
 Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B (**Table M2**).
 
-**Table M2**. Simplified and grouped management variables.
+```{table}  Simplified and grouped management variables.
 
 | Management per parcel             | counts |
 | --------------------------------- | ---------- |
@@ -71,6 +73,7 @@ Unique events were simplified and grouped together, where appropriate. In additi
 | MGMT_SOWING_PARCEL-A              | 6          |
 | MGMT_FERT_MIN_PARCEL-A            | 5          |
 | MGMT_FERT_MIN_PARCEL-B            | 2          |
+```
 
 ## Converting management info to time series format
 
@@ -81,21 +84,25 @@ In order to convert `start` and `end` information for each event to time series 
 The info from the Excel file was then inserted into the empty dataframe. When management took place, values in the respective data column for the respective day(s) were set to `1`, otherwise to `0`. All values of the respective days of management were set to `1` because the exact starting and end times were not available for all events.
 
 
-> **Example**
-> The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. In the dataframe, `1` was inserted in the column `MGMT_GRAZING_PARCEL-B` between the (daily) timestamps `2008-11-01` and `2008-11-04` (inclusive start and end dates).  
- 
+:::{admonition} Example
+The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. In the dataframe, `1` was inserted in the column `MGMT_GRAZING_PARCEL-B` between the (daily) timestamps `2008-11-01` and `2008-11-04` (inclusive start and end dates).  
+:::
+
 For all management events, `TIMESINCE` variables were calculated, describing the temporal distance of each day to the previous management event.
 
 TODO: add figure
 
-> **Example**  
-> The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. The variable `TIMESINCE_MGMT_GRAZING_PARCEL-B` was calculated and has value `0` between `2008-11-01` and `2008-11-04`, value `1` on `2008-11-05`, value `2` on `2008-11-06`, etc...  
+:::{admonition} Example
+The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. The variable `TIMESINCE_MGMT_GRAZING_PARCEL-B` was calculated and has value `0` between `2008-11-01` and `2008-11-04`, value `1` on `2008-11-05`, value `2` on `2008-11-06`, etc...  
+:::
+
 ### Half-hourly time scale
 
 Flux and meteo data are available with a **half-hourly (hh)** timestamp. Therefore, the daily management dataframe was converted to hh time resolution. The hh timestamp shows the _middle_ of the averaging interval, `TIMESTAMP_MIDDLE`.
 
-> **Example**  
-> At the daily scale, the event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. Converted to the half-hourly timescale, all values between `2008-11-01 00:15:00` and `2008-11-04 23:45:00` were set to `1`.  
+:::{admonition} Example
+At the daily scale, the event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. Converted to the half-hourly timescale, all values between `2008-11-01 00:15:00` and `2008-11-04 23:45:00` were set to `1`.
+:::
 
 Wind direction was then added to the hh management data and used to create new `_FOOTPRINT` (suffix) variables. These variables contain info about the parcel from where the wind was arriving at the sensors. This means, depending on wind direction, the `_FOOTPRINT` variables can contain info from `_PARCEL-A` or `_PARCEL-B` variables.
 

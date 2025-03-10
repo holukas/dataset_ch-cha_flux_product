@@ -20,11 +20,17 @@ This dataset contains ecosystem fluxes measured by the eddy covariance method, m
 - CH-CHA FP2025.1 (2005-2024) | initial release | release date: 8 Feb 2025
 
 ## Contents
+- [Site info CH-CHA](https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/): general info about the research station
+- [Meteo Data](Meteo_Data): details about used meteo data and gap-filling
+- [Management Data](Management_Data): describes how management information was converted to a time series format
+- [Flux Calculations](Flux_Calculations): lists background info about flux processing settings used in EddyPro
+- [Flux Post-processing](Flux_Post-processing): lists post-processing steps and their settings, including generation of quality flags, outlier removal and gap-filling
+- [Used Software](Used_Software): lists software (including links) used in the generation of this dataset
+- [Variables](Variables): list of variables in the dataset
+- [Links](Links): 
+- [References](References): contains references relevant to the production of this dataset
+- [Notebooks overview](notebooks/README.md): Jupyter notebooks used to create the final dataset
 
-- [Site info CH-CHA](https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/)
-- [Documentation](dataset_ch-cha_flux_product/README.md): Info about flux, meteo and management (post-)processing
-- [Notebooks](dataset_ch-cha_flux_product/notebooks/README.md): Jupyter notebooks used to create the final dataset
-[README](dataset_ch-cha_flux_product/notebooks/README.md)
 ## Eddy covariance fluxes in this dataset
 
 - **NEE**: Net ecosystem exchange of carbon dioxide (2005-2024)
