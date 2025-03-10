@@ -28,5 +28,5 @@ Photo of the CH-CHA research site in April 2014.
 
 Data were recorded by data loggers taking one measurement every 10s: 
 - 2005 to 2016: CR10X-2 M; 2016 to 2020: CR1000
-- since March 2020: CR1000X, Campbell Scientific, UT, USA)
+- since March 2020: CR1000X, Campbell Scientific, UT, USA
 

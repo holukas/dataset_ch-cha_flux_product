@@ -200,6 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Instrumentation.html">Instrumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SI.html">Supplementary Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/README.html">Notebook overview</a></li>
@@ -421,7 +422,7 @@ document.write(`
 <h2>OPENLAG runs to determine lag ranges<a class="headerlink" href="#openlag-runs-to-determine-lag-ranges" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Notebook example: <a class="reference external" href="https://github.com/holukas/dataset_cha_fp2024_2005-2023/blob/main/notebooks/00_L0_checks/02_L0_timelags_check.ipynb">Time lag check for 2024</a></p></li>
-<li><p>The lag between turbulent departures of wind and the gas of interest was first determined in a relatively wide time window (called OPENLAG run:  )</p>
+<li><p>The lag between turbulent departures of wind and the gas of interest was first determined in a relatively wide time window (called OPENLAG):</p>
 <ul>
 <li><p><strong>IRGA</strong> OPENLAG time window: between <code class="docutils literal notranslate"><span class="pre">-1s</span></code> and <code class="docutils literal notranslate"><span class="pre">+10s</span></code>. For IRGA, the goal was to find an appropriate nominal time lag, and to determine a time window for lag search as narrow as possible.</p></li>
 <li><p><strong>QCL</strong> OPENLAG time window: between <code class="docutils literal notranslate"><span class="pre">-1s</span></code> and <code class="docutils literal notranslate"><span class="pre">+10s</span></code>, and a second OPENLAG run between <code class="docutils literal notranslate"><span class="pre">-1s</span></code> and <code class="docutils literal notranslate"><span class="pre">+5s</span></code>. The second OPENLAG run was done because the first run showed that the time lags accumulated in a narrower range below +5s. For QCL fluxes, constant time lags were used for the final flux calcs, so here in the OPENLAG runs it was very important to get the value for the constant lag as correct as possible. The final lag range was then set according to these narrower results.</p></li>
@@ -670,8 +671,8 @@ document.write(`
 <h2>Check wind direction across years<a class="headerlink" href="#check-wind-direction-across-years" title="Link to this heading">#</a></h2>
 <p>I compared histograms of wind directions between 2005 and 2024 using Level-0 fluxes and found that a sonic orientation of 7° offset to north yields very similar results across years. It is therefore possible the the sonic orientation across all years was always close to 7°.</p>
 <p>Here are results from a comparison of annual wind direction histograms (with bin width of 1°) to a reference period (2006-2009), all wind directions were calculated with a north offset of 7°, then a histogram was calculated for each year. The OFFSET describes how many degrees have to be added (or subtracted) to the half-hourly wind direction to yield a histogram that is most similar to the reference. All OFFSETS are small, which indicates that the wind directions are in good agreement.</p>
-<p><strong>Table EC3</strong>. Wind direction offsets (in degrees) compared to a reference period (2006-2009) from Level-0 OPENLAG runs.</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<div class="pst-scrollable-table-container"><table class="table" id="id3">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Wind direction offsets (in degrees) compared to a reference period (2006-2009) from Level-0 OPENLAG runs.</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>YEAR</strong></p></th>
 <th class="head"><p><strong>OFFSET (°)</strong></p></th>

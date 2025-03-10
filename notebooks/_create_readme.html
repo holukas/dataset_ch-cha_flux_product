@@ -200,6 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Used_Software.html">Used Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Instrumentation.html">Instrumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SI.html">Supplementary Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html">Notebook overview</a></li>
@@ -448,8 +449,8 @@ document.write(`
         <span class="n">file_extension</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">suffix</span>      
         <span class="n">filename</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">name</span>
         <span class="n">filename_noext</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">stem</span>               
-        <span class="c1"># filelink = outpath / rel_filepath / f&quot;{filename_noext}.html&quot;</span>
-        <span class="n">filelink</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;notebooks&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">rel_filepath</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename_noext</span><span class="si">}</span><span class="s2">.html&quot;</span>
+        <span class="n">filelink</span> <span class="o">=</span> <span class="n">outpath</span> <span class="o">/</span> <span class="n">rel_filepath</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename_noext</span><span class="si">}</span><span class="s2">.html&quot;</span>
+        <span class="c1"># filelink = Path(&quot;notebooks&quot;) / rel_filepath / f&quot;{filename_noext}.html&quot;</span>
         <span class="c1"># filelink = f&quot;{filename_noext}.html&quot;</span>
         <span class="n">filelink</span> <span class="o">=</span> <span class="n">filelink</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>  <span class="c1"># Browser for html uses forward slash, also on Windows    </span>
         <span class="n">link</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filelink</span><span class="si">}</span><span class="s2">&quot;</span>    
@@ -465,7 +466,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WindowsPath(&#39;20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb&#39;)]
 20_MANAGEMENT
-[22.0_ConvertMgmtToTimeseries](notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html)
+[22.0_ConvertMgmtToTimeseries](https:/holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html)
 
 
 Links generated and saved to README
