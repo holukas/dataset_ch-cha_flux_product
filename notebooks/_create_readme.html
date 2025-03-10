@@ -460,7 +460,7 @@ document.write(`
         
         <span class="n">link</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filelink</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="n">link</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;https:/&quot;</span><span class="p">,</span> <span class="s2">&quot;https://&quot;</span><span class="p">)</span>
-        <span class="n">linestr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">filename_noext</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">linestr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;- [</span><span class="si">{</span><span class="n">filename_noext</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="c1"># linestr = f&quot;{filelink}\n&quot;</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">linestr</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">linestr</span><span class="p">)</span>
