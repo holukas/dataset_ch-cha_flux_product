@@ -204,13 +204,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../Links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../References.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html">Notebook overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html"><strong>Convert detailed management info to machine-readable format</strong></a></li>
-
-
-
-
-
-
 </ul>
 
     </div>
@@ -460,12 +453,16 @@ document.write(`
         <span class="c1"># filelink = Path(&quot;notebooks&quot;) / rel_filepath / f&quot;{filename_noext}.html&quot;</span>
         <span class="c1"># filelink = f&quot;{filename_noext}.html&quot;</span>
         
-        <span class="n">filelink</span> <span class="o">=</span> <span class="n">filelink</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>  <span class="c1"># Browser for html uses forward slash, also on Windows    </span>
+        <span class="c1"># Browser for html uses forward slash, also on Windows</span>
+        <span class="c1"># However, this also changes https:// to https:/, which is not desired, so fix that part later</span>
+        <span class="n">filelink</span> <span class="o">=</span> <span class="n">filelink</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>  
+        <span class="c1"># filelink = Path(outpath) / filelink</span>
         
-        <span class="n">link</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filelink</span><span class="si">}</span><span class="s2">&quot;</span>    
+        <span class="n">link</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filelink</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;https:/&quot;</span><span class="p">,</span> <span class="s2">&quot;https://&quot;</span><span class="p">)</span>
         <span class="n">linestr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">filename_noext</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="c1"># linestr = f&quot;{filelink}\n&quot;</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">linest</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">linestr</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">linestr</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Links generated and saved to README&quot;</span><span class="p">)</span>
@@ -475,7 +472,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WindowsPath(&#39;20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb&#39;)]
 20_MANAGEMENT
-[22.0_ConvertMgmtToTimeseries](https:/holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html)
+[22.0_ConvertMgmtToTimeseries](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html)
 
 
 Links generated and saved to README
@@ -483,7 +480,9 @@ Links generated and saved to README
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/_images/CH-CHA_ECtower_Apr2014_IMG_9304-HDR.jpg">https://holukas.github.io/dataset_ch-cha_flux_product/_images/CH-CHA_ECtower_Apr2014_IMG_9304-HDR.jpg</a></p>
+<p>https:/holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html
+<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html">https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html</a>
+<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/_images/CH-CHA_ECtower_Apr2014_IMG_9304-HDR.jpg">https://holukas.github.io/dataset_ch-cha_flux_product/_images/CH-CHA_ECtower_Apr2014_IMG_9304-HDR.jpg</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import os</span>
