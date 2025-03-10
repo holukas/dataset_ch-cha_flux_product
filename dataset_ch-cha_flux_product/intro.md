@@ -2,9 +2,11 @@
 
 produced by [Lukas Hörtnagl](https://gl.ethz.ch/people/person-detail.lukas.html)
 
-Documentation and notebooks for the PI dataset of the **intensively managed grassland ecosystem station CH-CHA (Chamau)** . The research station CH-CHA is part of [Swiss FluxNet](https://www.swissfluxnet.ethz.ch/), operated by the [Grassland Sciences Group, ETH Zurich](https://gl.ethz.ch/). Group leader: [Prof. Nina Buchmann](https://gl.ethz.ch/people/person-detail.nina.html).
+Documentation and notebooks for the creation of the PI dataset of the **intensively managed grassland ecosystem station CH-CHA (Chamau)** . The research station CH-CHA is part of [Swiss FluxNet](https://www.swissfluxnet.ethz.ch/), operated by the [Grassland Sciences Group, ETH Zurich](https://gl.ethz.ch/). Group leader: [Prof. Nina Buchmann](https://gl.ethz.ch/people/person-detail.nina.html).
 
-This dataset contains ecosystem fluxes measured by the eddy covariance method, meteorological data and detailed management info between 2005 and 2024. More data will be added to this dataset in the future.
+The dataset comprises ecosystem fluxes measured by the eddy covariance method, meteorological data and detailed management info between 2005 and 2024. More data will be added to this dataset in the future.
+
+
 
 ## Dataset versions
 
