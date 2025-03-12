@@ -19,7 +19,7 @@ flowchart
 	L32QCF[L3.2 quality flags]
 	L33QCF[L3.3 quality flags]
 	QCF[overall quality flag QCF]
-	L31FfilteredQCF[L3.1 fluxes filtered with QCF]
+	L31QCF[L3.1 fluxes filtered with QCF]
 	L41F[L4.1 gap-filled fluxes]
 	L42F[L4.2 partitioned fluxes]
 	
@@ -37,8 +37,8 @@ flowchart
 	L32QCF --> QCF
 	L33QCF --> QCF
 	
-	QCF -- applied to storage-corrected fluxes --> L31FfilteredQCF
-	L31FfilteredQCF -- gap-filling --> L41F
+	QCF -- applied to storage-corrected fluxes --> L31QCF
+	L31QCF -- gap-filling --> L41F
 	
 	L41F -- partitioning (NEE) --> L42F
 
