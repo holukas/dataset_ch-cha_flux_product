@@ -1,13 +1,19 @@
 # Management Data
 
-- **Notebook**: [22.0_ConvertMgmtToTimeseries.ipynb](../notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb)
-- **Detailed management info**: [CH-CHA-Management_2005-2024_20250107.zip](../data/CH-CHA-Management_2005-2024_20250107.zip) (zipped XLSX file, 8MB)
-
-
-
 **Management information was converted to a time series format with the aim to be used e.g. in machine-learning models.**
 
+`````{admonition} Notebook
+:class: tip
+[22.0_ConvertMgmtToTimeseries](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html)
+`````
+
+`````{admonition} Download management info as Excel file
+:class: note
+[CH-CHA-Management_2005-2024_20250107](https://github.com/holukas/dataset_ch-cha_flux_product/blob/main/dataset_ch-cha_flux_product/data/CH-CHA-Management_2005-2024_20250107.zip) (zipped XLSX file, 8MB)
+`````
+
 Detailed management data are available in an Excel file. The file contains info between 2001 and 2024, whereby info for 2024 and some info for 2023 (e.g., C content of fertilizer) was not available yet. 
+
 ## Unique events
 
 Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (**Table M1**).
