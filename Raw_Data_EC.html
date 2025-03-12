@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Raw_Data_EC';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Flux Calculations" href="Flux_Calculations.html" />
+    <link rel="next" title="Flux Processing Chain" href="FPC.html" />
     <link rel="prev" title="Management Data" href="Management_Data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,12 +184,9 @@
 <li class="toctree-l1"><a class="reference internal" href="Meteo_Data.html">Meteo Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management_Data.html">Management Data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Raw Data: Eddy Covariance</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Flux_Calculations.html">Flux Calculations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="FPC.html">Flux Processing Chain</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="L0.html">Level 0: Preliminary flux calculations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L1.html">Level 1: Final flux calculations</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Flux_Post-processing.html">Flux Post-processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="L2.html">Level 2: Quality flag expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level 3.1: Storage correction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level 3.2: Outlier flagging</a></li>
@@ -436,13 +433,13 @@ document.write(`
 <section id="creating-regularly-structured-files-for-eddypro">
 <h2>Creating regularly-structured files for EddyPro<a class="headerlink" href="#creating-regularly-structured-files-for-eddypro" title="Link to this heading">#</a></h2>
 <p>EddyPro can handle <em>regularly-structured</em> binary files, but not <em>irregularly-structured</em> files. EddyPro needs to know in what sequence data are coming in, i.e. the sequence in which data are stored in a file.</p>
-<p>Raw data files were converted to a regular structure (same number of columns for each line of records) using the script <a class="reference external" href="https://github.com/holukas/bico">bico</a>. During this conversion, the raw binary data are sorted into rows and columns, and at the end of one data row a line break is added. This means that one data row of records in the ASCII file consists of the data, sorted into columns, followed by a line break. Measured at 20Hz, there are 20 rows of data records (i.e. 20 records) per second. After the conversion, each data row has the same number of columns regardless of missing data, i.e., the data file becomes regularly-structured. Columns that contain no data have the value <code class="docutils literal notranslate"><span class="pre">-9999</span></code> to mark missing values. This way, the files can be directly used in EddyPro for the flux calculations.</p>
-<p><code class="docutils literal notranslate"><span class="pre">bico</span></code> also adds additional information to the CSV files, such as the variable names for each column, and adds the respective units and the source instrument. In addition, <code class="docutils literal notranslate"><span class="pre">bico</span></code> converts the binary files to ASCII format (CSV). This is not strictly required by EddyPro, but it makes the files human-readable, which can be helpful in detecting data issues. To reduce the file size of the ASCII files, the CSV files were zipped (<code class="docutils literal notranslate"><span class="pre">.gzip</span></code>).</p>
-<p>A typical name for a raw data file after the <code class="docutils literal notranslate"><span class="pre">bico</span></code> conversion is e.g. <code class="docutils literal notranslate"><span class="pre">CH-CHA_202408091300.csv.gz</span></code>, whereby the time info in the the file name gives the starting time for the data.</p>
+<p>Raw data files were converted to a regular structure (same number of columns for each line of records) using the script <a class="reference external" href="https://github.com/holukas/bico">bico</a>. During this conversion, the raw binary data are sorted into rows and columns, and at the end of one data row a line break is added. This means that one data row of records in the ASCII file consists of the data, sorted into columns, followed by a line break. Measured at 20Hz, there are 20 rows of data records per second. After the conversion, each data row has the same number of columns regardless of missing data, i.e., the data file becomes regularly-structured. Columns that contain no data have the value <code class="docutils literal notranslate"><span class="pre">-9999</span></code> to mark missing values. This way, the files can be directly used in EddyPro for the flux calculations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">bico</span></code> also adds additional information to the CSV files, such as the variable names for each column, and adds the respective units and the source instrument. In addition, <code class="docutils literal notranslate"><span class="pre">bico</span></code> converts the binary files to ASCII format (CSV). This is not strictly required by EddyPro, but it makes the files human-readable, which can be helpful in detecting data issues. To reduce the file size of the ASCII files, the CSV files were zipped (<code class="docutils literal notranslate"><span class="pre">.gz</span></code>). For flux calculations, the <code class="docutils literal notranslate"><span class="pre">.gz</span></code> files are first unzipped and then used in EddyPro using the home-made Python script <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a>.</p>
+<p>A typical name for a raw data file after the <code class="docutils literal notranslate"><span class="pre">bico</span></code> conversion is e.g. <code class="docutils literal notranslate"><span class="pre">CH-CHA_202408091300.csv.gz</span></code>, whereby the time info in the file name gives the starting time for the data.</p>
 </section>
 <section id="example-structure-of-ec-binary-raw-data-files">
 <h2>Example structure of EC binary raw data files<a class="headerlink" href="#example-structure-of-ec-binary-raw-data-files" title="Link to this heading">#</a></h2>
-<p>This example describes the structure of a raw data file with data from 1 sonic anemometer and 2 different gas analyzers (open-path LI-7500 and LGR).</p>
+<p>This example describes the structure of a binary raw data file with data from 1 sonic anemometer and 2 different gas analyzers (open-path LI-7500 and LGR).</p>
 <ul class="simple">
 <li><p>HEADER (29 bytes): Contains information created by the logging script <code class="docutils literal notranslate"><span class="pre">sonicread</span></code>. This information is not written to the regular ASCII file, but it is written to the <code class="docutils literal notranslate"><span class="pre">bico</span></code> log file during conversion from binary to ASCII. Each of the irregular binary files contains this header section.</p></li>
 <li><p>INSTRUMENT 1: Data block coming from sonic anemometer Solent R3-50 (<a class="reference external" href="https://github.com/holukas/bico/blob/master/src/settings/data_blocks/R350-B.dblock">R350-B</a>): 12 bytes (big endian short integer).</p></li>
@@ -641,11 +638,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Flux_Calculations.html"
+       href="FPC.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Flux Calculations</p>
+        <p class="prev-next-title">Flux Processing Chain</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

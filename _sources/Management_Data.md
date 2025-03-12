@@ -1,6 +1,6 @@
 # Management Data
 
-`````{admonition} Notebook
+`````{admonition} Info
 :class: note
 Management information was converted to a time series format with the aim to be used e.g. in machine-learning models.
 `````
