@@ -2,8 +2,6 @@
 
 ## Eddy covariance
 
-[ref](photo-ec1)
-
 - **Three-dimensional wind**: R3–50, Gill Instruments Ltd., UK; mounted at 2.41m height
 - **Gas analyzer for CO<sub>2</sub> and H<sub>2</sub>O molar densities**: LI-7500 open path infrared gas analyzer (IRGA), LICOR Biosciences, USA; mounted at 2.42m height, inclined (15°)
 

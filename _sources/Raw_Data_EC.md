@@ -11,13 +11,25 @@ Each EC raw data binary file contains a header section at the start of the file,
 
 **The binary format of the data files is *compressed and therefore irregularly structured***. One line of data records (i.e., all records for a specific moment in time) can consist of a varying number of bytes and data columns. For example, if all data for all instruments are available at a specific timestamp, one line of data records consists of 26 bytes and 12 data columns. If the data for one instrument are missing, then one line of data records may only consist of 14 bytes and 8 data columns.  An overview of data blocks, including their description, can be found online in the [bico repository](https://github.com/holukas/bico) on GitHub [here](https://github.com/holukas/bico/tree/master/src/settings/data_blocks).  
 
-**Data from the instruments arrive in data blocks at the logger**. Because of the real-time nature of `sonicread` all data blocks are stored to the same file in the moment they are recorded. The data blocks arrive sequentially: first the data block from instrument 1 (typically the sonic anemometer), then from instrument 2 (e.g., LI-7500), followed by other installed instruments (e.g., QCL or LGR). Data arriving from the sonic anemometer are the most reliable (SA runs most of the time) and most consistent (measurement frequency is always very close to the nominal 20Hz), therefore it is used as the "anchor" measurement for each file. After the SA data block was recorded to a file, the gas analyzer data that are available at that moment in time are added after the SA data block. If available, the data block of a second gas analyzer is added similarly. If no gas analyzer record is immediately available after the storing of the SA data block - for example when the GA is running at a lower time resolution such as 10Hz - the previous GA record is repeated. In the end, all files have a time resolution of 20Hz.
+**Data from the instruments arrive in data blocks at the logger**. Because of the real-time nature of `sonicread`, all data blocks are stored to the same file in the moment they are recorded. The data blocks arrive sequentially: first the data block from instrument 1 (typically the sonic anemometer), then from instrument 2 (e.g., LI-7500), followed by other installed instruments (e.g., QCL or LGR). Data arriving from the sonic anemometer are the most reliable (SA runs most of the time) and most consistent (measurement frequency is always very close to the nominal 20Hz), therefore it is used as the "anchor" measurement for each file. This means that each data row starts with the sonic data, then additional data from other instruments are added.
+
+The raw binary files lack any columnar structure or line breaks, presenting all instrument data blocks as a single, contiguous byte stream. 
+
+After the SA data block was stored to a file, the gas analyzer data that were available at that moment in time are added after the SA data block. If available, the data block of a second gas analyzer is added similarly. If no gas analyzer record is immediately available after the storing of the SA data block - for example when the GA is running at a lower time resolution such as 10Hz - the previous GA record is repeated. In the end, all files have a time resolution of 20Hz.
+
+Whenever an instrument was added or removed at the site, the format of the raw binary files changed. For example, most of the time the regular structure of a raw binary file consists of (a) sonic data and (b) IRGA data. When a QCL system is installed at the site, the data of this new instrument are added to the sonic and IRGA data, e.g. after 6 columns of sonic data and 8 columns of IRGA data follow 5 columns of QCL data. 
+
+Time periods with different instrumental setup have to be calculated separately.  
 
 ## Creating regularly-structured files for EddyPro
 
-EddyPro can handle *regularly-structured* binary files, but not *irregularly-structured* files. 
+EddyPro can handle *regularly-structured* binary files, but not *irregularly-structured* files. EddyPro needs to know in what sequence data are coming in, i.e. the sequence in which data are stored in a file.
 
-Raw data files were converted to a regular structure (same number of columns for each line of records) using the script [bico](https://github.com/holukas/bico). In addition, `bico` converts the binary files to ASCII format (CSV). This is not strictly required by EddyPro, but it makes the files human-readable, which can be helpful in detecting data issues. To reduce the file size of the ASCII files, the CSV files were zipped (`.gzip`). `bico` also adds additional information to the CSV files, such as the variable names for each column, and respective units and source instrument. A typical name for a raw data file is e.g. `CH-CHA_202408091300.csv.gz`, whereby the time info in the the file name gives the starting time for the data.
+Raw data files were converted to a regular structure (same number of columns for each line of records) using the script [bico](https://github.com/holukas/bico). During this conversion, the raw binary data are sorted into rows and columns, and at the end of one data row a line break is added. This means that one data row of records in the ASCII file consists of the data, sorted into columns, followed by a line break. Measured at 20Hz, there are 20 rows of data records (i.e. 20 records) per second. After the conversion, each data row has the same number of columns regardless of missing data, i.e., the data file becomes regularly-structured. Columns that contain no data have the value `-9999` to mark missing values. This way, the files can be directly used in EddyPro for the flux calculations.
+
+`bico` also adds additional information to the CSV files, such as the variable names for each column, and adds the respective units and the source instrument. In addition, `bico` converts the binary files to ASCII format (CSV). This is not strictly required by EddyPro, but it makes the files human-readable, which can be helpful in detecting data issues. To reduce the file size of the ASCII files, the CSV files were zipped (`.gzip`).   
+
+A typical name for a raw data file after the `bico` conversion is e.g. `CH-CHA_202408091300.csv.gz`, whereby the time info in the the file name gives the starting time for the data.
 
 ## Example structure of EC binary raw data files
 
@@ -30,7 +42,7 @@ This example describes the structure of a raw data file with data from 1 sonic a
 
 Each full data record (one row of data records for a specific moment in time) within the file occupies 61 bytes, consisting of 12 bytes for the SA data, 16 bytes for IRGA data, and 33 bytes for LGR data. If IRGA data are missing, the record size reduces to 47 bytes (12 bytes SA data, 2 bytes for missing IRGA data, 33 bytes LGR data). Conversely, if LGR data are missing, the record size is 30 bytes (12 bytes SA data, 16 bytes IRGA data, 2 bytes for missing LGR data). A 29-byte header is present at the start of the file, preceding the data records. 
 
-```{table} Example structure of EC binary raw data file. Variables are listed in the order they arrive at the logger. 
+:::{table} Example structure of EC binary raw data file. Variables are listed in the order they arrive at the logger. 
 
 | Variable            | Bytes | Instrument | Description                                                                                   |
 | ------------------- | ----- | ---------- | --------------------------------------------------------------------------------------------- |
@@ -61,4 +73,4 @@ Each full data record (one row of data records for a specific moment in time) wi
 | T_UNKNOWN           | 2     | LGR-A      | unused temperature                                                                            |
 | MIRROR_RINGDOWNTIME | 4     | LGR-A      | mirror ring-down time                                                                         |
 | FIT_FLAG            | 1     | LGR-A      | fit flag                                                                                      |
-```
+:::
