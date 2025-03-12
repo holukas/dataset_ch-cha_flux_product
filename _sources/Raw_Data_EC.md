@@ -1,6 +1,5 @@
 # Raw Data: Eddy Covariance
 
-XXX TODO
 ## EC raw data were recorded in real-time
 
 Eddy covariance (EC) raw data files were recorded using the **custom-made logging script** `sonicread` (Eugster & Plüss, 2010). `sonicread` was running on a data logger and directly merged incoming raw data streams (20Hz) arriving from the instruments into one single file in real-time. 
