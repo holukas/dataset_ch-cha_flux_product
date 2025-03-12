@@ -1,0 +1,3293 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Imports &#8212; CH-CHA Flux Product</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="CH-CHA Flux Product - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="CH-CHA Flux Product - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CH-CHA Flux Product
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Meteo_Data.html">Meteo Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Management_Data.html">Management Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../FPC.html">Flux Processing Chain</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../L0.html">Level 0: Preliminary flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L1.html">Level 1: Final flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L2.html">Level 2: Quality flag expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L3.1.html">Level 3.1: Storage correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L3.2.html">Level 3.2: Outlier flagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L3.3.html">Level 3.3: USTAR filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L4.1.html">Level 4.1: Gap-filling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L4.2.html">Level 4.2: NEE Partitioning (in progress)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../QCF.html">QCF: overall quality control flag</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Used_Software.html">Used Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Instrumentation.html">Instrumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../SI.html">Supplementary Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Notebook overview</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/holukas/dataset_ch-cha_flux_product" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/holukas/dataset_ch-cha_flux_product/issues/new?title=Issue%20on%20page%20%2Fnotebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Imports</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gap-filling-swc-gf1-0-15-1-most-complete-swc-variable">Gap-filling <code class="docutils literal notranslate"><span class="pre">SWC_GF1_0.15_1</span></code> (most complete SWC variable)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-to-file">Save to file</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook"><strong>End of notebook</strong>.</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="imports">
+<h1>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.io.files</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_parquet</span><span class="p">,</span> <span class="n">save_parquet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.pkgs.gapfilling.xgboost_ts</span><span class="w"> </span><span class="kn">import</span> <span class="n">XGBoostTS</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-data">
+<h1>Load data<a class="headerlink" href="#load-data" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">load_parquet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;52.1_CH-CHA_IRGA-L4.1+QCL-L1+LGR-L1+M10+MGMT_2005-2023.parquet&quot;</span><span class="p">)</span>
+<span class="c1"># df = df.loc[(df.index.year &gt;= 2021) &amp; (df.index.year &lt;= 2023)].copy()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file 52.1_CH-CHA_IRGA-L4.1+QCL-L1+LGR-L1+M10+MGMT_2005-2023.parquet (1.121 seconds). Detected time resolution of &lt;30 * Minutes&gt; / 30min 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AIR_MV</th>
+      <th>AIR_DENSITY</th>
+      <th>AIR_RHO_CP</th>
+      <th>AIR_CP</th>
+      <th>AOA_METHOD</th>
+      <th>AXES_ROTATION_METHOD</th>
+      <th>...</th>
+      <th>TS_GF1_0.04_1_gfXG</th>
+      <th>FLAG_TS_GF1_0.04_1_gfXG_ISFILLED</th>
+      <th>TS_GF1_0.15_1_gfXG</th>
+      <th>FLAG_TS_GF1_0.15_1_gfXG_ISFILLED</th>
+      <th>TS_GF1_0.4_1_gfXG</th>
+      <th>FLAG_TS_GF1_0.4_1_gfXG_ISFILLED</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.731083</td>
+      <td>1</td>
+      <td>3.657870</td>
+      <td>1</td>
+      <td>4.407055</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.731083</td>
+      <td>1</td>
+      <td>3.657870</td>
+      <td>1</td>
+      <td>4.407055</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.968712</td>
+      <td>1</td>
+      <td>3.575649</td>
+      <td>1</td>
+      <td>4.406270</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.968712</td>
+      <td>1</td>
+      <td>3.565512</td>
+      <td>1</td>
+      <td>4.357224</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.817249</td>
+      <td>1</td>
+      <td>3.753684</td>
+      <td>1</td>
+      <td>4.440534</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 21:45:00</th>
+      <td>0.023667</td>
+      <td>1.22060</td>
+      <td>1231.56</td>
+      <td>1008.98</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>3.359719</td>
+      <td>0</td>
+      <td>4.942291</td>
+      <td>0</td>
+      <td>6.010860</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:15:00</th>
+      <td>0.023709</td>
+      <td>1.21833</td>
+      <td>1229.43</td>
+      <td>1009.11</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>3.220912</td>
+      <td>0</td>
+      <td>4.944976</td>
+      <td>0</td>
+      <td>6.011540</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 22:45:00</th>
+      <td>0.023718</td>
+      <td>1.21785</td>
+      <td>1228.93</td>
+      <td>1009.10</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>3.148644</td>
+      <td>0</td>
+      <td>4.941619</td>
+      <td>0</td>
+      <td>6.014273</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:15:00</th>
+      <td>0.023710</td>
+      <td>1.21827</td>
+      <td>1229.34</td>
+      <td>1009.09</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>3.096104</td>
+      <td>0</td>
+      <td>4.923499</td>
+      <td>0</td>
+      <td>6.016316</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2023-12-31 23:45:00</th>
+      <td>0.023715</td>
+      <td>1.21807</td>
+      <td>1229.13</td>
+      <td>1009.08</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>3.065261</td>
+      <td>0</td>
+      <td>4.908740</td>
+      <td>0</td>
+      <td>6.025185</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>333072 rows × 647 columns</p>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="gap-filling-swc-gf1-0-15-1-most-complete-swc-variable">
+<h1>Gap-filling <code class="docutils literal notranslate"><span class="pre">SWC_GF1_0.15_1</span></code> (most complete SWC variable)<a class="headerlink" href="#gap-filling-swc-gf1-0-15-1-most-complete-swc-variable" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;SWC_GF1_0.05_1&#39;</span><span class="p">,</span> <span class="s1">&#39;SWC_GF1_0.15_1&#39;</span><span class="p">,</span> <span class="s1">&#39;SWC_GF1_0.75_1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\holukas\AppData\Local\Temp\ipykernel_19912\320009507.py:1: FutureWarning: &#39;A&#39; is deprecated and will be removed in a future version, please use &#39;YE&#39; instead.
+  df[[&#39;SWC_GF1_0.05_1&#39;, &#39;SWC_GF1_0.15_1&#39;, &#39;SWC_GF1_0.75_1&#39;]].resample(&#39;A&#39;).count()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SWC_GF1_0.05_1</th>
+      <th>SWC_GF1_0.15_1</th>
+      <th>SWC_GF1_0.75_1</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-12-31</th>
+      <td>3213</td>
+      <td>3213</td>
+      <td>3213</td>
+    </tr>
+    <tr>
+      <th>2006-12-31</th>
+      <td>17452</td>
+      <td>17428</td>
+      <td>17434</td>
+    </tr>
+    <tr>
+      <th>2007-12-31</th>
+      <td>17501</td>
+      <td>17503</td>
+      <td>17502</td>
+    </tr>
+    <tr>
+      <th>2008-12-31</th>
+      <td>17560</td>
+      <td>17554</td>
+      <td>17558</td>
+    </tr>
+    <tr>
+      <th>2009-12-31</th>
+      <td>17504</td>
+      <td>17505</td>
+      <td>17506</td>
+    </tr>
+    <tr>
+      <th>2010-12-31</th>
+      <td>10879</td>
+      <td>16539</td>
+      <td>16536</td>
+    </tr>
+    <tr>
+      <th>2011-12-31</th>
+      <td>17021</td>
+      <td>17018</td>
+      <td>17013</td>
+    </tr>
+    <tr>
+      <th>2012-12-31</th>
+      <td>17267</td>
+      <td>17268</td>
+      <td>17267</td>
+    </tr>
+    <tr>
+      <th>2013-12-31</th>
+      <td>17513</td>
+      <td>17512</td>
+      <td>17514</td>
+    </tr>
+    <tr>
+      <th>2014-12-31</th>
+      <td>17503</td>
+      <td>17507</td>
+      <td>17507</td>
+    </tr>
+    <tr>
+      <th>2015-12-31</th>
+      <td>17496</td>
+      <td>17496</td>
+      <td>17493</td>
+    </tr>
+    <tr>
+      <th>2016-12-31</th>
+      <td>16075</td>
+      <td>16101</td>
+      <td>16092</td>
+    </tr>
+    <tr>
+      <th>2017-12-31</th>
+      <td>17413</td>
+      <td>17413</td>
+      <td>17413</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>17085</td>
+      <td>17085</td>
+      <td>17085</td>
+    </tr>
+    <tr>
+      <th>2019-12-31</th>
+      <td>17394</td>
+      <td>17394</td>
+      <td>17394</td>
+    </tr>
+    <tr>
+      <th>2020-12-31</th>
+      <td>16867</td>
+      <td>16867</td>
+      <td>16867</td>
+    </tr>
+    <tr>
+      <th>2021-12-31</th>
+      <td>14497</td>
+      <td>14497</td>
+      <td>17466</td>
+    </tr>
+    <tr>
+      <th>2022-12-31</th>
+      <td>17516</td>
+      <td>17517</td>
+      <td>17515</td>
+    </tr>
+    <tr>
+      <th>2023-12-31</th>
+      <td>17520</td>
+      <td>17520</td>
+      <td>17515</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span> <span class="k">if</span> <span class="s2">&quot;SWC&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span> <span class="k">if</span> <span class="s2">&quot;PREC&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SWC_GF1_0.05_1
+SWC_GF1_0.15_1
+SWC_GF1_0.75_1
+PREC_RAIN_TOT_GF1_0.5_1
+FLAG_PREC_RAIN_TOT_GF1_0.5_1_ISFILLED
+FLAG_PREC_RAIN_TOT_GF1_0.5_1_FLUXNET_ISFILLED
+TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TARGET_COL</span> <span class="o">=</span> <span class="s1">&#39;SWC_GF1_0.15_1&#39;</span>
+<span class="n">TARGET_GAPFILLED_COL</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">TARGET_COL</span><span class="si">}</span><span class="s1">_gfXG&#39;</span>
+<span class="n">FLAG_GAPFILLED_COL</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;FLAG_</span><span class="si">{</span><span class="n">TARGET_GAPFILLED_COL</span><span class="si">}</span><span class="s1">_ISFILLED&#39;</span>
+
+<span class="c1"># Dataframe for gap-filling</span>
+<span class="n">_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">_df</span><span class="p">[</span><span class="n">TARGET_COL</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">TARGET_COL</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">_df</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">_df</span><span class="p">[</span><span class="s1">&#39;TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># XGBoost</span>
+<span class="n">xgb</span> <span class="o">=</span> <span class="n">XGBoostTS</span><span class="p">(</span>
+    <span class="n">input_df</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+    <span class="n">target_col</span><span class="o">=</span><span class="n">TARGET_COL</span><span class="p">,</span>
+    <span class="n">features_lag</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">features_lag_exclude_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1&#39;</span><span class="p">],</span>
+    <span class="n">perm_n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">include_timestamp_as_features</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">add_continuous_record_number</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">early_stopping_rounds</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">xgb</span><span class="o">.</span><span class="n">reduce_features</span><span class="p">()</span>
+<span class="n">xgb</span><span class="o">.</span><span class="n">report_feature_reduction</span><span class="p">()</span>
+<span class="n">xgb</span><span class="o">.</span><span class="n">trainmodel</span><span class="p">(</span><span class="n">showplot_scores</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showplot_importance</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">xgb</span><span class="o">.</span><span class="n">report_traintest</span><span class="p">()</span>
+<span class="n">xgb</span><span class="o">.</span><span class="n">fillgaps</span><span class="p">(</span><span class="n">showplot_scores</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showplot_importance</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">xgb</span><span class="o">.</span><span class="n">report_gapfilling</span><span class="p">()</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">gapfilling_df_</span>
+
+<span class="c1"># Add results to main data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">results</span><span class="p">[[</span><span class="n">TARGET_GAPFILLED_COL</span><span class="p">,</span> <span class="n">FLAG_GAPFILLED_COL</span><span class="p">]]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plot</span>
+<span class="n">plotdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">TARGET_COL</span><span class="p">,</span> <span class="n">TARGET_GAPFILLED_COL</span><span class="p">,</span> <span class="n">FLAG_GAPFILLED_COL</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">plotdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">TARGET_COL</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">6</span><span class="p">));</span>
+<span class="n">locs</span> <span class="o">=</span> <span class="p">(</span><span class="n">plotdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2011</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">plotdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plotdf</span><span class="p">[</span><span class="n">locs</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">TARGET_COL</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">6</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding new data columns ...
+++ Added new columns with timestamp info: [&#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;] 
+++ Added new column .RECORDNUMBER with record numbers from 1 to 333072.
+
+Feature reduction based on permutation importance ...
+[0]	validation_0-rmse:4.24619	validation_1-rmse:4.24619
+[1]	validation_0-rmse:3.57644	validation_1-rmse:3.57644
+[2]	validation_0-rmse:3.07415	validation_1-rmse:3.07415
+[3]	validation_0-rmse:2.76569	validation_1-rmse:2.76569
+[4]	validation_0-rmse:2.55242	validation_1-rmse:2.55242
+[5]	validation_0-rmse:2.40355	validation_1-rmse:2.40355
+[6]	validation_0-rmse:2.26818	validation_1-rmse:2.26818
+[7]	validation_0-rmse:2.16471	validation_1-rmse:2.16471
+[8]	validation_0-rmse:2.09313	validation_1-rmse:2.09313
+[9]	validation_0-rmse:2.00409	validation_1-rmse:2.00409
+[10]	validation_0-rmse:1.85594	validation_1-rmse:1.85594
+[11]	validation_0-rmse:1.81737	validation_1-rmse:1.81737
+[12]	validation_0-rmse:1.76822	validation_1-rmse:1.76822
+[13]	validation_0-rmse:1.72088	validation_1-rmse:1.72088
+[14]	validation_0-rmse:1.68358	validation_1-rmse:1.68358
+[15]	validation_0-rmse:1.65382	validation_1-rmse:1.65382
+[16]	validation_0-rmse:1.58008	validation_1-rmse:1.58008
+[17]	validation_0-rmse:1.51638	validation_1-rmse:1.51638
+[18]	validation_0-rmse:1.45408	validation_1-rmse:1.45408
+[19]	validation_0-rmse:1.43455	validation_1-rmse:1.43455
+[20]	validation_0-rmse:1.40318	validation_1-rmse:1.40318
+[21]	validation_0-rmse:1.36548	validation_1-rmse:1.36548
+[22]	validation_0-rmse:1.35830	validation_1-rmse:1.35830
+[23]	validation_0-rmse:1.33171	validation_1-rmse:1.33171
+[24]	validation_0-rmse:1.32430	validation_1-rmse:1.32430
+[25]	validation_0-rmse:1.31403	validation_1-rmse:1.31403
+[26]	validation_0-rmse:1.28328	validation_1-rmse:1.28328
+[27]	validation_0-rmse:1.27142	validation_1-rmse:1.27142
+[28]	validation_0-rmse:1.25277	validation_1-rmse:1.25277
+[29]	validation_0-rmse:1.22892	validation_1-rmse:1.22892
+[30]	validation_0-rmse:1.21315	validation_1-rmse:1.21315
+[31]	validation_0-rmse:1.19773	validation_1-rmse:1.19773
+[32]	validation_0-rmse:1.19010	validation_1-rmse:1.19010
+[33]	validation_0-rmse:1.16524	validation_1-rmse:1.16524
+[34]	validation_0-rmse:1.13885	validation_1-rmse:1.13885
+[35]	validation_0-rmse:1.13492	validation_1-rmse:1.13492
+[36]	validation_0-rmse:1.12352	validation_1-rmse:1.12352
+[37]	validation_0-rmse:1.11607	validation_1-rmse:1.11607
+[38]	validation_0-rmse:1.10001	validation_1-rmse:1.10001
+[39]	validation_0-rmse:1.09672	validation_1-rmse:1.09672
+[40]	validation_0-rmse:1.09107	validation_1-rmse:1.09107
+[41]	validation_0-rmse:1.06238	validation_1-rmse:1.06238
+[42]	validation_0-rmse:1.04706	validation_1-rmse:1.04706
+[43]	validation_0-rmse:1.03164	validation_1-rmse:1.03164
+[44]	validation_0-rmse:1.02360	validation_1-rmse:1.02360
+[45]	validation_0-rmse:1.02177	validation_1-rmse:1.02177
+[46]	validation_0-rmse:1.01239	validation_1-rmse:1.01239
+[47]	validation_0-rmse:1.00792	validation_1-rmse:1.00792
+[48]	validation_0-rmse:1.00578	validation_1-rmse:1.00578
+[49]	validation_0-rmse:0.99166	validation_1-rmse:0.99166
+[50]	validation_0-rmse:0.98652	validation_1-rmse:0.98652
+[51]	validation_0-rmse:0.98331	validation_1-rmse:0.98331
+[52]	validation_0-rmse:0.97592	validation_1-rmse:0.97592
+[53]	validation_0-rmse:0.96156	validation_1-rmse:0.96156
+[54]	validation_0-rmse:0.96034	validation_1-rmse:0.96034
+[55]	validation_0-rmse:0.94898	validation_1-rmse:0.94898
+[56]	validation_0-rmse:0.93128	validation_1-rmse:0.93128
+[57]	validation_0-rmse:0.92621	validation_1-rmse:0.92621
+[58]	validation_0-rmse:0.92282	validation_1-rmse:0.92282
+[59]	validation_0-rmse:0.91695	validation_1-rmse:0.91695
+[60]	validation_0-rmse:0.90641	validation_1-rmse:0.90641
+[61]	validation_0-rmse:0.90079	validation_1-rmse:0.90079
+[62]	validation_0-rmse:0.89469	validation_1-rmse:0.89469
+[63]	validation_0-rmse:0.89272	validation_1-rmse:0.89272
+[64]	validation_0-rmse:0.88743	validation_1-rmse:0.88743
+[65]	validation_0-rmse:0.88289	validation_1-rmse:0.88289
+[66]	validation_0-rmse:0.87715	validation_1-rmse:0.87715
+[67]	validation_0-rmse:0.86904	validation_1-rmse:0.86904
+[68]	validation_0-rmse:0.86594	validation_1-rmse:0.86594
+[69]	validation_0-rmse:0.86317	validation_1-rmse:0.86317
+[70]	validation_0-rmse:0.85101	validation_1-rmse:0.85101
+[71]	validation_0-rmse:0.84145	validation_1-rmse:0.84145
+[72]	validation_0-rmse:0.83972	validation_1-rmse:0.83972
+[73]	validation_0-rmse:0.83860	validation_1-rmse:0.83860
+[74]	validation_0-rmse:0.83215	validation_1-rmse:0.83215
+[75]	validation_0-rmse:0.82013	validation_1-rmse:0.82013
+[76]	validation_0-rmse:0.81937	validation_1-rmse:0.81937
+[77]	validation_0-rmse:0.81391	validation_1-rmse:0.81391
+[78]	validation_0-rmse:0.81224	validation_1-rmse:0.81224
+[79]	validation_0-rmse:0.80521	validation_1-rmse:0.80521
+[80]	validation_0-rmse:0.79863	validation_1-rmse:0.79863
+[81]	validation_0-rmse:0.79623	validation_1-rmse:0.79623
+[82]	validation_0-rmse:0.79335	validation_1-rmse:0.79335
+[83]	validation_0-rmse:0.79173	validation_1-rmse:0.79173
+[84]	validation_0-rmse:0.78608	validation_1-rmse:0.78608
+[85]	validation_0-rmse:0.78539	validation_1-rmse:0.78539
+[86]	validation_0-rmse:0.78139	validation_1-rmse:0.78139
+[87]	validation_0-rmse:0.77462	validation_1-rmse:0.77462
+[88]	validation_0-rmse:0.77128	validation_1-rmse:0.77128
+[89]	validation_0-rmse:0.76917	validation_1-rmse:0.76917
+[90]	validation_0-rmse:0.76761	validation_1-rmse:0.76761
+[91]	validation_0-rmse:0.76540	validation_1-rmse:0.76540
+[92]	validation_0-rmse:0.75591	validation_1-rmse:0.75591
+[93]	validation_0-rmse:0.75319	validation_1-rmse:0.75319
+[94]	validation_0-rmse:0.75189	validation_1-rmse:0.75189
+[95]	validation_0-rmse:0.75020	validation_1-rmse:0.75020
+[96]	validation_0-rmse:0.74708	validation_1-rmse:0.74708
+[97]	validation_0-rmse:0.74450	validation_1-rmse:0.74450
+[98]	validation_0-rmse:0.74225	validation_1-rmse:0.74225
+[99]	validation_0-rmse:0.74063	validation_1-rmse:0.74063
+[100]	validation_0-rmse:0.73666	validation_1-rmse:0.73666
+[101]	validation_0-rmse:0.73418	validation_1-rmse:0.73418
+[102]	validation_0-rmse:0.73053	validation_1-rmse:0.73053
+[103]	validation_0-rmse:0.72839	validation_1-rmse:0.72839
+[104]	validation_0-rmse:0.72707	validation_1-rmse:0.72707
+[105]	validation_0-rmse:0.72562	validation_1-rmse:0.72562
+[106]	validation_0-rmse:0.72268	validation_1-rmse:0.72268
+[107]	validation_0-rmse:0.72040	validation_1-rmse:0.72040
+[108]	validation_0-rmse:0.71532	validation_1-rmse:0.71532
+[109]	validation_0-rmse:0.71316	validation_1-rmse:0.71316
+[110]	validation_0-rmse:0.70732	validation_1-rmse:0.70732
+[111]	validation_0-rmse:0.70699	validation_1-rmse:0.70699
+[112]	validation_0-rmse:0.70603	validation_1-rmse:0.70603
+[113]	validation_0-rmse:0.70387	validation_1-rmse:0.70387
+[114]	validation_0-rmse:0.70183	validation_1-rmse:0.70183
+[115]	validation_0-rmse:0.70121	validation_1-rmse:0.70121
+[116]	validation_0-rmse:0.69990	validation_1-rmse:0.69990
+[117]	validation_0-rmse:0.69605	validation_1-rmse:0.69605
+[118]	validation_0-rmse:0.69513	validation_1-rmse:0.69513
+[119]	validation_0-rmse:0.69371	validation_1-rmse:0.69371
+[120]	validation_0-rmse:0.69007	validation_1-rmse:0.69007
+[121]	validation_0-rmse:0.68493	validation_1-rmse:0.68493
+[122]	validation_0-rmse:0.68206	validation_1-rmse:0.68206
+[123]	validation_0-rmse:0.67861	validation_1-rmse:0.67861
+[124]	validation_0-rmse:0.67786	validation_1-rmse:0.67786
+[125]	validation_0-rmse:0.67645	validation_1-rmse:0.67645
+[126]	validation_0-rmse:0.67619	validation_1-rmse:0.67619
+[127]	validation_0-rmse:0.67581	validation_1-rmse:0.67581
+[128]	validation_0-rmse:0.67185	validation_1-rmse:0.67185
+[129]	validation_0-rmse:0.67127	validation_1-rmse:0.67127
+[130]	validation_0-rmse:0.67011	validation_1-rmse:0.67011
+[131]	validation_0-rmse:0.66916	validation_1-rmse:0.66916
+[132]	validation_0-rmse:0.66808	validation_1-rmse:0.66808
+[133]	validation_0-rmse:0.66443	validation_1-rmse:0.66443
+[134]	validation_0-rmse:0.66116	validation_1-rmse:0.66116
+[135]	validation_0-rmse:0.66015	validation_1-rmse:0.66015
+[136]	validation_0-rmse:0.65909	validation_1-rmse:0.65909
+[137]	validation_0-rmse:0.65488	validation_1-rmse:0.65488
+[138]	validation_0-rmse:0.65310	validation_1-rmse:0.65310
+[139]	validation_0-rmse:0.64902	validation_1-rmse:0.64902
+[140]	validation_0-rmse:0.64633	validation_1-rmse:0.64633
+[141]	validation_0-rmse:0.64547	validation_1-rmse:0.64547
+[142]	validation_0-rmse:0.64520	validation_1-rmse:0.64520
+[143]	validation_0-rmse:0.64101	validation_1-rmse:0.64101
+[144]	validation_0-rmse:0.64017	validation_1-rmse:0.64017
+[145]	validation_0-rmse:0.63798	validation_1-rmse:0.63798
+[146]	validation_0-rmse:0.63720	validation_1-rmse:0.63720
+[147]	validation_0-rmse:0.63636	validation_1-rmse:0.63636
+[148]	validation_0-rmse:0.63261	validation_1-rmse:0.63261
+[149]	validation_0-rmse:0.62921	validation_1-rmse:0.62921
+[150]	validation_0-rmse:0.62804	validation_1-rmse:0.62804
+[151]	validation_0-rmse:0.62607	validation_1-rmse:0.62607
+[152]	validation_0-rmse:0.62521	validation_1-rmse:0.62521
+[153]	validation_0-rmse:0.62274	validation_1-rmse:0.62274
+[154]	validation_0-rmse:0.61804	validation_1-rmse:0.61804
+[155]	validation_0-rmse:0.61694	validation_1-rmse:0.61694
+[156]	validation_0-rmse:0.61629	validation_1-rmse:0.61629
+[157]	validation_0-rmse:0.61434	validation_1-rmse:0.61434
+[158]	validation_0-rmse:0.61300	validation_1-rmse:0.61300
+[159]	validation_0-rmse:0.61165	validation_1-rmse:0.61165
+[160]	validation_0-rmse:0.61063	validation_1-rmse:0.61063
+[161]	validation_0-rmse:0.60779	validation_1-rmse:0.60779
+[162]	validation_0-rmse:0.60698	validation_1-rmse:0.60698
+[163]	validation_0-rmse:0.60633	validation_1-rmse:0.60633
+[164]	validation_0-rmse:0.60348	validation_1-rmse:0.60348
+[165]	validation_0-rmse:0.60288	validation_1-rmse:0.60288
+[166]	validation_0-rmse:0.60168	validation_1-rmse:0.60168
+[167]	validation_0-rmse:0.59754	validation_1-rmse:0.59754
+[168]	validation_0-rmse:0.59497	validation_1-rmse:0.59497
+[169]	validation_0-rmse:0.59349	validation_1-rmse:0.59349
+[170]	validation_0-rmse:0.59101	validation_1-rmse:0.59101
+[171]	validation_0-rmse:0.58912	validation_1-rmse:0.58912
+[172]	validation_0-rmse:0.58701	validation_1-rmse:0.58701
+[173]	validation_0-rmse:0.58617	validation_1-rmse:0.58617
+[174]	validation_0-rmse:0.58478	validation_1-rmse:0.58478
+[175]	validation_0-rmse:0.58271	validation_1-rmse:0.58271
+[176]	validation_0-rmse:0.58074	validation_1-rmse:0.58074
+[177]	validation_0-rmse:0.58002	validation_1-rmse:0.58002
+[178]	validation_0-rmse:0.57789	validation_1-rmse:0.57789
+[179]	validation_0-rmse:0.57691	validation_1-rmse:0.57691
+[180]	validation_0-rmse:0.57638	validation_1-rmse:0.57638
+[181]	validation_0-rmse:0.57570	validation_1-rmse:0.57570
+[182]	validation_0-rmse:0.57532	validation_1-rmse:0.57532
+[183]	validation_0-rmse:0.57397	validation_1-rmse:0.57397
+[184]	validation_0-rmse:0.57236	validation_1-rmse:0.57236
+[185]	validation_0-rmse:0.57175	validation_1-rmse:0.57175
+[186]	validation_0-rmse:0.57117	validation_1-rmse:0.57117
+[187]	validation_0-rmse:0.57060	validation_1-rmse:0.57060
+[188]	validation_0-rmse:0.56960	validation_1-rmse:0.56960
+[189]	validation_0-rmse:0.56643	validation_1-rmse:0.56643
+[190]	validation_0-rmse:0.56371	validation_1-rmse:0.56371
+[191]	validation_0-rmse:0.56245	validation_1-rmse:0.56245
+[192]	validation_0-rmse:0.56155	validation_1-rmse:0.56155
+[193]	validation_0-rmse:0.56057	validation_1-rmse:0.56057
+[194]	validation_0-rmse:0.55942	validation_1-rmse:0.55942
+[195]	validation_0-rmse:0.55837	validation_1-rmse:0.55837
+[196]	validation_0-rmse:0.55792	validation_1-rmse:0.55792
+[197]	validation_0-rmse:0.55764	validation_1-rmse:0.55764
+[198]	validation_0-rmse:0.55731	validation_1-rmse:0.55731
+[199]	validation_0-rmse:0.55610	validation_1-rmse:0.55610
+[200]	validation_0-rmse:0.55446	validation_1-rmse:0.55446
+[201]	validation_0-rmse:0.55305	validation_1-rmse:0.55305
+[202]	validation_0-rmse:0.55055	validation_1-rmse:0.55055
+[203]	validation_0-rmse:0.54924	validation_1-rmse:0.54924
+[204]	validation_0-rmse:0.54862	validation_1-rmse:0.54862
+[205]	validation_0-rmse:0.54728	validation_1-rmse:0.54728
+[206]	validation_0-rmse:0.54668	validation_1-rmse:0.54668
+[207]	validation_0-rmse:0.54629	validation_1-rmse:0.54629
+[208]	validation_0-rmse:0.54520	validation_1-rmse:0.54520
+[209]	validation_0-rmse:0.54454	validation_1-rmse:0.54454
+[210]	validation_0-rmse:0.54294	validation_1-rmse:0.54294
+[211]	validation_0-rmse:0.54171	validation_1-rmse:0.54171
+[212]	validation_0-rmse:0.54058	validation_1-rmse:0.54058
+[213]	validation_0-rmse:0.53935	validation_1-rmse:0.53935
+[214]	validation_0-rmse:0.53879	validation_1-rmse:0.53879
+[215]	validation_0-rmse:0.53784	validation_1-rmse:0.53784
+[216]	validation_0-rmse:0.53596	validation_1-rmse:0.53596
+[217]	validation_0-rmse:0.53337	validation_1-rmse:0.53337
+[218]	validation_0-rmse:0.53075	validation_1-rmse:0.53075
+[219]	validation_0-rmse:0.52956	validation_1-rmse:0.52956
+[220]	validation_0-rmse:0.52792	validation_1-rmse:0.52792
+[221]	validation_0-rmse:0.52602	validation_1-rmse:0.52602
+[222]	validation_0-rmse:0.52481	validation_1-rmse:0.52481
+[223]	validation_0-rmse:0.52423	validation_1-rmse:0.52423
+[224]	validation_0-rmse:0.52390	validation_1-rmse:0.52390
+[225]	validation_0-rmse:0.52228	validation_1-rmse:0.52228
+[226]	validation_0-rmse:0.52075	validation_1-rmse:0.52075
+[227]	validation_0-rmse:0.52044	validation_1-rmse:0.52044
+[228]	validation_0-rmse:0.51947	validation_1-rmse:0.51947
+[229]	validation_0-rmse:0.51808	validation_1-rmse:0.51808
+[230]	validation_0-rmse:0.51763	validation_1-rmse:0.51763
+[231]	validation_0-rmse:0.51709	validation_1-rmse:0.51709
+[232]	validation_0-rmse:0.51682	validation_1-rmse:0.51682
+[233]	validation_0-rmse:0.51609	validation_1-rmse:0.51609
+[234]	validation_0-rmse:0.51520	validation_1-rmse:0.51520
+[235]	validation_0-rmse:0.51429	validation_1-rmse:0.51429
+[236]	validation_0-rmse:0.51368	validation_1-rmse:0.51368
+[237]	validation_0-rmse:0.51262	validation_1-rmse:0.51262
+[238]	validation_0-rmse:0.51155	validation_1-rmse:0.51155
+[239]	validation_0-rmse:0.51000	validation_1-rmse:0.51000
+[240]	validation_0-rmse:0.50958	validation_1-rmse:0.50958
+[241]	validation_0-rmse:0.50809	validation_1-rmse:0.50809
+[242]	validation_0-rmse:0.50644	validation_1-rmse:0.50644
+[243]	validation_0-rmse:0.50515	validation_1-rmse:0.50515
+[244]	validation_0-rmse:0.50466	validation_1-rmse:0.50466
+[245]	validation_0-rmse:0.50420	validation_1-rmse:0.50420
+[246]	validation_0-rmse:0.50394	validation_1-rmse:0.50394
+[247]	validation_0-rmse:0.50223	validation_1-rmse:0.50223
+[248]	validation_0-rmse:0.50151	validation_1-rmse:0.50151
+[249]	validation_0-rmse:0.50090	validation_1-rmse:0.50090
+[250]	validation_0-rmse:0.50050	validation_1-rmse:0.50050
+[251]	validation_0-rmse:0.49975	validation_1-rmse:0.49975
+[252]	validation_0-rmse:0.49920	validation_1-rmse:0.49920
+[253]	validation_0-rmse:0.49843	validation_1-rmse:0.49843
+[254]	validation_0-rmse:0.49788	validation_1-rmse:0.49788
+[255]	validation_0-rmse:0.49765	validation_1-rmse:0.49765
+[256]	validation_0-rmse:0.49608	validation_1-rmse:0.49608
+[257]	validation_0-rmse:0.49501	validation_1-rmse:0.49501
+[258]	validation_0-rmse:0.49352	validation_1-rmse:0.49352
+[259]	validation_0-rmse:0.49303	validation_1-rmse:0.49303
+[260]	validation_0-rmse:0.49180	validation_1-rmse:0.49180
+[261]	validation_0-rmse:0.49017	validation_1-rmse:0.49017
+[262]	validation_0-rmse:0.48974	validation_1-rmse:0.48974
+[263]	validation_0-rmse:0.48933	validation_1-rmse:0.48933
+[264]	validation_0-rmse:0.48843	validation_1-rmse:0.48843
+[265]	validation_0-rmse:0.48798	validation_1-rmse:0.48798
+[266]	validation_0-rmse:0.48751	validation_1-rmse:0.48751
+[267]	validation_0-rmse:0.48714	validation_1-rmse:0.48714
+[268]	validation_0-rmse:0.48635	validation_1-rmse:0.48635
+[269]	validation_0-rmse:0.48562	validation_1-rmse:0.48562
+[270]	validation_0-rmse:0.48419	validation_1-rmse:0.48419
+[271]	validation_0-rmse:0.48331	validation_1-rmse:0.48331
+[272]	validation_0-rmse:0.48317	validation_1-rmse:0.48317
+[273]	validation_0-rmse:0.48136	validation_1-rmse:0.48136
+[274]	validation_0-rmse:0.48084	validation_1-rmse:0.48084
+[275]	validation_0-rmse:0.48030	validation_1-rmse:0.48030
+[276]	validation_0-rmse:0.47979	validation_1-rmse:0.47979
+[277]	validation_0-rmse:0.47929	validation_1-rmse:0.47929
+[278]	validation_0-rmse:0.47877	validation_1-rmse:0.47877
+[279]	validation_0-rmse:0.47810	validation_1-rmse:0.47810
+[280]	validation_0-rmse:0.47761	validation_1-rmse:0.47761
+[281]	validation_0-rmse:0.47737	validation_1-rmse:0.47737
+[282]	validation_0-rmse:0.47603	validation_1-rmse:0.47603
+[283]	validation_0-rmse:0.47567	validation_1-rmse:0.47567
+[284]	validation_0-rmse:0.47442	validation_1-rmse:0.47442
+[285]	validation_0-rmse:0.47371	validation_1-rmse:0.47371
+[286]	validation_0-rmse:0.47347	validation_1-rmse:0.47347
+[287]	validation_0-rmse:0.47307	validation_1-rmse:0.47307
+[288]	validation_0-rmse:0.47264	validation_1-rmse:0.47264
+[289]	validation_0-rmse:0.47152	validation_1-rmse:0.47152
+[290]	validation_0-rmse:0.47129	validation_1-rmse:0.47129
+[291]	validation_0-rmse:0.47044	validation_1-rmse:0.47044
+[292]	validation_0-rmse:0.46935	validation_1-rmse:0.46935
+[293]	validation_0-rmse:0.46893	validation_1-rmse:0.46893
+[294]	validation_0-rmse:0.46820	validation_1-rmse:0.46820
+[295]	validation_0-rmse:0.46783	validation_1-rmse:0.46783
+[296]	validation_0-rmse:0.46707	validation_1-rmse:0.46707
+[297]	validation_0-rmse:0.46638	validation_1-rmse:0.46638
+[298]	validation_0-rmse:0.46589	validation_1-rmse:0.46589
+[299]	validation_0-rmse:0.46562	validation_1-rmse:0.46562
+[300]	validation_0-rmse:0.46492	validation_1-rmse:0.46492
+[301]	validation_0-rmse:0.46468	validation_1-rmse:0.46468
+[302]	validation_0-rmse:0.46438	validation_1-rmse:0.46438
+[303]	validation_0-rmse:0.46373	validation_1-rmse:0.46373
+[304]	validation_0-rmse:0.46292	validation_1-rmse:0.46292
+[305]	validation_0-rmse:0.46262	validation_1-rmse:0.46262
+[306]	validation_0-rmse:0.46173	validation_1-rmse:0.46173
+[307]	validation_0-rmse:0.46088	validation_1-rmse:0.46088
+[308]	validation_0-rmse:0.46034	validation_1-rmse:0.46034
+[309]	validation_0-rmse:0.45994	validation_1-rmse:0.45994
+[310]	validation_0-rmse:0.45976	validation_1-rmse:0.45976
+[311]	validation_0-rmse:0.45897	validation_1-rmse:0.45897
+[312]	validation_0-rmse:0.45862	validation_1-rmse:0.45862
+[313]	validation_0-rmse:0.45808	validation_1-rmse:0.45808
+[314]	validation_0-rmse:0.45733	validation_1-rmse:0.45733
+[315]	validation_0-rmse:0.45668	validation_1-rmse:0.45668
+[316]	validation_0-rmse:0.45605	validation_1-rmse:0.45605
+[317]	validation_0-rmse:0.45493	validation_1-rmse:0.45493
+[318]	validation_0-rmse:0.45467	validation_1-rmse:0.45467
+[319]	validation_0-rmse:0.45338	validation_1-rmse:0.45338
+[320]	validation_0-rmse:0.45264	validation_1-rmse:0.45264
+[321]	validation_0-rmse:0.45198	validation_1-rmse:0.45198
+[322]	validation_0-rmse:0.45075	validation_1-rmse:0.45075
+[323]	validation_0-rmse:0.45048	validation_1-rmse:0.45048
+[324]	validation_0-rmse:0.44975	validation_1-rmse:0.44975
+[325]	validation_0-rmse:0.44880	validation_1-rmse:0.44880
+[326]	validation_0-rmse:0.44842	validation_1-rmse:0.44842
+[327]	validation_0-rmse:0.44718	validation_1-rmse:0.44718
+[328]	validation_0-rmse:0.44656	validation_1-rmse:0.44656
+[329]	validation_0-rmse:0.44621	validation_1-rmse:0.44621
+[330]	validation_0-rmse:0.44565	validation_1-rmse:0.44565
+[331]	validation_0-rmse:0.44523	validation_1-rmse:0.44523
+[332]	validation_0-rmse:0.44504	validation_1-rmse:0.44504
+[333]	validation_0-rmse:0.44476	validation_1-rmse:0.44476
+[334]	validation_0-rmse:0.44429	validation_1-rmse:0.44429
+[335]	validation_0-rmse:0.44407	validation_1-rmse:0.44407
+[336]	validation_0-rmse:0.44346	validation_1-rmse:0.44346
+[337]	validation_0-rmse:0.44300	validation_1-rmse:0.44300
+[338]	validation_0-rmse:0.44279	validation_1-rmse:0.44279
+[339]	validation_0-rmse:0.44247	validation_1-rmse:0.44247
+[340]	validation_0-rmse:0.44150	validation_1-rmse:0.44150
+[341]	validation_0-rmse:0.44077	validation_1-rmse:0.44077
+[342]	validation_0-rmse:0.44059	validation_1-rmse:0.44059
+[343]	validation_0-rmse:0.44026	validation_1-rmse:0.44026
+[344]	validation_0-rmse:0.44003	validation_1-rmse:0.44003
+[345]	validation_0-rmse:0.43904	validation_1-rmse:0.43904
+[346]	validation_0-rmse:0.43841	validation_1-rmse:0.43841
+[347]	validation_0-rmse:0.43810	validation_1-rmse:0.43810
+[348]	validation_0-rmse:0.43786	validation_1-rmse:0.43786
+[349]	validation_0-rmse:0.43719	validation_1-rmse:0.43719
+[350]	validation_0-rmse:0.43693	validation_1-rmse:0.43693
+[351]	validation_0-rmse:0.43652	validation_1-rmse:0.43652
+[352]	validation_0-rmse:0.43524	validation_1-rmse:0.43524
+[353]	validation_0-rmse:0.43497	validation_1-rmse:0.43497
+[354]	validation_0-rmse:0.43423	validation_1-rmse:0.43423
+[355]	validation_0-rmse:0.43361	validation_1-rmse:0.43361
+[356]	validation_0-rmse:0.43329	validation_1-rmse:0.43329
+[357]	validation_0-rmse:0.43249	validation_1-rmse:0.43249
+[358]	validation_0-rmse:0.43113	validation_1-rmse:0.43113
+[359]	validation_0-rmse:0.43002	validation_1-rmse:0.43002
+[360]	validation_0-rmse:0.42902	validation_1-rmse:0.42902
+[361]	validation_0-rmse:0.42867	validation_1-rmse:0.42867
+[362]	validation_0-rmse:0.42843	validation_1-rmse:0.42843
+[363]	validation_0-rmse:0.42813	validation_1-rmse:0.42813
+[364]	validation_0-rmse:0.42794	validation_1-rmse:0.42794
+[365]	validation_0-rmse:0.42772	validation_1-rmse:0.42772
+[366]	validation_0-rmse:0.42744	validation_1-rmse:0.42744
+[367]	validation_0-rmse:0.42706	validation_1-rmse:0.42706
+[368]	validation_0-rmse:0.42593	validation_1-rmse:0.42593
+[369]	validation_0-rmse:0.42549	validation_1-rmse:0.42549
+[370]	validation_0-rmse:0.42517	validation_1-rmse:0.42517
+[371]	validation_0-rmse:0.42451	validation_1-rmse:0.42451
+[372]	validation_0-rmse:0.42438	validation_1-rmse:0.42438
+[373]	validation_0-rmse:0.42344	validation_1-rmse:0.42344
+[374]	validation_0-rmse:0.42332	validation_1-rmse:0.42332
+[375]	validation_0-rmse:0.42270	validation_1-rmse:0.42270
+[376]	validation_0-rmse:0.42233	validation_1-rmse:0.42233
+[377]	validation_0-rmse:0.42163	validation_1-rmse:0.42163
+[378]	validation_0-rmse:0.42077	validation_1-rmse:0.42077
+[379]	validation_0-rmse:0.42014	validation_1-rmse:0.42014
+[380]	validation_0-rmse:0.41987	validation_1-rmse:0.41987
+[381]	validation_0-rmse:0.41968	validation_1-rmse:0.41968
+[382]	validation_0-rmse:0.41954	validation_1-rmse:0.41954
+[383]	validation_0-rmse:0.41933	validation_1-rmse:0.41933
+[384]	validation_0-rmse:0.41887	validation_1-rmse:0.41887
+[385]	validation_0-rmse:0.41852	validation_1-rmse:0.41852
+[386]	validation_0-rmse:0.41783	validation_1-rmse:0.41783
+[387]	validation_0-rmse:0.41723	validation_1-rmse:0.41723
+[388]	validation_0-rmse:0.41701	validation_1-rmse:0.41701
+[389]	validation_0-rmse:0.41641	validation_1-rmse:0.41641
+[390]	validation_0-rmse:0.41617	validation_1-rmse:0.41617
+[391]	validation_0-rmse:0.41528	validation_1-rmse:0.41528
+[392]	validation_0-rmse:0.41507	validation_1-rmse:0.41507
+[393]	validation_0-rmse:0.41458	validation_1-rmse:0.41458
+[394]	validation_0-rmse:0.41365	validation_1-rmse:0.41365
+[395]	validation_0-rmse:0.41327	validation_1-rmse:0.41327
+[396]	validation_0-rmse:0.41313	validation_1-rmse:0.41313
+[397]	validation_0-rmse:0.41240	validation_1-rmse:0.41240
+[398]	validation_0-rmse:0.41121	validation_1-rmse:0.41121
+[399]	validation_0-rmse:0.41112	validation_1-rmse:0.41112
+[400]	validation_0-rmse:0.41086	validation_1-rmse:0.41086
+[401]	validation_0-rmse:0.41067	validation_1-rmse:0.41067
+[402]	validation_0-rmse:0.41038	validation_1-rmse:0.41038
+[403]	validation_0-rmse:0.41018	validation_1-rmse:0.41018
+[404]	validation_0-rmse:0.40991	validation_1-rmse:0.40991
+[405]	validation_0-rmse:0.40980	validation_1-rmse:0.40980
+[406]	validation_0-rmse:0.40942	validation_1-rmse:0.40942
+[407]	validation_0-rmse:0.40907	validation_1-rmse:0.40907
+[408]	validation_0-rmse:0.40871	validation_1-rmse:0.40871
+[409]	validation_0-rmse:0.40855	validation_1-rmse:0.40855
+[410]	validation_0-rmse:0.40830	validation_1-rmse:0.40830
+[411]	validation_0-rmse:0.40799	validation_1-rmse:0.40799
+[412]	validation_0-rmse:0.40778	validation_1-rmse:0.40778
+[413]	validation_0-rmse:0.40763	validation_1-rmse:0.40763
+[414]	validation_0-rmse:0.40700	validation_1-rmse:0.40700
+[415]	validation_0-rmse:0.40680	validation_1-rmse:0.40680
+[416]	validation_0-rmse:0.40618	validation_1-rmse:0.40618
+[417]	validation_0-rmse:0.40587	validation_1-rmse:0.40587
+[418]	validation_0-rmse:0.40575	validation_1-rmse:0.40575
+[419]	validation_0-rmse:0.40457	validation_1-rmse:0.40457
+[420]	validation_0-rmse:0.40374	validation_1-rmse:0.40374
+[421]	validation_0-rmse:0.40337	validation_1-rmse:0.40337
+[422]	validation_0-rmse:0.40274	validation_1-rmse:0.40274
+[423]	validation_0-rmse:0.40250	validation_1-rmse:0.40250
+[424]	validation_0-rmse:0.40230	validation_1-rmse:0.40230
+[425]	validation_0-rmse:0.40199	validation_1-rmse:0.40199
+[426]	validation_0-rmse:0.40128	validation_1-rmse:0.40128
+[427]	validation_0-rmse:0.40094	validation_1-rmse:0.40094
+[428]	validation_0-rmse:0.40078	validation_1-rmse:0.40078
+[429]	validation_0-rmse:0.40047	validation_1-rmse:0.40047
+[430]	validation_0-rmse:0.39931	validation_1-rmse:0.39931
+[431]	validation_0-rmse:0.39902	validation_1-rmse:0.39902
+[432]	validation_0-rmse:0.39819	validation_1-rmse:0.39819
+[433]	validation_0-rmse:0.39751	validation_1-rmse:0.39751
+[434]	validation_0-rmse:0.39726	validation_1-rmse:0.39726
+[435]	validation_0-rmse:0.39711	validation_1-rmse:0.39711
+[436]	validation_0-rmse:0.39678	validation_1-rmse:0.39678
+[437]	validation_0-rmse:0.39643	validation_1-rmse:0.39643
+[438]	validation_0-rmse:0.39574	validation_1-rmse:0.39574
+[439]	validation_0-rmse:0.39559	validation_1-rmse:0.39559
+[440]	validation_0-rmse:0.39550	validation_1-rmse:0.39550
+[441]	validation_0-rmse:0.39536	validation_1-rmse:0.39536
+[442]	validation_0-rmse:0.39440	validation_1-rmse:0.39440
+[443]	validation_0-rmse:0.39408	validation_1-rmse:0.39408
+[444]	validation_0-rmse:0.39357	validation_1-rmse:0.39357
+[445]	validation_0-rmse:0.39304	validation_1-rmse:0.39304
+[446]	validation_0-rmse:0.39291	validation_1-rmse:0.39291
+[447]	validation_0-rmse:0.39217	validation_1-rmse:0.39217
+[448]	validation_0-rmse:0.39148	validation_1-rmse:0.39148
+[449]	validation_0-rmse:0.39085	validation_1-rmse:0.39085
+[450]	validation_0-rmse:0.39019	validation_1-rmse:0.39019
+[451]	validation_0-rmse:0.38985	validation_1-rmse:0.38985
+[452]	validation_0-rmse:0.38947	validation_1-rmse:0.38947
+[453]	validation_0-rmse:0.38911	validation_1-rmse:0.38911
+[454]	validation_0-rmse:0.38901	validation_1-rmse:0.38901
+[455]	validation_0-rmse:0.38879	validation_1-rmse:0.38879
+[456]	validation_0-rmse:0.38870	validation_1-rmse:0.38870
+[457]	validation_0-rmse:0.38799	validation_1-rmse:0.38799
+[458]	validation_0-rmse:0.38793	validation_1-rmse:0.38793
+[459]	validation_0-rmse:0.38773	validation_1-rmse:0.38773
+[460]	validation_0-rmse:0.38756	validation_1-rmse:0.38756
+[461]	validation_0-rmse:0.38720	validation_1-rmse:0.38720
+[462]	validation_0-rmse:0.38698	validation_1-rmse:0.38698
+[463]	validation_0-rmse:0.38669	validation_1-rmse:0.38669
+[464]	validation_0-rmse:0.38650	validation_1-rmse:0.38650
+[465]	validation_0-rmse:0.38639	validation_1-rmse:0.38639
+[466]	validation_0-rmse:0.38630	validation_1-rmse:0.38630
+[467]	validation_0-rmse:0.38613	validation_1-rmse:0.38613
+[468]	validation_0-rmse:0.38603	validation_1-rmse:0.38603
+[469]	validation_0-rmse:0.38557	validation_1-rmse:0.38557
+[470]	validation_0-rmse:0.38502	validation_1-rmse:0.38502
+[471]	validation_0-rmse:0.38463	validation_1-rmse:0.38463
+[472]	validation_0-rmse:0.38445	validation_1-rmse:0.38445
+[473]	validation_0-rmse:0.38419	validation_1-rmse:0.38419
+[474]	validation_0-rmse:0.38405	validation_1-rmse:0.38405
+[475]	validation_0-rmse:0.38365	validation_1-rmse:0.38365
+[476]	validation_0-rmse:0.38338	validation_1-rmse:0.38338
+[477]	validation_0-rmse:0.38329	validation_1-rmse:0.38329
+[478]	validation_0-rmse:0.38317	validation_1-rmse:0.38317
+[479]	validation_0-rmse:0.38255	validation_1-rmse:0.38255
+[480]	validation_0-rmse:0.38221	validation_1-rmse:0.38221
+[481]	validation_0-rmse:0.38195	validation_1-rmse:0.38195
+[482]	validation_0-rmse:0.38172	validation_1-rmse:0.38172
+[483]	validation_0-rmse:0.38138	validation_1-rmse:0.38138
+[484]	validation_0-rmse:0.38050	validation_1-rmse:0.38050
+[485]	validation_0-rmse:0.38007	validation_1-rmse:0.38007
+[486]	validation_0-rmse:0.37986	validation_1-rmse:0.37986
+[487]	validation_0-rmse:0.37972	validation_1-rmse:0.37972
+[488]	validation_0-rmse:0.37914	validation_1-rmse:0.37914
+[489]	validation_0-rmse:0.37889	validation_1-rmse:0.37889
+[490]	validation_0-rmse:0.37863	validation_1-rmse:0.37863
+[491]	validation_0-rmse:0.37840	validation_1-rmse:0.37840
+[492]	validation_0-rmse:0.37782	validation_1-rmse:0.37782
+[493]	validation_0-rmse:0.37673	validation_1-rmse:0.37673
+[494]	validation_0-rmse:0.37650	validation_1-rmse:0.37650
+[495]	validation_0-rmse:0.37630	validation_1-rmse:0.37630
+[496]	validation_0-rmse:0.37558	validation_1-rmse:0.37558
+[497]	validation_0-rmse:0.37471	validation_1-rmse:0.37471
+[498]	validation_0-rmse:0.37423	validation_1-rmse:0.37423
+[499]	validation_0-rmse:0.37398	validation_1-rmse:0.37398
+[500]	validation_0-rmse:0.37382	validation_1-rmse:0.37382
+[501]	validation_0-rmse:0.37349	validation_1-rmse:0.37349
+[502]	validation_0-rmse:0.37334	validation_1-rmse:0.37334
+[503]	validation_0-rmse:0.37273	validation_1-rmse:0.37273
+[504]	validation_0-rmse:0.37253	validation_1-rmse:0.37253
+[505]	validation_0-rmse:0.37242	validation_1-rmse:0.37242
+[506]	validation_0-rmse:0.37229	validation_1-rmse:0.37229
+[507]	validation_0-rmse:0.37197	validation_1-rmse:0.37197
+[508]	validation_0-rmse:0.37164	validation_1-rmse:0.37164
+[509]	validation_0-rmse:0.37153	validation_1-rmse:0.37153
+[510]	validation_0-rmse:0.37113	validation_1-rmse:0.37113
+[511]	validation_0-rmse:0.37101	validation_1-rmse:0.37101
+[512]	validation_0-rmse:0.37057	validation_1-rmse:0.37057
+[513]	validation_0-rmse:0.36996	validation_1-rmse:0.36996
+[514]	validation_0-rmse:0.36952	validation_1-rmse:0.36952
+[515]	validation_0-rmse:0.36877	validation_1-rmse:0.36877
+[516]	validation_0-rmse:0.36865	validation_1-rmse:0.36865
+[517]	validation_0-rmse:0.36855	validation_1-rmse:0.36855
+[518]	validation_0-rmse:0.36792	validation_1-rmse:0.36792
+[519]	validation_0-rmse:0.36778	validation_1-rmse:0.36778
+[520]	validation_0-rmse:0.36745	validation_1-rmse:0.36745
+[521]	validation_0-rmse:0.36703	validation_1-rmse:0.36703
+[522]	validation_0-rmse:0.36667	validation_1-rmse:0.36667
+[523]	validation_0-rmse:0.36595	validation_1-rmse:0.36595
+[524]	validation_0-rmse:0.36587	validation_1-rmse:0.36587
+[525]	validation_0-rmse:0.36556	validation_1-rmse:0.36556
+[526]	validation_0-rmse:0.36515	validation_1-rmse:0.36515
+[527]	validation_0-rmse:0.36490	validation_1-rmse:0.36490
+[528]	validation_0-rmse:0.36458	validation_1-rmse:0.36458
+[529]	validation_0-rmse:0.36429	validation_1-rmse:0.36429
+[530]	validation_0-rmse:0.36375	validation_1-rmse:0.36375
+[531]	validation_0-rmse:0.36365	validation_1-rmse:0.36365
+[532]	validation_0-rmse:0.36336	validation_1-rmse:0.36336
+[533]	validation_0-rmse:0.36331	validation_1-rmse:0.36331
+[534]	validation_0-rmse:0.36321	validation_1-rmse:0.36321
+[535]	validation_0-rmse:0.36303	validation_1-rmse:0.36303
+[536]	validation_0-rmse:0.36277	validation_1-rmse:0.36277
+[537]	validation_0-rmse:0.36250	validation_1-rmse:0.36250
+[538]	validation_0-rmse:0.36211	validation_1-rmse:0.36211
+[539]	validation_0-rmse:0.36174	validation_1-rmse:0.36174
+[540]	validation_0-rmse:0.36097	validation_1-rmse:0.36097
+[541]	validation_0-rmse:0.36071	validation_1-rmse:0.36071
+[542]	validation_0-rmse:0.36031	validation_1-rmse:0.36031
+[543]	validation_0-rmse:0.35999	validation_1-rmse:0.35999
+[544]	validation_0-rmse:0.35937	validation_1-rmse:0.35937
+[545]	validation_0-rmse:0.35906	validation_1-rmse:0.35906
+[546]	validation_0-rmse:0.35882	validation_1-rmse:0.35882
+[547]	validation_0-rmse:0.35869	validation_1-rmse:0.35869
+[548]	validation_0-rmse:0.35829	validation_1-rmse:0.35829
+[549]	validation_0-rmse:0.35771	validation_1-rmse:0.35771
+[550]	validation_0-rmse:0.35731	validation_1-rmse:0.35731
+[551]	validation_0-rmse:0.35698	validation_1-rmse:0.35698
+[552]	validation_0-rmse:0.35669	validation_1-rmse:0.35669
+[553]	validation_0-rmse:0.35594	validation_1-rmse:0.35594
+[554]	validation_0-rmse:0.35561	validation_1-rmse:0.35561
+[555]	validation_0-rmse:0.35527	validation_1-rmse:0.35527
+[556]	validation_0-rmse:0.35513	validation_1-rmse:0.35513
+[557]	validation_0-rmse:0.35486	validation_1-rmse:0.35486
+[558]	validation_0-rmse:0.35476	validation_1-rmse:0.35476
+[559]	validation_0-rmse:0.35434	validation_1-rmse:0.35434
+[560]	validation_0-rmse:0.35362	validation_1-rmse:0.35362
+[561]	validation_0-rmse:0.35348	validation_1-rmse:0.35348
+[562]	validation_0-rmse:0.35326	validation_1-rmse:0.35326
+[563]	validation_0-rmse:0.35314	validation_1-rmse:0.35314
+[564]	validation_0-rmse:0.35261	validation_1-rmse:0.35261
+[565]	validation_0-rmse:0.35212	validation_1-rmse:0.35212
+[566]	validation_0-rmse:0.35197	validation_1-rmse:0.35197
+[567]	validation_0-rmse:0.35184	validation_1-rmse:0.35184
+[568]	validation_0-rmse:0.35178	validation_1-rmse:0.35178
+[569]	validation_0-rmse:0.35171	validation_1-rmse:0.35171
+[570]	validation_0-rmse:0.35163	validation_1-rmse:0.35163
+[571]	validation_0-rmse:0.35141	validation_1-rmse:0.35141
+[572]	validation_0-rmse:0.35120	validation_1-rmse:0.35120
+[573]	validation_0-rmse:0.35106	validation_1-rmse:0.35106
+[574]	validation_0-rmse:0.35087	validation_1-rmse:0.35087
+[575]	validation_0-rmse:0.35078	validation_1-rmse:0.35078
+[576]	validation_0-rmse:0.35064	validation_1-rmse:0.35064
+[577]	validation_0-rmse:0.34971	validation_1-rmse:0.34971
+[578]	validation_0-rmse:0.34961	validation_1-rmse:0.34961
+[579]	validation_0-rmse:0.34951	validation_1-rmse:0.34951
+[580]	validation_0-rmse:0.34942	validation_1-rmse:0.34942
+[581]	validation_0-rmse:0.34905	validation_1-rmse:0.34905
+[582]	validation_0-rmse:0.34769	validation_1-rmse:0.34769
+[583]	validation_0-rmse:0.34752	validation_1-rmse:0.34752
+[584]	validation_0-rmse:0.34736	validation_1-rmse:0.34736
+[585]	validation_0-rmse:0.34656	validation_1-rmse:0.34656
+[586]	validation_0-rmse:0.34622	validation_1-rmse:0.34622
+[587]	validation_0-rmse:0.34596	validation_1-rmse:0.34596
+[588]	validation_0-rmse:0.34579	validation_1-rmse:0.34579
+[589]	validation_0-rmse:0.34535	validation_1-rmse:0.34535
+[590]	validation_0-rmse:0.34492	validation_1-rmse:0.34492
+[591]	validation_0-rmse:0.34454	validation_1-rmse:0.34454
+[592]	validation_0-rmse:0.34418	validation_1-rmse:0.34418
+[593]	validation_0-rmse:0.34371	validation_1-rmse:0.34371
+[594]	validation_0-rmse:0.34348	validation_1-rmse:0.34348
+[595]	validation_0-rmse:0.34326	validation_1-rmse:0.34326
+[596]	validation_0-rmse:0.34253	validation_1-rmse:0.34253
+[597]	validation_0-rmse:0.34240	validation_1-rmse:0.34240
+[598]	validation_0-rmse:0.34212	validation_1-rmse:0.34212
+[599]	validation_0-rmse:0.34171	validation_1-rmse:0.34171
+[600]	validation_0-rmse:0.34140	validation_1-rmse:0.34140
+[601]	validation_0-rmse:0.34127	validation_1-rmse:0.34127
+[602]	validation_0-rmse:0.34108	validation_1-rmse:0.34108
+[603]	validation_0-rmse:0.34058	validation_1-rmse:0.34058
+[604]	validation_0-rmse:0.34033	validation_1-rmse:0.34033
+[605]	validation_0-rmse:0.34015	validation_1-rmse:0.34015
+[606]	validation_0-rmse:0.33990	validation_1-rmse:0.33990
+[607]	validation_0-rmse:0.33948	validation_1-rmse:0.33948
+[608]	validation_0-rmse:0.33918	validation_1-rmse:0.33918
+[609]	validation_0-rmse:0.33905	validation_1-rmse:0.33905
+[610]	validation_0-rmse:0.33870	validation_1-rmse:0.33870
+[611]	validation_0-rmse:0.33849	validation_1-rmse:0.33849
+[612]	validation_0-rmse:0.33792	validation_1-rmse:0.33792
+[613]	validation_0-rmse:0.33757	validation_1-rmse:0.33757
+[614]	validation_0-rmse:0.33723	validation_1-rmse:0.33723
+[615]	validation_0-rmse:0.33705	validation_1-rmse:0.33705
+[616]	validation_0-rmse:0.33681	validation_1-rmse:0.33681
+[617]	validation_0-rmse:0.33659	validation_1-rmse:0.33659
+[618]	validation_0-rmse:0.33653	validation_1-rmse:0.33653
+[619]	validation_0-rmse:0.33644	validation_1-rmse:0.33644
+[620]	validation_0-rmse:0.33624	validation_1-rmse:0.33624
+[621]	validation_0-rmse:0.33609	validation_1-rmse:0.33609
+[622]	validation_0-rmse:0.33603	validation_1-rmse:0.33603
+[623]	validation_0-rmse:0.33583	validation_1-rmse:0.33583
+[624]	validation_0-rmse:0.33567	validation_1-rmse:0.33567
+[625]	validation_0-rmse:0.33547	validation_1-rmse:0.33547
+[626]	validation_0-rmse:0.33515	validation_1-rmse:0.33515
+[627]	validation_0-rmse:0.33496	validation_1-rmse:0.33496
+[628]	validation_0-rmse:0.33476	validation_1-rmse:0.33476
+[629]	validation_0-rmse:0.33416	validation_1-rmse:0.33416
+[630]	validation_0-rmse:0.33359	validation_1-rmse:0.33359
+[631]	validation_0-rmse:0.33335	validation_1-rmse:0.33335
+[632]	validation_0-rmse:0.33306	validation_1-rmse:0.33306
+[633]	validation_0-rmse:0.33267	validation_1-rmse:0.33267
+[634]	validation_0-rmse:0.33227	validation_1-rmse:0.33227
+[635]	validation_0-rmse:0.33195	validation_1-rmse:0.33195
+[636]	validation_0-rmse:0.33174	validation_1-rmse:0.33174
+[637]	validation_0-rmse:0.33149	validation_1-rmse:0.33149
+[638]	validation_0-rmse:0.33141	validation_1-rmse:0.33141
+[639]	validation_0-rmse:0.33118	validation_1-rmse:0.33118
+[640]	validation_0-rmse:0.33091	validation_1-rmse:0.33091
+[641]	validation_0-rmse:0.33008	validation_1-rmse:0.33008
+[642]	validation_0-rmse:0.32981	validation_1-rmse:0.32981
+[643]	validation_0-rmse:0.32937	validation_1-rmse:0.32937
+[644]	validation_0-rmse:0.32931	validation_1-rmse:0.32931
+[645]	validation_0-rmse:0.32912	validation_1-rmse:0.32912
+[646]	validation_0-rmse:0.32896	validation_1-rmse:0.32896
+[647]	validation_0-rmse:0.32883	validation_1-rmse:0.32883
+[648]	validation_0-rmse:0.32861	validation_1-rmse:0.32861
+[649]	validation_0-rmse:0.32857	validation_1-rmse:0.32857
+[650]	validation_0-rmse:0.32832	validation_1-rmse:0.32832
+[651]	validation_0-rmse:0.32779	validation_1-rmse:0.32779
+[652]	validation_0-rmse:0.32734	validation_1-rmse:0.32734
+[653]	validation_0-rmse:0.32721	validation_1-rmse:0.32721
+[654]	validation_0-rmse:0.32691	validation_1-rmse:0.32691
+[655]	validation_0-rmse:0.32626	validation_1-rmse:0.32626
+[656]	validation_0-rmse:0.32589	validation_1-rmse:0.32589
+[657]	validation_0-rmse:0.32573	validation_1-rmse:0.32573
+[658]	validation_0-rmse:0.32555	validation_1-rmse:0.32555
+[659]	validation_0-rmse:0.32544	validation_1-rmse:0.32544
+[660]	validation_0-rmse:0.32509	validation_1-rmse:0.32509
+[661]	validation_0-rmse:0.32501	validation_1-rmse:0.32501
+[662]	validation_0-rmse:0.32441	validation_1-rmse:0.32441
+[663]	validation_0-rmse:0.32420	validation_1-rmse:0.32420
+[664]	validation_0-rmse:0.32406	validation_1-rmse:0.32406
+[665]	validation_0-rmse:0.32392	validation_1-rmse:0.32392
+[666]	validation_0-rmse:0.32382	validation_1-rmse:0.32382
+[667]	validation_0-rmse:0.32354	validation_1-rmse:0.32354
+[668]	validation_0-rmse:0.32337	validation_1-rmse:0.32337
+[669]	validation_0-rmse:0.32270	validation_1-rmse:0.32270
+[670]	validation_0-rmse:0.32263	validation_1-rmse:0.32263
+[671]	validation_0-rmse:0.32245	validation_1-rmse:0.32245
+[672]	validation_0-rmse:0.32219	validation_1-rmse:0.32219
+[673]	validation_0-rmse:0.32171	validation_1-rmse:0.32171
+[674]	validation_0-rmse:0.32156	validation_1-rmse:0.32156
+[675]	validation_0-rmse:0.32140	validation_1-rmse:0.32140
+[676]	validation_0-rmse:0.32121	validation_1-rmse:0.32121
+[677]	validation_0-rmse:0.32107	validation_1-rmse:0.32107
+[678]	validation_0-rmse:0.32103	validation_1-rmse:0.32103
+[679]	validation_0-rmse:0.32091	validation_1-rmse:0.32091
+[680]	validation_0-rmse:0.32078	validation_1-rmse:0.32078
+[681]	validation_0-rmse:0.32045	validation_1-rmse:0.32045
+[682]	validation_0-rmse:0.32012	validation_1-rmse:0.32012
+[683]	validation_0-rmse:0.31997	validation_1-rmse:0.31997
+[684]	validation_0-rmse:0.31941	validation_1-rmse:0.31941
+[685]	validation_0-rmse:0.31921	validation_1-rmse:0.31921
+[686]	validation_0-rmse:0.31886	validation_1-rmse:0.31886
+[687]	validation_0-rmse:0.31843	validation_1-rmse:0.31843
+[688]	validation_0-rmse:0.31829	validation_1-rmse:0.31829
+[689]	validation_0-rmse:0.31810	validation_1-rmse:0.31810
+[690]	validation_0-rmse:0.31778	validation_1-rmse:0.31778
+[691]	validation_0-rmse:0.31748	validation_1-rmse:0.31748
+[692]	validation_0-rmse:0.31736	validation_1-rmse:0.31736
+[693]	validation_0-rmse:0.31720	validation_1-rmse:0.31720
+[694]	validation_0-rmse:0.31688	validation_1-rmse:0.31688
+[695]	validation_0-rmse:0.31642	validation_1-rmse:0.31642
+[696]	validation_0-rmse:0.31627	validation_1-rmse:0.31627
+[697]	validation_0-rmse:0.31590	validation_1-rmse:0.31590
+[698]	validation_0-rmse:0.31578	validation_1-rmse:0.31578
+[699]	validation_0-rmse:0.31559	validation_1-rmse:0.31559
+[700]	validation_0-rmse:0.31550	validation_1-rmse:0.31550
+[701]	validation_0-rmse:0.31537	validation_1-rmse:0.31537
+[702]	validation_0-rmse:0.31516	validation_1-rmse:0.31516
+[703]	validation_0-rmse:0.31487	validation_1-rmse:0.31487
+[704]	validation_0-rmse:0.31465	validation_1-rmse:0.31465
+[705]	validation_0-rmse:0.31453	validation_1-rmse:0.31453
+[706]	validation_0-rmse:0.31436	validation_1-rmse:0.31436
+[707]	validation_0-rmse:0.31408	validation_1-rmse:0.31408
+[708]	validation_0-rmse:0.31391	validation_1-rmse:0.31391
+[709]	validation_0-rmse:0.31377	validation_1-rmse:0.31377
+[710]	validation_0-rmse:0.31363	validation_1-rmse:0.31363
+[711]	validation_0-rmse:0.31326	validation_1-rmse:0.31326
+[712]	validation_0-rmse:0.31316	validation_1-rmse:0.31316
+[713]	validation_0-rmse:0.31308	validation_1-rmse:0.31308
+[714]	validation_0-rmse:0.31302	validation_1-rmse:0.31302
+[715]	validation_0-rmse:0.31288	validation_1-rmse:0.31288
+[716]	validation_0-rmse:0.31254	validation_1-rmse:0.31254
+[717]	validation_0-rmse:0.31229	validation_1-rmse:0.31229
+[718]	validation_0-rmse:0.31212	validation_1-rmse:0.31212
+[719]	validation_0-rmse:0.31193	validation_1-rmse:0.31193
+[720]	validation_0-rmse:0.31166	validation_1-rmse:0.31166
+[721]	validation_0-rmse:0.31148	validation_1-rmse:0.31148
+[722]	validation_0-rmse:0.31138	validation_1-rmse:0.31138
+[723]	validation_0-rmse:0.31127	validation_1-rmse:0.31127
+[724]	validation_0-rmse:0.31110	validation_1-rmse:0.31110
+[725]	validation_0-rmse:0.31101	validation_1-rmse:0.31101
+[726]	validation_0-rmse:0.31095	validation_1-rmse:0.31095
+[727]	validation_0-rmse:0.31065	validation_1-rmse:0.31065
+[728]	validation_0-rmse:0.31047	validation_1-rmse:0.31047
+[729]	validation_0-rmse:0.31040	validation_1-rmse:0.31040
+[730]	validation_0-rmse:0.31035	validation_1-rmse:0.31035
+[731]	validation_0-rmse:0.31007	validation_1-rmse:0.31007
+[732]	validation_0-rmse:0.30996	validation_1-rmse:0.30996
+[733]	validation_0-rmse:0.30983	validation_1-rmse:0.30983
+[734]	validation_0-rmse:0.30962	validation_1-rmse:0.30962
+[735]	validation_0-rmse:0.30941	validation_1-rmse:0.30941
+[736]	validation_0-rmse:0.30911	validation_1-rmse:0.30911
+[737]	validation_0-rmse:0.30887	validation_1-rmse:0.30887
+[738]	validation_0-rmse:0.30850	validation_1-rmse:0.30850
+[739]	validation_0-rmse:0.30842	validation_1-rmse:0.30842
+[740]	validation_0-rmse:0.30830	validation_1-rmse:0.30830
+[741]	validation_0-rmse:0.30824	validation_1-rmse:0.30824
+[742]	validation_0-rmse:0.30797	validation_1-rmse:0.30797
+[743]	validation_0-rmse:0.30762	validation_1-rmse:0.30762
+[744]	validation_0-rmse:0.30756	validation_1-rmse:0.30756
+[745]	validation_0-rmse:0.30715	validation_1-rmse:0.30715
+[746]	validation_0-rmse:0.30707	validation_1-rmse:0.30707
+[747]	validation_0-rmse:0.30687	validation_1-rmse:0.30687
+[748]	validation_0-rmse:0.30659	validation_1-rmse:0.30659
+[749]	validation_0-rmse:0.30623	validation_1-rmse:0.30623
+[750]	validation_0-rmse:0.30611	validation_1-rmse:0.30611
+[751]	validation_0-rmse:0.30591	validation_1-rmse:0.30591
+[752]	validation_0-rmse:0.30544	validation_1-rmse:0.30544
+[753]	validation_0-rmse:0.30513	validation_1-rmse:0.30513
+[754]	validation_0-rmse:0.30483	validation_1-rmse:0.30483
+[755]	validation_0-rmse:0.30469	validation_1-rmse:0.30469
+[756]	validation_0-rmse:0.30459	validation_1-rmse:0.30459
+[757]	validation_0-rmse:0.30439	validation_1-rmse:0.30439
+[758]	validation_0-rmse:0.30421	validation_1-rmse:0.30421
+[759]	validation_0-rmse:0.30412	validation_1-rmse:0.30412
+[760]	validation_0-rmse:0.30405	validation_1-rmse:0.30405
+[761]	validation_0-rmse:0.30384	validation_1-rmse:0.30384
+[762]	validation_0-rmse:0.30378	validation_1-rmse:0.30378
+[763]	validation_0-rmse:0.30357	validation_1-rmse:0.30357
+[764]	validation_0-rmse:0.30348	validation_1-rmse:0.30348
+[765]	validation_0-rmse:0.30341	validation_1-rmse:0.30341
+[766]	validation_0-rmse:0.30336	validation_1-rmse:0.30336
+[767]	validation_0-rmse:0.30318	validation_1-rmse:0.30318
+[768]	validation_0-rmse:0.30303	validation_1-rmse:0.30303
+[769]	validation_0-rmse:0.30288	validation_1-rmse:0.30288
+[770]	validation_0-rmse:0.30286	validation_1-rmse:0.30286
+[771]	validation_0-rmse:0.30275	validation_1-rmse:0.30275
+[772]	validation_0-rmse:0.30267	validation_1-rmse:0.30267
+[773]	validation_0-rmse:0.30259	validation_1-rmse:0.30259
+[774]	validation_0-rmse:0.30256	validation_1-rmse:0.30256
+[775]	validation_0-rmse:0.30242	validation_1-rmse:0.30242
+[776]	validation_0-rmse:0.30235	validation_1-rmse:0.30235
+[777]	validation_0-rmse:0.30227	validation_1-rmse:0.30227
+[778]	validation_0-rmse:0.30217	validation_1-rmse:0.30217
+[779]	validation_0-rmse:0.30175	validation_1-rmse:0.30175
+[780]	validation_0-rmse:0.30147	validation_1-rmse:0.30147
+[781]	validation_0-rmse:0.30131	validation_1-rmse:0.30131
+[782]	validation_0-rmse:0.30123	validation_1-rmse:0.30123
+[783]	validation_0-rmse:0.30116	validation_1-rmse:0.30116
+[784]	validation_0-rmse:0.30098	validation_1-rmse:0.30098
+[785]	validation_0-rmse:0.30051	validation_1-rmse:0.30051
+[786]	validation_0-rmse:0.30033	validation_1-rmse:0.30033
+[787]	validation_0-rmse:0.30017	validation_1-rmse:0.30017
+[788]	validation_0-rmse:0.30010	validation_1-rmse:0.30010
+[789]	validation_0-rmse:0.29996	validation_1-rmse:0.29996
+[790]	validation_0-rmse:0.29971	validation_1-rmse:0.29971
+[791]	validation_0-rmse:0.29964	validation_1-rmse:0.29964
+[792]	validation_0-rmse:0.29921	validation_1-rmse:0.29921
+[793]	validation_0-rmse:0.29879	validation_1-rmse:0.29879
+[794]	validation_0-rmse:0.29855	validation_1-rmse:0.29855
+[795]	validation_0-rmse:0.29842	validation_1-rmse:0.29842
+[796]	validation_0-rmse:0.29817	validation_1-rmse:0.29817
+[797]	validation_0-rmse:0.29790	validation_1-rmse:0.29790
+[798]	validation_0-rmse:0.29765	validation_1-rmse:0.29765
+[799]	validation_0-rmse:0.29734	validation_1-rmse:0.29734
+[800]	validation_0-rmse:0.29722	validation_1-rmse:0.29722
+[801]	validation_0-rmse:0.29712	validation_1-rmse:0.29712
+[802]	validation_0-rmse:0.29703	validation_1-rmse:0.29703
+[803]	validation_0-rmse:0.29677	validation_1-rmse:0.29677
+[804]	validation_0-rmse:0.29670	validation_1-rmse:0.29670
+[805]	validation_0-rmse:0.29655	validation_1-rmse:0.29655
+[806]	validation_0-rmse:0.29588	validation_1-rmse:0.29588
+[807]	validation_0-rmse:0.29574	validation_1-rmse:0.29574
+[808]	validation_0-rmse:0.29547	validation_1-rmse:0.29547
+[809]	validation_0-rmse:0.29507	validation_1-rmse:0.29507
+[810]	validation_0-rmse:0.29460	validation_1-rmse:0.29460
+[811]	validation_0-rmse:0.29449	validation_1-rmse:0.29449
+[812]	validation_0-rmse:0.29439	validation_1-rmse:0.29439
+[813]	validation_0-rmse:0.29427	validation_1-rmse:0.29427
+[814]	validation_0-rmse:0.29421	validation_1-rmse:0.29421
+[815]	validation_0-rmse:0.29383	validation_1-rmse:0.29383
+[816]	validation_0-rmse:0.29365	validation_1-rmse:0.29365
+[817]	validation_0-rmse:0.29336	validation_1-rmse:0.29336
+[818]	validation_0-rmse:0.29315	validation_1-rmse:0.29315
+[819]	validation_0-rmse:0.29296	validation_1-rmse:0.29296
+[820]	validation_0-rmse:0.29276	validation_1-rmse:0.29276
+[821]	validation_0-rmse:0.29272	validation_1-rmse:0.29272
+[822]	validation_0-rmse:0.29253	validation_1-rmse:0.29253
+[823]	validation_0-rmse:0.29229	validation_1-rmse:0.29229
+[824]	validation_0-rmse:0.29197	validation_1-rmse:0.29197
+[825]	validation_0-rmse:0.29181	validation_1-rmse:0.29181
+[826]	validation_0-rmse:0.29160	validation_1-rmse:0.29160
+[827]	validation_0-rmse:0.29138	validation_1-rmse:0.29138
+[828]	validation_0-rmse:0.29125	validation_1-rmse:0.29125
+[829]	validation_0-rmse:0.29112	validation_1-rmse:0.29112
+[830]	validation_0-rmse:0.29099	validation_1-rmse:0.29099
+[831]	validation_0-rmse:0.29089	validation_1-rmse:0.29089
+[832]	validation_0-rmse:0.29075	validation_1-rmse:0.29075
+[833]	validation_0-rmse:0.29063	validation_1-rmse:0.29063
+[834]	validation_0-rmse:0.29054	validation_1-rmse:0.29054
+[835]	validation_0-rmse:0.29047	validation_1-rmse:0.29047
+[836]	validation_0-rmse:0.29040	validation_1-rmse:0.29040
+[837]	validation_0-rmse:0.29035	validation_1-rmse:0.29035
+[838]	validation_0-rmse:0.28977	validation_1-rmse:0.28977
+[839]	validation_0-rmse:0.28964	validation_1-rmse:0.28964
+[840]	validation_0-rmse:0.28952	validation_1-rmse:0.28952
+[841]	validation_0-rmse:0.28939	validation_1-rmse:0.28939
+[842]	validation_0-rmse:0.28923	validation_1-rmse:0.28923
+[843]	validation_0-rmse:0.28907	validation_1-rmse:0.28907
+[844]	validation_0-rmse:0.28893	validation_1-rmse:0.28893
+[845]	validation_0-rmse:0.28885	validation_1-rmse:0.28885
+[846]	validation_0-rmse:0.28827	validation_1-rmse:0.28827
+[847]	validation_0-rmse:0.28813	validation_1-rmse:0.28813
+[848]	validation_0-rmse:0.28776	validation_1-rmse:0.28776
+[849]	validation_0-rmse:0.28744	validation_1-rmse:0.28744
+[850]	validation_0-rmse:0.28696	validation_1-rmse:0.28696
+[851]	validation_0-rmse:0.28677	validation_1-rmse:0.28677
+[852]	validation_0-rmse:0.28652	validation_1-rmse:0.28652
+[853]	validation_0-rmse:0.28645	validation_1-rmse:0.28645
+[854]	validation_0-rmse:0.28621	validation_1-rmse:0.28621
+[855]	validation_0-rmse:0.28596	validation_1-rmse:0.28596
+[856]	validation_0-rmse:0.28503	validation_1-rmse:0.28503
+[857]	validation_0-rmse:0.28489	validation_1-rmse:0.28489
+[858]	validation_0-rmse:0.28474	validation_1-rmse:0.28474
+[859]	validation_0-rmse:0.28466	validation_1-rmse:0.28466
+[860]	validation_0-rmse:0.28428	validation_1-rmse:0.28428
+[861]	validation_0-rmse:0.28412	validation_1-rmse:0.28412
+[862]	validation_0-rmse:0.28404	validation_1-rmse:0.28404
+[863]	validation_0-rmse:0.28393	validation_1-rmse:0.28393
+[864]	validation_0-rmse:0.28389	validation_1-rmse:0.28389
+[865]	validation_0-rmse:0.28385	validation_1-rmse:0.28385
+[866]	validation_0-rmse:0.28367	validation_1-rmse:0.28367
+[867]	validation_0-rmse:0.28343	validation_1-rmse:0.28343
+[868]	validation_0-rmse:0.28314	validation_1-rmse:0.28314
+[869]	validation_0-rmse:0.28287	validation_1-rmse:0.28287
+[870]	validation_0-rmse:0.28260	validation_1-rmse:0.28260
+[871]	validation_0-rmse:0.28242	validation_1-rmse:0.28242
+[872]	validation_0-rmse:0.28236	validation_1-rmse:0.28236
+[873]	validation_0-rmse:0.28199	validation_1-rmse:0.28199
+[874]	validation_0-rmse:0.28185	validation_1-rmse:0.28185
+[875]	validation_0-rmse:0.28139	validation_1-rmse:0.28139
+[876]	validation_0-rmse:0.28135	validation_1-rmse:0.28135
+[877]	validation_0-rmse:0.28128	validation_1-rmse:0.28128
+[878]	validation_0-rmse:0.28114	validation_1-rmse:0.28114
+[879]	validation_0-rmse:0.28105	validation_1-rmse:0.28105
+[880]	validation_0-rmse:0.28085	validation_1-rmse:0.28085
+[881]	validation_0-rmse:0.28082	validation_1-rmse:0.28082
+[882]	validation_0-rmse:0.28076	validation_1-rmse:0.28076
+[883]	validation_0-rmse:0.28067	validation_1-rmse:0.28067
+[884]	validation_0-rmse:0.28059	validation_1-rmse:0.28059
+[885]	validation_0-rmse:0.28022	validation_1-rmse:0.28022
+[886]	validation_0-rmse:0.28012	validation_1-rmse:0.28012
+[887]	validation_0-rmse:0.28010	validation_1-rmse:0.28010
+[888]	validation_0-rmse:0.27999	validation_1-rmse:0.27999
+[889]	validation_0-rmse:0.27987	validation_1-rmse:0.27987
+[890]	validation_0-rmse:0.27984	validation_1-rmse:0.27984
+[891]	validation_0-rmse:0.27956	validation_1-rmse:0.27956
+[892]	validation_0-rmse:0.27931	validation_1-rmse:0.27931
+[893]	validation_0-rmse:0.27914	validation_1-rmse:0.27914
+[894]	validation_0-rmse:0.27902	validation_1-rmse:0.27902
+[895]	validation_0-rmse:0.27887	validation_1-rmse:0.27887
+[896]	validation_0-rmse:0.27882	validation_1-rmse:0.27882
+[897]	validation_0-rmse:0.27866	validation_1-rmse:0.27866
+[898]	validation_0-rmse:0.27857	validation_1-rmse:0.27857
+[899]	validation_0-rmse:0.27848	validation_1-rmse:0.27848
+[900]	validation_0-rmse:0.27835	validation_1-rmse:0.27835
+[901]	validation_0-rmse:0.27819	validation_1-rmse:0.27819
+[902]	validation_0-rmse:0.27812	validation_1-rmse:0.27812
+[903]	validation_0-rmse:0.27803	validation_1-rmse:0.27803
+[904]	validation_0-rmse:0.27795	validation_1-rmse:0.27795
+[905]	validation_0-rmse:0.27782	validation_1-rmse:0.27782
+[906]	validation_0-rmse:0.27748	validation_1-rmse:0.27748
+[907]	validation_0-rmse:0.27737	validation_1-rmse:0.27737
+[908]	validation_0-rmse:0.27726	validation_1-rmse:0.27726
+[909]	validation_0-rmse:0.27723	validation_1-rmse:0.27723
+[910]	validation_0-rmse:0.27715	validation_1-rmse:0.27715
+[911]	validation_0-rmse:0.27698	validation_1-rmse:0.27698
+[912]	validation_0-rmse:0.27674	validation_1-rmse:0.27674
+[913]	validation_0-rmse:0.27655	validation_1-rmse:0.27655
+[914]	validation_0-rmse:0.27652	validation_1-rmse:0.27652
+[915]	validation_0-rmse:0.27634	validation_1-rmse:0.27634
+[916]	validation_0-rmse:0.27627	validation_1-rmse:0.27627
+[917]	validation_0-rmse:0.27597	validation_1-rmse:0.27597
+[918]	validation_0-rmse:0.27586	validation_1-rmse:0.27586
+[919]	validation_0-rmse:0.27538	validation_1-rmse:0.27538
+[920]	validation_0-rmse:0.27524	validation_1-rmse:0.27524
+[921]	validation_0-rmse:0.27511	validation_1-rmse:0.27511
+[922]	validation_0-rmse:0.27498	validation_1-rmse:0.27498
+[923]	validation_0-rmse:0.27450	validation_1-rmse:0.27450
+[924]	validation_0-rmse:0.27424	validation_1-rmse:0.27424
+[925]	validation_0-rmse:0.27386	validation_1-rmse:0.27386
+[926]	validation_0-rmse:0.27362	validation_1-rmse:0.27362
+[927]	validation_0-rmse:0.27352	validation_1-rmse:0.27352
+[928]	validation_0-rmse:0.27338	validation_1-rmse:0.27338
+[929]	validation_0-rmse:0.27318	validation_1-rmse:0.27318
+[930]	validation_0-rmse:0.27299	validation_1-rmse:0.27299
+[931]	validation_0-rmse:0.27288	validation_1-rmse:0.27288
+[932]	validation_0-rmse:0.27274	validation_1-rmse:0.27274
+[933]	validation_0-rmse:0.27262	validation_1-rmse:0.27262
+[934]	validation_0-rmse:0.27220	validation_1-rmse:0.27220
+[935]	validation_0-rmse:0.27199	validation_1-rmse:0.27199
+[936]	validation_0-rmse:0.27194	validation_1-rmse:0.27194
+[937]	validation_0-rmse:0.27179	validation_1-rmse:0.27179
+[938]	validation_0-rmse:0.27165	validation_1-rmse:0.27165
+[939]	validation_0-rmse:0.27144	validation_1-rmse:0.27144
+[940]	validation_0-rmse:0.27123	validation_1-rmse:0.27123
+[941]	validation_0-rmse:0.27110	validation_1-rmse:0.27110
+[942]	validation_0-rmse:0.27094	validation_1-rmse:0.27094
+[943]	validation_0-rmse:0.27071	validation_1-rmse:0.27071
+[944]	validation_0-rmse:0.27059	validation_1-rmse:0.27059
+[945]	validation_0-rmse:0.27030	validation_1-rmse:0.27030
+[946]	validation_0-rmse:0.27014	validation_1-rmse:0.27014
+[947]	validation_0-rmse:0.26986	validation_1-rmse:0.26986
+[948]	validation_0-rmse:0.26970	validation_1-rmse:0.26970
+[949]	validation_0-rmse:0.26965	validation_1-rmse:0.26965
+[950]	validation_0-rmse:0.26955	validation_1-rmse:0.26955
+[951]	validation_0-rmse:0.26950	validation_1-rmse:0.26950
+[952]	validation_0-rmse:0.26935	validation_1-rmse:0.26935
+[953]	validation_0-rmse:0.26927	validation_1-rmse:0.26927
+[954]	validation_0-rmse:0.26911	validation_1-rmse:0.26911
+[955]	validation_0-rmse:0.26900	validation_1-rmse:0.26900
+[956]	validation_0-rmse:0.26892	validation_1-rmse:0.26892
+[957]	validation_0-rmse:0.26888	validation_1-rmse:0.26888
+[958]	validation_0-rmse:0.26883	validation_1-rmse:0.26883
+[959]	validation_0-rmse:0.26860	validation_1-rmse:0.26860
+[960]	validation_0-rmse:0.26848	validation_1-rmse:0.26848
+[961]	validation_0-rmse:0.26833	validation_1-rmse:0.26833
+[962]	validation_0-rmse:0.26809	validation_1-rmse:0.26809
+[963]	validation_0-rmse:0.26796	validation_1-rmse:0.26796
+[964]	validation_0-rmse:0.26751	validation_1-rmse:0.26751
+[965]	validation_0-rmse:0.26731	validation_1-rmse:0.26731
+[966]	validation_0-rmse:0.26721	validation_1-rmse:0.26721
+[967]	validation_0-rmse:0.26708	validation_1-rmse:0.26708
+[968]	validation_0-rmse:0.26699	validation_1-rmse:0.26699
+[969]	validation_0-rmse:0.26688	validation_1-rmse:0.26688
+[970]	validation_0-rmse:0.26678	validation_1-rmse:0.26678
+[971]	validation_0-rmse:0.26666	validation_1-rmse:0.26666
+[972]	validation_0-rmse:0.26655	validation_1-rmse:0.26655
+[973]	validation_0-rmse:0.26636	validation_1-rmse:0.26636
+[974]	validation_0-rmse:0.26631	validation_1-rmse:0.26631
+[975]	validation_0-rmse:0.26595	validation_1-rmse:0.26595
+[976]	validation_0-rmse:0.26585	validation_1-rmse:0.26585
+[977]	validation_0-rmse:0.26560	validation_1-rmse:0.26560
+[978]	validation_0-rmse:0.26555	validation_1-rmse:0.26555
+[979]	validation_0-rmse:0.26534	validation_1-rmse:0.26534
+[980]	validation_0-rmse:0.26530	validation_1-rmse:0.26530
+[981]	validation_0-rmse:0.26526	validation_1-rmse:0.26526
+[982]	validation_0-rmse:0.26524	validation_1-rmse:0.26524
+[983]	validation_0-rmse:0.26521	validation_1-rmse:0.26521
+[984]	validation_0-rmse:0.26517	validation_1-rmse:0.26517
+[985]	validation_0-rmse:0.26495	validation_1-rmse:0.26495
+[986]	validation_0-rmse:0.26482	validation_1-rmse:0.26482
+[987]	validation_0-rmse:0.26471	validation_1-rmse:0.26471
+[988]	validation_0-rmse:0.26454	validation_1-rmse:0.26454
+[989]	validation_0-rmse:0.26441	validation_1-rmse:0.26441
+[990]	validation_0-rmse:0.26429	validation_1-rmse:0.26429
+[991]	validation_0-rmse:0.26393	validation_1-rmse:0.26393
+[992]	validation_0-rmse:0.26364	validation_1-rmse:0.26364
+[993]	validation_0-rmse:0.26351	validation_1-rmse:0.26351
+[994]	validation_0-rmse:0.26334	validation_1-rmse:0.26334
+[995]	validation_0-rmse:0.26299	validation_1-rmse:0.26299
+[996]	validation_0-rmse:0.26284	validation_1-rmse:0.26284
+[997]	validation_0-rmse:0.26257	validation_1-rmse:0.26257
+[998]	validation_0-rmse:0.26242	validation_1-rmse:0.26242
+[999]	validation_0-rmse:0.26239	validation_1-rmse:0.26239
+&gt;&gt;&gt; Calculating feature importances (permutation importance, 10 repeats) ...
+&gt;&gt;&gt; Setting threshold for feature rejection to 0.0007642621533235916.
+&gt;&gt;&gt; Removing rejected features from model data ...
+
+=================
+FEATURE REDUCTION
+=================
+
+- Target variable: SWC_GF1_0.15_1
+
+- The random variable .RANDOM was added to the original features, used as benchmark for detecting relevant feature importances.
+
+PERMUTATION IMPORTANCE (mean) across all splits of TimeSeriesSplit:
+
+                                   PERM_IMPORTANCE   PERM_SD
+.YEARDOY                                  0.428751  0.000902
+.DOY                                      0.363077  0.000995
+.YEARWEEK                                 0.329633  0.000932
+.RECORDNUMBER                             0.327856  0.000942
+.YEARMONTH                                0.267826  0.001204
+.YEAR                                     0.087831  0.000594
+.WEEK                                     0.045076  0.000124
+TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1         0.036012  0.000186
+.MONTH                                    0.011262  0.000040
+.SEASON                                   0.007565  0.000064
+.HOUR                                     0.003532  0.000067
+.PREC_RAIN_TOT_GF1_0.5_1-5                0.002030  0.000011
+PREC_RAIN_TOT_GF1_0.5_1                   0.001500  0.000013
+.PREC_RAIN_TOT_GF1_0.5_1-4                0.001033  0.000014
+.PREC_RAIN_TOT_GF1_0.5_1-2                0.000931  0.000011
+.PREC_RAIN_TOT_GF1_0.5_1-3                0.000929  0.000008
+.PREC_RAIN_TOT_GF1_0.5_1-1                0.000881  0.000008
+.RANDOM                                   0.000764  0.000008
+
+- These results are from feature reduction. Note that feature importances for the final model are calculated during gap-filling.
+
+--&gt; 17 original input features (before feature reduction): [&#39;PREC_RAIN_TOT_GF1_0.5_1&#39;, &#39;TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-5&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-4&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-3&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-2&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-1&#39;, &#39;.YEAR&#39;, &#39;.SEASON&#39;, &#39;.MONTH&#39;, &#39;.WEEK&#39;, &#39;.DOY&#39;, &#39;.HOUR&#39;, &#39;.YEARMONTH&#39;, &#39;.YEARDOY&#39;, &#39;.YEARWEEK&#39;, &#39;.RECORDNUMBER&#39;]
+--&gt; 5 rejected features (during feature reduction): None.
+--&gt; 17 accepted features (after feature reduction): [&#39;.YEARDOY&#39;, &#39;.DOY&#39;, &#39;.YEARWEEK&#39;, &#39;.RECORDNUMBER&#39;, &#39;.YEARMONTH&#39;, &#39;.YEAR&#39;, &#39;.WEEK&#39;, &#39;TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1&#39;, &#39;.MONTH&#39;, &#39;.SEASON&#39;, &#39;.HOUR&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-5&#39;, &#39;PREC_RAIN_TOT_GF1_0.5_1&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-4&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-2&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-3&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-1&#39;]
+
+
+Training final model ...
+&gt;&gt;&gt; Training model &lt;class &#39;xgboost.sklearn.XGBRegressor&#39;&gt; based on data between 2005-09-09 10:15:00 and 2023-12-31 23:15:00 ...
+&gt;&gt;&gt; Fitting model to training data ...
+[0]	validation_0-rmse:4.24619	validation_1-rmse:4.29069
+[1]	validation_0-rmse:3.57644	validation_1-rmse:3.61214
+[2]	validation_0-rmse:3.07415	validation_1-rmse:3.10619
+[3]	validation_0-rmse:2.76569	validation_1-rmse:2.79414
+[4]	validation_0-rmse:2.55242	validation_1-rmse:2.57759
+[5]	validation_0-rmse:2.40355	validation_1-rmse:2.42526
+[6]	validation_0-rmse:2.26818	validation_1-rmse:2.28906
+[7]	validation_0-rmse:2.16471	validation_1-rmse:2.18208
+[8]	validation_0-rmse:2.09316	validation_1-rmse:2.11022
+[9]	validation_0-rmse:2.00412	validation_1-rmse:2.01649
+[10]	validation_0-rmse:1.85596	validation_1-rmse:1.86888
+[11]	validation_0-rmse:1.81742	validation_1-rmse:1.83021
+[12]	validation_0-rmse:1.76825	validation_1-rmse:1.78112
+[13]	validation_0-rmse:1.72090	validation_1-rmse:1.73275
+[14]	validation_0-rmse:1.68361	validation_1-rmse:1.69515
+[15]	validation_0-rmse:1.65385	validation_1-rmse:1.66684
+[16]	validation_0-rmse:1.58012	validation_1-rmse:1.59291
+[17]	validation_0-rmse:1.51642	validation_1-rmse:1.52803
+[18]	validation_0-rmse:1.45412	validation_1-rmse:1.46606
+[19]	validation_0-rmse:1.43459	validation_1-rmse:1.44686
+[20]	validation_0-rmse:1.40322	validation_1-rmse:1.41588
+[21]	validation_0-rmse:1.36553	validation_1-rmse:1.37947
+[22]	validation_0-rmse:1.35794	validation_1-rmse:1.37227
+[23]	validation_0-rmse:1.33009	validation_1-rmse:1.34314
+[24]	validation_0-rmse:1.32204	validation_1-rmse:1.33570
+[25]	validation_0-rmse:1.30107	validation_1-rmse:1.31334
+[26]	validation_0-rmse:1.28380	validation_1-rmse:1.29640
+[27]	validation_0-rmse:1.27567	validation_1-rmse:1.28872
+[28]	validation_0-rmse:1.26264	validation_1-rmse:1.27566
+[29]	validation_0-rmse:1.23109	validation_1-rmse:1.24322
+[30]	validation_0-rmse:1.21935	validation_1-rmse:1.23124
+[31]	validation_0-rmse:1.20674	validation_1-rmse:1.21835
+[32]	validation_0-rmse:1.16178	validation_1-rmse:1.17424
+[33]	validation_0-rmse:1.15140	validation_1-rmse:1.16429
+[34]	validation_0-rmse:1.14411	validation_1-rmse:1.15865
+[35]	validation_0-rmse:1.13815	validation_1-rmse:1.15301
+[36]	validation_0-rmse:1.10882	validation_1-rmse:1.12456
+[37]	validation_0-rmse:1.08847	validation_1-rmse:1.10411
+[38]	validation_0-rmse:1.07372	validation_1-rmse:1.09009
+[39]	validation_0-rmse:1.07236	validation_1-rmse:1.08866
+[40]	validation_0-rmse:1.06743	validation_1-rmse:1.08370
+[41]	validation_0-rmse:1.06437	validation_1-rmse:1.08174
+[42]	validation_0-rmse:1.04967	validation_1-rmse:1.06580
+[43]	validation_0-rmse:1.04379	validation_1-rmse:1.06074
+[44]	validation_0-rmse:1.03128	validation_1-rmse:1.04852
+[45]	validation_0-rmse:1.01380	validation_1-rmse:1.03214
+[46]	validation_0-rmse:1.01213	validation_1-rmse:1.03081
+[47]	validation_0-rmse:0.99851	validation_1-rmse:1.01731
+[48]	validation_0-rmse:0.98698	validation_1-rmse:1.00612
+[49]	validation_0-rmse:0.97931	validation_1-rmse:0.99889
+[50]	validation_0-rmse:0.97265	validation_1-rmse:0.99255
+[51]	validation_0-rmse:0.97105	validation_1-rmse:0.99176
+[52]	validation_0-rmse:0.96385	validation_1-rmse:0.98476
+[53]	validation_0-rmse:0.96315	validation_1-rmse:0.98410
+[54]	validation_0-rmse:0.95511	validation_1-rmse:0.97604
+[55]	validation_0-rmse:0.94523	validation_1-rmse:0.96532
+[56]	validation_0-rmse:0.92701	validation_1-rmse:0.94739
+[57]	validation_0-rmse:0.92315	validation_1-rmse:0.94419
+[58]	validation_0-rmse:0.92164	validation_1-rmse:0.94287
+[59]	validation_0-rmse:0.92013	validation_1-rmse:0.94223
+[60]	validation_0-rmse:0.91845	validation_1-rmse:0.94062
+[61]	validation_0-rmse:0.91441	validation_1-rmse:0.93683
+[62]	validation_0-rmse:0.90813	validation_1-rmse:0.92986
+[63]	validation_0-rmse:0.90397	validation_1-rmse:0.92570
+[64]	validation_0-rmse:0.90211	validation_1-rmse:0.92391
+[65]	validation_0-rmse:0.89250	validation_1-rmse:0.91463
+[66]	validation_0-rmse:0.88818	validation_1-rmse:0.91053
+[67]	validation_0-rmse:0.88139	validation_1-rmse:0.90387
+[68]	validation_0-rmse:0.87402	validation_1-rmse:0.89674
+[69]	validation_0-rmse:0.86846	validation_1-rmse:0.89146
+[70]	validation_0-rmse:0.86685	validation_1-rmse:0.89049
+[71]	validation_0-rmse:0.85828	validation_1-rmse:0.88131
+[72]	validation_0-rmse:0.84920	validation_1-rmse:0.87252
+[73]	validation_0-rmse:0.84040	validation_1-rmse:0.86365
+[74]	validation_0-rmse:0.83878	validation_1-rmse:0.86215
+[75]	validation_0-rmse:0.83561	validation_1-rmse:0.85904
+[76]	validation_0-rmse:0.83010	validation_1-rmse:0.85375
+[77]	validation_0-rmse:0.82150	validation_1-rmse:0.84557
+[78]	validation_0-rmse:0.81593	validation_1-rmse:0.84064
+[79]	validation_0-rmse:0.81166	validation_1-rmse:0.83664
+[80]	validation_0-rmse:0.81086	validation_1-rmse:0.83597
+[81]	validation_0-rmse:0.80933	validation_1-rmse:0.83480
+[82]	validation_0-rmse:0.80496	validation_1-rmse:0.83081
+[83]	validation_0-rmse:0.79979	validation_1-rmse:0.82584
+[84]	validation_0-rmse:0.79404	validation_1-rmse:0.82035
+[85]	validation_0-rmse:0.79221	validation_1-rmse:0.81875
+[86]	validation_0-rmse:0.78452	validation_1-rmse:0.81186
+[87]	validation_0-rmse:0.78111	validation_1-rmse:0.80872
+[88]	validation_0-rmse:0.77760	validation_1-rmse:0.80527
+[89]	validation_0-rmse:0.77220	validation_1-rmse:0.79989
+[90]	validation_0-rmse:0.77132	validation_1-rmse:0.79916
+[91]	validation_0-rmse:0.76660	validation_1-rmse:0.79500
+[92]	validation_0-rmse:0.76305	validation_1-rmse:0.79185
+[93]	validation_0-rmse:0.76034	validation_1-rmse:0.78951
+[94]	validation_0-rmse:0.75893	validation_1-rmse:0.78792
+[95]	validation_0-rmse:0.75505	validation_1-rmse:0.78409
+[96]	validation_0-rmse:0.74969	validation_1-rmse:0.77912
+[97]	validation_0-rmse:0.74495	validation_1-rmse:0.77441
+[98]	validation_0-rmse:0.74404	validation_1-rmse:0.77397
+[99]	validation_0-rmse:0.74108	validation_1-rmse:0.77134
+[100]	validation_0-rmse:0.73334	validation_1-rmse:0.76389
+[101]	validation_0-rmse:0.73167	validation_1-rmse:0.76237
+[102]	validation_0-rmse:0.72553	validation_1-rmse:0.75598
+[103]	validation_0-rmse:0.72465	validation_1-rmse:0.75538
+[104]	validation_0-rmse:0.72119	validation_1-rmse:0.75212
+[105]	validation_0-rmse:0.71639	validation_1-rmse:0.74686
+[106]	validation_0-rmse:0.71437	validation_1-rmse:0.74487
+[107]	validation_0-rmse:0.70914	validation_1-rmse:0.73982
+[108]	validation_0-rmse:0.70769	validation_1-rmse:0.73900
+[109]	validation_0-rmse:0.70386	validation_1-rmse:0.73507
+[110]	validation_0-rmse:0.70077	validation_1-rmse:0.73194
+[111]	validation_0-rmse:0.69765	validation_1-rmse:0.72895
+[112]	validation_0-rmse:0.69469	validation_1-rmse:0.72612
+[113]	validation_0-rmse:0.69338	validation_1-rmse:0.72489
+[114]	validation_0-rmse:0.69100	validation_1-rmse:0.72256
+[115]	validation_0-rmse:0.68985	validation_1-rmse:0.72209
+[116]	validation_0-rmse:0.68825	validation_1-rmse:0.72057
+[117]	validation_0-rmse:0.68577	validation_1-rmse:0.71785
+[118]	validation_0-rmse:0.68288	validation_1-rmse:0.71530
+[119]	validation_0-rmse:0.68158	validation_1-rmse:0.71406
+[120]	validation_0-rmse:0.68103	validation_1-rmse:0.71354
+[121]	validation_0-rmse:0.67837	validation_1-rmse:0.71103
+[122]	validation_0-rmse:0.67462	validation_1-rmse:0.70780
+[123]	validation_0-rmse:0.67415	validation_1-rmse:0.70783
+[124]	validation_0-rmse:0.67088	validation_1-rmse:0.70511
+[125]	validation_0-rmse:0.66869	validation_1-rmse:0.70311
+[126]	validation_0-rmse:0.66611	validation_1-rmse:0.70019
+[127]	validation_0-rmse:0.66465	validation_1-rmse:0.69960
+[128]	validation_0-rmse:0.66186	validation_1-rmse:0.69717
+[129]	validation_0-rmse:0.66049	validation_1-rmse:0.69594
+[130]	validation_0-rmse:0.65955	validation_1-rmse:0.69568
+[131]	validation_0-rmse:0.65846	validation_1-rmse:0.69505
+[132]	validation_0-rmse:0.65619	validation_1-rmse:0.69285
+[133]	validation_0-rmse:0.65572	validation_1-rmse:0.69272
+[134]	validation_0-rmse:0.65241	validation_1-rmse:0.68929
+[135]	validation_0-rmse:0.65024	validation_1-rmse:0.68730
+[136]	validation_0-rmse:0.64934	validation_1-rmse:0.68645
+[137]	validation_0-rmse:0.64621	validation_1-rmse:0.68379
+[138]	validation_0-rmse:0.64260	validation_1-rmse:0.68019
+[139]	validation_0-rmse:0.63941	validation_1-rmse:0.67689
+[140]	validation_0-rmse:0.63819	validation_1-rmse:0.67572
+[141]	validation_0-rmse:0.63746	validation_1-rmse:0.67557
+[142]	validation_0-rmse:0.63659	validation_1-rmse:0.67530
+[143]	validation_0-rmse:0.63446	validation_1-rmse:0.67328
+[144]	validation_0-rmse:0.63372	validation_1-rmse:0.67315
+[145]	validation_0-rmse:0.63309	validation_1-rmse:0.67313
+[146]	validation_0-rmse:0.62942	validation_1-rmse:0.67133
+[147]	validation_0-rmse:0.62904	validation_1-rmse:0.67107
+[148]	validation_0-rmse:0.62828	validation_1-rmse:0.67071
+[149]	validation_0-rmse:0.62596	validation_1-rmse:0.66825
+[150]	validation_0-rmse:0.62437	validation_1-rmse:0.66682
+[151]	validation_0-rmse:0.62073	validation_1-rmse:0.66331
+[152]	validation_0-rmse:0.61969	validation_1-rmse:0.66236
+[153]	validation_0-rmse:0.61880	validation_1-rmse:0.66187
+[154]	validation_0-rmse:0.61720	validation_1-rmse:0.66041
+[155]	validation_0-rmse:0.61170	validation_1-rmse:0.65533
+[156]	validation_0-rmse:0.60892	validation_1-rmse:0.65285
+[157]	validation_0-rmse:0.60431	validation_1-rmse:0.64837
+[158]	validation_0-rmse:0.60301	validation_1-rmse:0.64731
+[159]	validation_0-rmse:0.60266	validation_1-rmse:0.64724
+[160]	validation_0-rmse:0.60012	validation_1-rmse:0.64497
+[161]	validation_0-rmse:0.59890	validation_1-rmse:0.64412
+[162]	validation_0-rmse:0.59854	validation_1-rmse:0.64378
+[163]	validation_0-rmse:0.59628	validation_1-rmse:0.64157
+[164]	validation_0-rmse:0.59442	validation_1-rmse:0.63952
+[165]	validation_0-rmse:0.59242	validation_1-rmse:0.63771
+[166]	validation_0-rmse:0.59069	validation_1-rmse:0.63614
+[167]	validation_0-rmse:0.59032	validation_1-rmse:0.63584
+[168]	validation_0-rmse:0.58983	validation_1-rmse:0.63574
+[169]	validation_0-rmse:0.58886	validation_1-rmse:0.63479
+[170]	validation_0-rmse:0.58632	validation_1-rmse:0.63264
+[171]	validation_0-rmse:0.58509	validation_1-rmse:0.63139
+[172]	validation_0-rmse:0.58360	validation_1-rmse:0.62994
+[173]	validation_0-rmse:0.58292	validation_1-rmse:0.62924
+[174]	validation_0-rmse:0.58185	validation_1-rmse:0.62828
+[175]	validation_0-rmse:0.58136	validation_1-rmse:0.62785
+[176]	validation_0-rmse:0.58070	validation_1-rmse:0.62771
+[177]	validation_0-rmse:0.57850	validation_1-rmse:0.62575
+[178]	validation_0-rmse:0.57793	validation_1-rmse:0.62558
+[179]	validation_0-rmse:0.57766	validation_1-rmse:0.62544
+[180]	validation_0-rmse:0.57718	validation_1-rmse:0.62506
+[181]	validation_0-rmse:0.57688	validation_1-rmse:0.62486
+[182]	validation_0-rmse:0.57571	validation_1-rmse:0.62390
+[183]	validation_0-rmse:0.57514	validation_1-rmse:0.62376
+[184]	validation_0-rmse:0.57474	validation_1-rmse:0.62382
+[185]	validation_0-rmse:0.57298	validation_1-rmse:0.62213
+[186]	validation_0-rmse:0.57041	validation_1-rmse:0.61944
+[187]	validation_0-rmse:0.56887	validation_1-rmse:0.61834
+[188]	validation_0-rmse:0.56770	validation_1-rmse:0.61724
+[189]	validation_0-rmse:0.56599	validation_1-rmse:0.61553
+[190]	validation_0-rmse:0.56445	validation_1-rmse:0.61411
+[191]	validation_0-rmse:0.56339	validation_1-rmse:0.61325
+[192]	validation_0-rmse:0.56245	validation_1-rmse:0.61238
+[193]	validation_0-rmse:0.56123	validation_1-rmse:0.61129
+[194]	validation_0-rmse:0.56040	validation_1-rmse:0.61130
+[195]	validation_0-rmse:0.55919	validation_1-rmse:0.61012
+[196]	validation_0-rmse:0.55816	validation_1-rmse:0.60980
+[197]	validation_0-rmse:0.55686	validation_1-rmse:0.60876
+[198]	validation_0-rmse:0.55545	validation_1-rmse:0.60727
+[199]	validation_0-rmse:0.55491	validation_1-rmse:0.60688
+[200]	validation_0-rmse:0.55284	validation_1-rmse:0.60485
+[201]	validation_0-rmse:0.55222	validation_1-rmse:0.60496
+[202]	validation_0-rmse:0.55172	validation_1-rmse:0.60501
+[203]	validation_0-rmse:0.55138	validation_1-rmse:0.60507
+[204]	validation_0-rmse:0.55093	validation_1-rmse:0.60468
+[205]	validation_0-rmse:0.54863	validation_1-rmse:0.60232
+[206]	validation_0-rmse:0.54800	validation_1-rmse:0.60213
+[207]	validation_0-rmse:0.54757	validation_1-rmse:0.60205
+[208]	validation_0-rmse:0.54706	validation_1-rmse:0.60192
+[209]	validation_0-rmse:0.54559	validation_1-rmse:0.60105
+[210]	validation_0-rmse:0.54520	validation_1-rmse:0.60080
+[211]	validation_0-rmse:0.54294	validation_1-rmse:0.59841
+[212]	validation_0-rmse:0.54257	validation_1-rmse:0.59814
+[213]	validation_0-rmse:0.54196	validation_1-rmse:0.59812
+[214]	validation_0-rmse:0.54049	validation_1-rmse:0.59662
+[215]	validation_0-rmse:0.53972	validation_1-rmse:0.59604
+[216]	validation_0-rmse:0.53753	validation_1-rmse:0.59403
+[217]	validation_0-rmse:0.53669	validation_1-rmse:0.59320
+[218]	validation_0-rmse:0.53596	validation_1-rmse:0.59253
+[219]	validation_0-rmse:0.53559	validation_1-rmse:0.59248
+[220]	validation_0-rmse:0.53498	validation_1-rmse:0.59187
+[221]	validation_0-rmse:0.53220	validation_1-rmse:0.58970
+[222]	validation_0-rmse:0.53099	validation_1-rmse:0.58871
+[223]	validation_0-rmse:0.52927	validation_1-rmse:0.58744
+[224]	validation_0-rmse:0.52738	validation_1-rmse:0.58572
+[225]	validation_0-rmse:0.52494	validation_1-rmse:0.58367
+[226]	validation_0-rmse:0.52314	validation_1-rmse:0.58228
+[227]	validation_0-rmse:0.52257	validation_1-rmse:0.58213
+[228]	validation_0-rmse:0.52186	validation_1-rmse:0.58151
+[229]	validation_0-rmse:0.52175	validation_1-rmse:0.58150
+[230]	validation_0-rmse:0.52126	validation_1-rmse:0.58155
+[231]	validation_0-rmse:0.52075	validation_1-rmse:0.58155
+[232]	validation_0-rmse:0.51921	validation_1-rmse:0.58044
+[233]	validation_0-rmse:0.51825	validation_1-rmse:0.57957
+[234]	validation_0-rmse:0.51685	validation_1-rmse:0.57849
+[235]	validation_0-rmse:0.51635	validation_1-rmse:0.57843
+[236]	validation_0-rmse:0.51572	validation_1-rmse:0.57789
+[237]	validation_0-rmse:0.51442	validation_1-rmse:0.57683
+[238]	validation_0-rmse:0.51368	validation_1-rmse:0.57647
+[239]	validation_0-rmse:0.51214	validation_1-rmse:0.57508
+[240]	validation_0-rmse:0.51201	validation_1-rmse:0.57499
+[241]	validation_0-rmse:0.51176	validation_1-rmse:0.57497
+[242]	validation_0-rmse:0.51164	validation_1-rmse:0.57503
+[243]	validation_0-rmse:0.51111	validation_1-rmse:0.57479
+[244]	validation_0-rmse:0.50885	validation_1-rmse:0.57285
+[245]	validation_0-rmse:0.50708	validation_1-rmse:0.57147
+[246]	validation_0-rmse:0.50653	validation_1-rmse:0.57108
+[247]	validation_0-rmse:0.50584	validation_1-rmse:0.57047
+[248]	validation_0-rmse:0.50436	validation_1-rmse:0.56896
+[249]	validation_0-rmse:0.50218	validation_1-rmse:0.56698
+[250]	validation_0-rmse:0.50051	validation_1-rmse:0.56557
+[251]	validation_0-rmse:0.50001	validation_1-rmse:0.56560
+[252]	validation_0-rmse:0.49966	validation_1-rmse:0.56548
+[253]	validation_0-rmse:0.49871	validation_1-rmse:0.56428
+[254]	validation_0-rmse:0.49717	validation_1-rmse:0.56297
+[255]	validation_0-rmse:0.49696	validation_1-rmse:0.56300
+[256]	validation_0-rmse:0.49657	validation_1-rmse:0.56268
+[257]	validation_0-rmse:0.49523	validation_1-rmse:0.56152
+[258]	validation_0-rmse:0.49491	validation_1-rmse:0.56124
+[259]	validation_0-rmse:0.49445	validation_1-rmse:0.56107
+[260]	validation_0-rmse:0.49379	validation_1-rmse:0.56080
+[261]	validation_0-rmse:0.49299	validation_1-rmse:0.56005
+[262]	validation_0-rmse:0.49260	validation_1-rmse:0.56005
+[263]	validation_0-rmse:0.49192	validation_1-rmse:0.55956
+[264]	validation_0-rmse:0.49121	validation_1-rmse:0.55900
+[265]	validation_0-rmse:0.49061	validation_1-rmse:0.55883
+[266]	validation_0-rmse:0.49012	validation_1-rmse:0.55862
+[267]	validation_0-rmse:0.48919	validation_1-rmse:0.55786
+[268]	validation_0-rmse:0.48797	validation_1-rmse:0.55715
+[269]	validation_0-rmse:0.48757	validation_1-rmse:0.55713
+[270]	validation_0-rmse:0.48641	validation_1-rmse:0.55617
+[271]	validation_0-rmse:0.48565	validation_1-rmse:0.55554
+[272]	validation_0-rmse:0.48433	validation_1-rmse:0.55445
+[273]	validation_0-rmse:0.48319	validation_1-rmse:0.55333
+[274]	validation_0-rmse:0.48273	validation_1-rmse:0.55290
+[275]	validation_0-rmse:0.48184	validation_1-rmse:0.55240
+[276]	validation_0-rmse:0.48153	validation_1-rmse:0.55215
+[277]	validation_0-rmse:0.48020	validation_1-rmse:0.55092
+[278]	validation_0-rmse:0.47972	validation_1-rmse:0.55051
+[279]	validation_0-rmse:0.47898	validation_1-rmse:0.54999
+[280]	validation_0-rmse:0.47844	validation_1-rmse:0.54951
+[281]	validation_0-rmse:0.47793	validation_1-rmse:0.54913
+[282]	validation_0-rmse:0.47675	validation_1-rmse:0.54804
+[283]	validation_0-rmse:0.47591	validation_1-rmse:0.54737
+[284]	validation_0-rmse:0.47561	validation_1-rmse:0.54736
+[285]	validation_0-rmse:0.47413	validation_1-rmse:0.54674
+[286]	validation_0-rmse:0.47376	validation_1-rmse:0.54658
+[287]	validation_0-rmse:0.47263	validation_1-rmse:0.54579
+[288]	validation_0-rmse:0.47231	validation_1-rmse:0.54580
+[289]	validation_0-rmse:0.47209	validation_1-rmse:0.54585
+[290]	validation_0-rmse:0.47125	validation_1-rmse:0.54537
+[291]	validation_0-rmse:0.47103	validation_1-rmse:0.54518
+[292]	validation_0-rmse:0.47022	validation_1-rmse:0.54446
+[293]	validation_0-rmse:0.46945	validation_1-rmse:0.54391
+[294]	validation_0-rmse:0.46923	validation_1-rmse:0.54372
+[295]	validation_0-rmse:0.46869	validation_1-rmse:0.54338
+[296]	validation_0-rmse:0.46778	validation_1-rmse:0.54260
+[297]	validation_0-rmse:0.46666	validation_1-rmse:0.54171
+[298]	validation_0-rmse:0.46642	validation_1-rmse:0.54175
+[299]	validation_0-rmse:0.46473	validation_1-rmse:0.54032
+[300]	validation_0-rmse:0.46405	validation_1-rmse:0.54005
+[301]	validation_0-rmse:0.46341	validation_1-rmse:0.53993
+[302]	validation_0-rmse:0.46301	validation_1-rmse:0.53960
+[303]	validation_0-rmse:0.46228	validation_1-rmse:0.53920
+[304]	validation_0-rmse:0.46187	validation_1-rmse:0.53881
+[305]	validation_0-rmse:0.46169	validation_1-rmse:0.53866
+[306]	validation_0-rmse:0.46110	validation_1-rmse:0.53841
+[307]	validation_0-rmse:0.46034	validation_1-rmse:0.53744
+[308]	validation_0-rmse:0.45856	validation_1-rmse:0.53619
+[309]	validation_0-rmse:0.45806	validation_1-rmse:0.53579
+[310]	validation_0-rmse:0.45778	validation_1-rmse:0.53570
+[311]	validation_0-rmse:0.45752	validation_1-rmse:0.53584
+[312]	validation_0-rmse:0.45664	validation_1-rmse:0.53511
+[313]	validation_0-rmse:0.45503	validation_1-rmse:0.53345
+[314]	validation_0-rmse:0.45322	validation_1-rmse:0.53235
+[315]	validation_0-rmse:0.45287	validation_1-rmse:0.53209
+[316]	validation_0-rmse:0.45259	validation_1-rmse:0.53199
+[317]	validation_0-rmse:0.45213	validation_1-rmse:0.53163
+[318]	validation_0-rmse:0.45182	validation_1-rmse:0.53155
+[319]	validation_0-rmse:0.45135	validation_1-rmse:0.53159
+[320]	validation_0-rmse:0.45116	validation_1-rmse:0.53162
+[321]	validation_0-rmse:0.45090	validation_1-rmse:0.53149
+[322]	validation_0-rmse:0.45020	validation_1-rmse:0.53070
+[323]	validation_0-rmse:0.44992	validation_1-rmse:0.53045
+[324]	validation_0-rmse:0.44843	validation_1-rmse:0.52934
+[325]	validation_0-rmse:0.44767	validation_1-rmse:0.52871
+[326]	validation_0-rmse:0.44676	validation_1-rmse:0.52797
+[327]	validation_0-rmse:0.44583	validation_1-rmse:0.52728
+[328]	validation_0-rmse:0.44485	validation_1-rmse:0.52639
+[329]	validation_0-rmse:0.44333	validation_1-rmse:0.52513
+[330]	validation_0-rmse:0.44300	validation_1-rmse:0.52515
+[331]	validation_0-rmse:0.44266	validation_1-rmse:0.52506
+[332]	validation_0-rmse:0.44232	validation_1-rmse:0.52516
+[333]	validation_0-rmse:0.44177	validation_1-rmse:0.52466
+[334]	validation_0-rmse:0.44140	validation_1-rmse:0.52451
+[335]	validation_0-rmse:0.44080	validation_1-rmse:0.52403
+[336]	validation_0-rmse:0.44057	validation_1-rmse:0.52382
+[337]	validation_0-rmse:0.44016	validation_1-rmse:0.52353
+[338]	validation_0-rmse:0.43990	validation_1-rmse:0.52354
+[339]	validation_0-rmse:0.43940	validation_1-rmse:0.52305
+[340]	validation_0-rmse:0.43882	validation_1-rmse:0.52283
+[341]	validation_0-rmse:0.43835	validation_1-rmse:0.52245
+[342]	validation_0-rmse:0.43804	validation_1-rmse:0.52249
+[343]	validation_0-rmse:0.43754	validation_1-rmse:0.52229
+[344]	validation_0-rmse:0.43681	validation_1-rmse:0.52141
+[345]	validation_0-rmse:0.43648	validation_1-rmse:0.52122
+[346]	validation_0-rmse:0.43612	validation_1-rmse:0.52087
+[347]	validation_0-rmse:0.43591	validation_1-rmse:0.52073
+[348]	validation_0-rmse:0.43521	validation_1-rmse:0.52006
+[349]	validation_0-rmse:0.43499	validation_1-rmse:0.51994
+[350]	validation_0-rmse:0.43485	validation_1-rmse:0.51983
+[351]	validation_0-rmse:0.43470	validation_1-rmse:0.51987
+[352]	validation_0-rmse:0.43428	validation_1-rmse:0.51954
+[353]	validation_0-rmse:0.43393	validation_1-rmse:0.51924
+[354]	validation_0-rmse:0.43380	validation_1-rmse:0.51914
+[355]	validation_0-rmse:0.43323	validation_1-rmse:0.51864
+[356]	validation_0-rmse:0.43181	validation_1-rmse:0.51750
+[357]	validation_0-rmse:0.43027	validation_1-rmse:0.51621
+[358]	validation_0-rmse:0.43000	validation_1-rmse:0.51619
+[359]	validation_0-rmse:0.42950	validation_1-rmse:0.51571
+[360]	validation_0-rmse:0.42824	validation_1-rmse:0.51477
+[361]	validation_0-rmse:0.42804	validation_1-rmse:0.51465
+[362]	validation_0-rmse:0.42647	validation_1-rmse:0.51323
+[363]	validation_0-rmse:0.42479	validation_1-rmse:0.51261
+[364]	validation_0-rmse:0.42407	validation_1-rmse:0.51191
+[365]	validation_0-rmse:0.42387	validation_1-rmse:0.51177
+[366]	validation_0-rmse:0.42271	validation_1-rmse:0.51085
+[367]	validation_0-rmse:0.42177	validation_1-rmse:0.51054
+[368]	validation_0-rmse:0.42158	validation_1-rmse:0.51049
+[369]	validation_0-rmse:0.42137	validation_1-rmse:0.51045
+[370]	validation_0-rmse:0.42034	validation_1-rmse:0.50962
+[371]	validation_0-rmse:0.42008	validation_1-rmse:0.50942
+[372]	validation_0-rmse:0.41958	validation_1-rmse:0.50898
+[373]	validation_0-rmse:0.41932	validation_1-rmse:0.50876
+[374]	validation_0-rmse:0.41894	validation_1-rmse:0.50845
+[375]	validation_0-rmse:0.41850	validation_1-rmse:0.50808
+[376]	validation_0-rmse:0.41837	validation_1-rmse:0.50805
+[377]	validation_0-rmse:0.41760	validation_1-rmse:0.50753
+[378]	validation_0-rmse:0.41713	validation_1-rmse:0.50735
+[379]	validation_0-rmse:0.41642	validation_1-rmse:0.50691
+[380]	validation_0-rmse:0.41622	validation_1-rmse:0.50678
+[381]	validation_0-rmse:0.41534	validation_1-rmse:0.50596
+[382]	validation_0-rmse:0.41520	validation_1-rmse:0.50584
+[383]	validation_0-rmse:0.41454	validation_1-rmse:0.50526
+[384]	validation_0-rmse:0.41338	validation_1-rmse:0.50436
+[385]	validation_0-rmse:0.41319	validation_1-rmse:0.50433
+[386]	validation_0-rmse:0.41288	validation_1-rmse:0.50410
+[387]	validation_0-rmse:0.41200	validation_1-rmse:0.50332
+[388]	validation_0-rmse:0.41177	validation_1-rmse:0.50313
+[389]	validation_0-rmse:0.41156	validation_1-rmse:0.50296
+[390]	validation_0-rmse:0.41075	validation_1-rmse:0.50220
+[391]	validation_0-rmse:0.41007	validation_1-rmse:0.50151
+[392]	validation_0-rmse:0.40929	validation_1-rmse:0.50086
+[393]	validation_0-rmse:0.40871	validation_1-rmse:0.50050
+[394]	validation_0-rmse:0.40849	validation_1-rmse:0.50033
+[395]	validation_0-rmse:0.40829	validation_1-rmse:0.50015
+[396]	validation_0-rmse:0.40795	validation_1-rmse:0.50011
+[397]	validation_0-rmse:0.40758	validation_1-rmse:0.49988
+[398]	validation_0-rmse:0.40710	validation_1-rmse:0.49948
+[399]	validation_0-rmse:0.40678	validation_1-rmse:0.49921
+[400]	validation_0-rmse:0.40646	validation_1-rmse:0.49903
+[401]	validation_0-rmse:0.40613	validation_1-rmse:0.49898
+[402]	validation_0-rmse:0.40598	validation_1-rmse:0.49905
+[403]	validation_0-rmse:0.40536	validation_1-rmse:0.49855
+[404]	validation_0-rmse:0.40495	validation_1-rmse:0.49816
+[405]	validation_0-rmse:0.40447	validation_1-rmse:0.49767
+[406]	validation_0-rmse:0.40428	validation_1-rmse:0.49773
+[407]	validation_0-rmse:0.40382	validation_1-rmse:0.49742
+[408]	validation_0-rmse:0.40305	validation_1-rmse:0.49672
+[409]	validation_0-rmse:0.40273	validation_1-rmse:0.49641
+[410]	validation_0-rmse:0.40165	validation_1-rmse:0.49556
+[411]	validation_0-rmse:0.40116	validation_1-rmse:0.49516
+[412]	validation_0-rmse:0.40101	validation_1-rmse:0.49506
+[413]	validation_0-rmse:0.39964	validation_1-rmse:0.49391
+[414]	validation_0-rmse:0.39928	validation_1-rmse:0.49394
+[415]	validation_0-rmse:0.39837	validation_1-rmse:0.49348
+[416]	validation_0-rmse:0.39751	validation_1-rmse:0.49440
+[417]	validation_0-rmse:0.39734	validation_1-rmse:0.49437
+[418]	validation_0-rmse:0.39699	validation_1-rmse:0.49414
+[419]	validation_0-rmse:0.39594	validation_1-rmse:0.49329
+[420]	validation_0-rmse:0.39550	validation_1-rmse:0.49289
+[421]	validation_0-rmse:0.39532	validation_1-rmse:0.49291
+[422]	validation_0-rmse:0.39506	validation_1-rmse:0.49271
+[423]	validation_0-rmse:0.39469	validation_1-rmse:0.49272
+[424]	validation_0-rmse:0.39394	validation_1-rmse:0.49202
+[425]	validation_0-rmse:0.39372	validation_1-rmse:0.49184
+[426]	validation_0-rmse:0.39344	validation_1-rmse:0.49170
+[427]	validation_0-rmse:0.39302	validation_1-rmse:0.49138
+[428]	validation_0-rmse:0.39255	validation_1-rmse:0.49105
+[429]	validation_0-rmse:0.39239	validation_1-rmse:0.49107
+[430]	validation_0-rmse:0.39196	validation_1-rmse:0.49074
+[431]	validation_0-rmse:0.39124	validation_1-rmse:0.49024
+[432]	validation_0-rmse:0.39050	validation_1-rmse:0.48968
+[433]	validation_0-rmse:0.39017	validation_1-rmse:0.48965
+[434]	validation_0-rmse:0.38942	validation_1-rmse:0.48897
+[435]	validation_0-rmse:0.38851	validation_1-rmse:0.48839
+[436]	validation_0-rmse:0.38776	validation_1-rmse:0.48778
+[437]	validation_0-rmse:0.38755	validation_1-rmse:0.48780
+[438]	validation_0-rmse:0.38738	validation_1-rmse:0.48788
+[439]	validation_0-rmse:0.38725	validation_1-rmse:0.48776
+[440]	validation_0-rmse:0.38683	validation_1-rmse:0.48741
+[441]	validation_0-rmse:0.38634	validation_1-rmse:0.48708
+[442]	validation_0-rmse:0.38565	validation_1-rmse:0.48660
+[443]	validation_0-rmse:0.38515	validation_1-rmse:0.48624
+[444]	validation_0-rmse:0.38499	validation_1-rmse:0.48623
+[445]	validation_0-rmse:0.38464	validation_1-rmse:0.48601
+[446]	validation_0-rmse:0.38444	validation_1-rmse:0.48605
+[447]	validation_0-rmse:0.38423	validation_1-rmse:0.48589
+[448]	validation_0-rmse:0.38394	validation_1-rmse:0.48577
+[449]	validation_0-rmse:0.38387	validation_1-rmse:0.48578
+[450]	validation_0-rmse:0.38364	validation_1-rmse:0.48575
+[451]	validation_0-rmse:0.38351	validation_1-rmse:0.48566
+[452]	validation_0-rmse:0.38322	validation_1-rmse:0.48547
+[453]	validation_0-rmse:0.38265	validation_1-rmse:0.48510
+[454]	validation_0-rmse:0.38253	validation_1-rmse:0.48511
+[455]	validation_0-rmse:0.38223	validation_1-rmse:0.48508
+[456]	validation_0-rmse:0.38207	validation_1-rmse:0.48503
+[457]	validation_0-rmse:0.38178	validation_1-rmse:0.48496
+[458]	validation_0-rmse:0.38153	validation_1-rmse:0.48476
+[459]	validation_0-rmse:0.38139	validation_1-rmse:0.48478
+[460]	validation_0-rmse:0.38123	validation_1-rmse:0.48480
+[461]	validation_0-rmse:0.38060	validation_1-rmse:0.48453
+[462]	validation_0-rmse:0.38026	validation_1-rmse:0.48449
+[463]	validation_0-rmse:0.37991	validation_1-rmse:0.48445
+[464]	validation_0-rmse:0.37962	validation_1-rmse:0.48423
+[465]	validation_0-rmse:0.37921	validation_1-rmse:0.48393
+[466]	validation_0-rmse:0.37894	validation_1-rmse:0.48387
+[467]	validation_0-rmse:0.37815	validation_1-rmse:0.48331
+[468]	validation_0-rmse:0.37797	validation_1-rmse:0.48318
+[469]	validation_0-rmse:0.37775	validation_1-rmse:0.48316
+[470]	validation_0-rmse:0.37743	validation_1-rmse:0.48292
+[471]	validation_0-rmse:0.37734	validation_1-rmse:0.48292
+[472]	validation_0-rmse:0.37701	validation_1-rmse:0.48259
+[473]	validation_0-rmse:0.37620	validation_1-rmse:0.48177
+[474]	validation_0-rmse:0.37590	validation_1-rmse:0.48154
+[475]	validation_0-rmse:0.37573	validation_1-rmse:0.48154
+[476]	validation_0-rmse:0.37564	validation_1-rmse:0.48156
+[477]	validation_0-rmse:0.37531	validation_1-rmse:0.48119
+[478]	validation_0-rmse:0.37474	validation_1-rmse:0.48069
+[479]	validation_0-rmse:0.37431	validation_1-rmse:0.48035
+[480]	validation_0-rmse:0.37392	validation_1-rmse:0.48028
+[481]	validation_0-rmse:0.37339	validation_1-rmse:0.47984
+[482]	validation_0-rmse:0.37302	validation_1-rmse:0.47951
+[483]	validation_0-rmse:0.37288	validation_1-rmse:0.47940
+[484]	validation_0-rmse:0.37221	validation_1-rmse:0.47887
+[485]	validation_0-rmse:0.37187	validation_1-rmse:0.47854
+[486]	validation_0-rmse:0.37167	validation_1-rmse:0.47837
+[487]	validation_0-rmse:0.37116	validation_1-rmse:0.47823
+[488]	validation_0-rmse:0.37096	validation_1-rmse:0.47821
+[489]	validation_0-rmse:0.37040	validation_1-rmse:0.47788
+[490]	validation_0-rmse:0.37016	validation_1-rmse:0.47773
+[491]	validation_0-rmse:0.36970	validation_1-rmse:0.47735
+[492]	validation_0-rmse:0.36952	validation_1-rmse:0.47732
+[493]	validation_0-rmse:0.36939	validation_1-rmse:0.47729
+[494]	validation_0-rmse:0.36907	validation_1-rmse:0.47707
+[495]	validation_0-rmse:0.36798	validation_1-rmse:0.47622
+[496]	validation_0-rmse:0.36753	validation_1-rmse:0.47585
+[497]	validation_0-rmse:0.36671	validation_1-rmse:0.47532
+[498]	validation_0-rmse:0.36649	validation_1-rmse:0.47517
+[499]	validation_0-rmse:0.36577	validation_1-rmse:0.47462
+[500]	validation_0-rmse:0.36554	validation_1-rmse:0.47444
+[501]	validation_0-rmse:0.36500	validation_1-rmse:0.47403
+[502]	validation_0-rmse:0.36470	validation_1-rmse:0.47384
+[503]	validation_0-rmse:0.36444	validation_1-rmse:0.47368
+[504]	validation_0-rmse:0.36411	validation_1-rmse:0.47373
+[505]	validation_0-rmse:0.36394	validation_1-rmse:0.47377
+[506]	validation_0-rmse:0.36336	validation_1-rmse:0.47334
+[507]	validation_0-rmse:0.36324	validation_1-rmse:0.47334
+[508]	validation_0-rmse:0.36291	validation_1-rmse:0.47305
+[509]	validation_0-rmse:0.36249	validation_1-rmse:0.47279
+[510]	validation_0-rmse:0.36222	validation_1-rmse:0.47279
+[511]	validation_0-rmse:0.36191	validation_1-rmse:0.47255
+[512]	validation_0-rmse:0.36164	validation_1-rmse:0.47251
+[513]	validation_0-rmse:0.36150	validation_1-rmse:0.47239
+[514]	validation_0-rmse:0.36096	validation_1-rmse:0.47197
+[515]	validation_0-rmse:0.36088	validation_1-rmse:0.47192
+[516]	validation_0-rmse:0.36051	validation_1-rmse:0.47158
+[517]	validation_0-rmse:0.35990	validation_1-rmse:0.47111
+[518]	validation_0-rmse:0.35966	validation_1-rmse:0.47114
+[519]	validation_0-rmse:0.35903	validation_1-rmse:0.47041
+[520]	validation_0-rmse:0.35871	validation_1-rmse:0.47044
+[521]	validation_0-rmse:0.35863	validation_1-rmse:0.47049
+[522]	validation_0-rmse:0.35843	validation_1-rmse:0.47037
+[523]	validation_0-rmse:0.35803	validation_1-rmse:0.47005
+[524]	validation_0-rmse:0.35758	validation_1-rmse:0.46982
+[525]	validation_0-rmse:0.35744	validation_1-rmse:0.46975
+[526]	validation_0-rmse:0.35734	validation_1-rmse:0.46969
+[527]	validation_0-rmse:0.35681	validation_1-rmse:0.46933
+[528]	validation_0-rmse:0.35674	validation_1-rmse:0.46930
+[529]	validation_0-rmse:0.35652	validation_1-rmse:0.46912
+[530]	validation_0-rmse:0.35611	validation_1-rmse:0.46881
+[531]	validation_0-rmse:0.35601	validation_1-rmse:0.46874
+[532]	validation_0-rmse:0.35559	validation_1-rmse:0.46834
+[533]	validation_0-rmse:0.35541	validation_1-rmse:0.46828
+[534]	validation_0-rmse:0.35488	validation_1-rmse:0.46785
+[535]	validation_0-rmse:0.35444	validation_1-rmse:0.46769
+[536]	validation_0-rmse:0.35374	validation_1-rmse:0.46711
+[537]	validation_0-rmse:0.35354	validation_1-rmse:0.46697
+[538]	validation_0-rmse:0.35342	validation_1-rmse:0.46700
+[539]	validation_0-rmse:0.35267	validation_1-rmse:0.46675
+[540]	validation_0-rmse:0.35232	validation_1-rmse:0.46648
+[541]	validation_0-rmse:0.35215	validation_1-rmse:0.46636
+[542]	validation_0-rmse:0.35155	validation_1-rmse:0.46619
+[543]	validation_0-rmse:0.35142	validation_1-rmse:0.46615
+[544]	validation_0-rmse:0.35088	validation_1-rmse:0.46628
+[545]	validation_0-rmse:0.35073	validation_1-rmse:0.46622
+[546]	validation_0-rmse:0.35043	validation_1-rmse:0.46587
+[547]	validation_0-rmse:0.35033	validation_1-rmse:0.46588
+[548]	validation_0-rmse:0.35003	validation_1-rmse:0.46570
+[549]	validation_0-rmse:0.34967	validation_1-rmse:0.46537
+[550]	validation_0-rmse:0.34949	validation_1-rmse:0.46524
+[551]	validation_0-rmse:0.34896	validation_1-rmse:0.46490
+[552]	validation_0-rmse:0.34877	validation_1-rmse:0.46479
+[553]	validation_0-rmse:0.34816	validation_1-rmse:0.46444
+[554]	validation_0-rmse:0.34809	validation_1-rmse:0.46446
+[555]	validation_0-rmse:0.34787	validation_1-rmse:0.46431
+[556]	validation_0-rmse:0.34749	validation_1-rmse:0.46406
+[557]	validation_0-rmse:0.34710	validation_1-rmse:0.46366
+[558]	validation_0-rmse:0.34696	validation_1-rmse:0.46364
+[559]	validation_0-rmse:0.34687	validation_1-rmse:0.46367
+[560]	validation_0-rmse:0.34664	validation_1-rmse:0.46352
+[561]	validation_0-rmse:0.34646	validation_1-rmse:0.46341
+[562]	validation_0-rmse:0.34619	validation_1-rmse:0.46328
+[563]	validation_0-rmse:0.34605	validation_1-rmse:0.46321
+[564]	validation_0-rmse:0.34559	validation_1-rmse:0.46288
+[565]	validation_0-rmse:0.34486	validation_1-rmse:0.46228
+[566]	validation_0-rmse:0.34471	validation_1-rmse:0.46221
+[567]	validation_0-rmse:0.34454	validation_1-rmse:0.46208
+[568]	validation_0-rmse:0.34440	validation_1-rmse:0.46207
+[569]	validation_0-rmse:0.34403	validation_1-rmse:0.46184
+[570]	validation_0-rmse:0.34273	validation_1-rmse:0.46088
+[571]	validation_0-rmse:0.34262	validation_1-rmse:0.46086
+[572]	validation_0-rmse:0.34249	validation_1-rmse:0.46081
+[573]	validation_0-rmse:0.34203	validation_1-rmse:0.46049
+[574]	validation_0-rmse:0.34183	validation_1-rmse:0.46048
+[575]	validation_0-rmse:0.34161	validation_1-rmse:0.46037
+[576]	validation_0-rmse:0.34110	validation_1-rmse:0.46002
+[577]	validation_0-rmse:0.34076	validation_1-rmse:0.45970
+[578]	validation_0-rmse:0.34039	validation_1-rmse:0.45936
+[579]	validation_0-rmse:0.34001	validation_1-rmse:0.45917
+[580]	validation_0-rmse:0.33956	validation_1-rmse:0.45888
+[581]	validation_0-rmse:0.33943	validation_1-rmse:0.45892
+[582]	validation_0-rmse:0.33917	validation_1-rmse:0.45874
+[583]	validation_0-rmse:0.33901	validation_1-rmse:0.45875
+[584]	validation_0-rmse:0.33870	validation_1-rmse:0.45863
+[585]	validation_0-rmse:0.33847	validation_1-rmse:0.45847
+[586]	validation_0-rmse:0.33829	validation_1-rmse:0.45846
+[587]	validation_0-rmse:0.33819	validation_1-rmse:0.45842
+[588]	validation_0-rmse:0.33788	validation_1-rmse:0.45824
+[589]	validation_0-rmse:0.33766	validation_1-rmse:0.45808
+[590]	validation_0-rmse:0.33751	validation_1-rmse:0.45802
+[591]	validation_0-rmse:0.33736	validation_1-rmse:0.45802
+[592]	validation_0-rmse:0.33663	validation_1-rmse:0.45757
+[593]	validation_0-rmse:0.33635	validation_1-rmse:0.45739
+[594]	validation_0-rmse:0.33592	validation_1-rmse:0.45704
+[595]	validation_0-rmse:0.33572	validation_1-rmse:0.45687
+[596]	validation_0-rmse:0.33547	validation_1-rmse:0.45676
+[597]	validation_0-rmse:0.33537	validation_1-rmse:0.45671
+[598]	validation_0-rmse:0.33529	validation_1-rmse:0.45666
+[599]	validation_0-rmse:0.33494	validation_1-rmse:0.45669
+[600]	validation_0-rmse:0.33464	validation_1-rmse:0.45679
+[601]	validation_0-rmse:0.33444	validation_1-rmse:0.45681
+[602]	validation_0-rmse:0.33431	validation_1-rmse:0.45667
+[603]	validation_0-rmse:0.33423	validation_1-rmse:0.45671
+[604]	validation_0-rmse:0.33377	validation_1-rmse:0.45619
+[605]	validation_0-rmse:0.33362	validation_1-rmse:0.45609
+[606]	validation_0-rmse:0.33348	validation_1-rmse:0.45603
+[607]	validation_0-rmse:0.33291	validation_1-rmse:0.45550
+[608]	validation_0-rmse:0.33273	validation_1-rmse:0.45540
+[609]	validation_0-rmse:0.33246	validation_1-rmse:0.45525
+[610]	validation_0-rmse:0.33227	validation_1-rmse:0.45516
+[611]	validation_0-rmse:0.33203	validation_1-rmse:0.45500
+[612]	validation_0-rmse:0.33175	validation_1-rmse:0.45478
+[613]	validation_0-rmse:0.33172	validation_1-rmse:0.45476
+[614]	validation_0-rmse:0.33152	validation_1-rmse:0.45460
+[615]	validation_0-rmse:0.33121	validation_1-rmse:0.45466
+[616]	validation_0-rmse:0.33110	validation_1-rmse:0.45465
+[617]	validation_0-rmse:0.33067	validation_1-rmse:0.45437
+[618]	validation_0-rmse:0.33051	validation_1-rmse:0.45438
+[619]	validation_0-rmse:0.33041	validation_1-rmse:0.45442
+[620]	validation_0-rmse:0.33027	validation_1-rmse:0.45450
+[621]	validation_0-rmse:0.33010	validation_1-rmse:0.45439
+[622]	validation_0-rmse:0.32972	validation_1-rmse:0.45430
+[623]	validation_0-rmse:0.32889	validation_1-rmse:0.45366
+[624]	validation_0-rmse:0.32871	validation_1-rmse:0.45355
+[625]	validation_0-rmse:0.32840	validation_1-rmse:0.45337
+[626]	validation_0-rmse:0.32832	validation_1-rmse:0.45341
+[627]	validation_0-rmse:0.32801	validation_1-rmse:0.45316
+[628]	validation_0-rmse:0.32789	validation_1-rmse:0.45309
+[629]	validation_0-rmse:0.32743	validation_1-rmse:0.45272
+[630]	validation_0-rmse:0.32700	validation_1-rmse:0.45237
+[631]	validation_0-rmse:0.32685	validation_1-rmse:0.45234
+[632]	validation_0-rmse:0.32661	validation_1-rmse:0.45221
+[633]	validation_0-rmse:0.32629	validation_1-rmse:0.45201
+[634]	validation_0-rmse:0.32595	validation_1-rmse:0.45179
+[635]	validation_0-rmse:0.32571	validation_1-rmse:0.45163
+[636]	validation_0-rmse:0.32530	validation_1-rmse:0.45126
+[637]	validation_0-rmse:0.32485	validation_1-rmse:0.45111
+[638]	validation_0-rmse:0.32468	validation_1-rmse:0.45104
+[639]	validation_0-rmse:0.32428	validation_1-rmse:0.45086
+[640]	validation_0-rmse:0.32410	validation_1-rmse:0.45081
+[641]	validation_0-rmse:0.32404	validation_1-rmse:0.45083
+[642]	validation_0-rmse:0.32364	validation_1-rmse:0.45057
+[643]	validation_0-rmse:0.32343	validation_1-rmse:0.45049
+[644]	validation_0-rmse:0.32333	validation_1-rmse:0.45036
+[645]	validation_0-rmse:0.32309	validation_1-rmse:0.45022
+[646]	validation_0-rmse:0.32298	validation_1-rmse:0.45016
+[647]	validation_0-rmse:0.32288	validation_1-rmse:0.45008
+[648]	validation_0-rmse:0.32272	validation_1-rmse:0.44998
+[649]	validation_0-rmse:0.32253	validation_1-rmse:0.44983
+[650]	validation_0-rmse:0.32232	validation_1-rmse:0.44970
+[651]	validation_0-rmse:0.32221	validation_1-rmse:0.44967
+[652]	validation_0-rmse:0.32207	validation_1-rmse:0.44975
+[653]	validation_0-rmse:0.32199	validation_1-rmse:0.44977
+[654]	validation_0-rmse:0.32181	validation_1-rmse:0.44970
+[655]	validation_0-rmse:0.32172	validation_1-rmse:0.44962
+[656]	validation_0-rmse:0.32156	validation_1-rmse:0.44954
+[657]	validation_0-rmse:0.32132	validation_1-rmse:0.44939
+[658]	validation_0-rmse:0.32088	validation_1-rmse:0.44919
+[659]	validation_0-rmse:0.32058	validation_1-rmse:0.44900
+[660]	validation_0-rmse:0.32042	validation_1-rmse:0.44908
+[661]	validation_0-rmse:0.32034	validation_1-rmse:0.44914
+[662]	validation_0-rmse:0.31997	validation_1-rmse:0.44896
+[663]	validation_0-rmse:0.31966	validation_1-rmse:0.44885
+[664]	validation_0-rmse:0.31919	validation_1-rmse:0.44861
+[665]	validation_0-rmse:0.31847	validation_1-rmse:0.44817
+[666]	validation_0-rmse:0.31841	validation_1-rmse:0.44819
+[667]	validation_0-rmse:0.31797	validation_1-rmse:0.44785
+[668]	validation_0-rmse:0.31786	validation_1-rmse:0.44778
+[669]	validation_0-rmse:0.31781	validation_1-rmse:0.44776
+[670]	validation_0-rmse:0.31774	validation_1-rmse:0.44773
+[671]	validation_0-rmse:0.31768	validation_1-rmse:0.44776
+[672]	validation_0-rmse:0.31741	validation_1-rmse:0.44762
+[673]	validation_0-rmse:0.31725	validation_1-rmse:0.44754
+[674]	validation_0-rmse:0.31708	validation_1-rmse:0.44747
+[675]	validation_0-rmse:0.31694	validation_1-rmse:0.44737
+[676]	validation_0-rmse:0.31682	validation_1-rmse:0.44723
+[677]	validation_0-rmse:0.31671	validation_1-rmse:0.44716
+[678]	validation_0-rmse:0.31652	validation_1-rmse:0.44709
+[679]	validation_0-rmse:0.31633	validation_1-rmse:0.44694
+[680]	validation_0-rmse:0.31606	validation_1-rmse:0.44674
+[681]	validation_0-rmse:0.31565	validation_1-rmse:0.44632
+[682]	validation_0-rmse:0.31560	validation_1-rmse:0.44627
+[683]	validation_0-rmse:0.31541	validation_1-rmse:0.44612
+[684]	validation_0-rmse:0.31522	validation_1-rmse:0.44603
+[685]	validation_0-rmse:0.31506	validation_1-rmse:0.44603
+[686]	validation_0-rmse:0.31492	validation_1-rmse:0.44595
+[687]	validation_0-rmse:0.31469	validation_1-rmse:0.44583
+[688]	validation_0-rmse:0.31461	validation_1-rmse:0.44585
+[689]	validation_0-rmse:0.31425	validation_1-rmse:0.44561
+[690]	validation_0-rmse:0.31422	validation_1-rmse:0.44562
+[691]	validation_0-rmse:0.31397	validation_1-rmse:0.44547
+[692]	validation_0-rmse:0.31373	validation_1-rmse:0.44547
+[693]	validation_0-rmse:0.31348	validation_1-rmse:0.44526
+[694]	validation_0-rmse:0.31337	validation_1-rmse:0.44518
+[695]	validation_0-rmse:0.31259	validation_1-rmse:0.44472
+[696]	validation_0-rmse:0.31244	validation_1-rmse:0.44461
+[697]	validation_0-rmse:0.31229	validation_1-rmse:0.44450
+[698]	validation_0-rmse:0.31220	validation_1-rmse:0.44447
+[699]	validation_0-rmse:0.31217	validation_1-rmse:0.44449
+[700]	validation_0-rmse:0.31196	validation_1-rmse:0.44432
+[701]	validation_0-rmse:0.31184	validation_1-rmse:0.44430
+[702]	validation_0-rmse:0.31180	validation_1-rmse:0.44427
+[703]	validation_0-rmse:0.31149	validation_1-rmse:0.44406
+[704]	validation_0-rmse:0.31134	validation_1-rmse:0.44394
+[705]	validation_0-rmse:0.31108	validation_1-rmse:0.44369
+[706]	validation_0-rmse:0.31073	validation_1-rmse:0.44351
+[707]	validation_0-rmse:0.31040	validation_1-rmse:0.44320
+[708]	validation_0-rmse:0.31013	validation_1-rmse:0.44304
+[709]	validation_0-rmse:0.31005	validation_1-rmse:0.44309
+[710]	validation_0-rmse:0.30975	validation_1-rmse:0.44283
+[711]	validation_0-rmse:0.30956	validation_1-rmse:0.44277
+[712]	validation_0-rmse:0.30941	validation_1-rmse:0.44279
+[713]	validation_0-rmse:0.30928	validation_1-rmse:0.44279
+[714]	validation_0-rmse:0.30918	validation_1-rmse:0.44271
+[715]	validation_0-rmse:0.30904	validation_1-rmse:0.44267
+[716]	validation_0-rmse:0.30889	validation_1-rmse:0.44265
+[717]	validation_0-rmse:0.30877	validation_1-rmse:0.44256
+[718]	validation_0-rmse:0.30843	validation_1-rmse:0.44254
+[719]	validation_0-rmse:0.30829	validation_1-rmse:0.44272
+[720]	validation_0-rmse:0.30822	validation_1-rmse:0.44271
+[721]	validation_0-rmse:0.30768	validation_1-rmse:0.44238
+[722]	validation_0-rmse:0.30752	validation_1-rmse:0.44229
+[723]	validation_0-rmse:0.30742	validation_1-rmse:0.44226
+[724]	validation_0-rmse:0.30725	validation_1-rmse:0.44213
+[725]	validation_0-rmse:0.30698	validation_1-rmse:0.44206
+[726]	validation_0-rmse:0.30690	validation_1-rmse:0.44207
+[727]	validation_0-rmse:0.30684	validation_1-rmse:0.44206
+[728]	validation_0-rmse:0.30667	validation_1-rmse:0.44191
+[729]	validation_0-rmse:0.30653	validation_1-rmse:0.44189
+[730]	validation_0-rmse:0.30634	validation_1-rmse:0.44176
+[731]	validation_0-rmse:0.30625	validation_1-rmse:0.44178
+[732]	validation_0-rmse:0.30600	validation_1-rmse:0.44164
+[733]	validation_0-rmse:0.30559	validation_1-rmse:0.44126
+[734]	validation_0-rmse:0.30520	validation_1-rmse:0.44096
+[735]	validation_0-rmse:0.30506	validation_1-rmse:0.44099
+[736]	validation_0-rmse:0.30501	validation_1-rmse:0.44101
+[737]	validation_0-rmse:0.30495	validation_1-rmse:0.44095
+[738]	validation_0-rmse:0.30486	validation_1-rmse:0.44088
+[739]	validation_0-rmse:0.30466	validation_1-rmse:0.44072
+[740]	validation_0-rmse:0.30444	validation_1-rmse:0.44053
+[741]	validation_0-rmse:0.30402	validation_1-rmse:0.44013
+[742]	validation_0-rmse:0.30330	validation_1-rmse:0.43953
+[743]	validation_0-rmse:0.30305	validation_1-rmse:0.43934
+[744]	validation_0-rmse:0.30294	validation_1-rmse:0.43926
+[745]	validation_0-rmse:0.30249	validation_1-rmse:0.43897
+[746]	validation_0-rmse:0.30239	validation_1-rmse:0.43890
+[747]	validation_0-rmse:0.30234	validation_1-rmse:0.43883
+[748]	validation_0-rmse:0.30206	validation_1-rmse:0.43890
+[749]	validation_0-rmse:0.30184	validation_1-rmse:0.43891
+[750]	validation_0-rmse:0.30176	validation_1-rmse:0.43886
+[751]	validation_0-rmse:0.30169	validation_1-rmse:0.43883
+[752]	validation_0-rmse:0.30147	validation_1-rmse:0.43865
+[753]	validation_0-rmse:0.30122	validation_1-rmse:0.43852
+[754]	validation_0-rmse:0.30094	validation_1-rmse:0.43835
+[755]	validation_0-rmse:0.30087	validation_1-rmse:0.43830
+[756]	validation_0-rmse:0.30073	validation_1-rmse:0.43824
+[757]	validation_0-rmse:0.30068	validation_1-rmse:0.43828
+[758]	validation_0-rmse:0.30054	validation_1-rmse:0.43829
+[759]	validation_0-rmse:0.30044	validation_1-rmse:0.43830
+[760]	validation_0-rmse:0.30041	validation_1-rmse:0.43827
+[761]	validation_0-rmse:0.30037	validation_1-rmse:0.43826
+[762]	validation_0-rmse:0.30034	validation_1-rmse:0.43831
+[763]	validation_0-rmse:0.30017	validation_1-rmse:0.43831
+[764]	validation_0-rmse:0.30010	validation_1-rmse:0.43829
+[765]	validation_0-rmse:0.29997	validation_1-rmse:0.43824
+[766]	validation_0-rmse:0.29981	validation_1-rmse:0.43818
+[767]	validation_0-rmse:0.29971	validation_1-rmse:0.43810
+[768]	validation_0-rmse:0.29918	validation_1-rmse:0.43774
+[769]	validation_0-rmse:0.29886	validation_1-rmse:0.43758
+[770]	validation_0-rmse:0.29880	validation_1-rmse:0.43757
+[771]	validation_0-rmse:0.29871	validation_1-rmse:0.43749
+[772]	validation_0-rmse:0.29854	validation_1-rmse:0.43744
+[773]	validation_0-rmse:0.29846	validation_1-rmse:0.43742
+[774]	validation_0-rmse:0.29792	validation_1-rmse:0.43703
+[775]	validation_0-rmse:0.29781	validation_1-rmse:0.43697
+[776]	validation_0-rmse:0.29764	validation_1-rmse:0.43686
+[777]	validation_0-rmse:0.29749	validation_1-rmse:0.43673
+[778]	validation_0-rmse:0.29745	validation_1-rmse:0.43675
+[779]	validation_0-rmse:0.29733	validation_1-rmse:0.43679
+[780]	validation_0-rmse:0.29726	validation_1-rmse:0.43681
+[781]	validation_0-rmse:0.29719	validation_1-rmse:0.43679
+[782]	validation_0-rmse:0.29710	validation_1-rmse:0.43680
+[783]	validation_0-rmse:0.29648	validation_1-rmse:0.43650
+[784]	validation_0-rmse:0.29602	validation_1-rmse:0.43611
+[785]	validation_0-rmse:0.29584	validation_1-rmse:0.43613
+[786]	validation_0-rmse:0.29570	validation_1-rmse:0.43604
+[787]	validation_0-rmse:0.29543	validation_1-rmse:0.43579
+[788]	validation_0-rmse:0.29533	validation_1-rmse:0.43574
+[789]	validation_0-rmse:0.29508	validation_1-rmse:0.43558
+[790]	validation_0-rmse:0.29502	validation_1-rmse:0.43556
+[791]	validation_0-rmse:0.29496	validation_1-rmse:0.43552
+[792]	validation_0-rmse:0.29480	validation_1-rmse:0.43548
+[793]	validation_0-rmse:0.29441	validation_1-rmse:0.43538
+[794]	validation_0-rmse:0.29433	validation_1-rmse:0.43535
+[795]	validation_0-rmse:0.29430	validation_1-rmse:0.43536
+[796]	validation_0-rmse:0.29413	validation_1-rmse:0.43529
+[797]	validation_0-rmse:0.29360	validation_1-rmse:0.43485
+[798]	validation_0-rmse:0.29350	validation_1-rmse:0.43477
+[799]	validation_0-rmse:0.29331	validation_1-rmse:0.43468
+[800]	validation_0-rmse:0.29307	validation_1-rmse:0.43444
+[801]	validation_0-rmse:0.29267	validation_1-rmse:0.43417
+[802]	validation_0-rmse:0.29243	validation_1-rmse:0.43400
+[803]	validation_0-rmse:0.29220	validation_1-rmse:0.43388
+[804]	validation_0-rmse:0.29214	validation_1-rmse:0.43387
+[805]	validation_0-rmse:0.29207	validation_1-rmse:0.43392
+[806]	validation_0-rmse:0.29189	validation_1-rmse:0.43382
+[807]	validation_0-rmse:0.29177	validation_1-rmse:0.43379
+[808]	validation_0-rmse:0.29157	validation_1-rmse:0.43370
+[809]	validation_0-rmse:0.29153	validation_1-rmse:0.43369
+[810]	validation_0-rmse:0.29113	validation_1-rmse:0.43339
+[811]	validation_0-rmse:0.29099	validation_1-rmse:0.43333
+[812]	validation_0-rmse:0.29078	validation_1-rmse:0.43333
+[813]	validation_0-rmse:0.29033	validation_1-rmse:0.43308
+[814]	validation_0-rmse:0.29021	validation_1-rmse:0.43299
+[815]	validation_0-rmse:0.28991	validation_1-rmse:0.43274
+[816]	validation_0-rmse:0.28960	validation_1-rmse:0.43255
+[817]	validation_0-rmse:0.28953	validation_1-rmse:0.43261
+[818]	validation_0-rmse:0.28933	validation_1-rmse:0.43248
+[819]	validation_0-rmse:0.28883	validation_1-rmse:0.43222
+[820]	validation_0-rmse:0.28848	validation_1-rmse:0.43196
+[821]	validation_0-rmse:0.28832	validation_1-rmse:0.43182
+[822]	validation_0-rmse:0.28822	validation_1-rmse:0.43177
+[823]	validation_0-rmse:0.28816	validation_1-rmse:0.43175
+[824]	validation_0-rmse:0.28802	validation_1-rmse:0.43169
+[825]	validation_0-rmse:0.28778	validation_1-rmse:0.43166
+[826]	validation_0-rmse:0.28756	validation_1-rmse:0.43157
+[827]	validation_0-rmse:0.28736	validation_1-rmse:0.43140
+[828]	validation_0-rmse:0.28717	validation_1-rmse:0.43131
+[829]	validation_0-rmse:0.28694	validation_1-rmse:0.43121
+[830]	validation_0-rmse:0.28678	validation_1-rmse:0.43118
+[831]	validation_0-rmse:0.28624	validation_1-rmse:0.43076
+[832]	validation_0-rmse:0.28579	validation_1-rmse:0.43040
+[833]	validation_0-rmse:0.28567	validation_1-rmse:0.43030
+[834]	validation_0-rmse:0.28543	validation_1-rmse:0.43010
+[835]	validation_0-rmse:0.28526	validation_1-rmse:0.43003
+[836]	validation_0-rmse:0.28522	validation_1-rmse:0.43000
+[837]	validation_0-rmse:0.28517	validation_1-rmse:0.42998
+[838]	validation_0-rmse:0.28498	validation_1-rmse:0.42987
+[839]	validation_0-rmse:0.28492	validation_1-rmse:0.42983
+[840]	validation_0-rmse:0.28482	validation_1-rmse:0.42986
+[841]	validation_0-rmse:0.28459	validation_1-rmse:0.42984
+[842]	validation_0-rmse:0.28457	validation_1-rmse:0.42984
+[843]	validation_0-rmse:0.28429	validation_1-rmse:0.42968
+[844]	validation_0-rmse:0.28410	validation_1-rmse:0.42953
+[845]	validation_0-rmse:0.28394	validation_1-rmse:0.42950
+[846]	validation_0-rmse:0.28387	validation_1-rmse:0.42946
+[847]	validation_0-rmse:0.28369	validation_1-rmse:0.42937
+[848]	validation_0-rmse:0.28343	validation_1-rmse:0.42914
+[849]	validation_0-rmse:0.28336	validation_1-rmse:0.42915
+[850]	validation_0-rmse:0.28324	validation_1-rmse:0.42913
+[851]	validation_0-rmse:0.28319	validation_1-rmse:0.42909
+[852]	validation_0-rmse:0.28300	validation_1-rmse:0.42897
+[853]	validation_0-rmse:0.28291	validation_1-rmse:0.42893
+[854]	validation_0-rmse:0.28278	validation_1-rmse:0.42885
+[855]	validation_0-rmse:0.28260	validation_1-rmse:0.42878
+[856]	validation_0-rmse:0.28233	validation_1-rmse:0.42863
+[857]	validation_0-rmse:0.28225	validation_1-rmse:0.42861
+[858]	validation_0-rmse:0.28210	validation_1-rmse:0.42854
+[859]	validation_0-rmse:0.28199	validation_1-rmse:0.42845
+[860]	validation_0-rmse:0.28190	validation_1-rmse:0.42846
+[861]	validation_0-rmse:0.28169	validation_1-rmse:0.42844
+[862]	validation_0-rmse:0.28163	validation_1-rmse:0.42846
+[863]	validation_0-rmse:0.28109	validation_1-rmse:0.42817
+[864]	validation_0-rmse:0.28104	validation_1-rmse:0.42814
+[865]	validation_0-rmse:0.28100	validation_1-rmse:0.42816
+[866]	validation_0-rmse:0.28060	validation_1-rmse:0.42793
+[867]	validation_0-rmse:0.28026	validation_1-rmse:0.42776
+[868]	validation_0-rmse:0.27976	validation_1-rmse:0.42746
+[869]	validation_0-rmse:0.27965	validation_1-rmse:0.42740
+[870]	validation_0-rmse:0.27957	validation_1-rmse:0.42738
+[871]	validation_0-rmse:0.27940	validation_1-rmse:0.42725
+[872]	validation_0-rmse:0.27930	validation_1-rmse:0.42722
+[873]	validation_0-rmse:0.27919	validation_1-rmse:0.42729
+[874]	validation_0-rmse:0.27917	validation_1-rmse:0.42729
+[875]	validation_0-rmse:0.27901	validation_1-rmse:0.42720
+[876]	validation_0-rmse:0.27868	validation_1-rmse:0.42697
+[877]	validation_0-rmse:0.27858	validation_1-rmse:0.42692
+[878]	validation_0-rmse:0.27836	validation_1-rmse:0.42672
+[879]	validation_0-rmse:0.27823	validation_1-rmse:0.42664
+[880]	validation_0-rmse:0.27798	validation_1-rmse:0.42650
+[881]	validation_0-rmse:0.27793	validation_1-rmse:0.42649
+[882]	validation_0-rmse:0.27785	validation_1-rmse:0.42643
+[883]	validation_0-rmse:0.27761	validation_1-rmse:0.42635
+[884]	validation_0-rmse:0.27742	validation_1-rmse:0.42633
+[885]	validation_0-rmse:0.27731	validation_1-rmse:0.42637
+[886]	validation_0-rmse:0.27703	validation_1-rmse:0.42618
+[887]	validation_0-rmse:0.27692	validation_1-rmse:0.42612
+[888]	validation_0-rmse:0.27675	validation_1-rmse:0.42610
+[889]	validation_0-rmse:0.27669	validation_1-rmse:0.42604
+[890]	validation_0-rmse:0.27659	validation_1-rmse:0.42600
+[891]	validation_0-rmse:0.27638	validation_1-rmse:0.42596
+[892]	validation_0-rmse:0.27621	validation_1-rmse:0.42600
+[893]	validation_0-rmse:0.27587	validation_1-rmse:0.42568
+[894]	validation_0-rmse:0.27532	validation_1-rmse:0.42541
+[895]	validation_0-rmse:0.27511	validation_1-rmse:0.42526
+[896]	validation_0-rmse:0.27482	validation_1-rmse:0.42490
+[897]	validation_0-rmse:0.27456	validation_1-rmse:0.42466
+[898]	validation_0-rmse:0.27449	validation_1-rmse:0.42467
+[899]	validation_0-rmse:0.27445	validation_1-rmse:0.42468
+[900]	validation_0-rmse:0.27427	validation_1-rmse:0.42452
+[901]	validation_0-rmse:0.27414	validation_1-rmse:0.42450
+[902]	validation_0-rmse:0.27391	validation_1-rmse:0.42434
+[903]	validation_0-rmse:0.27381	validation_1-rmse:0.42431
+[904]	validation_0-rmse:0.27367	validation_1-rmse:0.42421
+[905]	validation_0-rmse:0.27346	validation_1-rmse:0.42406
+[906]	validation_0-rmse:0.27340	validation_1-rmse:0.42404
+[907]	validation_0-rmse:0.27302	validation_1-rmse:0.42390
+[908]	validation_0-rmse:0.27279	validation_1-rmse:0.42378
+[909]	validation_0-rmse:0.27259	validation_1-rmse:0.42368
+[910]	validation_0-rmse:0.27257	validation_1-rmse:0.42368
+[911]	validation_0-rmse:0.27249	validation_1-rmse:0.42366
+[912]	validation_0-rmse:0.27243	validation_1-rmse:0.42367
+[913]	validation_0-rmse:0.27223	validation_1-rmse:0.42352
+[914]	validation_0-rmse:0.27197	validation_1-rmse:0.42340
+[915]	validation_0-rmse:0.27175	validation_1-rmse:0.42319
+[916]	validation_0-rmse:0.27157	validation_1-rmse:0.42308
+[917]	validation_0-rmse:0.27118	validation_1-rmse:0.42267
+[918]	validation_0-rmse:0.27109	validation_1-rmse:0.42262
+[919]	validation_0-rmse:0.27089	validation_1-rmse:0.42248
+[920]	validation_0-rmse:0.27078	validation_1-rmse:0.42231
+[921]	validation_0-rmse:0.27026	validation_1-rmse:0.42197
+[922]	validation_0-rmse:0.27003	validation_1-rmse:0.42185
+[923]	validation_0-rmse:0.26992	validation_1-rmse:0.42180
+[924]	validation_0-rmse:0.26963	validation_1-rmse:0.42173
+[925]	validation_0-rmse:0.26962	validation_1-rmse:0.42171
+[926]	validation_0-rmse:0.26956	validation_1-rmse:0.42171
+[927]	validation_0-rmse:0.26948	validation_1-rmse:0.42166
+[928]	validation_0-rmse:0.26939	validation_1-rmse:0.42161
+[929]	validation_0-rmse:0.26927	validation_1-rmse:0.42160
+[930]	validation_0-rmse:0.26921	validation_1-rmse:0.42159
+[931]	validation_0-rmse:0.26907	validation_1-rmse:0.42149
+[932]	validation_0-rmse:0.26896	validation_1-rmse:0.42142
+[933]	validation_0-rmse:0.26893	validation_1-rmse:0.42138
+[934]	validation_0-rmse:0.26870	validation_1-rmse:0.42120
+[935]	validation_0-rmse:0.26839	validation_1-rmse:0.42107
+[936]	validation_0-rmse:0.26826	validation_1-rmse:0.42099
+[937]	validation_0-rmse:0.26820	validation_1-rmse:0.42095
+[938]	validation_0-rmse:0.26817	validation_1-rmse:0.42097
+[939]	validation_0-rmse:0.26808	validation_1-rmse:0.42099
+[940]	validation_0-rmse:0.26802	validation_1-rmse:0.42102
+[941]	validation_0-rmse:0.26793	validation_1-rmse:0.42097
+[942]	validation_0-rmse:0.26789	validation_1-rmse:0.42096
+[943]	validation_0-rmse:0.26773	validation_1-rmse:0.42093
+[944]	validation_0-rmse:0.26762	validation_1-rmse:0.42089
+[945]	validation_0-rmse:0.26746	validation_1-rmse:0.42079
+[946]	validation_0-rmse:0.26731	validation_1-rmse:0.42080
+[947]	validation_0-rmse:0.26723	validation_1-rmse:0.42081
+[948]	validation_0-rmse:0.26693	validation_1-rmse:0.42080
+[949]	validation_0-rmse:0.26677	validation_1-rmse:0.42070
+[950]	validation_0-rmse:0.26667	validation_1-rmse:0.42063
+[951]	validation_0-rmse:0.26659	validation_1-rmse:0.42060
+[952]	validation_0-rmse:0.26638	validation_1-rmse:0.42041
+[953]	validation_0-rmse:0.26628	validation_1-rmse:0.42034
+[954]	validation_0-rmse:0.26618	validation_1-rmse:0.42035
+[955]	validation_0-rmse:0.26609	validation_1-rmse:0.42032
+[956]	validation_0-rmse:0.26602	validation_1-rmse:0.42031
+[957]	validation_0-rmse:0.26598	validation_1-rmse:0.42034
+[958]	validation_0-rmse:0.26585	validation_1-rmse:0.42024
+[959]	validation_0-rmse:0.26580	validation_1-rmse:0.42025
+[960]	validation_0-rmse:0.26570	validation_1-rmse:0.42019
+[961]	validation_0-rmse:0.26562	validation_1-rmse:0.42014
+[962]	validation_0-rmse:0.26549	validation_1-rmse:0.42009
+[963]	validation_0-rmse:0.26537	validation_1-rmse:0.42001
+[964]	validation_0-rmse:0.26527	validation_1-rmse:0.41999
+[965]	validation_0-rmse:0.26512	validation_1-rmse:0.41992
+[966]	validation_0-rmse:0.26491	validation_1-rmse:0.41978
+[967]	validation_0-rmse:0.26479	validation_1-rmse:0.41976
+[968]	validation_0-rmse:0.26470	validation_1-rmse:0.41970
+[969]	validation_0-rmse:0.26462	validation_1-rmse:0.41966
+[970]	validation_0-rmse:0.26448	validation_1-rmse:0.41959
+[971]	validation_0-rmse:0.26406	validation_1-rmse:0.41933
+[972]	validation_0-rmse:0.26369	validation_1-rmse:0.41915
+[973]	validation_0-rmse:0.26362	validation_1-rmse:0.41918
+[974]	validation_0-rmse:0.26349	validation_1-rmse:0.41907
+[975]	validation_0-rmse:0.26343	validation_1-rmse:0.41910
+[976]	validation_0-rmse:0.26315	validation_1-rmse:0.41907
+[977]	validation_0-rmse:0.26294	validation_1-rmse:0.41894
+[978]	validation_0-rmse:0.26291	validation_1-rmse:0.41894
+[979]	validation_0-rmse:0.26262	validation_1-rmse:0.41876
+[980]	validation_0-rmse:0.26247	validation_1-rmse:0.41887
+[981]	validation_0-rmse:0.26221	validation_1-rmse:0.41871
+[982]	validation_0-rmse:0.26201	validation_1-rmse:0.41861
+[983]	validation_0-rmse:0.26183	validation_1-rmse:0.41846
+[984]	validation_0-rmse:0.26169	validation_1-rmse:0.41840
+[985]	validation_0-rmse:0.26158	validation_1-rmse:0.41833
+[986]	validation_0-rmse:0.26152	validation_1-rmse:0.41832
+[987]	validation_0-rmse:0.26148	validation_1-rmse:0.41829
+[988]	validation_0-rmse:0.26146	validation_1-rmse:0.41830
+[989]	validation_0-rmse:0.26132	validation_1-rmse:0.41823
+[990]	validation_0-rmse:0.26119	validation_1-rmse:0.41808
+[991]	validation_0-rmse:0.26110	validation_1-rmse:0.41804
+[992]	validation_0-rmse:0.26101	validation_1-rmse:0.41802
+[993]	validation_0-rmse:0.26096	validation_1-rmse:0.41805
+[994]	validation_0-rmse:0.26079	validation_1-rmse:0.41800
+[995]	validation_0-rmse:0.26061	validation_1-rmse:0.41788
+[996]	validation_0-rmse:0.26048	validation_1-rmse:0.41784
+[997]	validation_0-rmse:0.26045	validation_1-rmse:0.41786
+[998]	validation_0-rmse:0.26042	validation_1-rmse:0.41787
+[999]	validation_0-rmse:0.26039	validation_1-rmse:0.41786
+&gt;&gt;&gt; Using model to predict target SWC_GF1_0.15_1 in unseen test data ...
+&gt;&gt;&gt; Using model to calculate permutation importance based on unseen test data ...
+&gt;&gt;&gt; Calculating prediction scores based on predicting unseen test data of SWC_GF1_0.15_1 ...
+&gt;&gt;&gt; Collecting results, details about training and testing can be accessed by calling .report_traintest().
+&gt;&gt;&gt; Done.
+
+================================
+MODEL TRAINING &amp; TESTING RESULTS
+================================
+
+## DATA
+  &gt; target: SWC_GF1_0.15_1
+  &gt; features: 17 [&#39;.YEARDOY&#39;, &#39;.DOY&#39;, &#39;.YEARWEEK&#39;, &#39;.RECORDNUMBER&#39;, &#39;.YEARMONTH&#39;, &#39;.YEAR&#39;, &#39;.WEEK&#39;, &#39;TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1&#39;, &#39;.MONTH&#39;, &#39;.SEASON&#39;, &#39;.HOUR&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-5&#39;, &#39;PREC_RAIN_TOT_GF1_0.5_1&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-4&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-2&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-3&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-1&#39;]
+  &gt; 333072 records (with missing)
+  &gt; 310937 available records for target and all features (no missing values)
+  &gt; training on 233202 records (75.0%) of 233202 features between 2005-09-09 10:15:00 and 2023-12-31 23:15:00
+  &gt; testing on 77735 unseen records (25.0%) of SWC_GF1_0.15_1 between 2005-09-09 09:45:00 and 2023-12-31 23:45:00
+
+## MODEL
+  &gt; the model was trained on training data (233202 records)
+  &gt; the model was tested on test data (77735 values)
+  &gt; estimator:  XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=50,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=None, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=None, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=1000, n_jobs=-1,
+             num_parallel_tree=None, random_state=42, ...)
+  &gt; parameters:  {&#39;objective&#39;: &#39;reg:squarederror&#39;, &#39;base_score&#39;: None, &#39;booster&#39;: None, &#39;callbacks&#39;: None, &#39;colsample_bylevel&#39;: None, &#39;colsample_bynode&#39;: None, &#39;colsample_bytree&#39;: None, &#39;device&#39;: None, &#39;early_stopping_rounds&#39;: 50, &#39;enable_categorical&#39;: False, &#39;eval_metric&#39;: None, &#39;feature_types&#39;: None, &#39;gamma&#39;: None, &#39;grow_policy&#39;: None, &#39;importance_type&#39;: None, &#39;interaction_constraints&#39;: None, &#39;learning_rate&#39;: None, &#39;max_bin&#39;: None, &#39;max_cat_threshold&#39;: None, &#39;max_cat_to_onehot&#39;: None, &#39;max_delta_step&#39;: None, &#39;max_depth&#39;: None, &#39;max_leaves&#39;: None, &#39;min_child_weight&#39;: None, &#39;missing&#39;: nan, &#39;monotone_constraints&#39;: None, &#39;multi_strategy&#39;: None, &#39;n_estimators&#39;: 1000, &#39;n_jobs&#39;: -1, &#39;num_parallel_tree&#39;: None, &#39;random_state&#39;: 42, &#39;reg_alpha&#39;: None, &#39;reg_lambda&#39;: None, &#39;sampling_method&#39;: None, &#39;scale_pos_weight&#39;: None, &#39;subsample&#39;: None, &#39;tree_method&#39;: None, &#39;validate_parameters&#39;: None, &#39;verbosity&#39;: None}
+  &gt; number of features used in model:  17
+  &gt; names of features used in model:  [&#39;.YEARDOY&#39;, &#39;.DOY&#39;, &#39;.YEARWEEK&#39;, &#39;.RECORDNUMBER&#39;, &#39;.YEARMONTH&#39;, &#39;.YEAR&#39;, &#39;.WEEK&#39;, &#39;TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1&#39;, &#39;.MONTH&#39;, &#39;.SEASON&#39;, &#39;.HOUR&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-5&#39;, &#39;PREC_RAIN_TOT_GF1_0.5_1&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-4&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-2&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-3&#39;, &#39;.PREC_RAIN_TOT_GF1_0.5_1-1&#39;]
+
+## FEATURE IMPORTANCES
+  &gt; feature importances were calculated based on unseen test data of SWC_GF1_0.15_1 (77735 records).
+  &gt; feature importances are showing permutation importances from 10 repeats
+
+                                   PERM_IMPORTANCE   PERM_SD
+.RECORDNUMBER                             0.465199  0.002139
+.YEARDOY                                  0.458788  0.001880
+.YEARWEEK                                 0.401348  0.002215
+.DOY                                      0.378541  0.002631
+.YEARMONTH                                0.251943  0.001364
+TIMESINCE_PREC_RAIN_TOT_GF1_0.5_1         0.035352  0.000466
+.WEEK                                     0.029378  0.000155
+.MONTH                                    0.007454  0.000096
+.SEASON                                   0.004372  0.000038
+PREC_RAIN_TOT_GF1_0.5_1                   0.003214  0.000055
+.HOUR                                     0.003111  0.000165
+.PREC_RAIN_TOT_GF1_0.5_1-5                0.001394  0.000040
+.PREC_RAIN_TOT_GF1_0.5_1-4                0.000491  0.000015
+.PREC_RAIN_TOT_GF1_0.5_1-1                0.000478  0.000008
+.PREC_RAIN_TOT_GF1_0.5_1-2                0.000378  0.000016
+.PREC_RAIN_TOT_GF1_0.5_1-3                0.000288  0.000012
+.YEAR                                     0.000039  0.000003
+
+
+## MODEL SCORES
+  All scores were calculated based on unseen test data (77735 records).
+  &gt; MAE:  0.20086550862960204 (mean absolute error)
+  &gt; MedAE:  0.0967788709374986 (median absolute error)
+  &gt; MSE:  0.17458642624032364 (mean squared error)
+  &gt; RMSE:  0.4178354056806623 (root mean squared error)
+  &gt; MAXE:  12.144580840019529 (max error)
+  &gt; MAPE:  0.005 (mean absolute percentage error)
+  &gt; R2:  0.99413081542053
+
+
+Gap-filling using final model ...
+&gt;&gt;&gt; Using final model on all data to predict target SWC_GF1_0.15_1 ...
+&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">29</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">xgb</span><span class="o">.</span><span class="n">trainmodel</span><span class="p">(</span><span class="n">showplot_scores</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showplot_importance</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="n">xgb</span><span class="o">.</span><span class="n">report_traintest</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">29</span> <span class="n">xgb</span><span class="o">.</span><span class="n">fillgaps</span><span class="p">(</span><span class="n">showplot_scores</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">showplot_importance</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="n">xgb</span><span class="o">.</span><span class="n">report_gapfilling</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="n">results</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">gapfilling_df_</span>
+
+<span class="nn">File F:\Sync\luhk_work\20 - CODING\21 - DIIVE\diive\diive\core\ml\common.py:439,</span> in <span class="ni">MlRegressorGapFillingBase.fillgaps</span><span class="nt">(self, showplot_scores, showplot_importance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">def</span><span class="w"> </span><span class="nf">fillgaps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>              <span class="n">showplot_scores</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>              <span class="n">showplot_importance</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span><span class="sd">     Gap-fill data with previously built model</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">439</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fillgaps_fullmodel</span><span class="p">(</span><span class="n">showplot_scores</span><span class="p">,</span> <span class="n">showplot_importance</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fillgaps_fallback</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fillgaps_combinepredictions</span><span class="p">()</span>
+
+<span class="nn">File F:\Sync\luhk_work\20 - CODING\21 - DIIVE\diive\diive\core\ml\common.py:819,</span> in <span class="ni">MlRegressorGapFillingBase._fillgaps_fullmodel</span><span class="nt">(self, showplot_scores, showplot_importance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span> <span class="c1"># Calculate permutation importance and store in dataframe</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&gt;&gt;&gt; Using final model on all data to calculate permutation importance ...&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">819</span> <span class="bp">self</span><span class="o">.</span><span class="n">_feature_importances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_permutation_importance</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>     <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">X_names</span><span class="o">=</span><span class="n">X_names</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">822</span> <span class="k">if</span> <span class="n">showplot_importance</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt; Plotting feature importances (permutation importance) ...&quot;</span><span class="p">)</span>
+
+<span class="nn">File F:\Sync\luhk_work\20 - CODING\21 - DIIVE\diive\diive\core\ml\common.py:755,</span> in <span class="ni">MlRegressorGapFillingBase._permutation_importance</span><span class="nt">(self, model, X, y, X_names)</span>
+<span class="g g-Whitespace">    </span><span class="mi">751</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Calculate permutation importance&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">753</span> <span class="c1"># https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-feature-importance</span>
+<span class="ne">--&gt; </span><span class="mi">755</span> <span class="n">fi</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">756</span>                             <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">757</span>                             <span class="n">n_repeats</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">perm_n_repeats</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">758</span>                             <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_random_state</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">759</span>                             <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;r2&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">760</span>                             <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">762</span> <span class="c1"># Store permutation importance</span>
+<span class="g g-Whitespace">    </span><span class="mi">763</span> <span class="n">fidf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;PERM_IMPORTANCE&#39;</span><span class="p">:</span> <span class="n">fi</span><span class="o">.</span><span class="n">importances_mean</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">764</span>                      <span class="s1">&#39;PERM_SD&#39;</span><span class="p">:</span> <span class="n">fi</span><span class="o">.</span><span class="n">importances_std</span><span class="p">},</span>
+<span class="g g-Whitespace">    </span><span class="mi">765</span>                     <span class="n">index</span><span class="o">=</span><span class="n">X_names</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\cha_fp2024\lib\site-packages\sklearn\utils\_param_validation.py:213,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>             <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">213</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="k">except</span> <span class="n">InvalidParameterError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="c1"># When the function is just a wrapper around an estimator, we allow</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="c1"># the function to delegate validation to the estimator, but we replace</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="c1"># the name of the estimator by the name of the function in the error</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="c1"># message to avoid confusion.</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">msg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="sa">r</span><span class="s2">&quot;parameter of \w+ must be&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="sa">f</span><span class="s2">&quot;parameter of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2"> must be&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\cha_fp2024\lib\site-packages\sklearn\inspection\_permutation_importance.py:284,</span> in <span class="ni">permutation_importance</span><span class="nt">(estimator, X, y, scoring, n_repeats, n_jobs, random_state, sample_weight, max_samples)</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span> <span class="n">scorer</span> <span class="o">=</span> <span class="n">check_scoring</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="n">baseline_score</span> <span class="o">=</span> <span class="n">_weights_scorer</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">284</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_calculate_permutation_scores</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>         <span class="n">estimator</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>         <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>         <span class="n">sample_weight</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>         <span class="n">col_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>         <span class="n">random_seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="n">n_repeats</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>         <span class="n">scorer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="n">max_samples</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="p">)</span>
+<span class="nn">    296     for col_idx</span> in <span class="ni">range</span><span class="nt">(X.shape[1])</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">baseline_score</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="k">return</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="n">name</span><span class="p">:</span> <span class="n">_create_importances_bunch</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>             <span class="n">baseline_score</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseline_score</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>     <span class="p">}</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\cha_fp2024\lib\site-packages\sklearn\utils\parallel.py:74,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">74</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\cha_fp2024\lib\site-packages\joblib\parallel.py:2007,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2001</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
+<span class="g g-Whitespace">   </span><span class="mi">2002</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
+<span class="g g-Whitespace">   </span><span class="mi">2003</span> <span class="c1"># reaches the first `yield` statement. This starts the asynchronous</span>
+<span class="g g-Whitespace">   </span><span class="mi">2004</span> <span class="c1"># dispatch of the tasks to the workers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2005</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2007</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\cha_fp2024\lib\site-packages\joblib\parallel.py:1650,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1647</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">1649</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1650</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1652</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1653</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
+<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
+<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="c1"># the user if necessary.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1656</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\cha_fp2024\lib\site-packages\joblib\parallel.py:1762,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1757</span> <span class="c1"># If the next job is not ready for retrieval yet, we just wait for</span>
+<span class="g g-Whitespace">   </span><span class="mi">1758</span> <span class="c1"># async callbacks to progress.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1759</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">   </span><span class="mi">1760</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1761</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
+<span class="ne">-&gt; </span><span class="mi">1762</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1763</span>     <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1765</span> <span class="c1"># We need to be careful: the job list can be filling up as</span>
+<span class="g g-Whitespace">   </span><span class="mi">1766</span> <span class="c1"># we empty it and Python list are not thread-safe by</span>
+<span class="g g-Whitespace">   </span><span class="mi">1767</span> <span class="c1"># default hence the use of the lock</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="save-to-file">
+<h1>Save to file<a class="headerlink" href="#save-to-file" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OUTNAME</span> <span class="o">=</span> <span class="s2">&quot;53.1_CH-CHA_IRGA-L4.1+QCL-L1+LGR-L1+M10+MGMT_2005-2023&quot;</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="n">save_parquet</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">OUTNAME</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">OUTNAME</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="end-of-notebook">
+<h1><strong>End of notebook</strong>.<a class="headerlink" href="#end-of-notebook" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_string</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Finished. </span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gap-filling-swc-gf1-0-15-1-most-complete-swc-variable">Gap-filling <code class="docutils literal notranslate"><span class="pre">SWC_GF1_0.15_1</span></code> (most complete SWC variable)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-to-file">Save to file</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook"><strong>End of notebook</strong>.</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lukas Hörtnagl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
