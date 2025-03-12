@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>QCF: overall quality control flag &#8212; CH-CHA Flux Product</title>
+    <title>Raw Data: Eddy Covariance &#8212; CH-CHA Flux Product</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'QCF';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Raw_Data_EC';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Used Software" href="Used_Software.html" />
-    <link rel="prev" title="Level 4.2: NEE Partitioning (in progress)" href="L4.2.html" />
+    <link rel="next" title="Flux Calculations" href="Flux_Calculations.html" />
+    <link rel="prev" title="Management Data" href="Management_Data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,20 +183,20 @@
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Meteo_Data.html">Meteo Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management_Data.html">Management Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Raw Data: Eddy Covariance</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Flux_Calculations.html">Flux Calculations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="L0.html">Level 0: Preliminary flux calculations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L1.html">Level 1: Final flux calculations</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Flux_Post-processing.html">Flux Post-processing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Flux_Post-processing.html">Flux Post-processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="L2.html">Level 2: Quality flag expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level 3.1: Storage correction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level 3.2: Outlier flagging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level 3.3: USTAR filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level 4.1: Gap-filling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level 4.2: NEE Partitioning (in progress)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">QCF: overall quality control flag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
@@ -278,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FQCF.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FRaw_Data_EC.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@
       
       
       
-      <li><a href="_sources/QCF.md" target="_blank"
+      <li><a href="_sources/Raw_Data_EC.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +379,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,11 +392,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>QCF: overall quality control flag</h1>
+    <h1>Raw Data: Eddy Covariance</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ec-raw-data-were-recorded-in-real-time">EC raw data were recorded in real-time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format">File format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-regularly-structured-files-for-eddypro">Creating regularly-structured files for EddyPro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-structure-of-ec-binary-raw-data-files">Example structure of EC binary raw data files</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -404,45 +417,183 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="qcf-overall-quality-control-flag">
-<h1>QCF: overall quality control flag<a class="headerlink" href="#qcf-overall-quality-control-flag" title="Link to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">QCF</span></code> (<strong>Q</strong>uality <strong>C</strong>ontrol <strong>F</strong>lag) is calculated from multiple flags from single tests.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="raw-data-eddy-covariance">
+<h1>Raw Data: Eddy Covariance<a class="headerlink" href="#raw-data-eddy-covariance" title="Link to this heading">#</a></h1>
+<p>XXX TODO</p>
+<section id="ec-raw-data-were-recorded-in-real-time">
+<h2>EC raw data were recorded in real-time<a class="headerlink" href="#ec-raw-data-were-recorded-in-real-time" title="Link to this heading">#</a></h2>
+<p>Eddy covariance (EC) raw data files were recorded using the <strong>custom-made logging script</strong> <code class="docutils literal notranslate"><span class="pre">sonicread</span></code> (Eugster &amp; Plüss, 2010). <code class="docutils literal notranslate"><span class="pre">sonicread</span></code> was running on a data logger and directly merged incoming raw data streams (20Hz) arriving from the instruments into one single file in real-time.</p>
+</section>
+<section id="file-format">
+<h2>File format<a class="headerlink" href="#file-format" title="Link to this heading">#</a></h2>
+<p>Each EC raw data binary file contains a header section at the start of the file, followed by the data records of one installed sonic anemometer (SA) and one or more gas analyzers (GA). One raw data file comprises data over a time period of six hours. The files do not contain a timestamp, but the starting time of each file is written to the file name. Files do also not contain variable names or units. This info is later added during the file conversion using <code class="docutils literal notranslate"><span class="pre">bico</span></code> (see below).</p>
+<p><strong>The binary format of the data files is <em>compressed and therefore irregularly structured</em></strong>. One line of data records (i.e., all records for a specific moment in time) can consist of a varying number of bytes and data columns. For example, if all data for all instruments are available at a specific timestamp, one line of data records consists of 26 bytes and 12 data columns. If the data for one instrument are missing, then one line of data records may only consist of 14 bytes and 8 data columns.  An overview of data blocks, including their description, can be found online in the <a class="reference external" href="https://github.com/holukas/bico">bico repository</a> on GitHub <a class="reference external" href="https://github.com/holukas/bico/tree/master/src/settings/data_blocks">here</a>.</p>
+<p><strong>Data from the instruments arrive in data blocks at the logger</strong>. Because of the real-time nature of <code class="docutils literal notranslate"><span class="pre">sonicread</span></code> all data blocks are stored to the same file in the moment they are recorded. The data blocks arrive sequentially: first the data block from instrument 1 (typically the sonic anemometer), then from instrument 2 (e.g., LI-7500), followed by other installed instruments (e.g., QCL or LGR). Data arriving from the sonic anemometer are the most reliable (SA runs most of the time) and most consistent (measurement frequency is always very close to the nominal 20Hz), therefore it is used as the “anchor” measurement for each file. After the SA data block was recorded to a file, the gas analyzer data that are available at that moment in time are added after the SA data block. If available, the data block of a second gas analyzer is added similarly. If no gas analyzer record is immediately available after the storing of the SA data block - for example when the GA is running at a lower time resolution such as 10Hz - the previous GA record is repeated. In the end, all files have a time resolution of 20Hz.</p>
+</section>
+<section id="creating-regularly-structured-files-for-eddypro">
+<h2>Creating regularly-structured files for EddyPro<a class="headerlink" href="#creating-regularly-structured-files-for-eddypro" title="Link to this heading">#</a></h2>
+<p>EddyPro can handle <em>regularly-structured</em> binary files, but not <em>irregularly-structured</em> files.</p>
+<p>Raw data files were converted to a regular structure (same number of columns for each line of records) using the script <a class="reference external" href="https://github.com/holukas/bico">bico</a>. In addition, <code class="docutils literal notranslate"><span class="pre">bico</span></code> converts the binary files to ASCII format (CSV). This is not strictly required by EddyPro, but it makes the files human-readable, which can be helpful in detecting data issues. To reduce the file size of the ASCII files, the CSV files were zipped (<code class="docutils literal notranslate"><span class="pre">.gzip</span></code>). <code class="docutils literal notranslate"><span class="pre">bico</span></code> also adds additional information to the CSV files, such as the variable names for each column, and respective units and source instrument. A typical name for a raw data file is e.g. <code class="docutils literal notranslate"><span class="pre">CH-CHA_202408091300.csv.gz</span></code>, whereby the time info in the the file name gives the starting time for the data.</p>
+</section>
+<section id="example-structure-of-ec-binary-raw-data-files">
+<h2>Example structure of EC binary raw data files<a class="headerlink" href="#example-structure-of-ec-binary-raw-data-files" title="Link to this heading">#</a></h2>
+<p>This example describes the structure of a raw data file with data from 1 sonic anemometer and 2 different gas analyzers (open-path LI-7500 and LGR).</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">QCF</span></code> is a flag that shows the <em>overall</em> quality of the respective data point.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">QCF</span></code> can be: <code class="docutils literal notranslate"><span class="pre">0</span></code>=best data, <code class="docutils literal notranslate"><span class="pre">1</span></code>=OK data, <code class="docutils literal notranslate"><span class="pre">2</span></code>=bad data</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">QCF</span></code> is calculated from single test flags summed together</strong>:</p>
-<ul>
-<li><p>For records where the sum &gt; 2:  <code class="docutils literal notranslate"><span class="pre">QCF</span></code>=2</p></li>
-<li><p>For records where the sum = 2 from a single flag with value 2: <code class="docutils literal notranslate"><span class="pre">QCF</span></code>=2</p></li>
-<li><p>For records where the sum = 2 and no single flag is 2 (i.e., the sum comes from two single flags with value 1):  <code class="docutils literal notranslate"><span class="pre">QCF</span></code>=1</p></li>
-<li><p>For records where the sum = 1 (i.e., only on single flag with value 1): <code class="docutils literal notranslate"><span class="pre">QCF</span></code>=1</p></li>
-<li><p>For records where the sum = 0 (i.e., all single flags are zero): <code class="docutils literal notranslate"><span class="pre">QCF</span></code>=0 (best quality fluxes)</p></li>
+<li><p>HEADER (29 bytes): Contains information created by the logging script <code class="docutils literal notranslate"><span class="pre">sonicread</span></code>. This information is not written to the regular ASCII file, but it is written to the <code class="docutils literal notranslate"><span class="pre">bico</span></code> log file during conversion from binary to ASCII. Each of the irregular binary files contains this header section.</p></li>
+<li><p>INSTRUMENT 1: Data block coming from sonic anemometer Solent R3-50 (<a class="reference external" href="https://github.com/holukas/bico/blob/master/src/settings/data_blocks/R350-B.dblock">R350-B</a>): 12 bytes (big endian short integer).</p></li>
+<li><p>INSTRUMENT 2: Data block coming from Li-7500 (<a class="reference external" href="https://github.com/holukas/bico/blob/master/src/settings/data_blocks/IRGA75-A.dblock">IRGA75-A</a>): 2-16 bytes. In case of 2 bytes, data from the IRGA are missing. 16 bytes means all data available.</p></li>
+<li><p>INSTRUMENT 3: Data block coming from the LGR laser (<a class="reference external" href="https://github.com/holukas/bico/blob/master/src/settings/data_blocks/LGR-A.dblock">LGR-A</a>): 2-33 bytes. In case of 2 bytes, data from the LGR are missing. 33 bytes means all data available</p></li>
 </ul>
-</li>
-<li><p>Flags for single tests are created in Level-2, Level-3.2 and Level-3.3.</p></li>
-<li><p>Genereally, single tests can be:</p>
-<ul>
-<li><p><strong>Hard flags</strong>: Some tests yield either 0 or 2, but have no flag=1. This is the case if the test is so crucial that if the test fails, data are considered bad. If one test flag=2, then the <code class="docutils literal notranslate"><span class="pre">QCF</span></code> is automatically 2, no matter the other tests. Flags from such tests are also called hard flags.</p></li>
-<li><p><strong>Soft flags</strong>: If a test results is flag=1, it can still be OK data for some analyses. Even if there is a second test with flag=1, data might still be OK. If one or two flags are 1, and there is no flag=2, then the <code class="docutils literal notranslate"><span class="pre">QCF</span></code> is also 1. These flags are less crucial and are therefore soft flags.</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">QCF</span></code> always uses the same logic, for both flux and meteo data, only the single tests are different.</p></li>
-<li><p><strong>This was done for all fluxes, however, for NEE the requirements were stricter during the nighttime than during the daytime.</strong> For NEE, daytime <code class="docutils literal notranslate"><span class="pre">QCF</span></code> flags of 0 and 1 were accepted (flag 2 = bad data), but during nighttime only <code class="docutils literal notranslate"><span class="pre">QCF</span></code> flags with 0 were retained (flags 1 and 2 = bad data). For all other fluxes, <code class="docutils literal notranslate"><span class="pre">QCF</span></code> flags of 0 and 1 were accepted during daytime and nighttime (flag 2 = bad data).</p></li>
-<li><p><strong>Example</strong>:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">FLAG_L3.3_CUT_50_NEE_L3.1_QCF</span></code> is the flag after Level-3.3, for flux <code class="docutils literal notranslate"><span class="pre">NEE_L3.1</span></code> (storage-corrected) for the USTAR scenario <code class="docutils literal notranslate"><span class="pre">CUT_50</span></code>. This flag is applied to flux <code class="docutils literal notranslate"><span class="pre">NEE_L3.1</span></code>, producing the quality-filtered flux <code class="docutils literal notranslate"><span class="pre">NEE_L3.1_L3.3_CUT_50_QCF</span></code>. In addition, another flux variable is produced, containing only highest-quality fluxes: <code class="docutils literal notranslate"><span class="pre">NEE_L3.1_L3.3_CUT_50_QCF0</span></code> (all single flags are zero).</p></li>
-</ul>
-</li>
-</ul>
-<figure class="align-default" id="fig-qcf1">
-<img alt="" src="_images/QCF_overall_quality_flag.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Example showing how the overall quality control flag <code class="docutils literal notranslate"><span class="pre">QCF</span></code> is calculated from single test flags.</span><a class="headerlink" href="#fig-qcf1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<p>Each full data record (one row of data records for a specific moment in time) within the file occupies 61 bytes, consisting of 12 bytes for the SA data, 16 bytes for IRGA data, and 33 bytes for LGR data. If IRGA data are missing, the record size reduces to 47 bytes (12 bytes SA data, 2 bytes for missing IRGA data, 33 bytes LGR data). Conversely, if LGR data are missing, the record size is 30 bytes (12 bytes SA data, 16 bytes IRGA data, 2 bytes for missing LGR data). A 29-byte header is present at the start of the file, preceding the data records.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Example structure of EC binary raw data file. Variables are listed in the order they arrive at the logger.</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Bytes</p></th>
+<th class="head"><p>Instrument</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>U</p></td>
+<td><p>2</p></td>
+<td><p>R350-B</p></td>
+<td><p>first horizontal wind component (x)</p></td>
+</tr>
+<tr class="row-odd"><td><p>V</p></td>
+<td><p>2</p></td>
+<td><p>R350-B</p></td>
+<td><p>second horizontal wind component (y)</p></td>
+</tr>
+<tr class="row-even"><td><p>W</p></td>
+<td><p>2</p></td>
+<td><p>R350-B</p></td>
+<td><p>vertical wind component (z)</p></td>
+</tr>
+<tr class="row-odd"><td><p>T_SONIC</p></td>
+<td><p>2</p></td>
+<td><p>R350-B</p></td>
+<td><p>sonic temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>SA_DIAG_TYPE</p></td>
+<td><p>1</p></td>
+<td><p>R350-B</p></td>
+<td><p>status address</p></td>
+</tr>
+<tr class="row-odd"><td><p>SA_DIAG_VAL</p></td>
+<td><p>1</p></td>
+<td><p>R350-B</p></td>
+<td><p>status data</p></td>
+</tr>
+<tr class="row-even"><td><p>INC_XY</p></td>
+<td><p>2</p></td>
+<td><p>R350-B</p></td>
+<td><p>inclinometer, alternatively x (odd record numbers) and y (even record numbers)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATA_SIZE</p></td>
+<td><p>1</p></td>
+<td><p>IRGA75-A</p></td>
+<td><p>data size of current data block, number of bytes in IRGA record (2 = missing, 16 = available)</p></td>
+</tr>
+<tr class="row-even"><td><p>STATUS_CODE</p></td>
+<td><p>1</p></td>
+<td><p>IRGA75-A</p></td>
+<td><p>status of IRGA data acquisition</p></td>
+</tr>
+<tr class="row-odd"><td><p>GA_DIAG_CODE</p></td>
+<td><p>1</p></td>
+<td><p>IRGA75-A</p></td>
+<td><p>diagnostic value</p></td>
+</tr>
+<tr class="row-even"><td><p>H2O_CONC</p></td>
+<td><p>3</p></td>
+<td><p>IRGA75-A</p></td>
+<td><p>H2O concentration density, molar density</p></td>
+</tr>
+<tr class="row-odd"><td><p>CO2_CONC</p></td>
+<td><p>3</p></td>
+<td><p>IRGA75-A</p></td>
+<td><p>CO2 concentration density, molar density</p></td>
+</tr>
+<tr class="row-even"><td><p>T_BOX</p></td>
+<td><p>2</p></td>
+<td><p>IRGA75-A</p></td>
+<td><p>ambient temperature measured in the control box</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRESS_BOX</p></td>
+<td><p>2</p></td>
+<td><p>IRGA75-A</p></td>
+<td><p>atmospheric pressure measured in the control box</p></td>
+</tr>
+<tr class="row-even"><td><p>COOLER_V</p></td>
+<td><p>3</p></td>
+<td><p>IRGA75-A</p></td>
+<td><p>cooler voltage</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATA_SIZE</p></td>
+<td><p>1</p></td>
+<td><p>LGR-A</p></td>
+<td><p>data size of current data block, number of bytes in LGR record (2 = missing, 33 = available)</p></td>
+</tr>
+<tr class="row-even"><td><p>STATUS_CODE</p></td>
+<td><p>1</p></td>
+<td><p>LGR-A</p></td>
+<td><p>status of LGR data aquisition</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH4_DRY</p></td>
+<td><p>4</p></td>
+<td><p>LGR-A</p></td>
+<td><p>CH4 dry mole fraction (in dry air), mixing ratio, ppm (parts per million)</p></td>
+</tr>
+<tr class="row-even"><td><p>N2O_DRY</p></td>
+<td><p>4</p></td>
+<td><p>LGR-A</p></td>
+<td><p>N2O dry mole fraction (in dry air), mixing ratio, ppm</p></td>
+</tr>
+<tr class="row-odd"><td><p>H2O</p></td>
+<td><p>4</p></td>
+<td><p>LGR-A</p></td>
+<td><p>H2O molar fraction (in humid air), wet mole fraction</p></td>
+</tr>
+<tr class="row-even"><td><p>CH4</p></td>
+<td><p>4</p></td>
+<td><p>LGR-A</p></td>
+<td><p>CH4 molar fraction (in humid air), wet mole fraction</p></td>
+</tr>
+<tr class="row-odd"><td><p>N2O</p></td>
+<td><p>4</p></td>
+<td><p>LGR-A</p></td>
+<td><p>N2O molar fraction (in humid air), wet mole fraction</p></td>
+</tr>
+<tr class="row-even"><td><p>PRESS_CELL</p></td>
+<td><p>2</p></td>
+<td><p>LGR-A</p></td>
+<td><p>pressure in measurement cell</p></td>
+</tr>
+<tr class="row-odd"><td><p>T_CELL</p></td>
+<td><p>2</p></td>
+<td><p>LGR-A</p></td>
+<td><p>temperature in measurement cell</p></td>
+</tr>
+<tr class="row-even"><td><p>T_UNKNOWN</p></td>
+<td><p>2</p></td>
+<td><p>LGR-A</p></td>
+<td><p>unused temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>MIRROR_RINGDOWNTIME</p></td>
+<td><p>4</p></td>
+<td><p>LGR-A</p></td>
+<td><p>mirror ring-down time</p></td>
+</tr>
+<tr class="row-even"><td><p>FIT_FLAG</p></td>
+<td><p>1</p></td>
+<td><p>LGR-A</p></td>
+<td><p>fit flag</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -476,20 +627,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="L4.2.html"
+       href="Management_Data.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Level 4.2: NEE Partitioning (in progress)</p>
+        <p class="prev-next-title">Management Data</p>
       </div>
     </a>
     <a class="right-next"
-       href="Used_Software.html"
+       href="Flux_Calculations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Used Software</p>
+        <p class="prev-next-title">Flux Calculations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -499,6 +650,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ec-raw-data-were-recorded-in-real-time">EC raw data were recorded in real-time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format">File format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-regularly-structured-files-for-eddypro">Creating regularly-structured files for EddyPro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-structure-of-ec-binary-raw-data-files">Example structure of EC binary raw data files</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

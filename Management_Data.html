@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Management_Data';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Flux Calculations" href="Flux_Calculations.html" />
+    <link rel="next" title="Raw Data: Eddy Covariance" href="Raw_Data_EC.html" />
     <link rel="prev" title="Meteo Data" href="Meteo_Data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,8 +180,10 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Meteo_Data.html">Meteo Data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Management Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Flux_Calculations.html">Flux Calculations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="L0.html">Level 0: Preliminary flux calculations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L1.html">Level 1: Final flux calculations</a></li>
@@ -420,7 +422,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="management-data">
 <h1>Management Data<a class="headerlink" href="#management-data" title="Link to this heading">#</a></h1>
-<p><strong>Management information was converted to a time series format with the aim to be used e.g. in machine-learning models.</strong></p>
+<div class="note admonition">
+<p class="admonition-title">Notebook</p>
+<p>Management information was converted to a time series format with the aim to be used e.g. in machine-learning models.</p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Notebook</p>
 <p><a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html">22.0_ConvertMgmtToTimeseries</a></p>
@@ -432,7 +437,7 @@ document.write(`
 </div>
 <section id="unique-events">
 <h2>Unique events<a class="headerlink" href="#unique-events" title="Link to this heading">#</a></h2>
-<p>Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (<strong>Table M1</strong>).</p>
+<p>Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="id1">
 <caption><span class="caption-number">Table 1 </span><span class="caption-text">Unique management events between 2001 and 2024.</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
 <thead>
@@ -514,7 +519,7 @@ document.write(`
 </section>
 <section id="simplified-variable-names">
 <h2>Simplified variable names<a class="headerlink" href="#simplified-variable-names" title="Link to this heading">#</a></h2>
-<p>Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B (<strong>Table M2</strong>).</p>
+<p>Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="id2">
 <caption><span class="caption-number">Table 2 </span><span class="caption-text">Simplified and grouped management variables.</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
 <thead>
@@ -580,7 +585,7 @@ document.write(`
 <p>The event <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> had the start date <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and the end date <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>. In the dataframe, <code class="docutils literal notranslate"><span class="pre">1</span></code> was inserted in the column <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> between the (daily) timestamps <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code> (inclusive start and end dates).</p>
 </div>
 <p>For all management events, <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variables were calculated, describing the temporal distance of each day to the previous management event.</p>
-<p>TODO: add figure</p>
+<p>XXX TODO: add figure</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>The event <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> had the start date <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and the end date <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>. The variable <code class="docutils literal notranslate"><span class="pre">TIMESINCE_MGMT_GRAZING_PARCEL-B</span></code> was calculated and has value <code class="docutils literal notranslate"><span class="pre">0</span></code> between <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>, value <code class="docutils literal notranslate"><span class="pre">1</span></code> on <code class="docutils literal notranslate"><span class="pre">2008-11-05</span></code>, value <code class="docutils literal notranslate"><span class="pre">2</span></code> on <code class="docutils literal notranslate"><span class="pre">2008-11-06</span></code>, etc…</p>
@@ -639,11 +644,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Flux_Calculations.html"
+       href="Raw_Data_EC.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Flux Calculations</p>
+        <p class="prev-next-title">Raw Data: Eddy Covariance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
