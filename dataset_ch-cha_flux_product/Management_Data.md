@@ -1,17 +1,25 @@
 # Management Data
 
-- **Notebook**: [22.0_ConvertMgmtToTimeseries.ipynb](../notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb)
-- **Detailed management info**: [CH-CHA-Management_2005-2024_20250107.zip](../data/CH-CHA-Management_2005-2024_20250107.zip) (zipped XLSX file, 8MB)
+`````{admonition} Notebook
+:class: note
+Management information was converted to a time series format with the aim to be used e.g. in machine-learning models.
+`````
 
+`````{admonition} Notebook
+:class: tip
+[22.0_ConvertMgmtToTimeseries](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html)
+`````
 
+`````{admonition} Download management info as Excel file
+:class: note
+{download}`CH-CHA-Management_2005-2024_20250107 <data/CH-CHA-Management_2005-2024_20250107.zip>` (zipped XLSX file, 8MB)
 
-**Management information was converted to a time series format with the aim to be used e.g. in machine-learning models.**
+This file contains detailed management data, with info between 2001 and 2024. At the time of writing, some info (e.g., C content of fertilizer) was not yet available for the most recent year.
+`````
 
-Detailed management data are available in an Excel file. The file contains info between 2001 and 2024, whereby info for 2024 and some info for 2023 (e.g., C content of fertilizer) was not available yet. 
 ## Unique events
 
-Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (**Table M1**).
-
+Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events.
 
 ```{table} Unique management events between 2001 and 2024.
 
@@ -55,7 +63,7 @@ Each management event was assigned a variable name and a list of unique events w
 
 ## Simplified variable names
 
-Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B (**Table M2**).
+Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B.
 
 ```{table}  Simplified and grouped management variables.
 
@@ -85,14 +93,13 @@ In order to convert `start` and `end` information for each event to time series 
 
 The info from the Excel file was then inserted into the empty dataframe. When management took place, values in the respective data column for the respective day(s) were set to `1`, otherwise to `0`. All values of the respective days of management were set to `1` because the exact starting and end times were not available for all events.
 
-
 :::{admonition} Example
 The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. In the dataframe, `1` was inserted in the column `MGMT_GRAZING_PARCEL-B` between the (daily) timestamps `2008-11-01` and `2008-11-04` (inclusive start and end dates).  
 :::
 
 For all management events, `TIMESINCE` variables were calculated, describing the temporal distance of each day to the previous management event.
 
-TODO: add figure
+XXX TODO: add figure
 
 :::{admonition} Example
 The event `MGMT_GRAZING_PARCEL-B` had the start date `2008-11-01` and the end date `2008-11-04`. The variable `TIMESINCE_MGMT_GRAZING_PARCEL-B` was calculated and has value `0` between `2008-11-01` and `2008-11-04`, value `1` on `2008-11-05`, value `2` on `2008-11-06`, etc...  
@@ -109,3 +116,4 @@ At the daily scale, the event `MGMT_GRAZING_PARCEL-B` had the start date `2008-1
 Wind direction was then added to the hh management data and used to create new `_FOOTPRINT` (suffix) variables. These variables contain info about the parcel from where the wind was arriving at the sensors. This means, depending on wind direction, the `_FOOTPRINT` variables can contain info from `_PARCEL-A` or `_PARCEL-B` variables.
 
 Parcel division runs diagonally from 250° to 70°, with the measurement station at the center. In earlier years (2005-2013), the division was less clear, with the division line shifted further to the south, but an analysis in Feigenwinter et al. (2023) showed that most of the contribution to the flux footprint (>97%) came from `PARCEL-B`, north of the station.
+

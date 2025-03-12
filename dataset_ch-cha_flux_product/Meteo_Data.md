@@ -2,8 +2,12 @@
 
 ## Meteo data for EddyPro
 
-**Notebook**: [12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.ipynb](../notebooks/10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.ipynb)
-	- This is the notebook that was used to prepare input data for 2024 fluxes - which were calculated once 2024 was complete - and to create a new biomet file for future flux calculations. The notebook downloads meteo data from a newer FLUXNET version (v2024 dataset). However, for the flux calcs 2005-2020, meteo data from the [FLUXNET Warm Winter 2020](https://www.icos-cp.eu/data-products/2G60-ZHAK) dataset were used, which was done using an older version of this notebook (no longer available).
+`````{admonition} Notebook
+:class: tip
+[12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.ipynb](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.html)
+
+This is the notebook that was used to prepare input data for 2024 fluxes - which were calculated once 2024 was complete - and to create a new biomet file for future flux calculations. The notebook downloads meteo data from a newer FLUXNET version (v2024 dataset). However, for the flux calcs 2005-2020, meteo data from the [FLUXNET Warm Winter 2020](https://www.icos-cp.eu/data-products/2G60-ZHAK) dataset were used, which was done using an older version of this notebook (no longer available).
+`````
 
 - 6 meteo variables required: `SW_IN`, `PPFD`, `TA`, `PA`, `LW_IN` and `RH`
 - **For 2005-2020**, meteo data from the [FLUXNET Warm Winter 2020](https://www.icos-cp.eu/data-products/2G60-ZHAK)  dataset were used: 
@@ -13,6 +17,8 @@
 	- `SW_IN_T1_2_1`, `TA_T1_2_1`, `LW_IN_T1_2_1`, `PPFD_IN_T1_2_2`, `RH_T1_2_1`, `PA_GF1_0.9_1` (stored in mbar = hPa)
 	- Meteoscreening from database was done using the Python library `diive`.
 	- After meteoscreening, the variables `SW_IN_T1_2_1`, `TA_T1_2_1` and `PPFD_IN_T1_2_2` were gap-filled using XGBoost as implemented in `diive`.
+
+![](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.html#time-series-plot)
 
 All 6 meteo variables were merged into one file that was then used as input file (external meteo data) in EddyPro. 
 
@@ -26,7 +32,7 @@ All 6 meteo variables were merged into one file that was then used as input file
 
 **Notebooks**: [Notebooks used to quality-screen, download, merge and gap-fill meteo data.](../notebooks/10_METEO/README.txt)
 
-For the first version of the CH-CHA flux product (CH-CHA FP2025.1 2005-2024), the following meteo variables were available for analyses:
+For the first versions of the CH-CHA flux product (CH-CHA FP2025.1 2005-2024), the following meteo variables were available for analyses:
 - `TA` `SW_IN` `LW_IN` `PA` `PPFD` `RH`, `VPD`, `SWC`, `TS`, `PRECIP`
 
 See *Note#1* above: because of this warning I assembled the meteo data again to a new file that contains the meteo 6 variables between 2005 and 2024.
