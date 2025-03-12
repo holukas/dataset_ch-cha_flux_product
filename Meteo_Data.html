@@ -201,6 +201,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Instrumentation.html">Instrumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SI.html">Supplementary Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/README.html">Notebook overview</a></li>
@@ -425,8 +426,11 @@ document.write(`
 <h1>Meteo Data<a class="headerlink" href="#meteo-data" title="Link to this heading">#</a></h1>
 <section id="meteo-data-for-eddypro">
 <h2>Meteo data for EddyPro<a class="headerlink" href="#meteo-data-for-eddypro" title="Link to this heading">#</a></h2>
-<p><strong>Notebook</strong>: <a class="reference internal" href="#../notebooks/10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.ipynb"><span class="xref myst">12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.ipynb</span></a>
-- This is the notebook that was used to prepare input data for 2024 fluxes - which were calculated once 2024 was complete - and to create a new biomet file for future flux calculations. The notebook downloads meteo data from a newer FLUXNET version (v2024 dataset). However, for the flux calcs 2005-2020, meteo data from the <a class="reference external" href="https://www.icos-cp.eu/data-products/2G60-ZHAK">FLUXNET Warm Winter 2020</a> dataset were used, which was done using an older version of this notebook (no longer available).</p>
+<div class="tip admonition">
+<p class="admonition-title">Notebook</p>
+<p><a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.html">12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.ipynb</a></p>
+<p>This is the notebook that was used to prepare input data for 2024 fluxes - which were calculated once 2024 was complete - and to create a new biomet file for future flux calculations. The notebook downloads meteo data from a newer FLUXNET version (v2024 dataset). However, for the flux calcs 2005-2020, meteo data from the <a class="reference external" href="https://www.icos-cp.eu/data-products/2G60-ZHAK">FLUXNET Warm Winter 2020</a> dataset were used, which was done using an older version of this notebook (no longer available).</p>
+</div>
 <ul class="simple">
 <li><p>6 meteo variables required: <code class="docutils literal notranslate"><span class="pre">SW_IN</span></code>, <code class="docutils literal notranslate"><span class="pre">PPFD</span></code>, <code class="docutils literal notranslate"><span class="pre">TA</span></code>, <code class="docutils literal notranslate"><span class="pre">PA</span></code>, <code class="docutils literal notranslate"><span class="pre">LW_IN</span></code> and <code class="docutils literal notranslate"><span class="pre">RH</span></code></p></li>
 <li><p><strong>For 2005-2020</strong>, meteo data from the <a class="reference external" href="https://www.icos-cp.eu/data-products/2G60-ZHAK">FLUXNET Warm Winter 2020</a>  dataset were used:</p>
@@ -443,6 +447,7 @@ document.write(`
 </ul>
 </li>
 </ul>
+<p><img alt="" src="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.html#time-series-plot" /></p>
 <p>All 6 meteo variables were merged into one file that was then used as input file (external meteo data) in EddyPro.</p>
 <p><strong>Note#1 regarding meteo data in EddyPro output files:</strong></p>
 <blockquote>
@@ -456,7 +461,7 @@ document.write(`
 <section id="meteo-data-for-analysis">
 <h2>Meteo data for analysis<a class="headerlink" href="#meteo-data-for-analysis" title="Link to this heading">#</a></h2>
 <p><strong>Notebooks</strong>: <a class="reference internal" href="#../notebooks/10_METEO/README.txt"><span class="xref myst">Notebooks used to quality-screen, download, merge and gap-fill meteo data.</span></a></p>
-<p>For the first version of the CH-CHA flux product (CH-CHA FP2025.1 2005-2024), the following meteo variables were available for analyses:</p>
+<p>For the first versions of the CH-CHA flux product (CH-CHA FP2025.1 2005-2024), the following meteo variables were available for analyses:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TA</span></code> <code class="docutils literal notranslate"><span class="pre">SW_IN</span></code> <code class="docutils literal notranslate"><span class="pre">LW_IN</span></code> <code class="docutils literal notranslate"><span class="pre">PA</span></code> <code class="docutils literal notranslate"><span class="pre">PPFD</span></code> <code class="docutils literal notranslate"><span class="pre">RH</span></code>, <code class="docutils literal notranslate"><span class="pre">VPD</span></code>, <code class="docutils literal notranslate"><span class="pre">SWC</span></code>, <code class="docutils literal notranslate"><span class="pre">TS</span></code>, <code class="docutils literal notranslate"><span class="pre">PRECIP</span></code></p></li>
 </ul>

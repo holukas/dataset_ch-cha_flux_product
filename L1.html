@@ -201,6 +201,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Instrumentation.html">Instrumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SI.html">Supplementary Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Known Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/README.html">Notebook overview</a></li>
@@ -406,8 +407,26 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#used-level-1-files">Used Level-1 files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irga">IRGA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qcl">QCL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2005</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2006</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2007</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2008</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2009</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2010</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2011</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2012</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2013</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2014</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2015</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2016</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">2017</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">2018</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">2019</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">2020</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">2021</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">2022</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">2023</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">2024</a></li>
 </ul>
 </li>
 </ul>
@@ -456,7 +475,7 @@ document.write(`
 </li>
 <li><p><strong>Raw File Description</strong>:</p>
 <ul>
-<li><p>Original raw data files were converted from an irregular compressed binary format to a regular ASCII format using <a class="reference external" href="https://github.com/holukas/bico">bico</a></p></li>
+<li><p>Original raw data files were converted from an <em>irregular</em> compressed binary format to a <em>regular</em> ASCII format using <a class="reference external" href="https://github.com/holukas/bico">bico</a></p></li>
 <li><p><strong>Field separator</strong>: Comma</p></li>
 <li><p><strong>Number of header rows</strong>: 3</p></li>
 <li><p>Columns were defined depending on the year or time period</p></li>
@@ -511,13 +530,18 @@ document.write(`
 <li><p>Detrend method: Block average</p></li>
 <li><p>Time lag compensation:</p>
 <ul>
-<li><p>IRGA: Covariance maximization with default (see Table EC1)</p></li>
-<li><p>QCL/LGR: Constant (see Table EC2)</p></li>
+<li><p>IRGA: Covariance maximization with default, very small time window with default lag, similar to ICOS (XXX REF).  (see Table [XXX])</p></li>
+<li><p>QCL/LGR: constant time lag, separate for each year or for time periods when the time lag changed (XXX REF) (see Table [XXX])</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>Compensate density fluctiations (WPL terms)</strong>: YES for open-path IRGA, NO for QCL/LGR</p></li>
+<li><p><strong>Compensate density fluctuations (WPL terms)</strong>:</p>
+<ul>
+<li><p>IRGA: YES because it is open-path</p></li>
+<li><p>QCL_LGR: NO because it is closed-path with an inlet tube and internally converts wet mole fraction to dry mole fraction, i.e., it directly records mixing ratios</p></li>
+</ul>
+</li>
 <li><p><strong>Add instrument sensible heat components for LI-7500</strong>: NO (see Note#1 below)</p></li>
 <li><p><strong>Quality check</strong>: Mauder and Foken (2004) (0-1-2 system) for Level-1 quality flags, later extended in post-processing</p></li>
 <li><p><strong>Footprint estimation</strong>: Kljun et al. (2004)</p></li>
@@ -525,7 +549,7 @@ document.write(`
 <li><p><strong>Random flux uncertainty</strong>: Finkelstein and Sims (2001, Definition of the ITS: Cross-correlation first corssing 1/e, Maximum correlation period: 10s)</p></li>
 <li><p><strong>Spectral Analysis</strong> and Corrections:</p>
 <ul>
-<li><p>TODO</p></li>
+<li><p><em>XXX TODO</em></p></li>
 </ul>
 </li>
 </ul>
@@ -533,86 +557,291 @@ document.write(`
 </section>
 <section id="used-level-1-files">
 <h2>Used Level-1 files<a class="headerlink" href="#used-level-1-files" title="Link to this heading">#</a></h2>
-<section id="irga">
-<h3>IRGA<a class="headerlink" href="#irga" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table" id="id1">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">Used Level-1 files IRGA (2005-2024).</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p>Used Level-1 files.</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>2005_1_IRGA_eddypro_CH-CHA_FR-20240730-112428_fluxnet_2024-07-30T182651_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2006_1_IRGA_eddypro_CH-CHA_FR-20240730-112420_fluxnet_2024-07-31T080813_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2007_1_IRGA_eddypro_CH-CHA_FR-20240730-112410_fluxnet_2024-07-31T064739_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2008_1_IRGA_eddypro_CH-CHA_FR-20240730-112401_fluxnet_2024-07-31T085214_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2009_1+3_eddypro_CH-CHA_FR-20240919-144235_fluxnet_2024-09-20T054007_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2009_2_eddypro_CH-CHA_FR-20240919-144503_fluxnet_2024-09-19T181458_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2010_1+3_IRGA_eddypro_CH-CHA_FR-20240728-190324_fluxnet_2024-07-29T140100_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2010_2_IRGA_eddypro_CH-CHA_FR-20240730-112352_fluxnet_2024-07-30T160648_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2011_1_IRGA_eddypro_CH-CHA_FR-20240728-190344_fluxnet_2024-07-29T153514_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2012_1_IRGA_eddypro_CH-CHA_FR-20240730-112342_fluxnet_2024-07-30T134628_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2012_2_IRGA_eddypro_CH-CHA_FR-20240728-190409_fluxnet_2024-07-29T165401_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2013_1_IRGA_eddypro_CH-CHA_FR-20240727-210036_fluxnet_2024-07-29T001913_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2014_1_IRGA_eddypro_CH-CHA_FR-20240727-210133_fluxnet_2024-07-29T001656_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2015_1_IRGA_eddypro_CH-CHA_FR-20240727-210058_fluxnet_2024-07-28T091257_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2015_2_IRGA_eddypro_CH-CHA_FR-20240727-210122_fluxnet_2024-07-28T151141_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2016_1+3_IRGA_eddypro_CH-CHA_FR-20240730-112331_fluxnet_2024-07-31T065812_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2016_2_IRGA_eddypro_CH-CHA_FR-20240730-112320_fluxnet_2024-07-30T165223_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2017_1+2+3_IRGA_eddypro_CH-CHA_FR-20240727-210107_fluxnet_2024-07-29T012549_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2018_1+2_IRGA_eddypro_CH-CHA_FR-20240727-210213_fluxnet_2024-07-28T230450_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2018_3_IRGA_eddypro_CH-CHA_FR-20240730-112310_fluxnet_2024-07-30T132817_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2018_4_IRGA_eddypro_CH-CHA_FR-20240730-112301_fluxnet_2024-07-30T144534_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2019_1+2+3+4+5_IRGA_eddypro_CH-CHA_FR-20240727-210200_fluxnet_2024-07-29T014548_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2020_1+2+3_IRGA_eddypro_CH-CHA_FR-20240727-210028_fluxnet_2024-07-28T094044_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2020_4_IRGA_eddypro_CH-CHA_FR-20240730-112251_fluxnet_2024-07-30T121132_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2020_5_IRGA_eddypro_CH-CHA_FR-20240727-210053_fluxnet_2024-07-28T161420_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2021_1_IRGA_eddypro_CH-CHA_FR-20240727-005940_fluxnet_2024-07-27T135432_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2021_2_IRGA_eddypro_CH-CHA_FR-20240727-010348_fluxnet_2024-07-27T120109_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2022_1+2_IRGA_eddypro_CH-CHA_FR-20240726-181747_fluxnet_2024-07-27T080504_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2022_3_IRGA_eddypro_CH-CHA_FR-20240726-181749_fluxnet_2024-07-27T051830_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2023_01+eddypro_CH-CHA_FR-20250303-102224_fluxnet_2025-03-04T015312_adv.csv</p></td>
-</tr>
-<tr class="row-even"><td><p>2023_02+eddypro_CH-CHA_FR-20250304-093959_fluxnet_2025-03-04T110501_adv.csv</p></td>
-</tr>
-<tr class="row-odd"><td><p>2024_IRGA_eddypro_CH-CHA_FR-20250124-134851_fluxnet_2025-01-25T080153_adv.csv</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><em>XXX TODO explain time periods etc.</em></p>
+<section id="id1">
+<h3>2005<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2005_1_IRGA_eddypro_CH-CHA_FR-20240730-112428_fluxnet_2024-07-30T182651_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL: n.a.</p></li>
+</ul>
 </section>
-<section id="qcl">
-<h3>QCL<a class="headerlink" href="#qcl" title="Link to this heading">#</a></h3>
-<p><em>soon</em></p>
+<section id="id2">
+<h3>2006<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2006_1_IRGA_eddypro_CH-CHA_FR-20240730-112420_fluxnet_2024-07-31T080813_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL: n.a.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>2007<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2007_1_IRGA_eddypro_CH-CHA_FR-20240730-112410_fluxnet_2024-07-31T064739_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL: n.a.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>2008<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2008_1_IRGA_eddypro_CH-CHA_FR-20240730-112401_fluxnet_2024-07-31T085214_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL: n.a.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>2009<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2009_1+3_eddypro_CH-CHA_FR-20240919-144235_fluxnet_2024-09-20T054007_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2009_2_eddypro_CH-CHA_FR-20240919-144503_fluxnet_2024-09-19T181458_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL: n.a.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>2010<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2010_1+3_IRGA_eddypro_CH-CHA_FR-20240728-190324_fluxnet_2024-07-29T140100_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2010_2_IRGA_eddypro_CH-CHA_FR-20240730-112352_fluxnet_2024-07-30T160648_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL: n.a.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>2011<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2011_1_IRGA_eddypro_CH-CHA_FR-20240728-190344_fluxnet_2024-07-29T153514_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL: n.a.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>2012<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012_1_IRGA_eddypro_CH-CHA_FR-20240730-112342_fluxnet_2024-07-30T134628_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012_2_IRGA_eddypro_CH-CHA_FR-20240728-190409_fluxnet_2024-07-29T165401_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><strong>Start of QCL measurements</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id9">
+<h3>2013<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2013_1_IRGA_eddypro_CH-CHA_FR-20240727-210036_fluxnet_2024-07-29T001913_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id10">
+<h3>2014<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2014_1_IRGA_eddypro_CH-CHA_FR-20240727-210133_fluxnet_2024-07-29T001656_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id11">
+<h3>2015<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2015_1_IRGA_eddypro_CH-CHA_FR-20240727-210058_fluxnet_2024-07-28T091257_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2015_2_IRGA_eddypro_CH-CHA_FR-20240727-210122_fluxnet_2024-07-28T151141_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id12">
+<h3>2016<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2016_1+3_IRGA_eddypro_CH-CHA_FR-20240730-112331_fluxnet_2024-07-31T065812_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2016_2_IRGA_eddypro_CH-CHA_FR-20240730-112320_fluxnet_2024-07-30T165223_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id13">
+<h3>2017<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2017_1+2+3_IRGA_eddypro_CH-CHA_FR-20240727-210107_fluxnet_2024-07-29T012549_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id14">
+<h3>2018<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2018_1+2_IRGA_eddypro_CH-CHA_FR-20240727-210213_fluxnet_2024-07-28T230450_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2018_3_IRGA_eddypro_CH-CHA_FR-20240730-112310_fluxnet_2024-07-30T132817_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2018_4_IRGA_eddypro_CH-CHA_FR-20240730-112301_fluxnet_2024-07-30T144534_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id15">
+<h3>2019<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2019_1+2+3+4+5_IRGA_eddypro_CH-CHA_FR-20240727-210200_fluxnet_2024-07-29T014548_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id16">
+<h3>2020<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2020_1+2+3_IRGA_eddypro_CH-CHA_FR-20240727-210028_fluxnet_2024-07-28T094044_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2020_4_IRGA_eddypro_CH-CHA_FR-20240730-112251_fluxnet_2024-07-30T121132_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2020_5_IRGA_eddypro_CH-CHA_FR-20240727-210053_fluxnet_2024-07-28T161420_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id17">
+<h3>2021<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2021_1_IRGA_eddypro_CH-CHA_FR-20240727-005940_fluxnet_2024-07-27T135432_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2021_2_IRGA_eddypro_CH-CHA_FR-20240727-010348_fluxnet_2024-07-27T120109_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id18">
+<h3>2022<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2022_1+2_IRGA_eddypro_CH-CHA_FR-20240726-181747_fluxnet_2024-07-27T080504_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2022_3_IRGA_eddypro_CH-CHA_FR-20240726-181749_fluxnet_2024-07-27T051830_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id19">
+<h3>2023<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2023_01+eddypro_CH-CHA_FR-20250303-102224_fluxnet_2025-03-04T015312_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2023_02+eddypro_CH-CHA_FR-20250304-093959_fluxnet_2025-03-04T110501_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id20">
+<h3>2024<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>IRGA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2024_IRGA_eddypro_CH-CHA_FR-20250124-134851_fluxnet_2025-01-25T080153_adv.csv</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+<li><p>QCL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XXX</span></code> (<a class="reference internal" href="#XXX"><span class="xref myst">settings</span></a> | <a class="reference internal" href="#XXX"><span class="xref myst">metadata</span></a>)</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 </section>
@@ -688,8 +917,26 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#used-level-1-files">Used Level-1 files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irga">IRGA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qcl">QCL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2005</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2006</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2007</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2008</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2009</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2010</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2011</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2012</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2013</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2014</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2015</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">2016</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">2017</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">2018</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">2019</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">2020</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">2021</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">2022</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">2023</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">2024</a></li>
 </ul>
 </li>
 </ul>
