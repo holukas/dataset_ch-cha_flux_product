@@ -24,6 +24,7 @@ This documentation details the processing steps from XXX
 - [Site info CH-CHA](https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/): general info about the research station
 - [Meteo Data](Meteo_Data): details about used meteo data and gap-filling
 - [Management Data](Management_Data): describes how management information was converted to a time series format
+- Flux Processing Chain: 
 - [Flux Calculations](FPC.md): lists background info about flux processing settings used in EddyPro
 - [Flux Post-processing](Flux_Post-processing): lists post-processing steps and their settings, including generation of quality flags, outlier removal and gap-filling
 - [Used Software](Used_Software): lists software (including links) used in the generation of this dataset
