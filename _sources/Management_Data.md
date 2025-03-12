@@ -12,6 +12,8 @@
 [CH-CHA-Management_2005-2024_20250107](https://github.com/holukas/dataset_ch-cha_flux_product/blob/main/dataset_ch-cha_flux_product/data/CH-CHA-Management_2005-2024_20250107.zip) (zipped XLSX file, 8MB)
 `````
 
+{download}`Download <data/CH-CHA-Management_2005-2024_20250107.zip>`
+
 Detailed management data are available in an Excel file. The file contains info between 2001 and 2024, whereby info for 2024 and some info for 2023 (e.g., C content of fertilizer) was not available yet. 
 
 ## Unique events
