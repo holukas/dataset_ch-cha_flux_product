@@ -407,7 +407,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
 </ul>
             </nav>
         </div>
@@ -424,45 +424,63 @@ document.write(`
 <ul class="simple">
 <li><p>Flux processing follows the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/">Swiss Fluxnet Flux Processing Chain</a></p></li>
 </ul>
-<section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<section id="flowchart">
+<h2>Flowchart<a class="headerlink" href="#flowchart" title="Link to this heading">#</a></h2>
 <pre  class="mermaid">
         flowchart
 	ecbin[EC binary raw data]
     eccsv[EC ASCII raw data]
-    bico[bico]
     met[meteo data]
-    EP[fluxrun/EddyPro]
     L0F[L0 fluxes]
     L1F[L1 fluxes]
-	L2QCF[L2 quality flags]
-	L31F[L3.1 fluxes]
-	L31Ffiltered[L3.1 fluxes filtered]
-	L32QCF[L3.2 quality flags]
-	L33QCF[L3.3 quality flags]
-	QCF[overall quality flag QCF]
-	L31QCF[L3.1 fluxes filtered with QCF]
-	L41F[L4.1 gap-filled fluxes]
 	L42F[L4.2 partitioned fluxes]
-	
+    bico[bico]
+    EP[fluxrun/EddyPro]
+
+    %% ---------------- diive
+    subgraph diive_scripts
+    	diive[diive]
+        L2QCF[L2 quality flags]
+        L32QCF[L3.2 quality flags]
+        L33QCF[L3.3 quality flags]
+        QCF[overall quality flag QCF]
+        L31F[L3.1 fluxes]
+        L31QCF[L3.1 fluxes filtered]        
+	    L31Ffiltered[L3.1 fluxes filtered]
+        L41F[L4.1 gap-filled fluxes]
+    end
+    
+
 	ecbin --&gt; bico --&gt; eccsv --&gt; EP
     EP --&gt; L0F -- informs --&gt; L1F
     met -- informs --&gt; L1F
-    L1F --&gt; L2QCF
+    
+    L1F --&gt; diive    
+    diive --&gt; L2QCF
+    diive --&gt; L31F
+    diive --&gt; L33QCF
 	L2QCF --&gt; L31Ffiltered
-	L1F --&gt; L31F
-	L31F --&gt; L31Ffiltered
-	L31Ffiltered --&gt; L32QCF
-	L1F --&gt; L33QCF
-	
-	L2QCF --&gt; QCF
-	L32QCF --&gt; QCF
-	L33QCF --&gt; QCF
-	
-	QCF -- applied to storage-corrected fluxes --&gt; L31QCF
-	L31QCF -- gap-filling --&gt; L41F
-	
-	L41F -- partitioning (NEE) --&gt; L42F
+    L2QCF --&gt; QCF
+    L32QCF --&gt; QCF
+    L33QCF --&gt; QCF
+    QCF --&gt; L31QCF
+    L31F --&gt; L31QCF        
+    L31QCF -- gap-filling --&gt; L41F
+    L31F --&gt; L31Ffiltered
+    L31Ffiltered --&gt; L32QCF
+    L41F -- partitioning (NEE) --&gt; L42F
+
+    classDef orange fill:#FFE0B2,stroke:#E65100,stroke_width:4px,color:#E65100
+    class L2QCF,L32QCF,L33QCF,QCF orange
+
+    classDef green fill:#DCEDC8,stroke:#33691E,stroke_width:4px,color:#33691E
+    class L0F,L1F,L31F,L31Ffiltered,L31QCF,L41F,L42F green
+
+    classDef blue fill:#E1F5FE,stroke:#01579B,stroke_width:4px,color:#01579B
+    class bico,EP,diive blue
+
+    classDef white fill:#FFFFFF,stroke:#000000,stroke_width:4px,color:#000000
+    class diive_scripts white
 
     </pre><ul class="simple">
 <li><p><strong>Raw data EC</strong></p></li>
@@ -544,7 +562,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
 </ul>
   </nav></div>
 
