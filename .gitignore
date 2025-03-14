@@ -14,6 +14,7 @@
 /dataset_ch-cha_flux_product/notebooks/60_MERGE_DATA_FLUXES/*.zip
 /dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/tests
 /dataset_ch-cha_flux_product/_build
+/_raw
 /_presentations
 *.parquet
 *.pptx
