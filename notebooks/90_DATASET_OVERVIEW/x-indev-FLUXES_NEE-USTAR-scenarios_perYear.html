@@ -57,7 +57,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/90_DATASET_OVERVIEW/METEO_TA';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/90_DATASET_OVERVIEW/x-indev-FLUXES_NEE-USTAR-scenarios_perYear';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -275,7 +275,7 @@
       
       
       
-      <li><a href="https://github.com/holukas/dataset_ch-cha_flux_product/issues/new?title=Issue%20on%20page%20%2Fnotebooks/90_DATASET_OVERVIEW/METEO_TA.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/holukas/dataset_ch-cha_flux_product/issues/new?title=Issue%20on%20page%20%2Fnotebooks/90_DATASET_OVERVIEW/x-indev-FLUXES_NEE-USTAR-scenarios_perYear.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="../../_sources/notebooks/90_DATASET_OVERVIEW/METEO_TA.ipynb" target="_blank"
+      <li><a href="../../_sources/notebooks/90_DATASET_OVERVIEW/x-indev-FLUXES_NEE-USTAR-scenarios_perYear.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -400,14 +400,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Imports</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load data</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-air-temperature-variables"><strong>List of air temperature variables</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#air-temperature"><strong>Air temperature</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmaps-half-hourly">Heatmaps (half-hourly)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmaps-monthly">Heatmaps (monthly)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#averages-up-to-respective-doy">Averages up to respective DOY</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-below-0c">Number of days below 0°C</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-above-30c">Number of days above 30°C</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load data</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulatives-per-year">Cumulatives per year</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook"><strong>End of notebook</strong></a></li>
@@ -425,7 +419,7 @@ document.write(`
                   
   <span style='font-size:40px; display:block;'>
 <b>
-    TA
+    Cumulative NEE per year vs. USTAR scenarios
 </b>
 </span><p><strong>Author</strong>: Lukas Hörtnagl (<a class="reference external" href="mailto:holukas&#37;&#52;&#48;ethz&#46;ch">holukas<span>&#64;</span>ethz<span>&#46;</span>ch</a>)</p>
 <section class="tex2jax_ignore mathjax_ignore" id="imports">
@@ -469,7 +463,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\60_MERGE_DATA_FLUXES\61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet (0.837 seconds).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\60_MERGE_DATA_FLUXES\61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet (6.086 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
 </pre></div>
 </div>
@@ -938,178 +932,11 @@ document.write(`
 <p>350640 rows × 784 columns</p>
 </div></div></div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="list-of-air-temperature-variables">
-<h1><strong>List of air temperature variables</strong><a class="headerlink" href="#list-of-air-temperature-variables" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fluxlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;TA&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">];</span>
-<span class="n">fluxlist</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;AXES_ROTATION_METHOD&#39;,
- &#39;CUSTOM_DATA_SIZE_IRGA75_MEAN&#39;,
- &#39;CUSTOM_DATA_SIZE_LGR_MEAN&#39;,
- &#39;CUSTOM_DATA_SIZE_QCL_MEAN&#39;,
- &#39;CUSTOM_STATUS_CODE_IRGA75_MEAN&#39;,
- &#39;CUSTOM_STATUS_CODE_LGR_MEAN&#39;,
- &#39;CUSTOM_STATUS_CODE_QCL_MEAN&#39;,
- &#39;CUSTOM_STATUS_QCL_MEAN&#39;,
- &#39;CUSTOM_STATUS_WORD_QCL_MEAN&#39;,
- &#39;DENTRENDING_TIME_CONSTANT&#39;,
- &#39;DOY_START&#39;,
- &#39;ET_STAGE1&#39;,
- &#39;ET_STAGE2&#39;,
- &#39;FCH4_STAGE1&#39;,
- &#39;FCH4_STAGE2&#39;,
- &#39;FC_STAGE1&#39;,
- &#39;FC_STAGE2&#39;,
- &#39;FH2O_STAGE1&#39;,
- &#39;FH2O_STAGE2&#39;,
- &#39;FLAG_TA_T1_2_1_ISFILLED&#39;,
- &#39;FN2O_STAGE1&#39;,
- &#39;FN2O_STAGE2&#39;,
- &#39;H_STAGE1&#39;,
- &#39;H_STAGE2&#39;,
- &#39;LE_STAGE1&#39;,
- &#39;LE_STAGE2&#39;,
- &#39;TAU&#39;,
- &#39;TAU_CORRDIFF&#39;,
- &#39;TAU_NR&#39;,
- &#39;TAU_NSR&#39;,
- &#39;TAU_RANDUNC_HF&#39;,
- &#39;TAU_SCF&#39;,
- &#39;TAU_SS&#39;,
- &#39;TAU_SSITC_TEST&#39;,
- &#39;TAU_SS_TEST&#39;,
- &#39;TAU_STAGE1&#39;,
- &#39;TAU_STAGE2&#39;,
- &#39;TAU_UNCORR&#39;,
- &#39;TA_EP&#39;,
- &#39;TA_T1_2_1&#39;,
- &#39;TIMESTAMP_START&#39;,
- &#39;TSTAR&#39;,
- &#39;USTAR&#39;,
- &#39;USTAR_UNCORR&#39;,
- &#39;FLAG_L3.3_CUT_16_NEE_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_50_NEE_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_84_NEE_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_NONE_LE_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_NONE_H_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_16_FN2O_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_50_FN2O_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_84_FN2O_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_16_FCH4_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_50_FCH4_L3.1_USTAR_TEST&#39;,
- &#39;FLAG_L3.3_CUT_84_FCH4_L3.1_USTAR_TEST&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="air-temperature">
-<h1><strong>Air temperature</strong><a class="headerlink" href="#air-temperature" title="Link to this heading">#</a></h1>
-<section id="heatmaps-half-hourly">
-<h2>Heatmaps (half-hourly)<a class="headerlink" href="#heatmaps-half-hourly" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
-<span class="n">HeatmapDateTime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">,</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/622175b1fea4945acf01d95dc784a378fe55b46d127ade5546bf9d1878bcdaea.png" src="../../_images/622175b1fea4945acf01d95dc784a378fe55b46d127ade5546bf9d1878bcdaea.png" />
-</div>
-</div>
-</section>
-<section id="heatmaps-monthly">
-<h2>Heatmaps (monthly)<a class="headerlink" href="#heatmaps-monthly" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Per month&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
-
-
-<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>        
-<span class="n">HeatmapYearMonth</span><span class="p">(</span><span class="n">series_monthly</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;monthly mean&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;monthly mean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>        
-<span class="n">HeatmapYearMonth</span><span class="p">(</span><span class="n">series_monthly</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;monthly minimum&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;monthly minimum&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>        
-<span class="n">HeatmapYearMonth</span><span class="p">(</span><span class="n">series_monthly</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;monthly maximum&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;monthly maximum&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TA_T1_2_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>      
-<span class="n">HeatmapYearMonth</span><span class="p">(</span><span class="n">series_monthly</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;monthly range&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;monthly range&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-
-<span class="c1"># axs[0].axes.get_yaxis().get_label().set_visible(False)</span>
-<span class="c1"># hide_labels = [1, 2, 3, 4]</span>
-<span class="c1"># for h in hide_labels:</span>
-<span class="c1">#     axs[h].axes.get_yaxis().get_label().set_visible(False)</span>
-<span class="c1">#     plt.setp(axs[h].get_yticklabels(), visible=False)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/64500c167a94fa2e8b251cec7afffe15f4c932ff90b0928252249d52e13ff605.png" src="../../_images/64500c167a94fa2e8b251cec7afffe15f4c932ff90b0928252249d52e13ff605.png" />
-</div>
-</div>
-</section>
-<section id="averages-up-to-respective-doy">
-<h2>Averages up to respective DOY<a class="headerlink" href="#averages-up-to-respective-doy" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ta</span> <span class="o">=</span> <span class="s2">&quot;TA_T1_2_1&quot;</span>
-<span class="n">plotdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">ta</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">plotdf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">plotdf</span><span class="p">[</span><span class="s1">&#39;DOY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span>
-<span class="n">plotdf</span><span class="p">[</span><span class="s1">&#39;DOY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">plotdf</span><span class="p">[</span><span class="s1">&#39;DOY&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofyear</span>
-
-<span class="n">allyears</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">locs</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span>
-    <span class="n">yeardf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="p">[</span><span class="n">locs</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">yeardf</span><span class="p">[</span><span class="s1">&#39;CUMSUM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">yeardf</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>  
-    <span class="n">yeardf</span><span class="p">[</span><span class="s1">&#39;avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">yeardf</span><span class="p">[</span><span class="s1">&#39;CUMSUM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">yeardf</span><span class="p">[</span><span class="s1">&#39;DOY&#39;</span><span class="p">])</span>
-    <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">allyears</span> <span class="o">=</span> <span class="n">yeardf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">allyears</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">allyears</span><span class="p">,</span> <span class="n">yeardf</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Average TA up to respective DOY&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-
-<span class="n">grouped</span> <span class="o">=</span> <span class="n">allyears</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">allyears</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">groupdf</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
-    <span class="n">yearlyavg</span> <span class="o">=</span> <span class="n">groupdf</span><span class="p">[</span><span class="s2">&quot;avg&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">groupdf</span><span class="p">[</span><span class="s2">&quot;DOY&quot;</span><span class="p">],</span> <span class="n">groupdf</span><span class="p">[</span><span class="s2">&quot;avg&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ix</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">yearlyavg</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °C&quot;</span><span class="p">)</span>
-    <span class="c1"># groupdf.plot()</span>
-    <span class="c1"># print(groupdf)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/e7dbfa7efd18491d34f8693612337bc991ea8720720820ef6dbe9290d90c651e.png" src="../../_images/e7dbfa7efd18491d34f8693612337bc991ea8720720820ef6dbe9290d90c651e.png" />
-</div>
-</div>
-</section>
-<section id="number-of-days-below-0c">
-<h2>Number of days below 0°C<a class="headerlink" href="#number-of-days-below-0c" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ta</span> <span class="o">=</span> <span class="s2">&quot;TA_T1_2_1&quot;</span>
-<span class="n">plotdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">ta</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">plotdf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">belowzero</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">plotdf</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">belowzero</span> <span class="o">=</span> <span class="n">belowzero</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">belowzero</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">belowzero</span><span class="p">[</span><span class="s2">&quot;YEAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">belowzero</span><span class="o">.</span><span class="n">index</span>
-<span class="n">belowzero</span>
-<span class="n">belowzero</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of days with TA &lt; 0°&quot;</span><span class="p">);</span>
-<span class="n">display</span><span class="p">(</span><span class="n">belowzero</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average per year: </span><span class="si">{</span><span class="n">belowzero</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">belowzero</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> SD&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NEE_L3.1_L3.3_CUT_16_QCF_gfRF&#39;</span><span class="p">,</span> <span class="s1">&#39;NEE_L3.1_L3.3_CUT_50_QCF_gfRF&#39;</span><span class="p">,</span> <span class="s1">&#39;NEE_L3.1_L3.3_CUT_84_QCF_gfRF&#39;</span><span class="p">]</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">subset</span>
 </pre></div>
 </div>
 </div>
@@ -1132,276 +959,417 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>TA_T1_2_1</th>
-      <th>YEAR</th>
+      <th>NEE_L3.1_L3.3_CUT_16_QCF_gfRF</th>
+      <th>NEE_L3.1_L3.3_CUT_50_QCF_gfRF</th>
+      <th>NEE_L3.1_L3.3_CUT_84_QCF_gfRF</th>
     </tr>
     <tr>
       <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2005</th>
-      <td>94</td>
-      <td>2005</td>
+      <th>2005-01-01 00:15:00</th>
+      <td>1.237837</td>
+      <td>0.911990</td>
+      <td>0.641069</td>
     </tr>
     <tr>
-      <th>2006</th>
-      <td>107</td>
-      <td>2006</td>
+      <th>2005-01-01 00:45:00</th>
+      <td>1.223967</td>
+      <td>0.910926</td>
+      <td>0.642671</td>
     </tr>
     <tr>
-      <th>2007</th>
-      <td>100</td>
-      <td>2007</td>
+      <th>2005-01-01 01:15:00</th>
+      <td>1.630407</td>
+      <td>1.667542</td>
+      <td>1.284791</td>
     </tr>
     <tr>
-      <th>2008</th>
-      <td>112</td>
-      <td>2008</td>
+      <th>2005-01-01 01:45:00</th>
+      <td>1.523451</td>
+      <td>1.639653</td>
+      <td>1.286028</td>
     </tr>
     <tr>
-      <th>2009</th>
-      <td>107</td>
-      <td>2009</td>
+      <th>2005-01-01 02:15:00</th>
+      <td>1.608524</td>
+      <td>1.660211</td>
+      <td>1.338450</td>
     </tr>
     <tr>
-      <th>2010</th>
-      <td>118</td>
-      <td>2010</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>2011</th>
-      <td>98</td>
-      <td>2011</td>
+      <th>2024-12-31 21:45:00</th>
+      <td>1.164181</td>
+      <td>1.160720</td>
+      <td>1.210497</td>
     </tr>
     <tr>
-      <th>2012</th>
-      <td>100</td>
-      <td>2012</td>
+      <th>2024-12-31 22:15:00</th>
+      <td>1.129005</td>
+      <td>1.131454</td>
+      <td>1.198036</td>
     </tr>
     <tr>
-      <th>2013</th>
-      <td>113</td>
-      <td>2013</td>
+      <th>2024-12-31 22:45:00</th>
+      <td>1.046967</td>
+      <td>1.046967</td>
+      <td>1.046967</td>
     </tr>
     <tr>
-      <th>2014</th>
-      <td>78</td>
-      <td>2014</td>
+      <th>2024-12-31 23:15:00</th>
+      <td>1.372674</td>
+      <td>1.372674</td>
+      <td>1.372674</td>
     </tr>
     <tr>
-      <th>2015</th>
-      <td>97</td>
-      <td>2015</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>96</td>
-      <td>2016</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>102</td>
-      <td>2017</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>81</td>
-      <td>2018</td>
-    </tr>
-    <tr>
-      <th>2019</th>
-      <td>96</td>
-      <td>2019</td>
-    </tr>
-    <tr>
-      <th>2020</th>
-      <td>88</td>
-      <td>2020</td>
-    </tr>
-    <tr>
-      <th>2021</th>
-      <td>104</td>
-      <td>2021</td>
-    </tr>
-    <tr>
-      <th>2022</th>
-      <td>91</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>2023</th>
-      <td>91</td>
-      <td>2023</td>
-    </tr>
-    <tr>
-      <th>2024</th>
-      <td>85</td>
-      <td>2024</td>
+      <th>2024-12-31 23:45:00</th>
+      <td>1.035859</td>
+      <td>1.126110</td>
+      <td>1.145695</td>
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average per year: 97.9 +/- 10.57 SD
-</pre></div>
+<p>350640 rows × 3 columns</p>
+</div></div></div>
 </div>
-<img alt="../../_images/bca3287dd0b2f68775eeef07fe5f0281e2a2252493acf3c581cbebbf2db6328d.png" src="../../_images/bca3287dd0b2f68775eeef07fe5f0281e2a2252493acf3c581cbebbf2db6328d.png" />
-</div>
-</div>
-</section>
-<section id="number-of-days-above-30c">
-<h2>Number of days above 30°C<a class="headerlink" href="#number-of-days-above-30c" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ta</span> <span class="o">=</span> <span class="s2">&quot;TA_T1_2_1&quot;</span>
-<span class="n">plotdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">ta</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">plotdf</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">above</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">plotdf</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">above</span> <span class="o">=</span> <span class="n">above</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">above</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">above</span><span class="p">[</span><span class="s2">&quot;YEAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">above</span><span class="o">.</span><span class="n">index</span>
-<span class="n">above</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of days with TA &gt; 30°&quot;</span><span class="p">);</span>
-<span class="n">display</span><span class="p">(</span><span class="n">above</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average per year: </span><span class="si">{</span><span class="n">above</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">above</span><span class="p">[</span><span class="n">ta</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> SD&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uniq_years</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">uniq_years</span> <span class="o">=</span> <span class="n">uniq_years</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">uniq_years</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>TA_T1_2_1</th>
-      <th>YEAR</th>
-    </tr>
-    <tr>
-      <th>TIMESTAMP_MIDDLE</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2005</th>
-      <td>8</td>
-      <td>2005</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>17</td>
-      <td>2006</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>9</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>12</td>
-      <td>2008</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>18</td>
-      <td>2009</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>14</td>
-      <td>2010</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>10</td>
-      <td>2011</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>13</td>
-      <td>2012</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>14</td>
-      <td>2013</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>8</td>
-      <td>2014</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>30</td>
-      <td>2015</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>11</td>
-      <td>2016</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>28</td>
-      <td>2017</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>26</td>
-      <td>2018</td>
-    </tr>
-    <tr>
-      <th>2019</th>
-      <td>21</td>
-      <td>2019</td>
-    </tr>
-    <tr>
-      <th>2020</th>
-      <td>15</td>
-      <td>2020</td>
-    </tr>
-    <tr>
-      <th>2021</th>
-      <td>9</td>
-      <td>2021</td>
-    </tr>
-    <tr>
-      <th>2022</th>
-      <td>22</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>2023</th>
-      <td>24</td>
-      <td>2023</td>
-    </tr>
-    <tr>
-      <th>2024</th>
-      <td>20</td>
-      <td>2024</td>
-    </tr>
-  </tbody>
-</table>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average per year: 16.45 +/- 6.89 SD
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2005,
+ 2006,
+ 2007,
+ 2008,
+ 2009,
+ 2010,
+ 2011,
+ 2012,
+ 2013,
+ 2014,
+ 2015,
+ 2016,
+ 2017,
+ 2018,
+ 2019,
+ 2020,
+ 2021,
+ 2022,
+ 2023,
+ 2024]
 </pre></div>
 </div>
-<img alt="../../_images/0bcbc5c65547b7b905d77a1437f49c8ba0c3fc07274cc92d1fba68780457e286.png" src="../../_images/0bcbc5c65547b7b905d77a1437f49c8ba0c3fc07274cc92d1fba68780457e286.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">uniq_years</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">yr</span> <span class="ow">in</span> <span class="n">uniq_years</span><span class="p">:</span>
+    <span class="n">locs</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">yr</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="n">locs</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">cumsum</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>    
+        <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="n">yr</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">cumsum</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span> <span class="n">cumsum</span><span class="p">)</span>
+        <span class="c1"># print(res.loc[res.index == yr, c])</span>
+<span class="c1"># res</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2005 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -13318.286514
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13079.440617
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -10286.446338
+dtype: float64
+2005 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -13318.286514
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13079.440617
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -10286.446338
+dtype: float64
+2005 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -13318.286514
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13079.440617
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -10286.446338
+dtype: float64
+2006 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8494.997279
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -5778.661138
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8786.703087
+dtype: float64
+2006 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8494.997279
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -5778.661138
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8786.703087
+dtype: float64
+2006 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8494.997279
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -5778.661138
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8786.703087
+dtype: float64
+2007 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -10464.889238
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -10893.547256
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -13641.344905
+dtype: float64
+2007 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -10464.889238
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -10893.547256
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -13641.344905
+dtype: float64
+2007 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -10464.889238
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -10893.547256
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -13641.344905
+dtype: float64
+2008 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -11729.780882
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    -6780.414338
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -10693.427657
+dtype: float64
+2008 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -11729.780882
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    -6780.414338
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -10693.427657
+dtype: float64
+2008 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -11729.780882
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    -6780.414338
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -10693.427657
+dtype: float64
+2009 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -11183.160850
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13259.108137
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -12427.470417
+dtype: float64
+2009 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -11183.160850
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13259.108137
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -12427.470417
+dtype: float64
+2009 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -11183.160850
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13259.108137
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -12427.470417
+dtype: float64
+2010 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8000.794562
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -6802.098474
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8758.101752
+dtype: float64
+2010 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8000.794562
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -6802.098474
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8758.101752
+dtype: float64
+2010 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8000.794562
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -6802.098474
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8758.101752
+dtype: float64
+2011 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -10709.308991
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    -7397.324195
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF    -9679.403099
+dtype: float64
+2011 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -10709.308991
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    -7397.324195
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF    -9679.403099
+dtype: float64
+2011 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -10709.308991
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    -7397.324195
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF    -9679.403099
+dtype: float64
+2012 NEE_L3.1_L3.3_CUT_16_QCF_gfRF    5580.647302
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    6421.169223
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF    5566.712251
+dtype: float64
+2012 NEE_L3.1_L3.3_CUT_16_QCF_gfRF    5580.647302
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    6421.169223
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF    5566.712251
+dtype: float64
+2012 NEE_L3.1_L3.3_CUT_16_QCF_gfRF    5580.647302
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF    6421.169223
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF    5566.712251
+dtype: float64
+2013 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -21206.413037
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -21589.604260
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -16464.478362
+dtype: float64
+2013 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -21206.413037
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -21589.604260
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -16464.478362
+dtype: float64
+2013 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -21206.413037
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -21589.604260
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -16464.478362
+dtype: float64
+2014 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -20466.086697
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -23280.737533
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -20531.016953
+dtype: float64
+2014 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -20466.086697
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -23280.737533
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -20531.016953
+dtype: float64
+2014 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -20466.086697
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -23280.737533
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -20531.016953
+dtype: float64
+2015 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -22065.559487
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22008.109590
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -17361.452229
+dtype: float64
+2015 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -22065.559487
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22008.109590
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -17361.452229
+dtype: float64
+2015 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -22065.559487
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22008.109590
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -17361.452229
+dtype: float64
+2016 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -23845.641068
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22271.174437
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -23604.153589
+dtype: float64
+2016 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -23845.641068
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22271.174437
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -23604.153589
+dtype: float64
+2016 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -23845.641068
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22271.174437
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -23604.153589
+dtype: float64
+2017 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -13238.832664
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -11737.837406
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -13264.499730
+dtype: float64
+2017 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -13238.832664
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -11737.837406
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -13264.499730
+dtype: float64
+2017 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -13238.832664
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -11737.837406
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -13264.499730
+dtype: float64
+2018 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -3657.868837
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -2133.535522
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -1110.213459
+dtype: float64
+2018 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -3657.868837
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -2133.535522
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -1110.213459
+dtype: float64
+2018 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -3657.868837
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -2133.535522
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -1110.213459
+dtype: float64
+2019 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -6428.477931
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -5654.891662
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -4891.520287
+dtype: float64
+2019 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -6428.477931
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -5654.891662
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -4891.520287
+dtype: float64
+2019 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -6428.477931
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -5654.891662
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -4891.520287
+dtype: float64
+2020 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -12370.045811
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -11508.103365
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -11179.588474
+dtype: float64
+2020 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -12370.045811
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -11508.103365
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -11179.588474
+dtype: float64
+2020 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -12370.045811
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -11508.103365
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -11179.588474
+dtype: float64
+2021 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8310.721891
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -7549.415727
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8116.090134
+dtype: float64
+2021 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8310.721891
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -7549.415727
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8116.090134
+dtype: float64
+2021 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -8310.721891
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -7549.415727
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -8116.090134
+dtype: float64
+2022 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -21112.060968
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22246.634851
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -19109.506978
+dtype: float64
+2022 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -21112.060968
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22246.634851
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -19109.506978
+dtype: float64
+2022 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -21112.060968
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -22246.634851
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -19109.506978
+dtype: float64
+2023 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -20559.265623
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -18898.675758
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -17700.206116
+dtype: float64
+2023 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -20559.265623
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -18898.675758
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -17700.206116
+dtype: float64
+2023 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -20559.265623
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -18898.675758
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -17700.206116
+dtype: float64
+2024 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -14381.079237
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13796.040885
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -11573.101521
+dtype: float64
+2024 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -14381.079237
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13796.040885
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -11573.101521
+dtype: float64
+2024 NEE_L3.1_L3.3_CUT_16_QCF_gfRF   -14381.079237
+NEE_L3.1_L3.3_CUT_50_QCF_gfRF   -13796.040885
+NEE_L3.1_L3.3_CUT_84_QCF_gfRF   -11573.101521
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cumulatives-per-year">
+<h2>Cumulatives per year<a class="headerlink" href="#cumulatives-per-year" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conversion factors and resulting units</span>
+<span class="n">conversions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;NEE_L3.1_L3.3_CUT_50_QCF_gfRF&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.02161926</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;($\mathrm{gC\ m^{-2}}$)&#39;</span><span class="p">],</span>  <span class="c1"># umol CO2 m-2 s-1 --&gt; gC m-2 yr-1</span>
+    <span class="s1">&#39;LE_L3.1_L3.3_CUT_NONE_QCF_gfRF&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1800</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;($\mathrm{W\ m^{-2}}$)&#39;</span><span class="p">],</span>  <span class="c1"># W m-2 s-1 --&gt; W m-2 yr-1</span>
+    <span class="s1">&#39;H_L3.1_L3.3_CUT_NONE_QCF_gfRF&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1800</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;($\mathrm{W\ m^{-2}}$)&#39;</span><span class="p">],</span>  <span class="c1"># W m-2 s-1 --&gt; W m-2 yr-1</span>
+    <span class="s1">&#39;FN2O_L3.1_L3.3_CUT_50_QCF_gfRF&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0002521206</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;($\mathrm{kg\ N_2O-N\ ha^{-1}}$)&#39;</span><span class="p">],</span>  <span class="c1"># nmol N2O m-2 s-1 --&gt; kg N2O-N ha-1 yr-1</span>
+    <span class="s1">&#39;FCH4_L3.1_L3.3_CUT_50_QCF_gfRF&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.000216198</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;($\mathrm{kg\ CH_4-C\ ha^{-1}}$)&#39;</span><span class="p">]</span>  <span class="c1"># nmol CH4 m-2 s-1 --&gt; kg CH4-C ha-1 yr-1</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fluxes</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">conversions</span><span class="p">[</span><span class="n">f</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">units</span> <span class="o">=</span> <span class="n">conversions</span><span class="p">[</span><span class="n">f</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">CumulativeYear</span><span class="p">(</span>
+        <span class="n">series</span><span class="o">=</span><span class="n">s</span><span class="p">,</span>
+        <span class="n">series_units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span>
+        <span class="n">start_year</span><span class="o">=</span><span class="mi">2005</span><span class="p">,</span>
+        <span class="n">end_year</span><span class="o">=</span><span class="mi">2024</span><span class="p">,</span>
+        <span class="n">show_reference</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">excl_years_from_reference</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">highlight_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">highlight_year_color</span><span class="o">=</span><span class="s1">&#39;#F44336&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/98c9a8f23886ade28c889b10cb34973b6ebf93696b62f5f0fa44bc86dc03fc29.png" src="../../_images/98c9a8f23886ade28c889b10cb34973b6ebf93696b62f5f0fa44bc86dc03fc29.png" />
+<img alt="../../_images/37f9ad264c8c40adce050221f83544468a1ba47f75d5b0e5af8748ebb18e1559.png" src="../../_images/37f9ad264c8c40adce050221f83544468a1ba47f75d5b0e5af8748ebb18e1559.png" />
+<img alt="../../_images/ba41ce7d16d2ec1442bd010606cb0c3d378cc28729c381ec2f06caa9e841e0bb.png" src="../../_images/ba41ce7d16d2ec1442bd010606cb0c3d378cc28729c381ec2f06caa9e841e0bb.png" />
+<img alt="../../_images/994ac53a083867508d3e428ac5c943a0df22f9573474828d754d15d5cb1d53cc.png" src="../../_images/994ac53a083867508d3e428ac5c943a0df22f9573474828d754d15d5cb1d53cc.png" />
+<img alt="../../_images/f329647ad92d359ed65876b83683985f6a44de3589a9fb12286b44198420d3ac.png" src="../../_images/f329647ad92d359ed65876b83683985f6a44de3589a9fb12286b44198420d3ac.png" />
 </div>
 </div>
 </section>
@@ -1416,7 +1384,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-03-14 15:13:16
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-03-14 15:11:47
 </pre></div>
 </div>
 </div>
@@ -1470,14 +1438,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Imports</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load data</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-air-temperature-variables"><strong>List of air temperature variables</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#air-temperature"><strong>Air temperature</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmaps-half-hourly">Heatmaps (half-hourly)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmaps-monthly">Heatmaps (monthly)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#averages-up-to-respective-doy">Averages up to respective DOY</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-below-0c">Number of days below 0°C</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-above-30c">Number of days above 30°C</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load data</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulatives-per-year">Cumulatives per year</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook"><strong>End of notebook</strong></a></li>

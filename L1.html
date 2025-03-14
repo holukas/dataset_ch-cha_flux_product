@@ -402,7 +402,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eddypro-settings">EddyPro settings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-creation">Project creation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-settings">Basic settings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-settings">Advanced settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-settings">Advanced settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-options">Processing options</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analyses">Statistical analyses</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis-and-corrections">Spectral Analysis and Corrections:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output files</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#used-level-1-files">Used Level-1 files</a><ul class="nav section-nav flex-column">
@@ -427,10 +433,13 @@ document.write(`
 <p class="admonition-title">Info</p>
 <p>Level-1 are the final flux calculations. Results from Level-1 are used in all subsequent processing steps.</p>
 </div>
-<p><a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (using EddyPro v7.0.9) was used for all flux calculations.</p>
 <div class="note admonition">
 <p class="admonition-title">Download EddyPro settings and metadata files</p>
 <p>All used EddyPro processing settings can be downloaded directly from the repository <a class="reference external" href="https://github.com/holukas/dataset_ch-cha_flux_product/tree/main/dataset_ch-cha_flux_product/data/EddyPro_settings">here</a>.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">fluxrun</p>
+<p><a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (using EddyPro v7.0.9) was used for all flux calculations.</p>
 </div>
 <section id="eddypro-settings">
 <h2>EddyPro settings<a class="headerlink" href="#eddypro-settings" title="Link to this heading">#</a></h2>
@@ -453,10 +462,12 @@ document.write(`
 <li><p><strong>Longitude</strong>: 008° 24’ 38.300’’ E</p></li>
 <li><p><strong>Example for instrument settings from 2022</strong>:</p>
 <ul>
+<li><p>Note that settings are different for some periods, but the settings listed here are representative examples used during flux processing.</p></li>
 <li><p><strong>Anemometer</strong>: Gill R3-50, Height: 2.41 m, Wind data format: U, V &amp; W, North alignment: Axis, North off-set: 7.0°</p></li>
 <li><p><strong>Gas Analyzers</strong>:</p>
 <ul>
 <li><p><strong>LI-7500 IRGA</strong>: Northward separation: 4.00 cm, Eastward separation: 35.00 cm, Vertical separation: -1.00 cm</p></li>
+<li><p><strong>QCL</strong> (Aerodyne): Northward separation: 3 cm, Eastward separation: 0 cm, Vertical separation: -18.00 cm, Tube length: 857 cm, Tube inner diameter: 4.0 mm, Nominal tube flow rate: 8.0 l/m, Longitudinal path length: 32.00 cm, Transversal path length: 4.1500 cm, Time response: 0.1308 s</p></li>
 <li><p><strong>LGR</strong> (Los Gatos Laser, Generic Closed Path): Northward separation: 0 cm, Eastward separation: -5.00 cm, Vertical separation: -18.00 cm, Tube length: 954 cm, Tube inner diameter: 10.0 mm, Nominal tube flow rate: 8.0 l/m, Longitudinal path length: 28.00 cm, Transversal path length: 4.4450 cm, Time response: 0.1 s</p></li>
 </ul>
 </li>
@@ -511,37 +522,74 @@ document.write(`
 </section>
 <section id="advanced-settings">
 <h3>Advanced settings<a class="headerlink" href="#advanced-settings" title="Link to this heading">#</a></h3>
+<section id="processing-options">
+<h4>Processing options<a class="headerlink" href="#processing-options" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Angle-of-attack correction</strong>: NO, has a tendency to e.g. overestimate CO<sub>2</sub> uptake, and to underestimate CO<sub>2</sub> release.</p></li>
 <li><p><strong>Axis rotations for tilt correction</strong>: Double rotation</p></li>
 <li><p><strong>Turbulent fluctuations</strong>:</p>
 <ul>
 <li><p>Detrend method: Block average</p></li>
-<li><p>Time lag compensation:</p>
-<ul>
-<li><p>IRGA: Covariance maximization with default, very small time window with default lag, similar to ICOS (XXX REF).  (see Table [XXX])</p></li>
-<li><p>QCL/LGR: constant time lag, separate for each year or for time periods when the time lag changed (XXX REF) (see Table [XXX])</p></li>
 </ul>
 </li>
+<li><p><strong>Time lag compensation</strong>:</p>
+<ul>
+<li><p>Settings for length of the lag search window, nominal (default) and constant time lags are based on reesults from <a class="reference internal" href="L0.html"><span class="doc std std-doc">Level-0</span></a> flux calculations, which uses a large time window for covariance maximization.</p></li>
+<li><p><strong>IRGA</strong>: Covariance maximization with default, very small time window with default lag, similar to ICOS (see Table <a class="reference internal" href="L0.html#table-irga-openlags"><span class="std std-ref">IRGA lags</span></a>)</p></li>
+<li><p><strong>QCL/LGR</strong>: constant time lag, separate for each year or for time periods when the time lag changed (see Table <a class="reference internal" href="L0.html#table-qcllgr-openlags"><span class="std std-ref">QCL lags</span></a>)</p></li>
 </ul>
 </li>
 <li><p><strong>Compensate density fluctuations (WPL terms)</strong>:</p>
 <ul>
-<li><p>IRGA: YES because it is open-path</p></li>
-<li><p>QCL_LGR: NO because it is closed-path with an inlet tube and internally converts wet mole fraction to dry mole fraction, i.e., it directly records mixing ratios</p></li>
+<li><p><strong>IRGA</strong>: YES because it is open-path</p></li>
+<li><p><strong>QCL/LGR</strong>: NO because it is closed-path with an inlet tube and internally converts wet mole fraction to dry mole fraction, i.e., it directly records mixing ratios</p></li>
 </ul>
 </li>
-<li><p><strong>Add instrument sensible heat components for LI-7500</strong>: NO (see Note#1 below)</p></li>
+<li><p><strong>Add instrument sensible heat components for LI-7500</strong>: NO (<a class="reference internal" href="SI.html"><span class="doc std std-doc">read more about this decision here</span></a>)</p></li>
 <li><p><strong>Quality check</strong>: Mauder and Foken (2004) (0-1-2 system) for Level-1 quality flags, later extended in post-processing</p></li>
 <li><p><strong>Footprint estimation</strong>: Kljun et al. (2004)</p></li>
-<li><p><strong>Statistical analyses</strong>: all tests were selected for output, but not all tests were later used. Notable difference to default settings: Angle of attack criteria were slightly relaxed and allowed minimum AoA -35° (instead of default -30°) and maximum AoA +35° (instead of default +35°)</p></li>
+</ul>
+</section>
+<section id="statistical-analyses">
+<h4>Statistical analyses<a class="headerlink" href="#statistical-analyses" title="Link to this heading">#</a></h4>
+<p>All tests were selected for output, but not all tests were later used. Notable difference to default settings: Angle of attack criteria were slightly relaxed and allowed minimum AoA -35° (instead of default -30°) and maximum AoA +35° (instead of default +35°)</p>
+<ul class="simple">
 <li><p><strong>Random flux uncertainty</strong>: Finkelstein and Sims (2001, Definition of the ITS: Cross-correlation first corssing 1/e, Maximum correlation period: 10s)</p></li>
-<li><p><strong>Spectral Analysis</strong> and Corrections:</p>
+</ul>
+</section>
+<section id="spectral-analysis-and-corrections">
+<h4>Spectral Analysis and Corrections:<a class="headerlink" href="#spectral-analysis-and-corrections" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Spectra and (co)spectra calculation</strong>: Binned (co)spectra not available, Use power-of-two samples to speed up the FFT: YES, Lowest noise frequency: all gases 1Hz</p></li>
+<li><p><strong>Spectra and Cospectra QA/QC</strong>: in the following the three settings for “Minimum, unstable”/”Minimum, stable”/”Maximum”, respectively. In particular, note the settings for CH<sub>4</sub> and N<sub>2</sub>O. Settings for these two had to be strongly adjusted to accomodate the often very low fluxes at the site.</p>
 <ul>
-<li><p><em>XXX TODO</em></p></li>
+<li><p><em>Friction velocity</em> 0.2/0.05/5 m s<sup>-1</sup></p></li>
+<li><p><em>Sensible heat flux</em> 20/5/1000 W m<sup>-2</sup></p></li>
+<li><p><em>Latent heat flux</em> 20/3/1000 W m<sup>-2</sup></p></li>
+<li><p><em>CH<sub>4</sub></em> 0.01/0.005/20 µmol m<sup>2</sup> s<sup>-1</sup></p></li>
+<li><p><em>N<sub>2</sub>O</em> (4<sup>th</sup> gas) 0.01/0.005/20 µmol m<sup>2</sup> s<sup>-1</sup></p></li>
+</ul>
+</li>
+<li><p><strong>Filter (co)spectra according to Vickers and Mahrt (1997) test results</strong>: NO</p></li>
+<li><p><strong>Filter (co)spectra according to micrometeorological quality test results (Mauder and Foken, 2004)</strong>: Low data quality (flag value = 2): YES, Moderate data quality (flag = 1): NO</p></li>
+<li><p><strong>Spectral Correction Options</strong>:</p>
+<ul>
+<li><p>Low frequency range: Analytic correction of high-pass filtering effects (Moncrieff at al. 2004): YES</p></li>
+<li><p>High frequency range: Correction of low-pass filtering effects: YES, for LI-7500 fluxes Horst (1997), for QCL or LGR Fratini et al. (2012) because these are closed-path instruments</p></li>
+<li><p><strong>Spectral assessment file</strong> (SAF) was not available for most time periods. Generally calculated for each year, or for each distinct time period that required separate processing (e.g. in case of setup changes). In case of very short time periods the SAF from neighboring time periods was used. For example: when flux calculations were done for a short time period in May 2020 (few days), the SAF from the following time period was used (SAF based on 6+ months).</p></li>
+<li><p><strong>Assessment of high-frequncy attenuation</strong>: all gases: Lowest frequency 0.005 Hz, Highest frequency 2 Hz</p></li>
+<li><p>We also output full w/Ts cospectra for final flux calculations in Level-1</p></li>
 </ul>
 </li>
 </ul>
+</section>
+<section id="output-files">
+<h4>Output files<a class="headerlink" href="#output-files" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Spectra and cospectra output</strong>: Reduced spectra and ogives YES all, Full length spectra: Ts YES for Fratini at al. (2012) correction, Full length cospectra: NO all</p></li>
+<li><p><strong>Processed raw data</strong>: all statistics, no time series</p></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="used-level-1-files">
@@ -686,7 +734,13 @@ Notebook that was used to merge all QCL and LGR Level-1 result files.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eddypro-settings">EddyPro settings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-creation">Project creation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-settings">Basic settings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-settings">Advanced settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-settings">Advanced settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-options">Processing options</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analyses">Statistical analyses</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis-and-corrections">Spectral Analysis and Corrections:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output files</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#used-level-1-files">Used Level-1 files</a><ul class="nav section-nav flex-column">
