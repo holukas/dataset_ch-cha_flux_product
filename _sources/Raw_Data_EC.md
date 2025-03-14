@@ -1,8 +1,13 @@
 # Raw Data: Eddy Covariance
 
+`````{admonition} Info
+:class: note
+Eddy covariance raw data files are used to calculate preliminary (Level-0) and final fluxes (Level-1).
+`````
+
 ## EC raw data were recorded in real-time
 
-Eddy covariance (EC) raw data files were recorded using the **custom-made logging script** `sonicread` (Eugster & Plüss, 2010). `sonicread` was running on a data logger and directly merged incoming raw data streams (20Hz) arriving from the instruments into one single file in real-time. 
+Eddy covariance (EC) raw data files are recorded using the **custom-made logging script** `sonicread` (Eugster & Plüss, 2010). `sonicread` runs on a data logger and directly merges incoming raw data streams (20Hz) arriving from the instruments into one single file in real-time. 
 
 ## File format
 

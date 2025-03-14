@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Level 0: Preliminary flux calculations &#8212; CH-CHA Flux Product</title>
+    <title>Level-0: Preliminary flux calculations &#8212; CH-CHA Flux Product</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'L0';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Level 1: Final flux calculations" href="L1.html" />
-    <link rel="prev" title="Flux Processing Chain" href="FPC.html" />
+    <link rel="next" title="Level-1: Final flux calculations" href="L1.html" />
+    <link rel="prev" title="Raw Data: Eddy Covariance" href="Raw_Data_EC.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,16 +183,16 @@
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Meteo_Data.html">Meteo Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management_Data.html">Management Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="FPC.html">Flux Processing Chain</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Level 0: Preliminary flux calculations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L1.html">Level 1: Final flux calculations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L2.html">Level 2: Quality flag expansion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level 3.1: Storage correction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level 3.2: Outlier flagging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level 3.3: USTAR filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level 4.1: Gap-filling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level 4.2: NEE Partitioning (in progress)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Level-0: Preliminary flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L1.html">Level-1: Final flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L2.html">Level-2: Quality flag expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level-3.1: Storage correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level-3.2: Outlier flagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level-3.3: USTAR filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level-4.1: Gap-filling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level-4.2: NEE Partitioning (in progress)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
@@ -389,7 +389,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Level 0: Preliminary flux calculations</h1>
+    <h1>Level-0: Preliminary flux calculations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -399,7 +399,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openlag-runs-to-determine-lag-ranges">OPENLAG runs to determine lag ranges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openlag-runs-to-determine-final-lag-ranges">OPENLAG runs to determine final lag ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-wind-direction-across-years">Check wind direction across years</a></li>
 </ul>
             </nav>
@@ -413,15 +413,25 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="level-0-preliminary-flux-calculations">
-<h1>Level 0: Preliminary flux calculations<a class="headerlink" href="#level-0-preliminary-flux-calculations" title="Link to this heading">#</a></h1>
+<h1>Level-0: Preliminary flux calculations<a class="headerlink" href="#level-0-preliminary-flux-calculations" title="Link to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Info</p>
+<p>Results from preliminary flux calculations with relaxed processing settings assist in finding the most appropriate settings for final flux calculations (Level-1).</p>
+</div>
+<p>Level-0 flux results help to find the best settings for the final flux calculations. Generally, these preliminary results are used:</p>
 <ul class="simple">
-<li><p>More details can be found in the documentation of the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/#Step_2_Level-0_Preliminary_Flux_Calculations_With_OPENLAG_and_Other_Tests">Flux Processing Chain</a></p></li>
-<li><p>Generally, preliminary flux calculations were used to check whether the flux processing works, to check the wind direction across years and to determine appropriate time windows for lag search for final flux calculations (Level-1)</p></li>
+<li><p>to check whether the flux processing works,</p></li>
+<li><p>to check the wind direction across years,</p></li>
+<li><p>to determine appropriate time windows for lag search for final flux calculations.</p></li>
 </ul>
-<section id="openlag-runs-to-determine-lag-ranges">
-<h2>OPENLAG runs to determine lag ranges<a class="headerlink" href="#openlag-runs-to-determine-lag-ranges" title="Link to this heading">#</a></h2>
+<p>More details can be found in the documentation of the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/#Step_2_Level-0_Preliminary_Flux_Calculations_With_OPENLAG_and_Other_Tests">Flux Processing Chain</a></p>
+<section id="openlag-runs-to-determine-final-lag-ranges">
+<h2>OPENLAG runs to determine final lag ranges<a class="headerlink" href="#openlag-runs-to-determine-final-lag-ranges" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Notebook</p>
+<p><a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/00_L0_checks/02_L0_timelags_check.html">02_L0_timelags_check</a></p>
+</div>
 <ul class="simple">
-<li><p>Notebook example: <a class="reference external" href="https://github.com/holukas/dataset_cha_fp2024_2005-2023/blob/main/notebooks/00_L0_checks/02_L0_timelags_check.ipynb">Time lag check for 2024</a></p></li>
 <li><p>The lag between turbulent departures of wind and the gas of interest was first determined in a relatively wide time window (called OPENLAG):</p>
 <ul>
 <li><p><strong>IRGA</strong> OPENLAG time window: between <code class="docutils literal notranslate"><span class="pre">-1s</span></code> and <code class="docutils literal notranslate"><span class="pre">+10s</span></code>. For IRGA, the goal was to find an appropriate nominal time lag, and to determine a time window for lag search as narrow as possible.</p></li>
@@ -432,12 +442,18 @@ document.write(`
 <li><p>The results from the OPENLAG runs were used to define a time window as narrow as possible (IRGA) for the final flux calculations (Level-1)</p>
 <ul>
 <li><p>The histograms of found OPENLAG time lags were inspected to determine whether there was a the histogram bin with peak distribution</p></li>
-<li><p><strong>IRGA</strong>: peak of distribution was used as nominal (default) lag, time ranges around this peak were used as time window (<strong>Table EC1</strong>)</p></li>
-<li><p><strong>QCL</strong>: peak of distrubution was used as constant lag for the respective time period, no time window used, all lags were constant (<strong>Table EC2</strong>)</p></li>
+<li><p><strong>IRGA</strong>: peak of distribution was used as nominal (default) lag, time ranges around this peak were used as time window (<a class="reference internal" href="#table-irga-openlags"><span class="std std-ref">table</span></a>)</p></li>
+<li><p><strong>QCL</strong>: peak of distrubution was used as constant lag for the respective time period, no time window used, all lags were constant (<a class="reference internal" href="#table-qcllgr-openlags"><span class="std std-ref">table</span></a>)</p></li>
 </ul>
 </li>
 </ul>
-<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<figure class="align-default" id="fig-openlag1">
+<img alt="" src="_images/CO2_TLAG_ACTUAL_OPENLAG_2024.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Results for the OPENLAG run (Level-0 fluxes) in 2024. The time lag between turbulent departures of vertical wind and CO<sub>2</sub> molar densities of the open-path IRGA was first searched in a time window between -1s and 10s, then the window was narrowed down to get a clearer histogram peak for the most frequently found time lag. Level-0 flux calculations use no nominal (default) time lag, only simple covariance maximization.These results were used to define a narrow time window for final flux calculations in Level-1. In this example, for Level-1 flux calculations, the time lag with peak distribution was used as the nominal (default) time lag (0.30s), the time window for lag search was set to between +0.05s and +0.5s.</span><a class="headerlink" href="#fig-openlag1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="pst-scrollable-table-container"><span id="table-irga-openlags"></span><table class="table" id="id1">
 <caption><span class="caption-number">Table 4 </span><span class="caption-text">IRGA nominal (default) time lags and size of the lag search windows for different time periods in seconds. Used for CO2 and H2O (LE) in final flux calculations.</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>time period</strong></p></th>
@@ -550,7 +566,7 @@ document.write(`
 </tbody>
 </table>
 </div>
-<div class="pst-scrollable-table-container"><table class="table" id="id2">
+<div class="pst-scrollable-table-container"><span id="table-qcllgr-openlags"></span><table class="table" id="id2">
 <caption><span class="caption-number">Table 5 </span><span class="caption-text">QCL and LGR constant time lags (seconds) for N<sub>2</sub>O and CH<sub>4</sub> used in final flux calculations. In addition, the range  where most time lags were found is given.</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>time period</strong></p></th>
@@ -669,9 +685,13 @@ document.write(`
 </section>
 <section id="check-wind-direction-across-years">
 <h2>Check wind direction across years<a class="headerlink" href="#check-wind-direction-across-years" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Notebook</p>
+<p><a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/00_L0_checks/03_L0_winddir_check.html">03_L0_winddir_check</a></p>
+</div>
 <p>I compared histograms of wind directions between 2005 and 2024 using Level-0 fluxes and found that a sonic orientation of 7° offset to north yields very similar results across years. It is therefore possible the the sonic orientation across all years was always close to 7°.</p>
-<p>Here are results from a comparison of annual wind direction histograms (with bin width of 1°) to a reference period (2006-2009), all wind directions were calculated with a north offset of 7°, then a histogram was calculated for each year. The OFFSET describes how many degrees have to be added (or subtracted) to the half-hourly wind direction to yield a histogram that is most similar to the reference. All OFFSETS are small, which indicates that the wind directions are in good agreement.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id3">
+<p>Here are results from a comparison of annual wind direction histograms (with bin width of 1°) to a reference period (2006-2009), all wind directions were calculated with a north offset of 7°, then a histogram was calculated for each year. The OFFSET describes how many degrees have to be added (or subtracted) to the half-hourly wind direction to yield a histogram that is most similar to the reference. All OFFSETS are small, which indicates that the wind directions are in good agreement (<a class="reference internal" href="#table-winddir"><span class="std std-ref">table</span></a>).</p>
+<div class="pst-scrollable-table-container"><span id="table-winddir"></span><table class="table" id="id3">
 <caption><span class="caption-number">Table 6 </span><span class="caption-text">Wind direction offsets (in degrees) compared to a reference period (2006-2009) from Level-0 OPENLAG runs.</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>YEAR</strong></p></th>
@@ -776,12 +796,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="FPC.html"
+       href="Raw_Data_EC.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Flux Processing Chain</p>
+        <p class="prev-next-title">Raw Data: Eddy Covariance</p>
       </div>
     </a>
     <a class="right-next"
@@ -789,7 +809,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Level 1: Final flux calculations</p>
+        <p class="prev-next-title">Level-1: Final flux calculations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -809,7 +829,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openlag-runs-to-determine-lag-ranges">OPENLAG runs to determine lag ranges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openlag-runs-to-determine-final-lag-ranges">OPENLAG runs to determine final lag ranges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-wind-direction-across-years">Check wind direction across years</a></li>
 </ul>
   </nav></div>

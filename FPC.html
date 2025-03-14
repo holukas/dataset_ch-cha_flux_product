@@ -68,8 +68,8 @@ window.addEventListener("load", () => mermaid.run());
     <script>DOCUMENTATION_OPTIONS.pagename = 'FPC';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Level 0: Preliminary flux calculations" href="L0.html" />
-    <link rel="prev" title="Raw Data: Eddy Covariance" href="Raw_Data_EC.html" />
+    <link rel="next" title="Raw Data: Eddy Covariance" href="Raw_Data_EC.html" />
+    <link rel="prev" title="Management Data" href="Management_Data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,16 +191,16 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Meteo_Data.html">Meteo Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management_Data.html">Management Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Flux Processing Chain</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="L0.html">Level 0: Preliminary flux calculations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L1.html">Level 1: Final flux calculations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L2.html">Level 2: Quality flag expansion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level 3.1: Storage correction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level 3.2: Outlier flagging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level 3.3: USTAR filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level 4.1: Gap-filling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level 4.2: NEE Partitioning (in progress)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L0.html">Level-0: Preliminary flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L1.html">Level-1: Final flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L2.html">Level-2: Quality flag expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level-3.1: Storage correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level-3.2: Outlier flagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level-3.3: USTAR filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level-4.1: Gap-filling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level-4.2: NEE Partitioning (in progress)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
@@ -408,6 +408,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-steps">Processing steps</a></li>
 </ul>
             </nav>
         </div>
@@ -421,9 +422,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="flux-processing-chain">
 <h1>Flux Processing Chain<a class="headerlink" href="#flux-processing-chain" title="Link to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Flux processing follows the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/">Swiss Fluxnet Flux Processing Chain</a></p></li>
-</ul>
+<div class="note admonition">
+<p class="admonition-title">Info</p>
+<p>Flux processing follows the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/">Swiss Fluxnet Flux Processing Chain</a></p>
+</div>
 <section id="flowchart">
 <h2>Flowchart<a class="headerlink" href="#flowchart" title="Link to this heading">#</a></h2>
 <pre  class="mermaid">
@@ -482,10 +484,13 @@ document.write(`
     classDef white fill:#FFFFFF,stroke:#000000,stroke_width:4px,color:#000000
     class diive_scripts white
 
-    </pre><ul class="simple">
-<li><p><strong>Raw data EC</strong></p></li>
-<li><p><strong>Level-0</strong></p></li>
-<li><p><strong>Level-1</strong></p></li>
+    </pre></section>
+<section id="processing-steps">
+<h2>Processing steps<a class="headerlink" href="#processing-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Raw data EC</strong> are the eddy covariance raw data files.</p></li>
+<li><p><strong>Level-0</strong> are preliminary calculations, used to fine-tune final processing settings.</p></li>
+<li><p><strong>Level-1</strong> are final flux calculations that are used in all subsequent steps.</p></li>
 <li><p><strong>Level-2</strong> creates additional quality flags based on Level-1 output</p></li>
 <li><p><strong>Level-3.1</strong> adds the storage term to the respective flux</p></li>
 <li><p><strong>Level-3.2</strong> detects outliers and creates additional quality flags</p></li>
@@ -529,20 +534,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Raw_Data_EC.html"
+       href="Management_Data.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Raw Data: Eddy Covariance</p>
+        <p class="prev-next-title">Management Data</p>
       </div>
     </a>
     <a class="right-next"
-       href="L0.html"
+       href="Raw_Data_EC.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Level 0: Preliminary flux calculations</p>
+        <p class="prev-next-title">Raw Data: Eddy Covariance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -563,6 +568,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-steps">Processing steps</a></li>
 </ul>
   </nav></div>
 

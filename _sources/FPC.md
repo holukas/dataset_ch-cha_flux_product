@@ -1,6 +1,10 @@
 # Flux Processing Chain
 
-- Flux processing follows the [Swiss Fluxnet Flux Processing Chain](https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/)
+`````{admonition} Info
+:class: note
+Flux processing follows the [Swiss Fluxnet Flux Processing Chain](https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/)
+`````
+
 ## Flowchart
 
 ```{mermaid}
@@ -62,14 +66,14 @@ flowchart
 
 ```
 
-- **Raw data EC**
-- **Level-0**
-- **Level-1** 
+## Processing steps
+
+- **Raw data EC** are the eddy covariance raw data files.
+- **Level-0** are preliminary calculations, used to fine-tune final processing settings.
+- **Level-1** are final flux calculations that are used in all subsequent steps.
 - **Level-2** creates additional quality flags based on Level-1 output
 - **Level-3.1** adds the storage term to the respective flux
 - **Level-3.2** detects outliers and creates additional quality flags
 - **Level-3.3** creates additional quality flags based on three different constant USTAR thresholds, previously detected by FLUXNET (Pastorello et al., 2020)
 - **Level-4.1** performs gap-filling (long-term random forest)
 - **Level-4.2** partitions NEE fluxes (gap-filled with random forest, MDS) into GPP and RECO
-
-
