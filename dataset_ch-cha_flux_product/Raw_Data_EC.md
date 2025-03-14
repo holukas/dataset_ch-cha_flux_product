@@ -1,8 +1,13 @@
 # Raw Data: Eddy Covariance
 
+`````{admonition} Info
+:class: note
+Eddy covariance raw data files are used to calculate preliminary (Level-0) and final fluxes (Level-1).
+`````
+
 ## EC raw data were recorded in real-time
 
-Eddy covariance (EC) raw data files were recorded using the **custom-made logging script** `sonicread` (Eugster & Plüss, 2010). `sonicread` was running on a data logger and directly merged incoming raw data streams (20Hz) arriving from the instruments into one single file in real-time. 
+Eddy covariance (EC) raw data files are recorded using the **custom-made logging script** `sonicread` (Eugster & Plüss, 2010). `sonicread` runs on a data logger and directly merges incoming raw data streams (20Hz) arriving from the instruments into one single file in real-time. 
 
 ## File format
 
@@ -24,15 +29,15 @@ Time periods with different instrumental setup have to be calculated separately.
 
 EddyPro can handle *regularly-structured* binary files, but not *irregularly-structured* files. EddyPro needs to know in what sequence data are coming in, i.e. the sequence in which data are stored in a file.
 
-Raw data files were converted to a regular structure (same number of columns for each line of records) using the script [bico](https://github.com/holukas/bico). During this conversion, the raw binary data are sorted into rows and columns, and at the end of one data row a line break is added. This means that one data row of records in the ASCII file consists of the data, sorted into columns, followed by a line break. Measured at 20Hz, there are 20 rows of data records (i.e. 20 records) per second. After the conversion, each data row has the same number of columns regardless of missing data, i.e., the data file becomes regularly-structured. Columns that contain no data have the value `-9999` to mark missing values. This way, the files can be directly used in EddyPro for the flux calculations.
+Raw data files were converted to a regular structure (same number of columns for each line of records) using the script [bico](https://github.com/holukas/bico). During this conversion, the raw binary data are sorted into rows and columns, and at the end of one data row a line break is added. This means that one data row of records in the ASCII file consists of the data, sorted into columns, followed by a line break. Measured at 20Hz, there are 20 rows of data records per second. After the conversion, each data row has the same number of columns regardless of missing data, i.e., the data file becomes regularly-structured. Columns that contain no data have the value `-9999` to mark missing values. This way, the files can be directly used in EddyPro for the flux calculations.
 
-`bico` also adds additional information to the CSV files, such as the variable names for each column, and adds the respective units and the source instrument. In addition, `bico` converts the binary files to ASCII format (CSV). This is not strictly required by EddyPro, but it makes the files human-readable, which can be helpful in detecting data issues. To reduce the file size of the ASCII files, the CSV files were zipped (`.gzip`).   
+`bico` also adds additional information to the CSV files, such as the variable names for each column, and adds the respective units and the source instrument. In addition, `bico` converts the binary files to ASCII format (CSV). This is not strictly required by EddyPro, but it makes the files human-readable, which can be helpful in detecting data issues. To reduce the file size of the ASCII files, the CSV files were zipped (`.gz`). For flux calculations, the `.gz` files are first unzipped and then used in EddyPro using the home-made Python script [fluxrun](https://github.com/holukas/fluxrun).
 
-A typical name for a raw data file after the `bico` conversion is e.g. `CH-CHA_202408091300.csv.gz`, whereby the time info in the the file name gives the starting time for the data.
+A typical name for a raw data file after the `bico` conversion is e.g. `CH-CHA_202408091300.csv.gz`, whereby the time info in the file name gives the starting time for the data.
 
 ## Example structure of EC binary raw data files
 
-This example describes the structure of a raw data file with data from 1 sonic anemometer and 2 different gas analyzers (open-path LI-7500 and LGR). 
+This example describes the structure of a binary raw data file with data from 1 sonic anemometer and 2 different gas analyzers (open-path LI-7500 and LGR). 
 
 - HEADER (29 bytes): Contains information created by the logging script `sonicread`. This information is not written to the regular ASCII file, but it is written to the `bico` log file during conversion from binary to ASCII. Each of the irregular binary files contains this header section.
 - INSTRUMENT 1: Data block coming from sonic anemometer Solent R3-50 ([R350-B](https://github.com/holukas/bico/blob/master/src/settings/data_blocks/R350-B.dblock)): 12 bytes (big endian short integer). 
