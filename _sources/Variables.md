@@ -1,5 +1,7 @@
 # Variables
 
+- [List of variable abbreviations](https://www.swissfluxnet.ethz.ch/index.php/data/variables/variable-abbreviations/): extensive list with variable names used by the Grassland Sciences group, FLUXNET, ICOS and others. Has a search bar.
+
 ## Eddy covariance fluxes
 
 ### Main fluxes
@@ -45,6 +47,11 @@
 - **SWC**: soil water content
 - **TS**: soil temperature
 - (**G**: soil heat flux)
+
+## Variants
+*Variants calculated from directly measured variables.*
+
+*soon*
 
 ## Auxiliary
 *soon*

@@ -148,8 +148,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo1.jpg" class="logo__image only-light" alt="CH-CHA Flux Product - Home"/>
+    <script>document.write(`<img src="_static/logo1.jpg" class="logo__image only-dark" alt="CH-CHA Flux Product - Home"/>`);</script>
   
-    <p class="title logo__title">CH-CHA Flux Product</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -371,7 +377,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -387,6 +395,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-processing-chain">Flux processing chain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteo-data">Meteo data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#management-data">Management data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebooks">Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-versions">Dataset versions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -398,23 +420,69 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
-<p>The dataset was created using homogenized eddy covariance (EC) flux processing sites across all years. It combines ecosystem fluxes with meteo data and detailed management information.</p>
-<p>EC measurements at the research site <a class="reference internal" href="#(https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/)"><span class="xref myst">CH-CHA (Chamau)</span></a> in Switzerland started in 2005, and at the time of writing measurements are ongoing.</p>
-<p>This documentation consists of various sections that give details about the respective variables and processing steps. In addition, we provide all Jupyter notebooks that were used to create the dataset.</p>
-<p>Below you find a short overview of the different sections in this documentation.</p>
-<p>XXX <a class="reference internal" href="Meteo_Data.html"><span class="doc std std-doc">Meteo data</span></a> included are variables directly measured at the station. This section describes which meteo variables were included and how some of them were gap-filled.</p>
-<p>XXX <a class="reference internal" href="Management_Data.html"><span class="doc std std-doc">Management data</span></a> describes how management information was converted to a time series format.</p>
-<p>XXX <a class="reference internal" href="FPC.html"><span class="doc std std-doc">Flux processing chain</span></a> lists background info about flux processing settings used in EddyPro,
-lists post-processing steps and their settings, including generation of quality flags, outlier removal and gap-filling</p>
-<p>XXX <a class="reference internal" href="Used_Software.html"><span class="doc std std-doc">Used Software</span></a>: lists software (including links) used in the generation of this dataset</p>
-<p>XXX <a class="reference internal" href="Instrumentation.html"><span class="doc std std-doc">Instrumentation</span></a></p>
-<p>XXX <a class="reference internal" href="Variables.html"><span class="doc std std-doc">Variables</span></a> lists variables that are part of the dataset. Since there are many hundreds of variables, it also gives recommendations which variables to use for which purpose. It lists the most important variables that</p>
-<p>XXX <a class="reference internal" href="SI.html"><span class="doc std std-doc">Supplementary Information</span></a></p>
-<p>XXX <a class="reference internal" href="Issues.html"><span class="doc std std-doc">Known Issues</span></a></p>
-<p>XXX <a class="reference internal" href="Links.html"><span class="doc std std-doc">Links</span></a></p>
-<p>XXX <a class="reference internal" href="References.html"><span class="doc std std-doc">References</span></a>: contains references relevant to the production of this dataset</p>
-<p>XXX <a class="reference internal" href="notebooks/README.html"><span class="std std-doc">Notebooks overview</span></a>: Jupyter notebooks used to create the final dataset</p>
-<p>XXX <a class="reference internal" href="Dataset_Versions.html"><span class="doc std std-doc">Dataset versions</span></a></p>
+<p>The dataset was created using homogenized eddy covariance (EC) flux processing sites across all years. It combines ecosystem fluxes with meteo data and detailed management information. EC measurements at the research site <a class="reference internal" href="#(https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/)"><span class="xref myst">CH-CHA (Chamau)</span></a> in Switzerland started in 2005, and at the time of writing measurements are ongoing. This documentation consists of various sections that give details about the respective variables and processing steps. In addition, we provide all flux processing settings (EddyPro settings and metadata info) and Jupyter notebooks (for post-processing) that were used to create the dataset.</p>
+<p>Below you find a short summary and important info related to the different sections in this documentation.</p>
+<section id="flux-processing-chain">
+<h2>Flux processing chain<a class="headerlink" href="#flux-processing-chain" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="FPC.html"><span class="doc std std-doc">Flux processing chain</span></a> lists background info about flux processing settings used in EddyPro and post-processing steps (quality flags, outlier removal, gap-filling) and their settings.</p>
+<p>We use “Levels” to describe different steps in the processing chain: <a class="reference internal" href="L0.html"><span class="doc std std-doc">Level-0</span></a> are preliminary fluxes used to refine processing settings, <a class="reference internal" href="L1.html"><span class="doc std std-doc">Level-1</span></a> are final flux calculations, <a class="reference internal" href="L2.html"><span class="doc std std-doc">Level-2</span></a> uses the Level-1 output to calculate additional quality flags, <a class="reference internal" href="L3.1.html"><span class="doc std std-doc">Level-3.1</span></a> calculates the storage-corrected fluxes (simple addition of storage term to flux), <a class="reference internal" href="L3.2.html"><span class="doc std std-doc">Level-3.2</span></a> creates quality flags related to outliers and <a class="reference internal" href="L3.3.html"><span class="doc std std-doc">Level-3.3</span></a> creates quality flags related to turbulence (USTAR threshold used for <code class="docutils literal notranslate"><span class="pre">NEE</span></code>, <code class="docutils literal notranslate"><span class="pre">FCH4</span></code> and <code class="docutils literal notranslate"><span class="pre">FN2O</span></code>).</p>
+<p>Then we assess the overall quality of each specific data record by combining quality test results from multiple individual tests into one overall quality control flag (<code class="docutils literal notranslate"><span class="pre">QCF</span></code>). Each flux has it’s own <code class="docutils literal notranslate"><span class="pre">QCF</span></code>. The page <a class="reference internal" href="QCF.html"><span class="doc std std-doc">QCF</span></a> shows how this overall flag was generated. After the <code class="docutils literal notranslate"><span class="pre">QCF</span></code> was calculated, it is applied to the fluxes by removing flux records of low quality, creating quality-filtered flux versions that were then used in subsequent steps.</p>
+<p><a class="reference internal" href="L4.1.html"><span class="doc std std-doc">Level-4.1</span></a> then uses these filtered fluxes during gap-filling, creating continuous and complete time series for each flux. <a class="reference internal" href="L4.2.html"><span class="doc std std-doc">Level-4.2</span></a> describes <code class="docutils literal notranslate"><span class="pre">NEE</span></code> partitioning using 3 different methods.</p>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="Variables.html"><span class="doc std std-doc">Variables</span></a> lists variables that are part of the dataset. Since there are many hundreds of variables, it also gives recommendations which variables to use for which purpose. Also worth mentioning here: we have a <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/variables/variable-abbreviations/">collection of commonly used variable abbreviations</a> (with search bar) on the Swiss FluxNet homepage.</p>
+<p><strong>XXX TODO naming convention</strong></p>
+<p>One imporant aspect is that we included many variables as <em>variants</em> in the dataset. These are new variables that were calculated from existing variables. For example, <code class="docutils literal notranslate"><span class="pre">SWC</span></code> (soil water content) was included as the original measurement, but also as a mean value over the preceding 3 hours (<code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code>, <a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.2_CalcMean3HVars_SWC_TS_PREC.html">notebook</a>). In an additional step, we used the <code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code> variables to calculate <em>step-lagged variants</em> (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.4_CalcMean3HVarsStepLag_SWC_TS_PREC.html">notebook</a>): in this case, the means are lagged, however, the lag is not applied continuously (1 record, 2 records, 3 records, …) but in steps (6 records, 12, 18, 24), whereby 1 record corresponds to 30MIN. <code class="docutils literal notranslate"><span class="pre">MEAN3H-18</span></code> is the mean over the 3-hour time period ending 18 records (corresponds to 9 hours) before the respective timestamp.</p>
+<p>This approach follows the description in <a class="reference internal" href="References.html"><span class="doc std std-doc">Feigenwinter et al. (2023a)</span></a>:</p>
+<blockquote>
+<div><p>We created aggregated and lagged versions of these three variables: The running mean over 3 h before the respective timestamp (mean3h) was calculated as well as lagged running means over 3 h, which started 6, 9, and 12 h before and ended 3, 6, and 9 h before the corresponding timestamp, respectively (…).</p>
+</div></blockquote>
+<p>Another example: <code class="docutils literal notranslate"><span class="pre">PREC</span></code> (precipitation) was included as the original measurement, and in addition as <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variant (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html#calc-timesince-variable-for-prec">notebook</a>), which counted the number of records (in our case one record is 30MIN) since the last precipitation event, done for each data record.</p>
+<p>One goal of this dataset was to keep the different flux versions after each Level. It was therefore unavoidable to use sometimes cryptic (and long) variable names. For example, after storage correction, <code class="docutils literal notranslate"><span class="pre">FC</span></code> (CO<sub>2</sub> flux) becomes <code class="docutils literal notranslate"><span class="pre">NEE</span></code> (storage-corrected CO<sub>2</sub> flux). In this case it is easy to distinguish between the storage-corrected version and the original version. Such a distinction is not straight-forward for other fluxes, they do not have a dedicated name that would imply that they are storage-corrected. Therefore, we use the suffix <code class="docutils literal notranslate"><span class="pre">_L3.1</span></code> to indicate that the respective flux was storage-corrected (e.g. <code class="docutils literal notranslate"><span class="pre">FN2O_L3.1</span></code>). To keep naming consistent, we do this also for <code class="docutils literal notranslate"><span class="pre">NEE</span></code> as <code class="docutils literal notranslate"><span class="pre">NEE_L3.1</span></code>.</p>
+<p>Here is an example for <code class="docutils literal notranslate"><span class="pre">FN2O</span></code> and its name throughout the processing chain, taken from the flux processing chain notebook <a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.0_FluxProcessingChain_L3.3_FN2O_QCF11.html#flux-variable-names">here</a>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O</span></code>: original input flux from final flux calculations (<a class="reference internal" href="L1.html"><span class="doc std std-doc">Level-1</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L2_QCF</span></code>: flux quality-controlled with Level-2 flags, not used in any further processing steps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_QCF</span></code>: flux quality-controlled with Level-2 flags, including Level-3.1 storage correction, not used in any further processing steps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.2_QCF</span></code>: flux quality-controlled with Level-2 and Level-3.2 flags, including Level-3.1 storage correction), not used in any further processing steps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.2_QCF0</span></code>: highest-quality flux (QCF=0), quality-controlled with Level-2 and Level-3.2 flags, including Level-3.1 storage correction), not used in any further processing steps</p></li>
+</ul>
+<p>Name of flux variables used in gap-filling and all further steps:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.3_CUT_16_QCF</span></code>: flux quality-controlled with Level-2 and Level-3.2 flags, and after Level-3.3 USTAR filtering (CUT_16), including Level-3.1 storage correction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.3_CUT_50_QCF</span></code>: flux quality-controlled with Level-2 and Level-3.2 flags, and after Level-3.3 USTAR filtering (CUT_50), including Level-3.1 storage correction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.3_CUT_84_QCF</span></code>: flux quality-controlled with Level-2 and Level-3.2 flags, and after Level-3.3 USTAR filtering (CUT_84), including Level-3.1 storage correction</p></li>
+</ul>
+</section>
+<section id="meteo-data">
+<h2>Meteo data<a class="headerlink" href="#meteo-data" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="Meteo_Data.html"><span class="doc std std-doc">Meteo data</span></a> describes which variables were included and how some of them were gap-filled. <a class="reference internal" href="#Meteo_Data#data-mering"><span class="xref myst">Some variables were merged</span></a> with other datasets to generate one complete time series. Generally, included data were directly measured at the station. There are some exceptions when data from a neighboring meteo stations were used to fill gaps for e.g. <code class="docutils literal notranslate"><span class="pre">PREC</span></code> (see <a class="reference external" href="https://doi.org/10.1016/j.agrformet.2023.109613">Feigenwinter et al., 2023b</a> for more details).</p>
+<p>Note that there are also numerous notebooks that were used to quality-screen data from recent years (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/README.html#meteo-11-meteoscreening-diive-2021-2023">2021-2023</a>, <a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/README.html#meteo-11-meteoscreening-diive-2024">2024</a>). For screening older years, no notebooks are available because data were screened with a now deprecated meteoscreening tool.</p>
+</section>
+<section id="management-data">
+<h2>Management data<a class="headerlink" href="#management-data" title="Link to this heading">#</a></h2>
+<p>One central question during the creation of this dataset was how can management data be combined with time series data. <a class="reference internal" href="Management_Data.html"><span class="doc std std-doc">Management Data</span></a> describes how management information was converted to a time series format. The original management info is available as XLSX file and can also be downloaded from that page. There is a <a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html">notebook</a> that shows how this conversion to a time series format was done. In addition, the dataset contains <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants that put each record in temporal relation to past management events (<code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variables count the number of records since the most recent respective event). The notebook shows <a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.html#calculate-timesince-management-event">here</a> how this looks like for management data.</p>
+</section>
+<section id="notebooks">
+<h2>Notebooks<a class="headerlink" href="#notebooks" title="Link to this heading">#</a></h2>
+<p>All Jupyter notebooks used to create the dataset were collected here: <a class="reference internal" href="notebooks/README.html"><span class="std std-doc">Notebooks overview</span></a>. They contain a lot of additional information besides the code, e.g., details about specific processing steps. If you miss some important information here in the written documentation, it is very likely that one of the notebooks has that info.</p>
+</section>
+<section id="dataset-versions">
+<h2>Dataset versions<a class="headerlink" href="#dataset-versions" title="Link to this heading">#</a></h2>
+<p>Since sometimes the dataset is updated, the page <a class="reference internal" href="Dataset_Versions.html"><span class="doc std std-doc">Dataset Versions</span></a> collects info about the different data versions. At the moment I would not expect any major changes in future versions (but you never know). Normally if there is a new version of this dataset it means that we added new variables to the data, such as soil heat flux. Or we added variants of existing variables, e.g., fluxes gap-filled with the MDS method in addition to the random forest variants.</p>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="Used_Software.html"><span class="doc std std-doc">Used Software</span></a> lists software (including links) used in the generation of this dataset</p></li>
+<li><p><a class="reference internal" href="Instrumentation.html"><span class="doc std std-doc">Instrumentation</span></a> contains information about some of the used instruments.</p></li>
+<li><p><a class="reference internal" href="SI.html"><span class="doc std std-doc">Supplementary Information</span></a> dives deeper into specific aspects of the dataset.</p></li>
+<li><p>Sometimes not all issues can be solved perfectly. Therefore, the page <a class="reference internal" href="Issues.html"><span class="doc std std-doc">Known Issues</span></a> collects information about time periods when something noteworthy happened. Also lists the solution for the respective issue. Let’s hope this list stays as empty as possible.</p></li>
+<li><p><a class="reference internal" href="Links.html"><span class="doc std std-doc">Links</span></a> is a collection of external links relevant to this dataset.</p></li>
+<li><p>References relevant to the production of this dataset are listed in <a class="reference internal" href="References.html"><span class="doc std std-doc">References</span></a>. It is possible that this list is not complete, but it should contain most of the references mentioned in the main texts. I will update this list if I found a publication I missed.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,6 +539,27 @@ lists post-processing steps and their settings, including generation of quality 
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-processing-chain">Flux processing chain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteo-data">Meteo data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#management-data">Management data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebooks">Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-versions">Dataset versions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

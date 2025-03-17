@@ -18,8 +18,6 @@ This is the notebook that was used to prepare input data for 2024 fluxes - which
 	- Meteoscreening from database was done using the Python library `diive`.
 	- After meteoscreening, the variables `SW_IN_T1_2_1`, `TA_T1_2_1` and `PPFD_IN_T1_2_2` were gap-filled using XGBoost as implemented in `diive`.
 
-![](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/12.0_DownloadMeteo_2005-2024_FLUXNET_diive_for_eddypro.html#time-series-plot)
-
 All 6 meteo variables were merged into one file that was then used as input file (external meteo data) in EddyPro. 
 
 **Note#1 regarding meteo data in EddyPro output files:**
@@ -89,10 +87,11 @@ See *Note#1* above: because of this warning I assembled the meteo data again to 
 
 ## Meteo data originally shared with FLUXNET
 
-##### Table MD1. Details for variables shared with FLUXNET. 
+(table-sharing-fluxnet)=
+:::{table} Details for variables shared with FLUXNET. 
 Info from the BADM file `CH-CHA_BADM-Instrument_Ops_20190418.xlsx`
 
-| FLUXNET VAR       |  ETH VAR          | INSTRUMENT                     |
+| FLUXNET VAR   |  ETH VAR                       | INSTRUMENT                                                                      |
 | ------------- | ------------------------------ | ------------------------------------------------------------------------------- |
 | P_1_1_1       |  P_RAIN_GF1_0x5_1_Tot          | SN: 810326.0007, LAMBRECHT meteo GmbH, P_RAIN_GF1_0x5_1_Tot                     |
 | SWC_1_1_1     |  SWC_AVG_GF1_0.05_1            | Model ML2x, Delta-T Devices Ltd, Cambridge, United Kingdom, SWC_AVG_GF1_0.05_1  |
@@ -123,7 +122,4 @@ Info from the BADM file `CH-CHA_BADM-Instrument_Ops_20190418.xlsx`
 | SW_IN_1_1_1   | SW_IN_CORRECTED_AVG_T1B2_2_1   |                                                                                 |
 | LW_IN_1_1_1   | LW_IN_AVG_T1B2_2_1             |                                                                                 |
 | PPFD_IN_1_1_1 | PPFD_IN_CORRECTED_AVG_T1B2_2_2 |                                                                                 |
-
-
-
-
+:::
