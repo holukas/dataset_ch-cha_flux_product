@@ -148,14 +148,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="CH-CHA Flux Product - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="CH-CHA Flux Product - Home"/>`);</script>
   
+    <p class="title logo__title">CH-CHA Flux Product</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -196,14 +190,15 @@
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Instrumentation.html">Instrumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SI.html">Supplementary Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/README.html">Notebook overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dataset_Versions.html">Dataset Versions</a></li>
 </ul>
 
     </div>
@@ -403,8 +398,23 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
-<p><em>soon</em></p>
-<p>Raw data acquisition EC</p>
+<p>The dataset was created using homogenized eddy covariance (EC) flux processing sites across all years. It combines ecosystem fluxes with meteo data and detailed management information.</p>
+<p>EC measurements at the research site <a class="reference internal" href="#(https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/)"><span class="xref myst">CH-CHA (Chamau)</span></a> in Switzerland started in 2005, and at the time of writing measurements are ongoing.</p>
+<p>This documentation consists of various sections that give details about the respective variables and processing steps. In addition, we provide all Jupyter notebooks that were used to create the dataset.</p>
+<p>Below you find a short overview of the different sections in this documentation.</p>
+<p>XXX <a class="reference internal" href="Meteo_Data.html"><span class="doc std std-doc">Meteo data</span></a> included are variables directly measured at the station. This section describes which meteo variables were included and how some of them were gap-filled.</p>
+<p>XXX <a class="reference internal" href="Management_Data.html"><span class="doc std std-doc">Management data</span></a> describes how management information was converted to a time series format.</p>
+<p>XXX <a class="reference internal" href="FPC.html"><span class="doc std std-doc">Flux processing chain</span></a> lists background info about flux processing settings used in EddyPro,
+lists post-processing steps and their settings, including generation of quality flags, outlier removal and gap-filling</p>
+<p>XXX <a class="reference internal" href="Used_Software.html"><span class="doc std std-doc">Used Software</span></a>: lists software (including links) used in the generation of this dataset</p>
+<p>XXX <a class="reference internal" href="Instrumentation.html"><span class="doc std std-doc">Instrumentation</span></a></p>
+<p>XXX <a class="reference internal" href="Variables.html"><span class="doc std std-doc">Variables</span></a> lists variables that are part of the dataset. Since there are many hundreds of variables, it also gives recommendations which variables to use for which purpose. It lists the most important variables that</p>
+<p>XXX <a class="reference internal" href="SI.html"><span class="doc std std-doc">Supplementary Information</span></a></p>
+<p>XXX <a class="reference internal" href="Issues.html"><span class="doc std std-doc">Known Issues</span></a></p>
+<p>XXX <a class="reference internal" href="Links.html"><span class="doc std std-doc">Links</span></a></p>
+<p>XXX <a class="reference internal" href="References.html"><span class="doc std std-doc">References</span></a>: contains references relevant to the production of this dataset</p>
+<p>XXX <a class="reference internal" href="notebooks/README.html"><span class="std std-doc">Notebooks overview</span></a>: Jupyter notebooks used to create the final dataset</p>
+<p>XXX <a class="reference internal" href="Dataset_Versions.html"><span class="doc std std-doc">Dataset versions</span></a></p>
 </section>
 
     <script type="text/x-thebe-config">

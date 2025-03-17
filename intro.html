@@ -149,14 +149,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="CH-CHA Flux Product - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="CH-CHA Flux Product - Home"/>`);</script>
   
+    <p class="title logo__title">CH-CHA Flux Product</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -197,14 +191,15 @@
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Instrumentation.html">Instrumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SI.html">Supplementary Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/README.html">Notebook overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dataset_Versions.html">Dataset Versions</a></li>
 </ul>
 
     </div>
@@ -400,14 +395,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-versions">Dataset versions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-dataset-version">Current dataset version</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch-cha-fp2025-2-2005-2024-current-version"><strong>CH-CHA FP2025.2 (2005-2024) [current version]</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-versions">Previous versions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eddy-covariance-fluxes-in-this-dataset">Eddy covariance fluxes in this dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upcoming-updates">Upcoming updates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funding">Funding</a></li>
 </ul>
@@ -426,69 +417,26 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="ch-cha-flux-product">
 <h1>CH-CHA Flux Product<a class="headerlink" href="#ch-cha-flux-product" title="Link to this heading">#</a></h1>
 <p>produced by <a class="reference external" href="https://gl.ethz.ch/people/person-detail.lukas.html">Lukas Hörtnagl</a></p>
-<p>Documentation and notebooks for the creation of the PI dataset of the <strong>intensively managed grassland ecosystem station CH-CHA (Chamau)</strong> . The research station CH-CHA is part of <a class="reference external" href="https://www.swissfluxnet.ethz.ch/">Swiss FluxNet</a>, operated by the <a class="reference external" href="https://gl.ethz.ch/">Grassland Sciences Group, ETH Zurich</a>. Group leader: <a class="reference external" href="https://gl.ethz.ch/people/person-detail.nina.html">Prof. Nina Buchmann</a>.</p>
+<p>Documentation and notebooks for the creation of the PI dataset of the <strong>intensively managed grassland ecosystem station <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/">CH-CHA (Chamau)</a></strong> . The site is part of <a class="reference external" href="https://www.swissfluxnet.ethz.ch/">Swiss FluxNet</a>, operated by the <a class="reference external" href="https://gl.ethz.ch/">Grassland Sciences Group, ETH Zurich</a>. Group leader: <a class="reference external" href="https://gl.ethz.ch/people/person-detail.nina.html">Prof. Nina Buchmann</a>.</p>
 <p>The dataset comprises ecosystem fluxes measured by the eddy covariance method (CO<sub>2</sub>, H<sub>2</sub>O, H, N<sub>2</sub>O, CH<sub>4</sub>), meteorological data and detailed management info between 2005 and 2024. More data will be added to this dataset in the future.</p>
-<p>This documentation details the processing steps from XXX</p>
-<section id="dataset-versions">
-<h2>Dataset versions<a class="headerlink" href="#dataset-versions" title="Link to this heading">#</a></h2>
+<p>For an overview of the dataset, see <a class="reference internal" href="Overview.html"><span class="doc std std-doc">here</span></a>.</p>
+<section id="current-dataset-version">
+<h2>Current dataset version<a class="headerlink" href="#current-dataset-version" title="Link to this heading">#</a></h2>
 <section id="ch-cha-fp2025-2-2005-2024-current-version">
 <h3><strong>CH-CHA FP2025.2 (2005-2024) [current version]</strong><a class="headerlink" href="#ch-cha-fp2025-2-2005-2024-current-version" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>release date: 7 Mar 2025</p></li>
 <li><p>is currently available on demand from the Grassland Sciences group server</p></li>
-<li><p><strong>Differrences to previous version</strong>:</p>
+<li><p><strong>Differrences to previous version FP2025.1</strong>:</p>
 <ul>
 <li><p><strong>Flux calculations Level-1, updated fluxes for 2023</strong>: The vertical wind component <code class="docutils literal notranslate"><span class="pre">W</span></code> showed a constant offset during some time periods. Fluxes for these time periods were re-calculated separately, taking the offset into account in the EddyPro settings. See <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/ec-raw-binary-format-ch-cha/#Setup_since_2005">this table</a>, Note (28), for the exact time periods. Other time periods during the same year were also re-calculated, but without the offset time periods.</p></li>
 <li><p><strong>Post-processing Level-2, SSITC test</strong>: stricter setting for <em>all fluxes</em> between <code class="docutils literal notranslate"><span class="pre">2022-05-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2023-09-30</span></code>. For this test flag, data of medium quality were set to bad quality. This allowed to filter out erratic flux values due to a drift towards negative numbers observed in the vertical wind component <code class="docutils literal notranslate"><span class="pre">W</span></code>.</p></li>
 <li><p>No new data were added.</p></li>
 </ul>
 </li>
+<li><p>For a list of previous versions see <a class="reference internal" href="Dataset_Versions.html"><span class="doc std std-doc">here</span></a>.</p></li>
 </ul>
 </section>
-<section id="previous-versions">
-<h3>Previous versions<a class="headerlink" href="#previous-versions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>CH-CHA FP2025.1 (2005-2024) | initial release | release date: 8 Feb 2025</p></li>
-</ul>
-</section>
-</section>
-<section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/">Site info CH-CHA</a>: general info about the research station</p></li>
-<li><p><a class="reference internal" href="Meteo_Data.html"><span class="doc std std-doc">Meteo Data</span></a>: details about used meteo data and gap-filling</p></li>
-<li><p><a class="reference internal" href="Management_Data.html"><span class="doc std std-doc">Management Data</span></a>: describes how management information was converted to a time series format</p></li>
-<li><p>Flux Processing Chain:</p></li>
-<li><p><a class="reference internal" href="FPC.html"><span class="std std-doc">Flux Calculations</span></a>: lists background info about flux processing settings used in EddyPro</p></li>
-<li><p><a class="reference internal" href="#Flux_Post-processing"><span class="xref myst">Flux Post-processing</span></a>: lists post-processing steps and their settings, including generation of quality flags, outlier removal and gap-filling</p></li>
-<li><p><a class="reference internal" href="Used_Software.html"><span class="doc std std-doc">Used Software</span></a>: lists software (including links) used in the generation of this dataset</p></li>
-<li><p><a class="reference internal" href="Variables.html"><span class="doc std std-doc">Variables</span></a>: list of variables in the dataset</p></li>
-<li><p><a class="reference internal" href="Links.html"><span class="doc std std-doc">Links</span></a>:</p></li>
-<li><p><a class="reference internal" href="References.html"><span class="doc std std-doc">References</span></a>: contains references relevant to the production of this dataset</p></li>
-<li><p><a class="reference internal" href="notebooks/README.html"><span class="std std-doc">Notebooks overview</span></a>: Jupyter notebooks used to create the final dataset</p></li>
-</ul>
-</section>
-<section id="eddy-covariance-fluxes-in-this-dataset">
-<h2>Eddy covariance fluxes in this dataset<a class="headerlink" href="#eddy-covariance-fluxes-in-this-dataset" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>NEE</strong>: Net ecosystem exchange of carbon dioxide (2005-2024)</p></li>
-<li><p><strong>LE</strong>: Latent heat flux (2005-2024)</p></li>
-<li><p><strong>H</strong>: Sensible heat flux (2005-2024)</p></li>
-<li><p><strong>FN2O</strong>: Nitrous oxide flux (Jan 2012 - July 2022, with eight years of good data coverage)</p></li>
-<li><p><strong>FCH4</strong>: Methane flux (Jan 2012 - July 2022, with eight years of good data coverage)</p></li>
-</ul>
-</section>
-<section id="upcoming-updates">
-<h2>Upcoming updates<a class="headerlink" href="#upcoming-updates" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><em>RF = gap-filled using random forest</em></p></li>
-<li><p><em>MDS = gap-filled using marginal distrubution sampling from Reichstein et al. (2005)</em></p></li>
-<li><p><strong>GPP</strong> (RF) and <strong>RECO</strong> (RF) from NEE (RF) partitioning</p></li>
-<li><p><strong>GPP</strong> (MDS) and <strong>RECO</strong> (MDS) from NEE (MDS) partitioning</p></li>
-<li><p><strong>ET</strong> calculated from LE (RF)</p></li>
-<li><p><strong>ET</strong> calculated from LE (MDS)</p></li>
-<li><p>more meteo variables</p></li>
-</ul>
 </section>
 <section id="acknowledgments">
 <h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
@@ -557,14 +505,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-versions">Dataset versions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-dataset-version">Current dataset version</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch-cha-fp2025-2-2005-2024-current-version"><strong>CH-CHA FP2025.2 (2005-2024) [current version]</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-versions">Previous versions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eddy-covariance-fluxes-in-this-dataset">Eddy covariance fluxes in this dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upcoming-updates">Upcoming updates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funding">Funding</a></li>
 </ul>
