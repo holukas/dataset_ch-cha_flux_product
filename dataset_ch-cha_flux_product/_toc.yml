@@ -19,11 +19,12 @@ chapters:
   - file: L4.1
   - file: L4.2  
   - file: QCF  
-- file: Used_Software
 - file: Instrumentation
 - file: Variables
 - file: SI
 - file: Issues
+- file: Used_Software
 - file: Links
 - file: References
 - file: notebooks/README
+- file: Dataset_Versions
