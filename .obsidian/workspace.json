@@ -14,13 +14,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dataset_ch-cha_flux_product/Overview.md",
+                "file": "dataset_ch-cha_flux_product/Variables.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Overview"
+              "title": "Outline of Variables"
             }
           }
         ]
@@ -42,7 +42,8 @@
               },
               "icon": "lucide-file",
               "title": "Overview"
-            }
+            },
+            "group": "ac0ff02c90982078"
           },
           {
             "id": "c22cde81e6d91dc0",
@@ -128,7 +129,8 @@
               "title": "Management_Data"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       },
       {
         "id": "d1c8b7570bbfab20",
@@ -141,13 +143,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/Variables.md",
-                "mode": "source",
+                "file": "dataset_ch-cha_flux_product/Overview.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Variables"
-            }
+              "title": "Overview"
+            },
+            "group": "ac0ff02c90982078"
           },
           {
             "id": "58fb78139ecc8d5d",
@@ -295,8 +298,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9778c4ed30cdb39e",
+  "active": "ea1dc0d809d860d2",
   "lastOpenFiles": [
+    "dataset_ch-cha_flux_product/FPC.md",
+    "dataset_ch-cha_flux_product/Variables.md",
+    "dataset_ch-cha_flux_product/Overview.md",
+    "dataset_ch-cha_flux_product/notebooks/README.md",
+    "dataset_ch-cha_flux_product/Meteo_Data.md",
     "dataset_ch-cha_flux_product/_build/html/index.html",
     "dataset_ch-cha_flux_product/_build/html/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css",
     "dataset_ch-cha_flux_product/_build/html/objects.inv",
@@ -317,7 +325,6 @@
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.ipynb",
     "dataset_ch-cha_flux_product/_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.ipynb",
-    "dataset_ch-cha_flux_product/_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/README.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/intro.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Variables.md",
@@ -338,10 +345,6 @@
     "dataset_ch-cha_flux_product/_build/html/_sources/L3.1.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/L2.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/L1.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/L0.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/Issues.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/Instrumentation.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/FPC.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/Dataset_Versions.md"
+    "dataset_ch-cha_flux_product/_build/html/_sources/L0.md"
   ]
 }

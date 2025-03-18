@@ -1,24 +1,34 @@
 # Overview
 
-The dataset was created using homogenized eddy covariance (EC) flux processing sites across all years. It combines ecosystem fluxes with meteo data and detailed management information. EC measurements at the research site [CH-CHA (Chamau)]((https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/)) in Switzerland started in 2005, and at the time of writing measurements are ongoing. This documentation consists of various sections that give details about the respective variables and processing steps. In addition, we provide all flux processing settings (EddyPro settings and metadata info) and Jupyter notebooks (for post-processing) that were used to create the dataset.
+The dataset was created using homogenized eddy covariance (EC) flux processing sites across all years. It combines ecosystem fluxes with meteo data and detailed management information. EC measurements at the research site [CH-CHA (Chamau)]((https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/)) in Switzerland started in 2005, and at the time of writing measurements are ongoing. This documentation consists of various sections that give details about the respective variables and processing steps. In addition, we provide all flux processing settings ([EddyPro settings and metadata info](https://github.com/holukas/dataset_ch-cha_flux_product/tree/main/dataset_ch-cha_flux_product/data/EddyPro_settings)) and [Jupyter notebooks](notebooks/README) (for post-processing) that were used to create the dataset.
 
 Below you find a short summary and important info related to the different sections in this documentation. 
 
 ## Flux processing chain
 
-[Flux processing chain](FPC) lists background info about flux processing settings used in EddyPro and post-processing steps (quality flags, outlier removal, gap-filling) and their settings. 
+We follow [Swiss FluxNet's Flux Processing Chain](https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/) for (post-)processing eddy covariance fluxes.
 
-We use "Levels" to describe different steps in the processing chain: [Level-0](L0) are preliminary fluxes used to refine processing settings, [Level-1](L1) are final flux calculations, [Level-2](L2) uses the Level-1 output to calculate additional quality flags, [Level-3.1](L3.1) calculates the storage-corrected fluxes (simple addition of storage term to flux), [Level-3.2](L3.2) creates quality flags related to outliers and [Level-3.3](L3.3) creates quality flags related to turbulence (USTAR threshold used for `NEE`, `FCH4` and `FN2O`). 
+The page [Flux Processing Chain](FPC) lists background info about flux processing settings used in EddyPro and post-processing steps (quality flags, outlier removal, gap-filling) and their settings. 
 
-Then we assess the overall quality of each specific data record by combining quality test results from multiple individual tests into one overall quality control flag (`QCF`). Each flux has it's own `QCF`. The page [QCF](QCF) shows how this overall flag was generated. After the `QCF` was calculated, it is applied to the fluxes by removing flux records of low quality, creating quality-filtered flux versions that were then used in subsequent steps.
+We use "Levels" to describe different steps in the flux processing chain: [Level-0](L0) are preliminary fluxes used to refine processing settings, [Level-1](L1) are final flux calculations, [Level-2](L2) uses the Level-1 output to calculate additional quality flags, [Level-3.1](L3.1) calculates the storage-corrected fluxes (simple addition of storage term to flux), [Level-3.2](L3.2) creates quality flags related to outliers and [Level-3.3](L3.3) creates quality flags related to turbulence (USTAR threshold used for `NEE`, `FCH4` and `FN2O`). 
+
+Then we assess the overall quality of each specific data record by combining quality test results from multiple individual tests into one overall **Q**uality **C**ontrol **F**lag (`QCF`). Each flux has its own `QCF`. The page [QCF](QCF) shows how this overall flag is generated. After the `QCF` was calculated, it is applied to the fluxes by removing flux records of low quality, creating quality-filtered flux versions that are used in subsequent steps.
 
 [Level-4.1](L4.1) then uses these filtered fluxes during gap-filling, creating continuous and complete time series for each flux. [Level-4.2](L4.2) describes `NEE` partitioning using 3 different methods.
 
 ## Variables
 
-[Variables](Variables) lists variables that are part of the dataset. Since there are many hundreds of variables, it also gives recommendations which variables to use for which purpose. Also worth mentioning here: we have a [collection of commonly used variable abbreviations](https://www.swissfluxnet.ethz.ch/index.php/data/variables/variable-abbreviations/) (with search bar) on the Swiss FluxNet homepage. 
+The page [Variables](Variables) lists variables that are part of the dataset. Since there are many hundreds of variables, it also gives recommendations which variables to use for which purpose. Also worth mentioning here: we have a [collection of commonly used variable abbreviations](https://www.swissfluxnet.ethz.ch/index.php/data/variables/variable-abbreviations/) (with search bar) on the Swiss FluxNet homepage. 
 
-**XXX TODO naming convention**
+### Naming convention
+
+For *meteo or auxiliary* variable names, we developed a [variable naming convention](https://www.swissfluxnet.ethz.ch/index.php/data/variables/naming-convention/) that is based on FLUXNET variable names. We use the same variable abbreviations as FLUXNET, with some exceptions (e.g. we call precipitation `PREC` instead of `P`). 
+
+Similar to FLUXNET, we also use identifiers in the variable names that describe the horizontal and vertical position where the variable was measured, along with its replicate number. However, we use identifiers slightly differently. For example, in our case the soil water content measured in the grasslandfloor at 5 cm depth is named `SWC_GF1_0.05_1`, whereas in FLUXNET the variable name would be `SWC_1_1_1`. We decided to include the depth (or height) of a sensor in the variable name because with the FLUXNET convention (using only numbers) would make the use of a complementary list explaining all variable positions mandatory at all times.
+
+Following our convention it is possible to understand many variables in the dataset directly by simply checking its name. 
+
+### Variants
 
 One imporant aspect is that we included many variables as *variants* in the dataset. These are new variables that were calculated from existing variables. For example, `SWC` (soil water content) was included as the original measurement, but also as a mean value over the preceding 3 hours (`MEAN3H`, [notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.2_CalcMean3HVars_SWC_TS_PREC.html)). In an additional step, we used the `MEAN3H` variables to calculate *step-lagged variants* ([notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.4_CalcMean3HVarsStepLag_SWC_TS_PREC.html)): in this case, the means are lagged, however, the lag is not applied continuously (1 record, 2 records, 3 records, …) but in steps (6 records, 12, 18, 24), whereby 1 record corresponds to 30MIN. `MEAN3H-18` is the mean over the 3-hour time period ending 18 records (corresponds to 9 hours) before the respective timestamp.
 
@@ -27,6 +37,8 @@ This approach follows the description in [Feigenwinter et al. (2023a)](Reference
 > We created aggregated and lagged versions of these three variables: The running mean over 3 h before the respective timestamp (mean3h) was calculated as well as lagged running means over 3 h, which started 6, 9, and 12 h before and ended 3, 6, and 9 h before the corresponding timestamp, respectively (...).
 
 Another example: `PREC` (precipitation) was included as the original measurement, and in addition as `TIMESINCE` variant ([notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html#calc-timesince-variable-for-prec)), which counted the number of records (in our case one record is 30MIN) since the last precipitation event, done for each data record. 
+
+### Different flux versions
 
 One goal of this dataset was to keep the different flux versions after each Level. It was therefore unavoidable to use sometimes cryptic (and long) variable names. For example, after storage correction, `FC` (CO<sub>2</sub> flux) becomes `NEE` (storage-corrected CO<sub>2</sub> flux). In this case it is easy to distinguish between the storage-corrected version and the original version. Such a distinction is not straight-forward for other fluxes, they do not have a dedicated name that would imply that they are storage-corrected. Therefore, we use the suffix `_L3.1` to indicate that the respective flux was storage-corrected (e.g. `FN2O_L3.1`). To keep naming consistent, we do this also for `NEE` as `NEE_L3.1`. 
 
