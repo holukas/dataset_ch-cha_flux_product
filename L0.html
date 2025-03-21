@@ -443,18 +443,24 @@ document.write(`
 <li><p>The results from the OPENLAG runs were used to define a time window as narrow as possible (IRGA) for the final flux calculations (Level-1)</p>
 <ul>
 <li><p>The histograms of found OPENLAG time lags were inspected to determine whether there was a the histogram bin with peak distribution</p></li>
-<li><p><strong>IRGA</strong>: peak of distribution was used as nominal (default) lag, time ranges around this peak were used as time window (<a class="reference internal" href="#table-irga-openlags"><span class="std std-ref">table</span></a>)</p></li>
-<li><p><strong>QCL</strong>: peak of distrubution was used as constant lag for the respective time period, no time window used, all lags were constant (<a class="reference internal" href="#table-qcllgr-openlags"><span class="std std-ref">table</span></a>)</p></li>
+<li><p><strong>IRGA</strong>: peak of distribution was used as nominal (default) lag, time ranges around this peak were used as time window (<a class="reference internal" href="#table-irga-openlags"><span class="xref myst">table</span></a>)</p></li>
+<li><p><strong>QCL</strong>: peak of distrubution was used as constant lag for the respective time period, no time window used, all used lags were constant (<a class="reference internal" href="#table-qcllgr-openlags"><span class="std std-ref">table</span></a>)</p></li>
 </ul>
 </li>
 </ul>
 <figure class="align-default" id="fig-openlag1">
 <img alt="" src="_images/CO2_TLAG_ACTUAL_OPENLAG_2024.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Results for the OPENLAG run (Level-0 fluxes) in 2024. The time lag between turbulent departures of vertical wind and CO<sub>2</sub> molar densities of the open-path IRGA was first searched in a time window between -1s and 10s, then the window was narrowed down to get a clearer histogram peak for the most frequently found time lag. Level-0 flux calculations use no nominal (default) time lag, only simple covariance maximization.These results were used to define a narrow time window for final flux calculations in Level-1. In this example, for Level-1 flux calculations, the time lag with peak distribution was used as the nominal (default) time lag (0.30s), the time window for lag search was set to between +0.05s and +0.5s.</span><a class="headerlink" href="#fig-openlag1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Results for the OPENLAG run for CO<sub>2</sub> (Level-0 fluxes) in 2024.</strong> The time lag between turbulent departures of vertical wind and CO<sub>2</sub> molar densities of the open-path IRGA was first searched in a time window between -1s and 10s, then the window was narrowed down to get a clearer histogram peak for the most frequently found time lag. Level-0 flux calculations use no nominal (default) time lag, only simple covariance maximization.These results were used to define a narrow time window for final flux calculations in Level-1. In this example, for Level-1 flux calculations, the time lag with peak distribution was used as the nominal (default) time lag (0.30s), the time window for lag search was set to between +0.05s and +0.5s.</span><a class="headerlink" href="#fig-openlag1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="pst-scrollable-table-container"><span id="table-irga-openlags"></span><table class="table" id="id1">
+<figure class="align-default" id="fig-openlag-n2o-2021">
+<img alt="" src="_images/N2O_TLAG_ACTUAL_OPENLAG_2021.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text"><strong>Histogram and time series of found time lags between turbulent departures of vertical wind and N<sub>2</sub>O mixing ratios.</strong> Results from the OPENLAG run (Level-0 fluxes) in 2021. The histogram shows a clear bimodal distribution, which indicates that the time lag between the two scalars is not constant. In this example, there are two distinct time periods: the first time period has shorter lags and ranges from January to 22 July; the second time period has longer lags and ranges from 23 July to 31 December. In this example, the fluxes for the two time periods are calculated separately, with their own respective constant time lags. Time lags get noisier towards the end of the year due to (very) low N<sub>2</sub>O fluxes and therefore low signal-to-noise ratios. However, lags after 31 December 2021, during the following year, are still in the same range, therefore our best estimate is that the lags remain essentially the same during the noisy period.</span><a class="headerlink" href="#fig-openlag-n2o-2021" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
 <caption><span class="caption-number">Table 4 </span><span class="caption-text">IRGA nominal (default) time lags and size of the lag search windows for different time periods in seconds. Used for CO2 and H2O (LE) in final flux calculations.</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>time period</strong></p></th>
@@ -856,7 +862,7 @@ By Lukas Hörtnagl
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>

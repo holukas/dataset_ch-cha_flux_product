@@ -400,13 +400,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-settings-for-flux-calculations">Key settings for flux calculations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eddypro-settings">EddyPro settings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-creation">Project creation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-settings">Basic settings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-settings">Advanced settings</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-options">Processing options</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analyses">Statistical analyses</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis-and-corrections">Spectral Analysis and Corrections:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis-and-corrections">Spectral Analysis and Corrections</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output files</a></li>
 </ul>
 </li>
@@ -442,6 +443,16 @@ document.write(`
 <p class="admonition-title">fluxrun</p>
 <p><a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (using EddyPro v7.0.9) was used for all flux calculations.</p>
 </div>
+<section id="key-settings-for-flux-calculations">
+<h2>Key settings for flux calculations<a class="headerlink" href="#key-settings-for-flux-calculations" title="Link to this heading">#</a></h2>
+<p><em>Important settings</em></p>
+<ul class="simple">
+<li><p><strong>Sonic anemometer</strong>: NO angle-of-attack correction, see below</p></li>
+<li><p><strong>Time lag</strong>: Small time lag search window with nominal (default) lag for CO2 and LE from LI-7500</p></li>
+<li><p><strong>Time lag</strong>: Constant time lag for N2O and CH4 fluxes from QCL/LGR</p></li>
+<li><p><strong>Spectra and Cospectra QA/QC</strong>: low flux values for N2O and CH4, see below</p></li>
+</ul>
+</section>
 <section id="eddypro-settings">
 <h2>EddyPro settings<a class="headerlink" href="#eddypro-settings" title="Link to this heading">#</a></h2>
 <section id="project-creation">
@@ -526,7 +537,7 @@ document.write(`
 <section id="processing-options">
 <h4>Processing options<a class="headerlink" href="#processing-options" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p><strong>Angle-of-attack correction</strong>: NO, has a tendency to e.g. overestimate CO<sub>2</sub> uptake, and to underestimate CO<sub>2</sub> release.</p></li>
+<li><p><strong>Angle-of-attack correction</strong>: NO, because for another site we observed a tendency to e.g. overestimate CO<sub>2</sub> uptake, and to underestimate CO<sub>2</sub> release.</p></li>
 <li><p><strong>Axis rotations for tilt correction</strong>: Double rotation</p></li>
 <li><p><strong>Turbulent fluctuations</strong>:</p>
 <ul>
@@ -536,7 +547,7 @@ document.write(`
 <li><p><strong>Time lag compensation</strong>:</p>
 <ul>
 <li><p>Settings for length of the lag search window, nominal (default) and constant time lags are based on reesults from <a class="reference internal" href="L0.html"><span class="doc std std-doc">Level-0</span></a> flux calculations, which uses a large time window for covariance maximization.</p></li>
-<li><p><strong>IRGA</strong>: Covariance maximization with default, very small time window with default lag, similar to ICOS (see Table <a class="reference internal" href="L0.html#table-irga-openlags"><span class="std std-ref">IRGA lags</span></a>)</p></li>
+<li><p><strong>IRGA</strong>: Covariance maximization with default, very small time window with default lag, similar to ICOS (see Table <span class="xref std std-ref">IRGA lags</span>)</p></li>
 <li><p><strong>QCL/LGR</strong>: constant time lag, separate for each year or for time periods when the time lag changed (see Table <a class="reference internal" href="L0.html#table-qcllgr-openlags"><span class="std std-ref">QCL lags</span></a>)</p></li>
 </ul>
 </li>
@@ -559,10 +570,10 @@ document.write(`
 </ul>
 </section>
 <section id="spectral-analysis-and-corrections">
-<h4>Spectral Analysis and Corrections:<a class="headerlink" href="#spectral-analysis-and-corrections" title="Link to this heading">#</a></h4>
+<h4>Spectral Analysis and Corrections<a class="headerlink" href="#spectral-analysis-and-corrections" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Spectra and (co)spectra calculation</strong>: Binned (co)spectra not available, Use power-of-two samples to speed up the FFT: YES, Lowest noise frequency: all gases 1Hz</p></li>
-<li><p><strong>Spectra and Cospectra QA/QC</strong>: in the following the three settings for “Minimum, unstable”/”Minimum, stable”/”Maximum”, respectively. In particular, note the settings for CH<sub>4</sub> and N<sub>2</sub>O. Settings for these two had to be strongly adjusted to accomodate the often very low fluxes at the site.</p>
+<li><p><strong>Spectra and Cospectra QA/QC</strong>: in the following the three settings for “Minimum, unstable”/”Minimum, stable”/”Maximum”, respectively. <strong>In particular, note the settings for CH<sub>4</sub> and N<sub>2</sub>O</strong>. Settings for these two had to be strongly adjusted to accomodate the often very low fluxes at the site.</p>
 <ul>
 <li><p><em>Friction velocity</em> 0.2/0.05/5 m s<sup>-1</sup></p></li>
 <li><p><em>Sensible heat flux</em> 20/5/1000 W m<sup>-2</sup></p></li>
@@ -732,13 +743,14 @@ Notebook that was used to merge all QCL and LGR Level-1 result files.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-settings-for-flux-calculations">Key settings for flux calculations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eddypro-settings">EddyPro settings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-creation">Project creation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-settings">Basic settings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-settings">Advanced settings</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-options">Processing options</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analyses">Statistical analyses</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis-and-corrections">Spectral Analysis and Corrections:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis-and-corrections">Spectral Analysis and Corrections</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output files</a></li>
 </ul>
 </li>
@@ -773,7 +785,7 @@ By Lukas Hörtnagl
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>

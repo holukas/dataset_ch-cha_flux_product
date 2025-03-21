@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; CH-CHA Flux Product</title>
+    <title>Time lag check on Level-0 fluxes &#8212; CH-CHA Flux Product</title>
   
   
   
@@ -377,9 +377,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -390,19 +388,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Time lag check on Level-0 fluxes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -412,7 +402,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="time-lag-check-on-level-0-fluxes">
+<h1>Time lag check on Level-0 fluxes<a class="headerlink" href="#time-lag-check-on-level-0-fluxes" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -440,7 +432,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\0_data\OPENLAG-IRGA-Level-0_fluxnet_2005-2024\merged_all_years.parquet (0.538 seconds).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\0_data\OPENLAG-IRGA-Level-0_fluxnet_2005-2024\merged_all_years.parquet (2.825 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
 </pre></div>
 </div>
@@ -1242,7 +1234,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tlag_actual_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tlag_cols</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_ACTUAL&quot;</span><span class="p">)]</span>
 <span class="c1"># locs = (df.index.year == 2019) &amp; (df.index.month &gt;= 5)</span>
-<span class="n">locs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2024</span>
+<span class="n">locs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2021</span>
 <span class="c1"># locs = (df.index.year == 2017) | (df.index.year == 2018)</span>
 <span class="c1"># locs = (df.index.year == 2017) &amp; (df.index &lt; &quot;2017-03-15 23:59:00&quot;)</span>
 <span class="c1"># locs = (df.index.year == 2019) &amp; ((df.index &gt; &quot;2019-02-17 23:59:00&quot;) &amp; (df.index &lt;= &quot;2019-04-30 23:59:00&quot;))</span>
@@ -1260,16 +1252,16 @@ document.write(`
 <span class="c1">#     tlag_actual[c].plot(x_compat=True, title=c)</span>
 <span class="c1">#     plt.show()</span>
 
-<span class="c1"># gases = [&#39;CO2&#39;]</span>
-<span class="n">gases</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="s1">&#39;H2O&#39;</span><span class="p">]</span>
-<span class="n">vline1</span> <span class="o">=</span> <span class="mf">0.05</span>
-<span class="n">vline2</span> <span class="o">=</span> <span class="mf">0.50</span>
-<span class="c1"># gases = [&#39;CH4&#39;, &#39;N2O&#39;]</span>
-<span class="c1"># gases = [&#39;CH4&#39;, &#39;N2O&#39;, &#39;H2O&#39;]</span>
-<span class="c1"># vline1 = 0.4</span>
-<span class="c1"># vline2 = 0.85</span>
+<span class="c1"># # gases = [&#39;CO2&#39;]</span>
+<span class="c1"># gases = [&#39;CO2&#39;, &#39;H2O&#39;]</span>
+<span class="c1"># vline1 = 0.05</span>
+<span class="c1"># vline2 = 0.50</span>
+<span class="n">gases</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CH4&#39;</span><span class="p">,</span> <span class="s1">&#39;N2O&#39;</span><span class="p">]</span>
+<span class="n">gases</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CH4&#39;</span><span class="p">,</span> <span class="s1">&#39;N2O&#39;</span><span class="p">,</span> <span class="s1">&#39;H2O&#39;</span><span class="p">]</span>
+<span class="n">vline1</span> <span class="o">=</span> <span class="mf">0.70</span>
+<span class="n">vline2</span> <span class="o">=</span> <span class="mf">1.50</span>
 <span class="n">startbin</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">endbin</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">endbin</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
@@ -1315,20 +1307,21 @@ document.write(`
     <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gascol</span><span class="si">}</span><span class="s2"> (between </span><span class="si">{</span><span class="n">first_date</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">last_date</span><span class="si">}</span><span class="s2">)&quot;</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">vline1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">vline2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-    <span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">vline1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-    <span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">vline2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+
     <span class="n">peak</span> <span class="o">=</span> <span class="n">peakbins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">peak</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
 
-    <span class="n">trans</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">blended_transform_factory</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">transData</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">vline1</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;start </span><span class="si">{</span><span class="n">vline1</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">,</span>
-            <span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">backgroundcolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">trans</span><span class="p">,</span>
-            <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">999</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">vline2</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;end </span><span class="si">{</span><span class="n">vline2</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">,</span>
-            <span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">backgroundcolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">trans</span><span class="p">,</span>
-            <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">999</span><span class="p">)</span>
+    <span class="c1"># ax.axvline(vline1, color=&quot;blue&quot;)</span>
+    <span class="c1"># ax.axvline(vline2, color=&quot;red&quot;)</span>
+    <span class="c1"># ax2.axhline(vline1, color=&quot;blue&quot;)</span>
+    <span class="c1"># ax2.axhline(vline2, color=&quot;red&quot;)</span>
+    <span class="c1"># trans = transforms.blended_transform_factory(ax.transData, ax.transAxes)</span>
+    <span class="c1"># ax.text(vline1, 0.70, f&quot;start {vline1}s&quot;,</span>
+    <span class="c1">#         size=16, color=&#39;blue&#39;, backgroundcolor=&#39;none&#39;, transform=trans,</span>
+    <span class="c1">#         alpha=1, horizontalalignment=&#39;right&#39;, verticalalignment=&#39;top&#39;, zorder=999)</span>
+    <span class="c1"># ax.text(vline2, 0.70, f&quot;end {vline2}s&quot;,</span>
+    <span class="c1">#         size=16, color=&#39;red&#39;, backgroundcolor=&#39;none&#39;, transform=trans,</span>
+    <span class="c1">#         alpha=1, horizontalalignment=&#39;left&#39;, verticalalignment=&#39;top&#39;, zorder=999)</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">peak</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">peak</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;PEAK </span><span class="si">{</span><span class="n">peak</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">,</span>
@@ -1340,27 +1333,33 @@ document.write(`
     <span class="n">ax</span><span class="o">.</span><span class="n">locator_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
     <span class="n">ax2</span><span class="o">.</span><span class="n">locator_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 
     <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\nopan\AppData\Local\Temp\ipykernel_13868\3563623386.py:63: UserWarning: &#39;set_params()&#39; not defined for locator of type &lt;class &#39;matplotlib.dates.AutoDateLocator&#39;&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\nopan\AppData\Local\Temp\ipykernel_8396\2609315706.py:64: UserWarning: &#39;set_params()&#39; not defined for locator of type &lt;class &#39;matplotlib.dates.AutoDateLocator&#39;&gt;
   ax2.locator_params(axis=&#39;both&#39;, nbins=20)
-C:\Users\nopan\AppData\Local\Temp\ipykernel_13868\3563623386.py:67: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+C:\Users\nopan\AppData\Local\Temp\ipykernel_8396\2609315706.py:68: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   fig.show()
-C:\Users\nopan\AppData\Local\Temp\ipykernel_13868\3563623386.py:63: UserWarning: &#39;set_params()&#39; not defined for locator of type &lt;class &#39;matplotlib.dates.AutoDateLocator&#39;&gt;
+C:\Users\nopan\AppData\Local\Temp\ipykernel_8396\2609315706.py:64: UserWarning: &#39;set_params()&#39; not defined for locator of type &lt;class &#39;matplotlib.dates.AutoDateLocator&#39;&gt;
   ax2.locator_params(axis=&#39;both&#39;, nbins=20)
-C:\Users\nopan\AppData\Local\Temp\ipykernel_13868\3563623386.py:67: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+C:\Users\nopan\AppData\Local\Temp\ipykernel_8396\2609315706.py:68: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  fig.show()
+C:\Users\nopan\AppData\Local\Temp\ipykernel_8396\2609315706.py:64: UserWarning: &#39;set_params()&#39; not defined for locator of type &lt;class &#39;matplotlib.dates.AutoDateLocator&#39;&gt;
+  ax2.locator_params(axis=&#39;both&#39;, nbins=20)
+C:\Users\nopan\AppData\Local\Temp\ipykernel_8396\2609315706.py:68: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   fig.show()
 </pre></div>
 </div>
-<img alt="../../_images/2fe08e1ae0dabaecb8d30ebe61fcfcd02eb92131cd47139fc6b0a359dec4e19e.png" src="../../_images/2fe08e1ae0dabaecb8d30ebe61fcfcd02eb92131cd47139fc6b0a359dec4e19e.png" />
-<img alt="../../_images/59d0e5eb7b5c43a44d2d3f52086014f0fd71b9616c387b90cc32798bc4bd0741.png" src="../../_images/59d0e5eb7b5c43a44d2d3f52086014f0fd71b9616c387b90cc32798bc4bd0741.png" />
+<img alt="../../_images/2619eb50af0c4389ae34601a8173944cb033c3c991ad36c3dc4c7235d87e84b5.png" src="../../_images/2619eb50af0c4389ae34601a8173944cb033c3c991ad36c3dc4c7235d87e84b5.png" />
+<img alt="../../_images/be84317c180dc6759462a397abceb32174eb2ead06a2dffefef3a15d42ac7129.png" src="../../_images/be84317c180dc6759462a397abceb32174eb2ead06a2dffefef3a15d42ac7129.png" />
+<img alt="../../_images/6a0580c5ec7511781538ab55e6a4f848149963edee9a3da9108fe060586de17c.png" src="../../_images/6a0580c5ec7511781538ab55e6a4f848149963edee9a3da9108fe060586de17c.png" />
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1399,21 +1398,6 @@ C:\Users\nopan\AppData\Local\Temp\ipykernel_13868\3563623386.py:67: UserWarning:
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -1433,7 +1417,7 @@ By Lukas Hörtnagl
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
