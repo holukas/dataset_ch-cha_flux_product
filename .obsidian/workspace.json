@@ -14,13 +14,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dataset_ch-cha_flux_product/Variables.md",
+                "file": "dataset_ch-cha_flux_product/L0.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Variables"
+              "title": "Outline of L0"
             }
           }
         ]
@@ -28,7 +28,7 @@
       {
         "id": "5cc31ff0d2ff9a41",
         "type": "tabs",
-        "dimension": 49.72650422675286,
+        "dimension": 45.45002486325211,
         "children": [
           {
             "id": "9778c4ed30cdb39e",
@@ -36,14 +36,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/Overview.md",
+                "file": "dataset_ch-cha_flux_product/intro.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Overview"
-            },
-            "group": "ac0ff02c90982078"
+              "title": "intro"
+            }
           },
           {
             "id": "c22cde81e6d91dc0",
@@ -60,82 +59,27 @@
             }
           },
           {
-            "id": "f0a74b628270336c",
+            "id": "3d96762ebf79d48f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/References.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "References"
-            }
-          },
-          {
-            "id": "ea1dc0d809d860d2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "dataset_ch-cha_flux_product/Variables.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Variables"
-            }
-          },
-          {
-            "id": "d316261f155a426b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "dataset_ch-cha_flux_product/Instrumentation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Instrumentation"
-            }
-          },
-          {
-            "id": "ea060802510d5a39",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "dataset_ch-cha_flux_product/Meteo_Data.md",
+                "file": "dataset_ch-cha_flux_product/L0.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Meteo_Data"
-            }
-          },
-          {
-            "id": "cff393e8aeb1e471",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "dataset_ch-cha_flux_product/Management_Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Management_Data"
-            }
+              "title": "L0"
+            },
+            "group": "9faeb14a4a1e372e"
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       },
       {
         "id": "d1c8b7570bbfab20",
         "type": "tabs",
-        "dimension": 38.58776727996022,
+        "dimension": 42.864246643460966,
         "children": [
           {
             "id": "5ad14774901f0a80",
@@ -143,14 +87,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/Overview.md",
+                "file": "dataset_ch-cha_flux_product/L0.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Overview"
+              "title": "L0"
             },
-            "group": "ac0ff02c90982078"
+            "group": "9faeb14a4a1e372e"
           },
           {
             "id": "58fb78139ecc8d5d",
@@ -298,33 +242,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ea1dc0d809d860d2",
+  "active": "3d96762ebf79d48f",
   "lastOpenFiles": [
-    "dataset_ch-cha_flux_product/FPC.md",
-    "dataset_ch-cha_flux_product/Variables.md",
-    "dataset_ch-cha_flux_product/Overview.md",
-    "dataset_ch-cha_flux_product/notebooks/README.md",
-    "dataset_ch-cha_flux_product/Meteo_Data.md",
     "dataset_ch-cha_flux_product/_build/html/index.html",
     "dataset_ch-cha_flux_product/_build/html/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css",
     "dataset_ch-cha_flux_product/_build/html/objects.inv",
     "dataset_ch-cha_flux_product/_build/html/searchindex.js",
     "dataset_ch-cha_flux_product/_build/html/_images/c45f66dfb737dee82787070df4c7c1ad3463346a9f0708aa67bed8bb9be105f4.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/e81abef98a72c7c4d5ae828383650d08ae72ba15363e74886c26f0fafb83d5f5.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/d2003f0eea3db2e8636ce12596a822cf521f37eb20968504906ed10a4b784d23.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/4cece03924693e2f16c8ac7ce4b4fabfb275c1835eae9a88c17f3d314122ec9f.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/5c1fb2f779c41f2c574b25c0a8bd87dfb87d7a1be953f9f2373bb082a3c3abe3.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/632797b9ffd950cff051e95c63a881dcdc35765148918c9b2e8fa2503123cba2.png",
     "dataset_ch-cha_flux_product/_build/html/_images/d50986b4b7bdfab0305d1758c1213677f19dbfda8a16627e8814f4dd4f9bb2ad.png",
     "dataset_ch-cha_flux_product/_build/html/_images/cbbb7a4160d49ffadc4ffe5a17009f1153cfe37b066d787710ad4ecd295df6a2.png",
     "dataset_ch-cha_flux_product/_build/html/_images/7e08d6a1554c374a90a59affcd4a2263fb6c98767bed8ac45bd9bbc35a41f32a.png",
     "dataset_ch-cha_flux_product/_build/html/_images/3dbed8f7479b40d3843f9660fd42e9d7f42f1626d75e50d58d8f55172c265c58.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/fb48cb8376f8b457b9fe7516343ed0f42598ea9099e13bd9ede7532ba89128b5.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/760d4ead801b8ba086c1fb61d6e40e4201904dedddcaf4f3a91611d6a15c38c0.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/07674ce9db1d49ea46082bcc23eed262e7767b5b0c884394c7ae7a9925fd685b.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/6e6fed291f499f78db684db0ab11fd1421f8b472c632d5c20feec50eb85effd7.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/554e590eaf9f9313602b1d8e5e361d86cca040148295e16988274d0ef186864b.png",
     "dataset_ch-cha_flux_product/_build/html/_images",
     "dataset_ch-cha_flux_product/_build/html/search.html",
     "dataset_ch-cha_flux_product/_build/html/genindex.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.ipynb",
     "dataset_ch-cha_flux_product/_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.ipynb",
+    "dataset_ch-cha_flux_product/_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/README.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/intro.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Variables.md",
@@ -345,6 +285,10 @@
     "dataset_ch-cha_flux_product/_build/html/_sources/L3.1.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/L2.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/L1.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/L0.md"
+    "dataset_ch-cha_flux_product/_build/html/_sources/Issues.md",
+    "dataset_ch-cha_flux_product/_build/html/_sources/L0.md",
+    "dataset_ch-cha_flux_product/_build/html/_sources/Instrumentation.md",
+    "dataset_ch-cha_flux_product/_build/html/_sources/FPC.md",
+    "dataset_ch-cha_flux_product/_build/html/_sources/Dataset_Versions.md"
   ]
 }

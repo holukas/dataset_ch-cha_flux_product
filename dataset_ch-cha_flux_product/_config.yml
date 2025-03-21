@@ -3,6 +3,7 @@
 
 title: CH-CHA Flux Product
 author: Lukas Hörtnagl
+copyright: "2025"
 logo: logo1.jpg
 
 # Force re-execution of notebooks on each build.
