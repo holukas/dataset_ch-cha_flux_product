@@ -14,13 +14,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dataset_ch-cha_flux_product/L0.md",
+                "file": "dataset_ch-cha_flux_product/intro.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of L0"
+              "title": "Outline of intro"
             }
           }
         ]
@@ -50,13 +50,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/L1.md",
+                "file": "dataset_ch-cha_flux_product/intro.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L1"
-            }
+              "title": "intro"
+            },
+            "group": "1cef01039de74f6e"
           },
           {
             "id": "3d96762ebf79d48f",
@@ -70,11 +71,10 @@
               },
               "icon": "lucide-file",
               "title": "L0"
-            },
-            "group": "9faeb14a4a1e372e"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "d1c8b7570bbfab20",
@@ -87,14 +87,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/L0.md",
+                "file": "dataset_ch-cha_flux_product/intro.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "L0"
+              "title": "intro"
             },
-            "group": "9faeb14a4a1e372e"
+            "group": "1cef01039de74f6e"
           },
           {
             "id": "58fb78139ecc8d5d",
@@ -242,8 +242,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3d96762ebf79d48f",
+  "active": "c22cde81e6d91dc0",
   "lastOpenFiles": [
+    "dataset_ch-cha_flux_product/Issues.md",
+    "dataset_ch-cha_flux_product/intro.md",
+    "dataset_ch-cha_flux_product/L1.md",
+    "dataset_ch-cha_flux_product/L0.md",
     "dataset_ch-cha_flux_product/_build/html/index.html",
     "dataset_ch-cha_flux_product/_build/html/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css",
     "dataset_ch-cha_flux_product/_build/html/objects.inv",
@@ -264,7 +268,6 @@
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.ipynb",
     "dataset_ch-cha_flux_product/_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.ipynb",
-    "dataset_ch-cha_flux_product/_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/README.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/intro.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Variables.md",
@@ -286,9 +289,6 @@
     "dataset_ch-cha_flux_product/_build/html/_sources/L2.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/L1.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Issues.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/L0.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/Instrumentation.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/FPC.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/Dataset_Versions.md"
+    "dataset_ch-cha_flux_product/_build/html/_sources/L0.md"
   ]
 }
