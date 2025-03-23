@@ -30,13 +30,30 @@ Following our convention it is possible to understand many variables in the data
 
 ### Variants
 
-One important aspect is that we included many variables as *variants* in the dataset. These are new variables that were calculated from existing variables. For example, `SWC` (soil water content) was included as the original measurement, but also as a mean value over the preceding 3 hours (`MEAN3H`, [notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.2_CalcMean3HVars_SWC_TS_PREC.html)). In an additional step, we used the `MEAN3H` variables to calculate *step-lagged variants* ([notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.4_CalcMean3HVarsStepLag_SWC_TS_PREC.html)): in this case, the means are lagged, however, the lag is not applied continuously (1 record, 2 records, 3 records, …) but in steps (6 records, 12, 18, 24), whereby 1 record corresponds to 30MIN. `MEAN3H-18` is the mean over the 3-hour time period ending 18 records (corresponds to 9 hours) before the respective timestamp.
+One important aspect is that we included many variables as *variants* in the dataset. These are new variables that were calculated from existing variables.
+#### `MEAN3H` variants
+*Mean value over the preceding 3 hours.*
+
+ For variables `SWC`, `TS` and `PREC` we calculated `MEAN3H` variants. The variables were included as measured, and in addition also as mean value over the preceding 3 hours ([notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.2_CalcMean3HVars_SWC_TS_PREC.html), see also description in [Feigenwinter et al., 2023a](References)). 
+
+#### Step-lagged variants
+
+In an additional step, we used the `MEAN3H` variants for variables `SWC`, `TS` and `PREC` to calculate *step-lagged variants* ([notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.4_CalcMean3HVarsStepLag_SWC_TS_PREC.html)): in this case, the means are lagged, however, the lag is not applied continuously (1 record, 2 records, 3 records, …) but in steps (6 records, 12, 18, 24), whereby 1 record corresponds to 30MIN. `MEAN3H-18` is the mean over the 3-hour time period ending 18 records (corresponds to 9 hours) before the respective timestamp.
 
 This approach follows the description in [Feigenwinter et al. (2023a)](References):
 
 > We created aggregated and lagged versions of these three variables: The running mean over 3 h before the respective timestamp (mean3h) was calculated as well as lagged running means over 3 h, which started 6, 9, and 12 h before and ended 3, 6, and 9 h before the corresponding timestamp, respectively (...).
 
-Another example: `PREC` (precipitation) was included as the original measurement, and in addition as `TIMESINCE` variant ([notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html#calc-timesince-variable-for-prec)), which counted the number of records (in our case one record is 30MIN) since the last precipitation event, done for each data record. 
+#### `TIMESINCE` variants
+*Time since last occurrence.*
+
+`TIMESINCE` variants count the number of records since the last occurrence of an event. These variants were calculated for `PREC` and all `MGMT` (management) variables. 
+
+Especially for the `MGMT` variables the `TIMESINCE` variants are important. By calculating `TIMESINCE` variants for all `MGMT` variables, a temporal relation of each data record to preceding management events is established. Example: `TIMESINCE_MGMT_FERT_MIN_FOOTPRINT` is the number of records since the last time mineral fertilizer was applied in the footprint. 
+
+For example: `PREC` (precipitation) was included as the original measurement, and in addition as `TIMESINCE` variant ([notebook](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html#calc-timesince-variable-for-prec)), which counted the number of records (in our case one record is 30MIN) since the last precipitation event, done for each data record. 
+
+Measurements at the site started in 2005, but management info was available since 2001. Therefore it was possible to define the `TIMESINCE` variants also for the first year 2005. 
 
 ### Different flux versions
 
@@ -61,6 +78,8 @@ Name of flux variables used in gap-filling and all further steps:
 [Meteo data](Meteo_Data) describes which variables were included and how some of them were gap-filled. [Some variables were merged](Meteo_Data#data-mering) with other datasets to generate one complete time series. Generally, included data were directly measured at the station. There are some exceptions when data from a neighboring meteo stations were used to fill gaps for e.g. `PREC` (see [Feigenwinter et al., 2023b](https://doi.org/10.1016/j.agrformet.2023.109613) for more details).
 
 Note that there are also numerous notebooks that were used to quality-screen data from recent years ([2021-2023](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/README.html#meteo-11-meteoscreening-diive-2021-2023), [2024](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/README.html#meteo-11-meteoscreening-diive-2024)). For screening older years, no notebooks are available because data were screened with a now deprecated meteoscreening tool.
+
+Plots of non gap-filled meteo data (2005-2024) are [shown in our database here](https://dataviews.swissfluxnet.ethz.ch/d/eeewpv2d68a9sb/15de5f4?orgId=1&from=2004-12-31T23:00:00.000Z&to=2024-12-31T23:00:00.000Z&timezone=Africa%2FTunis&var-datasource=c180d4a3-13b0-4ee5-b2ec-bcb21d46c2ea&var-dataversion1=meteoscreening_diive&var-dataversion2=meteoscreening_mst&var-measurement=$__all).
 
 ## Management data
 
