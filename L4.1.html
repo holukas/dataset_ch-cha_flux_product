@@ -425,7 +425,7 @@ document.write(`
 <h2>Random forest<a class="headerlink" href="#random-forest" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>All fluxes were gap-filled using the class <code class="docutils literal notranslate"><span class="pre">LongTermGapFillingRandomForestTS</span></code> from <a class="reference external" href="https://github.com/holukas/diive/tree/main">diive</a></p></li>
-<li><p>This class builds a random forest model for each year, trained on data of the respective year and the two closest/neighboring years</p></li>
+<li><p>This class uses a sliding three-year window to train annual random forest models, incorporating data from each target year and its two nearest neighbors.</p></li>
 <li><p><strong>For example</strong>: for gap-filling 2015, the model was trained on 2014, 2015 and 2016. For 2005 (the very first year for FC fluxes), the two closest years were used, i.e., the model was trained on 2005, 2006 and 2007. Likewise, for the very last year, the model was trained on data from the last year and the two preceding years.</p></li>
 <li><p><strong>Exception</strong>: due to low flux availability for <code class="docutils literal notranslate"><span class="pre">FN2O</span></code> and <code class="docutils literal notranslate"><span class="pre">FCH4</span></code> in 2017, 2018 and 2022, respective gap-filling models were built from all available, directly measured data (2012-2022) after quality checks and then used to gap-fill these three years. A completely new gap-filled flux version for the complete time range (2012-2022) was built. From that version, gap-filled data for the three years (2017, 2018, 2022) then replaced the data in the previously gap-filled version.</p></li>
 <li><p>Generally used random forest settings: <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>: 500, <code class="docutils literal notranslate"><span class="pre">random_state</span></code>: 42, <code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>: 2, <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>: 1, default settings were used for all other parameters, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">here</a>.</p></li>
@@ -433,6 +433,7 @@ document.write(`
 <section id="features-predictors">
 <h3>Features (predictors)<a class="headerlink" href="#features-predictors" title="Link to this heading">#</a></h3>
 <ul class="simple">
+<li><p>We chose features based on their demonstrated predictive ability in previous studies. As an example, regarding temperature, air temperature <code class="docutils literal notranslate"><span class="pre">TA</span></code> was selected for <code class="docutils literal notranslate"><span class="pre">NEE</span></code> predictions, while soil temperature <code class="docutils literal notranslate"><span class="pre">TS</span></code> was deemed more suitable for <code class="docutils literal notranslate"><span class="pre">FCH4</span></code> and <code class="docutils literal notranslate"><span class="pre">FN2O</span></code>.</p></li>
 <li><p>Variables used as features in training the random forest models.</p></li>
 <li><p>In addition to features listed below, timestamp info was included as additional features:</p></li>
 </ul>
@@ -440,12 +441,25 @@ document.write(`
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Lagged variants</strong> were calculated for <code class="docutils literal notranslate"><span class="pre">SW_IN_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">TA_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">VPD_T1_2_1</span></code> and all variables listed in  <code class="docutils literal notranslate"><span class="pre">METEO_VARS</span></code> (see below).</p></li>
-<li><p><strong>Feature importances</strong> were calculated as <strong>permutation importance</strong>: Permutation feature importance assesses feature contributions to a model’s performance. It works by randomly shuffling a feature’s values, observing the resulting performance drop. This reveals how much the model relies on that feature.</p></li>
-<li><p><strong>Feature reduction</strong>: Feature reduction was performed by comparing feature importances to a random variable (<code class="docutils literal notranslate"><span class="pre">.RANDOM</span></code>), which consisted of random numbers (floats) between 0 and 1. Features with importance below <code class="docutils literal notranslate"><span class="pre">.RANDOM</span></code>’s were discarded. To ensure consistency across yearly models, a feature was only removed if it was deemed unimportant in <em>all</em> yearly models. A feature was retained if it was deemed important in at least one model.</p></li>
+<li><p><strong>Lagged variants</strong> of directly measured variables were included as features. Used variants were <code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code>, step-lagged and <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants. For a description of variants see <a class="reference internal" href="#Overview#Variants"><span class="xref myst">Overview: Variants</span></a>.</p></li>
+<li><p><strong>Feature importances</strong> were calculated as <strong>permutation importance</strong>: Permutation feature importance assesses feature contributions to a model’s performance. It works by randomly shuffling a feature’s values, observing the resulting performance drop. This reveals how much the model relies on that feature. <a class="reference external" href="https://scikit-learn.org/stable/modules/permutation_importance.html">See here for the official description</a> in <code class="docutils literal notranslate"><span class="pre">scikit</span></code>’s documentation.</p>
+<ul>
+<li><p>Note:</p></li>
 </ul>
+</li>
+<li><p><strong>Feature reduction</strong>: Feature reduction was performed by comparing feature permutation importances to a random variable (<code class="docutils literal notranslate"><span class="pre">.RANDOM</span></code>), which consisted of random numbers (floats) between 0 and 1. Features with importance below <code class="docutils literal notranslate"><span class="pre">.RANDOM</span></code>’s were discarded. To ensure consistency across yearly models, a feature was only removed if it was deemed unimportant in <em>all</em> yearly models. A feature was retained if it was deemed important in at least one model.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>By default, the random forest regressor in <code class="docutils literal notranslate"><span class="pre">scikit</span></code> uses <code class="docutils literal notranslate"><span class="pre">Gini</span></code> importance to calculate feature importances. However, <code class="docutils literal notranslate"><span class="pre">Gini</span></code> (impurity-based) feature importances can be misleading for high cardinality features (many unique values), as mentioned <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor.feature_importances_">here</a>. In the models (also during feature reduction) we used permutation importance instead of <code class="docutils literal notranslate"><span class="pre">Gini</span></code>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <strong>amount</strong> of applied fertilizer nitrogen (<code class="docutils literal notranslate"><span class="pre">N</span></code>) was not used as a predictive feature. This decision stemmed from the difficulty in translating a single application event into a format suitable for machine learning. The substantial range of decay function values reported in the literature hindered the development of a consistent representation. We had no detailed information about possible decay rates over the long measurement campaign at the study site. A potential solution for future analyses involves carrying the total <code class="docutils literal notranslate"><span class="pre">N</span></code> amount forward as a repeated value until the next application occurs.</p>
+</div>
 <section id="nee-le-h">
 <h4>NEE, LE, H<a class="headerlink" href="#nee-le-h" title="Link to this heading">#</a></h4>
+<p><em>Features used for gap-filling fluxes.</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MGMT_VARS</span> <span class="o">=</span> <span class="p">[</span>
 <span class="s2">&quot;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_GRAZING_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_MOWING_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_SOILCULTIVATION_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_SOWING_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_PESTICIDE_HERBICIDE_FOOTPRINT&quot;</span><span class="p">]</span>
 
@@ -456,6 +470,7 @@ document.write(`
 </section>
 <section id="fn2o-fch4">
 <h4>FN2O, FCH4<a class="headerlink" href="#fn2o-fch4" title="Link to this heading">#</a></h4>
+<p><em>Features used for gap-filling fluxes.</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Management variables (also includes time since PRECIP)</span>
 <span class="n">MGMT_VARS</span> <span class="o">=</span> <span class="p">[</span>
 <span class="s2">&quot;TIMESINCE_MGMT_FERT_MIN_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_FERT_ORG_FOOTPRINT&quot;</span><span class="p">,</span>   <span class="s2">&quot;TIMESINCE_MGMT_GRAZING_FOOTPRINT&quot;</span><span class="p">,</span> <span class="s2">&quot;TIMESINCE_MGMT_MOWING_FOOTPRINT&quot;</span><span class="p">,</span>

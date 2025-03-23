@@ -403,7 +403,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-processing-chain">Flux processing chain</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention">Naming convention</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variants">Variants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variants">Variants</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mean3h-variants"><code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code> variants</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-lagged-variants">Step-lagged variants</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timesince-variants"><code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-flux-versions">Different flux versions</a></li>
 </ul>
 </li>
@@ -446,12 +451,28 @@ document.write(`
 </section>
 <section id="variants">
 <h3>Variants<a class="headerlink" href="#variants" title="Link to this heading">#</a></h3>
-<p>One important aspect is that we included many variables as <em>variants</em> in the dataset. These are new variables that were calculated from existing variables. For example, <code class="docutils literal notranslate"><span class="pre">SWC</span></code> (soil water content) was included as the original measurement, but also as a mean value over the preceding 3 hours (<code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code>, <a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.2_CalcMean3HVars_SWC_TS_PREC.html">notebook</a>). In an additional step, we used the <code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code> variables to calculate <em>step-lagged variants</em> (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.4_CalcMean3HVarsStepLag_SWC_TS_PREC.html">notebook</a>): in this case, the means are lagged, however, the lag is not applied continuously (1 record, 2 records, 3 records, …) but in steps (6 records, 12, 18, 24), whereby 1 record corresponds to 30MIN. <code class="docutils literal notranslate"><span class="pre">MEAN3H-18</span></code> is the mean over the 3-hour time period ending 18 records (corresponds to 9 hours) before the respective timestamp.</p>
+<p>One important aspect is that we included many variables as <em>variants</em> in the dataset. These are new variables that were calculated from existing variables.</p>
+<section id="mean3h-variants">
+<h4><code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code> variants<a class="headerlink" href="#mean3h-variants" title="Link to this heading">#</a></h4>
+<p><em>Mean value over the preceding 3 hours.</em></p>
+<p>For variables <code class="docutils literal notranslate"><span class="pre">SWC</span></code>, <code class="docutils literal notranslate"><span class="pre">TS</span></code> and <code class="docutils literal notranslate"><span class="pre">PREC</span></code> we calculated <code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code> variants. The variables were included as measured, and in addition also as mean value over the preceding 3 hours (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.2_CalcMean3HVars_SWC_TS_PREC.html">notebook</a>, see also description in <a class="reference internal" href="References.html"><span class="doc std std-doc">Feigenwinter et al., 2023a</span></a>).</p>
+</section>
+<section id="step-lagged-variants">
+<h4>Step-lagged variants<a class="headerlink" href="#step-lagged-variants" title="Link to this heading">#</a></h4>
+<p>In an additional step, we used the <code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code> variants for variables <code class="docutils literal notranslate"><span class="pre">SWC</span></code>, <code class="docutils literal notranslate"><span class="pre">TS</span></code> and <code class="docutils literal notranslate"><span class="pre">PREC</span></code> to calculate <em>step-lagged variants</em> (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/33.4_CalcMean3HVarsStepLag_SWC_TS_PREC.html">notebook</a>): in this case, the means are lagged, however, the lag is not applied continuously (1 record, 2 records, 3 records, …) but in steps (6 records, 12, 18, 24), whereby 1 record corresponds to 30MIN. <code class="docutils literal notranslate"><span class="pre">MEAN3H-18</span></code> is the mean over the 3-hour time period ending 18 records (corresponds to 9 hours) before the respective timestamp.</p>
 <p>This approach follows the description in <a class="reference internal" href="References.html"><span class="doc std std-doc">Feigenwinter et al. (2023a)</span></a>:</p>
 <blockquote>
 <div><p>We created aggregated and lagged versions of these three variables: The running mean over 3 h before the respective timestamp (mean3h) was calculated as well as lagged running means over 3 h, which started 6, 9, and 12 h before and ended 3, 6, and 9 h before the corresponding timestamp, respectively (…).</p>
 </div></blockquote>
-<p>Another example: <code class="docutils literal notranslate"><span class="pre">PREC</span></code> (precipitation) was included as the original measurement, and in addition as <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variant (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html#calc-timesince-variable-for-prec">notebook</a>), which counted the number of records (in our case one record is 30MIN) since the last precipitation event, done for each data record.</p>
+</section>
+<section id="timesince-variants">
+<h4><code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants<a class="headerlink" href="#timesince-variants" title="Link to this heading">#</a></h4>
+<p><em>Time since last occurrence.</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants count the number of records since the last occurrence of an event. These variants were calculated for <code class="docutils literal notranslate"><span class="pre">PREC</span></code> and all <code class="docutils literal notranslate"><span class="pre">MGMT</span></code> (management) variables.</p>
+<p>Especially for the <code class="docutils literal notranslate"><span class="pre">MGMT</span></code> variables the <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants are important. By calculating <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants for all <code class="docutils literal notranslate"><span class="pre">MGMT</span></code> variables, a temporal relation of each data record to preceding management events is established. Example: <code class="docutils literal notranslate"><span class="pre">TIMESINCE_MGMT_FERT_MIN_FOOTPRINT</span></code> is the number of records since the last time mineral fertilizer was applied in the footprint.</p>
+<p>For example: <code class="docutils literal notranslate"><span class="pre">PREC</span></code> (precipitation) was included as the original measurement, and in addition as <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variant (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html#calc-timesince-variable-for-prec">notebook</a>), which counted the number of records (in our case one record is 30MIN) since the last precipitation event, done for each data record.</p>
+<p>Measurements at the site started in 2005, but management info was available since 2001. Therefore it was possible to define the <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants also for the first year 2005.</p>
+</section>
 </section>
 <section id="different-flux-versions">
 <h3>Different flux versions<a class="headerlink" href="#different-flux-versions" title="Link to this heading">#</a></h3>
@@ -476,6 +497,7 @@ document.write(`
 <h2>Meteo data<a class="headerlink" href="#meteo-data" title="Link to this heading">#</a></h2>
 <p><a class="reference internal" href="Meteo_Data.html"><span class="doc std std-doc">Meteo data</span></a> describes which variables were included and how some of them were gap-filled. <a class="reference internal" href="#Meteo_Data#data-mering"><span class="xref myst">Some variables were merged</span></a> with other datasets to generate one complete time series. Generally, included data were directly measured at the station. There are some exceptions when data from a neighboring meteo stations were used to fill gaps for e.g. <code class="docutils literal notranslate"><span class="pre">PREC</span></code> (see <a class="reference external" href="https://doi.org/10.1016/j.agrformet.2023.109613">Feigenwinter et al., 2023b</a> for more details).</p>
 <p>Note that there are also numerous notebooks that were used to quality-screen data from recent years (<a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/README.html#meteo-11-meteoscreening-diive-2021-2023">2021-2023</a>, <a class="reference external" href="https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/README.html#meteo-11-meteoscreening-diive-2024">2024</a>). For screening older years, no notebooks are available because data were screened with a now deprecated meteoscreening tool.</p>
+<p>Plots of non gap-filled meteo data (2005-2024) are <a class="reference external" href="https://dataviews.swissfluxnet.ethz.ch/d/eeewpv2d68a9sb/15de5f4?orgId=1&amp;amp;from=2004-12-31T23:00:00.000Z&amp;amp;to=2024-12-31T23:00:00.000Z&amp;amp;timezone=Africa%2FTunis&amp;amp;var-datasource=c180d4a3-13b0-4ee5-b2ec-bcb21d46c2ea&amp;amp;var-dataversion1=meteoscreening_diive&amp;amp;var-dataversion2=meteoscreening_mst&amp;amp;var-measurement=$__all">shown in our database here</a>.</p>
 </section>
 <section id="management-data">
 <h2>Management data<a class="headerlink" href="#management-data" title="Link to this heading">#</a></h2>
@@ -569,7 +591,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-processing-chain">Flux processing chain</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention">Naming convention</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variants">Variants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variants">Variants</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mean3h-variants"><code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code> variants</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-lagged-variants">Step-lagged variants</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timesince-variants"><code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-flux-versions">Different flux versions</a></li>
 </ul>
 </li>

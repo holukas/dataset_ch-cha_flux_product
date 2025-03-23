@@ -67,7 +67,7 @@ In addition to fluxes that were filtered according to quality
 - **Recommended variables in the dataset**: *in progress*
 
 ## Meteo
-*Variables in brackets are currently in progress.*
+*Variables directly measured at the site.*
 
 - **TA**: air temperature
 - **SW_IN**: short-wave incoming radiation
@@ -86,7 +86,7 @@ In addition to fluxes that were filtered according to quality
 ## Variants
 *Variants calculated from directly measured variables.*
 
-*soon*
+See description in the [Overview](Overview#Variants).
 
 ## Auxiliary
 *soon*
