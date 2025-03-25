@@ -86,7 +86,7 @@ In addition to fluxes that were filtered according to quality
 ## Variants
 *Variants calculated from directly measured variables.*
 
-See description in the [Overview](Overview#Variants).
+See description in the [Overview](Overview#variants).
 
 ## Auxiliary
 *soon*

@@ -7,7 +7,7 @@ Eddy covariance raw data files are used to calculate preliminary (Level-0) and f
 
 ## EC raw data were recorded in real-time
 
-Eddy covariance (EC) raw data files are recorded using the **custom-made logging script** `sonicread` (Eugster & Plüss, 2010). `sonicread` runs on a data logger and directly merges incoming raw data streams (20Hz) arriving from the instruments into one single file in real-time. 
+Eddy covariance (EC) raw data files are recorded using the **custom-made real-time logging script** `sonicread` ([Eugster & Plüss, 2010](https://doi.org/10.1016/j.agrformet.2009.12.008)). `sonicread` runs on a data logger and directly merges incoming raw data streams (20Hz or 10Hz) arriving from the instruments into one single file. Other loggers can easily be added to the datastream, creating complete data files comprising records from the  sonic anemometer and any number of gas analyzers. Due to the real-time data merging of `sonicread`, it does not have to rely on any timestamps in the data files. This makes handling data from e.g. the QCL much easier, because the QCL logging software uses its own internal clock that is synchronized to the system clock of the QCL computer at regular intervals, and the QCL computer also has to be synchronized to the sonic/IRGA logger.
 
 ## File format
 

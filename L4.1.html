@@ -442,11 +442,7 @@ document.write(`
 </div>
 <ul class="simple">
 <li><p><strong>Lagged variants</strong> of directly measured variables were included as features. Used variants were <code class="docutils literal notranslate"><span class="pre">MEAN3H</span></code>, step-lagged and <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variants. For a description of variants see <a class="reference internal" href="#Overview#Variants"><span class="xref myst">Overview: Variants</span></a>.</p></li>
-<li><p><strong>Feature importances</strong> were calculated as <strong>permutation importance</strong>: Permutation feature importance assesses feature contributions to a model’s performance. It works by randomly shuffling a feature’s values, observing the resulting performance drop. This reveals how much the model relies on that feature. <a class="reference external" href="https://scikit-learn.org/stable/modules/permutation_importance.html">See here for the official description</a> in <code class="docutils literal notranslate"><span class="pre">scikit</span></code>’s documentation.</p>
-<ul>
-<li><p>Note:</p></li>
-</ul>
-</li>
+<li><p><strong>Feature importances</strong> were calculated as <strong>permutation importance</strong>: Permutation feature importance assesses feature contributions to a model’s performance. It works by randomly shuffling a feature’s values, observing the resulting performance drop. This reveals how much the model relies on that feature. <a class="reference external" href="https://scikit-learn.org/stable/modules/permutation_importance.html">See here for the official description</a> in <code class="docutils literal notranslate"><span class="pre">scikit</span></code>’s documentation.</p></li>
 <li><p><strong>Feature reduction</strong>: Feature reduction was performed by comparing feature permutation importances to a random variable (<code class="docutils literal notranslate"><span class="pre">.RANDOM</span></code>), which consisted of random numbers (floats) between 0 and 1. Features with importance below <code class="docutils literal notranslate"><span class="pre">.RANDOM</span></code>’s were discarded. To ensure consistency across yearly models, a feature was only removed if it was deemed unimportant in <em>all</em> yearly models. A feature was retained if it was deemed important in at least one model.</p></li>
 </ul>
 <div class="admonition important">
