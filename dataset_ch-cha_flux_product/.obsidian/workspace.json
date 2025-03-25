@@ -14,13 +14,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "L4.1.md",
+                "file": "Raw_Data_EC.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of L4.1"
+              "title": "Outline of Raw_Data_EC"
             }
           }
         ]
@@ -50,13 +50,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "L4.1.md",
+                "file": "Raw_Data_EC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L4.1"
-            }
+              "title": "Raw_Data_EC"
+            },
+            "group": "e1a03d4e62b4d9e6"
           }
         ],
         "currentTab": 1
@@ -72,13 +73,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "L4.1.md",
+                "file": "Raw_Data_EC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L4.1"
-            }
+              "title": "Raw_Data_EC"
+            },
+            "group": "e1a03d4e62b4d9e6"
           },
           {
             "id": "a00fc535a6038c0e",
@@ -243,7 +245,12 @@
   },
   "active": "d6e7d3a8c1baf14b",
   "lastOpenFiles": [
+    "QCF.md",
+    "Raw_Data_EC.md",
+    "L0.md",
     "Overview.md",
+    "Variables.md",
+    "L4.1.md",
     "_build/jupyter_execute/notebooks/10_METEO/11_meteoscreening_diive_2021-2023/SWC_LOWRES_GF1_0.75_3_2021-2023.ipynb",
     "_build/jupyter_execute/037e3a755e95aa2d1cfbd5f5cfbd7f71d983b4848d2ef65b016f376025b5116b.png",
     "_build/jupyter_execute/ed23a0b3223d71e2a1fd266148121554ccfb12feccb22a3d350e1aaee9f476a1.png",
@@ -264,8 +271,6 @@
     "_build/jupyter_execute/notebooks/10_METEO/11_meteoscreening_diive_2021-2023/SWC_GF1_0.05_1_2021-2023.ipynb",
     "_build/jupyter_execute/notebooks/10_METEO/11_meteoscreening_diive_2021-2023/RH_T1_2_1_2021-2023.ipynb",
     "_build/jupyter_execute/notebooks/10_METEO/11_meteoscreening_diive_2021-2023/PPFD_IN_T1_2_2_2021-2023.ipynb",
-    "L4.1.md",
-    "Variables.md",
     "References.md",
     "intro.md",
     "L1.md"

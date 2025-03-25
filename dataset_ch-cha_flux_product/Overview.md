@@ -28,6 +28,14 @@ Similar to FLUXNET, we also use identifiers in the variable names that describe 
 
 Following our convention it is possible to understand many variables in the dataset and their position in the field directly by simply checking its name. 
 
+### Timestamp
+
+The dataset uses `TIMESTAMP_MIDDLE`, which refers to the middle of the averaging period. This means that for half-hourly data typical timestamps are e.g. `2021-06-05 14:15` (with data between 14:00 and 14:30), `2021-06-05 14:45` (with data between 14:30 and 15:00).
+
+We decided against using simply `TIMESTAMP` because it does not explain when the respective averaging interval starts or stops. It is often common to use a timestamp that gives the end of the averaging interval, without mentioning this in the description or the timestamp name. This can lead to confusion. 
+
+For comparison: FLUXNET gives two timestamps in their dataset: `TIMESTAMP_START` and `TIMESTAMP_END`. `TIMESTAMP_START` is essentially the same as `TIMESTAMP_MIDDLE`. Using `TIMESTAMP_END` and aggregating by date, then the daily value for `2021-06-05` would include records between `2021-06-05 00:00` (these data contain the last half-hour of the previous day) and `2021-06-05 23:30` (with data between 23:00 and 23:30), i.e., the first half-hour of this day is from the previous day, and the last half-hour is missing. In essence, using `TIMESTAMP_START` and `TIMESTAMP_MIDDLE` makes aggregations easier by simply relying on the date info already given in the timestamp.
+
 ### Variants
 
 One important aspect is that we included many variables as *variants* in the dataset. These are new variables that were calculated from existing variables.
