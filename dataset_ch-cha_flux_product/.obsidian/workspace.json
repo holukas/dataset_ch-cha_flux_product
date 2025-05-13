@@ -14,13 +14,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Raw_Data_EC.md",
+                "file": "L4.1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Raw_Data_EC"
+              "title": "Outline of L4.1"
             }
           }
         ]
@@ -43,24 +43,8 @@
               "icon": "lucide-file",
               "title": "L4.1"
             }
-          },
-          {
-            "id": "d6e7d3a8c1baf14b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Raw_Data_EC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Raw_Data_EC"
-            },
-            "group": "e1a03d4e62b4d9e6"
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "443145dbc9c1700d",
@@ -79,8 +63,7 @@
               },
               "icon": "lucide-file",
               "title": "Raw_Data_EC"
-            },
-            "group": "e1a03d4e62b4d9e6"
+            }
           },
           {
             "id": "a00fc535a6038c0e",
@@ -243,12 +226,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d6e7d3a8c1baf14b",
+  "active": "8210e1347d5cd4a2",
   "lastOpenFiles": [
-    "_build/html/index.html",
-    "_build/html/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css",
-    "_build/html/objects.inv",
-    "_build/html/searchindex.js",
+    "notebooks/60_PARTITIONING/61.5_FLUXES_M10_MGMT_L4.2_NEE_LE_H_FN2O_FCH4.parquet",
+    "notebooks/60_PARTITIONING/61.4_AddPartitioningResultsToDataset.ipynb",
+    "notebooks/60_PARTITIONING/61.2_CH-CHA_NEE_RF-GAPF_PART_RP-20250319215835.csv",
+    "notebooks/60_PARTITIONING/61.1_logfile_RF_20250319215835.txt",
+    "notebooks/60_PARTITIONING/61.0_RFPartitionPipelineV2.R",
+    "notebooks/80_FINALIZE/CH-CHA_FP2025.1_2005-2024_61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4_20250208.csv.zip",
+    "notebooks/80_FINALIZE/x-61.0_MergeFluxProcessingChainResults_20250208.ipynb",
+    "notebooks/80_FINALIZE/CH-CHA_FP2025.2_61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4_20250307.csv.zip",
+    "notebooks/80_FINALIZE/62.0_AddMoreMeteo.ipynb",
+    "notebooks/80_FINALIZE/61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.parquet",
+    "notebooks/80_FINALIZE/61.1_FLUXES_M10_MGMT_L4.1_NEE_LE_H_FN2O_FCH4.csv",
+    "Raw_Data_EC.md",
     "_build/html/_images/760d4ead801b8ba086c1fb61d6e40e4201904dedddcaf4f3a91611d6a15c38c0.png",
     "_build/html/_images/07674ce9db1d49ea46082bcc23eed262e7767b5b0c884394c7ae7a9925fd685b.png",
     "_build/html/_images/6e6fed291f499f78db684db0ab11fd1421f8b472c632d5c20feec50eb85effd7.png",
@@ -259,13 +250,6 @@
     "_build/html/_images/31b4cd0e72803515a88cfd61f6a06a2d335a914dfa181f9f6bfeaf6def384750.png",
     "_build/html/_images/1133c4da61773c59f035cf9f9140b75f7023c980b45a388d9d29dde3bd03308a.png",
     "_build/html/_images/5f8a1a5838f92648ed6e6bf8db7e2512c14cb53c8cb55eded1b8c07bc8d8eb4a.png",
-    "_build/html/_images",
-    "_build/html/search.html",
-    "_build/html/genindex.html",
-    "_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.ipynb",
-    "_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/53.0_GapFilling_SWC.html",
-    "_build/html/_sources/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.ipynb",
-    "_build/html/notebooks/x-OLD_50_MERGE_DATA_AND_GAPFILLING-TS-SWC/52.0_GapFilling_TS.html",
     "_build/html/_sources/notebooks/README.md",
     "_build/html/_sources/intro.md",
     "_build/html/_sources/Variables.md",
@@ -289,7 +273,6 @@
     "_build/html/_sources/L0.md",
     "_build/html/_sources/Issues.md",
     "_build/html/_sources/Instrumentation.md",
-    "_build/html/_sources/FPC.md",
-    "_build/html/_sources/Dataset_Versions.md"
+    "_build/html/_sources/FPC.md"
   ]
 }

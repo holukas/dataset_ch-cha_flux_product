@@ -10,9 +10,9 @@
 /dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/*.csv
 /dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/*.csv
 /dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/*.csv
-/dataset_ch-cha_flux_product/notebooks/60_MERGE_DATA_FLUXES/*.csv
-/dataset_ch-cha_flux_product/notebooks/60_MERGE_DATA_FLUXES/*.zip
-/dataset_ch-cha_flux_product/notebooks/70_PARTITIONING/*.csv
+/dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.csv
+/dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.zip
+/dataset_ch-cha_flux_product/notebooks/60_PARTITIONING/*.csv
 /dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/tests
 /dataset_ch-cha_flux_product/_build
 /_raw
