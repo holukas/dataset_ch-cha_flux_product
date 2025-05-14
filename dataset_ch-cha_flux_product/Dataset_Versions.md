@@ -4,7 +4,7 @@
 
 ### **CH-CHA FP2025.3 (2005-2024) [current version]**
 - This release adds additional variables to the dataset. Otherwise, data are the same as in FP2025.2.
-- release date: X May 2025
+- release date: 14 May 2025
 - is currently available on demand from the Grassland Sciences group server
 - **Differrences to previous version FP2025.2**:
 	- Added new flux variables from NEE partitioning (2005-2024):

@@ -53,11 +53,11 @@ In addition to fluxes that were filtered according to quality
 	- `FCH4_L3.1_L3.3_CUT_50_QCF_gfRF`: fully quality-controlled flux, gap-filled using long-term random forest as implemented in `diive`
 	- `FCH4_L3.1_L3.3_CUT_50_QCF0`: fully quality-controlled flux, but only highest-quality fluxes, *not gap-filled*
 
-### Modeled fluxes (in progress)
+### Modeled fluxes
 *Fluxes calculated from main fluxes.*
 
 #### GPP
-- gross primary productivity, modeled from `NEE` partitioning
+- gross primary productivity, modeled from `NEE` partitioning, `µmol CO2 m-2 s-1`
 - 6 different different versions, based on the 3 `NEE` versions
 - **Recommended variables in the dataset**:
 	- Using nighttime method (Reichstein et al., 2005):
@@ -70,7 +70,7 @@ In addition to fluxes that were filtered according to quality
 		- `GPP_DT_CUT_84_gfRF`
 
 #### RECO
-- ecosystem respiration, modeled from `NEE` partitioning
+- ecosystem respiration, modeled from `NEE` partitioning, `µmol CO2 m-2 s-1`
 - 6 different different versions, based on the 3 `NEE` versions
 - **Recommended variables in the dataset**:
 	- Using nighttime method (Reichstein et al., 2005):
@@ -85,25 +85,39 @@ In addition to fluxes that were filtered according to quality
 ## Meteo
 *Variables directly measured at the site.*
 
-- **TA**: air temperature
-- **SW_IN**: short-wave incoming radiation
-- **SW_OUT**: short-wave outgoing radiation *in progress*
-- **LW_IN**: long-wave incoming radiation
-- **LW_OUT**: long-wave outgoing radiation *in progress*
-- **PA**: air pressure
-- **PPFD**: photosynthetic photon flux density
-- **PREC**: precipitation
-- **RH**: relative humidity
+- **TA**: air temperature `°C`
+- **SW_IN**: short-wave incoming radiation `W m-2`
+- **SW_OUT**: short-wave outgoing radiation `W m-2`
+- **LW_IN**: long-wave incoming radiation `W m-2`
+- **LW_OUT**: long-wave outgoing radiation `W m-2`
+- **NETRAD**: net radiation `W m-2`
+- **PA**: air pressure `hPa`
+- **PPFD_IN**: incoming photosynthetic photon flux density `µmol m-2 s-1`
+- **PPFD_OUT**: outgoing photosynthetic photon flux density `µmol m-2 s-1`
+- **PREC**: precipitation `mm`
+- **RH**: relative humidity `%`
 - **VPD**: vapor pressure deficit, calculated from `TA` and `VPD`
-- **SWC**: soil water content
-- **TS**: soil temperature
-- **G**: soil heat flux *in progress*
+- **SWC**: soil water content `%`
+- **TS**: soil temperature `°C`
+- **G**: soil heat flux `W m-2`
 
 ## Variants
 *Variants calculated from directly measured variables.*
 
 See description in the [Overview](Overview#variants).
 
+## Management
+*Management events at the site.*
+
+- `MGMT_MOWING`: mowing/harvest
+- `MGMT_FERT_ORG`: application of organic fertilizer
+- `MGMT_FERT_MIN`: application of mineral fertilizer
+- `MGMT_GRAZING`: grazing by sheep or cattle
+- `MGMT_SOWING`: sowing
+- `MGMT_SOILCULTIVATION`: soil cultivation, e.g. grassland restoration in 2012
+- `MGMT_PESTICIDE_HERBICIDE`: application of pesticides/herbicides
+
+See description regarding managment data in the [Overview](Overview#variants).
 ## Auxiliary
 *soon*
 

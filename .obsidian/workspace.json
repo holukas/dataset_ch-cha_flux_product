@@ -14,13 +14,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dataset_ch-cha_flux_product/Dataset_Versions.md",
+                "file": "dataset_ch-cha_flux_product/intro.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dataset_Versions"
+              "title": "Outline of intro"
             }
           }
         ]
@@ -45,17 +45,87 @@
             }
           },
           {
-            "id": "bb480641159a9878",
+            "id": "2674aabd91073cf4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dataset_ch-cha_flux_product/Dataset_Versions.md",
+                "file": "dataset_ch-cha_flux_product/FPC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dataset_Versions"
+              "title": "FPC"
+            }
+          },
+          {
+            "id": "2b15438308adb5c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataset_ch-cha_flux_product/L4.1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L4.1"
+            }
+          },
+          {
+            "id": "8cae90ac24c03301",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataset_ch-cha_flux_product/intro.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "intro"
+            }
+          },
+          {
+            "id": "84f094d53154d06a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataset_ch-cha_flux_product/Issues.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Issues"
+            }
+          },
+          {
+            "id": "0371bbabba40230c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataset_ch-cha_flux_product/Management_Data.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Management_Data"
+            }
+          },
+          {
+            "id": "77ed3da4aaca88fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataset_ch-cha_flux_product/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           },
           {
@@ -87,7 +157,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       },
       {
         "id": "d1c8b7570bbfab20",
@@ -154,7 +224,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "mds",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -254,40 +324,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bb480641159a9878",
+  "active": "8cae90ac24c03301",
   "lastOpenFiles": [
-    "dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/METEO_TA.ipynb",
-    "dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUX_NEE-Copy1.ipynb",
-    "dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/_METEO_TA_RidgePlots.ipynb",
-    "dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/_METEO_TA.ipynb",
-    "dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUX_NEE.ipynb",
-    "dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUX_NEE_RidgeLinePlots.ipynb",
-    "dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/VARIABLES.ipynb",
-    "dataset_ch-cha_flux_product/notebooks/10_METEO/18.1_CH-CHA_DATABASE_G_LWOUT_PPFDOUT_SWOUT_NETRAD_2004-2024.csv",
-    "dataset_ch-cha_flux_product/notebooks/10_METEO/18.1_CH-CHA_DATABASE_G_LWOUT_PPFDOUT_SWOUT_NETRAD_2004-2024.parquet",
     "dataset_ch-cha_flux_product/Variables.md",
-    "dataset_ch-cha_flux_product/Dataset_Versions.md",
-    "dataset_ch-cha_flux_product/L4.2.md",
-    "dataset_ch-cha_flux_product/notebooks/10_METEO/18.1_CH-CHA_DATABASE_G_LWOUT_2004-2024.csv",
-    "dataset_ch-cha_flux_product/notebooks/10_METEO/18.1_CH-CHA_DATABASE_G_LWOUT_2004-2024.parquet",
     "dataset_ch-cha_flux_product/References.md",
-    "dataset_ch-cha_flux_product/L1.md",
-    "dataset_ch-cha_flux_product/L3.1.md",
-    "dataset_ch-cha_flux_product/L3.2.md",
-    "dataset_ch-cha_flux_product/intro.md",
-    "dataset_ch-cha_flux_product/L0.md",
-    "dataset_ch-cha_flux_product/L3.3.md",
+    "dataset_ch-cha_flux_product/README.md",
+    "dataset_ch-cha_flux_product/Management_Data.md",
     "dataset_ch-cha_flux_product/Issues.md",
-    "dataset_ch-cha_flux_product/_build/html/_images/c45f66dfb737dee82787070df4c7c1ad3463346a9f0708aa67bed8bb9be105f4.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/d50986b4b7bdfab0305d1758c1213677f19dbfda8a16627e8814f4dd4f9bb2ad.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/cbbb7a4160d49ffadc4ffe5a17009f1153cfe37b066d787710ad4ecd295df6a2.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/7e08d6a1554c374a90a59affcd4a2263fb6c98767bed8ac45bd9bbc35a41f32a.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/3dbed8f7479b40d3843f9660fd42e9d7f42f1626d75e50d58d8f55172c265c58.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/fb48cb8376f8b457b9fe7516343ed0f42598ea9099e13bd9ede7532ba89128b5.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/760d4ead801b8ba086c1fb61d6e40e4201904dedddcaf4f3a91611d6a15c38c0.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/07674ce9db1d49ea46082bcc23eed262e7767b5b0c884394c7ae7a9925fd685b.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/6e6fed291f499f78db684db0ab11fd1421f8b472c632d5c20feec50eb85effd7.png",
-    "dataset_ch-cha_flux_product/_build/html/_images/554e590eaf9f9313602b1d8e5e361d86cca040148295e16988274d0ef186864b.png",
+    "dataset_ch-cha_flux_product/intro.md",
+    "dataset_ch-cha_flux_product/L4.2.md",
+    "dataset_ch-cha_flux_product/L4.1.md",
+    "dataset_ch-cha_flux_product/_build/html/_sources/FPC.md",
+    "dataset_ch-cha_flux_product/FPC.md",
+    "dataset_ch-cha_flux_product/Dataset_Versions.md",
+    "dataset_ch-cha_flux_product/_build/html/_sources/Dataset_Versions.md",
+    "dataset_ch-cha_flux_product/Used_Software.md",
+    "dataset_ch-cha_flux_product/Overview.md",
+    "dataset_ch-cha_flux_product/notebooks/80_FINALIZE/CH-CHA_FP2025.3_2005-2024_81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4_20250514.csv.zip",
+    "dataset_ch-cha_flux_product/notebooks/80_FINALIZE/CH-CHA_FP2025.3_2005-2024_81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4_20250514.csv",
+    "dataset_ch-cha_flux_product/notebooks/80_FINALIZE/CH-CHA_FP2025.3_81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4_20250514.csv",
+    "dataset_ch-cha_flux_product/notebooks/80_FINALIZE/81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4 - Copy.csv",
+    "dataset_ch-cha_flux_product/_build/html/index.html",
+    "dataset_ch-cha_flux_product/_build/html/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css",
+    "dataset_ch-cha_flux_product/_build/html/objects.inv",
+    "dataset_ch-cha_flux_product/_build/html/searchindex.js",
+    "dataset_ch-cha_flux_product/_build/html/_images/6e0abb90c1a9ac10cc1534da3fd21cfa905867a0772213e77bc67cad4dbbc498.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/525e2ade8caa5672bd98352cbf61da3fd174f9798fe374cad66628130295b6a0.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/f3d1cd3b81f81ec42db5984a6fa4c89f0b50d5686d99e705163663de89be995e.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/1619e94e1fc59abca8e1a8d2debf171bbf9b737f577dd0f34ef30b35f991c73f.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/d786617e43052a34c62ded8f9ed0d846d3dfae66900983d1949f2a3ab0673275.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/1141f1583a21432c3f1169f26e1e1fc990c065ac20389bf6630a70461e9add77.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/4618eb9c0fee643af4b515ee417b3b32a6b4db6e127ac2d6f8649e9d673b7f61.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/dedfaee7244543009b39954f26e9a38711047785e5aaa6031a2cdb7bdccc6560.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/006d8ad95d4b885c22a1ccb49f4eae2acfdd213429876d22798d5ff49ae4d24c.png",
+    "dataset_ch-cha_flux_product/_build/html/_images/03a94a1c23894002f377b2d0f4d5ce23c2e16c30c42d73fc6b998b93683291b8.png",
+    "dataset_ch-cha_flux_product/_build/html/_images",
+    "dataset_ch-cha_flux_product/_build/html/search.html",
     "dataset_ch-cha_flux_product/_build/html/_sources/notebooks/README.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/intro.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Variables.md",
@@ -299,8 +371,6 @@
     "dataset_ch-cha_flux_product/_build/html/_sources/QCF.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Overview.md",
     "dataset_ch-cha_flux_product/_build/html/_sources/Meteo_Data.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/Management_Data.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/Links.md",
-    "dataset_ch-cha_flux_product/_build/html/_sources/L4.2.md"
+    "dataset_ch-cha_flux_product/_build/html/_sources/Management_Data.md"
   ]
 }
