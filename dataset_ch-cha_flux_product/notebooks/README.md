@@ -75,8 +75,7 @@
 - [17.0_AddAdditionalMeteoData_PREC_SWC_TS](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html)
 - [17.2_GapFilling_TS](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.2_GapFilling_TS.html)
 - [17.4_GapFilling_SWC](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.4_GapFilling_SWC.html)
-- [18.0_AddAdditionalMeteoData_G_LWOUT_2005-2024_DB-PROCESSED_meteoscreening_mst_diive](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/18.0_AddAdditionalMeteoData_G_LWOUT_2005-2024_DB-PROCESSED_meteoscreening_mst_diive.html)
-- [STATS](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/STATS.html)
+- [18.0_DownloadAdditionalMeteoData_2005-2024_meteoscreening_mst_diive](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/18.0_DownloadAdditionalMeteoData_2005-2024_meteoscreening_mst_diive.html)
 
 
 ## 20_MANAGEMENT
@@ -118,8 +117,7 @@
 
 
 ## 90_DATASET_OVERVIEW
-- [FLUX_NEE_RidgePlots](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUX_NEE_RidgePlots.html)
+- [FLUX_NEE](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUX_NEE.html)
 - [FLUXES](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUXES.html)
 - [METEO_TA](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/METEO_TA.html)
-- [METEO_TA_RidgePlots](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/METEO_TA_RidgePlots.html)
-- [Variables](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/Variables.html)
+- [VARIABLES](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/VARIABLES.html)
