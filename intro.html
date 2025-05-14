@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level-3.2: Outlier flagging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level-3.3: USTAR filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level-4.1: Gap-filling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level-4.2: NEE Partitioning (in progress)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level-4.2: NEE Partitioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
@@ -402,7 +402,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-dataset-version">Current dataset version</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch-cha-fp2025-2-2005-2024-current-version"><strong>CH-CHA FP2025.2 (2005-2024) [current version]</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch-cha-fp2025-3-2005-2024-current-version"><strong>CH-CHA FP2025.3 (2005-2024) [current version]</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a><ul class="nav section-nav flex-column">
@@ -422,23 +422,43 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-cha-flux-product">
 <h1>CH-CHA Flux Product<a class="headerlink" href="#ch-cha-flux-product" title="Link to this heading">#</a></h1>
-<p><em>This dataset description is currently in progress.</em></p>
 <p>produced by <a class="reference external" href="https://gl.ethz.ch/people/person-detail.lukas.html">Lukas Hörtnagl</a></p>
 <p>Documentation and notebooks for the creation of the PI dataset of the <strong>intensively managed grassland ecosystem station <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/">CH-CHA (Chamau)</a></strong> . The site is part of <a class="reference external" href="https://www.swissfluxnet.ethz.ch/">Swiss FluxNet</a>, operated by the <a class="reference external" href="https://gl.ethz.ch/">Grassland Sciences Group, ETH Zurich</a>. Group leader: <a class="reference external" href="https://gl.ethz.ch/people/person-detail.nina.html">Prof. Nina Buchmann</a>.</p>
 <p>The dataset comprises ecosystem fluxes measured by the eddy covariance method (CO<sub>2</sub>, H<sub>2</sub>O, H, N<sub>2</sub>O, CH<sub>4</sub>), meteorological data and detailed management info between 2005 and 2024. More data will be added to this dataset in the future.</p>
 <p>For an overview of the dataset, see <a class="reference internal" href="Overview.html"><span class="doc std std-doc">here</span></a>.</p>
 <section id="current-dataset-version">
 <h2>Current dataset version<a class="headerlink" href="#current-dataset-version" title="Link to this heading">#</a></h2>
-<section id="ch-cha-fp2025-2-2005-2024-current-version">
-<h3><strong>CH-CHA FP2025.2 (2005-2024) [current version]</strong><a class="headerlink" href="#ch-cha-fp2025-2-2005-2024-current-version" title="Link to this heading">#</a></h3>
+<section id="ch-cha-fp2025-3-2005-2024-current-version">
+<h3><strong>CH-CHA FP2025.3 (2005-2024) [current version]</strong><a class="headerlink" href="#ch-cha-fp2025-3-2005-2024-current-version" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>release date: 7 Mar 2025</p></li>
+<li><p>This release adds additional variables to the dataset. Otherwise, data are the same as in FP2025.2.</p></li>
+<li><p>release date: 14 May 2025</p></li>
 <li><p>is currently available on demand from the Grassland Sciences group server</p></li>
-<li><p><strong>Differrences to previous version FP2025.1</strong>:</p>
+<li><p><strong>Differrences to previous version FP2025.2</strong>:</p>
 <ul>
-<li><p><strong>Flux calculations Level-1, updated fluxes for 2023</strong>: The vertical wind component <code class="docutils literal notranslate"><span class="pre">W</span></code> showed a constant offset during some time periods. Fluxes for these time periods were re-calculated separately, taking the offset into account in the EddyPro settings. See <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/ec-raw-binary-format-ch-cha/#Setup_since_2005">this table</a>, Note (28), for the exact time periods. Other time periods during the same year were also re-calculated, but without the offset time periods.</p></li>
-<li><p><strong>Post-processing Level-2, SSITC test</strong>: stricter setting for <em>all fluxes</em> between <code class="docutils literal notranslate"><span class="pre">2022-05-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2023-09-30</span></code>. For this test flag, data of medium quality were set to bad quality. This allowed to filter out erratic flux values due to a drift towards negative numbers observed in the vertical wind component <code class="docutils literal notranslate"><span class="pre">W</span></code>.</p></li>
-<li><p>No new data were added.</p></li>
+<li><p>Added new flux variables from NEE partitioning (2005-2024):</p>
+<ul>
+<li><p>Partitioned fluxes were calculated from the gap-filled (random forest) NEE versions (3 USTAR scenarios: 16, 50, 84)</p></li>
+<li><p>Using nighttime method (Reichstein et al., 2005):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPP_NT_CUT_16_gfRF</span></code>, <code class="docutils literal notranslate"><span class="pre">GPP_NT_CUT_50_gfRF</span></code>, <code class="docutils literal notranslate"><span class="pre">GPP_NT_CUT_84_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RECO_NT_CUT_16_gfRF</span></code>, <code class="docutils literal notranslate"><span class="pre">RECO_NT_CUT_50_gfRF</span></code>, <code class="docutils literal notranslate"><span class="pre">RECO_NT_CUT_84_gfRF</span></code></p></li>
+</ul>
+</li>
+<li><p>Using daytime method (Lasslop et al., 2010):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPP_DT_CUT_16_gfRF</span></code>, <code class="docutils literal notranslate"><span class="pre">GPP_DT_CUT_50_gfRF</span></code>, <code class="docutils literal notranslate"><span class="pre">GPP_DT_CUT_84_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RECO_DT_CUT_16_gfRF</span></code>, <code class="docutils literal notranslate"><span class="pre">RECO_DT_CUT_50_gfRF</span></code>, <code class="docutils literal notranslate"><span class="pre">RECO_DT_CUT_84_gfRF</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Added new meteo variables (2005-2024):</p>
+<ul>
+<li><p>Soil heat flux: <code class="docutils literal notranslate"><span class="pre">G_GF1_0.03_1</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF1_0.03_2</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF1_0.05_1</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF1_0.05_2</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF4_0.02_1</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF5_0.02_1</span></code> (different depths not complete over the years, sometimes only sporadically)</p></li>
+<li><p>Radiation: <code class="docutils literal notranslate"><span class="pre">SW_OUT_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">LW_OUT_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">NETRAD_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">PPFD_OUT_T1_2_2</span></code></p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>For a list of previous versions see <a class="reference internal" href="Dataset_Versions.html"><span class="doc std std-doc">here</span></a>.</p></li>
@@ -447,7 +467,7 @@ document.write(`
 </section>
 <section id="acknowledgments">
 <h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
-<p>We acknowledge the scientific advice by Iris Feigenwinter, Yi Wang, Lukas Hörtnagl, Lutz Merbold, Werner Eugster, Kathrin Fuchs, Matthias Zeeman, Valentin Klaus and Nina Buchmann. The technical assistance in the maintenance of the QCLAS and the eddy station by Thomas Baur, Philip Meier, Markus Staudinger, Paul Linwood, Peter Plüss, Patrick Koller, Florian Käslin is greatly acknowledged. We thank Lukas Stocker and the staff at Chamau for managing the fields around the flux station. We thank Franziska Richter and Severin Henzmann for the help with field and lab work. Annika Ackermann and Roland A. Werner are greatly acknowledged for measuring biomass C and N concentrations. We thank Regine Maier for helping with the soil sampling in 2018. We also thank Dennis Imer for his scientific and Hans-Ruedi Wettstein for organisational efforts at Chamau. Many student helpers contributed to this work with their assistance in the field and in the lab. Different projects and several doctoral students helped maintaining the site, resulting in a unique and valuable longterm time series.</p>
+<p>We acknowledge the scientific advice by Iris Feigenwinter, Yi Wang, Lukas Hörtnagl, Lutz Merbold, Werner Eugster, Kathrin Fuchs, Matthias Zeeman, Valentin Klaus and Nina Buchmann. Special thanks to Iris Feigenwinter and Yi Wang for collecting and preparing data. The technical assistance in the maintenance of the QCLAS and the eddy station by Thomas Baur, Philip Meier, Markus Staudinger, Paul Linwood, Peter Plüss, Patrick Koller, Florian Käslin is greatly acknowledged. We thank Lukas Stocker and the staff at Chamau for managing the fields around the flux station. We thank Franziska Richter and Severin Henzmann for the help with field and lab work. Annika Ackermann and Roland A. Werner are greatly acknowledged for measuring biomass C and N concentrations. We thank Regine Maier for helping with the soil sampling in 2018. We also thank Dennis Imer for his scientific and Hans-Ruedi Wettstein for organisational efforts at Chamau. Many student helpers contributed to this work with their assistance in the field and in the lab. Different projects and several doctoral students helped maintaining the site, resulting in a unique and valuable longterm time series.</p>
 <section id="funding">
 <h3>Funding<a class="headerlink" href="#funding" title="Link to this heading">#</a></h3>
 <p>This work was funded by the European Union Horizon 2020 project Developing Sustainable Permanent Grassland Systems and Policies SUPER-G (grant number 774124), the SNF projects GrassGas (200021-105949) and M4P (40FA40_154245) as well as funds from ETH Zurich.</p>
@@ -513,7 +533,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-dataset-version">Current dataset version</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch-cha-fp2025-2-2005-2024-current-version"><strong>CH-CHA FP2025.2 (2005-2024) [current version]</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch-cha-fp2025-3-2005-2024-current-version"><strong>CH-CHA FP2025.3 (2005-2024) [current version]</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a><ul class="nav section-nav flex-column">

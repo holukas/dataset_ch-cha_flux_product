@@ -76,4 +76,4 @@ flowchart
 - **Level-3.2** detects outliers and creates additional quality flags
 - **Level-3.3** creates additional quality flags based on three different constant USTAR thresholds, previously detected by FLUXNET (Pastorello et al., 2020)
 - **Level-4.1** performs gap-filling (long-term random forest)
-- **Level-4.2** partitions NEE fluxes (gap-filled with random forest, MDS) into GPP and RECO
+- **Level-4.2** partitions NEE fluxes (gap-filled with random forest) into GPP and RECO

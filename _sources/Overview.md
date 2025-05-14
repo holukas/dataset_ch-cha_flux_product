@@ -14,7 +14,7 @@ We use "Levels" to describe different steps in the flux processing chain: [Level
 
 Then we assess the overall quality of each specific data record by combining quality test results from multiple individual tests into one overall **Q**uality **C**ontrol **F**lag (`QCF`). Each flux has its own `QCF`. The page [QCF](QCF) shows how this overall flag is generated. After the `QCF` was calculated, it is applied to the fluxes by removing flux records of low quality, creating quality-filtered flux versions that are used in subsequent steps.
 
-[Level-4.1](L4.1) then uses these filtered fluxes during gap-filling, creating continuous and complete time series for each flux. [Level-4.2](L4.2) describes `NEE` partitioning using 3 different methods.
+[Level-4.1](L4.1) then uses these filtered fluxes during gap-filling, creating continuous and complete time series for each flux. [Level-4.2](L4.2) describes `NEE` partitioning using 2 different methods (nighttime method, daytime method).
 
 ## Variables
 

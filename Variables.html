@@ -192,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level-3.2: Outlier flagging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level-3.3: USTAR filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level-4.1: Gap-filling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level-4.2: NEE Partitioning (in progress)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level-4.2: NEE Partitioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
 </ul>
 </details></li>
@@ -410,7 +410,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fch4">FCH4</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeled-fluxes-in-progress">Modeled fluxes (in progress)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeled-fluxes">Modeled fluxes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gpp">GPP</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reco">RECO</a></li>
 </ul>
@@ -419,6 +419,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteo">Meteo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variants">Variants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#management">Management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary">Auxiliary</a></li>
 </ul>
             </nav>
@@ -524,13 +525,13 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="modeled-fluxes-in-progress">
-<h3>Modeled fluxes (in progress)<a class="headerlink" href="#modeled-fluxes-in-progress" title="Link to this heading">#</a></h3>
+<section id="modeled-fluxes">
+<h3>Modeled fluxes<a class="headerlink" href="#modeled-fluxes" title="Link to this heading">#</a></h3>
 <p><em>Fluxes calculated from main fluxes.</em></p>
 <section id="gpp">
 <h4>GPP<a class="headerlink" href="#gpp" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>gross primary productivity, modeled from <code class="docutils literal notranslate"><span class="pre">NEE</span></code> partitioning</p></li>
+<li><p>gross primary productivity, modeled from <code class="docutils literal notranslate"><span class="pre">NEE</span></code> partitioning, <code class="docutils literal notranslate"><span class="pre">µmol</span> <span class="pre">CO2</span> <span class="pre">m-2</span> <span class="pre">s-1</span></code></p></li>
 <li><p>6 different different versions, based on the 3 <code class="docutils literal notranslate"><span class="pre">NEE</span></code> versions</p></li>
 <li><p><strong>Recommended variables in the dataset</strong>:</p>
 <ul>
@@ -555,7 +556,7 @@ document.write(`
 <section id="reco">
 <h4>RECO<a class="headerlink" href="#reco" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>ecosystem respiration, modeled from <code class="docutils literal notranslate"><span class="pre">NEE</span></code> partitioning</p></li>
+<li><p>ecosystem respiration, modeled from <code class="docutils literal notranslate"><span class="pre">NEE</span></code> partitioning, <code class="docutils literal notranslate"><span class="pre">µmol</span> <span class="pre">CO2</span> <span class="pre">m-2</span> <span class="pre">s-1</span></code></p></li>
 <li><p>6 different different versions, based on the 3 <code class="docutils literal notranslate"><span class="pre">NEE</span></code> versions</p></li>
 <li><p><strong>Recommended variables in the dataset</strong>:</p>
 <ul>
@@ -583,25 +584,41 @@ document.write(`
 <h2>Meteo<a class="headerlink" href="#meteo" title="Link to this heading">#</a></h2>
 <p><em>Variables directly measured at the site.</em></p>
 <ul class="simple">
-<li><p><strong>TA</strong>: air temperature</p></li>
-<li><p><strong>SW_IN</strong>: short-wave incoming radiation</p></li>
-<li><p><strong>SW_OUT</strong>: short-wave outgoing radiation <em>in progress</em></p></li>
-<li><p><strong>LW_IN</strong>: long-wave incoming radiation</p></li>
-<li><p><strong>LW_OUT</strong>: long-wave outgoing radiation <em>in progress</em></p></li>
-<li><p><strong>PA</strong>: air pressure</p></li>
-<li><p><strong>PPFD</strong>: photosynthetic photon flux density</p></li>
-<li><p><strong>PREC</strong>: precipitation</p></li>
-<li><p><strong>RH</strong>: relative humidity</p></li>
+<li><p><strong>TA</strong>: air temperature <code class="docutils literal notranslate"><span class="pre">°C</span></code></p></li>
+<li><p><strong>SW_IN</strong>: short-wave incoming radiation <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code></p></li>
+<li><p><strong>SW_OUT</strong>: short-wave outgoing radiation <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code></p></li>
+<li><p><strong>LW_IN</strong>: long-wave incoming radiation <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code></p></li>
+<li><p><strong>LW_OUT</strong>: long-wave outgoing radiation <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code></p></li>
+<li><p><strong>NETRAD</strong>: net radiation <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code></p></li>
+<li><p><strong>PA</strong>: air pressure <code class="docutils literal notranslate"><span class="pre">hPa</span></code></p></li>
+<li><p><strong>PPFD_IN</strong>: incoming photosynthetic photon flux density <code class="docutils literal notranslate"><span class="pre">µmol</span> <span class="pre">m-2</span> <span class="pre">s-1</span></code></p></li>
+<li><p><strong>PPFD_OUT</strong>: outgoing photosynthetic photon flux density <code class="docutils literal notranslate"><span class="pre">µmol</span> <span class="pre">m-2</span> <span class="pre">s-1</span></code></p></li>
+<li><p><strong>PREC</strong>: precipitation <code class="docutils literal notranslate"><span class="pre">mm</span></code></p></li>
+<li><p><strong>RH</strong>: relative humidity <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
 <li><p><strong>VPD</strong>: vapor pressure deficit, calculated from <code class="docutils literal notranslate"><span class="pre">TA</span></code> and <code class="docutils literal notranslate"><span class="pre">VPD</span></code></p></li>
-<li><p><strong>SWC</strong>: soil water content</p></li>
-<li><p><strong>TS</strong>: soil temperature</p></li>
-<li><p><strong>G</strong>: soil heat flux <em>in progress</em></p></li>
+<li><p><strong>SWC</strong>: soil water content <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+<li><p><strong>TS</strong>: soil temperature <code class="docutils literal notranslate"><span class="pre">°C</span></code></p></li>
+<li><p><strong>G</strong>: soil heat flux <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code></p></li>
 </ul>
 </section>
 <section id="variants">
 <h2>Variants<a class="headerlink" href="#variants" title="Link to this heading">#</a></h2>
 <p><em>Variants calculated from directly measured variables.</em></p>
 <p>See description in the <a class="reference internal" href="#Overview#variants"><span class="xref myst">Overview</span></a>.</p>
+</section>
+<section id="management">
+<h2>Management<a class="headerlink" href="#management" title="Link to this heading">#</a></h2>
+<p><em>Management events at the site.</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MGMT_MOWING</span></code>: mowing/harvest</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MGMT_FERT_ORG</span></code>: application of organic fertilizer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MGMT_FERT_MIN</span></code>: application of mineral fertilizer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING</span></code>: grazing by sheep or cattle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MGMT_SOWING</span></code>: sowing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MGMT_SOILCULTIVATION</span></code>: soil cultivation, e.g. grassland restoration in 2012</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MGMT_PESTICIDE_HERBICIDE</span></code>: application of pesticides/herbicides</p></li>
+</ul>
+<p>See description regarding managment data in the <a class="reference internal" href="#Overview#variants"><span class="xref myst">Overview</span></a>.</p>
 </section>
 <section id="auxiliary">
 <h2>Auxiliary<a class="headerlink" href="#auxiliary" title="Link to this heading">#</a></h2>
@@ -683,7 +700,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fch4">FCH4</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeled-fluxes-in-progress">Modeled fluxes (in progress)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeled-fluxes">Modeled fluxes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gpp">GPP</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reco">RECO</a></li>
 </ul>
@@ -692,6 +709,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meteo">Meteo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variants">Variants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#management">Management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary">Auxiliary</a></li>
 </ul>
   </nav></div>

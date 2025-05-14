@@ -19,5 +19,5 @@
 * [diive](https://github.com/holukas/diive): Python library for (post-)processing time series data. Used for quality control, gap-filling, merging, etc.  Used versions `v0.80+`.
 
 ## REddyProc
-*Produces Level-4.1 (MDS) and Level-4.2.*
-- [REddyProc](https://github.com/EarthyScience/REddyProc) was used for MDS gap-filling and NEE partitioning. Used version `X.X.X`
+*Produces Level-4.2.*
+- [REddyProc](https://github.com/EarthyScience/REddyProc) was used for NEE partitioning. Used version `X.X.X`
