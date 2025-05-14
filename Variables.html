@@ -411,8 +411,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeled-fluxes-in-progress">Modeled fluxes (in progress)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gpp-in-progress">GPP (in progress)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reco-in-progress">RECO (in progress)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gpp">GPP</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reco">RECO</a></li>
 </ul>
 </li>
 </ul>
@@ -446,12 +446,12 @@ document.write(`
 <h4>NEE<a class="headerlink" href="#nee" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Net ecosystem exchange of carbon dioxide, <code class="docutils literal notranslate"><span class="pre">µmol</span> <span class="pre">CO2</span> <span class="pre">m-2</span> <span class="pre">s-1</span></code> (2005-2024)</p></li>
-<li><p>6 different versions: 3 USTAR scenarios, each with 2 different gap-filling methods (RF, MDS)</p></li>
+<li><p>3 different versions: 3 USTAR scenarios, gap-filled with random forest</p></li>
 <li><p><strong>Recommended variables in the dataset</strong>:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">NEE_L3.1_L3.3_CUT_50_QCF</span></code>: fully quality-controlled flux, daytime: highest- and medium-quality fluxes, nighttime: only highest-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NEE_L3.1_L3.3_CUT_50_QCF</span></code>: fully quality-controlled flux, daytime: highest- and medium-quality fluxes, nighttime: only highest-quality fluxes, <em>not gap-filled</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">NEE_L3.1_L3.3_CUT_50_QCF_gfRF</span></code>: fully quality-controlled flux, gap-filled using long-term random forest as implemented in <code class="docutils literal notranslate"><span class="pre">diive</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">NEE_L3.1_L3.3_CUT_50_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NEE_L3.1_L3.3_CUT_50_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, <em>not gap-filled</em></p></li>
 </ul>
 </li>
 </ul>
@@ -460,12 +460,12 @@ document.write(`
 <h4>LE<a class="headerlink" href="#le" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Latent heat flux, <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code> (2005-2024)</p></li>
-<li><p>2 different versions: different gap-filling methods (RF, MDS)</p></li>
+<li><p>1 version, gap-filled with random forest</p></li>
 <li><p><strong>Recommended variables in the dataset</strong>:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">LE_L3.1_L3.3_CUT_NONE_QCF</span></code>: fully quality-controlled flux, daytime and nighttime: highest- and medium-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LE_L3.1_L3.3_CUT_NONE_QCF</span></code>: fully quality-controlled flux, daytime and nighttime: highest- and medium-quality fluxes, <em>not gap-filled</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">LE_L3.1_L3.3_CUT_NONE_QCF_gfRF</span></code>: fully quality-controlled flux, gap-filled using long-term random forest as implemented in <code class="docutils literal notranslate"><span class="pre">diive</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LE_L3.1_L3.3_CUT_NONE_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LE_L3.1_L3.3_CUT_NONE_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, <em>not gap-filled</em></p></li>
 </ul>
 </li>
 </ul>
@@ -473,8 +473,8 @@ document.write(`
 <section id="et-in-progress">
 <h4>ET (in progress)<a class="headerlink" href="#et-in-progress" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Evapotranspiration, <code class="docutils literal notranslate"><span class="pre">mm</span> <span class="pre">h-1</span></code></p></li>
-<li><p>2 different versions, calculated from <code class="docutils literal notranslate"><span class="pre">LE</span></code></p></li>
+<li><p>Evapotranspiration, <code class="docutils literal notranslate"><span class="pre">mm</span> <span class="pre">h-1</span></code> (2005-2024)</p></li>
+<li><p>1 version, calculated from <code class="docutils literal notranslate"><span class="pre">LE</span></code> gap-filled with random forest</p></li>
 <li><ul>
 <li><p><strong>Recommended variables in the dataset</strong>: <em>in progress</em></p></li>
 </ul>
@@ -485,10 +485,10 @@ document.write(`
 <h4>H<a class="headerlink" href="#h" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Sensible heat flux, <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">m-2</span></code> (2005-2024)</p></li>
-<li><p>2 different versions: different gap-filling methods (RF, MDS)</p></li>
+<li><p>1 version, gap-filled with random forest</p></li>
 <li><p><strong>Recommended variables in the dataset</strong>:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">H_L3.1_L3.3_CUT_NONE_QCF</span></code>: fully quality-controlled flux, daytime and nighttime: highest- and medium-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">H_L3.1_L3.3_CUT_NONE_QCF</span></code>: fully quality-controlled flux, daytime and nighttime: highest- and medium-quality fluxes, <em>not gap-filled</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">H_L3.1_L3.3_CUT_NONE_QCF_gfRF</span></code>: fully quality-controlled flux, gap-filled using long-term random forest as implemented in <code class="docutils literal notranslate"><span class="pre">diive</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">H_L3.1_L3.3_CUT_NONE_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, not gap-filled</p></li>
 </ul>
@@ -499,12 +499,12 @@ document.write(`
 <h4>FN2O<a class="headerlink" href="#fn2o" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Nitrous oxide flux, <code class="docutils literal notranslate"><span class="pre">nmol</span> <span class="pre">N2O</span> <span class="pre">m-2</span> <span class="pre">s-1</span></code> (Jan 2012 - July 2022, with eight years of good data coverage)</p></li>
-<li><p>6 different versions: 3 USTAR scenarios, each with 2 different gap-filling methods (RF, MDS)</p></li>
+<li><p>3 different versions: 3 USTAR scenarios, gap-filled with random forest</p></li>
 <li><p><strong>Recommended variables in the dataset</strong>:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.3_CUT_50_QCF</span></code>: fully quality-controlled flux, daytime and nighttime: highest- and medium-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.3_CUT_50_QCF</span></code>: fully quality-controlled flux, daytime and nighttime: highest- and medium-quality fluxes, <em>not gap-filled</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.3_CUT_50_QCF_gfRF</span></code>: fully quality-controlled flux, gap-filled using long-term random forest as implemented in <code class="docutils literal notranslate"><span class="pre">diive</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.3_CUT_50_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FN2O_L3.1_L3.3_CUT_50_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, <em>not gap-filled</em></p></li>
 </ul>
 </li>
 </ul>
@@ -513,12 +513,12 @@ document.write(`
 <h4>FCH4<a class="headerlink" href="#fch4" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Methane flux, <code class="docutils literal notranslate"><span class="pre">nmol</span> <span class="pre">CH4</span> <span class="pre">m-2</span> <span class="pre">s-1</span></code> (Jan 2012 - July 2022, with eight years of good data coverage)</p></li>
-<li><p>6 different versions: 3 USTAR scenarios, each with 2 different gap-filling methods (RF, MDS)</p></li>
+<li><p>3 different versions: 3 USTAR scenarios, gap-filled with random forest</p></li>
 <li><p><strong>Recommended variables in the dataset</strong>:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">FCH4_L3.1_L3.3_CUT_50_QCF</span></code>: fully quality-controlled flux, daytime and nighttime: highest- and medium-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCH4_L3.1_L3.3_CUT_50_QCF</span></code>: fully quality-controlled flux, daytime and nighttime: highest- and medium-quality fluxes, <em>not gap-filled</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FCH4_L3.1_L3.3_CUT_50_QCF_gfRF</span></code>: fully quality-controlled flux, gap-filled using long-term random forest as implemented in <code class="docutils literal notranslate"><span class="pre">diive</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FCH4_L3.1_L3.3_CUT_50_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, not gap-filled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCH4_L3.1_L3.3_CUT_50_QCF0</span></code>: fully quality-controlled flux, but only highest-quality fluxes, <em>not gap-filled</em></p></li>
 </ul>
 </li>
 </ul>
@@ -527,20 +527,54 @@ document.write(`
 <section id="modeled-fluxes-in-progress">
 <h3>Modeled fluxes (in progress)<a class="headerlink" href="#modeled-fluxes-in-progress" title="Link to this heading">#</a></h3>
 <p><em>Fluxes calculated from main fluxes.</em></p>
-<section id="gpp-in-progress">
-<h4>GPP (in progress)<a class="headerlink" href="#gpp-in-progress" title="Link to this heading">#</a></h4>
+<section id="gpp">
+<h4>GPP<a class="headerlink" href="#gpp" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>gross primary productivity, modeled from <code class="docutils literal notranslate"><span class="pre">NEE</span></code> partitioning</p></li>
-<li><p>18 different different versions, based on the 6 <code class="docutils literal notranslate"><span class="pre">NEE</span></code> versions</p></li>
-<li><p><strong>Recommended variables in the dataset</strong>: <em>in progress</em></p></li>
+<li><p>6 different different versions, based on the 3 <code class="docutils literal notranslate"><span class="pre">NEE</span></code> versions</p></li>
+<li><p><strong>Recommended variables in the dataset</strong>:</p>
+<ul>
+<li><p>Using nighttime method (Reichstein et al., 2005):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPP_NT_CUT_16_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPP_NT_CUT_50_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPP_NT_CUT_84_gfRF</span></code></p></li>
+</ul>
+</li>
+<li><p>Using daytime method (Lasslop et al., 2010):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPP_DT_CUT_16_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPP_DT_CUT_50_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPP_DT_CUT_84_gfRF</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </section>
-<section id="reco-in-progress">
-<h4>RECO (in progress)<a class="headerlink" href="#reco-in-progress" title="Link to this heading">#</a></h4>
+<section id="reco">
+<h4>RECO<a class="headerlink" href="#reco" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>ecosystem respiration, modeled from <code class="docutils literal notranslate"><span class="pre">NEE</span></code> partitioning</p></li>
-<li><p>18 different different versions, based on the 6 <code class="docutils literal notranslate"><span class="pre">NEE</span></code> versions</p></li>
-<li><p><strong>Recommended variables in the dataset</strong>: <em>in progress</em></p></li>
+<li><p>6 different different versions, based on the 3 <code class="docutils literal notranslate"><span class="pre">NEE</span></code> versions</p></li>
+<li><p><strong>Recommended variables in the dataset</strong>:</p>
+<ul>
+<li><p>Using nighttime method (Reichstein et al., 2005):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">RECO_NT_CUT_16_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RECO_NT_CUT_50_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RECO_NT_CUT_84_gfRF</span></code></p></li>
+</ul>
+</li>
+<li><p>Using daytime method (Lasslop et al., 2010):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">RECO_DT_CUT_16_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RECO_DT_CUT_50_gfRF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RECO_DT_CUT_84_gfRF</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
@@ -650,8 +684,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeled-fluxes-in-progress">Modeled fluxes (in progress)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gpp-in-progress">GPP (in progress)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reco-in-progress">RECO (in progress)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gpp">GPP</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reco">RECO</a></li>
 </ul>
 </li>
 </ul>

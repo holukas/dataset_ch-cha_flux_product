@@ -75,7 +75,7 @@
 - [17.0_AddAdditionalMeteoData_PREC_SWC_TS](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.0_AddAdditionalMeteoData_PREC_SWC_TS.html)
 - [17.2_GapFilling_TS](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.2_GapFilling_TS.html)
 - [17.4_GapFilling_SWC](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/17.4_GapFilling_SWC.html)
-- [STATS](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/STATS.html)
+- [18.0_DownloadAdditionalMeteoData_2005-2024_meteoscreening_mst_diive](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/10_METEO/18.0_DownloadAdditionalMeteoData_2005-2024_meteoscreening_mst_diive.html)
 
 
 ## 20_MANAGEMENT
@@ -108,13 +108,16 @@
 - [52.6_CorrectionGapFilling_FCH4_CUT84](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.6_CorrectionGapFilling_FCH4_CUT84.html)
 
 
-## 60_MERGE_DATA_FLUXES
-- [61.0_MergeFluxProcessingChainResults](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/60_MERGE_DATA_FLUXES/61.0_MergeFluxProcessingChainResults.html)
+## 60_PARTITIONING
+- [61.4_CollectPartitioningResults](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/60_PARTITIONING/61.4_CollectPartitioningResults.html)
+
+
+## 80_FINALIZE
+- [81.0_FINALIZE](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/80_FINALIZE/81.0_FINALIZE.html)
 
 
 ## 90_DATASET_OVERVIEW
-- [FLUX_NEE_RidgePlots](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUX_NEE_RidgePlots.html)
+- [FLUX_NEE](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUX_NEE.html)
 - [FLUXES](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUXES.html)
 - [METEO_TA](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/METEO_TA.html)
-- [METEO_TA_RidgePlots](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/METEO_TA_RidgePlots.html)
-- [Variables](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/Variables.html)
+- [VARIABLES](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/VARIABLES.html)
