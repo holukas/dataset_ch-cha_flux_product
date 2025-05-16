@@ -471,7 +471,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\80_FINALIZE\81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4.parquet (1.987 seconds).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\80_FINALIZE\81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4.parquet (1.005 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
 </pre></div>
 </div>
@@ -1009,30 +1009,31 @@ document.write(`
 </div>
 </div>
 </div>
-<p><span class="math notranslate nohighlight">\(\mathrm{NEE=\mu mol\ CO_{2}\ m^{-2}\ s^{-1}}\)</span></p>
+<p>Flux units:
+$<span class="math notranslate nohighlight">\(
+\mathrm{NEE=\mu mol\ CO_{2}\ m^{-2}\ s^{-1}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\mathrm{LE=W\ m^{-2}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\mathrm{H=W\ m^{-2}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\mathrm{N_{2}O=nmol\ N_{2}O\ m^{-2}\ s^{-1}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\mathrm{CH_{4}=nmol\ CH_{4}\ m^{-2}\ s^{-1}}
+\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">units_nee</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{\mu mol\ CO_</span><span class="si">{2}</span><span class="s2">\ m^{-2}\ s^{-1}}$&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">units_nee</span><span class="p">)</span>
-<span class="c1"># units_le = </span>
-<span class="c1"># units_h = </span>
-<span class="c1"># units_n2o = </span>
-<span class="c1"># units_ch4 = </span>
-<span class="c1"># units_gpp = </span>
-<span class="c1"># units_reco = </span>
-<span class="c1">#     &#39;NEE_L3.1_L3.3_CUT_50_QCF_gfRF&#39;: [0.02161926, ],  # umol CO2 m-2 s-1 --&gt; gC m-2 30min-1</span>
-<span class="c1">#     &#39;GPP_DT_CUT_50_gfRF&#39;: [0.02161926, r&#39;($\mathrm{gC\ m^{-2}}$)&#39;],  # umol CO2 m-2 s-1 --&gt; gC m-2 30min-1</span>
-<span class="c1">#     &#39;RECO_DT_CUT_50_gfRF&#39;: [0.02161926, r&#39;($\mathrm{gC\ m^{-2}}$)&#39;],  # umol CO2 m-2 s-1 --&gt; gC m-2 30min-1</span>
-<span class="c1">#     &#39;LE_L3.1_L3.3_CUT_NONE_QCF_gfRF&#39;: [1800, r&#39;($\mathrm{W\ m^{-2}}$)&#39;],  # W m-2 s-1 --&gt; W m-2 30min-1</span>
-<span class="c1">#     &#39;H_L3.1_L3.3_CUT_NONE_QCF_gfRF&#39;: [1800, r&#39;($\mathrm{W\ m^{-2}}$)&#39;],  # W m-2 s-1 --&gt; W m-2 30min-1</span>
-<span class="c1">#     &#39;FN2O_L3.1_L3.3_CUT_50_QCF_gfRF&#39;: [0.00050424109632, r&#39;($\mathrm{kg\ N_2O-N\ ha^{-1}}$)&#39;],  # nmol N2O m-2 s-1 --&gt; kg N2O-N ha-1 30min-1</span>
-<span class="c1">#     &#39;FCH4_L3.1_L3.3_CUT_50_QCF_gfRF&#39;: [0.000216198, r&#39;($\mathrm{kg\ CH_4-C\ ha^{-1}}$)&#39;]  # nmol CH4 m-2 s-1 --&gt; kg CH4-C ha-1 30min-1</span>
-<span class="c1"># }</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>($\mathrm{gC\ m^{-2}}$)
+<span class="n">units_gpp</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{\mu mol\ CO_</span><span class="si">{2}</span><span class="s2">\ m^{-2}\ s^{-1}}$&quot;</span>
+<span class="n">units_reco</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{\mu mol\ CO_</span><span class="si">{2}</span><span class="s2">\ m^{-2}\ s^{-1}}$&quot;</span>
+<span class="n">units_le</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{W\ m^{-2}}$&quot;</span>
+<span class="n">units_h</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{W\ m^{-2}}$&quot;</span>
+<span class="n">units_n2o</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{nmol\ N_</span><span class="si">{2}</span><span class="s2">O\ m^{-2}\ s^{-1}}$&quot;</span>
+<span class="n">units_ch4</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{nmol\ CH_</span><span class="si">{4}</span><span class="s2">\ m^{-2}\ s^{-1}}$&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1042,29 +1043,23 @@ document.write(`
 <h2>Heatmaps (half-hourly fluxes)<a class="headerlink" href="#heatmaps-half-hourly-fluxes" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">nee</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">gpp</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">reco</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">nee</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">units_nee</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">gpp</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">units_gpp</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">reco</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">units_reco</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">le</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">units_le</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">h</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">units_h</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">n2o</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">units_n2o</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">ch4</span><span class="p">],</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">units_ch4</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">hide_labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">hide_labels</span><span class="p">:</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">(),</span> <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/531cc6120f41eef98866d669ccf9d2214be0425eda76f658167e1f30d237b9bc.png" src="../../_images/531cc6120f41eef98866d669ccf9d2214be0425eda76f658167e1f30d237b9bc.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">le</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">h</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">n2o</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapdatetime</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">ch4</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2a9692bd0d3cfa9f5944d4b08aa3386bcc4b1e9bf475aa75052c28d4740af2a1.png" src="../../_images/2a9692bd0d3cfa9f5944d4b08aa3386bcc4b1e9bf475aa75052c28d4740af2a1.png" />
+<img alt="../../_images/0e975940a901ad5f2fb82241c4a707bfe6ffcc14778eb8efec737ad2dd6e15e4.png" src="../../_images/0e975940a901ad5f2fb82241c4a707bfe6ffcc14778eb8efec737ad2dd6e15e4.png" />
 </div>
 </div>
 </section>
@@ -1145,7 +1140,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-05-16 12:15:45
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-05-16 16:02:48
 </pre></div>
 </div>
 </div>

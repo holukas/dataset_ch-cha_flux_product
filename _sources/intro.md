@@ -8,6 +8,12 @@ The dataset comprises ecosystem fluxes measured by the eddy covariance method (C
 
 For an overview of the dataset, see [here](Overview).
 
+:::{figure-md} photo-ec1
+![](images/CH-CHA_ECtower_Apr2014_IMG_9304-HDR.jpg)
+
+Photo of the CH-CHA research site in April 2014. Photo: Lukas Hörtnagl, Grassland Sciences Group, ETH Zurich
+:::
+
 ## Current dataset version
 
 ### **CH-CHA FP2025.3 (2005-2024) [current version]**
