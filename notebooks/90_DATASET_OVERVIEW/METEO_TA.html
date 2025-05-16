@@ -504,7 +504,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\80_FINALIZE\81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4.parquet (1.508 seconds).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\80_FINALIZE\81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4.parquet (1.020 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
 </pre></div>
 </div>
@@ -1016,12 +1016,12 @@ Freq: 30min, Name: TA_T1_2_1, Length: 350640, dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_yearly_avg</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;YE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">_overall_mean</span> <span class="o">=</span> <span class="n">_yearly_avg</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">_overall_sd</span> <span class="o">=</span> <span class="n">_yearly_avg</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Overall mean: </span><span class="si">{</span><span class="n">mean</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">_overall_sd</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Overall mean: </span><span class="si">{</span><span class="n">_overall_mean</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">_overall_sd</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall mean: 9.988218541077401 +/- 0.6491468905031849
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overall mean: 9.988191896143565 +/- 0.6491468905031849
 </pre></div>
 </div>
 </div>
@@ -1031,7 +1031,8 @@ Freq: 30min, Name: TA_T1_2_1, Length: 350640, dtype: float64
 <h2>Yearly means<a class="headerlink" href="#yearly-means" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;YE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ym</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;YE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">ym</span>
 </pre></div>
 </div>
 </div>
@@ -1058,6 +1059,39 @@ Freq: 30min, Name: TA_T1_2_1, Length: 350640, dtype: float64
 2023-12-31    10.773193
 2024-12-31    10.599748
 Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ym</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMESTAMP_MIDDLE
+2022-12-31    11.064683
+2018-12-31    11.020365
+2023-12-31    10.773193
+2024-12-31    10.599748
+2020-12-31    10.566112
+2019-12-31    10.336325
+2014-12-31    10.243456
+2015-12-31    10.214341
+2017-12-31    10.158153
+2007-12-31    10.020665
+2011-12-31     9.961233
+2016-12-31     9.959387
+2009-12-31     9.768376
+2006-12-31     9.510808
+2008-12-31     9.509768
+2012-12-31     9.500586
+2005-12-31     9.500346
+2021-12-31     9.480925
+2013-12-31     8.972617
+2010-12-31     8.602752
+Name: TA_T1_2_1, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1439,7 +1473,7 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 <span class="n">belowzero</span> <span class="o">=</span> <span class="n">belowzero</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">belowzero</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">belowzero</span><span class="p">[</span><span class="s2">&quot;YEAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">belowzero</span><span class="o">.</span><span class="n">index</span>
 <span class="n">belowzero</span>
-<span class="n">belowzero</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">varname</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of days with TA &lt; 0°&quot;</span><span class="p">);</span>
+<span class="n">belowzero</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">varname</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Number of days with </span><span class="si">{</span><span class="n">varname</span><span class="si">}</span><span class="s2"> &lt; 0°&quot;</span><span class="p">);</span>
 <span class="n">display</span><span class="p">(</span><span class="n">belowzero</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average per year: </span><span class="si">{</span><span class="n">belowzero</span><span class="p">[</span><span class="n">varname</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">belowzero</span><span class="p">[</span><span class="n">varname</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> SD&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1579,7 +1613,7 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 </div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average per year: 97.9 +/- 10.57 SD
 </pre></div>
 </div>
-<img alt="../../_images/dedfaee7244543009b39954f26e9a38711047785e5aaa6031a2cdb7bdccc6560.png" src="../../_images/dedfaee7244543009b39954f26e9a38711047785e5aaa6031a2cdb7bdccc6560.png" />
+<img alt="../../_images/77384d92a34e89d78ccd22a4fb236d57e4843d063e5bdae782ce5c0a043ae6b8.png" src="../../_images/77384d92a34e89d78ccd22a4fb236d57e4843d063e5bdae782ce5c0a043ae6b8.png" />
 </div>
 </div>
 </section>
@@ -1592,7 +1626,7 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 <span class="n">above</span> <span class="o">=</span> <span class="n">plotdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">plotdf</span><span class="p">[</span><span class="n">varname</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">above</span> <span class="o">=</span> <span class="n">above</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">above</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">above</span><span class="p">[</span><span class="s2">&quot;YEAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">above</span><span class="o">.</span><span class="n">index</span>
-<span class="n">above</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">varname</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of days with TA &gt; 30°&quot;</span><span class="p">);</span>
+<span class="n">above</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">varname</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Number of days with </span><span class="si">{</span><span class="n">varname</span><span class="si">}</span><span class="s2"> &gt; 30°&quot;</span><span class="p">);</span>
 <span class="n">display</span><span class="p">(</span><span class="n">above</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average per year: </span><span class="si">{</span><span class="n">above</span><span class="p">[</span><span class="n">varname</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">above</span><span class="p">[</span><span class="n">varname</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> SD&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1732,7 +1766,7 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 </div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average per year: 16.45 +/- 6.89 SD
 </pre></div>
 </div>
-<img alt="../../_images/4618eb9c0fee643af4b515ee417b3b32a6b4db6e127ac2d6f8649e9d673b7f61.png" src="../../_images/4618eb9c0fee643af4b515ee417b3b32a6b4db6e127ac2d6f8649e9d673b7f61.png" />
+<img alt="../../_images/2a6185948daf5d900053d17baeb0d764686c428405b9d9b60d74ac713285f6ac.png" src="../../_images/2a6185948daf5d900053d17baeb0d764686c428405b9d9b60d74ac713285f6ac.png" />
 </div>
 </div>
 </br></section>
@@ -1787,13 +1821,13 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 <span class="n">ax_max</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">ax_max_ranks</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;axlabels_fontsize&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;ticks_labelsize&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;cb_labelsize&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth_ranks</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_mean</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">ranks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;°C&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth_ranks</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_mean</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">ranks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;°C&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="n">show_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
-<span class="n">hm_mean_ranks</span> <span class="o">=</span> <span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth_ranks</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_mean_ranks</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+<span class="n">hm_mean_ranks</span> <span class="o">=</span> <span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth_ranks</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_mean_ranks</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">show_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
 <span class="n">hm_mean_ranks</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth_ranks</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_max</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="n">ranks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;°C&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth_ranks</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_max_ranks</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth_ranks</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_max</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="n">ranks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="s2">&quot;°C&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="n">show_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth_ranks</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_max_ranks</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">series</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="n">show_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
 <span class="n">ax_mean</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Air temperature mean&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">ax_mean_ranks</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Air temperature mean: ranks&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
@@ -1862,6 +1896,9 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c6fce3b701221d37a457cf719f17f5f716041419770b30c8fb29a273c49d65a5.png" src="../../_images/c6fce3b701221d37a457cf719f17f5f716041419770b30c8fb29a273c49d65a5.png" />
+</div>
 </div>
 </section>
 <section id="id1">
@@ -1887,6 +1924,9 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/accfb7fc1af1815c3b66c7306344071369cec6e23b9886a3354a18485f68c5ca.png" src="../../_images/accfb7fc1af1815c3b66c7306344071369cec6e23b9886a3354a18485f68c5ca.png" />
+</div>
 </div>
 </section>
 <section id="weekly">
@@ -1911,6 +1951,9 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/96d62c289cdaa2566c67abbe59bb79a903f7d8ae82811c72457cbb4be3234a2d.png" src="../../_images/96d62c289cdaa2566c67abbe59bb79a903f7d8ae82811c72457cbb4be3234a2d.png" />
 </div>
 </div>
 </section>
@@ -1941,6 +1984,28 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/baddf68fa6cd16010dbc158d583554a79e81f2e26bc4f505fc1e12b4b9a6d957.png" src="../../_images/baddf68fa6cd16010dbc158d583554a79e81f2e26bc4f505fc1e12b4b9a6d957.png" />
+<img alt="../../_images/cec07e99a5c3e139ae581c73cc67ba9cbe721831bf334241a6122dfc5f61516f.png" src="../../_images/cec07e99a5c3e139ae581c73cc67ba9cbe721831bf334241a6122dfc5f61516f.png" />
+<img alt="../../_images/d0c3b9ac075102d286a3603d1309ea8350f593a2b7e75f30f709ee73407c4aa3.png" src="../../_images/d0c3b9ac075102d286a3603d1309ea8350f593a2b7e75f30f709ee73407c4aa3.png" />
+<img alt="../../_images/8a3da14a358a65862c5394aad4c859466e5b990b9be344d9ce8fb512803edddf.png" src="../../_images/8a3da14a358a65862c5394aad4c859466e5b990b9be344d9ce8fb512803edddf.png" />
+<img alt="../../_images/67e1d66dd9a972c2e6714b3deb5b2755231d526c052f2a8a1ed68c7454cede34.png" src="../../_images/67e1d66dd9a972c2e6714b3deb5b2755231d526c052f2a8a1ed68c7454cede34.png" />
+<img alt="../../_images/d1b9acc35c5f5078a5af90c9216e92ece9fc59c08292e509cf8798bf725bc8ec.png" src="../../_images/d1b9acc35c5f5078a5af90c9216e92ece9fc59c08292e509cf8798bf725bc8ec.png" />
+<img alt="../../_images/00c4e7420554f7bbcd92f1029e28313358b48714afff6cbefbdbd4f4566665be.png" src="../../_images/00c4e7420554f7bbcd92f1029e28313358b48714afff6cbefbdbd4f4566665be.png" />
+<img alt="../../_images/b1607975eec1ad6789e7f6fe510530bc3c58292bbf70610e63c667fb2736ca2f.png" src="../../_images/b1607975eec1ad6789e7f6fe510530bc3c58292bbf70610e63c667fb2736ca2f.png" />
+<img alt="../../_images/216565bd98cc6e0cc737a575f1713ceeb51035cc5afffedd3f09d1a7fc02ce18.png" src="../../_images/216565bd98cc6e0cc737a575f1713ceeb51035cc5afffedd3f09d1a7fc02ce18.png" />
+<img alt="../../_images/504ae3623f81bed37550ed33fa6f5692c5feb777bbeb12d6e03b486493220230.png" src="../../_images/504ae3623f81bed37550ed33fa6f5692c5feb777bbeb12d6e03b486493220230.png" />
+<img alt="../../_images/6090d334274df6ea3243cdfd68a8bf5287b085e8ce5d48fd6396d4307fcda205.png" src="../../_images/6090d334274df6ea3243cdfd68a8bf5287b085e8ce5d48fd6396d4307fcda205.png" />
+<img alt="../../_images/85f5f0ea21a0a35cdc34e70e990cbde5250b5e61b4a5c1daa36ce4850d783814.png" src="../../_images/85f5f0ea21a0a35cdc34e70e990cbde5250b5e61b4a5c1daa36ce4850d783814.png" />
+<img alt="../../_images/e09654c6dca468b0ea906f16a1b604f1e120ce2894b9d5fe7845c520cffc9cd1.png" src="../../_images/e09654c6dca468b0ea906f16a1b604f1e120ce2894b9d5fe7845c520cffc9cd1.png" />
+<img alt="../../_images/2bba4db627e5bab6c1f0e955ce647a57969655b73c0254398da1e7a611b999c8.png" src="../../_images/2bba4db627e5bab6c1f0e955ce647a57969655b73c0254398da1e7a611b999c8.png" />
+<img alt="../../_images/19decbced4b628e0a8418fa7208df8843f140581a0ba1e86db61d0c2cd56bee3.png" src="../../_images/19decbced4b628e0a8418fa7208df8843f140581a0ba1e86db61d0c2cd56bee3.png" />
+<img alt="../../_images/6b309b9787f4197d4317c4eb8d7a71057bbf034366acbe6c319982f1060d8092.png" src="../../_images/6b309b9787f4197d4317c4eb8d7a71057bbf034366acbe6c319982f1060d8092.png" />
+<img alt="../../_images/63766753addf0073936920574a21d16c6ec5238649fc0cd4cd1c8042608d2f9e.png" src="../../_images/63766753addf0073936920574a21d16c6ec5238649fc0cd4cd1c8042608d2f9e.png" />
+<img alt="../../_images/5fed97e21abd45b1eb98336166ebdb99c4b5e2a45f8011280e1ab64102e00125.png" src="../../_images/5fed97e21abd45b1eb98336166ebdb99c4b5e2a45f8011280e1ab64102e00125.png" />
+<img alt="../../_images/bb97a86f2470e8f1c8810113c312a59046e63239358799a66e525734aa38ab46.png" src="../../_images/bb97a86f2470e8f1c8810113c312a59046e63239358799a66e525734aa38ab46.png" />
+<img alt="../../_images/d7e1a7d23b4db293caccc84d0367259fbaf21dd8d287303486447577457b88ea.png" src="../../_images/d7e1a7d23b4db293caccc84d0367259fbaf21dd8d287303486447577457b88ea.png" />
+</div>
 </div>
 </section>
 <section id="single-years-per-week">
@@ -1969,6 +2034,28 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
     <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/21142bb803e569acee92d2607d628dca0f68e98fddd7f963db834e2eda0ab11c.png" src="../../_images/21142bb803e569acee92d2607d628dca0f68e98fddd7f963db834e2eda0ab11c.png" />
+<img alt="../../_images/93b6ae9985241b570b5edd110de55c9f0f0267d77cfb13e01a36272f2a3a700c.png" src="../../_images/93b6ae9985241b570b5edd110de55c9f0f0267d77cfb13e01a36272f2a3a700c.png" />
+<img alt="../../_images/6d33b67bface54f70c25fbd9f81bb2d6c0fd41ebed6c2b11813315d3da511cfc.png" src="../../_images/6d33b67bface54f70c25fbd9f81bb2d6c0fd41ebed6c2b11813315d3da511cfc.png" />
+<img alt="../../_images/ea1ca368e435717114e5cc53a3f08dde8ef31353971f01361a4fe37f0c4da382.png" src="../../_images/ea1ca368e435717114e5cc53a3f08dde8ef31353971f01361a4fe37f0c4da382.png" />
+<img alt="../../_images/cf6491b56ca9558f48178db8e6ee0a92bc91199751596653b01e95c21ccd4459.png" src="../../_images/cf6491b56ca9558f48178db8e6ee0a92bc91199751596653b01e95c21ccd4459.png" />
+<img alt="../../_images/c7b522d883ad0da440b88a731f0be94dc6d1a38114461a66c2ff1dfd4c4bd5da.png" src="../../_images/c7b522d883ad0da440b88a731f0be94dc6d1a38114461a66c2ff1dfd4c4bd5da.png" />
+<img alt="../../_images/8b233134856955ee84f2d6a32233f82cabe09023df09b7cb87a05e752b288c1a.png" src="../../_images/8b233134856955ee84f2d6a32233f82cabe09023df09b7cb87a05e752b288c1a.png" />
+<img alt="../../_images/f3b1ad194ee8a65cd4d41d28cfd0da2e8c739c0b9b074c21fce832eec6a37882.png" src="../../_images/f3b1ad194ee8a65cd4d41d28cfd0da2e8c739c0b9b074c21fce832eec6a37882.png" />
+<img alt="../../_images/4a9b5aff6439bbda9873b2484a6db15aebe6571f0f65d4f5263fd336d7df6ea3.png" src="../../_images/4a9b5aff6439bbda9873b2484a6db15aebe6571f0f65d4f5263fd336d7df6ea3.png" />
+<img alt="../../_images/fbfc77d35faafb90c8a623ec3699362608df068e227e7c26aa2bc42e713c9ef5.png" src="../../_images/fbfc77d35faafb90c8a623ec3699362608df068e227e7c26aa2bc42e713c9ef5.png" />
+<img alt="../../_images/e5f8c6b5d544e505579e10e31af40b08125da6e1ed65f649609164d3884ba5d0.png" src="../../_images/e5f8c6b5d544e505579e10e31af40b08125da6e1ed65f649609164d3884ba5d0.png" />
+<img alt="../../_images/293e6641776071380ea6cf22172243469ad38574b74b0cb3992ba21c68cf82fc.png" src="../../_images/293e6641776071380ea6cf22172243469ad38574b74b0cb3992ba21c68cf82fc.png" />
+<img alt="../../_images/e456a4765263fb4cf8338773b963d4f3909bf2b6fdb13fa282916f3f91d6d246.png" src="../../_images/e456a4765263fb4cf8338773b963d4f3909bf2b6fdb13fa282916f3f91d6d246.png" />
+<img alt="../../_images/0af6c5821d381ffb32f89c833040855fb7a449c4b1ebb694623a9476e27b0cbc.png" src="../../_images/0af6c5821d381ffb32f89c833040855fb7a449c4b1ebb694623a9476e27b0cbc.png" />
+<img alt="../../_images/13e03ae51ecf713d3a6a507be7fce103b37ab7362ea2788775d42933cb100193.png" src="../../_images/13e03ae51ecf713d3a6a507be7fce103b37ab7362ea2788775d42933cb100193.png" />
+<img alt="../../_images/c02a34c0100a9b9ba896e21fe16c8e390268d0bfeb6023fead4a8cec5e33bf27.png" src="../../_images/c02a34c0100a9b9ba896e21fe16c8e390268d0bfeb6023fead4a8cec5e33bf27.png" />
+<img alt="../../_images/d6be9968c9cc804aa5303bc2fd750f9a745e5cfcc7f37aaaa686e4e2d59514b6.png" src="../../_images/d6be9968c9cc804aa5303bc2fd750f9a745e5cfcc7f37aaaa686e4e2d59514b6.png" />
+<img alt="../../_images/1a67b38cf03b90ee648b1842ddb34a035e1ad13aa2b49f582dc1862b3904db50.png" src="../../_images/1a67b38cf03b90ee648b1842ddb34a035e1ad13aa2b49f582dc1862b3904db50.png" />
+<img alt="../../_images/72b7bcf15e2ed90173c8f2d8ebe37667b3c660f660237f7435816a3b165bf7eb.png" src="../../_images/72b7bcf15e2ed90173c8f2d8ebe37667b3c660f660237f7435816a3b165bf7eb.png" />
+<img alt="../../_images/54eedb1403fb93a87e2ba1a697eb8d8e8622b3d805b4de6dc86312acebc344d8.png" src="../../_images/54eedb1403fb93a87e2ba1a697eb8d8e8622b3d805b4de6dc86312acebc344d8.png" />
 </div>
 </div>
 </br></section>
@@ -2000,17 +2087,17 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series_yearly_mean</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;YE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">series_yearly_mean</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">series_yearly_mean</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
-<span class="n">series_label</span> <span class="o">=</span> <span class="s2">&quot;CH-CHA: Air temperature&quot;</span>
+<span class="n">series_label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;CH-CHA: </span><span class="si">{</span><span class="n">varname</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="n">LongtermAnomaliesYear</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">series_yearly_mean</span><span class="p">,</span>
                       <span class="n">series_label</span><span class="o">=</span><span class="n">series_label</span><span class="p">,</span>
-                      <span class="n">series_units</span><span class="o">=</span><span class="s1">&#39;(°C)&#39;</span><span class="p">,</span>
+                      <span class="n">series_units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span>
                       <span class="n">reference_start_year</span><span class="o">=</span><span class="mi">2005</span><span class="p">,</span>
                       <span class="n">reference_end_year</span><span class="o">=</span><span class="mi">2024</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6e0abb90c1a9ac10cc1534da3fd21cfa905867a0772213e77bc67cad4dbbc498.png" src="../../_images/6e0abb90c1a9ac10cc1534da3fd21cfa905867a0772213e77bc67cad4dbbc498.png" />
+<img alt="../../_images/5c7ec406f8e4b8e328c7c74128351fa68f18fbf094bfb64ee1fd2006c6349ad9.png" src="../../_images/5c7ec406f8e4b8e328c7c74128351fa68f18fbf094bfb64ee1fd2006c6349ad9.png" />
 </div>
 </div>
 </br></section>
@@ -2024,7 +2111,7 @@ Freq: YE-DEC, Name: TA_T1_2_1, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-05-14 13:53:30
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-05-16 12:56:46
 </pre></div>
 </div>
 </div>

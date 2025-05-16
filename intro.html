@@ -431,12 +431,14 @@ document.write(`
 <section id="ch-cha-fp2025-3-2005-2024-current-version">
 <h3><strong>CH-CHA FP2025.3 (2005-2024) [current version]</strong><a class="headerlink" href="#ch-cha-fp2025-3-2005-2024-current-version" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>This release adds additional variables to the dataset. Otherwise, data are the same as in FP2025.2.</p></li>
-<li><p>release date: 14 May 2025</p></li>
+<li><p>This release adds additional variables to the dataset and applies a different gap-filling for N<sub>2</sub>O and CH<sub>4</sub> fluxes during 2+ weeks after grassland restoration in 2012.</p></li>
+<li><p>release date: 16 May 2025</p></li>
 <li><p>is currently available on demand from the Grassland Sciences group server</p></li>
 <li><p><strong>Differrences to previous version FP2025.2</strong>:</p>
 <ul>
-<li><p>Added new flux variables from NEE partitioning (2005-2024):</p>
+<li><p><strong>Correction gap-filling Feb/Mar 2012:</strong>
+Random forest models were not able to predict N<sub>2</sub>O and CH<sub>4</sub> fluxes satisfactorily between 27 Feb 2012 8:00 and 16 Mar 2012 18:00. Fluxes during this time period were gap-filled using the MDS method (with SW_IN, TS and SWC as predictors) instead of random forest.</p></li>
+<li><p><strong>Added new flux variables from NEE partitioning</strong> (2005-2024):</p>
 <ul>
 <li><p>Partitioned fluxes were calculated from the gap-filled (random forest) NEE versions (3 USTAR scenarios: 16, 50, 84)</p></li>
 <li><p>Using nighttime method (Reichstein et al., 2005):</p>
@@ -453,7 +455,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><p>Added new meteo variables (2005-2024):</p>
+<li><p><strong>Added new meteo variables</strong> (2005-2024):</p>
 <ul>
 <li><p>Soil heat flux: <code class="docutils literal notranslate"><span class="pre">G_GF1_0.03_1</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF1_0.03_2</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF1_0.05_1</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF1_0.05_2</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF4_0.02_1</span></code>, <code class="docutils literal notranslate"><span class="pre">G_GF5_0.02_1</span></code> (different depths not complete over the years, sometimes only sporadically)</p></li>
 <li><p>Radiation: <code class="docutils literal notranslate"><span class="pre">SW_OUT_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">LW_OUT_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">NETRAD_T1_2_1</span></code>, <code class="docutils literal notranslate"><span class="pre">PPFD_OUT_T1_2_2</span></code></p></li>

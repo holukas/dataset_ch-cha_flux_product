@@ -57,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/90_DATASET_OVERVIEW/FLUXES';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -469,7 +471,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\80_FINALIZE\81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4.parquet (1.015 seconds).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\80_FINALIZE\81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4.parquet (1.987 seconds).
     --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
 </pre></div>
 </div>
@@ -1007,6 +1009,34 @@ document.write(`
 </div>
 </div>
 </div>
+<p><span class="math notranslate nohighlight">\(\mathrm{NEE=\mu mol\ CO_{2}\ m^{-2}\ s^{-1}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">units_nee</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{\mu mol\ CO_</span><span class="si">{2}</span><span class="s2">\ m^{-2}\ s^{-1}}$&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">units_nee</span><span class="p">)</span>
+<span class="c1"># units_le = </span>
+<span class="c1"># units_h = </span>
+<span class="c1"># units_n2o = </span>
+<span class="c1"># units_ch4 = </span>
+<span class="c1"># units_gpp = </span>
+<span class="c1"># units_reco = </span>
+<span class="c1">#     &#39;NEE_L3.1_L3.3_CUT_50_QCF_gfRF&#39;: [0.02161926, ],  # umol CO2 m-2 s-1 --&gt; gC m-2 30min-1</span>
+<span class="c1">#     &#39;GPP_DT_CUT_50_gfRF&#39;: [0.02161926, r&#39;($\mathrm{gC\ m^{-2}}$)&#39;],  # umol CO2 m-2 s-1 --&gt; gC m-2 30min-1</span>
+<span class="c1">#     &#39;RECO_DT_CUT_50_gfRF&#39;: [0.02161926, r&#39;($\mathrm{gC\ m^{-2}}$)&#39;],  # umol CO2 m-2 s-1 --&gt; gC m-2 30min-1</span>
+<span class="c1">#     &#39;LE_L3.1_L3.3_CUT_NONE_QCF_gfRF&#39;: [1800, r&#39;($\mathrm{W\ m^{-2}}$)&#39;],  # W m-2 s-1 --&gt; W m-2 30min-1</span>
+<span class="c1">#     &#39;H_L3.1_L3.3_CUT_NONE_QCF_gfRF&#39;: [1800, r&#39;($\mathrm{W\ m^{-2}}$)&#39;],  # W m-2 s-1 --&gt; W m-2 30min-1</span>
+<span class="c1">#     &#39;FN2O_L3.1_L3.3_CUT_50_QCF_gfRF&#39;: [0.00050424109632, r&#39;($\mathrm{kg\ N_2O-N\ ha^{-1}}$)&#39;],  # nmol N2O m-2 s-1 --&gt; kg N2O-N ha-1 30min-1</span>
+<span class="c1">#     &#39;FCH4_L3.1_L3.3_CUT_50_QCF_gfRF&#39;: [0.000216198, r&#39;($\mathrm{kg\ CH_4-C\ ha^{-1}}$)&#39;]  # nmol CH4 m-2 s-1 --&gt; kg CH4-C ha-1 30min-1</span>
+<span class="c1"># }</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>($\mathrm{gC\ m^{-2}}$)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="heatmaps-half-hourly-fluxes">
 <h2>Heatmaps (half-hourly fluxes)<a class="headerlink" href="#heatmaps-half-hourly-fluxes" title="Link to this heading">#</a></h2>
@@ -1034,7 +1064,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4a0ad161df2b1bff65589dfb7f9c911195614866092752e74f57d461bcc6af05.png" src="../../_images/4a0ad161df2b1bff65589dfb7f9c911195614866092752e74f57d461bcc6af05.png" />
+<img alt="../../_images/2a9692bd0d3cfa9f5944d4b08aa3386bcc4b1e9bf475aa75052c28d4740af2a1.png" src="../../_images/2a9692bd0d3cfa9f5944d4b08aa3386bcc4b1e9bf475aa75052c28d4740af2a1.png" />
 </div>
 </div>
 </section>
@@ -1058,7 +1088,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4003f3bc0aadead962f4e4b34e21af38f919e9213a729db53f5a92d8c41a2911.png" src="../../_images/4003f3bc0aadead962f4e4b34e21af38f919e9213a729db53f5a92d8c41a2911.png" />
+<img alt="../../_images/9d29f12a93d1a2b51c4e7c7c8ffa5241f0ae4d314a0c9a25f5d0b7e9f5a77e5c.png" src="../../_images/9d29f12a93d1a2b51c4e7c7c8ffa5241f0ae4d314a0c9a25f5d0b7e9f5a77e5c.png" />
 </div>
 </div>
 </section>
@@ -1099,8 +1129,8 @@ document.write(`
 <img alt="../../_images/87d80cf43104ee765035e356a767643ef0b206b2e397198e365b1a822c7d22e1.png" src="../../_images/87d80cf43104ee765035e356a767643ef0b206b2e397198e365b1a822c7d22e1.png" />
 <img alt="../../_images/3920ddb51a75ec845c57a7ded33bd180e86100d7e5e2dbba03177597220a6eb1.png" src="../../_images/3920ddb51a75ec845c57a7ded33bd180e86100d7e5e2dbba03177597220a6eb1.png" />
 <img alt="../../_images/0a5a9c59db521ed07b120fed9b87fccf3b0e34525b3a6d9a3e0943c19c926be5.png" src="../../_images/0a5a9c59db521ed07b120fed9b87fccf3b0e34525b3a6d9a3e0943c19c926be5.png" />
-<img alt="../../_images/51955f4b033a7d59f61c74771a2c60abc6bdfa5599888bb2a1a29e016d9727f9.png" src="../../_images/51955f4b033a7d59f61c74771a2c60abc6bdfa5599888bb2a1a29e016d9727f9.png" />
-<img alt="../../_images/187da5e61f6b42664cc19b015736466193fd6afe97faa4bb157d52adfb9ecd20.png" src="../../_images/187da5e61f6b42664cc19b015736466193fd6afe97faa4bb157d52adfb9ecd20.png" />
+<img alt="../../_images/643c4373d156dcb9f0b4d39b67dfb0b121b156d24851ae6aca0ee45aa8f4d801.png" src="../../_images/643c4373d156dcb9f0b4d39b67dfb0b121b156d24851ae6aca0ee45aa8f4d801.png" />
+<img alt="../../_images/22b51be2a94d1cd36650dff9d1f275c55bd942371bf0f237f32da78d7b855f54.png" src="../../_images/22b51be2a94d1cd36650dff9d1f275c55bd942371bf0f237f32da78d7b855f54.png" />
 </div>
 </div>
 </br></section>
@@ -1115,7 +1145,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-05-14 12:43:12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-05-16 12:15:45
 </pre></div>
 </div>
 </div>
