@@ -96,7 +96,7 @@ In addition to fluxes that were filtered according to quality
 - **PPFD_OUT**: outgoing photosynthetic photon flux density `µmol m-2 s-1`
 - **PREC**: precipitation `mm`
 - **RH**: relative humidity `%`
-- **VPD**: vapor pressure deficit, calculated from `TA` and `VPD`
+- **VPD**: vapor pressure deficit, calculated from `TA` and `VPD`, `kPa`
 - **SWC**: soil water content `%`
 - **TS**: soil temperature `°C`
 - **G**: soil heat flux `W m-2`
