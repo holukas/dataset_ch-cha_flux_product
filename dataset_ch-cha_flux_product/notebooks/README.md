@@ -102,10 +102,16 @@
 - [51.2_CorrectionGapFilling_FN2O_CUT50](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.2_CorrectionGapFilling_FN2O_CUT50.html)
 - [51.4_CorrectionGapFilling_FN2O_CUT16](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.4_CorrectionGapFilling_FN2O_CUT16.html)
 - [51.6_CorrectionGapFilling_FN2O_CUT84](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.6_CorrectionGapFilling_FN2O_CUT84.html)
+- [51.8a_CorrectionGapFilling_2012_FN2O_CUT50](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.8a_CorrectionGapFilling_2012_FN2O_CUT50.html)
+- [51.8c_CorrectionGapFilling_2012_FN2O_CUT16](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.8c_CorrectionGapFilling_2012_FN2O_CUT16.html)
+- [51.8e_CorrectionGapFilling_2012_FN2O_CUT84](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/51.8e_CorrectionGapFilling_2012_FN2O_CUT84.html)
 - [52.0_FluxProcessingChain_L3.3_FCH4_QCF11](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.0_FluxProcessingChain_L3.3_FCH4_QCF11.html)
 - [52.2_CorrectionGapFilling_FCH4_CUT50](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.2_CorrectionGapFilling_FCH4_CUT50.html)
 - [52.4_CorrectionGapFilling_FCH4_CUT16](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.4_CorrectionGapFilling_FCH4_CUT16.html)
 - [52.6_CorrectionGapFilling_FCH4_CUT84](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.6_CorrectionGapFilling_FCH4_CUT84.html)
+- [52.8a_CorrectionGapFilling_2012_FCH4_CUT50](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.8a_CorrectionGapFilling_2012_FCH4_CUT50.html)
+- [52.8c_CorrectionGapFilling_2012_FCH4_CUT16](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.8c_CorrectionGapFilling_2012_FCH4_CUT16.html)
+- [52.8e_CorrectionGapFilling_2012_FCH4_CUT84](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/52.8e_CorrectionGapFilling_2012_FCH4_CUT84.html)
 
 
 ## 60_PARTITIONING
@@ -119,5 +125,7 @@
 ## 90_DATASET_OVERVIEW
 - [FLUX_NEE](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUX_NEE.html)
 - [FLUXES](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/FLUXES.html)
+- [METEO_SW_IN](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/METEO_SW_IN.html)
 - [METEO_TA](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/METEO_TA.html)
-- [VARIABLES](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/VARIABLES.html)
+- [METEO_VPD](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/METEO_VPD.html)
+- [Variables](https://holukas.github.io/dataset_ch-cha_flux_product/notebooks/90_DATASET_OVERVIEW/Variables.html)
