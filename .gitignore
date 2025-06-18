@@ -3,20 +3,22 @@
 # e.g.: /src
 .obsidian/
 .idea/
+dataset_ch-cha_flux_product/.obsidian/
 
-/dataset_ch-cha_flux_product/notebooks/0_data
-/dataset_ch-cha_flux_product/notebooks/10_METEO/*.csv
-/dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/*.csv
-/dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/*.csv
-/dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/*.csv
-/dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/*.csv
-/dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.csv
-/dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.zip
-/dataset_ch-cha_flux_product/notebooks/60_PARTITIONING/*.csv
-/dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/tests
-/dataset_ch-cha_flux_product/_build
-/_raw
-/_presentations
+dataset_ch-cha_flux_product/notebooks/0_data
+dataset_ch-cha_flux_product/notebooks/10_METEO/*.csv
+dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/*.csv
+dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/*.csv
+dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/*.csv
+dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/*.csv
+dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.csv
+dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.zip
+dataset_ch-cha_flux_product/notebooks/60_PARTITIONING/*.csv
+dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/tests
+dataset_ch-cha_flux_product/_build
+dataset_ch-cha_flux_product/dataset_ch-cha_flux_product/notebooks/95_DATA_REQUESTS/
+_raw/
+_presentations/
 *.parquet
 *.pptx
 *.html
@@ -137,3 +139,5 @@ venv.bak/
 /__archived/
 /__local_folders/
 /notebooks/40_FLUX_PROCESSING_CHAIN/tests/
+dataset_ch-cha_flux_product/notebooks/10_METEO/11_meteoscreening_diive_additional/inProgress/G_GF1_0.05_1_2021-2024.ipynb
+dataset_ch-cha_flux_product/notebooks/10_METEO/11_meteoscreening_diive_additional/inProgress/G_GF1_0.05_2_2021-2024.ipynb
