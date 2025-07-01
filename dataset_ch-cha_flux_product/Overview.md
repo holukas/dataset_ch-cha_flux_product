@@ -75,7 +75,7 @@ Gap-filling for all fluxes was performed using the Random Forest (RF) class `Lon
 
 ### NEE partitioning (Level-4.2)
 
-==XXX==
+ We used two methods to partition NEE into GPP and RECO: the nighttime method based on Reichstein et al (2005) and the daytime method based on Lasslop et al. (2010). As a notable difference to FLUXNET datasets, partitioned fluxes were calculated from NEE gap-filled using the long-term random forest method described in [Level-4.1](L4.1) (FLUXNET uses MDS gap-filled NEE).
 
  
 ---
