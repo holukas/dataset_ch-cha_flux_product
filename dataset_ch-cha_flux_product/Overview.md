@@ -16,17 +16,11 @@ Hörtnagl, L. (2025). diive (v0.86.0). Zenodo. https://doi.org/10.5281/zenodo.15
 
 ### Flux calculations (Level-1)
 
-Biosphere-atmosphere exchange was quantified by maximizing the covariance between turbulent vertical wind speed and the turbulent gas concentrations (CO2, H2O) or dry mixing ratios (N2O, CH4). Axis rotation for tilt correction using double rotation (Wilczak et al., 2001) and block average detrending were applied. Accurate time lag determination was achieved by initially searching for the maximum covariance within a wide time window (-0.05 to +10 s) for each gas and year. For CO2 and H2O, the mode of the resultant time lag distribution defined the default lag (0.3 s), and the spread of the distribution informed the appropriate window size (typically 0.05–0.5 s). The default lag was applied when a distinct covariance peak was absent during the narrow-window search. For N2O and CH4, the most frequently observed time lag from the initial broad search was adopted as the constant lag (typically 0.6–1.75 s), with the exact value depending on the specific year and experimental setup. Density fluctuations in the open-path gas measurements were compensated (Webb et al., 1980). Raw data were tested for spikes, amplitude and drop outs (Vickers and Mahrt, 1997). Fluxes were corrected for high-pass (Moncrieff et al., 2004) and low-pass (LI-7500: Horst, 1997; QCL/LGR: Fratini et al., 2012) filtering effects. In addition, a correction for instrument separation was applied for QCL/LGR fluxes (only crosswind and vertical; Horst and Lenschow, 2009). In instances where time periods were too short for direct spectral assessment, spectral correction of the fluxes was performed using the spectral assessment file derived from the closest appropriate time period.
+
 
 ### Quality flag expansion (Level-2)
 
-Fluxes were then subjected to a series of quality checks. Results for each test were stored in a separate single flag using the 0-1-2 system (unless otherwise noted), where flag=0 denotes fluxes of highest quality, 1=moderate quality, 2=low quality. 
-- **Steady-state and integral turbulence characteristics test** (SSITC test, Foken and Wichura, 1996). Notably, from 1 May 2022 to 30 September 2023, moderately flagged data (flag 1) was reclassified as "low quality" (flag 2) to correct for an issue with the sonic anemometer's vertical wind measurements.
-- **Gas completeness test** of 20Hz raw data files (Sabbatini et al., 2018): Applied to all fluxes, this flag, calculated in diive, checks the completeness of the raw gas concentration data. (best quality: >99% available, moderate quality: between >=97% and < 99% available, low quality: <97 % or <34,920 records available).
-- **Spectral correction factor (SCF) test for out-of-range values** (Sabbatini et al., 2018): applied to all fluxes (best quality: SCF < 2, moderate quality: 2 <= SCF < 4, low quality: SCF > 4).
-- **Signal strength (SS) test flag**: based on the automatic gain control from the open-path IRGA, applied to CO2 and H2O fluxes (best quality: SS <= 90%, low quality > 90%).
-- **Raw data statistical screening** (Vickers and Mahrt, 1997): applied to all fluxes, checks the occurrence of spikes, drop-outs and low amplitude resolution in 20 Hz raw data.  
-- **Angle-of-attack (AoA) test flag**: applied to all fluxes during specific periods: 1 Jan 2008 – 31 Dec 2009, 1 Mar – 30 Apr 2016, and 10 Dec 2021 – 23 Dec 2023. This flag addressed unrealistic wind values from the sonic anemometer's vertical wind velocity. Though not a default, it effectively removed erratic data. The standard EddyPro angle of attack settings were relaxed from $\pm30^\circ$ to $\pm35^\circ$ to balance data retention and quality, resulting in new flag variables to identify good (0) and bad (2) flux records.
+
 
 ### Storage correction (Level-3.1)
 
