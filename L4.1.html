@@ -400,7 +400,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random forest</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-approach">General approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-features">Model features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random forest</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-predictors">Features (predictors)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nee-le-h">NEE, LE, H</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fn2o-fch4">FN2O, FCH4</a></li>
@@ -421,8 +428,29 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="level-4-1-gap-filling">
 <h1>Level-4.1: Gap-filling<a class="headerlink" href="#level-4-1-gap-filling" title="Link to this heading">#</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<section id="general-approach">
+<h3>General approach<a class="headerlink" href="#general-approach" title="Link to this heading">#</a></h3>
+<p>Gap-filling for all fluxes was performed using the Random Forest (RF) class <code class="docutils literal notranslate"><span class="pre">LongTermRandomForestTS</span></code> implemented in <code class="docutils literal notranslate"><span class="pre">diive</span></code>, utilizing a sliding three-year window for annual model training. The class is based on the random forest implementation in the <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> (v1.15)  Python library. For selecting model features, we selected variables based on their demonstrated predictive ability in previous studies. Generally, predictor variables included meteorological data, management information, timestamp information, and lagged variants. Feature selection employed permutation importance and a random variable (comprising random numbers between 0 and 1) comparison for robust feature reduction. Generally used random forest hyperparameters: <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>: 500, <code class="docutils literal notranslate"><span class="pre">random_state</span></code>: 42 (fixed for reproducibility), <code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>: 2, <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>: 1; other hyperparameters used their respective default values.</p>
+</section>
+<section id="exceptions">
+<h3>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">#</a></h3>
+<p><strong>Exception (2012)</strong>: The random forest model struggled to accurately predict <code class="docutils literal notranslate"><span class="pre">FN2O</span></code> and <code class="docutils literal notranslate"><span class="pre">FCH4</span></code> following grassland restoration between 27 February 27 2012 8:00 and 16 March 2012 18:00. Consequently, these flux values were gap-filled using the classic MDS method (Reichstein et al., 2005), which utilized incoming shortwave radiation (SWIN), soil temperature (TS), and soil water content (SWC) as predictor variables, instead of relying on the random forest predictions. This involved first removing the flux values previously imputed by the random forest model for this specific period and then applying the MDS method. This alternative gap-filling approach resulted in a more plausible representation of the flux dynamics.</p>
+<p><strong>Exception (2017, 2018, 2022)</strong>: due to low flux availability for <code class="docutils literal notranslate"><span class="pre">FN2O</span></code> and <code class="docutils literal notranslate"><span class="pre">FCH4</span></code> in 2017, 2018 and 2022, respective gap-filling models were built from all available, directly measured data (2012-2022) after quality checks and then used to gap-fill these three years. A completely new gap-filled flux version for the complete time range (2012-2022) was built. From that version, gap-filled data for the three years (2017, 2018, 2022) then replaced the data in the previously gap-filled version.</p>
+</section>
+<section id="model-features">
+<h3>Model features<a class="headerlink" href="#model-features" title="Link to this heading">#</a></h3>
+<p><strong>NEE, LE and H</strong>: Model features for random forest gap-filling of NEE, LE and H included shortwave incoming radiation (SWIN, at 2m height), air temperature (TA, at 2m height), vapor pressure deficit (VPD, calculated from relative humidity and TA at 2m height) and management information. Each variable was included: (1) as its measured (gap-filled) time series and (2) as time series lagged by one record, pairing each data record with the respective value of the preceding record. Additionally, PREC was included as TIMESINCE variable, counting the time (as number of records) since the last precipitation event. Management information for the two grassland parcels (PARCEL-A or PARCEL-B) was included in the form of TIMESINCE variables, which counted the number of records since the most recent occurrence of specific management events, putting each record in temporal relation to past events for the respective parcel. These events included applications of mineral fertilizer, organic fertilizer, grazing, mowing, soil cultivation, sowing, and pesticide/herbicide applications. Management TIMESINCE variables were then used in combination with wind direction to create FOOTPRINT variables. These variables linked each data record to information from either PARCEL-A or PARCEL-B variables, depending on the wind’s origin at the sensors, ensuring that the source parcel of the air was accounted for. This means, depending on wind direction, the FOOTPRINT variables can contain info from PARCEL-A or PARCEL-B variables. Timestamp info was included as additional features: YEAR (integer, e.g., 2021), SEASON (integer, e.g., 2 for summer months June, July and August), MONTH (integer, e.g. 7 for July), WEEK (integer, week of year, e.g., 52), DOY (integer, day of year), HOUR (integer between 0 and 23), YEARMONTH (string, year and month, e.g. 2021-07 for July 2021), YEARDOY (string, year and day of year, e.g. 2021-034), YEARWEEK (string, year and week of year, e.g., 2021-19 for week 19 in 2021).</p>
+<p><strong>FN2O, FCH4</strong>: Model features for gap-filling FN2O and FCH4 included soil temperature (TS), soil water content (SWC), precipitation (PREC) and management information. For TS, measurements at 4, 15, and 40 cm depths were used, while SWC at 15 cm and PREC at 50 cm height were included. Each variable was included as: (1) its measured (gap-filled) time series, (2) a 3-hour preceding mean, and (3) step-lagged variants representing 3, 6, 9, and 12-hour lagged means, as described by <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0048969723050143?via%3Dihub">Feigenwinter et al. (2023)</a>. PREC, management information and timestamp information were included like for NEE, LE and H.</p>
+<p><strong>Feature importances</strong> were calculated as <strong>permutation importance</strong>: Permutation feature importance assesses feature contributions to a model’s performance. It works by randomly shuffling a feature’s values, observing the resulting performance drop.</p>
+<p><strong>Feature reduction</strong> was performed by comparing feature permutation importances to a random variable, which consisted of random numbers (floats) between 0 and 1. Features with importance below the importance of the random variable were discarded. To ensure consistency across yearly models, a feature was only removed if it was deemed unimportant in <em>all</em> yearly models. A feature was retained if it was deemed important in at least one model.</p>
+</section>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Link to this heading">#</a></h2>
 <section id="random-forest">
-<h2>Random forest<a class="headerlink" href="#random-forest" title="Link to this heading">#</a></h2>
+<h3>Random forest<a class="headerlink" href="#random-forest" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>All fluxes were gap-filled using the class <code class="docutils literal notranslate"><span class="pre">LongTermGapFillingRandomForestTS</span></code> from <a class="reference external" href="https://github.com/holukas/diive/tree/main">diive</a></p></li>
 <li><p>This class uses a sliding three-year window to train annual random forest models, incorporating data from each target year and its two nearest neighbors.</p></li>
@@ -431,6 +459,7 @@ document.write(`
 <li><p><strong>Exception</strong> (Feb/Mar 2012): The random forest model struggled to accurately predict N₂O and CH₄ fluxes following grassland restoration between 27 February 27 2012 8:00 and 16 March 2012 18:00. Consequently, these flux values were gap-filled using the classic MDS method (Reichstein et al., 2005), which utilized incoming shortwave radiation (SW_IN), soil temperature (TS), and soil water content (SWC) as predictor variables, instead of relying on the random forest predictions. This involved first removing the flux values previously imputed by the random forest model for this specific period and then applying the MDS method. This alternative gap-filling approach resulted in a more plausible representation of the flux dynamics.</p></li>
 <li><p>Generally used random forest settings: <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>: 500, <code class="docutils literal notranslate"><span class="pre">random_state</span></code>: 42, <code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>: 2, <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>: 1, default settings were used for all other parameters, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">here</a>.</p></li>
 </ul>
+</section>
 <section id="features-predictors">
 <h3>Features (predictors)<a class="headerlink" href="#features-predictors" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -565,7 +594,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random forest</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-approach">General approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-features">Model features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random forest</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-predictors">Features (predictors)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nee-le-h">NEE, LE, H</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fn2o-fch4">FN2O, FCH4</a></li>

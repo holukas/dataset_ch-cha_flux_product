@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
     <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
@@ -408,6 +410,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-steps">Processing steps</a></li>
 </ul>
@@ -427,6 +430,10 @@ document.write(`
 <p class="admonition-title">Info</p>
 <p>Flux processing follows the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/">Swiss Fluxnet Flux Processing Chain</a></p>
 </div>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Half-hourly eddy covariance (EC) fluxes of CO2, N2O, and CH4 were computed from 20Hz raw data using <em>EddyPro</em> (v7.0.9), following established community guidelines (Aubinet et al., 2012; Sabbatini et al., 2018). Post-processing, including quality control and gap-filling, utilized the Python library <em>diive</em> (v0.87.1; Hörtnagl, 2025) ; for quality assessment and gap-filling) and the R package <em>ReddyProc</em> (v???, Wutzler et al., 2018; for NEE partitioning). The processing workflow involved several key stages: flux calculation (Level-1), quality flagging (Level-2) encompassing steady-state, gas completeness, spectral correction, signal strength, raw data statistical screening, and angle-of-attack tests, and storage correction (Level-3.1). Subsequent outlier flagging (Level-3.2) employed a suite of statistical tests and absolute limits. Low-turbulence periods were filtered using three different USTAR thresholds (Level-3.3). An overall quality flag was calculated from all individual tests and then applied to reject flux records of low quality. Gaps in the quality-filtered data were then filled using the long-term random forest approach as implemented in <em>diive</em> (for random forest see Breiman, 2001), with exceptions handled by the MDS method (Reichstein et al., 2005) where appropriate (Level-4.1). Net ecosystem exchange (NEE) was subsequently partitioned into gross primary production (GPP) and ecosystem respiration (RECO) using both nighttime and daytime methods (Level-4.2; Lasslop et al., 2010; Reichstein et al., 2005). Additional details about specific processing steps and settings are given in the respective sections of this documentation, and in the <a class="reference internal" href="notebooks/README.html"><span class="std std-doc">Jupyter notebooks</span></a>.</p>
+</section>
 <section id="flowchart">
 <h2>Flowchart<a class="headerlink" href="#flowchart" title="Link to this heading">#</a></h2>
 <pre  class="mermaid">
@@ -568,6 +575,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-steps">Processing steps</a></li>
 </ul>

@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'L3.3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -400,6 +402,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qcf-overall-quality-control-flag-after-level-3-3-tests">QCF: overall quality control flag after Level-3.3 tests</a></li>
 </ul>
             </nav>
@@ -418,6 +422,8 @@ document.write(`
 <p class="admonition-title">Info</p>
 <p>Level-3.3 creates additional quality flags to flag time periods of low turbulence. No data are removed in this step, only the flags are created.</p>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Info</p>
 <p><strong>Fluxes filtered with USTAR threshold</strong>: <code class="docutils literal notranslate"><span class="pre">NEE</span></code>, <code class="docutils literal notranslate"><span class="pre">FN2O</span></code>, <code class="docutils literal notranslate"><span class="pre">FCH4</span></code></p>
 <p><strong>Fluxes <em>not</em> filtered with USTAR threshold</strong>: <code class="docutils literal notranslate"><span class="pre">LE</span></code> (and therefore <code class="docutils literal notranslate"><span class="pre">ET</span></code>), <code class="docutils literal notranslate"><span class="pre">H</span></code></p>
 <ul class="simple">
@@ -426,12 +432,20 @@ document.write(`
 <blockquote>
 <div><p>The USTAR filtering is not applied to H and LE, because it has not been proved that when there are CO2 advective fluxes, these also impact energy fluxes, specifically due to the fact that when advection is in general large (nighttime), energy fluxes are small.</p>
 </div></blockquote>
+</div>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Turbulence filtering at Level-3.3 involved flagging low turbulence periods using constant USTAR thresholds (CUT) across all years. These thresholds were derived from a recent FLUXNET analysis (2005-2023) following Pastorello et al. (2020) and were applied to NEE, FN2O, and FCH4 fluxes. They were not applied to LE or H, as advection’s impact on energy fluxes differs (Pastorello et al., 2020). To provide a range of best-estimate and uncertainty-bounding flux versions, three USTAR scenarios were employed: CUT_50 (<span class="math notranslate nohighlight">\(0.069898\ ms^{-1}\)</span>), CUT_16 (<span class="math notranslate nohighlight">\(0.052945\ ms^{-1}\)</span>), and CUT_84 (<span class="math notranslate nohighlight">\(0.092841\ ms^{-1}\)</span>), corresponding to the 50th, 16th, and 84th percentiles of the FLUXNET USTAR distribution, respectively.</p>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Link to this heading">#</a></h2>
 <p>A <strong>constant USTAR threshold</strong> (<code class="docutils literal notranslate"><span class="pre">CUT</span></code>) is used for all years (same threshold for all years). Threshold values are based on USTAR detection results from the most recent FLUXNET data product (2024). The FLUXNET threshold detection was done used data between 2005 and 2023 and using the methods (with bootstrapping) described in Pastorello et al. (2020).</p>
 <p>Following Pastorello et al. (2020), <strong>three USTAR scenarios</strong> were considered to calculate three NEE/FN2O/FCH4 versions:
 - <code class="docutils literal notranslate"><span class="pre">CUT_50</span></code>: This is the main NEE version (best estimate) with a constant USTAR threshold of <code class="docutils literal notranslate"><span class="pre">0.069898</span></code>, corresponding to the 50th percentile from the FLUXNET detection results
 - <code class="docutils literal notranslate"><span class="pre">CUT_16</span></code>: NEE version with a constant USTAR threshold of <code class="docutils literal notranslate"><span class="pre">0.052945</span></code>, corresponding to the 16th percentile from the FLUXNET detection results
 - <code class="docutils literal notranslate"><span class="pre">CUT_84</span></code>: NEE version with a constant USTAR threshold of <code class="docutils literal notranslate"><span class="pre">0.092841</span></code>, corresponding to the 84th percentile from the FLUXNET detection results
 - The two other scenarios use a slightly lower and higher threshold.</p>
+</section>
 <section id="qcf-overall-quality-control-flag-after-level-3-3-tests">
 <h2>QCF: overall quality control flag after Level-3.3 tests<a class="headerlink" href="#qcf-overall-quality-control-flag-after-level-3-3-tests" title="Link to this heading">#</a></h2>
 <p><em>See <a class="reference internal" href="QCF.html"><span class="doc std std-doc">here</span></a> for a description of how <code class="docutils literal notranslate"><span class="pre">QCF</span></code> is calculated.</em></p>
@@ -565,6 +579,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qcf-overall-quality-control-flag-after-level-3-3-tests">QCF: overall quality control flag after Level-3.3 tests</a></li>
 </ul>
   </nav></div>

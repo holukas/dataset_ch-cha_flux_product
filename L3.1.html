@@ -377,7 +377,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,6 +395,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -408,6 +419,12 @@ document.write(`
 <p class="admonition-title">Info</p>
 <p>Level-3.1 calculates storage-corrected fluxes by adding the storage term from <em>single point measurement</em> to the respective flux.</p>
 </div>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Storage terms, calculated from single point measurements, were added to the respective flux to quantify the ecosystem exchange and correct for conditions with low turbulence (Aubinet et al., 2001).</p>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The storage term was calculated by EddyPro during flux calculations (Level-1)</p></li>
 <li><p>Storage-corrected fluxes are: <code class="docutils literal notranslate"><span class="pre">NEE_L3.1</span></code> (from <code class="docutils literal notranslate"><span class="pre">FC</span></code>), <code class="docutils literal notranslate"><span class="pre">LE_L3.1</span></code> (from <code class="docutils literal notranslate"><span class="pre">LE</span></code>), <code class="docutils literal notranslate"><span class="pre">H_L3.1</span></code> (from <code class="docutils literal notranslate"><span class="pre">H</span></code>), <code class="docutils literal notranslate"><span class="pre">FN2O_L3.1</span></code> (from <code class="docutils literal notranslate"><span class="pre">FN2O</span></code>), <code class="docutils literal notranslate"><span class="pre">FCH4_L3.1</span></code> (from <code class="docutils literal notranslate"><span class="pre">FCH4</span></code>)</p></li>
@@ -444,6 +461,7 @@ document.write(`
 <span class="n">SC_SINGLE_gfRMED_L3</span><span class="mf">.1</span>  <span class="mi">288091</span> <span class="o">-</span><span class="mf">7.555871</span> <span class="o">-</span><span class="mf">0.015403</span>  <span class="mf">6.739739</span>
 </pre></div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -500,6 +518,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

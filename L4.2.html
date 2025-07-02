@@ -377,7 +377,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,6 +395,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -404,15 +414,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="level-4-2-nee-partitioning">
 <h1>Level-4.2: NEE Partitioning<a class="headerlink" href="#level-4-2-nee-partitioning" title="Link to this heading">#</a></h1>
-<ul class="simple">
-<li><p>NEE fluxes from <a class="reference internal" href="L4.1.html"><span class="doc std std-doc">Level-4.1</span></a> were partitioned into GPP and RECO</p></li>
-<li><p>Two partitioning methods were used:</p>
-<ul>
-<li><p>Nighttime method based on Reichstein et al (2005)</p></li>
-<li><p>Daytime method based on Lasslop et al. (2010)</p></li>
-</ul>
-</li>
-</ul>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>We used two methods to partition NEE into GPP and RECO: the nighttime method based on Reichstein et al (2005) and the daytime method based on Lasslop et al. (2010). As a notable difference to FLUXNET datasets, partitioned fluxes were calculated from NEE gap-filled using the long-term random forest method described in <a class="reference internal" href="L4.1.html"><span class="doc std std-doc">Level-4.1</span></a> (FLUXNET uses MDS gap-filled NEE).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -469,6 +474,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

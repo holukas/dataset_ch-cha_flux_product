@@ -4,6 +4,10 @@
 The `QCF` (**Q**uality **C**ontrol **F**lag) is calculated from multiple flags from single tests.
 :::
 
+## Description
+The overall quality of each 30-minute flux data record was assessed by combining quality test results from the individual Level-2, Level-3.2 and Level-3.3 quality tests into a single overall quality control flag (QCF), calculated separately for each flux. Fluxes were categorized into three quality levels: highest quality (QCF=0) fluxes successfully passed all individual quality checks; medium quality (QCF=1) fluxes had no individual tests that outright rejected the data (test flag=2) and a maximum of two tests indicating moderate quality (test flag=1); low quality (QCF=2) fluxes were characterized by at least one individual test rejecting the record or by three or more tests marking the record as moderate quality. Low-quality flux records (QCF=2) were removed from the dataset in all cases. Moderate quality fluxes (QCF=1) were retained, with the exception of nighttime NEE where moderate quality NEE fluxes were also rejected. Resulting quality-filtered time series were used in subsequent processing steps.
+
+## Details
 - `QCF` is a flag that shows the *overall* quality of the respective data point. 
 - `QCF` can be: `0`=best data, `1`=OK data, `2`=bad data
 - **`QCF` is calculated from single test flags summed together**:

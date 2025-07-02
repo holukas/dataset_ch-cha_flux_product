@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'L2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -400,6 +402,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-flags">Individual flags</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssitc-test-flag">SSITC test flag</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-completeness-test-flag">Gas completeness test flag</a></li>
@@ -431,6 +434,18 @@ document.write(`
 <li><p>Based on Level-1 (final) flux calculations</p></li>
 <li><p>Builds upon flux results (<em><em>fluxnet</em></em> files) from EddyPro</p></li>
 </ul>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Fluxes were then subjected to a series of quality checks. Results for each test were stored in a separate single flag using the 0-1-2 system (unless otherwise noted), where flag=0 denotes fluxes of highest quality, 1=moderate quality, 2=low quality.</p>
+<ul class="simple">
+<li><p><strong>Steady-state and integral turbulence characteristics test</strong> (SSITC test, Foken and Wichura, 1996). Notably, from 1 May 2022 to 30 September 2023, moderately flagged data (flag 1) was reclassified as “low quality” (flag 2) to correct for an issue with the sonic anemometer’s vertical wind measurements.</p></li>
+<li><p><strong>Gas completeness test</strong> of 20Hz raw data files (Sabbatini et al., 2018): Applied to all fluxes, this flag, calculated in diive, checks the completeness of the raw gas concentration data. (best quality: &gt;99% available, moderate quality: between &gt;=97% and &lt; 99% available, low quality: &lt;97 % or &lt;34,920 records available).</p></li>
+<li><p><strong>Spectral correction factor (SCF) test for out-of-range values</strong> (Sabbatini et al., 2018): applied to all fluxes (best quality: SCF &lt; 2, moderate quality: 2 &lt;= SCF &lt; 4, low quality: SCF &gt; 4).</p></li>
+<li><p><strong>Signal strength (SS) test flag</strong>: based on the automatic gain control from the open-path IRGA, applied to CO2 and H2O fluxes (best quality: SS &lt;= 90%, low quality &gt; 90%).</p></li>
+<li><p><strong>Raw data statistical screening</strong> (Vickers and Mahrt, 1997): applied to all fluxes, checks the occurrence of spikes, drop-outs and low amplitude resolution in 20 Hz raw data.</p></li>
+<li><p><strong>Angle-of-attack (AoA) test flag</strong>: applied to all fluxes during specific periods: 1 Jan 2008 – 31 Dec 2009, 1 Mar – 30 Apr 2016, and 10 Dec 2021 – 23 Dec 2023. This flag addressed unrealistic wind values from the sonic anemometer’s vertical wind velocity. Though not a default, it effectively removed erratic data. The standard EddyPro angle of attack settings were relaxed from <span class="math notranslate nohighlight">\(\pm30^\circ\)</span> to <span class="math notranslate nohighlight">\(\pm35^\circ\)</span> to balance data retention and quality, resulting in new flag variables to identify good (0) and bad (2) flux records.</p></li>
+</ul>
+</section>
 <section id="individual-flags">
 <h2>Individual flags<a class="headerlink" href="#individual-flags" title="Link to this heading">#</a></h2>
 <p><em>See notebooks for more details</em></p>
@@ -615,6 +630,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-flags">Individual flags</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssitc-test-flag">SSITC test flag</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-completeness-test-flag">Gas completeness test flag</a></li>

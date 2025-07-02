@@ -377,7 +377,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,6 +395,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -408,6 +419,12 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">QCF</span></code> (<strong>Q</strong>uality <strong>C</strong>ontrol <strong>F</strong>lag) is calculated from multiple flags from single tests.</p>
 </div>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>The overall quality of each 30-minute flux data record was assessed by combining quality test results from the individual Level-2, Level-3.2 and Level-3.3 quality tests into a single overall quality control flag (QCF), calculated separately for each flux. Fluxes were categorized into three quality levels: highest quality (QCF=0) fluxes successfully passed all individual quality checks; medium quality (QCF=1) fluxes had no individual tests that outright rejected the data (test flag=2) and a maximum of two tests indicating moderate quality (test flag=1); low quality (QCF=2) fluxes were characterized by at least one individual test rejecting the record or by three or more tests marking the record as moderate quality. Low-quality flux records (QCF=2) were removed from the dataset in all cases. Moderate quality fluxes (QCF=1) were retained, with the exception of nighttime NEE where moderate quality NEE fluxes were also rejected. Resulting quality-filtered time series were used in subsequent processing steps.</p>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">QCF</span></code> is a flag that shows the <em>overall</em> quality of the respective data point.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">QCF</span></code> can be: <code class="docutils literal notranslate"><span class="pre">0</span></code>=best data, <code class="docutils literal notranslate"><span class="pre">1</span></code>=OK data, <code class="docutils literal notranslate"><span class="pre">2</span></code>=bad data</p></li>
@@ -441,6 +458,7 @@ document.write(`
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Example showing how the overall quality control flag <code class="docutils literal notranslate"><span class="pre">QCF</span></code> is calculated from single test flags.</span><a class="headerlink" href="#fig-qcf1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -497,6 +515,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

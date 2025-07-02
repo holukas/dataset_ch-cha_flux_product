@@ -5,6 +5,9 @@
 Flux processing follows the [Swiss Fluxnet Flux Processing Chain](https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/)
 `````
 
+## Description
+Half-hourly eddy covariance (EC) fluxes of CO2, N2O, and CH4 were computed from 20Hz raw data using _EddyPro_ (v7.0.9), following established community guidelines (Aubinet et al., 2012; Sabbatini et al., 2018). Post-processing, including quality control and gap-filling, utilized the Python library _diive_ (v0.87.1; Hörtnagl, 2025) ; for quality assessment and gap-filling) and the R package _ReddyProc_ (v???, Wutzler et al., 2018; for NEE partitioning). The processing workflow involved several key stages: flux calculation (Level-1), quality flagging (Level-2) encompassing steady-state, gas completeness, spectral correction, signal strength, raw data statistical screening, and angle-of-attack tests, and storage correction (Level-3.1). Subsequent outlier flagging (Level-3.2) employed a suite of statistical tests and absolute limits. Low-turbulence periods were filtered using three different USTAR thresholds (Level-3.3). An overall quality flag was calculated from all individual tests and then applied to reject flux records of low quality. Gaps in the quality-filtered data were then filled using the long-term random forest approach as implemented in _diive_ (for random forest see Breiman, 2001), with exceptions handled by the MDS method (Reichstein et al., 2005) where appropriate (Level-4.1). Net ecosystem exchange (NEE) was subsequently partitioned into gross primary production (GPP) and ecosystem respiration (RECO) using both nighttime and daytime methods (Level-4.2; Lasslop et al., 2010; Reichstein et al., 2005). Additional details about specific processing steps and settings are given in the respective sections of this documentation, and in the [Jupyter notebooks](notebooks/README.md).
+
 ## Flowchart
 
 ```{mermaid}

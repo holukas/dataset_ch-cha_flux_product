@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'L3.2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -400,7 +402,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-outlier-functions">Description of outlier functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outlier-functions">Outlier functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outlier-detection-settings">Outlier detection settings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nee-net-ecosystem-exchange-of-co2">NEE (net ecosystem exchange of CO<sub>2</sub>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-latent-heat">LE (latent heat)</a></li>
@@ -426,10 +429,23 @@ document.write(`
 <p class="admonition-title">Info</p>
 <p>Level-3.2 creates additional quality flags. No data are removed in this step, only the flags are created.</p>
 </div>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Outlier tests were performed on Level-3.1 fluxes, which had already undergone an initial quality control. Specifically, individual Level-2 quality flags were combined into one overall quality control flag QCF and then <em>temporarily</em> applied to filter Level-3.1 fluxes. This ensured that the outlier detection process only considered data that had not already been marked as low quality in Level-2. The outlier tests themselves were conducted sequentially, meaning the results of one test informed the next, as running all tests on the original, unfiltered data proved ineffective.</p>
+<p>Generally, the following outlier tests were used:</p>
+<ul class="simple">
+<li><p><strong>Absolute limits</strong>: flag values outside a physically plausible range (NEE: <span class="math notranslate nohighlight">\(\pm50\ \mu mol\ m^{-2}\ s^{-1}\)</span>, LE: <span class="math notranslate nohighlight">\(-50\)</span> to <span class="math notranslate nohighlight">\(+800\ Wm^{-2}\)</span>, H: <span class="math notranslate nohighlight">\(-200\)</span> to <span class="math notranslate nohighlight">\(+400\ Wm^{-2}\)</span>, FN2O: <span class="math notranslate nohighlight">\(-5\)</span> to <span class="math notranslate nohighlight">\(+70\ nmol\ m^{-2}\ s^{-1}\)</span>, FCH4: <span class="math notranslate nohighlight">\(-100\)</span> to <span class="math notranslate nohighlight">\(+1100\ nmol\ m^{-2}\ s^{-1}\)</span>). The limits were determined by analyzing typical ranges for highest-quality fluxes.</p></li>
+<li><p><strong>Manual flag</strong>: flag specific time periods, e.g., due to known instrument failure. Applied to NEE, LE and H between 1 Dec 2008 and 1 May 2019 due to instrument failure.</p></li>
+<li><p><strong>Hampel filter</strong>, separate for daytime and nighttime. The Hampel filter identifies anomalies in time-series data using a sliding window of adjustable size. Within each window, it compares each data point to the Median Absolute Deviation (MAD). Points exceeding the MAD by a specified multiple (adjustable) are flagged as outliers. Applied to NEE, LE and H using the settings <code class="docutils literal notranslate"><span class="pre">window_length=48*13</span></code> (corresponds to 13 days of half-hourly data), <code class="docutils literal notranslate"><span class="pre">n_sigma_dt=3.5</span></code> and <code class="docutils literal notranslate"><span class="pre">n_sigma_nt=3.5</span></code> (same n_sigma for daytime and nighttime). The test was repeated until no more outliers were flagged.</p></li>
+<li><p><strong>Rolling z-score</strong>, identify outliers based on the rolling z-score of records. For each record, the rolling z-score is calculated from the rolling mean and rolling standard deviation, centered on the respective value. Applied to FN2O (FCH4) with the settings <code class="docutils literal notranslate"><span class="pre">n_sd=8.0</span></code> (<code class="docutils literal notranslate"><span class="pre">n_sd=7.0</span></code>) and <code class="docutils literal notranslate"><span class="pre">winsize=48*3</span></code>. The test was repeated until no more outliers were flagged.</p></li>
+<li><p><strong>Local standard deviation</strong>, with rolling median and constant (NEE, LE, H) or rolling (FN2O, FCH4) standard deviation (SD). SD was calculated across all data and then used in combination with the rolling window. Applied to all fluxes using the following respective settings for NEE/LE/H/FN2O/FCH4: <code class="docutils literal notranslate"><span class="pre">n_sd=3.5/4.5/5.0/8.0/7.0</span></code> and <code class="docutils literal notranslate"><span class="pre">winsize=48*13</span></code> (NEE, LE, H) or <code class="docutils literal notranslate"><span class="pre">winsize=48*3</span></code> (FN2O, FCH4). The test was repeated until no more outliers were flagged.</p></li>
+<li><p><strong>Local outlier factor</strong>, separate for daytime and nighttime. Local Outlier Factor (LOF) is an unsupervised anomaly detection method. It calculates an anomaly score based on the local density deviation of a sample compared to its k-nearest neighbors. Samples with significantly lower density than their neighbors are identified as outliers. See also the official description <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.LocalOutlierFactor.html">here</a>. Applied to LE with the settings <code class="docutils literal notranslate"><span class="pre">n_neighbors=50</span></code> and <code class="docutils literal notranslate"><span class="pre">contamination=None</span></code>. Test was not repeated, only one iteration.</p></li>
+</ul>
 <p>Outlier tests are based on data where some outliers were already removed. In particular, after the creation of additional quality flags in <a class="reference internal" href="L2.html"><span class="doc std std-doc">Level-2</span></a>, the individual Level-2 flags are combined into one overall quality flag <a class="reference internal" href="QCF.html"><span class="doc std std-doc">QCF</span></a>. Storage-corrected fluxes from <a class="reference internal" href="L3.1.html"><span class="doc std std-doc">Level-3.1</span></a> were then <em>temporarily</em> filtered with this <code class="docutils literal notranslate"><span class="pre">QCF</span></code> to remove fluxes of low quality, and the filtered data were then used for detecting outliers. This way the outlier removal functions do not take into account values that were already flagged for removal in Level-2.</p>
 <p><strong>Outlier tests were run sequentially</strong>: results from one test were based on results from the previous test. Running all tests on the original, non-outlier removed data yielded unsatisfactory results.</p>
-<section id="description-of-outlier-functions">
-<h2>Description of outlier functions<a class="headerlink" href="#description-of-outlier-functions" title="Link to this heading">#</a></h2>
+</section>
+<section id="outlier-functions">
+<h2>Outlier functions<a class="headerlink" href="#outlier-functions" title="Link to this heading">#</a></h2>
 <p>Generally, the following outlier tests were used:</p>
 <ul class="simple">
 <li><p><strong>Absolute limits</strong>: flag values outside a physically plausible range.</p></li>
@@ -559,7 +575,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-outlier-functions">Description of outlier functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outlier-functions">Outlier functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outlier-detection-settings">Outlier detection settings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nee-net-ecosystem-exchange-of-co2">NEE (net ecosystem exchange of CO<sub>2</sub>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-latent-heat">LE (latent heat)</a></li>
