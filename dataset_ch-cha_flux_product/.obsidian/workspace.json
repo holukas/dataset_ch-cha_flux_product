@@ -28,38 +28,10 @@
       {
         "id": "9ce8ff5a575148a9",
         "type": "tabs",
-        "dimension": 36.91335740072203,
+        "dimension": 38.71841155234657,
         "children": [
           {
-            "id": "f41a3466cc70df73",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Issues.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Issues"
-            }
-          },
-          {
-            "id": "303893d7068e8f91",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Instrumentation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Instrumentation"
-            }
-          },
-          {
-            "id": "d3b5a6ca9c08e798",
+            "id": "e3f27e876105a3b3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -73,83 +45,40 @@
             }
           },
           {
-            "id": "8210e1347d5cd4a2",
+            "id": "fbe062449ec5bd03",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Meteo_Data.md",
+                "file": "Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Meteo_Data"
+              "title": "Overview"
             }
           },
           {
-            "id": "a0a18621f3e69ac1",
+            "id": "d5b9bb875c6468c2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SI.md",
+                "file": "References.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SI"
-            }
-          },
-          {
-            "id": "f2648345d34e3a84",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Variables.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Variables"
-            }
-          },
-          {
-            "id": "6309815563246540",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "L4.1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "L4.1"
+              "title": "References"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "443145dbc9c1700d",
         "type": "tabs",
-        "dimension": 50.04512635379061,
+        "dimension": 48.24007220216607,
         "children": [
-          {
-            "id": "a4c32842fd33f19f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Raw_Data_EC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Raw_Data_EC"
-            }
-          },
           {
             "id": "a00fc535a6038c0e",
             "type": "leaf",
@@ -163,8 +92,135 @@
               "icon": "lucide-file",
               "title": "Variables"
             }
+          },
+          {
+            "id": "d1db9194cef7f1b6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "FPC.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "FPC"
+            }
+          },
+          {
+            "id": "e6e6a586f78360dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "L1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L1"
+            }
+          },
+          {
+            "id": "45568a87c588b975",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "L2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L2"
+            }
+          },
+          {
+            "id": "3c4130d5f438272b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "L3.1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L3.1"
+            }
+          },
+          {
+            "id": "8dfd1d7eaf094b5e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "L3.2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L3.2"
+            }
+          },
+          {
+            "id": "d72ff86e1c60e836",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "L3.3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L3.3"
+            }
+          },
+          {
+            "id": "095cd25c52859f22",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "QCF.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "QCF"
+            }
+          },
+          {
+            "id": "3e5de9d66373ba61",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "L4.1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L4.1"
+            }
+          },
+          {
+            "id": "656a77be819b8614",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "L4.2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L4.2"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -311,33 +367,32 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d3b5a6ca9c08e798",
+  "active": "e3f27e876105a3b3",
   "lastOpenFiles": [
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/x-OLD-41.0_FluxProcessingChain_L3.3_NEE_QCF10_20250203.ipynb",
-    "_build/jupyter_execute/abfc41ef5271c7f28f69639fc7e383db117bd1d267d62ce4e7e6d57354f13130.png",
-    "_build/jupyter_execute/880291d817d28955b1704deb200a6563a4519771221a8ead18fd45d109ffe5aa.png",
-    "_build/jupyter_execute/ddf705ae9143ef0af68df2d35400a12f95a31f737dd46b2fb38b1048c8002657.png",
-    "_build/jupyter_execute/2fab198a04605e62210310e4b33faf7677073f2b04ef70f55ec10060e2b17aa7.png",
-    "_build/jupyter_execute/60267a8533d14c03c125710ba5a9023657907d0aa49abde632a2d92007d95a33.png",
-    "_build/jupyter_execute/3f32f0ea871197315bf75c1d66f15a011a696e6989376820d3b0faef27f8a100.png",
-    "_build/jupyter_execute/9b45b86636763dbe2c265d19063c1eafdf18c97a522e7a0b5111ee9c70a9d551.png",
-    "_build/jupyter_execute/62779a04ea091b59ef8fd0a5ec7a8c8700d94106789423c9f983a3ca1c2af677.png",
-    "_build/jupyter_execute/21936fecda127b55c0e080ae19662935fbb0c7e3a07d1473d3b3459237cdc492.png",
-    "_build/jupyter_execute/0add2710a719d6f68205b6e82983808e13f14701e3207abc2cf13d8bc913a3bb.png",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/QCF10_allYears_+LocalSDconst_2008-2010_repeat.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/QCF10_allYears_+LocalSDconst_2008-2010.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/QCF10_allYears_+LocalSDconst_2007-2010.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/QCF10_allYears_+LocalSDconst.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/QCF10_allYears.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/QCF00_allYears_+LocalSDconst.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/QCF00_allYears.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/2017-2019.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/2008-2010_b_minsamples5.ipynb",
-    "_build/jupyter_execute/notebooks/40_FLUX_PROCESSING_CHAIN/tests/2008-2010_a.ipynb",
-    "Instrumentation.md",
-    "Issues.md",
-    "Meteo_Data.md",
-    "SI.md",
+    "notebooks/10_METEO/11_meteoscreening_diive_additional/inProgress/G_GF1_0.05_2_2021-2024.ipynb",
+    "notebooks/10_METEO/11_meteoscreening_diive_additional/inProgress/G_GF1_0.05_1_2021-2024.ipynb",
+    "notebooks/10_METEO/11_meteoscreening_diive_additional/inProgress",
+    "notebooks/10_METEO/11_meteoscreening_diive_additional",
+    "README.md",
+    "intro.md",
+    "Overview.md",
+    "_build/html/index.html",
+    "_build/html/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css",
+    "_build/html/objects.inv",
+    "_build/html/searchindex.js",
+    "_build/html/_images/d4c79b8d050161ebc990fe62f5f8dce1f610c5758820ddb8904136a02286e36f.png",
+    "_build/html/_images/976ddb9ae479f15c3334ceda07a76ef2ab035dae6846362c826fffefb313d992.png",
+    "_build/html/_images/cc75f460d74670a7916b9559c8b9f6b70470d8eb1979b6e5aea48e7e1373cf82.png",
+    "_build/html/_images/e66f27a3e9aea1c9f911c3f442040a09512829a3a7e2404e38b3153bef7416b3.png",
+    "_build/html/_images/a0a382a36b12f9f2a3d0711dc5d38d7d35246d2a180aa1473891701a004e2637.png",
+    "_build/html/_images/cf6491b56ca9558f48178db8e6ee0a92bc91199751596653b01e95c21ccd4459.png",
+    "_build/html/_images/ea1ca368e435717114e5cc53a3f08dde8ef31353971f01361a4fe37f0c4da382.png",
+    "_build/html/_images/6b309b9787f4197d4317c4eb8d7a71057bbf034366acbe6c319982f1060d8092.png",
+    "_build/html/_images/19decbced4b628e0a8418fa7208df8843f140581a0ba1e86db61d0c2cd56bee3.png",
+    "_build/html/_images/2bba4db627e5bab6c1f0e955ce647a57969655b73c0254398da1e7a611b999c8.png",
+    "_build/html/_images",
+    "_build/html/search.html",
+    "_build/html/genindex.html",
     "_build/html/_sources/notebooks/README.md",
     "_build/html/_sources/intro.md",
     "_build/html/_sources/Variables.md",
@@ -358,6 +413,7 @@
     "_build/html/_sources/L3.1.md",
     "_build/html/_sources/L2.md",
     "_build/html/_sources/L1.md",
-    "_build/html/_sources/L0.md"
+    "_build/html/_sources/L0.md",
+    "_build/html/_sources/Issues.md"
   ]
 }

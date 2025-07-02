@@ -13,6 +13,8 @@
 /dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.csv
 /dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.zip
 /dataset_ch-cha_flux_product/notebooks/60_PARTITIONING/*.csv
+/dataset_ch-cha_flux_product/notebooks/95_DATA_REQUESTS/*.csv
+/dataset_ch-cha_flux_product/notebooks/95_DATA_REQUESTS/*.zip
 /dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/tests
 /dataset_ch-cha_flux_product/_build
 /_raw

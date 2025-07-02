@@ -6,7 +6,9 @@ Documentation and notebooks for the creation of the PI dataset of the **intensiv
 
 The dataset comprises ecosystem fluxes measured by the eddy covariance method (CO<sub>2</sub>, H<sub>2</sub>O, H, N<sub>2</sub>O, CH<sub>4</sub>), meteorological data and detailed management info between 2005 and 2024. More data will be added to this dataset in the future.
 
-For an overview of the dataset, see [here](Overview).
+For an overview of the dataset, see [Overview](Overview).
+
+For an overview of recent documentation updates see [here](https://github.com/holukas/dataset_ch-cha_flux_product/commits/main/).
 
 :::{figure-md} photo-ec1
 ![](images/CH-CHA_ECtower_Apr2014_IMG_9304-HDR.jpg)

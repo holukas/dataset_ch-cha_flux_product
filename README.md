@@ -6,8 +6,9 @@ Documentation and notebooks for the PI dataset of the **intensively managed gras
 
 This dataset contains ecosystem fluxes measured by the eddy covariance method, meteorological data and detailed management info between 2005 and 2024. More data will be added to this dataset in the future.
 
-## Dataset versions
+[The documentation is available as Jupyter book here](https://holukas.github.io/dataset_ch-cha_flux_product/intro.html.
 
+<<<<<<< Updated upstream
 ### **CH-CHA FP2025.2 (2005-2024) [current version]**
 - release date: 7 Mar 2025
 - is currently available on demand from the Grassland Sciences group server
@@ -25,6 +26,8 @@ This dataset contains ecosystem fluxes measured by the eddy covariance method, m
 - [Documentation](dataset_ch-cha_flux_product/README.md): Info about flux, meteo and management (post-)processing
 - [Notebooks](dataset_ch-cha_flux_product/notebooks/README.md): Jupyter notebooks used to create the final dataset
 [README](dataset_ch-cha_flux_product/notebooks/README.md)
+=======
+>>>>>>> Stashed changes
 ## Eddy covariance fluxes in this dataset
 
 - **NEE**: Net ecosystem exchange of carbon dioxide (2005-2024)
@@ -32,16 +35,6 @@ This dataset contains ecosystem fluxes measured by the eddy covariance method, m
 - **H**: Sensible heat flux (2005-2024)
 - **FN2O**: Nitrous oxide flux (Jan 2012 - July 2022, with eight years of good data coverage)
 - **FCH4**: Methane flux (Jan 2012 - July 2022, with eight years of good data coverage)
-
-## Upcoming updates
-
-- *RF = gap-filled using random forest*
-- *MDS = gap-filled using marginal distrubution sampling from Reichstein et al. (2005)*
-- **GPP** (RF) and **RECO** (RF) from NEE (RF) partitioning
-- **GPP** (MDS) and **RECO** (MDS) from NEE (MDS) partitioning
-- **ET** calculated from LE (RF)
-- **ET** calculated from LE (MDS)
-- more meteo variables
 
 ## Acknowledgments
 
