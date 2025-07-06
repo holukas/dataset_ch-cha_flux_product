@@ -3,22 +3,22 @@
 # e.g.: /src
 /.obsidian
 /.idea
-
+/_raw
+/_presentations
+/dataset_ch-cha_flux_product/_build
+/dataset_ch-cha_flux_product/.obsidian
 /dataset_ch-cha_flux_product/notebooks/0_data
 /dataset_ch-cha_flux_product/notebooks/10_METEO/*.csv
 /dataset_ch-cha_flux_product/notebooks/20_MANAGEMENT/*.csv
 /dataset_ch-cha_flux_product/notebooks/30_MERGE_DATA/*.csv
 /dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/*.csv
+/dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/tests
 /dataset_ch-cha_flux_product/notebooks/50_FLUX_PROCESSING_CHAIN_QCL+LGR/*.csv
 /dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.csv
 /dataset_ch-cha_flux_product/notebooks/80_FINALIZE/*.zip
 /dataset_ch-cha_flux_product/notebooks/60_PARTITIONING/*.csv
 /dataset_ch-cha_flux_product/notebooks/95_DATA_REQUESTS/*.csv
 /dataset_ch-cha_flux_product/notebooks/95_DATA_REQUESTS/*.zip
-/dataset_ch-cha_flux_product/notebooks/40_FLUX_PROCESSING_CHAIN/tests
-/dataset_ch-cha_flux_product/_build
-/_raw
-/_presentations
 *.parquet
 *.pptx
 *.html
