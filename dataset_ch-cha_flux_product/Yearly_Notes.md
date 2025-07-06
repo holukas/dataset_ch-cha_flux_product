@@ -113,8 +113,11 @@
 ---
 ## 2021
 
-### General notes
-- #todo w_unrot
+:::{figure-md} photo-ec6
+![](images/CH-CHA_2021_20210720_152738.jpg)
+
+Photo of the CH-CHA research site on 20 Jul 2021. Photo: Grassland Sciences Group, ETH Zurich
+:::
 
 ### FF-202407 (IRGA75)
  
@@ -202,6 +205,12 @@
 
 ## 2019
 
+:::{figure-md} photo-ec9
+![](images/CH-CHA_2019_Okt2019-211.jpg)
+
+Photo of the CH-CHA research site in Oct 2019. Photo: Grassland Sciences Group, ETH Zurich
+:::
+
 ### General notes
 - **QCL time lag** is quite unclear during the time period between `2019021819.C00` and `2019043019.C00`. Most likely around +7s for N2O and CH4. 
 
@@ -239,6 +248,12 @@
 
 ---
 ## 2018
+
+:::{figure-md} photo-ec3
+![](images/CH-CHA_2018_ECtower_DSC02800_20181116.JPG)
+
+Photo of the CH-CHA research site on 16 Nov 2018. Photo: Grassland Sciences Group, ETH Zurich
+:::
 
 ### FF-202407 (IRGA75)
  
@@ -372,6 +387,12 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 ---
 ## 2015
 
+:::{figure-md} photo-ec4
+![](images/CH-CHA_2015_2015-06-30_DSC3252.jpg)
+
+Photo of the CH-CHA research site on 30 Jun 2015. Photo: Grassland Sciences Group, ETH Zurich
+:::
+
 ### FF-202407 (IRGA75)
  
 - **Final Flux Version**: R350-IRGA75_FF-202407
@@ -404,6 +425,12 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 
 ---
 ## 2014
+
+:::{figure-md} photo-ec1
+![](images/CH-CHA_2014_ECtower_Apr2014_IMG_9304-HDR.jpg)
+
+Photo of the CH-CHA research site in April 2014. Photo: Lukas Hörtnagl, Grassland Sciences Group, ETH Zurich
+:::
 
 ### FF-202407 (IRGA75)
  
@@ -438,6 +465,12 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 ---
 ## 2013
 
+:::{figure-md} photo-ec5
+![](images/CH-CHA_2013_20130607.jpg)
+
+Photo of the CH-CHA research site on 7 Jun 2013. Photo: Grassland Sciences Group, ETH Zurich
+:::
+
 ### FF-202407 (IRGA75)
  
 - **Final Flux Version**: R350-IRGA75_FF-202407
@@ -470,6 +503,12 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 
 ---
 ## 2012
+
+:::{figure-md} photo-ec2
+![](images/CH-CHA_2012_ECtower_DSC4977_20120726.JPG)
+
+Photo of the CH-CHA research site on 26 Jul 2012. Photo: Grassland Sciences Group, ETH Zurich
+:::
 
 ### General notes
 
@@ -535,6 +574,12 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 ---
 ## 2010
 
+:::{figure-md} photo-ec8
+![](images/CH-CHA_2010_DSC04008_20100922.JPG)
+
+Photo of the CH-CHA research site on 22 Sep 2010. Photo: Grassland Sciences Group, ETH Zurich
+:::
+
 ### FF-202407 (IRGA75)
  
 - **Final Flux Version**: R350-IRGA75_FF-202407
@@ -575,6 +620,12 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 
 ---
 ## 2008
+
+:::{figure-md} photo-ec7
+![](images/CH-CHA_2008_Chamau-270608-0031.jpg)
+
+Photo of the CH-CHA research site on 27 Jun 2008. Photo: Grassland Sciences Group, ETH Zurich
+:::
 
 ### General notes
 - In 2008 and 2009, the sonic anemometer had problems, this can clearly be seen in the spectra of sonic T. There is something strange going on at high frequencies. 

@@ -6,7 +6,7 @@
 - **Gas analyzer for CO<sub>2</sub> and H<sub>2</sub>O molar densities**: LI-7500 open path infrared gas analyzer (IRGA), LICOR Biosciences, USA; mounted at 2.42m height, inclined (15°)
 
 :::{figure-md} photo-ec1
-![](images/CH-CHA_ECtower_Apr2014_IMG_9304-HDR.jpg)
+![](images/CH-CHA_2014_ECtower_Apr2014_IMG_9304-HDR.jpg)
 
 Photo of the CH-CHA research site in April 2014. Photo: Lukas Hörtnagl, Grassland Sciences Group, ETH Zurich
 :::
