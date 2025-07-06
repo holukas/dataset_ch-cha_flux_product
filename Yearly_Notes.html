@@ -1,0 +1,1835 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Yearly Notes &#8212; CH-CHA Flux Product</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Yearly_Notes';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Dataset Versions" href="Dataset_Versions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo1.jpg" class="logo__image only-light" alt="CH-CHA Flux Product - Home"/>
+    <script>document.write(`<img src="_static/logo1.jpg" class="logo__image only-dark" alt="CH-CHA Flux Product - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    CH-CHA Flux Product
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Meteo_Data.html">Meteo Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Management_Data.html">Management Data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="FPC.html">Flux Processing Chain</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L0.html">Level-0: Preliminary flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L1.html">Level-1: Final flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L2.html">Level-2: Quality flag expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.1.html">Level-3.1: Storage correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.2.html">Level-3.2: Outlier flagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L3.3.html">Level-3.3: USTAR filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.1.html">Level-4.1: Gap-filling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L4.2.html">Level-4.2: NEE Partitioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QCF.html">QCF: overall quality control flag</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="Instrumentation.html">Instrumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SI.html">Supplementary Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Used_Software.html">Used Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/README.html">Notebook overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dataset_Versions.html">Dataset Versions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Yearly Notes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/holukas/dataset_ch-cha_flux_product" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/holukas/dataset_ch-cha_flux_product/issues/new?title=Issue%20on%20page%20%2FYearly_Notes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Yearly_Notes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Yearly Notes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-abbreviations">General abbreviations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2024</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202501-irga75">FF-202501 (IRGA75)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2023</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notes">General notes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#w-offsets"><code class="docutils literal notranslate"><span class="pre">W</span></code> offsets</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202503-irga75">FF-202503 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-versions">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2022</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202407-irga75">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202407-lgr">FF-202407 (LGR)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2021</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">FF-202407 (LGR)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202407-qcl">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2020</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">2019</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">2018</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">2017</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-info">General info</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calibration-gas-issue">Calibration gas issue</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">2016</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">2015</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">2014</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">2013</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">2012</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id46">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id47">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id48">2011</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id49">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id50">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id51">2010</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id52">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id53">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id54">2009</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id55">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id56">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id57">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id58">2008</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id59">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id60">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id61">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id62">2007</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id63">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id64">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id65">2006</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id66">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id67">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id68">2005</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id69">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id70">Deprecated versions</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="yearly-notes">
+<h1>Yearly Notes<a class="headerlink" href="#yearly-notes" title="Link to this heading">#</a></h1>
+<section id="info">
+<h2>Info<a class="headerlink" href="#info" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This page gives information about current and past flux calculations, including used software versions, and important info for each year.</p></li>
+<li><p><a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/ec-raw-binary-format-ch-cha/">Overview table of the setup across years</a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?gid=0#gid=0">Sheet</a> with processing info for recent versions</p></li>
+<li><p>Info about some time periods is given in the form of the names of the original eddy covariance raw data files, e.g. <code class="docutils literal notranslate"><span class="pre">2019021819.C00</span></code>.</p></li>
+<li><p><strong>Sonic orientation/height</strong>: Should be <code class="docutils literal notranslate"><span class="pre">7°</span></code> / <code class="docutils literal notranslate"><span class="pre">2.41m</span></code> more or less and consistent across all years. In a comparison of histograms of wind directions between 2005 and 2023 showed that a sonic orientation of <code class="docutils literal notranslate"><span class="pre">7°</span></code> offset to north yields very similar results across years all years. Info from one of the oldest setup files (<code class="docutils literal notranslate"><span class="pre">locations.table</span></code>) that were used for documenting setup info in earlier years listed the sonic orientation at <code class="docutils literal notranslate"><span class="pre">0°</span></code>. In 2016, <code class="docutils literal notranslate"><span class="pre">7°</span></code> north offset was measured for the north spar, the sonic setup should be approx. the same across all years.</p></li>
+</ul>
+<section id="general-abbreviations">
+<h3>General abbreviations<a class="headerlink" href="#general-abbreviations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IRGA</span></code> fluxes: CO2, H2O, H</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QCL</span></code> fluxes: N2O, CH4</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LGR</span></code> fluxes: N2O, CH4</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF-</span></code>: Final fluxes</p></li>
+</ul>
+</section>
+<section id="datasets">
+<h3>Datasets<a class="headerlink" href="#datasets" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Level-3-4_PI_dataset_2005-2020</span></code>: <a class="reference external" href="https://doi.org/10.1016/j.agrformet.2023.109613">PI Dataset Feigentwinter et al. (2023a)</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Level-3-4_PI_dataset_N2O_CH4_2019-2020</span></code>: <a class="reference external" href="https://doi.org/10.1016/j.scitotenv.2023.166389">PI Dataset Feigentwinter et al. (2023b)</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209</span></code>: <a class="reference external" href="https://doi.org/10.18160/2G60-ZHAK">ICOS/FLUXNET Warm Winter 2020 ecosystem eddy covariance flux product</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Level-3-4_FLUXNET2015-FN-20190606-beta-3</span></code>: <a class="reference external" href="https://doi.org/10.18160/YVR0-4898">FLUXNET Drought-2018 ecosystem eddy covariance flux product</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Level-3-4_FLUXNET2015-FN-20161021</span></code>: <a class="reference external" href="https://fluxnet.org/data/fluxnet2015-dataset/">FLUXNET2015 Dataset</a>, described in <a class="reference external" href="https://doi.org/10.1038/s41597-020-0534-3">Pastorello et al. (2020)</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Level-3-4_FLUXNET-CH4-2020_V1_2012-2016</span></code>: <a class="reference external" href="https://fluxnet.org/data/fluxnet-ch4-community-product/">FLUXNET-CH4 Community Product</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id1">
+<h2>2024<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="ff-202501-irga75">
+<h3>FF-202501 (IRGA75)<a class="headerlink" href="#ff-202501-irga75" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202501</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20250124-134851</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h2>2023<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="general-notes">
+<h3>General notes<a class="headerlink" href="#general-notes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>During this year, there have been some sporadic events where the unrotated vertical wind variable <code class="docutils literal notranslate"><span class="pre">W_UNROT</span></code> shows a clear (most likely constant) offset. These periods are generally short and lasted a few days. These periods need to be calculated separately from unaffected periods by using a constant <code class="docutils literal notranslate"><span class="pre">W</span></code> offset in EddyPro. Not correcting for this issue causes fluxes to become less pronounced, e.g. the diel cycle becomes less clear.</p></li>
+<li><p><strong>Wind offset</strong> in sonic anemometer data for vertical wind component W: W jumps to higher values and then remains stable around this higher value. This issue can be more or less corrected in EddyPro by defining an offset for the vertical wind measurements. The affected time periods are (inlcuding offsets, using middle timestamp for half-hours):</p></li>
+</ul>
+<section id="w-offsets">
+<h4><code class="docutils literal notranslate"><span class="pre">W</span></code> offsets<a class="headerlink" href="#w-offsets" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>All these time periods should be calculated together in one run, using a <strong>mean offset</strong> of <code class="docutils literal notranslate"><span class="pre">1.173283</span></code>.</p></li>
+<li><p>between 2023-04-17 10:15 and 2023-04-20 06:15: <code class="docutils literal notranslate"><span class="pre">1.163599708029197</span></code></p></li>
+<li><p>between 2023-07-21 15:45 and 2023-07-21 18:45: <code class="docutils literal notranslate"><span class="pre">1.1862112857142857</span></code></p></li>
+<li><p>between 2023-08-23 14:15 and 2023-08-24 18:45: <code class="docutils literal notranslate"><span class="pre">1.2251075862068965</span></code></p></li>
+<li><p>between 2023-08-26 16:45 and 2023-08-30 08:45: <code class="docutils literal notranslate"><span class="pre">1.0117830873920455</span></code> (during this time period, there seems to be another issue on 28 Aug 2023, but only for approx. one half day, otherwise this offset would also be approx. 1.2)</p></li>
+<li><p>between 2023-09-14 00:45 and 2023-09-18 15:45: <code class="docutils literal notranslate"><span class="pre">1.187201864864865</span></code></p></li>
+<li><p>between 2023-09-22 00:45 and 2023-09-26 14:45: <code class="docutils literal notranslate"><span class="pre">1.1451817454545454</span></code></p></li>
+<li><p>between 2023-09-28 08:45 and 2023-09-29 14:15: <code class="docutils literal notranslate"><span class="pre">1.132388540677966</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="ff-202503-irga75">
+<h3>FF-202503 (IRGA75)<a class="headerlink" href="#ff-202503-irga75" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202503</p></li>
+<li><p><strong>Level-1</strong>:</p>
+<ul>
+<li><p>Level-1_CH-CHA_FR-20250303-102224</p></li>
+<li><p>Level-1_CH-CHA_FR-20250304-093959_W-OFFSET (corrected <code class="docutils literal notranslate"><span class="pre">W</span></code> offset periods)</p></li>
+</ul>
+</li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code> offset periods were calculated separately from unaffected time periods</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="deprecated-versions">
+<h3>Deprecated versions<a class="headerlink" href="#deprecated-versions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-202407 (IRGA75)</strong> | Final Flux Version: R350-IRGA75_FF-202407 | Level-1: Level-1_FR-20240726-181748 | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: - | Notes: <a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a>; calculated without angle-of-attack correction</p></li>
+<li><p><strong>FF-202403 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202403 | Level-1: Level-1_FR-20240326-143413_AoA | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: - | Notes: calculated with angle-of-attack correction, to be consistent with previous years</p></li>
+<li><p><strong>FF-202403 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202403 | Level-1: Level-1_FR-20240326-143214_NoAoA | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: 27 Mar 2024 | Notes: variant calculated without angle-of-attack correction</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>2022<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="ff-202407-irga75">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#ff-202407-irga75" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240726-181747, Level-1_FR-20240726-181749</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ff-202407-lgr">
+<h3>FF-202407 (LGR)<a class="headerlink" href="#ff-202407-lgr" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-LGR_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240809-181345</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, LGR</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+<li><p>last year with LGR fluxes</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h3>Deprecated versions<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-202307 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202307 | Level-1: Level-1_FR-20231026-115535_AoA | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: - | Notes: calculated with angle-of-attack correction, to be consistent with previous years</p></li>
+<li><p><strong>FF-202307 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202307 | Level-1: Level-1_FR-20231026-161730_NoAoA | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: 27 Oct 2023 | Notes: variant calculated without angle-of-attack correction</p></li>
+<li><p><strong>FF-202307 (LGR, deprecated)</strong> | Final Flux Version: R350-LGR_FF-202307 | Level-1: Level-1_FR-20231028-112955 | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, LGR | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: - | Notes: no angle-of-attack correction</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h2>2021<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec6">
+<img alt="" src="_images/CH-CHA_2021_20210720_152738.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Photo of the CH-CHA research site on 20 Jul 2021. Photo: Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id6">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240727-005940, Level-1_FR-20240727-010348</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id7">
+<h3>FF-202407 (LGR)<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-LGR_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240809-181345</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, LGR</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+<li><p>first year with LGR fluxes</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ff-202407-qcl">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#ff-202407-qcl" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240809-181351</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+<li><p>last year with QCL fluxes</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id8">
+<h3>Deprecated versions<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-202306 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202306 | Level-1: 3 parts: Level-1_FR-20230809-104348 / Level-1_FR-20230809-104955 / Level-1_FR-20230810-095226 | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.3.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.0 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: - | Notes: calculated with angle-of-attack correction, to be consistent with previous years</p></li>
+<li><p><strong>FF-202306 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202306 | Level-1: 3 parts: Level-1_FR-20230626-120326 / Level-1_FR-20230807-121916 / Level-1_FR-20230808-115504 | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.3.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.0 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: 21 Aug 2023 | Notes: variant calculated without angle-of-attack correction</p></li>
+<li><p><strong>FF-202306 (QCL, deprecated)</strong> | Final Flux Version: R350-QCL_FF-202306 | Level-1: Level-1_FR-20230626-120549 | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, QCL | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.3.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.0 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: - | Notes: without angle-of-attack correction</p></li>
+<li><p><strong>FF-202306 (LGR, deprecated)</strong> | Final Flux Version: R350-LGR_FF-202306 | Level-1: Level-1_FR-20230807-095427 / Level-1_FR-20230807-095844 | Level-4 ID(s): <em>in progress</em> | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, LGR | Scripts: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.3.0, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.3.0 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9) | FLUXNET Upload: - | Notes: without angle-of-attack correction</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id9">
+<h2>2020<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240727-210028, Level-1_FR-20240727-210053, Level-1_FR-20240730-112251</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id11">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240809-181351, Level-1_FR-20240813-123539, Level-1_FR-20240813-124302</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id12">
+<h3>Deprecated versions<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-202108 (IRGA75, deprecated)</strong> | Final Flux Version: FF-202108 | Level-1: Level-1_FR-20210727-113252 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fluxrun">FR</a> 0.5.0 with <a class="reference external" href="https://www.licor.com/env/products/eddy_covariance/eddypro">EddyPro</a> 7.0.6, <a class="reference external" href="https://gitlab.ethz.ch/holukas/diive">DIIVE</a> v0.21.0, <a class="reference external" href="https://gitlab.ethz.ch/holukas/bico">BICO</a> 0.5.0 (binary conversion) | FLUXNET Upload: - | Notes: Differences to previous version: calculated with angle-of-attack correction</p></li>
+<li><p><strong>FF-202101 (QCL, deprecated)</strong> | Final Flux Version: R350-QCL_FF-202101 | Level-1: Level-1_FR-20210329 / Level-1_FR-20210329-101401 / Level-1_FR-20210329-161921 | Level-4 ID(s): Level-3-4_PI_dataset_N2O_CH4_2019-2020 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, QCL | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fluxrun">FR</a> 0.5.0 with <a class="reference external" href="https://www.licor.com/env/products/eddy_covariance/eddypro">EddyPro</a> 7.0.6, <a class="reference external" href="https://gitlab.ethz.ch/holukas/diive">DIIVE</a> v0.21.0, <a class="reference external" href="https://gitlab.ethz.ch/holukas/bico">BICO</a> 0.5.0 (binary conversion) | FLUXNET Upload: - | Notes: -</p></li>
+<li><p><strong>FF-202101 (IRGA75, deprecated)</strong> | Final Flux Version: FF-202101 | Level-1: Level-1_FR-20210318-171526 | Level-4 ID(s): Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/bico">BICO</a> v0.5.0, <a class="reference external" href="https://gitlab.ethz.ch/holukas/fluxrun">FLUXRUN</a> v0.5.0(?), <a class="reference external" href="https://gitlab.ethz.ch/holukas/diive">DIIVE</a> v0.17.0 | FLUXNET Upload: 1 Apr 2021 | Notes: Data for full year; Used file for dynamic vegetation height</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id13">
+<h2>2019<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec9">
+<img alt="" src="_images/CH-CHA_2019_Okt2019-211.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Photo of the CH-CHA research site in Oct 2019. Photo: Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id14">
+<h3>General notes<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>QCL time lag</strong> is quite unclear during the time period between <code class="docutils literal notranslate"><span class="pre">2019021819.C00</span></code> and <code class="docutils literal notranslate"><span class="pre">2019043019.C00</span></code>. Most likely around +7s for N2O and CH4.</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240727-210200</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id16">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240812-132901, Level-1_FR-20240812-142125, Level-1_FR-20240812-144207, Level-1_FR-20240812-151728</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id17">
+<h3>Deprecated versions<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-202108 (IRGA75, deprecated)</strong> | Final Flux Version: FF-202108 | Level-1: Level-1_FR-20210809-121703 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fluxrun">FR</a> 0.5.0 with <a class="reference external" href="https://www.licor.com/env/products/eddy_covariance/eddypro">EddyPro</a> 7.0.6, <a class="reference external" href="https://gitlab.ethz.ch/holukas/diive">DIIVE</a> v0.21.0, <a class="reference external" href="https://gitlab.ethz.ch/holukas/bico">BICO</a> 0.5.0 (binary conversion) | FLUXNET Upload: - | Notes: Differences to previous version: calculated with angle-of-attack correction; used file for dynamic vegetation height</p></li>
+<li><p><strong>FF-202101 (QCL, deprecated)</strong> | Final Flux Version: R350-QCL_FF-202101 | Level-1: Level-1_CH-CHA_FR-20210329-102017 / Level-1_CH-CHA_FR-20210329-110058 / Level-1_CH-CHA_FR-20210412-135410 | Level-4 ID(s): Level-3-4_PI_dataset_N2O_CH4_2019-2020 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, QCL | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fluxrun">FR</a> 0.5.0 with <a class="reference external" href="https://www.licor.com/env/products/eddy_covariance/eddypro">EddyPro</a> 7.0.6, <a class="reference external" href="https://gitlab.ethz.ch/holukas/diive">DIIVE</a> v0.21.0, <a class="reference external" href="https://gitlab.ethz.ch/holukas/bico">BICO</a> 0.5.0 (binary conversion) | FLUXNET Upload: - | Notes: -</p></li>
+<li><p><strong>FF-202008 (IRGA75, deprecated)</strong> | Final Flux Version: FF-202008 | Level-1: Level-1_ID2020-08-06T170629 | Level-4 ID(s): Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fct-flux-calculation-tool/-/releases/v0.9.6">FCT v0.9.6</a> (Level-1 calcs), <a class="reference external" href="https://gitlab.ethz.ch/holukas/fqc-flux-quality-control/-/releases/v2.1.2">FQC v2.1.2</a> (Level-2 QC), Amp v0.16.0 | FLUXNET Upload: 17 Aug 2020 | Notes: First final flux calculations for 2019; For more info, see here: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/documentation/ch-cha-ff-202008/">CH-CHA / FF-202008</a>.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id18">
+<h2>2018<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec3">
+<img alt="" src="_images/CH-CHA_2018_ECtower_DSC02800_20181116.JPG" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Photo of the CH-CHA research site on 16 Nov 2018. Photo: Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id19">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240727-210213, Level-1_FR-20240730-112301, Level-1_FR-20240730-112310</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id20">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240812-141157, Level-1_FR-20240812-132901, Level-1_FR-20240812-120855</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id21">
+<h3>Deprecated versions<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-202108 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202108 | Level-1: Level-1_DIIVE-20210811-115925 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fluxrun">FR</a> 0.5.0 with <a class="reference external" href="https://www.licor.com/env/products/eddy_covariance/eddypro">EddyPro</a> 7.0.6, <a class="reference external" href="https://gitlab.ethz.ch/holukas/diive">DIIVE</a> v0.21.0, <a class="reference external" href="https://gitlab.ethz.ch/holukas/bico">BICO</a> 0.5.0 (binary conversion) | FLUXNET Upload: - | Notes: Differences to previous version: calculated with angle-of-attack correction; used file for dynamic vegetation height</p></li>
+<li><p><strong>FF-202008 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202008 | Level-1: Level-1-ID2020-08-09T035558 | Level-4 ID(s): Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fct-flux-calculation-tool/-/releases/v0.9.6">FCT v0.9.6</a> (Level-1 calcs), <a class="reference external" href="https://gitlab.ethz.ch/holukas/fqc-flux-quality-control/-/releases/v2.1.2">FQC v2.1.2</a> (Level-2 QC), Amp v0.16.0 | FLUXNET Upload: ICOS Winter 2020 Initiative (original upload 9 Aug 2020) | Notes: Fluxes 2018 were re-calculated because the years around it were newly calculated, to make the most recent years more homogeneous; For more info, see here: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/documentation/ch-cha-ff-202008/">CH-CHA / FF-202008</a>.</p></li>
+<li><p><strong>FF-201902 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201902 | Level-1: Level-1_ID2019-03-01T191002 / merged from: 2018_1: ID2019-02-27T155640, 2018_2:  ID2019-03-01T165849, 2018_3: ID2019-03-01T170012 / separate conversions: 2018_1 in ID2019-02-13T180423, 2018_2 in ID2019-03-01T152305, 2018_3 in ID2019-02-28T181358) | Level-4 ID(s): Level-3-4_FLUXNET2015-FN-20190606-beta-3 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.86 (2018_1 and 2018_3), FCT 0.87 (2018_2 because of different QCL setup), EP 6.2.0 (Level-1), FM 0.91 (Level-1 merging), FQC 1.04 (Level-2) | FLUXNET Upload: European Drought Study 2018 (upload 29 Mar 2019) | Notes: -</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id22">
+<h2>2017<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
+<section id="general-info">
+<h3>General info<a class="headerlink" href="#general-info" title="Link to this heading">#</a></h3>
+<section id="calibration-gas-issue">
+<h4>Calibration gas issue<a class="headerlink" href="#calibration-gas-issue" title="Link to this heading">#</a></h4>
+<p>Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx. 2 months is affected by the wrong calibration gas. Affected time period: all IRGA75 CO2 concentrations between <code class="docutils literal notranslate"><span class="pre">2017011114.C57</span></code> and <code class="docutils literal notranslate"><span class="pre">2017031507.C00</span></code>. For more info see <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/documentation/wrong-calibration-gas-2017/">here</a>.</p>
+<p><strong>The problem</strong>: CO2 standards, measured at 15.07.2016 were off by 10-15 ppm. We measured the flasks at EMPA (CZ) on 07/03/2019 and found roughly 14 ppm difference (see below). After knowing this, I contacted ML and he immediately found the problem: the calibration was done using a cubic calibration function (UniBe1) instead of a linear one (UniBe2). This resulted in approx 12 ppm difference. Considering the “wrong” air matrix of the synthetic air (only 20% O2, no Ar), the EMPA measurements are roughly 1 ppm underestimated. This leads to a difference of approx 1.5 ppm between EMPA and UniBe2.</p>
+<p><strong>Conclusion</strong>: UniBe2 are the correct concentrations; we calibrated with the wrong concentrations (UniBe1) at the dates in the table below</p>
+<p><strong>Erroneous flasks</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Flask</p></th>
+<th class="head"><p>EMPA</p></th>
+<th class="head"><p>UniBe1</p></th>
+<th class="head"><p>Diff</p></th>
+<th class="head"><p>Factor</p></th>
+<th class="head"><p>UniBe2</p></th>
+<th class="head"><p>Factor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10748329</p></td>
+<td><p>447.19</p></td>
+<td><p>461.195</p></td>
+<td><p>14.005</p></td>
+<td><p>1.0313</p></td>
+<td><p>449.064</p></td>
+<td><p>0.974</p></td>
+</tr>
+<tr class="row-odd"><td><p>10754002</p></td>
+<td><p>447.54</p></td>
+<td><p>461.791</p></td>
+<td><p>14.251</p></td>
+<td><p>1.0318</p></td>
+<td><p>449.607</p></td>
+<td><p>0.974</p></td>
+</tr>
+<tr class="row-even"><td><p>10692738</p></td>
+<td><p>444.83</p></td>
+<td><p>458.434</p></td>
+<td><p>13.604</p></td>
+<td><p>1.0306</p></td>
+<td><p>446.597</p></td>
+<td><p>0.974</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Calibrations with the wrong standards</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Date</strong></p></td>
+<td><p>Instr</p></td>
+<td><p>SN</p></td>
+<td><p>Flask</p></td>
+<td><p>Meas</p></td>
+<td><p>Comment</p></td>
+</tr>
+<tr class="row-odd"><td><p>11 Jan 2017</p></td>
+<td><p>LI-7500</p></td>
+<td><p>75H-0639</p></td>
+<td><p>10748329</p></td>
+<td><p>EC</p></td>
+<td><p>calibration file found</p></td>
+</tr>
+<tr class="row-even"><td><p>15 Mar 2017</p></td>
+<td><p>LI-7500</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>EC</p></td>
+<td><p>replacement instrument from CH-OE2, was calibrated before with correct calibration gas</p></td>
+</tr>
+<tr class="row-odd"><td><p>14 Apr 2017</p></td>
+<td><p>LI-7500</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>EC</p></td>
+<td><p>again change of analyzer, was calibrated before with correct calibration gas</p></td>
+</tr>
+<tr class="row-even"><td><p>30 Apr 2019</p></td>
+<td><p>LI-7500</p></td>
+<td><p>75H-0639</p></td>
+<td><p></p></td>
+<td><p>EC</p></td>
+<td><p><strong>calibrated with correct calibration gas</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Affected time period: all IRGA75 CO2 concentrations between <code class="docutils literal notranslate"><span class="pre">2017011114.C57</span></code> and <code class="docutils literal notranslate"><span class="pre">2017031507.C00</span></code>.</p></li>
+<li><p>Due to the replacement of in 15 Mar 2017, only a short time period of approx. 2 months is affected by the wrong calibration gas.</p></li>
+<li><p>Affected time periods are also shown in <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">EC Raw Binary Format (CH-CHA)</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="id23">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240727-210107</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id24">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240812-120855, Level-1_FR-20240809-162135</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id25">
+<h3>Deprecated versions<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-202108 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202108 | Level-1: Level-1_FR-20210809-112924 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fluxrun">FR</a> 0.5.0 with <a class="reference external" href="https://www.licor.com/env/products/eddy_covariance/eddypro">EddyPro</a> 7.0.6, <a class="reference external" href="https://gitlab.ethz.ch/holukas/diive">DIIVE</a> v0.21.0, <a class="reference external" href="https://gitlab.ethz.ch/holukas/bico">BICO</a> 0.5.0 (binary conversion) | FLUXNET Upload: - | Notes: Differences to previous version: calculated with angle-of-attack correction</p></li>
+<li><p><strong>FF-202008 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-202008 | Level-1: Level-1_ID2020-08-06T141401 | Level-4 ID(s): Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: <a class="reference external" href="https://gitlab.ethz.ch/holukas/fct-flux-calculation-tool/-/releases/v0.9.6">FCT v0.9.6</a> (Level-1 calcs), <a class="reference external" href="https://gitlab.ethz.ch/holukas/fqc-flux-quality-control/-/releases/v2.1.2">FQC v2.1.2</a> (Level-2 QC), Amp v0.16.0 | FLUXNET Upload: ICOS Winter 2020 Initiative (original upload 9 Aug 2020) | Notes: Fluxes 2017 were re-calculated because of the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/documentation/wrong-calibration-gas-2017/">Wrong Calibration Gas 2017</a>; For more info, see here: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/documentation/ch-cha-ff-202008/">CH-CHA / FF-202008</a>.</p></li>
+<li><p><strong>FF-201902 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201902 | Level-1: Level-1_ID2019-02-27T155352 / conversion in ID2019-02-12T172700 | Level-4 ID(s): Level-3-4_FLUXNET2015-FN-20190606-beta-3 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.86, EP 6.2.0 (Level-1), FM 0.91 (Level-1 merging), FQC 1.04 (Level-2) | FLUXNET Upload: European Drought Study 2018 (upload 29 Mar 2019) | Notes: Known issues: Fluxes have not been corrected for the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/documentation/wrong-calibration-gas-2017/">Wrong Calibration Gas 2017</a> issue (unknown at the time). See here for affected time periods: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-fru-fruebuel/data-ch-fru/ec-raw-binary-format/">Setup since 2005</a>. Affected time period: all IRGA75 CO2 concentrations between <code class="docutils literal notranslate"><span class="pre">2017011114.C57</span></code> and <code class="docutils literal notranslate"><span class="pre">2017031507.C00</span></code> (approx. 2 months).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id26">
+<h2>2016<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
+<section id="id27">
+<h3>General notes<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>During this year, there was a major problem with the sonic starting in March and lasting throughout April. The exact time period is: remove fluxes between <code class="docutils literal notranslate"><span class="pre">2016-03-18</span> <span class="pre">12:30:00</span></code> and <code class="docutils literal notranslate"><span class="pre">2016-05-03</span> <span class="pre">07:00:00</span></code>. During this time period, The sensible heat fluxes are off and are lost due to the spike flag during Level-2 quality control. Still, the IRGA75 provided continuous measurements throughout April, but the fluxes look noisy with large deviations. The spectral correction factors for CO2 (<code class="docutils literal notranslate"><span class="pre">FC_SCF</span></code>) during this period within range, although they have less spikes than the rest of the year. However, to be more on the safe side, the recommendation is to use the spectral assessment file of 2017, which has a similar setup, and to remove the time period detailed above.</p></li>
+</ul>
+</section>
+<section id="id28">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240730-112320, Level-1_FR-20240730-112331</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3 and v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id29">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240809-162135, Level-1_FR-20240812-122540</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3 and v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id30">
+<h3>Deprecated versions<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201902 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201902 | Level-1: Level-1_ID2019-03-01T193757 / merged from: 2016_1-3: ID2019-02-27T154133, 2016_2: ID2019-02-27T154512 / separate conversions: 2016_1, 2016_3 in ID2019-02-12T172410; 2016_2 in ID2019-02-12T172532 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.86, EP 6.2.0 (Level-1), FM 0.91 (Level-1 merging), FQC 1.04 (Level-2) | FLUXNET Upload: European Drought Study 2018 (upload 29 Mar 2019) | Notes: For QC-20190310-130244, I leave the CO2 fluxes for April in the data, with the flag as provided by the default Level-2 QC check, but the fluxes during this time period need to be used (and if needed re-checked) with care, since I can see reasons to remove all fluxes for most of March and all of April. – LH</p></li>
+<li><p><strong>FF-XXXXXX (QCL, deprecated)</strong> | Final Flux Version: R350-QCL_FF-XXXXXX (vX) | Level-1: XXX | Level-4 ID(s): Level-3-4_FLUXNET-CH4-2020_V1_2012-2016 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, QCL | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET-CH4 Community Product (upload X 2019) | Notes: data were shared with FLUXNET, but unclear which version</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id31">
+<h2>2015<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec4">
+<img alt="" src="_images/CH-CHA_2015_2015-06-30_DSC3252.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Photo of the CH-CHA research site on 30 Jun 2015. Photo: Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id32">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id32" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240727-210058, Level-1_FR-20240727-210122</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3 and v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id33">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240809-195140, Level-1_FR-20240809-195142</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3 and v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id34">
+<h3>Deprecated versions<a class="headerlink" href="#id34" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-24T165022 / merged from: 2015_1: ID2016-05-23T124232, 2015_2: ID2016-05-22T000117 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) (a) | Notes: Although these fluxes were prepared for the original FLUXNET2015 release in 2016, they were not included in the dataset. Data were later included for the FLUXNET2015 Drought Study 2018. May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. This run used the final meteo data, as checked by PK and KF. All EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). Run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+<li><p><strong>FF-201605 (QCL, deprecated)</strong> | Final Flux Version: R350-QCL_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-06-07T103201 / merged from: 2015_1: ID2016-06-05T010130, 2015_2: ID2016-06-06T094455 | Level-4 ID(s): Level-3-4_FLUXNET-CH4-2020_V1_2012-2016 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, QCL | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET-CH4 Community Product (upload 5 May 2019) | Notes: -</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id35">
+<h2>2014<a class="headerlink" href="#id35" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec1">
+<img alt="" src="_images/CH-CHA_2014_ECtower_Apr2014_IMG_9304-HDR.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Photo of the CH-CHA research site in April 2014. Photo: Lukas Hörtnagl, Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id36">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id36" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240727-210133</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id37">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id37" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240731-180109</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id38">
+<h3>Deprecated versions<a class="headerlink" href="#id38" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-22T000255 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a>| Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. This run used the final meteo data, as checked by PK and KF. All EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). Run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+<li><p><strong>FF-201605 (QCL, deprecated)</strong> | Final Flux Version: R350-QCL_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-06-05T010121 | Level-4 ID(s): Level-3-4_FLUXNET-CH4-2020_V1_2012-2016 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, QCL | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET-CH4 Community Product (upload 5 May 2019) | Notes: -</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id39">
+<h2>2013<a class="headerlink" href="#id39" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec5">
+<img alt="" src="_images/CH-CHA_2013_20130607.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Photo of the CH-CHA research site on 7 Jun 2013. Photo: Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id40">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id40" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240727-210036</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id41">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id41" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240731-175843</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id42">
+<h3>Deprecated versions<a class="headerlink" href="#id42" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-22T000412 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+<li><p><strong>FF-201605 (QCL, deprecated)</strong> | Final Flux Version: R350-QCL_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-06-05T010109 | Level-4 ID(s): Level-3-4_FLUXNET-CH4-2020_V1_2012-2016 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, QCL | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET-CH4 Community Product (upload 5 May 2019) | Notes: -</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id43">
+<h2>2012<a class="headerlink" href="#id43" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec2">
+<img alt="" src="_images/CH-CHA_2012_ECtower_DSC4977_20120726.JPG" />
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Photo of the CH-CHA research site on 26 Jul 2012. Photo: Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id44">
+<h3>General notes<a class="headerlink" href="#id44" title="Link to this heading">#</a></h3>
+<p><strong>Erroneous data between 27 Feb 2012 08:00 and 16 Mar 2012 18:00</strong>: I checked the eddy covariance raw data plots (20Hz) and found:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2012022702.b00</span></code> is the last complete raw data file before the gap, N2O and CH4 look good</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012022708.b00</span></code> is the last complete raw data file before the gap, but N2O and CH4 measurements by the QCL are already faulty</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012022714.b00</span></code> is the first incomplete raw data file already <em>during</em> the gap (N2O and CH4 completely missing)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012031602.b00</span></code> is the last incomplete raw data file already <em>during</em> the gap (N2O and CH4 completely missing)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012031614.b00</span></code> is the first complete raw data file after the gap, N2O and CH4 look good again after approx. 18:00h</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012031620.b00</span></code> is the first complete raw data file after the gap, N2O and CH4 look good again</p></li>
+</ul>
+</section>
+<section id="id45">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id45" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240728-190409, Level-1_FR-20240730-112342</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3 and v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id46">
+<h3>FF-202407 (QCL)<a class="headerlink" href="#id46" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-QCL_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240731-175623</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, QCL</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3 and v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+<li><p>first year with QCL fluxes</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id47">
+<h3>Deprecated versions<a class="headerlink" href="#id47" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-23T201124 / merged results from: 2012_1: ID2016-05-22T000702, 2012_2: ID2016-05-22T000537 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a>| Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+<li><p><strong>FF-201605 (QCL, deprecated)</strong> | Final Flux Version: R350-QCL_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-26T115356 | Level-4 ID(s): Level-3-4_FLUXNET-CH4-2020_V1_2012-2016 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, QCL | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET-CH4 Community Product (upload 5 May 2019) | Notes: -</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id48">
+<h2>2011<a class="headerlink" href="#id48" title="Link to this heading">#</a></h2>
+<section id="id49">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id49" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240728-190344</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id50">
+<h3>Deprecated versions<a class="headerlink" href="#id50" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-23T145001 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020 |  Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209 |  Level-3-4_FLUXNET2015-FN-20190606-beta-3 |  Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id51">
+<h2>2010<a class="headerlink" href="#id51" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec8">
+<img alt="" src="_images/CH-CHA_2010_DSC04008_20100922.JPG" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Photo of the CH-CHA research site on 22 Sep 2010. Photo: Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id52">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id52" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240728-190324, Level-1_FR-20240730-112352</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3 and v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id53">
+<h3>Deprecated versions<a class="headerlink" href="#id53" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-23T135737 / merged results from: 2010_1 and 2010_3: ID2016-05-22T001209, 2010_2: ID2016-05-22T001000 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id54">
+<h2>2009<a class="headerlink" href="#id54" title="Link to this heading">#</a></h2>
+<section id="id55">
+<h3>General notes<a class="headerlink" href="#id55" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>In 2008 and 2009, the sonic anemometer had problems, this can clearly be seen in the spectra of sonic T. There is something strange going on at high frequencies.</p></li>
+</ul>
+</section>
+<section id="id56">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id56" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_CH-CHA_FR-20240919-144235, Level-1_CH-CHA_FR-20240919-144503</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id57">
+<h3>Deprecated versions<a class="headerlink" href="#id57" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-06-04T135915 / merged results from: 2009_1 and 2009_3: ID2016-06-03T121445, 2009_2: ID2016-06-03T121522 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FM (Level-1 merging), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°. For this run, the spectral assessment file for 2011 was used to calculate fluxes for 2008 and 2009. This should give a more reliable result.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id58">
+<h2>2008<a class="headerlink" href="#id58" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="photo-ec7">
+<img alt="" src="_images/CH-CHA_2008_Chamau-270608-0031.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Photo of the CH-CHA research site on 27 Jun 2008. Photo: Grassland Sciences Group, ETH Zurich</span><a class="headerlink" href="#photo-ec7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id59">
+<h3>General notes<a class="headerlink" href="#id59" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>In 2008 and 2009, the sonic anemometer had problems, this can clearly be seen in the spectra of sonic T. There is something strange going on at high frequencies.</p></li>
+</ul>
+</section>
+<section id="id60">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id60" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240730-112401</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id61">
+<h3>Deprecated versions<a class="headerlink" href="#id61" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-06-03T121335 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a>| Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°. For this run, the spectral assessment file for 2011 was used to calculate fluxes for 2008 and 2009. This should give a more reliable result.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id62">
+<h2>2007<a class="headerlink" href="#id62" title="Link to this heading">#</a></h2>
+<section id="id63">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id63" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240730-112410</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id64">
+<h3>Deprecated versions<a class="headerlink" href="#id64" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-23T194748 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id65">
+<h2>2006<a class="headerlink" href="#id65" title="Link to this heading">#</a></h2>
+<section id="id66">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id66" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240730-112420</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.5, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id67">
+<h3>Deprecated versions<a class="headerlink" href="#id67" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | Final Flux Version: R350-IRGA75_FF-201605 (v2016-05) | Level-1: Level-1_ID2016-05-24T165540 | Level-4 ID(s): Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | Setup: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | Instruments: R350, IRGA75 | Scripts: FCT 0.74, EP 6.1.0 (Level-1), FQC (Level-2) | FLUXNET Upload: FLUXNET2015 dataset (upload 4 Jun 2016) | Notes: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id68">
+<h2>2005<a class="headerlink" href="#id68" title="Link to this heading">#</a></h2>
+<section id="id69">
+<h3>FF-202407 (IRGA75)<a class="headerlink" href="#id69" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Final Flux Version</strong>: R350-IRGA75_FF-202407</p></li>
+<li><p><strong>Level-1</strong>: Level-1_FR-20240730-112428</p></li>
+<li><p><strong>Level-4 ID(s)</strong>: <em>in progress</em></p></li>
+<li><p><strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a></p></li>
+<li><p><strong>Instruments</strong>: R350, IRGA75</p></li>
+<li><p><strong>Scripts</strong>: <a class="reference external" href="https://github.com/holukas/bico">bico</a> v1.6.3, <a class="reference external" href="https://github.com/holukas/fluxrun">fluxrun</a> v1.4.1 (<a class="reference external" href="https://www.licor.com/env/products/eddy-covariance/eddypro">EddyPro</a> v7.0.9)</p></li>
+<li><p><strong>FLUXNET Upload</strong>: -</p></li>
+<li><p><strong>Notes</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing">Progress notes on Google Docs</a></p></li>
+<li><p>calculated without angle-of-attack correction</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id70">
+<h3>Deprecated versions<a class="headerlink" href="#id70" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>FF-201605 (IRGA75, deprecated)</strong> | <strong>Final Flux Version</strong>: R350-IRGA75_FF-201605 (v2016-05) | <strong>Level-1</strong>: Level-1_ID2016-05-24T234642 | <strong>Level-4 ID(s)</strong>: Level-3-4_PI_dataset_2005-2020; Level-3-4_FLUXNET-WW2020_RELEASE-2022-1_FN-20220209; Level-3-4_FLUXNET2015-FN-20190606-beta-3; Level-3-4_FLUXNET2015-FN-20161021 | <strong>Setup</strong>: <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/">Setup since 2005</a> | <strong>Instruments</strong>: R350, IRGA75 | <strong>Scripts</strong>: FCT 0.74, EP 6.1.0 (Level-1), FQC (Level-2) | <strong>FLUXNET Upload</strong>: FLUXNET2015 dataset (upload 4 Jun 2016) | <strong>Notes</strong>: May 2016: [2005-2015] v2016-05 calculated with EddyPro 610, FluxCalc 0.74, Anaconda3 (Python) by LH. this run used the final meteo data, as checked by PK and KF. all EddyPro <em>.processing</em> files were newly setup for this run, to avoid legacy paths in the processing files that might mess with our results (e.g. there were spectral problems because EP could not find the spectral files). run used slightly different settings: sonic height 2.41m, sonic north offset 7°</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Dataset_Versions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dataset Versions</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-abbreviations">General abbreviations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2024</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202501-irga75">FF-202501 (IRGA75)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2023</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notes">General notes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#w-offsets"><code class="docutils literal notranslate"><span class="pre">W</span></code> offsets</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202503-irga75">FF-202503 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-versions">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2022</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202407-irga75">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202407-lgr">FF-202407 (LGR)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2021</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">FF-202407 (LGR)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ff-202407-qcl">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2020</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">2019</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">2018</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">2017</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-info">General info</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calibration-gas-issue">Calibration gas issue</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">2016</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">2015</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">2014</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">2013</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">2012</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id46">FF-202407 (QCL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id47">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id48">2011</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id49">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id50">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id51">2010</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id52">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id53">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id54">2009</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id55">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id56">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id57">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id58">2008</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id59">General notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id60">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id61">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id62">2007</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id63">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id64">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id65">2006</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id66">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id67">Deprecated versions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id68">2005</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id69">FF-202407 (IRGA75)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id70">Deprecated versions</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lukas Hörtnagl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
