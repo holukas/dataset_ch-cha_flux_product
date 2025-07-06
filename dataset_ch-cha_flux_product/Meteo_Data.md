@@ -88,14 +88,13 @@ See *Note#1* above: because of this warning I assembled the meteo data again to 
 ## Meteo data originally shared with FLUXNET
 
 (table-sharing-fluxnet)=
-:::{table} Details for variables shared with FLUXNET. 
-Info from the BADM file `CH-CHA_BADM-Instrument_Ops_20190418.xlsx`
+:::{table} Details for variables shared with FLUXNET. Info from the BADM file `CH-CHA_BADM-Instrument_Ops_20190418.xlsx`
 
-| FLUXNET VAR   |  ETH VAR                       | INSTRUMENT                                                                      |
+| FLUXNET VAR   | ETH VAR                        | INSTRUMENT                                                                      |
 | ------------- | ------------------------------ | ------------------------------------------------------------------------------- |
-| P_1_1_1       |  P_RAIN_GF1_0x5_1_Tot          | SN: 810326.0007, LAMBRECHT meteo GmbH, P_RAIN_GF1_0x5_1_Tot                     |
+| P_1_1_1       | P_RAIN_GF1_0x5_1_Tot           | SN: 810326.0007, LAMBRECHT meteo GmbH, P_RAIN_GF1_0x5_1_Tot                     |
 | SWC_1_1_1     |  SWC_AVG_GF1_0.05_1            | Model ML2x, Delta-T Devices Ltd, Cambridge, United Kingdom, SWC_AVG_GF1_0.05_1  |
-| SWC_1_2_1     |  SWC_AVG_GF1_0.15_1            | Model ML2x, Delta-T Devices Ltd, Cambridge, United Kingdom, SWC_AVG_GF1_0.15_1  |
+| SWC_1_2_1     | SWC_AVG_GF1_0.15_1             | Model ML2x, Delta-T Devices Ltd, Cambridge, United Kingdom, SWC_AVG_GF1_0.15_1  |
 | SWC_1_3_1     |  SWC_AVG_GF1_0.75_1            | Model ML2x, Delta-T Devices Ltd, Cambridge, United Kingdom, SWC_AVG_GF1_0.75_1  |
 | TS_1_1_1      |  TS_AVG_GF1_0.01_1             | Model TL107, Markasub AG, Olten, Switzerland, TS_AVG_GF1_0.01_1                 |
 | TS_1_2_1      |  TS_AVG_GF1_0.04_1             | Model TL107, Markasub AG, Olten, Switzerland, TS_AVG_GF1_0.04_1                 |
