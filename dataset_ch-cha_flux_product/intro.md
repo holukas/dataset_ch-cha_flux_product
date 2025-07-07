@@ -10,6 +10,8 @@ For an overview of the dataset, see [Overview](Overview).
 
 For an overview of recent documentation updates see [here](https://github.com/holukas/dataset_ch-cha_flux_product/commits/main/).
 
+For a list of planned updates and additions, see [Issues on the GitHub repository](https://github.com/holukas/dataset_ch-cha_flux_product/issues).
+
 :::{figure-md} photo-ec1
 ![](images/CH-CHA_2014_ECtower_Apr2014_IMG_9304-HDR.jpg)
 
