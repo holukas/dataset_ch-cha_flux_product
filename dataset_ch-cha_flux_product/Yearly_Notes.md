@@ -6,6 +6,7 @@
 - This page gives information about current and past flux calculations, including used software versions, and important info for each year.
 - [Overview table of the setup across years](https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/ec-raw-binary-format-ch-cha/)
 - [Sheet](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?gid=0#gid=0) with processing info for recent versions
+- Info about the different flux levels: [Flux Processing Chain](https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/)
 - Info about some time periods is given in the form of the names of the original eddy covariance raw data files, e.g. `2019021819.C00`. 
 - **Sonic orientation/height**: Should be `7°` / `2.41m` more or less and consistent across all years. In a comparison of histograms of wind directions between 2005 and 2023 showed that a sonic orientation of `7°` offset to north yields very similar results across years all years. Info from one of the oldest setup files (`locations.table`) that were used for documenting setup info in earlier years listed the sonic orientation at `0°`. In 2016, `7°` north offset was measured for the north spar, the sonic setup should be approx. the same across all years.
 

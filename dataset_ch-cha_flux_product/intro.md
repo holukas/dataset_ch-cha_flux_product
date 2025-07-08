@@ -1,4 +1,4 @@
-# CH-CHA Flux Product
+# CH-CHA Flux Product (PI dataset)
 
 produced by [Lukas Hörtnagl](https://gl.ethz.ch/people/person-detail.lukas.html)
 
