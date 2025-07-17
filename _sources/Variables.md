@@ -104,7 +104,7 @@ In addition to fluxes that were filtered according to quality
 ## Variants
 *Variants calculated from directly measured variables.*
 
-See description in the [Overview](Overview#variants).
+See description in the [Overview](Overview).
 
 ## Management
 *Management events at the site.*
@@ -117,7 +117,7 @@ See description in the [Overview](Overview#variants).
 - `MGMT_SOILCULTIVATION`: soil cultivation, e.g. grassland restoration in 2012
 - `MGMT_PESTICIDE_HERBICIDE`: application of pesticides/herbicides
 
-See description regarding managment data in the [Overview](Overview#variants).
+See description regarding managment data in the [Overview](Overview).
 ## Auxiliary
 *soon*
 

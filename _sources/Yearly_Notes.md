@@ -6,6 +6,7 @@
 - This page gives information about current and past flux calculations, including used software versions, and important info for each year.
 - [Overview table of the setup across years](https://www.swissfluxnet.ethz.ch/index.php/sites/site-info-ch-cha/ec-raw-binary-format-ch-cha/)
 - [Sheet](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?gid=0#gid=0) with processing info for recent versions
+- Info about the different flux levels: [Flux Processing Chain](https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/)
 - Info about some time periods is given in the form of the names of the original eddy covariance raw data files, e.g. `2019021819.C00`. 
 - **Sonic orientation/height**: Should be `7°` / `2.41m` more or less and consistent across all years. In a comparison of histograms of wind directions between 2005 and 2023 showed that a sonic orientation of `7°` offset to north yields very similar results across years all years. Info from one of the oldest setup files (`locations.table`) that were used for documenting setup info in earlier years listed the sonic orientation at `0°`. In 2016, `7°` north offset was measured for the north spar, the sonic setup should be approx. the same across all years.
 
@@ -34,7 +35,7 @@
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -64,7 +65,7 @@
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -86,7 +87,7 @@
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -99,7 +100,7 @@
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, LGR
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -127,7 +128,7 @@ Photo of the CH-CHA research site on 20 Jul 2021. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -140,7 +141,7 @@ Photo of the CH-CHA research site on 20 Jul 2021. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, LGR
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -154,7 +155,7 @@ Photo of the CH-CHA research site on 20 Jul 2021. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -178,7 +179,7 @@ Photo of the CH-CHA research site on 20 Jul 2021. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -191,7 +192,7 @@ Photo of the CH-CHA research site on 20 Jul 2021. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -223,7 +224,7 @@ Photo of the CH-CHA research site in Oct 2019. Photo: Grassland Sciences Group, 
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -236,7 +237,7 @@ Photo of the CH-CHA research site in Oct 2019. Photo: Grassland Sciences Group, 
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -263,7 +264,7 @@ Photo of the CH-CHA research site on 16 Nov 2018. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -276,7 +277,7 @@ Photo of the CH-CHA research site on 16 Nov 2018. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -325,7 +326,7 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -338,7 +339,7 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -362,7 +363,7 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3 and v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -375,7 +376,7 @@ Due to the IRGA75 replacement on 15 Mar 2017, only a short time period of approx
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3 and v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -401,7 +402,7 @@ Photo of the CH-CHA research site on 30 Jun 2015. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3 and v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -414,7 +415,7 @@ Photo of the CH-CHA research site on 30 Jun 2015. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3 and v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -440,7 +441,7 @@ Photo of the CH-CHA research site in April 2014. Photo: Lukas Hörtnagl, Grassla
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -453,7 +454,7 @@ Photo of the CH-CHA research site in April 2014. Photo: Lukas Hörtnagl, Grassla
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -479,7 +480,7 @@ Photo of the CH-CHA research site on 7 Jun 2013. Photo: Grassland Sciences Group
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -492,7 +493,7 @@ Photo of the CH-CHA research site on 7 Jun 2013. Photo: Grassland Sciences Group
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -529,7 +530,7 @@ Photo of the CH-CHA research site on 26 Jul 2012. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3 and v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -542,7 +543,7 @@ Photo of the CH-CHA research site on 26 Jul 2012. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, QCL
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3 and v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 28 Feb 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -563,7 +564,7 @@ Photo of the CH-CHA research site on 26 Jul 2012. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -588,7 +589,7 @@ Photo of the CH-CHA research site on 22 Sep 2010. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3 and v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -610,7 +611,7 @@ Photo of the CH-CHA research site on 22 Sep 2010. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -638,7 +639,7 @@ Photo of the CH-CHA research site on 27 Jun 2008. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -657,7 +658,7 @@ Photo of the CH-CHA research site on 27 Jun 2008. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -676,7 +677,7 @@ Photo of the CH-CHA research site on 27 Jun 2008. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.5, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction
@@ -694,7 +695,7 @@ Photo of the CH-CHA research site on 27 Jun 2008. Photo: Grassland Sciences Grou
 - **Setup**: [Setup since 2005](https://www.swissfluxnet.ethz.ch/index.php/sites/ch-cha-chamau/data-ch-cha/ec-raw-binary-format-ch-cha/)
 - **Instruments**: R350, IRGA75
 - **Scripts**: [bico](https://github.com/holukas/bico) v1.6.3, [fluxrun](https://github.com/holukas/fluxrun) v1.4.1 ([EddyPro](https://www.licor.com/env/products/eddy-covariance/eddypro) v7.0.9)
-- **FLUXNET Upload**: -
+- **FLUXNET Upload**: 20 Apr 2025
 - **Notes**:
 	- [Progress notes on Google Docs](https://docs.google.com/spreadsheets/d/1KXaTtckHqOGULcr9nwL0FJ-xDnMJUFeDaXX8zh0fbJo/edit?usp=sharing)
 	- calculated without angle-of-attack correction

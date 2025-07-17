@@ -37,11 +37,4 @@
 
 ## Upcoming updates
 
-- *RF = gap-filled using random forest*
-- *MDS = gap-filled using marginal distrubution sampling from Reichstein et al. (2005)*
-- **ET** calculated from LE (RF)
-- *maybe* **GPP** (MDS) and **RECO** (MDS) from NEE (MDS) partitioning
-- *maybe* **ET** calculated from LE (MDS)
-- *maybe* Modified daytime paritioning (NEE) method based on Keenan et al. (2019)
-- more meteo variables
-
+- [Check Issues in the GitHub repo for upcoming updates](https://github.com/holukas/dataset_ch-cha_flux_product/issues)
