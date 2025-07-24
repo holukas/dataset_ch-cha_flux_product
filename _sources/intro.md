@@ -21,6 +21,10 @@ Photo of the CH-CHA research site in April 2014. Photo: Lukas Hörtnagl, Grassla
 ## Current dataset version
 
 ### **CH-CHA FP2025.3 (2005-2024) [current version]**
+`````{admonition} Download complete dataset
+:class: note
+[Eddy covariance ecosystem fluxes, meteorological data and detailed management information for the intensively managed grassland site Chamau in Switzerland, collected between 2005 and 2024 (CH-CHA FP2025.3)](https://www.research-collection.ethz.ch/handle/20.500.11850/747025)
+`````
 - This release adds additional variables to the dataset and applies a different gap-filling for N<sub>2</sub>O and CH<sub>4</sub> fluxes during 2+ weeks after grassland restoration in 2012.
 - release date: 16 May 2025
 - is currently available on demand from the Grassland Sciences group server
