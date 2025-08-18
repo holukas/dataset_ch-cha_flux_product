@@ -1,0 +1,2089 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Flux: Monthly heatmaps of NEE (2005-2024) and FN2O (2012-2022) &#8212; CH-CHA Flux Product</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/90_DATASET_OVERVIEW/FLUX_NEE_FN2O_MonthlyHeatmaps-Copy1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo1.jpg" class="logo__image only-light" alt="CH-CHA Flux Product - Home"/>
+    <script>document.write(`<img src="../../_static/logo1.jpg" class="logo__image only-dark" alt="CH-CHA Flux Product - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    CH-CHA Flux Product (PI dataset)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Meteo_Data.html">Meteo Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Management_Data.html">Management Data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../FPC.html">Flux Processing Chain</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Raw_Data_EC.html">Raw Data: Eddy Covariance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L0.html">Level-0: Preliminary flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L1.html">Level-1: Final flux calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L2.html">Level-2: Quality flag expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L3.1.html">Level-3.1: Storage correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L3.2.html">Level-3.2: Outlier flagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L3.3.html">Level-3.3: USTAR filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L4.1.html">Level-4.1: Gap-filling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../L4.2.html">Level-4.2: NEE Partitioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../QCF.html">QCF: overall quality control flag</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Instrumentation.html">Instrumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../SI.html">Supplementary Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Used_Software.html">Used Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Dataset_Versions.html">Dataset Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Yearly_Notes.html">Yearly Notes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/holukas/dataset_ch-cha_flux_product" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/holukas/dataset_ch-cha_flux_product/issues/new?title=Issue%20on%20page%20%2Fnotebooks/90_DATASET_OVERVIEW/FLUX_NEE_FN2O_MonthlyHeatmaps-Copy1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/90_DATASET_OVERVIEW/FLUX_NEE_FN2O_MonthlyHeatmaps-Copy1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Flux: Monthly heatmaps of NEE (2005-2024) and FN2O (2012-2022)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Flux: Monthly heatmaps of NEE (2005-2024) and FN2O (2012-2022)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nee">NEE</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fn2o">FN2O</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">Flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flag">Flag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-number-of-available-non-gap-filled-records">Checking number of available non-gap-filled records</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-gap-fill-counts">Merge gap-fill counts</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-figure-to-file">Save figure to file</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook">End of notebook</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="flux-monthly-heatmaps-of-nee-2005-2024-and-fn2o-2012-2022">
+<h1>Flux: Monthly heatmaps of NEE (2005-2024) and FN2O (2012-2022)<a class="headerlink" href="#flux-monthly-heatmaps-of-nee-2005-2024-and-fn2o-2012-2022" title="Link to this heading">#</a></h1>
+<p><strong>Author</strong>: Lukas Hörtnagl (<a class="reference external" href="mailto:holukas&#37;&#52;&#48;ethz&#46;ch">holukas<span>&#64;</span>ethz<span>&#46;</span>ch</a>)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="imports">
+<h1>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">importlib.metadata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearSegmentedColormap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">diive</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diive.core.io.files</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_parquet</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
+<span class="n">version_diive</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;diive&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;diive version: v</span><span class="si">{</span><span class="n">version_diive</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diive version: v0.87.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-data">
+<h1>Load data<a class="headerlink" href="#load-data" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SOURCEDIR</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;../80_FINALIZE&quot;</span>
+<span class="n">FILENAME</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4.parquet&quot;</span>
+<span class="n">FILEPATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">SOURCEDIR</span><span class="p">)</span> <span class="o">/</span> <span class="n">FILENAME</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_parquet</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">FILEPATH</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded .parquet file ..\80_FINALIZE\81.1_FLUXES_M15_MGMT_L4.2_NEE_GPP_RECO_LE_H_FN2O_FCH4.parquet (6.237 seconds).
+    --&gt; Detected time resolution of &lt;30 * Minutes&gt; / 30min 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-12</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-18</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-24</th>
+      <th>.PREC_RAIN_TOT_GF1_0.5_1_MEAN3H-6</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-12</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-18</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-24</th>
+      <th>.SWC_GF1_0.15_1_gfXG_MEAN3H-6</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-12</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-18</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-24</th>
+      <th>.TS_GF1_0.04_1_gfXG_MEAN3H-6</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-12</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-18</th>
+      <th>.TS_GF1_0.15_1_gfXG_MEAN3H-24</th>
+      <th>...</th>
+      <th>GPP_NT_CUT_50_gfRF</th>
+      <th>RECO_DT_CUT_50_gfRF</th>
+      <th>GPP_DT_CUT_50_gfRF</th>
+      <th>RECO_DT_CUT_50_gfRF_SD</th>
+      <th>GPP_DT_CUT_50_gfRF_SD</th>
+      <th>G_GF1_0.03_1</th>
+      <th>G_GF1_0.03_2</th>
+      <th>G_GF1_0.05_1</th>
+      <th>G_GF1_0.05_2</th>
+      <th>G_GF4_0.02_1</th>
+      <th>G_GF5_0.02_1</th>
+      <th>LW_OUT_T1_2_1</th>
+      <th>NETRAD_T1_2_1</th>
+      <th>PPFD_OUT_T1_2_2</th>
+      <th>SW_OUT_T1_2_1</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.918553</td>
+      <td>0.093071</td>
+      <td>0.0</td>
+      <td>0.080016</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.917972</td>
+      <td>0.092682</td>
+      <td>0.0</td>
+      <td>0.079688</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.163001</td>
+      <td>0.093071</td>
+      <td>0.0</td>
+      <td>0.080016</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.190890</td>
+      <td>0.093071</td>
+      <td>0.0</td>
+      <td>0.080016</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.167042</td>
+      <td>0.092295</td>
+      <td>0.0</td>
+      <td>0.079361</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 21:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.229004</td>
+      <td>52.226300</td>
+      <td>52.226689</td>
+      <td>52.216796</td>
+      <td>3.458828</td>
+      <td>3.150402</td>
+      <td>3.115260</td>
+      <td>3.660897</td>
+      <td>4.335667</td>
+      <td>4.347764</td>
+      <td>4.385967</td>
+      <td>...</td>
+      <td>-0.334996</td>
+      <td>1.091028</td>
+      <td>0.0</td>
+      <td>0.265808</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-9.097370</td>
+      <td>-7.880106</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>311.167160</td>
+      <td>-5.883538</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.227858</td>
+      <td>52.227986</td>
+      <td>52.224528</td>
+      <td>52.214211</td>
+      <td>3.522570</td>
+      <td>3.187638</td>
+      <td>3.103440</td>
+      <td>3.643396</td>
+      <td>4.338551</td>
+      <td>4.342880</td>
+      <td>4.379524</td>
+      <td>...</td>
+      <td>-0.310533</td>
+      <td>1.078751</td>
+      <td>0.0</td>
+      <td>0.264327</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-9.561669</td>
+      <td>-8.172388</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>310.079817</td>
+      <td>-6.269816</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.226640</td>
+      <td>52.229837</td>
+      <td>52.222456</td>
+      <td>52.209876</td>
+      <td>3.578745</td>
+      <td>3.230037</td>
+      <td>3.095339</td>
+      <td>3.624025</td>
+      <td>4.343767</td>
+      <td>4.339440</td>
+      <td>4.372636</td>
+      <td>...</td>
+      <td>-0.225651</td>
+      <td>1.079759</td>
+      <td>0.0</td>
+      <td>0.264447</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-10.138718</td>
+      <td>-8.527732</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>309.604987</td>
+      <td>-6.934394</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:15:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.224375</td>
+      <td>52.231151</td>
+      <td>52.221324</td>
+      <td>52.238293</td>
+      <td>3.624160</td>
+      <td>3.278488</td>
+      <td>3.093806</td>
+      <td>3.601135</td>
+      <td>4.350872</td>
+      <td>4.336333</td>
+      <td>4.366082</td>
+      <td>...</td>
+      <td>-0.558285</td>
+      <td>1.062164</td>
+      <td>0.0</td>
+      <td>0.262373</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-10.649611</td>
+      <td>-8.871628</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>308.812117</td>
+      <td>-5.696729</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:45:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.222007</td>
+      <td>52.230632</td>
+      <td>52.222701</td>
+      <td>52.273511</td>
+      <td>3.656167</td>
+      <td>3.331678</td>
+      <td>3.103003</td>
+      <td>3.579020</td>
+      <td>4.360311</td>
+      <td>4.334225</td>
+      <td>4.359530</td>
+      <td>...</td>
+      <td>-0.317543</td>
+      <td>1.047483</td>
+      <td>0.0</td>
+      <td>0.260688</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-10.944774</td>
+      <td>-9.138224</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>307.372117</td>
+      <td>-8.102484</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>350640 rows × 812 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [print(c) for c in df.columns if &quot;FN2O&quot; in c];</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nee">
+<h1>NEE<a class="headerlink" href="#nee" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nee</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;NEE_L3.1_L3.3_CUT_50_QCF_gfRF&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">nee_var</span> <span class="o">=</span> <span class="s2">&quot;NEE&quot;</span>
+<span class="n">nee_units</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{\mu mol\ CO_</span><span class="si">{2}</span><span class="s2">\ m^{-2}\ s^{-1}}$&quot;</span>
+<span class="n">nee_zlabel</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nee_var</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">nee_units</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="n">nee</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMESTAMP_MIDDLE
+2005-01-01 00:15:00    0.911990
+2005-01-01 00:45:00    0.910926
+2005-01-01 01:15:00    1.667542
+2005-01-01 01:45:00    1.639653
+2005-01-01 02:15:00    1.660211
+                         ...   
+2024-12-31 21:45:00    1.160720
+2024-12-31 22:15:00    1.131454
+2024-12-31 22:45:00    1.046967
+2024-12-31 23:15:00    1.372674
+2024-12-31 23:45:00    1.126110
+Freq: 30min, Name: NEE_L3.1_L3.3_CUT_50_QCF_gfRF, Length: 350640, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fn2o">
+<h1>FN2O<a class="headerlink" href="#fn2o" title="Link to this heading">#</a></h1>
+<section id="flux">
+<h2>Flux<a class="headerlink" href="#flux" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fluxcol</span> <span class="o">=</span> <span class="s1">&#39;FN2O_L3.1_L3.3_CUT_50_QCF_gfRF&#39;</span>
+<span class="n">fn2o</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">fluxcol</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">fn2o</span><span class="p">[</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fn2o</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">fn2o</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fn2o_var</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{N_</span><span class="si">{2}</span><span class="s2">O\ flux}$&quot;</span>
+<span class="n">fn2o_units</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm{nmol\ N_</span><span class="si">{2}</span><span class="s2">O\ m^{-2}\ s^{-1}}$&quot;</span>
+<span class="n">fn2o_zlabel</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fn2o_var</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">fn2o_units</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="n">fn2o</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FN2O_L3.1_L3.3_CUT_50_QCF_gfRF</th>
+      <th>YEARMONTH</th>
+    </tr>
+    <tr>
+      <th>TIMESTAMP_MIDDLE</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01-01 00:15:00</th>
+      <td>NaN</td>
+      <td>2005-01</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 00:45:00</th>
+      <td>NaN</td>
+      <td>2005-01</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:15:00</th>
+      <td>NaN</td>
+      <td>2005-01</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 01:45:00</th>
+      <td>NaN</td>
+      <td>2005-01</td>
+    </tr>
+    <tr>
+      <th>2005-01-01 02:15:00</th>
+      <td>NaN</td>
+      <td>2005-01</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 21:45:00</th>
+      <td>NaN</td>
+      <td>2024-12</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:15:00</th>
+      <td>NaN</td>
+      <td>2024-12</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 22:45:00</th>
+      <td>NaN</td>
+      <td>2024-12</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:15:00</th>
+      <td>NaN</td>
+      <td>2024-12</td>
+    </tr>
+    <tr>
+      <th>2024-12-31 23:45:00</th>
+      <td>NaN</td>
+      <td>2024-12</td>
+    </tr>
+  </tbody>
+</table>
+<p>350640 rows × 2 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="flag">
+<h2>Flag<a class="headerlink" href="#flag" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flagcol</span> <span class="o">=</span> <span class="s1">&#39;FLAG_FN2O_L3.1_L3.3_CUT_50_QCF_gfRF_ISFILLED&#39;</span>
+<span class="n">flag_fn2o</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">flagcol</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">flag_fn2o</span> <span class="o">=</span> <span class="n">flag_fn2o</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">flag_fn2o</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">flag_fn2o</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Some locations have flag values &gt; 1 due to MDS gap-filling</span>
+<span class="n">flag_fn2o</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">flag_fn2o</span><span class="p">)</span>
+<span class="n">flag_fn2o</span><span class="p">[</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_fn2o</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">flag_fn2o</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">flag_fn2o</span> <span class="o">=</span> <span class="n">flag_fn2o</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">flag_fn2o</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<span class="n">flag_fn2o</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FLAG_FN2O_L3.1_L3.3_CUT_50_QCF_gfRF_ISFILLED</th>
+    </tr>
+    <tr>
+      <th>YEARMONTH</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005-01</th>
+      <td>1488.0</td>
+    </tr>
+    <tr>
+      <th>2005-02</th>
+      <td>1344.0</td>
+    </tr>
+    <tr>
+      <th>2005-03</th>
+      <td>1488.0</td>
+    </tr>
+    <tr>
+      <th>2005-04</th>
+      <td>1440.0</td>
+    </tr>
+    <tr>
+      <th>2005-05</th>
+      <td>1488.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-08</th>
+      <td>1488.0</td>
+    </tr>
+    <tr>
+      <th>2024-09</th>
+      <td>1440.0</td>
+    </tr>
+    <tr>
+      <th>2024-10</th>
+      <td>1488.0</td>
+    </tr>
+    <tr>
+      <th>2024-11</th>
+      <td>1440.0</td>
+    </tr>
+    <tr>
+      <th>2024-12</th>
+      <td>1488.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>240 rows × 1 columns</p>
+</div></div><img alt="../../_images/22da00484b7591d55a16e6b451035232d82ce63cca73ed8e5e63cee3822bc515.png" src="../../_images/22da00484b7591d55a16e6b451035232d82ce63cca73ed8e5e63cee3822bc515.png" />
+</div>
+</div>
+</section>
+<section id="checking-number-of-available-non-gap-filled-records">
+<h2>Checking number of available non-gap-filled records<a class="headerlink" href="#checking-number-of-available-non-gap-filled-records" title="Link to this heading">#</a></h2>
+<p>If keeping data from months using 15% threshold (i.e. 15% measured and 85% gap-filled) then the stats are:<br />
+mean data availability (not gap-filled) in shown months = 48.4%<br />
+data coverage between 17.5% (June 2022) and 77.2% (April 2012)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_colwidth&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.width&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="n">flagcol</span> <span class="o">=</span> <span class="s1">&#39;FLAG_FN2O_L3.1_L3.3_CUT_50_QCF_gfRF_ISFILLED&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">flagcol</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">f</span><span class="p">[</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">f</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">max_available</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1"># display(max_available)</span>
+
+<span class="n">flagcol</span> <span class="o">=</span> <span class="s1">&#39;FLAG_FN2O_L3.1_L3.3_CUT_50_QCF_gfRF_ISFILLED&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">flagcol</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">f</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">f</span><span class="p">[</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">f</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="c1"># f.plot(x_compat=True);</span>
+<span class="n">available</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1"># display(available)</span>
+
+<span class="n">_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">_df</span><span class="p">[</span><span class="s1">&#39;max_available&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_available</span>
+<span class="n">_df</span><span class="p">[</span><span class="s1">&#39;available&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">available</span>
+<span class="n">_df</span><span class="p">[</span><span class="s1">&#39;available&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_df</span><span class="p">[</span><span class="s1">&#39;available&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">_df</span><span class="p">[</span><span class="s1">&#39;perc_available&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_df</span><span class="p">[</span><span class="s1">&#39;available&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">_df</span><span class="p">[</span><span class="s1">&#39;max_available&#39;</span><span class="p">])</span>
+<span class="n">_df</span><span class="p">[</span><span class="s1">&#39;perc_available&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_df</span><span class="p">[</span><span class="s1">&#39;perc_available&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">keeplocs</span> <span class="o">=</span> <span class="n">_df</span><span class="p">[</span><span class="s1">&#39;perc_available&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">15</span>
+<span class="n">_df</span> <span class="o">=</span> <span class="n">_df</span><span class="p">[</span><span class="n">keeplocs</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">_df</span><span class="p">)</span>
+
+<span class="c1"># data = {&#39;available&#39;: available, &#39;max_available&#39;: max_available}</span>
+<span class="c1"># _df = pd.DataFrame(data, index=available.index)</span>
+<span class="c1"># _df</span>
+
+<span class="c1"># perc_available = available.div(max_available)</span>
+<span class="c1"># perc_available.describe()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>max_available</th>
+      <th>available</th>
+      <th>perc_available</th>
+    </tr>
+    <tr>
+      <th>YEARMONTH</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2012-01</th>
+      <td>1488</td>
+      <td>493.0</td>
+      <td>33.131720</td>
+    </tr>
+    <tr>
+      <th>2012-02</th>
+      <td>1392</td>
+      <td>825.0</td>
+      <td>59.267241</td>
+    </tr>
+    <tr>
+      <th>2012-03</th>
+      <td>1488</td>
+      <td>410.0</td>
+      <td>27.553763</td>
+    </tr>
+    <tr>
+      <th>2012-04</th>
+      <td>1440</td>
+      <td>1112.0</td>
+      <td>77.222222</td>
+    </tr>
+    <tr>
+      <th>2012-05</th>
+      <td>1488</td>
+      <td>1143.0</td>
+      <td>76.814516</td>
+    </tr>
+    <tr>
+      <th>2012-06</th>
+      <td>1440</td>
+      <td>1067.0</td>
+      <td>74.097222</td>
+    </tr>
+    <tr>
+      <th>2012-07</th>
+      <td>1488</td>
+      <td>949.0</td>
+      <td>63.776882</td>
+    </tr>
+    <tr>
+      <th>2012-08</th>
+      <td>1488</td>
+      <td>728.0</td>
+      <td>48.924731</td>
+    </tr>
+    <tr>
+      <th>2012-09</th>
+      <td>1440</td>
+      <td>840.0</td>
+      <td>58.333333</td>
+    </tr>
+    <tr>
+      <th>2012-10</th>
+      <td>1488</td>
+      <td>816.0</td>
+      <td>54.838710</td>
+    </tr>
+    <tr>
+      <th>2012-11</th>
+      <td>1440</td>
+      <td>709.0</td>
+      <td>49.236111</td>
+    </tr>
+    <tr>
+      <th>2012-12</th>
+      <td>1488</td>
+      <td>807.0</td>
+      <td>54.233871</td>
+    </tr>
+    <tr>
+      <th>2013-01</th>
+      <td>1488</td>
+      <td>709.0</td>
+      <td>47.647849</td>
+    </tr>
+    <tr>
+      <th>2013-02</th>
+      <td>1344</td>
+      <td>667.0</td>
+      <td>49.627976</td>
+    </tr>
+    <tr>
+      <th>2013-03</th>
+      <td>1488</td>
+      <td>813.0</td>
+      <td>54.637097</td>
+    </tr>
+    <tr>
+      <th>2013-04</th>
+      <td>1440</td>
+      <td>714.0</td>
+      <td>49.583333</td>
+    </tr>
+    <tr>
+      <th>2013-05</th>
+      <td>1488</td>
+      <td>760.0</td>
+      <td>51.075269</td>
+    </tr>
+    <tr>
+      <th>2013-06</th>
+      <td>1440</td>
+      <td>757.0</td>
+      <td>52.569444</td>
+    </tr>
+    <tr>
+      <th>2013-07</th>
+      <td>1488</td>
+      <td>671.0</td>
+      <td>45.094086</td>
+    </tr>
+    <tr>
+      <th>2013-08</th>
+      <td>1488</td>
+      <td>641.0</td>
+      <td>43.077957</td>
+    </tr>
+    <tr>
+      <th>2013-09</th>
+      <td>1440</td>
+      <td>609.0</td>
+      <td>42.291667</td>
+    </tr>
+    <tr>
+      <th>2013-10</th>
+      <td>1488</td>
+      <td>752.0</td>
+      <td>50.537634</td>
+    </tr>
+    <tr>
+      <th>2013-11</th>
+      <td>1440</td>
+      <td>676.0</td>
+      <td>46.944444</td>
+    </tr>
+    <tr>
+      <th>2013-12</th>
+      <td>1488</td>
+      <td>664.0</td>
+      <td>44.623656</td>
+    </tr>
+    <tr>
+      <th>2014-01</th>
+      <td>1488</td>
+      <td>641.0</td>
+      <td>43.077957</td>
+    </tr>
+    <tr>
+      <th>2014-02</th>
+      <td>1344</td>
+      <td>639.0</td>
+      <td>47.544643</td>
+    </tr>
+    <tr>
+      <th>2014-03</th>
+      <td>1488</td>
+      <td>710.0</td>
+      <td>47.715054</td>
+    </tr>
+    <tr>
+      <th>2014-04</th>
+      <td>1440</td>
+      <td>710.0</td>
+      <td>49.305556</td>
+    </tr>
+    <tr>
+      <th>2014-05</th>
+      <td>1488</td>
+      <td>864.0</td>
+      <td>58.064516</td>
+    </tr>
+    <tr>
+      <th>2014-06</th>
+      <td>1440</td>
+      <td>764.0</td>
+      <td>53.055556</td>
+    </tr>
+    <tr>
+      <th>2014-07</th>
+      <td>1488</td>
+      <td>738.0</td>
+      <td>49.596774</td>
+    </tr>
+    <tr>
+      <th>2014-08</th>
+      <td>1488</td>
+      <td>635.0</td>
+      <td>42.674731</td>
+    </tr>
+    <tr>
+      <th>2014-09</th>
+      <td>1440</td>
+      <td>669.0</td>
+      <td>46.458333</td>
+    </tr>
+    <tr>
+      <th>2014-10</th>
+      <td>1488</td>
+      <td>585.0</td>
+      <td>39.314516</td>
+    </tr>
+    <tr>
+      <th>2014-11</th>
+      <td>1440</td>
+      <td>579.0</td>
+      <td>40.208333</td>
+    </tr>
+    <tr>
+      <th>2014-12</th>
+      <td>1488</td>
+      <td>673.0</td>
+      <td>45.228495</td>
+    </tr>
+    <tr>
+      <th>2015-01</th>
+      <td>1488</td>
+      <td>697.0</td>
+      <td>46.841398</td>
+    </tr>
+    <tr>
+      <th>2015-02</th>
+      <td>1344</td>
+      <td>570.0</td>
+      <td>42.410714</td>
+    </tr>
+    <tr>
+      <th>2015-03</th>
+      <td>1488</td>
+      <td>579.0</td>
+      <td>38.911290</td>
+    </tr>
+    <tr>
+      <th>2015-04</th>
+      <td>1440</td>
+      <td>655.0</td>
+      <td>45.486111</td>
+    </tr>
+    <tr>
+      <th>2015-05</th>
+      <td>1488</td>
+      <td>750.0</td>
+      <td>50.403226</td>
+    </tr>
+    <tr>
+      <th>2015-06</th>
+      <td>1440</td>
+      <td>814.0</td>
+      <td>56.527778</td>
+    </tr>
+    <tr>
+      <th>2015-07</th>
+      <td>1488</td>
+      <td>773.0</td>
+      <td>51.948925</td>
+    </tr>
+    <tr>
+      <th>2015-08</th>
+      <td>1488</td>
+      <td>704.0</td>
+      <td>47.311828</td>
+    </tr>
+    <tr>
+      <th>2015-09</th>
+      <td>1440</td>
+      <td>716.0</td>
+      <td>49.722222</td>
+    </tr>
+    <tr>
+      <th>2015-10</th>
+      <td>1488</td>
+      <td>598.0</td>
+      <td>40.188172</td>
+    </tr>
+    <tr>
+      <th>2015-11</th>
+      <td>1440</td>
+      <td>576.0</td>
+      <td>40.000000</td>
+    </tr>
+    <tr>
+      <th>2015-12</th>
+      <td>1488</td>
+      <td>646.0</td>
+      <td>43.413978</td>
+    </tr>
+    <tr>
+      <th>2016-01</th>
+      <td>1488</td>
+      <td>759.0</td>
+      <td>51.008065</td>
+    </tr>
+    <tr>
+      <th>2016-02</th>
+      <td>1392</td>
+      <td>637.0</td>
+      <td>45.761494</td>
+    </tr>
+    <tr>
+      <th>2016-04</th>
+      <td>1440</td>
+      <td>259.0</td>
+      <td>17.986111</td>
+    </tr>
+    <tr>
+      <th>2016-05</th>
+      <td>1488</td>
+      <td>405.0</td>
+      <td>27.217742</td>
+    </tr>
+    <tr>
+      <th>2016-06</th>
+      <td>1440</td>
+      <td>683.0</td>
+      <td>47.430556</td>
+    </tr>
+    <tr>
+      <th>2016-07</th>
+      <td>1488</td>
+      <td>274.0</td>
+      <td>18.413978</td>
+    </tr>
+    <tr>
+      <th>2016-09</th>
+      <td>1440</td>
+      <td>596.0</td>
+      <td>41.388889</td>
+    </tr>
+    <tr>
+      <th>2016-10</th>
+      <td>1488</td>
+      <td>677.0</td>
+      <td>45.497312</td>
+    </tr>
+    <tr>
+      <th>2016-11</th>
+      <td>1440</td>
+      <td>691.0</td>
+      <td>47.986111</td>
+    </tr>
+    <tr>
+      <th>2016-12</th>
+      <td>1488</td>
+      <td>499.0</td>
+      <td>33.534946</td>
+    </tr>
+    <tr>
+      <th>2017-01</th>
+      <td>1488</td>
+      <td>633.0</td>
+      <td>42.540323</td>
+    </tr>
+    <tr>
+      <th>2017-03</th>
+      <td>1488</td>
+      <td>317.0</td>
+      <td>21.303763</td>
+    </tr>
+    <tr>
+      <th>2018-02</th>
+      <td>1344</td>
+      <td>777.0</td>
+      <td>57.812500</td>
+    </tr>
+    <tr>
+      <th>2018-03</th>
+      <td>1488</td>
+      <td>830.0</td>
+      <td>55.779570</td>
+    </tr>
+    <tr>
+      <th>2018-12</th>
+      <td>1488</td>
+      <td>955.0</td>
+      <td>64.180108</td>
+    </tr>
+    <tr>
+      <th>2019-01</th>
+      <td>1488</td>
+      <td>775.0</td>
+      <td>52.083333</td>
+    </tr>
+    <tr>
+      <th>2019-02</th>
+      <td>1344</td>
+      <td>308.0</td>
+      <td>22.916667</td>
+    </tr>
+    <tr>
+      <th>2019-05</th>
+      <td>1488</td>
+      <td>676.0</td>
+      <td>45.430108</td>
+    </tr>
+    <tr>
+      <th>2019-06</th>
+      <td>1440</td>
+      <td>670.0</td>
+      <td>46.527778</td>
+    </tr>
+    <tr>
+      <th>2019-07</th>
+      <td>1488</td>
+      <td>651.0</td>
+      <td>43.750000</td>
+    </tr>
+    <tr>
+      <th>2019-08</th>
+      <td>1488</td>
+      <td>850.0</td>
+      <td>57.123656</td>
+    </tr>
+    <tr>
+      <th>2019-09</th>
+      <td>1440</td>
+      <td>706.0</td>
+      <td>49.027778</td>
+    </tr>
+    <tr>
+      <th>2019-10</th>
+      <td>1488</td>
+      <td>894.0</td>
+      <td>60.080645</td>
+    </tr>
+    <tr>
+      <th>2019-11</th>
+      <td>1440</td>
+      <td>779.0</td>
+      <td>54.097222</td>
+    </tr>
+    <tr>
+      <th>2019-12</th>
+      <td>1488</td>
+      <td>875.0</td>
+      <td>58.803763</td>
+    </tr>
+    <tr>
+      <th>2020-01</th>
+      <td>1488</td>
+      <td>732.0</td>
+      <td>49.193548</td>
+    </tr>
+    <tr>
+      <th>2020-03</th>
+      <td>1488</td>
+      <td>856.0</td>
+      <td>57.526882</td>
+    </tr>
+    <tr>
+      <th>2020-04</th>
+      <td>1440</td>
+      <td>717.0</td>
+      <td>49.791667</td>
+    </tr>
+    <tr>
+      <th>2020-05</th>
+      <td>1488</td>
+      <td>893.0</td>
+      <td>60.013441</td>
+    </tr>
+    <tr>
+      <th>2020-06</th>
+      <td>1440</td>
+      <td>771.0</td>
+      <td>53.541667</td>
+    </tr>
+    <tr>
+      <th>2020-07</th>
+      <td>1488</td>
+      <td>734.0</td>
+      <td>49.327957</td>
+    </tr>
+    <tr>
+      <th>2020-08</th>
+      <td>1488</td>
+      <td>792.0</td>
+      <td>53.225806</td>
+    </tr>
+    <tr>
+      <th>2020-09</th>
+      <td>1440</td>
+      <td>744.0</td>
+      <td>51.666667</td>
+    </tr>
+    <tr>
+      <th>2020-11</th>
+      <td>1440</td>
+      <td>599.0</td>
+      <td>41.597222</td>
+    </tr>
+    <tr>
+      <th>2020-12</th>
+      <td>1488</td>
+      <td>797.0</td>
+      <td>53.561828</td>
+    </tr>
+    <tr>
+      <th>2021-01</th>
+      <td>1488</td>
+      <td>830.0</td>
+      <td>55.779570</td>
+    </tr>
+    <tr>
+      <th>2021-02</th>
+      <td>1344</td>
+      <td>692.0</td>
+      <td>51.488095</td>
+    </tr>
+    <tr>
+      <th>2021-03</th>
+      <td>1488</td>
+      <td>780.0</td>
+      <td>52.419355</td>
+    </tr>
+    <tr>
+      <th>2021-04</th>
+      <td>1440</td>
+      <td>756.0</td>
+      <td>52.500000</td>
+    </tr>
+    <tr>
+      <th>2021-05</th>
+      <td>1488</td>
+      <td>912.0</td>
+      <td>61.290323</td>
+    </tr>
+    <tr>
+      <th>2021-06</th>
+      <td>1440</td>
+      <td>854.0</td>
+      <td>59.305556</td>
+    </tr>
+    <tr>
+      <th>2021-07</th>
+      <td>1488</td>
+      <td>758.0</td>
+      <td>50.940860</td>
+    </tr>
+    <tr>
+      <th>2021-08</th>
+      <td>1488</td>
+      <td>925.0</td>
+      <td>62.163978</td>
+    </tr>
+    <tr>
+      <th>2021-09</th>
+      <td>1440</td>
+      <td>814.0</td>
+      <td>56.527778</td>
+    </tr>
+    <tr>
+      <th>2021-10</th>
+      <td>1488</td>
+      <td>842.0</td>
+      <td>56.586022</td>
+    </tr>
+    <tr>
+      <th>2021-11</th>
+      <td>1440</td>
+      <td>778.0</td>
+      <td>54.027778</td>
+    </tr>
+    <tr>
+      <th>2021-12</th>
+      <td>1488</td>
+      <td>640.0</td>
+      <td>43.010753</td>
+    </tr>
+    <tr>
+      <th>2022-01</th>
+      <td>1488</td>
+      <td>716.0</td>
+      <td>48.118280</td>
+    </tr>
+    <tr>
+      <th>2022-02</th>
+      <td>1344</td>
+      <td>674.0</td>
+      <td>50.148810</td>
+    </tr>
+    <tr>
+      <th>2022-03</th>
+      <td>1488</td>
+      <td>691.0</td>
+      <td>46.438172</td>
+    </tr>
+    <tr>
+      <th>2022-04</th>
+      <td>1440</td>
+      <td>802.0</td>
+      <td>55.694444</td>
+    </tr>
+    <tr>
+      <th>2022-05</th>
+      <td>1488</td>
+      <td>323.0</td>
+      <td>21.706989</td>
+    </tr>
+    <tr>
+      <th>2022-06</th>
+      <td>1440</td>
+      <td>252.0</td>
+      <td>17.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="merge-gap-fill-counts">
+<h2>Merge gap-fill counts<a class="headerlink" href="#merge-gap-fill-counts" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the flag column in _df for clarity after merging</span>
+<span class="n">flag_fn2o</span> <span class="o">=</span> <span class="n">flag_fn2o</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;FLAG_FN2O_L3.1_L3.3_CUT_50_QCF_gfRF_ISFILLED&#39;</span><span class="p">:</span> <span class="s1">&#39;GapFillCount&#39;</span><span class="p">})</span>
+
+<span class="c1"># Merge fn2o with flag_fn2o to bring the monthly gap-fill counts into fn2o&#39;s DataFrame</span>
+<span class="c1"># We&#39;ll merge on &#39;YEARMONTH&#39;</span>
+<span class="n">fn2o_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">fn2o</span><span class="p">,</span> <span class="n">flag_fn2o</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1"># Restore the original TIMESTAMP_MIDDLE as index and drop the helper YEARMONTH column</span>
+<span class="n">fn2o_merged</span> <span class="o">=</span> <span class="n">fn2o_merged</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">fn2o</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">fn2o_merged</span> <span class="o">=</span> <span class="n">fn2o_merged</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;YEARMONTH&#39;</span><span class="p">])</span>
+
+<span class="c1"># Filter the flux data based on the &#39;GapFillCount&#39;</span>
+<span class="c1"># Keep flux data only where &#39;GapFillCount&#39; is less than 1000</span>
+<span class="n">fn2o_filtered</span> <span class="o">=</span> <span class="n">fn2o_merged</span><span class="p">[</span><span class="n">fn2o_merged</span><span class="p">[</span><span class="s1">&#39;GapFillCount&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1400</span><span class="p">]</span>
+<span class="n">fn2o_final</span> <span class="o">=</span> <span class="n">fn2o_filtered</span><span class="p">[</span><span class="n">fluxcol</span><span class="p">]</span> <span class="c1"># Use fn2o.name to get the original column name</span>
+
+<span class="n">fn2o_final</span> <span class="o">=</span> <span class="n">fn2o_final</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">fn2o</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">fn2o_final</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMESTAMP_MIDDLE
+2005-01-01 00:15:00   NaN
+2005-01-01 00:45:00   NaN
+2005-01-01 01:15:00   NaN
+2005-01-01 01:45:00   NaN
+2005-01-01 02:15:00   NaN
+                       ..
+2024-12-31 21:45:00   NaN
+2024-12-31 22:15:00   NaN
+2024-12-31 22:45:00   NaN
+2024-12-31 23:15:00   NaN
+2024-12-31 23:45:00   NaN
+Freq: 30min, Name: FN2O_L3.1_L3.3_CUT_50_QCF_gfRF, Length: 350640, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="heatmap">
+<h1>Heatmap<a class="headerlink" href="#heatmap" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">17.6</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>  <span class="c1"># rows, cols</span>
+<span class="c1"># gs.update(wspace=0.5, hspace=0.3, left=0.03, right=0.97, top=0.97, bottom=0.03)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ax_orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">cb_digits_after_comma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">show_values</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">nee</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">nee_zlabel</span><span class="p">,</span> <span class="o">**</span><span class="n">settings</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">dv</span><span class="o">.</span><span class="n">heatmapyearmonth</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="n">fn2o_final</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">zlabel</span><span class="o">=</span><span class="n">fn2o_zlabel</span><span class="p">,</span> <span class="n">color_bad</span><span class="o">=</span><span class="s1">&#39;#a6a6a6&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">settings</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/424d3cd7dd6f9d3d7393aa63ee292473dbe059559645d1304f57807ffd54d888.png" src="../../_images/424d3cd7dd6f9d3d7393aa63ee292473dbe059559645d1304f57807ffd54d888.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="save-figure-to-file">
+<h1>Save figure to file<a class="headerlink" href="#save-figure-to-file" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;FLUX_NEE_FN2O_MonthlyHeatmaps_Figure1.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="end-of-notebook">
+<h1>End of notebook<a class="headerlink" href="#end-of-notebook" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_string</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Finished. </span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. 2025-07-01 16:43:59
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\90_DATASET_OVERVIEW"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Flux: Monthly heatmaps of NEE (2005-2024) and FN2O (2012-2022)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nee">NEE</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fn2o">FN2O</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">Flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flag">Flag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-number-of-available-non-gap-filled-records">Checking number of available non-gap-filled records</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-gap-fill-counts">Merge gap-fill counts</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-figure-to-file">Save figure to file</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-notebook">End of notebook</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lukas Hörtnagl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
