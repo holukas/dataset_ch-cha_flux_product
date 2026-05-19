@@ -18,14 +18,18 @@ import math
 import os
 import subprocess
 import sys
-import threading
-import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, wait as futures_wait
 from pathlib import Path
 
 from rich.console import Console
-from rich.live import Live
-from rich.text import Text
+from rich.progress import (
+    BarColumn,
+    MofNCompleteColumn,
+    Progress,
+    TextColumn,
+    TimeElapsedColumn,
+    TimeRemainingColumn,
+)
 
 # ── Configuration ──────────────────────────────────────────────────────────────
 SCRIPT = Path(__file__).parent / '04-flux_lag_pwbopt.py'
@@ -34,24 +38,13 @@ OUTPUT_BASE = Path(__file__).parent.parent / 'output' / '04-flux_lag_pwbopt'
 
 N_PARTS = 8  # number of equal groups to split the data into
 DEFAULT_WORKERS = 8  # run all parts simultaneously
+MAX_FILES = 500  # set to an int (e.g. 50) to cap total files processed; None = all files
 
 INPUT_DIR = INPUT_BASE / '03-rotated_data_from_eddypro_level5'
 INPUT_FILE_PATTERN = '*.txt'
 # ───────────────────────────────────────────────────────────────────────────────
 
-# Shared state updated by worker threads
-_states: dict[int, str] = {}  # part -> 'pending' | 'running' | 'ok' | 'failed'
 _part_sizes: dict[int, int] = {}  # part -> total files in that part
-_lock = threading.Lock()
-
-BAR_WIDTH = 24
-
-SYMBOLS = {
-    'pending': ('○', 'dim white'),
-    'running': ('●', 'yellow'),
-    'ok': ('✓', 'bold green'),
-    'failed': ('✗', 'bold red'),
-}
 
 console = Console()
 
@@ -97,72 +90,10 @@ def count_done_per_part(parts: list[int]) -> dict[int, int]:
     return done
 
 
-def _format_eta(seconds: float) -> str:
-    if seconds < 0:
-        return '—'
-    seconds = int(seconds)
-    h, rem = divmod(seconds, 3600)
-    m, s = divmod(rem, 60)
-    if h > 0:
-        return f'{h}h {m:02d}m {s:02d}s'
-    if m > 0:
-        return f'{m}m {s:02d}s'
-    return f'{s}s'
-
-
-def make_display(parts: list[int], done_per_part: dict[int, int],
-                 files_total: int, start_time: float) -> Text:
-    text = Text()
-
-    # One line per part: symbol + bar + count
-    for part in parts:
-        state = _states.get(part, 'pending')
-        sym, sym_style = SYMBOLS[state]
-        total_part = _part_sizes.get(part, 0)
-        done_part = done_per_part.get(part, 0)
-        pct_part = done_part / total_part if total_part > 0 else 0.0
-        filled = int(pct_part * BAR_WIDTH)
-
-        text.append(f'  part{part} ')
-        text.append(sym, style=sym_style)
-        text.append('  ')
-        text.append('█' * filled, style='bold green')
-        text.append('░' * (BAR_WIDTH - filled), style='dim')
-        text.append(f'  {done_part:>{len(str(total_part))}} / {total_part}')
-        text.append(f'  ({pct_part * 100:5.1f}%)\n', style='cyan')
-
-    # Overall progress + ETA
-    files_done = sum(done_per_part.values())
-    pct = files_done / files_total * 100 if files_total > 0 else 0.0
-    elapsed = time.monotonic() - start_time
-    rate = files_done / elapsed if elapsed > 0 and files_done > 0 else 0.0
-    remaining = (files_total - files_done) / rate if rate > 0 else -1
-
-    text.append(f'\n  Total: ')
-    text.append(f'{files_done} / {files_total}', style='bold')
-    text.append(f'  ({pct:.1f}%)', style='cyan')
-    text.append(f'  ETA: ')
-    text.append(_format_eta(remaining), style='magenta')
-
-    return text
-
-
-def _monitor(parts: list[int], total: int, start_time: float,
-             live: Live, stop: threading.Event) -> None:
-    """Background thread: refresh the display every 0.5s with latest file counts."""
-    while not stop.is_set():
-        done_per_part = count_done_per_part(parts)
-        live.update(make_display(parts, done_per_part, total, start_time))
-        stop.wait(0.5)
-
-
 def run_part(part: int, file_list_path: Path) -> tuple[int, int, Path]:
     output_dir = OUTPUT_BASE / f'part{part}'
     output_dir.mkdir(parents=True, exist_ok=True)
     log_path = output_dir / 'run.log'
-
-    with _lock:
-        _states[part] = 'running'
 
     env = {**os.environ, 'TLAG_NO_DISPLAY': '1'}
 
@@ -175,9 +106,6 @@ def run_part(part: int, file_list_path: Path) -> tuple[int, int, Path]:
             stderr=log,
             env=env,
         )
-
-    with _lock:
-        _states[part] = 'ok' if result.returncode == 0 else 'failed'
 
     return part, result.returncode, log_path
 
@@ -196,6 +124,9 @@ def main():
     if not all_files:
         console.print('[red]No input files found.[/]')
         sys.exit(1)
+    if MAX_FILES is not None:
+        all_files = all_files[:MAX_FILES]
+        console.print(f'[yellow]MAX_FILES={MAX_FILES}: using first {len(all_files)} files.[/]')
 
     groups = split_into_parts(all_files, N_PARTS)
     file_list_paths = write_file_lists(groups)
@@ -204,7 +135,6 @@ def main():
     parts = args.parts if args.parts else all_parts
 
     for part in all_parts:
-        _states[part] = 'pending'
         _part_sizes[part] = len(groups[part - 1])
 
     files_total = len(all_files)
@@ -216,30 +146,63 @@ def main():
     console.print(f'Output → {OUTPUT_BASE}\n')
 
     failed = []
-    stop_event = threading.Event()
-    start_time = time.monotonic()
 
-    with ThreadPoolExecutor(max_workers=args.workers) as executor:
-        futures = {
-            executor.submit(run_part, part, file_list_paths[part - 1]): part
-            for part in parts
-        }
+    with Progress(
+        TextColumn('  {task.description}'),
+        BarColumn(bar_width=28),
+        MofNCompleteColumn(),
+        TimeElapsedColumn(),
+        TimeRemainingColumn(),
+        console=console,
+        refresh_per_second=4,
+    ) as progress:
 
-        with Live(make_display(parts, {}, files_total, start_time), console=console,
-                  refresh_per_second=4, transient=False) as live:
-
-            monitor = threading.Thread(
-                target=_monitor, args=(parts, files_total, start_time, live, stop_event),
-                daemon=True,
+        # One progress task per part + one overall task
+        task_ids: dict[int, int] = {}
+        for part in all_parts:
+            task_ids[part] = progress.add_task(
+                f'[dim]part{part}  ○[/]',
+                total=_part_sizes[part],
+                visible=True,
             )
-            monitor.start()
+        overall = progress.add_task('[bold]Total[/]', total=files_total)
 
-            for f in as_completed(futures):
-                part, returncode, log_path = f.result()
-                if returncode != 0:
-                    failed.append(part)
+        with ThreadPoolExecutor(max_workers=args.workers) as executor:
+            future_map = {
+                executor.submit(run_part, part, file_list_paths[part - 1]): part
+                for part in parts
+            }
 
-            stop_event.set()
+            # Mark submitted parts as running
+            for part in parts:
+                progress.update(task_ids[part], description=f'[yellow]part{part}  ●[/]')
+
+            pending = set(future_map)
+            while pending:
+                # Wait up to 0.5 s or until the next future completes
+                done_futures, pending = futures_wait(pending, timeout=0.5)
+
+                for f in done_futures:
+                    part, returncode, log_path = f.result()
+                    if returncode != 0:
+                        failed.append(part)
+                        progress.update(task_ids[part],
+                                        description=f'[red]part{part}  ✗[/]',
+                                        completed=_part_sizes[part])
+                    else:
+                        progress.update(task_ids[part],
+                                        description=f'[green]part{part}  ✓[/]',
+                                        completed=_part_sizes[part])
+
+                # Refresh per-part counts from checkpoint files for still-running parts
+                still_running = [future_map[f] for f in pending]
+                done_counts = count_done_per_part(still_running)
+                for part, done_count in done_counts.items():
+                    progress.update(task_ids[part], completed=done_count)
+
+                # Update overall bar
+                total_done = sum(count_done_per_part(all_parts).values())
+                progress.update(overall, completed=total_done)
 
     console.print()
     if failed:

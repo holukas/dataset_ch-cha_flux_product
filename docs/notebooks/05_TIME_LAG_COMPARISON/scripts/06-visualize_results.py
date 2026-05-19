@@ -38,7 +38,7 @@ SCALARS = {'CH4': 'ch4', 'N2O': 'n2o'}
 # PWBOPT thresholds — must match the values used in 04-flux_lag_pwbopt.py
 HDI_THRESH_S = 0.5  # S1: HDI below this → reliable
 DEV_THRESH_S = 0.5  # S2: max deviation from preceding optimal lag
-HDI_PREFILTER_S = 2.0  # pre-filter: discard lags with HDI wider than this
+HDI_PREFILTER_S = 1.0  # pre-filter: discard lags with HDI wider than this
 LAG_MAX_S = 10.0  # used for y-axis limits on the lag panel
 
 
