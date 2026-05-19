@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"/mnt/f/Sync/luhk_work/20 - CODING/29 - WORKBENCH/dataset_ch-cha_flux_product/dataset_ch-cha_flux_product\" && ls)"
+    ]
+  }
+}

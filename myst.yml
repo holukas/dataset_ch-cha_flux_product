@@ -1,0 +1,20 @@
+version: 1
+project:
+  title: CH-CHA Flux Product
+  authors:
+    - name: Lukas Hörtnagl
+  copyright: "2025"
+  logo: docs/logo1.jpg
+  github: https://github.com/holukas/dataset_ch-cha_flux_product
+  bibliography:
+    - docs/references.bib
+  toc: docs/_toc.yml
+  execute:
+    execute_notebooks: 'off'
+
+site:
+  template: book-theme
+  options:
+    use_issues_button: true
+    use_repository_button: true
+    baseurl: /dataset_ch-cha_flux_product/
