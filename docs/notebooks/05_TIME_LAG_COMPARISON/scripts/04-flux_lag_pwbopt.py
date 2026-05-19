@@ -128,6 +128,11 @@ FILE_NA_VALUES = ['-9999', '-9999.0', '-9999.0000000000000']
 # Vertical wind column name (after FILE_COL_NAMES renaming)
 COL_W = 'w'
 
+# Sonic temperature column — enables the full 4-combination PWB bootstrap
+# (cw, ct, wc, tc) instead of just the 2 scalar×W combinations.  Only used
+# when the column is present and valid; synthetic mode has no sonic temperature.
+COL_TS = 'ts'
+
 # Scalars to process: {display_label: column_name_in_file}
 # Add or remove entries to change which gases are detected.
 SCALARS = {
@@ -475,22 +480,37 @@ for period_name, source in period_sources:
 
     row = {'period': period_name}
 
+    # Sonic temperature available for the 4-combination PWB bootstrap?
+    # Only valid in real-data mode; synthetic DataFrames do not have a ts column.
+    has_ts = (not USE_SYNTHETIC
+              and COL_TS in df.columns
+              and is_valid_series(df[COL_TS]))
+
     for scalar_label, scalar_col in SCALARS.items():
         prefix = scalar_label.lower()  # e.g. 'ch4', 'n2o'
 
         if not is_valid_series(df[scalar_col]):
             print(f'  -> {scalar_label} skipped (too many NaN or constant series).')
             for suffix in ('tlag_s', 'hdi_lo_s', 'hdi_hi_s',
-                           'hdi_range_s', 'tlag_pw_s', 'corr_est', 'ar_order'):
+                           'hdi_range_s', 'tlag_pw_s', 'corr_est', 'ar_order',
+                           'best_combination'):
                 row[f'{prefix}_{suffix}'] = np.nan
             continue
 
+        # Build the DataFrame slice for this scalar.  Include sonic temperature
+        # when available so PreWhiteningBootstrap can run the full 4-combination
+        # bootstrap (cw, ct, wc, tc) — essential for trace gases.
+        cols_sel = [COL_W, scalar_col] + ([COL_TS] if has_ts else [])
+        rename_map = {COL_W: 'W', scalar_col: scalar_label}
+        if has_ts:
+            rename_map[COL_TS] = 'TS'
+
         # Run PWB (equivalent to detect_gas() -> tlag_detection() in R script)
         pwb = dv.PreWhiteningBootstrap(
-            df=df[[COL_W, scalar_col]].rename(columns={COL_W: 'W',
-                                                       scalar_col: scalar_label}),
+            df=df[cols_sel].rename(columns=rename_map),
             var_w='W',
             var_scalar=scalar_label,
+            var_tsonic='TS' if has_ts else None,
             hz=HZ,
             lag_max_s=LAG_MAX_S,
             n_bootstrap=N_BOOTSTRAP,
@@ -508,10 +528,12 @@ for period_name, source in period_sources:
         row[f'{prefix}_tlag_pw_s'] = res['tlag_pw_s']  # R: res$opt_tlag / mfreq
         row[f'{prefix}_corr_est'] = res['corr_est']  # R: res$cor_pwb
         row[f'{prefix}_ar_order'] = res['ar_order']
+        row[f'{prefix}_best_combination'] = res['best_combination']
 
         print(f'  -> {scalar_label}: tlag={res["tlag_s"]:.3f} s  '
               f'HDI_range={res["hdi_range_s"]:.3f} s  '
-              f'reliable={res["is_reliable"]}')
+              f'reliable={res["is_reliable"]}  '
+              f'combo={res["best_combination"]}')
 
         # Save diagnostic plot per period per scalar (R: pdf() in detect_gas())
         if SAVE_PLOTS and not USE_SYNTHETIC:
