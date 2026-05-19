@@ -4,7 +4,7 @@ project:
   authors:
     - name: Lukas Hörtnagl
   copyright: "2025"
-  logo: docs/logo1.jpg
+  logo: docs/logo.jpg
   github: https://github.com/holukas/dataset_ch-cha_flux_product
   bibliography:
     - docs/references.bib

@@ -4,28 +4,28 @@
 format: jb-book
 root: intro
 chapters:
-- file: Overview
-- file: Meteo_Data
-- file: Management_Data
-- file: FPC
+- file: pages/data/Overview
+- file: pages/data/Meteo_Data
+- file: pages/data/Management_Data
+- file: pages/processing/FPC
   sections:
-  - file: Raw_Data_EC  
-  - file: L0
-  - file: L1
-  - file: L2
-  - file: L3.1
-  - file: L3.2  
-  - file: L3.3  
-  - file: L4.1
-  - file: L4.2  
-  - file: QCF  
-- file: Instrumentation
-- file: Variables
-- file: SI
-- file: Issues
-- file: Used_Software
-- file: Links
-- file: References
+  - file: pages/processing/Raw_Data_EC
+  - file: pages/processing/L0
+  - file: pages/processing/L1
+  - file: pages/processing/L2
+  - file: pages/processing/L3.1
+  - file: pages/processing/L3.2
+  - file: pages/processing/L3.3
+  - file: pages/processing/L4.1
+  - file: pages/processing/L4.2
+  - file: pages/processing/QCF
+- file: pages/data/Variables
+- file: pages/reference/Instrumentation
+- file: pages/reference/SI
+- file: pages/reference/Issues
+- file: pages/reference/Used_Software
+- file: pages/reference/Links
+- file: pages/reference/References
 - file: notebooks/README
-- file: Dataset_Versions
-- file: Yearly_Notes
+- file: pages/reference/Dataset_Versions
+- file: pages/reference/Yearly_Notes

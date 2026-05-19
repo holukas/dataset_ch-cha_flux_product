@@ -48,13 +48,27 @@ PI dataset of eddy covariance ecosystem fluxes, meteorological data, and grassla
 ## Repo Structure
 
 ```
-docs/                          # Jupyter Book source (docs + notebooks)
-  notebooks/                   # Processing notebooks, organized by step
-  data/EddyPro_settings/       # EddyPro settings and metadata files
-_raw/                          # Raw input data
-_ETH_ResearchCollection/       # Files related to ETH Research Collection upload
-myst.yml                       # JB2 config (repo root, references docs/)
-pyproject.toml                 # uv project config
+myst.yml                            # JB2 config (repo root)
+pyproject.toml                      # uv project config
+.python-version                     # pins Python 3.12
+docs/                               # Jupyter Book source
+  intro.md                          # book landing page (TOC root)
+  _toc.yml                          # book table of contents
+  pages/
+    processing/                     # FPC.md, Raw_Data_EC.md, L0–L4.2.md, QCF.md
+    data/                           # Overview.md, Meteo_Data.md, Management_Data.md, Variables.md
+    reference/                      # Instrumentation.md, SI.md, Issues.md, Used_Software.md,
+                                    # Links.md, References.md, Dataset_Versions.md, Yearly_Notes.md
+  notebooks/                        # Processing notebooks by step (00_data … 95_DATA_REQUESTS)
+  data/
+    eddypro/                        # EddyPro settings and metadata files
+    management/                     # Management data zip
+  images/                           # Figures used in docs
+  logo.jpg
+  references.bib
+_raw/                               # Raw input data (not part of book)
+_ETH_ResearchCollection/            # ETH Research Collection upload files
+_internal_meetings_presentations/   # Internal docs
 ```
 
 ## Key External Links

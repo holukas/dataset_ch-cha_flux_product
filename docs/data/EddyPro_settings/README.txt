@@ -1,1 +1,0 @@
-This folder contains EddyPro settings files that were used to calculate fluxes.
