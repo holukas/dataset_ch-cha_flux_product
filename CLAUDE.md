@@ -59,7 +59,24 @@ docs/                               # Jupyter Book source
     data/                           # Overview.md, Meteo_Data.md, Management_Data.md, Variables.md
     reference/                      # Instrumentation.md, SI.md, Issues.md, Used_Software.md,
                                     # Links.md, References.md, Dataset_Versions.md, Yearly_Notes.md
-  notebooks/                        # Processing notebooks by step (00_data … 95_DATA_REQUESTS)
+  notebooks/                        # Processing notebooks by step
+    05_TIME_LAG_COMPARISON/         # Time lag comparison test (2021 data, informs final settings)
+      scripts/
+        04-flux_lag_pwbopt.py       # PWB time lag detection (run directly or via parallel runner)
+        04-run_parallel.py          # Parallel runner: splits input into 8 parts, runs simultaneously
+        05-merge_results.py         # Merge per-part CSVs into one (run in PyCharm)
+        06-visualize_results.py     # Visualize merged results: PWBOPT plots + KDE (run in PyCharm)
+      eddypro_settings/             # EddyPro settings for each of the 10 test variants
+      input/                        # High-frequency input files (gitignored)
+      output/                       # Results (gitignored)
+        04-flux_lag_pwbopt/         # Output produced by 04-flux_lag_pwbopt.py
+          part1/ … part8/           # One subfolder per parallel group
+        05-merge_results/           # Output produced by 05-merge_results.py
+          tlag_results.csv          # All parts merged and sorted chronologically
+        06-visualize_results/       # Output produced by 06-visualize_results.py
+          summary_ch4.png           # 3-panel summary figure for CH4
+          summary_n2o.png           # 3-panel summary figure for N2O
+          lag_strategy_comparison.png  # Scatter + KDE comparison of PWBOPT strategies
   data/
     eddypro/                        # EddyPro settings and metadata files
     management/                     # Management data zip

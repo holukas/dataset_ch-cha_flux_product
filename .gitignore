@@ -8,7 +8,10 @@
 /_ETH_ResearchCollection
 /docs/_build
 /docs/.obsidian
-/docs/notebooks/0_data
+/docs/notebooks/00_data
+/docs/notebooks/05_TIME_LAG_COMPARISON/input/
+/docs/notebooks/05_TIME_LAG_COMPARISON/output/
+/docs/notebooks/05_TIME_LAG_COMPARISON/references
 /docs/notebooks/10_METEO/*.csv
 /docs/notebooks/20_MANAGEMENT/*.csv
 /docs/notebooks/30_MERGE_DATA/*.csv
@@ -104,7 +107,7 @@ target/
 .ipynb_checkpoints
 
 # pyenv
-.python-version
+# .python-version  # tracked intentionally to pin Python version
 
 # celery beat schedule file
 celerybeat-schedule
