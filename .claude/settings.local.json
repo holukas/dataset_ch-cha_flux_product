@@ -3,7 +3,9 @@
     "allow": [
       "Bash(cd \"/mnt/f/Sync/luhk_work/20 - CODING/29 - WORKBENCH/dataset_ch-cha_flux_product/dataset_ch-cha_flux_product\" && ls)",
       "Bash(mkdir -p docs/pages/processing docs/pages/data docs/pages/reference docs/data/eddypro docs/data/management)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "Bash(python -c \"import diive; print\\(diive.__version__\\)\")",
+      "Bash(uv run *)"
     ]
   }
 }

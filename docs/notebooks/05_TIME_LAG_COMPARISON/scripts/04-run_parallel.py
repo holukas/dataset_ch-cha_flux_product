@@ -38,7 +38,7 @@ OUTPUT_BASE = Path(__file__).parent.parent / 'output' / '04-flux_lag_pwbopt'
 
 N_PARTS = 8  # number of equal groups to split the data into
 DEFAULT_WORKERS = 8  # run all parts simultaneously
-MAX_FILES = 500  # set to an int (e.g. 50) to cap total files processed; None = all files
+MAX_FILES = None  # set to an int (e.g. 50) to cap total files processed; None = all files
 
 INPUT_DIR = INPUT_BASE / '03-rotated_data_from_eddypro_level5'
 INPUT_FILE_PATTERN = '*.txt'
@@ -148,13 +148,13 @@ def main():
     failed = []
 
     with Progress(
-        TextColumn('  {task.description}'),
-        BarColumn(bar_width=28),
-        MofNCompleteColumn(),
-        TimeElapsedColumn(),
-        TimeRemainingColumn(),
-        console=console,
-        refresh_per_second=4,
+            TextColumn('  {task.description}'),
+            BarColumn(bar_width=28),
+            MofNCompleteColumn(),
+            TimeElapsedColumn(),
+            TimeRemainingColumn(),
+            console=console,
+            refresh_per_second=4,
     ) as progress:
 
         # One progress task per part + one overall task
